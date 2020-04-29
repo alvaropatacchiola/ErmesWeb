@@ -1,0 +1,180 @@
+﻿.unita{
+color:#464646;
+padding-right:5px;
+font-size: 13px;
+}
+.misura{
+                color:#000000;
+font-weight: 600;
+font-size: 18px;
+}
+
+.idnumero{
+font-size: 18px;
+font-weight: 600;
+padding-left:5px;
+}
+
+.nome{
+min-width: 60px;
+font-weight: 600;
+font-size: 18px;
+color:#464646;
+text-align: left;
+
+}
+
+.navbar .main .altezza40{
+height: 40px;
+}
+
+
+.alarm{
+
+    color:red;
+
+}
+
+
+
+
+.row-fluid .regular-gray {
+border-bottom: 4px solid #e5e5e5;
+
+}
+
+
+.row-fluid .regular-gray .span2 {
+
+                padding-top:10px;
+                padding-bottom:10px;
+                
+
+                text-align: center;
+                
+
+
+
+
+}
+
+.row-fluid .regular-gray .span12 {
+
+                padding-top:10px;
+                padding-bottom:5px;
+                
+                
+
+
+
+
+}
+
+
+.border {
+
+                
+                border-bottom: 1px solid #e5e5e5;
+
+
+
+
+}
+
+
+
+
+.block{
+                display: block;
+}
+
+
+.impianto{
+                padding:10px;
+                font-weight: 600;
+                font-size: 20px;
+                color:#ffffff;
+}
+
+.row-fluid .regular-gray:hover {
+                background-color:#cccccc;             
+}
+
+.row-fluid .noflow {
+                background-color:#44413e;
+                color:#ffe640;
+                border-bottom: 4px solid #e5e5e5;
+}
+.row-fluid .noflow:hover {
+                background-color:#000000;
+                color:#ffe640;
+}
+
+
+.row-fluid .noflow .span4{
+                min-width: 60px;
+font-weight: 600;
+font-size: 18px;
+
+                color:#ffe640;
+                padding-top:10px;
+                padding-bottom:10px;
+                
+                min-width: 50px;
+                text-align: center;
+                
+}
+
+.row-fluid .noflow .span8{
+                min-width: 60px;
+font-weight: 600;
+font-size: 18px;
+
+                color:#ffe640;
+                padding-top:10px;
+                padding-bottom:10px;
+                
+                min-width: 50px;
+                
+}
+
+
+.row-fluid .notconnected {
+                background-color:#b5b5b5;
+                border-bottom: 4px solid #e5e5e5;
+
+                
+}
+.row-fluid .notconnected:hover {
+                background-color:#cccccc;
+                color:#000000;
+}
+.row-fluid .notconnected .span8{
+                min-width: 60px;
+font-weight: 600;
+font-size: 18px;
+
+                color:#000000;
+                padding-top:10px;
+                padding-bottom:10px;
+
+                min-width: 50px;
+                
+}
+
+.row-fluid .notconnected .span4 {
+                min-width: 60px;
+font-weight: 600;
+font-size: 18px;
+
+                color:#000000;
+                padding-top:10px;
+                padding-bottom:10px;
+                padding-left:10px;
+                min-width: 50px;
+                text-align: center;
+}
+
+
+
+

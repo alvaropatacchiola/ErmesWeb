@@ -1,0 +1,1005 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AdditiveResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="AdditiveResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DisableResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DisableResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="fixed_cl_relayResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="fixed_cl_relayResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="fixed_ph_relayResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="fixed_ph_relayResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="L_PResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="L_PResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Label67Resource1.Text" xml:space="preserve">
+    <value>Mode</value>
+  </data>
+  <data name="Label76Resource1.Text" xml:space="preserve">
+    <value>Mode</value>
+  </data>
+  <data name="Label78Resource1.Text" xml:space="preserve">
+    <value>Mode</value>
+  </data>
+  <data name="Label7Resource1.Text" xml:space="preserve">
+    <value>pH Pulse 1</value>
+  </data>
+  <data name="LINEA_cl_pulse1Resource2.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="LINEA_cl_pulse1Resource2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="LINEA_ph_pulse1Resource2.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="LINEA_ph_pulse1Resource2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="LINEA_ph_pulse2Resource2.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="LINEA_ph_pulse2Resource2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Literal10Resource1.Text" xml:space="preserve">
+    <value>Cl Pulse 1</value>
+  </data>
+  <data name="Literal11Resource1.Text" xml:space="preserve">
+    <value>cL Relay</value>
+  </data>
+  <data name="Literal12Resource1.Text" xml:space="preserve">
+    <value>pH</value>
+  </data>
+  <data name="Literal13Resource1.Text" xml:space="preserve">
+    <value>pH ON</value>
+  </data>
+  <data name="Literal14Resource1.Text" xml:space="preserve">
+    <value>Pulse / Minute</value>
+  </data>
+  <data name="Literal15Resource1.Text" xml:space="preserve">
+    <value>pH</value>
+  </data>
+  <data name="Literal16Resource1.Text" xml:space="preserve">
+    <value>pH OFF</value>
+  </data>
+  <data name="Literal17Resource1.Text" xml:space="preserve">
+    <value>Pulse / Minute</value>
+  </data>
+  <data name="Literal18Resource1.Text" xml:space="preserve">
+    <value>Pulse Speed (min)</value>
+  </data>
+  <data name="Literal1Resource1.Text" xml:space="preserve">
+    <value>pH</value>
+  </data>
+  <data name="Literal21Resource1.Text" xml:space="preserve">
+    <value>pH</value>
+  </data>
+  <data name="Literal22Resource1.Text" xml:space="preserve">
+    <value>pH ON</value>
+  </data>
+  <data name="Literal23Resource1.Text" xml:space="preserve">
+    <value>%</value>
+  </data>
+  <data name="Literal24Resource1.Text" xml:space="preserve">
+    <value>sec</value>
+  </data>
+  <data name="Literal25Resource1.Text" xml:space="preserve">
+    <value>pH</value>
+  </data>
+  <data name="Literal26Resource1.Text" xml:space="preserve">
+    <value>pH OFF</value>
+  </data>
+  <data name="Literal27Resource1.Text" xml:space="preserve">
+    <value>%</value>
+  </data>
+  <data name="Literal28Resource1.Text" xml:space="preserve">
+    <value>sec</value>
+  </data>
+  <data name="Literal29Resource1.Text" xml:space="preserve">
+    <value>Cl</value>
+  </data>
+  <data name="Literal2Resource1.Text" xml:space="preserve">
+    <value>pH</value>
+  </data>
+  <data name="Literal30Resource1.Text" xml:space="preserve">
+    <value>Cl ON</value>
+  </data>
+  <data name="Literal31Resource1.Text" xml:space="preserve">
+    <value>Pulse / Minute</value>
+  </data>
+  <data name="Literal32Resource1.Text" xml:space="preserve">
+    <value>Cl</value>
+  </data>
+  <data name="Literal33Resource1.Text" xml:space="preserve">
+    <value>Cl OFF</value>
+  </data>
+  <data name="Literal34Resource1.Text" xml:space="preserve">
+    <value>Pulse / Minute</value>
+  </data>
+  <data name="Literal35Resource1.Text" xml:space="preserve">
+    <value>Pulse Speed (min)</value>
+  </data>
+  <data name="Literal36Resource1.Text" xml:space="preserve">
+    <value>cc/stk</value>
+  </data>
+  <data name="Literal38Resource1.Text" xml:space="preserve">
+    <value>cL</value>
+  </data>
+  <data name="Literal39Resource1.Text" xml:space="preserve">
+    <value>cL ON</value>
+  </data>
+  <data name="Literal3Resource1.Text" xml:space="preserve">
+    <value>Pulse / Minute</value>
+  </data>
+  <data name="Literal40Resource1.Text" xml:space="preserve">
+    <value>%</value>
+  </data>
+  <data name="Literal41Resource1.Text" xml:space="preserve">
+    <value>sec</value>
+  </data>
+  <data name="Literal42Resource1.Text" xml:space="preserve">
+    <value>cL</value>
+  </data>
+  <data name="Literal43Resource1.Text" xml:space="preserve">
+    <value>cL OFF</value>
+  </data>
+  <data name="Literal44Resource1.Text" xml:space="preserve">
+    <value>%</value>
+  </data>
+  <data name="Literal45Resource1.Text" xml:space="preserve">
+    <value>sec</value>
+  </data>
+  <data name="Literal4Resource1.Text" xml:space="preserve">
+    <value>Pulse / Minute</value>
+  </data>
+  <data name="Literal59Resource1.Text" xml:space="preserve">
+    <value>Timeout:</value>
+  </data>
+  <data name="Literal5Resource1.Text" xml:space="preserve">
+    <value>Pulse Speed (min)</value>
+  </data>
+  <data name="Literal60Resource1.Text" xml:space="preserve">
+    <value>mc/h:</value>
+  </data>
+  <data name="Literal64Resource1.Text" xml:space="preserve">
+    <value>Setpoint</value>
+  </data>
+  <data name="Literal6Resource1.Text" xml:space="preserve">
+    <value>pH ON</value>
+  </data>
+  <data name="Literal70Resource1.Text" xml:space="preserve">
+    <value>Value %:</value>
+  </data>
+  <data name="Literal70Resource2.Text" xml:space="preserve">
+    <value>Reset No</value>
+  </data>
+  <data name="Literal71Resource1.Text" xml:space="preserve">
+    <value>mc/h:</value>
+  </data>
+  <data name="Literal71Resource2.Text" xml:space="preserve">
+    <value>Reset Yes</value>
+  </data>
+  <data name="Literal72Resource2.Text" xml:space="preserve">
+    <value>4/20 mA</value>
+  </data>
+  <data name="Literal73Resource2.Text" xml:space="preserve">
+    <value>0/20 mA</value>
+  </data>
+  <data name="Literal74Resource2.Text" xml:space="preserve">
+    <value>Litri/Pulse</value>
+  </data>
+  <data name="Literal75Resource1.Text" xml:space="preserve">
+    <value>Pulse/Litri</value>
+  </data>
+  <data name="Literal7Resource1.Text" xml:space="preserve">
+    <value>pH OFF</value>
+  </data>
+  <data name="Literal8Resource1.Text" xml:space="preserve">
+    <value>pH Pulse 2</value>
+  </data>
+  <data name="Literal94BResource1.Text" xml:space="preserve">
+    <value>Setpoint</value>
+  </data>
+  <data name="Literal94Resource1.Text" xml:space="preserve">
+    <value>Conc[%]</value>
+  </data>
+  <data name="Literal95Resource1.Text" xml:space="preserve">
+    <value>Range</value>
+  </data>
+  <data name="Literal96Resource1.Text" xml:space="preserve">
+    <value>mc/h</value>
+  </data>
+  <data name="Literal97Resource1.Text" xml:space="preserve">
+    <value>% </value>
+  </data>
+  <data name="Literal99Resource1.Text" xml:space="preserve">
+    <value>% at 0 mc/h</value>
+  </data>
+  <data name="Literal9Resource1.Text" xml:space="preserve">
+    <value>pH Relay</value>
+  </data>
+  <data name="LiteralAddResource1.Text" xml:space="preserve">
+    <value>Additive</value>
+  </data>
+  <data name="LiteralclmResource2.Text" xml:space="preserve">
+    <value>Mode ch2:-</value>
+  </data>
+  <data name="LiteralclpResource1.Text" xml:space="preserve">
+    <value>Mode ch2:+</value>
+  </data>
+  <data name="LiteralderResource1.Text" xml:space="preserve">
+    <value>Time Der:</value>
+  </data>
+  <data name="LiteralDisResource2.Text" xml:space="preserve">
+    <value>Disable</value>
+  </data>
+  <data name="LiteralIntResource1.Text" xml:space="preserve">
+    <value>Time Integral:</value>
+  </data>
+  <data name="LiteralMultResource2.Text" xml:space="preserve">
+    <value>Multiplicative</value>
+  </data>
+  <data name="LiteralpHmResource2.Text" xml:space="preserve">
+    <value>Mode ch1:-</value>
+  </data>
+  <data name="LiteralpHpResource1.Text" xml:space="preserve">
+    <value>Mode ch1:+</value>
+  </data>
+  <data name="LiteralResource1.Text" xml:space="preserve">
+    <value>On / Off</value>
+  </data>
+  <data name="LiteralResource10.Text" xml:space="preserve">
+    <value>Off</value>
+  </data>
+  <data name="LiteralResource11.Text" xml:space="preserve">
+    <value>On / Off</value>
+  </data>
+  <data name="LiteralResource12.Text" xml:space="preserve">
+    <value>Proportional</value>
+  </data>
+  <data name="LiteralResource13.Text" xml:space="preserve">
+    <value>Off</value>
+  </data>
+  <data name="LiteralResource14.Text" xml:space="preserve">
+    <value>On / Off</value>
+  </data>
+  <data name="LiteralResource15.Text" xml:space="preserve">
+    <value>Proportional PWM</value>
+  </data>
+  <data name="LiteralResource16.Text" xml:space="preserve">
+    <value>Fixed PWM</value>
+  </data>
+  <data name="LiteralResource17.Text" xml:space="preserve">
+    <value>Off</value>
+  </data>
+  <data name="LiteralResource2.Text" xml:space="preserve">
+    <value>Proportional</value>
+  </data>
+  <data name="LiteralResource3.Text" xml:space="preserve">
+    <value>Off</value>
+  </data>
+  <data name="LiteralResource4.Text" xml:space="preserve">
+    <value>Prop+WM</value>
+  </data>
+  <data name="LiteralResource4A.Text" xml:space="preserve">
+    <value>On / Off</value>
+  </data>
+  <data name="LiteralResource5.Text" xml:space="preserve">
+    <value>PID</value>
+  </data>
+  <data name="LiteralResource5A.Text" xml:space="preserve">
+    <value>Line</value>
+  </data>
+  <data name="LiteralResource6.Text" xml:space="preserve">
+    <value>Off</value>
+  </data>
+  <data name="LiteralResource7.Text" xml:space="preserve">
+    <value>On / Off</value>
+  </data>
+  <data name="LiteralResource8.Text" xml:space="preserve">
+    <value>Proportional PWM</value>
+  </data>
+  <data name="LiteralResource9.Text" xml:space="preserve">
+    <value>Fixed PWM</value>
+  </data>
+  <data name="Literalstk1Resource1.Text" xml:space="preserve">
+    <value>STK Ch1:</value>
+  </data>
+  <data name="Literalstk2Resource1.Text" xml:space="preserve">
+    <value>STK Ch2:</value>
+  </data>
+  <data name="LiteralVarResource1.Text" xml:space="preserve">
+    <value>Var [%]:</value>
+  </data>
+  <data name="mA0_20Resource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="mA0_20Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="mA4_20_PResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="mA4_20_PResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="message_channelResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="mode_menoResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="mode_menoResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="mode_piuResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="mode_piuResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="MultiplicativeResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="MultiplicativeResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="off_cl_pulse1Resource2.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="off_cl_pulse1Resource2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="off_cl_relayResource2.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="off_cl_relayResource2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="off_ph_pulse1Resource2.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="off_ph_pulse1Resource2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="off_ph_pulse2Resource2.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="off_ph_pulse2Resource2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="off_ph_relayResource2.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="off_ph_relayResource2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="on_off_cl_pulse1Resource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="on_off_cl_pulse1Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="on_off_cl_relayResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="on_off_cl_relayResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="on_off_ph_pulse1Resource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="on_off_ph_pulse1Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="on_off_ph_pulse2Resource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="on_off_ph_pulse2Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="on_off_ph_relayResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="on_off_ph_relayResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="P_LResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="P_LResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="PageResource1.Title" xml:space="preserve">
+    <value />
+  </data>
+  <data name="PID_cl_pulse1Resource2.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="PID_cl_pulse1Resource2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="PID_cl_relayResource2.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="PID_cl_relayResource2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="PID_ph_pulse1Resource2.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="PID_ph_pulse1Resource2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="PID_ph_pulse2Resource2.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="PID_ph_pulse2Resource2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="PID_ph_relayResource2.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="PID_ph_relayResource2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Prop_WM_cl_pulse1Resource2.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Prop_WM_cl_pulse1Resource2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Prop_WM_cl_relayResource2.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Prop_WM_cl_relayResource2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Prop_WM_ph_pulse1Resource2.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Prop_WM_ph_pulse1Resource2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Prop_WM_ph_pulse2Resource2.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Prop_WM_ph_pulse2Resource2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Prop_WM_ph_relayResource2.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Prop_WM_ph_relayResource2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="proportional_cl_pulse1Resource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="proportional_cl_pulse1Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="proportional_cl_relayResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="proportional_cl_relayResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="proportional_ph_pulse1Resource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="proportional_ph_pulse1Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="proportional_ph_pulse2Resource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="proportional_ph_pulse2Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="proportional_ph_relayResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="proportional_ph_relayResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Reset_noResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Reset_noResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Reset_yesResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Reset_yesResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="save_setpointlddp_newResource1.Text" xml:space="preserve">
+    <value>Save and Load Data</value>
+  </data>
+  <data name="save_setpointlddp_newResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tabld1_1Resource1.Text" xml:space="preserve">
+    <value>pH Pulse1</value>
+  </data>
+  <data name="tabld1_2Resource1.Text" xml:space="preserve">
+    <value>pH Pulse2</value>
+  </data>
+  <data name="tabld1_3Resource1.Text" xml:space="preserve">
+    <value>pH Relay</value>
+  </data>
+  <data name="tabld1_4Resource1.Text" xml:space="preserve">
+    <value>Cl pulse</value>
+  </data>
+  <data name="tabld1_5Resource1.Text" xml:space="preserve">
+    <value>Cl Relay</value>
+  </data>
+  <data name="tabld1_6Resource1.Text" xml:space="preserve">
+    <value>PID</value>
+  </data>
+  <data name="tabld1_7Resource1.Text" xml:space="preserve">
+    <value>Feed Forward</value>
+  </data>
+  <data name="tabld1_8Resource1.Text" xml:space="preserve">
+    <value>Water Meter</value>
+  </data>
+  <data name="tabld1_9Resource1.Text" xml:space="preserve">
+    <value>Set Strokes</value>
+  </data>
+  <data name="value_cl_pulse_concResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_cl_pulse_concResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_mchResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_mchResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_percResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_percResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_ph_pulse_concResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_ph_pulse_concResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_stk_clResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_stk_clResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_stk_phResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_stk_phResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_time_derResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_time_derResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_time_intResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_time_intResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_varResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_varResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_wmResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_wmResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value1_cl_pulse1_1Resource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value1_cl_pulse1_1Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value1_cl_pulse1_2Resource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value1_cl_pulse1_2Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value1_cl_relay_1Resource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value1_cl_relay_1Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value1_cl_relay_2Resource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value1_cl_relay_2Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value1_ph_pulse1_1Resource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value1_ph_pulse1_1Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value1_ph_pulse1_2Resource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value1_ph_pulse1_2Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value1_ph_pulse2_1Resource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value1_ph_pulse2_1Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value1_ph_pulse2_2Resource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value1_ph_pulse2_2Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value1_ph_relay_1Resource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value1_ph_relay_1Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value1_ph_relay_2Resource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value1_ph_relay_2Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value2_cl_pulse_mchResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value2_cl_pulse_mchResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value2_cl_pulse_perc3Resource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value2_cl_pulse_perc3Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value2_cl_pulse_perc4Resource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value2_cl_pulse_perc4Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value2_cl_pulse_rangeResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value2_cl_pulse_rangeResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value2_cl_pulse_setpointResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value2_cl_pulse_setpointResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value2_cl_pulse1_1Resource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value2_cl_pulse1_1Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value2_cl_pulse1_2Resource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value2_cl_pulse1_2Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value2_cl_pulse1_3Resource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value2_cl_pulse1_3Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value2_cl_relay_1Resource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value2_cl_relay_1Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value2_cl_relay_2Resource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value2_cl_relay_2Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value2_cl_relay_perc3Resource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value2_cl_relay_perc3Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value2_cl_relay_perc4Resource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value2_cl_relay_perc4Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value2_cl_relay_rangeResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value2_cl_relay_rangeResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value2_cl_relay2_setpointResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value2_cl_relay2_setpointResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value2_ph_pulse_mchResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value2_ph_pulse_mchResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value2_ph_pulse_perc3Resource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value2_ph_pulse_perc3Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value2_ph_pulse_perc4Resource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value2_ph_pulse_perc4Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value2_ph_pulse_rangeResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value2_ph_pulse_rangeResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value2_ph_pulse_setpointResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value2_ph_pulse_setpointResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value2_ph_pulse1_1Resource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value2_ph_pulse1_1Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value2_ph_pulse1_2Resource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value2_ph_pulse1_2Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value2_ph_pulse1_3Resource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value2_ph_pulse1_3Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value2_ph_pulse2_1Resource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value2_ph_pulse2_1Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value2_ph_pulse2_2Resource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value2_ph_pulse2_2Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value2_ph_pulse2_3Resource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value2_ph_pulse2_3Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value2_ph_pulse2_perc4Resource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value2_ph_pulse2_perc4Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value2_ph_realy_mchResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value2_ph_realy_mchResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value2_ph_relay_1Resource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value2_ph_relay_1Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value2_ph_relay_2Resource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value2_ph_relay_2Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value2_ph_relay_perc3Resource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value2_ph_relay_perc3Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value2_ph_relay_perc4Resource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value2_ph_relay_perc4Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value2_ph_relay_rangeResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value2_ph_relay_rangeResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value2_ph_relay2_setpointResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value2_ph_relay2_setpointResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+</root>

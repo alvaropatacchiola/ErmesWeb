@@ -1,0 +1,345 @@
+﻿<%@ Master Language="VB" AutoEventWireup="false" CodeBehind="main.master.vb" Inherits="ermes_web_20.main" %>
+
+
+<!DOCTYPE html>
+
+<html xmlns="https://www.w3.org/1999/xhtml">
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>ERMES Communication software</title>
+  <!-- Meta -->
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=7; IE=EDGE" />
+	
+	<!-- Bootstrap -->
+	<link href="bootstrap/css/bootstrap.css" rel="stylesheet" />
+	<link href="bootstrap/css/responsive.css" rel="stylesheet" />
+    <link href="theme/scripts/plugins/forms/dropzone/css/dropzone.css" rel="stylesheet" />
+
+        <!-- custom -->
+    <link href="theme/css/custom.css" rel="stylesheet" />
+            
+
+        <!-- custom  
+    <link href="theme/css/dropipad.css" rel="stylesheet" />
+           -->
+
+	
+	<!-- Glyphicons Font Icons -->
+	<link href="theme/css/glyphicons.css" rel="stylesheet" />
+	
+	<!-- Uniform Pretty Checkboxes -->
+	<link href="theme/scripts/plugins/forms/pixelmatrix-uniform/css/uniform.default.css" rel="stylesheet" />
+	
+	<!--[if IE]><!--><script src="theme/scripts/plugins/other/excanvas/excanvas.js"></script><!--<![endif]-->
+	<!--[if lt IE 8]><script src="theme/scripts/plugins/other/json2.js"></script><![endif]-->
+	<script src="theme/scripts/plugins/other/json2.js"></script>
+
+	<!-- Bootstrap Extended -->
+	<link href="bootstrap/extend/jasny-bootstrap/css/jasny-bootstrap.min.css" rel="stylesheet">
+	<link href="bootstrap/extend/jasny-bootstrap/css/jasny-bootstrap-responsive.min.css" rel="stylesheet">
+	<link href="bootstrap/extend/bootstrap-wysihtml5/css/bootstrap-wysihtml5-0.0.2.css" rel="stylesheet">
+	<link href="bootstrap/extend/bootstrap-select/bootstrap-select.css" rel="stylesheet" />
+	<link href="bootstrap/extend/bootstrap-toggle-buttons/static/stylesheets/bootstrap-toggle-buttons.css" rel="stylesheet" />
+	  
+
+
+	<!-- Select2 Plugin -->
+	<link href="theme/scripts/plugins/forms/select2/select2.css" rel="stylesheet" />
+	
+	<!-- DateTimePicker Plugin -->
+	<link href="theme/scripts/plugins/forms/bootstrap-datetimepicker/css/datetimepicker.css" rel="stylesheet" />
+	
+	<!-- JQueryUI -->
+	<link href="theme/scripts/plugins/system/jquery-ui/css/smoothness/jquery-ui-1.9.2.custom.min.css" rel="stylesheet" />
+	
+	<!-- MiniColors ColorPicker Plugin -->
+	<link href="theme/scripts/plugins/color/jquery-miniColors/jquery.miniColors.css" rel="stylesheet" />
+	
+	<!-- Notyfy Notifications Plugin -->
+	<link href="theme/scripts/plugins/notifications/notyfy/jquery.notyfy.css" rel="stylesheet" />
+	<link href="theme/scripts/plugins/notifications/notyfy/themes/default.css" rel="stylesheet" />
+	
+	<!-- Gritter Notifications Plugin -->
+	<link href="theme/scripts/plugins/notifications/Gritter/css/jquery.gritter.css" rel="stylesheet" />
+	
+    <!-- DataTables Plugin --> 
+    <link href="theme/scripts/plugins/tables/DataTables/media/css/DT_bootstrap.css" rel="stylesheet" />
+
+	<!-- Easy-pie Plugin -->
+	<link href="theme/scripts/plugins/charts/easy-pie/jquery.easy-pie-chart.css" rel="stylesheet" />
+
+	<!-- Google Code Prettify Plugin -->
+	<link href="theme/scripts/plugins/other/google-code-prettify/prettify.css" rel="stylesheet" />
+
+	<!-- Bootstrap Image Gallery -->
+	<link href="bootstrap/extend/bootstrap-image-gallery/css/bootstrap-image-gallery.min.css" rel="stylesheet" />
+	
+	<!-- Main Theme Stylesheet :: CSS -->
+	<link href="theme/css/style-dark.min.css?1366720685" rel="stylesheet" />
+    
+	<!-- COLOR Stylesheet :: CSS -->
+	<link href="theme/skins/css/default.css" rel="stylesheet" type="text/css" />
+    
+     <!-- JQuery 
+	<script src="http://code.jquery.com/jquery-1.9.1.js"></script>-->
+    <script src="https://code.jquery.com/jquery-1.12.4.js">
+     
+
+    	<!-- gif animata load new page -->
+	<script src="common/spin.js"></script>
+	<!-- gif animata load new page -->
+	<script src="common/spin_min.js"></script>
+
+    
+    
+	<!-- LESS.js Library -->
+	<script src="theme/scripts/plugins/system/less.min.js"></script>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+
+      
+            <script type="text/javascript">
+                var color_general = '#a4c408';
+            </script>
+
+            <!-- personalizzazione thema -->
+            <asp:Literal ID="literal_theme" Text="<link id='themer-stylesheet' href='theme/personalizzazione/emecfrance.css' rel='stylesheet' type='text/css' />" runat="server"></asp:Literal>
+
+    <!--
+    <asp:Literal ID="auto_refresh" text ="<meta http-equiv='refresh' content='300;pippo.aspx'/>" runat="server"></asp:Literal>
+        -->
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-55370521-1', 'auto');
+        ga('send', 'pageview');
+
+</script>
+
+</head>
+<body class="">
+    <form id="form1" runat="server">
+    <div class="container-fluid fluid menu-left">
+        		<!-- Top navbar -->
+        <asp:Literal ID="Literal2" runat="server" >
+
+        </asp:Literal>
+                    
+		<!-- Top navbar END -->
+		
+				<!-- Sidebar menu & content wrapper -->
+        <asp:Literal ID="Literal1" runat="server" >
+
+        </asp:Literal>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+
+        <asp:Literal ID="Literal3" runat="server" >
+
+        </asp:Literal>
+		        
+   </div>
+    
+    <div id="themer" class="collapse">
+		<div class="wrapper">
+			<span class="close2">&times; close</span>
+			<h4>Themer <span>color options</span></h4>
+			<ul>
+				<li>Theme: <select id="themer-theme" class="pull-right"></select><div class="clearfix"></div></li>
+				<li>Primary Color: <input type="text" data-type="minicolors" data-default="#ffffff" data-slider="hue" data-textfield="false" data-position="left" id="themer-primary-cp" /><div class="clearfix"></div></li>
+				<li>
+					<span class="link" id="themer-custom-reset">reset theme</span>
+					<span class="pull-right"><label>advanced <input type="checkbox" value="1" id="themer-advanced-toggle" /></label></span>
+				</li>
+			</ul>
+			<div id="themer-getcode" class="hide">
+				<hr class="separator" />
+				<button class="btn btn-primary btn-small pull-right btn-icon glyphicons download" id="themer-getcode-less"><i></i>Get LESS</button>
+				<button class="btn btn-inverse btn-small pull-right btn-icon glyphicons download" id="themer-getcode-css"><i></i>Get CSS</button>
+				<div class="clearfix"></div>
+			</div>
+		</div>
+	</div>
+	<!-- Modal Gallery -->
+	<div id="modal-gallery" class="modal modal-gallery hide fade hidden-print" tabindex="-1">
+	    <div class="modal-header">
+	        <a class="close" data-dismiss="modal">&times;</a>
+	        <h3 class="modal-title"></h3>
+	    </div>
+	    <div class="modal-body"><div class="modal-image"></div></div>
+	    <div class="modal-footer">
+	        <a class="btn btn-primary modal-next">Next <i class="icon-arrow-right icon-white"></i></a>
+	        <a class="btn btn-info modal-prev"><i class="icon-arrow-left icon-white"></i> Previous</a>
+	        <a class="btn btn-success modal-play modal-slideshow" data-slideshow="5000"><i class="icon-play icon-white"></i> Slideshow</a>
+	        <a class="btn modal-download" target="_blank"><i class="icon-download"></i> Download</a>
+	    </div>
+	</div>
+
+             <asp:ContentPlaceHolder ID="script_footer" runat="server">
+    </asp:ContentPlaceHolder>
+        
+
+
+        <!-- JQuery -->
+    	<!-- HIGHCHARTS  -->
+
+
+<!--
+<script src="chart/js/highstock.js"></script>
+
+            -->
+<script src="https://code.highcharts.com/stock/highstock.js?v=1.0"></script>
+<!--
+<script src="https://code.highcharts.com/highcharts.js?v=1.0"></script>
+        -->
+<script src="https://code.highcharts.com/highcharts-more.js?v=1.0"></script>
+
+<script src="http://code.highcharts.com/modules/solid-gauge.js"></script>
+<script src="chart/js/modules/exporting.js"></script>
+
+    
+    	
+	
+	<!-- JQueryUI 
+	<script src="theme/scripts/plugins/system/jquery-ui/js/jquery-ui-1.9.2.custom.js"></script>-->
+    <script src="https://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+	
+	<!-- JQueryUI Touch Punch -->
+	<!-- small hack that enables the use of touch events on sites using the jQuery UI user interface library -->
+	<script src="theme/scripts/plugins/system/jquery-ui-touch-punch/jquery.ui.touch-punch.min.js"></script>
+
+	<!-- Modernizr -->
+	<script src="theme/scripts/plugins/system/modernizr.js"></script>
+	
+	<!-- Bootstrap -->
+	<script src="bootstrap/js/bootstrap.min.js"></script>
+	
+	<!-- SlimScroll Plugin -->
+	<script src="theme/scripts/plugins/other/jquery-slimScroll/jquery.slimscroll.min.js"></script>
+	
+	<!-- Common Demo Script -->
+	<script src="theme/scripts/demo/common.js?1366720685"></script>
+	
+	<!-- Holder Plugin -->
+	<script src="theme/scripts/plugins/other/holder/holder.js"></script>
+	
+	<!-- Uniform Forms Plugin -->
+	<script src="theme/scripts/plugins/forms/pixelmatrix-uniform/jquery.uniform.min.js"></script>
+    
+    	<!-- DateTimePicker Plugin -->
+	<script src="theme/scripts/plugins/forms/bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js"></script>
+
+
+
+	<!-- Global -->
+	<script>
+	    var basePath = '';
+	</script>
+
+	<!-- Bootstrap Extended -->
+	<script src="bootstrap/extend/bootstrap-select/bootstrap-select.js"></script>
+	<script src="bootstrap/extend/bootstrap-toggle-buttons/static/js/jquery.toggle.buttons.js"></script>
+	<script src="bootstrap/extend/bootstrap-hover-dropdown/twitter-bootstrap-hover-dropdown.min.js"></script>
+	<script src="bootstrap/extend/jasny-bootstrap/js/jasny-bootstrap.min.js"></script>
+	<script src="bootstrap/extend/jasny-bootstrap/js/bootstrap-fileupload.js"></script>
+	<script src="bootstrap/extend/bootbox.js"></script>
+	<script src="bootstrap/extend/bootstrap-wysihtml5/js/wysihtml5-0.3.0_rc2.min.js"></script>
+	<script src="bootstrap/extend/bootstrap-wysihtml5/js/bootstrap-wysihtml5-0.0.2.js"></script>
+	
+	<!-- Google Code Prettify -->
+	<script src="theme/scripts/plugins/other/google-code-prettify/prettify.js"></script>
+	
+	<!-- Gritter Notifications Plugin -->
+	<script src="theme/scripts/plugins/notifications/Gritter/js/jquery.gritter.min.js"></script>
+	
+	<!-- Notyfy Notifications Plugin -->
+	<script src="theme/scripts/plugins/notifications/notyfy/jquery.notyfy.js"></script>
+	
+	<!-- MiniColors Plugin -->
+	<script src="theme/scripts/plugins/color/jquery-miniColors/jquery.miniColors.js"></script>
+	
+
+	<!-- Cookie Plugin -->
+	<script src="theme/scripts/plugins/system/jquery.cookie.js"></script>
+	
+       
+
+	<!-- Colors -->
+	<script>
+	    var primaryColor = '#e04545',
+            dangerColor = '#bd362f',
+            successColor = '#609450',
+            warningColor = '#ab7a4b',
+            inverseColor = '#45484d';
+        
+	</script>
+	
+	<!-- Themer -->
+	<script>
+	    var themerPrimaryColor = primaryColor;
+	</script>
+	<script src="theme/scripts/demo/themer.js"></script>
+
+	<!-- form validator -->
+	
+    
+    
+	
+	<!-- Ba-Resize Plugin 
+	<script src="theme/scripts/plugins/other/jquery.ba-resize.js"></script>
+	-->
+
+    <!-- ColorPicker 
+	<script src="theme/scripts/plugins/color/farbtastic/farbtastic.js"></script>
+	-->
+	
+	
+	<!-- Form Elements Page Demo Script 
+	<script src="theme/scripts/demo/form_elements.js"></script>
+        -->
+	
+	
+	<!-- Google JSAPI -->
+	<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+		
+	
+    
+    
+
+    
+	<!-- Charts Helper Demo Script -->
+	<script src="theme/scripts/demo/charts.helper.js?1366720685"></script>
+	
+	<!-- Charts Page Demo Script -->
+	<script src="theme/scripts/demo/charts.js?1366720739"></script>
+
+	
+
+	<!-- Optional Resizable Sidebars -->
+	<!--[if gt IE 8]><!--><script src="theme/scripts/demo/resizable.js?1366720685"></script>
+
+        <asp:Literal ID="js_variable" runat="server"></asp:Literal>
+<asp:ContentPlaceHolder ID="script_at_end" runat="server">
+    </asp:ContentPlaceHolder>
+
+        </form>
+        
+        
+            <div class='clearfix'></div>
+    <div id='footer' class='hidden-print'>
+        <div class='copy' style='text-align:right;'>powered by ERMES | ERMES is a software by <a href='http://www.emec.it' target='_blank'>EMEC S.r.l.</a> - Current version: v1.4 </div></div>
+    <!--
+    <asp:Literal ID="footer_script" runat="server"></asp:Literal>
+        -->
+</body>
+</html>

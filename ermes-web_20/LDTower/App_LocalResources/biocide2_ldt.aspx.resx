@@ -1,0 +1,1938 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="am_day1_firstResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="am_day1_firstResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="am_day1_fourthResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="am_day1_fourthResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="am_day1_secondResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="am_day1_secondResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="am_day1_thirdResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="am_day1_thirdResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="am_day2_firstResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="am_day2_firstResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="am_day2_fourthResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="am_day2_fourthResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="am_day2_secondResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="am_day2_secondResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="am_day2_thirdResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="am_day2_thirdResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="am_day3_firstResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="am_day3_firstResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="am_day3_fourthResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="am_day3_fourthResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="am_day3_secondResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="am_day3_secondResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="am_day3_thirdResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="am_day3_thirdResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="am_day4_firstResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="am_day4_firstResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="am_day4_fourthResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="am_day4_fourthResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="am_day4_secondResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="am_day4_secondResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="am_day4_thirdResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="am_day4_thirdResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="am_day5_firstResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="am_day5_firstResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="am_day5_fourthResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="am_day5_fourthResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="am_day5_secondResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="am_day5_secondResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="am_day5_thirdResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="am_day5_thirdResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="am_day6_firstResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="am_day6_firstResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="am_day6_fourthResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="am_day6_fourthResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="am_day6_secondResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="am_day6_secondResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="am_day6_thirdResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="am_day6_thirdResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="am_day7_firstResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="am_day7_firstResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="am_day7_fourthResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="am_day7_fourthResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="am_day7_secondResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="am_day7_secondResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="am_day7_thirdResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="am_day7_thirdResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="biocide_day1_firstResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="biocide_day1_firstResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="biocide_day1_fourthResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="biocide_day1_fourthResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="biocide_day1_secondResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="biocide_day1_secondResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="biocide_day1_thirdResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="biocide_day1_thirdResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="biocide_day2_firstResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="biocide_day2_firstResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="biocide_day2_fourthResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="biocide_day2_fourthResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="biocide_day2_secondResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="biocide_day2_secondResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="biocide_day2_thirdResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="biocide_day2_thirdResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="biocide_day3_firstResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="biocide_day3_firstResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="biocide_day3_fourthResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="biocide_day3_fourthResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="biocide_day3_secondResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="biocide_day3_secondResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="biocide_day3_thirdResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="biocide_day3_thirdResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="biocide_day4_firstResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="biocide_day4_firstResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="biocide_day4_fourthResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="biocide_day4_fourthResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="biocide_day4_secondResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="biocide_day4_secondResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="biocide_day4_thirdResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="biocide_day4_thirdResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="biocide_day5_firstResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="biocide_day5_firstResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="biocide_day5_fourthResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="biocide_day5_fourthResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="biocide_day5_secondResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="biocide_day5_secondResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="biocide_day5_thirdResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="biocide_day5_thirdResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="biocide_day6_firstResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="biocide_day6_firstResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="biocide_day6_fourthResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="biocide_day6_fourthResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="biocide_day6_secondResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="biocide_day6_secondResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="biocide_day6_thirdResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="biocide_day6_thirdResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="biocide_day7_firstResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="biocide_day7_firstResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="biocide_day7_fourthResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="biocide_day7_fourthResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="biocide_day7_secondResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="biocide_day7_secondResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="biocide_day7_thirdResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="biocide_day7_thirdResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Label7Resource1.Text" xml:space="preserve">
+    <value>Pre Bleed</value>
+  </data>
+  <data name="Literal102Resource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Literal105Resource1.Text" xml:space="preserve">
+    <value>Counter Hour</value>
+  </data>
+  <data name="Literal106Resource1.Text" xml:space="preserve">
+    <value>Counter Minute</value>
+  </data>
+  <data name="Literal107Resource1.Text" xml:space="preserve">
+    <value>Time Hour</value>
+  </data>
+  <data name="Literal108Resource1.Text" xml:space="preserve">
+    <value>Time Minute</value>
+  </data>
+  <data name="Literal109Resource1.Text" xml:space="preserve">
+    <value>AM/PM</value>
+  </data>
+  <data name="Literal10Resource1.Text" xml:space="preserve">
+    <value>Circulation (Hr)</value>
+  </data>
+  <data name="Literal112Resource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Literal114Resource1.Text" xml:space="preserve">
+    <value>Counter Hour</value>
+  </data>
+  <data name="Literal115Resource1.Text" xml:space="preserve">
+    <value>Counter Minute</value>
+  </data>
+  <data name="Literal116Resource1.Text" xml:space="preserve">
+    <value>Time Hour</value>
+  </data>
+  <data name="Literal117Resource1.Text" xml:space="preserve">
+    <value>Time Minute</value>
+  </data>
+  <data name="Literal118Resource1.Text" xml:space="preserve">
+    <value>AM/PM</value>
+  </data>
+  <data name="Literal122Resource1.Text" xml:space="preserve">
+    <value>Biocide2 day4</value>
+  </data>
+  <data name="Literal124Resource1.Text" xml:space="preserve">
+    <value>Counter Hour</value>
+  </data>
+  <data name="Literal125Resource1.Text" xml:space="preserve">
+    <value>Counter Minute</value>
+  </data>
+  <data name="Literal126Resource1.Text" xml:space="preserve">
+    <value>Time Hour</value>
+  </data>
+  <data name="Literal127Resource1.Text" xml:space="preserve">
+    <value>Time Minute</value>
+  </data>
+  <data name="Literal128Resource1.Text" xml:space="preserve">
+    <value>AM/PM</value>
+  </data>
+  <data name="Literal12Resource1.Text" xml:space="preserve">
+    <value>Counter Hour</value>
+  </data>
+  <data name="Literal131Resource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Literal133Resource1.Text" xml:space="preserve">
+    <value>Counter Hour</value>
+  </data>
+  <data name="Literal134Resource1.Text" xml:space="preserve">
+    <value>Counter Minute</value>
+  </data>
+  <data name="Literal135Resource1.Text" xml:space="preserve">
+    <value>Time Hour</value>
+  </data>
+  <data name="Literal136Resource1.Text" xml:space="preserve">
+    <value>Time Minute</value>
+  </data>
+  <data name="Literal137Resource1.Text" xml:space="preserve">
+    <value>AM/PM</value>
+  </data>
+  <data name="Literal13Resource1.Text" xml:space="preserve">
+    <value>Counter Minute</value>
+  </data>
+  <data name="Literal140Resource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Literal142Resource1.Text" xml:space="preserve">
+    <value>Counter Hour</value>
+  </data>
+  <data name="Literal143Resource1.Text" xml:space="preserve">
+    <value>Counter Minute</value>
+  </data>
+  <data name="Literal144Resource1.Text" xml:space="preserve">
+    <value>Time Hour</value>
+  </data>
+  <data name="Literal145Resource1.Text" xml:space="preserve">
+    <value>Time Minute</value>
+  </data>
+  <data name="Literal146Resource1.Text" xml:space="preserve">
+    <value>AM/PM</value>
+  </data>
+  <data name="Literal149Resource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Literal4Resource1.Text" xml:space="preserve">
+    <value>LockOut(Hr)</value>
+  </data>
+  <data name="Literal151Resource1.Text" xml:space="preserve">
+    <value>Counter Hour</value>
+  </data>
+  <data name="Literal152Resource1.Text" xml:space="preserve">
+    <value>Counter Minute</value>
+  </data>
+  <data name="Literal153Resource1.Text" xml:space="preserve">
+    <value>Time Hour</value>
+  </data>
+  <data name="Literal154Resource1.Text" xml:space="preserve">
+    <value>Time Minute</value>
+  </data>
+  <data name="Literal155Resource1.Text" xml:space="preserve">
+    <value>AM/PM</value>
+  </data>
+  <data name="Literal159Resource1.Text" xml:space="preserve">
+    <value>Biocide2 day5</value>
+  </data>
+  <data name="Literal15Resource1.Text" xml:space="preserve">
+    <value>Time Minute</value>
+  </data>
+  <data name="Literal161Resource1.Text" xml:space="preserve">
+    <value>Counter Hour</value>
+  </data>
+  <data name="Literal162Resource1.Text" xml:space="preserve">
+    <value>Counter Minute</value>
+  </data>
+  <data name="Literal163Resource1.Text" xml:space="preserve">
+    <value>Time Hour</value>
+  </data>
+  <data name="Literal164Resource1.Text" xml:space="preserve">
+    <value>Time Minute</value>
+  </data>
+  <data name="Literal165Resource1.Text" xml:space="preserve">
+    <value>AM/PM</value>
+  </data>
+  <data name="Literal168Resource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Literal16Resource1.Text" xml:space="preserve">
+    <value>AM/PM</value>
+  </data>
+  <data name="Literal170Resource1.Text" xml:space="preserve">
+    <value>Counter Hour</value>
+  </data>
+  <data name="Literal171Resource1.Text" xml:space="preserve">
+    <value>Counter Minute</value>
+  </data>
+  <data name="Literal172Resource1.Text" xml:space="preserve">
+    <value>Time Hour</value>
+  </data>
+  <data name="Literal173Resource1.Text" xml:space="preserve">
+    <value>Time Minute</value>
+  </data>
+  <data name="Literal174Resource1.Text" xml:space="preserve">
+    <value>AM/PM</value>
+  </data>
+  <data name="Literal177Resource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Literal179Resource1.Text" xml:space="preserve">
+    <value>Counter Hour</value>
+  </data>
+  <data name="Literal180Resource1.Text" xml:space="preserve">
+    <value>Counter Minute</value>
+  </data>
+  <data name="Literal181Resource1.Text" xml:space="preserve">
+    <value>Time Hour</value>
+  </data>
+  <data name="Literal182Resource1.Text" xml:space="preserve">
+    <value>Time Minute</value>
+  </data>
+  <data name="Literal183Resource1.Text" xml:space="preserve">
+    <value>AM/PM</value>
+  </data>
+  <data name="Literal186Resource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Literal188Resource1.Text" xml:space="preserve">
+    <value>Counter Hour</value>
+  </data>
+  <data name="Literal189Resource1.Text" xml:space="preserve">
+    <value>Counter Minute</value>
+  </data>
+  <data name="Literal190Resource1.Text" xml:space="preserve">
+    <value>Time Hour</value>
+  </data>
+  <data name="Literal191Resource1.Text" xml:space="preserve">
+    <value>Time Minute</value>
+  </data>
+  <data name="Literal192Resource1.Text" xml:space="preserve">
+    <value>AM/PM</value>
+  </data>
+  <data name="Literal196Resource1.Text" xml:space="preserve">
+    <value>Biocide2 day6</value>
+  </data>
+  <data name="Literal198Resource1.Text" xml:space="preserve">
+    <value>Counter Hour</value>
+  </data>
+  <data name="Literal199Resource1.Text" xml:space="preserve">
+    <value>Counter Minute</value>
+  </data>
+  <data name="Literal19Resource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Literal200Resource1.Text" xml:space="preserve">
+    <value>Time Hour</value>
+  </data>
+  <data name="Literal201Resource1.Text" xml:space="preserve">
+    <value>Time Minute</value>
+  </data>
+  <data name="Literal202Resource1.Text" xml:space="preserve">
+    <value>AM/PM</value>
+  </data>
+  <data name="Literal205Resource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Literal207Resource1.Text" xml:space="preserve">
+    <value>Counter Hour</value>
+  </data>
+  <data name="Literal208Resource1.Text" xml:space="preserve">
+    <value>Counter Minute</value>
+  </data>
+  <data name="Literal209Resource1.Text" xml:space="preserve">
+    <value>Time Hour</value>
+  </data>
+  <data name="Literal210Resource1.Text" xml:space="preserve">
+    <value>Time Minute</value>
+  </data>
+  <data name="Literal211Resource1.Text" xml:space="preserve">
+    <value>AM/PM</value>
+  </data>
+  <data name="Literal214Resource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Literal216Resource1.Text" xml:space="preserve">
+    <value>Counter Hour</value>
+  </data>
+  <data name="Literal217Resource1.Text" xml:space="preserve">
+    <value>Counter Minute</value>
+  </data>
+  <data name="Literal218Resource1.Text" xml:space="preserve">
+    <value>Time Hour</value>
+  </data>
+  <data name="Literal219Resource1.Text" xml:space="preserve">
+    <value>Time Minute</value>
+  </data>
+  <data name="Literal21Resource1.Text" xml:space="preserve">
+    <value>Counter Hour</value>
+  </data>
+  <data name="Literal220Resource1.Text" xml:space="preserve">
+    <value>AM/PM</value>
+  </data>
+  <data name="Literal223Resource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Literal225Resource1.Text" xml:space="preserve">
+    <value>Counter Hour</value>
+  </data>
+  <data name="Literal226Resource1.Text" xml:space="preserve">
+    <value>Counter Minute</value>
+  </data>
+  <data name="Literal227Resource1.Text" xml:space="preserve">
+    <value>Time Hour</value>
+  </data>
+  <data name="Literal228Resource1.Text" xml:space="preserve">
+    <value>Time Minute</value>
+  </data>
+  <data name="Literal229Resource1.Text" xml:space="preserve">
+    <value>AM/PM</value>
+  </data>
+  <data name="Literal22Resource1.Text" xml:space="preserve">
+    <value>Counter Minute</value>
+  </data>
+  <data name="Literal233Resource1.Text" xml:space="preserve">
+    <value>Biocide2 day7</value>
+  </data>
+  <data name="Literal235Resource1.Text" xml:space="preserve">
+    <value>Counter Hour</value>
+  </data>
+  <data name="Literal236Resource1.Text" xml:space="preserve">
+    <value>Counter Minute</value>
+  </data>
+  <data name="Literal237Resource1.Text" xml:space="preserve">
+    <value>Time Hour</value>
+  </data>
+  <data name="Literal238Resource1.Text" xml:space="preserve">
+    <value>Time Minute</value>
+  </data>
+  <data name="Literal239Resource1.Text" xml:space="preserve">
+    <value>AM/PM</value>
+  </data>
+  <data name="Literal23Resource1.Text" xml:space="preserve">
+    <value>Time Hour</value>
+  </data>
+  <data name="Literal242Resource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Literal244Resource1.Text" xml:space="preserve">
+    <value>Counter Hour</value>
+  </data>
+  <data name="Literal245Resource1.Text" xml:space="preserve">
+    <value>Counter Minute</value>
+  </data>
+  <data name="Literal246Resource1.Text" xml:space="preserve">
+    <value>Time Hour</value>
+  </data>
+  <data name="Literal247Resource1.Text" xml:space="preserve">
+    <value>Time Minute</value>
+  </data>
+  <data name="Literal248Resource1.Text" xml:space="preserve">
+    <value>AM/PM</value>
+  </data>
+  <data name="Literal24Resource1.Text" xml:space="preserve">
+    <value>Time Minute</value>
+  </data>
+  <data name="Literal251Resource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Literal253Resource1.Text" xml:space="preserve">
+    <value>Counter Hour</value>
+  </data>
+  <data name="Literal254Resource1.Text" xml:space="preserve">
+    <value>Counter Minute</value>
+  </data>
+  <data name="Literal255Resource1.Text" xml:space="preserve">
+    <value>Time Hour</value>
+  </data>
+  <data name="Literal256Resource1.Text" xml:space="preserve">
+    <value>Time Minute</value>
+  </data>
+  <data name="Literal257Resource1.Text" xml:space="preserve">
+    <value>AM/PM</value>
+  </data>
+  <data name="Literal25Resource1.Text" xml:space="preserve">
+    <value>AM/PM</value>
+  </data>
+  <data name="Literal260Resource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Literal262Resource1.Text" xml:space="preserve">
+    <value>Counter Hour</value>
+  </data>
+  <data name="Literal263Resource1.Text" xml:space="preserve">
+    <value>Counter Minute</value>
+  </data>
+  <data name="Literal264Resource1.Text" xml:space="preserve">
+    <value>Time Hour</value>
+  </data>
+  <data name="Literal265Resource1.Text" xml:space="preserve">
+    <value>Time Minute</value>
+  </data>
+  <data name="Literal266Resource1.Text" xml:space="preserve">
+    <value>AM/PM</value>
+  </data>
+  <data name="Literal28Resource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Literal30Resource1.Text" xml:space="preserve">
+    <value>Counter Hour</value>
+  </data>
+  <data name="Literal31Resource1.Text" xml:space="preserve">
+    <value>Counter Minute</value>
+  </data>
+  <data name="Literal32Resource1.Text" xml:space="preserve">
+    <value>Time Hour</value>
+  </data>
+  <data name="Literal33Resource1.Text" xml:space="preserve">
+    <value>Time Minute</value>
+  </data>
+  <data name="Literal34Resource1.Text" xml:space="preserve">
+    <value>AM/PM</value>
+  </data>
+  <data name="Literal37Resource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Literal39Resource1.Text" xml:space="preserve">
+    <value>Counter Hour</value>
+  </data>
+  <data name="Literal3Resource1.Text" xml:space="preserve">
+    <value>Circulation (Min)</value>
+  </data>
+  <data name="Literal40Resource1.Text" xml:space="preserve">
+    <value>Counter Minute</value>
+  </data>
+  <data name="Literal41Resource1.Text" xml:space="preserve">
+    <value>Time Hour</value>
+  </data>
+  <data name="Literal42Resource1.Text" xml:space="preserve">
+    <value>Time Minute</value>
+  </data>
+  <data name="Literal43Resource1.Text" xml:space="preserve">
+    <value>AM/PM</value>
+  </data>
+  <data name="Literal46Resource1.Text" xml:space="preserve">
+    <value>Biocide2 Day2</value>
+  </data>
+  <data name="Literal48Resource1.Text" xml:space="preserve">
+    <value>Counter Hour</value>
+  </data>
+  <data name="Literal49Resource1.Text" xml:space="preserve">
+    <value>Counter Minute</value>
+  </data>
+  <data name="Literal50Resource1.Text" xml:space="preserve">
+    <value>Time Hour</value>
+  </data>
+  <data name="Literal51Resource1.Text" xml:space="preserve">
+    <value>Time Minute</value>
+  </data>
+  <data name="Literal52Resource1.Text" xml:space="preserve">
+    <value>AM/PM</value>
+  </data>
+  <data name="Literal55Resource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Literal57Resource1.Text" xml:space="preserve">
+    <value>Counter Hour</value>
+  </data>
+  <data name="Literal58Resource1.Text" xml:space="preserve">
+    <value>Counter Minute</value>
+  </data>
+  <data name="Literal59Resource1.Text" xml:space="preserve">
+    <value>Time Hour</value>
+  </data>
+  <data name="Literal5Resource1.Text" xml:space="preserve">
+    <value>Minute</value>
+  </data>
+  <data name="Literal60Resource1.Text" xml:space="preserve">
+    <value>Time Minute</value>
+  </data>
+  <data name="Literal61Resource1.Text" xml:space="preserve">
+    <value>AM/PM</value>
+  </data>
+  <data name="Literal64Resource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Literal66Resource1.Text" xml:space="preserve">
+    <value>Counter Hour</value>
+  </data>
+  <data name="Literal68Resource1.Text" xml:space="preserve">
+    <value>Counter Minute</value>
+  </data>
+  <data name="Literal69Resource1.Text" xml:space="preserve">
+    <value>Time Hour</value>
+  </data>
+  <data name="Literal6Resource1.Text" xml:space="preserve">
+    <value>Hour</value>
+  </data>
+  <data name="Literal70Resource1.Text" xml:space="preserve">
+    <value>Time Minute</value>
+  </data>
+  <data name="Literal71Resource1.Text" xml:space="preserve">
+    <value>AM/PM</value>
+  </data>
+  <data name="Literal74Resource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Literal76Resource1.Text" xml:space="preserve">
+    <value>Counter Hour</value>
+  </data>
+  <data name="Literal77Resource1.Text" xml:space="preserve">
+    <value>Counter Minute</value>
+  </data>
+  <data name="Literal78Resource1.Text" xml:space="preserve">
+    <value>Time Hour</value>
+  </data>
+  <data name="Literal79Resource1.Text" xml:space="preserve">
+    <value>Time Minute</value>
+  </data>
+  <data name="Literal7Resource1.Text" xml:space="preserve">
+    <value>LockOut (Min)</value>
+  </data>
+  <data name="Literal80Resource1.Text" xml:space="preserve">
+    <value>AM/PM</value>
+  </data>
+  <data name="Literal83Resource1.Text" xml:space="preserve">
+    <value>Biocide2 day3</value>
+  </data>
+  <data name="Literal85Resource1.Text" xml:space="preserve">
+    <value>Counter Hour</value>
+  </data>
+  <data name="Literal86Resource1.Text" xml:space="preserve">
+    <value>Counter Minute</value>
+  </data>
+  <data name="Literal87Resource1.Text" xml:space="preserve">
+    <value>Time Hour</value>
+  </data>
+  <data name="Literal88Resource1.Text" xml:space="preserve">
+    <value>Time Minute</value>
+  </data>
+  <data name="Literal89Resource1.Text" xml:space="preserve">
+    <value>AM/PM</value>
+  </data>
+  <data name="Literal8Resource1.Text" xml:space="preserve">
+    <value>uS</value>
+  </data>
+  <data name="Literal92Resource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Literal94Resource1.Text" xml:space="preserve">
+    <value>Counter Hour</value>
+  </data>
+  <data name="Literal96Resource1.Text" xml:space="preserve">
+    <value>Counter Minute</value>
+  </data>
+  <data name="Literal97Resource1.Text" xml:space="preserve">
+    <value>Time Hour</value>
+  </data>
+  <data name="Literal98Resource1.Text" xml:space="preserve">
+    <value>Time Minute</value>
+  </data>
+  <data name="Literal99Resource1.Text" xml:space="preserve">
+    <value>AM/PM</value>
+  </data>
+  <data name="Literal9Resource1.Text" xml:space="preserve">
+    <value>Biocide2 Day1</value>
+  </data>
+  <data name="LiteralResource1.Text" xml:space="preserve">
+    <value>PM</value>
+  </data>
+  <data name="LiteralResource10.Text" xml:space="preserve">
+    <value>First</value>
+  </data>
+  <data name="LiteralResource11.Text" xml:space="preserve">
+    <value>Second</value>
+  </data>
+  <data name="LiteralResource12.Text" xml:space="preserve">
+    <value>Third</value>
+  </data>
+  <data name="LiteralResource13.Text" xml:space="preserve">
+    <value>Fourth</value>
+  </data>
+  <data name="LiteralResource17.Text" xml:space="preserve">
+    <value>First</value>
+  </data>
+  <data name="LiteralResource2.Text" xml:space="preserve">
+    <value>uS</value>
+  </data>
+  <data name="LiteralResource3.Text" xml:space="preserve">
+    <value>First</value>
+  </data>
+  <data name="LiteralResource4.Text" xml:space="preserve">
+    <value>Second</value>
+  </data>
+  <data name="LiteralResource5.Text" xml:space="preserve">
+    <value>Third</value>
+  </data>
+  <data name="LiteralResource6.Text" xml:space="preserve">
+    <value>Fourth</value>
+  </data>
+  <data name="message_channelResource1.Text" xml:space="preserve">
+    <value>Biocide2 CoolTrol</value>
+  </data>
+  <data name="PageResource1.Title" xml:space="preserve">
+    <value />
+  </data>
+  <data name="pm_day1_firstResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="pm_day1_firstResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="pm_day1_fourthResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="pm_day1_fourthResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="pm_day1_secondResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="pm_day1_secondResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="pm_day1_thirdResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="pm_day1_thirdResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="pm_day2_firstResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="pm_day2_firstResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="pm_day2_fourthResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="pm_day2_fourthResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="pm_day2_secondResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="pm_day2_secondResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="pm_day2_thirdResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="pm_day2_thirdResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="pm_day3_firstResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="pm_day3_firstResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="pm_day3_fourthResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="pm_day3_fourthResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="pm_day3_secondResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="pm_day3_secondResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="pm_day3_thirdResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="pm_day3_thirdResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="pm_day4_firstResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="pm_day4_firstResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="pm_day4_fourthResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="pm_day4_fourthResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="pm_day4_secondResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="pm_day4_secondResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="pm_day4_thirdResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="pm_day4_thirdResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="pm_day5_firstResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="pm_day5_firstResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="pm_day5_fourthResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="pm_day5_fourthResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="pm_day5_secondResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="pm_day5_secondResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="pm_day5_thirdResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="pm_day5_thirdResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="pm_day6_firstResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="pm_day6_firstResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="pm_day6_fourthResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="pm_day6_fourthResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="pm_day6_secondResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="pm_day6_secondResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="pm_day6_thirdResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="pm_day6_thirdResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="pm_day7_firstResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="pm_day7_firstResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="pm_day7_fourthResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="pm_day7_fourthResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="pm_day7_secondResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="pm_day7_secondResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="pm_day7_thirdResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="pm_day7_thirdResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="pre_bleed_timeResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="pre_bleed_timeResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="pre_bleed_usResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="pre_bleed_usResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="riga_biocide_count_day3_first_hrResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="riga_biocide_count_day3_first_hrResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="riga_biocide_count_day4_first_hrResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="riga_biocide_count_day4_first_hrResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="riga_biocide_count_day5_first_hrResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="riga_biocide_count_day5_first_hrResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="riga_biocide_count_day6_first_hrResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="riga_biocide_count_day6_first_hrResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="riga_biocide_count_day7_first_hrResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="riga_biocide_count_day7_first_hrResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="save_biocide_ldtower_newResource1.Text" xml:space="preserve">
+    <value>Salva e carica i dati</value>
+  </data>
+  <data name="save_biocide_ldtower_newResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="tabtower1_1Resource1.Text" xml:space="preserve">
+    <value>Biocide 2</value>
+  </data>
+  <data name="tabtower1_2Resource1.Text" xml:space="preserve">
+    <value>Day 1</value>
+  </data>
+  <data name="tabtower1_3Resource1.Text" xml:space="preserve">
+    <value>Day 2</value>
+  </data>
+  <data name="tabtower1_4Resource1.Text" xml:space="preserve">
+    <value>Day 3</value>
+  </data>
+  <data name="tabtower1_5Resource1.Text" xml:space="preserve">
+    <value>Day 4</value>
+  </data>
+  <data name="tabtower1_6Resource1.Text" xml:space="preserve">
+    <value>Day 5</value>
+  </data>
+  <data name="tabtower1_7Resource1.Text" xml:space="preserve">
+    <value>Day 6</value>
+  </data>
+  <data name="tabtower1_8Resource1.Text" xml:space="preserve">
+    <value>Day 7</value>
+  </data>
+  <data name="value_biocide_count_day1_fourth_hrResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_biocide_count_day1_fourth_hrResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_biocide_count_day1_fourth_minResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_biocide_count_day1_fourth_minResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_biocide_count_day1_second_hrResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_biocide_count_day1_second_hrResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_biocide_count_day1_third_hrResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_biocide_count_day1_third_hrResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_biocide_count_day1_third_minResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_biocide_count_day1_third_minResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_biocide_count_day2_first_hrResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_biocide_count_day2_first_hrResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_biocide_count_day2_first_minResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_biocide_count_day2_first_minResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_biocide_count_day2_fourth_hrResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_biocide_count_day2_fourth_hrResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_biocide_count_day2_fourth_minResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_biocide_count_day2_fourth_minResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_biocide_count_day2_second_hrResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_biocide_count_day2_second_hrResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_biocide_count_day2_second_minResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_biocide_count_day2_second_minResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_biocide_count_day2_third_hrResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_biocide_count_day2_third_hrResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_biocide_count_day2_third_minResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_biocide_count_day2_third_minResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_biocide_count_day3_first_minResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_biocide_count_day3_first_minResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_biocide_count_day3_fourth_hrResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_biocide_count_day3_fourth_hrResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_biocide_count_day3_fourth_minResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_biocide_count_day3_fourth_minResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_biocide_count_day3_second_hrResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_biocide_count_day3_second_hrResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_biocide_count_day3_second_minResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_biocide_count_day3_second_minResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_biocide_count_day3_third_hrResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_biocide_count_day3_third_hrResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_biocide_count_day3_third_minResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_biocide_count_day3_third_minResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_biocide_count_day4_first_minResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_biocide_count_day4_first_minResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_biocide_count_day4_fourth_hrResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_biocide_count_day4_fourth_hrResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_biocide_count_day4_fourth_minResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_biocide_count_day4_fourth_minResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_biocide_count_day4_second_hrResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_biocide_count_day4_second_hrResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_biocide_count_day4_second_minResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_biocide_count_day4_second_minResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_biocide_count_day4_third_hrResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_biocide_count_day4_third_hrResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_biocide_count_day4_third_minResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_biocide_count_day4_third_minResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_biocide_count_day5_first_minResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_biocide_count_day5_first_minResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_biocide_count_day5_fourth_hrResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_biocide_count_day5_fourth_hrResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_biocide_count_day5_fourth_minResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_biocide_count_day5_fourth_minResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_biocide_count_day5_second_hrResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_biocide_count_day5_second_hrResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_biocide_count_day5_second_minResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_biocide_count_day5_second_minResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_biocide_count_day5_third_hrResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_biocide_count_day5_third_hrResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_biocide_count_day5_third_minResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_biocide_count_day5_third_minResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_biocide_count_day6_first_minResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_biocide_count_day6_first_minResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_biocide_count_day6_fourth_hrResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_biocide_count_day6_fourth_hrResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_biocide_count_day6_fourth_minResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_biocide_count_day6_fourth_minResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_biocide_count_day6_second_hrResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_biocide_count_day6_second_hrResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_biocide_count_day6_second_minResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_biocide_count_day6_second_minResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_biocide_count_day6_third_hrResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_biocide_count_day6_third_hrResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_biocide_count_day6_third_minResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_biocide_count_day6_third_minResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_biocide_count_day7_first_minResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_biocide_count_day7_first_minResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_biocide_count_day7_fourth_hrResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_biocide_count_day7_fourth_hrResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_biocide_count_day7_fourth_minResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_biocide_count_day7_fourth_minResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_biocide_count_day7_second_hrResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_biocide_count_day7_second_hrResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_biocide_count_day7_second_minResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_biocide_count_day7_second_minResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_biocide_count_day7_third_hrResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_biocide_count_day7_third_hrResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_biocide_count_day7_third_minResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_biocide_count_day7_third_minResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_biocide_day1_first_hrResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_biocide_day1_first_hrResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_biocide_day1_first_minResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_biocide_day1_first_minResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_biocide_time_day1_first_hrResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_biocide_time_day1_first_hrResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_biocide_time_day1_first_minResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_biocide_time_day1_first_minResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_biocide_time_day1_fourth_hrResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_biocide_time_day1_fourth_hrResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_biocide_time_day1_fourth_minResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_biocide_time_day1_fourth_minResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_biocide_time_day1_second_hrResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_biocide_time_day1_second_hrResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_biocide_time_day1_second_minResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_biocide_time_day1_second_minResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_biocide_time_day1_third_hrResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_biocide_time_day1_third_hrResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_biocide_time_day1_third_minResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_biocide_time_day1_third_minResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_biocide_time_day2_first_hrResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_biocide_time_day2_first_hrResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_biocide_time_day2_first_minResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_biocide_time_day2_first_minResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_biocide_time_day2_fourth_hrResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_biocide_time_day2_fourth_hrResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_biocide_time_day2_fourth_minResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_biocide_time_day2_fourth_minResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_biocide_time_day2_second_hrResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_biocide_time_day2_second_hrResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_biocide_time_day2_second_minResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_biocide_time_day2_second_minResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_biocide_time_day2_third_hrResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_biocide_time_day2_third_hrResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_biocide_time_day2_third_minResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_biocide_time_day2_third_minResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_biocide_time_day3_first_hrResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_biocide_time_day3_first_hrResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_biocide_time_day3_first_minResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_biocide_time_day3_first_minResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_biocide_time_day3_fourth_hrResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_biocide_time_day3_fourth_hrResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_biocide_time_day3_fourth_minResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_biocide_time_day3_fourth_minResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_biocide_time_day3_second_hrResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_biocide_time_day3_second_hrResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_biocide_time_day3_second_minResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_biocide_time_day3_second_minResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_biocide_time_day3_third_hrResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_biocide_time_day3_third_hrResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_biocide_time_day3_third_minResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_biocide_time_day3_third_minResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_biocide_time_day4_first_hrResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_biocide_time_day4_first_hrResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_biocide_time_day4_first_minResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_biocide_time_day4_first_minResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_biocide_time_day4_fourth_hrResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_biocide_time_day4_fourth_hrResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_biocide_time_day4_fourth_minResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_biocide_time_day4_fourth_minResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_biocide_time_day4_second_hrResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_biocide_time_day4_second_hrResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_biocide_time_day4_second_minResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_biocide_time_day4_second_minResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_biocide_time_day4_third_hrResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_biocide_time_day4_third_hrResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_biocide_time_day4_third_minResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_biocide_time_day4_third_minResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_biocide_time_day5_first_hrResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_biocide_time_day5_first_hrResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_biocide_time_day5_first_minResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_biocide_time_day5_first_minResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_biocide_time_day5_fourth_hrResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_biocide_time_day5_fourth_hrResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_biocide_time_day5_fourth_minResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_biocide_time_day5_fourth_minResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_biocide_time_day5_second_hrResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_biocide_time_day5_second_hrResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_biocide_time_day5_second_minResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_biocide_time_day5_second_minResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_biocide_time_day5_third_hrResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_biocide_time_day5_third_hrResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_biocide_time_day5_third_minResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_biocide_time_day5_third_minResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_biocide_time_day6_first_hrResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_biocide_time_day6_first_hrResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_biocide_time_day6_first_minResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_biocide_time_day6_first_minResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_biocide_time_day6_fourth_hrResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_biocide_time_day6_fourth_hrResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_biocide_time_day6_fourth_minResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_biocide_time_day6_fourth_minResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_biocide_time_day6_second_hrResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_biocide_time_day6_second_hrResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_biocide_time_day6_second_minResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_biocide_time_day6_second_minResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_biocide_time_day6_third_hrResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_biocide_time_day6_third_hrResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_biocide_time_day6_third_minResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_biocide_time_day6_third_minResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_biocide_time_day7_first_hrResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_biocide_time_day7_first_hrResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_biocide_time_day7_first_minResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_biocide_time_day7_first_minResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_biocide_time_day7_fourth_hrResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_biocide_time_day7_fourth_hrResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_biocide_time_day7_fourth_minResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_biocide_time_day7_fourth_minResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_biocide_time_day7_second_hrResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_biocide_time_day7_second_hrResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_biocide_time_day7_second_minResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_biocide_time_day7_second_minResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_biocide_time_day7_third_hrResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_biocide_time_day7_third_hrResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_biocide_time_day7_third_minResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_biocide_time_day7_third_minResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_circulation_hrResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_circulation_hrResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_circulation_minResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_circulation_minResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_pre_bleed_time_hrResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_pre_bleed_time_hrResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_pre_bleed_time_minResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_pre_bleed_time_minResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_pre_bleed_usResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_pre_bleed_usResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_pre_lockout_hrResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_pre_lockout_hrResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_pre_lockout_minResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_pre_lockout_minResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+</root>

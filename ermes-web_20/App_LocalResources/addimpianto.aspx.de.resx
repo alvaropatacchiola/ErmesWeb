@@ -1,0 +1,1893 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="check1Resource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="check1Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="countriesResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="gruppiResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="indirizziResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="inputCodiceResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="inputCodiceResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="inputTitleResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="inputTitleResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ListItemResource1.Text" xml:space="preserve">
+    <value>Neuer..</value>
+  </data>
+  <data name="ListItemResource1.Value" xml:space="preserve">
+    <value>nuovo</value>
+  </data>
+  <data name="ListItemResource10.Text" xml:space="preserve">
+    <value>Antarctica</value>
+  </data>
+  <data name="ListItemResource10.Value" xml:space="preserve">
+    <value>AQ</value>
+  </data>
+  <data name="ListItemResource100.Text" xml:space="preserve">
+    <value>Hungary</value>
+  </data>
+  <data name="ListItemResource100.Value" xml:space="preserve">
+    <value>HU</value>
+  </data>
+  <data name="ListItemResource101.Text" xml:space="preserve">
+    <value>Iceland</value>
+  </data>
+  <data name="ListItemResource101.Value" xml:space="preserve">
+    <value>IS</value>
+  </data>
+  <data name="ListItemResource102.Text" xml:space="preserve">
+    <value>India</value>
+  </data>
+  <data name="ListItemResource102.Value" xml:space="preserve">
+    <value>IN</value>
+  </data>
+  <data name="ListItemResource103.Text" xml:space="preserve">
+    <value>Indonesia</value>
+  </data>
+  <data name="ListItemResource103.Value" xml:space="preserve">
+    <value>ID</value>
+  </data>
+  <data name="ListItemResource104.Text" xml:space="preserve">
+    <value>Iran, Islamic Republic of</value>
+  </data>
+  <data name="ListItemResource104.Value" xml:space="preserve">
+    <value>IR</value>
+  </data>
+  <data name="ListItemResource105.Text" xml:space="preserve">
+    <value>Iraq</value>
+  </data>
+  <data name="ListItemResource105.Value" xml:space="preserve">
+    <value>IQ</value>
+  </data>
+  <data name="ListItemResource106.Text" xml:space="preserve">
+    <value>Ireland</value>
+  </data>
+  <data name="ListItemResource106.Value" xml:space="preserve">
+    <value>IE</value>
+  </data>
+  <data name="ListItemResource107.Text" xml:space="preserve">
+    <value>Isle of Man</value>
+  </data>
+  <data name="ListItemResource107.Value" xml:space="preserve">
+    <value>IM</value>
+  </data>
+  <data name="ListItemResource108.Text" xml:space="preserve">
+    <value>Israel</value>
+  </data>
+  <data name="ListItemResource108.Value" xml:space="preserve">
+    <value>IL</value>
+  </data>
+  <data name="ListItemResource109.Text" xml:space="preserve">
+    <value>Italy</value>
+  </data>
+  <data name="ListItemResource109.Value" xml:space="preserve">
+    <value>IT</value>
+  </data>
+  <data name="ListItemResource11.Text" xml:space="preserve">
+    <value>Antigua and Barbuda</value>
+  </data>
+  <data name="ListItemResource11.Value" xml:space="preserve">
+    <value>AG</value>
+  </data>
+  <data name="ListItemResource110.Text" xml:space="preserve">
+    <value>Jamaica</value>
+  </data>
+  <data name="ListItemResource110.Value" xml:space="preserve">
+    <value>JM</value>
+  </data>
+  <data name="ListItemResource111.Text" xml:space="preserve">
+    <value>Japan</value>
+  </data>
+  <data name="ListItemResource111.Value" xml:space="preserve">
+    <value>JP</value>
+  </data>
+  <data name="ListItemResource112.Text" xml:space="preserve">
+    <value>Jersey</value>
+  </data>
+  <data name="ListItemResource112.Value" xml:space="preserve">
+    <value>JE</value>
+  </data>
+  <data name="ListItemResource113.Text" xml:space="preserve">
+    <value>Jordan</value>
+  </data>
+  <data name="ListItemResource113.Value" xml:space="preserve">
+    <value>JO</value>
+  </data>
+  <data name="ListItemResource114.Text" xml:space="preserve">
+    <value>Kazakhstan</value>
+  </data>
+  <data name="ListItemResource114.Value" xml:space="preserve">
+    <value>KZ</value>
+  </data>
+  <data name="ListItemResource115.Text" xml:space="preserve">
+    <value>Kenya</value>
+  </data>
+  <data name="ListItemResource115.Value" xml:space="preserve">
+    <value>KE</value>
+  </data>
+  <data name="ListItemResource116.Text" xml:space="preserve">
+    <value>Kiribati</value>
+  </data>
+  <data name="ListItemResource116.Value" xml:space="preserve">
+    <value>KI</value>
+  </data>
+  <data name="ListItemResource117.Text" xml:space="preserve">
+    <value>Korea, Democratic People's Republic of</value>
+  </data>
+  <data name="ListItemResource117.Value" xml:space="preserve">
+    <value>KP</value>
+  </data>
+  <data name="ListItemResource118.Text" xml:space="preserve">
+    <value>Korea, Republic of</value>
+  </data>
+  <data name="ListItemResource118.Value" xml:space="preserve">
+    <value>KR</value>
+  </data>
+  <data name="ListItemResource119.Text" xml:space="preserve">
+    <value>Kuwait</value>
+  </data>
+  <data name="ListItemResource119.Value" xml:space="preserve">
+    <value>KW</value>
+  </data>
+  <data name="ListItemResource12.Text" xml:space="preserve">
+    <value>Argentina</value>
+  </data>
+  <data name="ListItemResource12.Value" xml:space="preserve">
+    <value>AR</value>
+  </data>
+  <data name="ListItemResource120.Text" xml:space="preserve">
+    <value>Kyrgyzstan</value>
+  </data>
+  <data name="ListItemResource120.Value" xml:space="preserve">
+    <value>KG</value>
+  </data>
+  <data name="ListItemResource121.Text" xml:space="preserve">
+    <value>Lao People's Democratic Republic</value>
+  </data>
+  <data name="ListItemResource121.Value" xml:space="preserve">
+    <value>LA</value>
+  </data>
+  <data name="ListItemResource122.Text" xml:space="preserve">
+    <value>Latvia</value>
+  </data>
+  <data name="ListItemResource122.Value" xml:space="preserve">
+    <value>LV</value>
+  </data>
+  <data name="ListItemResource123.Text" xml:space="preserve">
+    <value>Lebanon</value>
+  </data>
+  <data name="ListItemResource123.Value" xml:space="preserve">
+    <value>LB</value>
+  </data>
+  <data name="ListItemResource124.Text" xml:space="preserve">
+    <value>Lesotho</value>
+  </data>
+  <data name="ListItemResource124.Value" xml:space="preserve">
+    <value>LS</value>
+  </data>
+  <data name="ListItemResource125.Text" xml:space="preserve">
+    <value>Liberia</value>
+  </data>
+  <data name="ListItemResource125.Value" xml:space="preserve">
+    <value>LR</value>
+  </data>
+  <data name="ListItemResource126.Text" xml:space="preserve">
+    <value>Libyan Arab Jamahiriya</value>
+  </data>
+  <data name="ListItemResource126.Value" xml:space="preserve">
+    <value>LY</value>
+  </data>
+  <data name="ListItemResource127.Text" xml:space="preserve">
+    <value>Liechtenstein</value>
+  </data>
+  <data name="ListItemResource127.Value" xml:space="preserve">
+    <value>LI</value>
+  </data>
+  <data name="ListItemResource128.Text" xml:space="preserve">
+    <value>Lithuania</value>
+  </data>
+  <data name="ListItemResource128.Value" xml:space="preserve">
+    <value>LT</value>
+  </data>
+  <data name="ListItemResource129.Text" xml:space="preserve">
+    <value>Luxembourg</value>
+  </data>
+  <data name="ListItemResource129.Value" xml:space="preserve">
+    <value>LU</value>
+  </data>
+  <data name="ListItemResource13.Text" xml:space="preserve">
+    <value>Armenia</value>
+  </data>
+  <data name="ListItemResource13.Value" xml:space="preserve">
+    <value>AM</value>
+  </data>
+  <data name="ListItemResource130.Text" xml:space="preserve">
+    <value>Macao</value>
+  </data>
+  <data name="ListItemResource130.Value" xml:space="preserve">
+    <value>MO</value>
+  </data>
+  <data name="ListItemResource131.Text" xml:space="preserve">
+    <value>Macedonia, The Former Yugoslav Republic of</value>
+  </data>
+  <data name="ListItemResource131.Value" xml:space="preserve">
+    <value>MK</value>
+  </data>
+  <data name="ListItemResource132.Text" xml:space="preserve">
+    <value>Madagascar</value>
+  </data>
+  <data name="ListItemResource132.Value" xml:space="preserve">
+    <value>MG</value>
+  </data>
+  <data name="ListItemResource133.Text" xml:space="preserve">
+    <value>Malawi</value>
+  </data>
+  <data name="ListItemResource133.Value" xml:space="preserve">
+    <value>MW</value>
+  </data>
+  <data name="ListItemResource134.Text" xml:space="preserve">
+    <value>Malaysia</value>
+  </data>
+  <data name="ListItemResource134.Value" xml:space="preserve">
+    <value>MY</value>
+  </data>
+  <data name="ListItemResource135.Text" xml:space="preserve">
+    <value>Maldives</value>
+  </data>
+  <data name="ListItemResource135.Value" xml:space="preserve">
+    <value>MV</value>
+  </data>
+  <data name="ListItemResource136.Text" xml:space="preserve">
+    <value>Mali</value>
+  </data>
+  <data name="ListItemResource136.Value" xml:space="preserve">
+    <value>ML</value>
+  </data>
+  <data name="ListItemResource137.Text" xml:space="preserve">
+    <value>Malta</value>
+  </data>
+  <data name="ListItemResource137.Value" xml:space="preserve">
+    <value>MT</value>
+  </data>
+  <data name="ListItemResource138.Text" xml:space="preserve">
+    <value>Marshall Islands</value>
+  </data>
+  <data name="ListItemResource138.Value" xml:space="preserve">
+    <value>MH</value>
+  </data>
+  <data name="ListItemResource139.Text" xml:space="preserve">
+    <value>Martinique</value>
+  </data>
+  <data name="ListItemResource139.Value" xml:space="preserve">
+    <value>MQ</value>
+  </data>
+  <data name="ListItemResource14.Text" xml:space="preserve">
+    <value>Aruba</value>
+  </data>
+  <data name="ListItemResource14.Value" xml:space="preserve">
+    <value>AW</value>
+  </data>
+  <data name="ListItemResource140.Text" xml:space="preserve">
+    <value>Mauritania</value>
+  </data>
+  <data name="ListItemResource140.Value" xml:space="preserve">
+    <value>MR</value>
+  </data>
+  <data name="ListItemResource141.Text" xml:space="preserve">
+    <value>Mauritius</value>
+  </data>
+  <data name="ListItemResource141.Value" xml:space="preserve">
+    <value>MU</value>
+  </data>
+  <data name="ListItemResource142.Text" xml:space="preserve">
+    <value>Mayotte</value>
+  </data>
+  <data name="ListItemResource142.Value" xml:space="preserve">
+    <value>YT</value>
+  </data>
+  <data name="ListItemResource143.Text" xml:space="preserve">
+    <value>Mexico</value>
+  </data>
+  <data name="ListItemResource143.Value" xml:space="preserve">
+    <value>MX</value>
+  </data>
+  <data name="ListItemResource144.Text" xml:space="preserve">
+    <value>Micronesia, Federated States of</value>
+  </data>
+  <data name="ListItemResource144.Value" xml:space="preserve">
+    <value>FM</value>
+  </data>
+  <data name="ListItemResource145.Text" xml:space="preserve">
+    <value>Moldova, Republic of</value>
+  </data>
+  <data name="ListItemResource145.Value" xml:space="preserve">
+    <value>MD</value>
+  </data>
+  <data name="ListItemResource146.Text" xml:space="preserve">
+    <value>Monaco</value>
+  </data>
+  <data name="ListItemResource146.Value" xml:space="preserve">
+    <value>MC</value>
+  </data>
+  <data name="ListItemResource147.Text" xml:space="preserve">
+    <value>Mongolia</value>
+  </data>
+  <data name="ListItemResource147.Value" xml:space="preserve">
+    <value>MN</value>
+  </data>
+  <data name="ListItemResource148.Text" xml:space="preserve">
+    <value>Montenegro</value>
+  </data>
+  <data name="ListItemResource148.Value" xml:space="preserve">
+    <value>ME</value>
+  </data>
+  <data name="ListItemResource149.Text" xml:space="preserve">
+    <value>Montserrat</value>
+  </data>
+  <data name="ListItemResource149.Value" xml:space="preserve">
+    <value>MS</value>
+  </data>
+  <data name="ListItemResource15.Text" xml:space="preserve">
+    <value>Australia</value>
+  </data>
+  <data name="ListItemResource15.Value" xml:space="preserve">
+    <value>AU</value>
+  </data>
+  <data name="ListItemResource150.Text" xml:space="preserve">
+    <value>Morocco</value>
+  </data>
+  <data name="ListItemResource150.Value" xml:space="preserve">
+    <value>MA</value>
+  </data>
+  <data name="ListItemResource151.Text" xml:space="preserve">
+    <value>Mozambique</value>
+  </data>
+  <data name="ListItemResource151.Value" xml:space="preserve">
+    <value>MZ</value>
+  </data>
+  <data name="ListItemResource152.Text" xml:space="preserve">
+    <value>Myanmar</value>
+  </data>
+  <data name="ListItemResource152.Value" xml:space="preserve">
+    <value>MM</value>
+  </data>
+  <data name="ListItemResource153.Text" xml:space="preserve">
+    <value>Namibia</value>
+  </data>
+  <data name="ListItemResource153.Value" xml:space="preserve">
+    <value>NA</value>
+  </data>
+  <data name="ListItemResource154.Text" xml:space="preserve">
+    <value>Nauru</value>
+  </data>
+  <data name="ListItemResource154.Value" xml:space="preserve">
+    <value>NR</value>
+  </data>
+  <data name="ListItemResource155.Text" xml:space="preserve">
+    <value>Nepal</value>
+  </data>
+  <data name="ListItemResource155.Value" xml:space="preserve">
+    <value>NP</value>
+  </data>
+  <data name="ListItemResource156.Text" xml:space="preserve">
+    <value>Netherlands</value>
+  </data>
+  <data name="ListItemResource156.Value" xml:space="preserve">
+    <value>NL</value>
+  </data>
+  <data name="ListItemResource157.Text" xml:space="preserve">
+    <value>Netherlands Antilles</value>
+  </data>
+  <data name="ListItemResource157.Value" xml:space="preserve">
+    <value>AN</value>
+  </data>
+  <data name="ListItemResource158.Text" xml:space="preserve">
+    <value>New Caledonia</value>
+  </data>
+  <data name="ListItemResource158.Value" xml:space="preserve">
+    <value>NC</value>
+  </data>
+  <data name="ListItemResource159.Text" xml:space="preserve">
+    <value>New Zealand</value>
+  </data>
+  <data name="ListItemResource159.Value" xml:space="preserve">
+    <value>NZ</value>
+  </data>
+  <data name="ListItemResource16.Text" xml:space="preserve">
+    <value>Austria</value>
+  </data>
+  <data name="ListItemResource16.Value" xml:space="preserve">
+    <value>AT</value>
+  </data>
+  <data name="ListItemResource160.Text" xml:space="preserve">
+    <value>Nicaragua</value>
+  </data>
+  <data name="ListItemResource160.Value" xml:space="preserve">
+    <value>NI</value>
+  </data>
+  <data name="ListItemResource161.Text" xml:space="preserve">
+    <value>Niger</value>
+  </data>
+  <data name="ListItemResource161.Value" xml:space="preserve">
+    <value>NE</value>
+  </data>
+  <data name="ListItemResource162.Text" xml:space="preserve">
+    <value>Nigeria</value>
+  </data>
+  <data name="ListItemResource162.Value" xml:space="preserve">
+    <value>NG</value>
+  </data>
+  <data name="ListItemResource163.Text" xml:space="preserve">
+    <value>Niue</value>
+  </data>
+  <data name="ListItemResource163.Value" xml:space="preserve">
+    <value>NU</value>
+  </data>
+  <data name="ListItemResource164.Text" xml:space="preserve">
+    <value>Norfolk Island</value>
+  </data>
+  <data name="ListItemResource164.Value" xml:space="preserve">
+    <value>NF</value>
+  </data>
+  <data name="ListItemResource165.Text" xml:space="preserve">
+    <value>Northern Mariana Islands</value>
+  </data>
+  <data name="ListItemResource165.Value" xml:space="preserve">
+    <value>MP</value>
+  </data>
+  <data name="ListItemResource166.Text" xml:space="preserve">
+    <value>Norway</value>
+  </data>
+  <data name="ListItemResource166.Value" xml:space="preserve">
+    <value>NO</value>
+  </data>
+  <data name="ListItemResource167.Text" xml:space="preserve">
+    <value>Oman</value>
+  </data>
+  <data name="ListItemResource167.Value" xml:space="preserve">
+    <value>OM</value>
+  </data>
+  <data name="ListItemResource168.Text" xml:space="preserve">
+    <value>Pakistan</value>
+  </data>
+  <data name="ListItemResource168.Value" xml:space="preserve">
+    <value>PK</value>
+  </data>
+  <data name="ListItemResource169.Text" xml:space="preserve">
+    <value>Palau</value>
+  </data>
+  <data name="ListItemResource169.Value" xml:space="preserve">
+    <value>PW</value>
+  </data>
+  <data name="ListItemResource17.Text" xml:space="preserve">
+    <value>Azerbaijan</value>
+  </data>
+  <data name="ListItemResource17.Value" xml:space="preserve">
+    <value>AZ</value>
+  </data>
+  <data name="ListItemResource170.Text" xml:space="preserve">
+    <value>Palestinian Territory, Occupied</value>
+  </data>
+  <data name="ListItemResource170.Value" xml:space="preserve">
+    <value>PS</value>
+  </data>
+  <data name="ListItemResource171.Text" xml:space="preserve">
+    <value>Panama</value>
+  </data>
+  <data name="ListItemResource171.Value" xml:space="preserve">
+    <value>PA</value>
+  </data>
+  <data name="ListItemResource172.Text" xml:space="preserve">
+    <value>Papua New Guinea</value>
+  </data>
+  <data name="ListItemResource172.Value" xml:space="preserve">
+    <value>PG</value>
+  </data>
+  <data name="ListItemResource173.Text" xml:space="preserve">
+    <value>Paraguay</value>
+  </data>
+  <data name="ListItemResource173.Value" xml:space="preserve">
+    <value>PY</value>
+  </data>
+  <data name="ListItemResource174.Text" xml:space="preserve">
+    <value>Peru</value>
+  </data>
+  <data name="ListItemResource174.Value" xml:space="preserve">
+    <value>PE</value>
+  </data>
+  <data name="ListItemResource175.Text" xml:space="preserve">
+    <value>Philippines</value>
+  </data>
+  <data name="ListItemResource175.Value" xml:space="preserve">
+    <value>PH</value>
+  </data>
+  <data name="ListItemResource176.Text" xml:space="preserve">
+    <value>Pitcairn</value>
+  </data>
+  <data name="ListItemResource176.Value" xml:space="preserve">
+    <value>PN</value>
+  </data>
+  <data name="ListItemResource177.Text" xml:space="preserve">
+    <value>Poland</value>
+  </data>
+  <data name="ListItemResource177.Value" xml:space="preserve">
+    <value>PL</value>
+  </data>
+  <data name="ListItemResource178.Text" xml:space="preserve">
+    <value>Portugal</value>
+  </data>
+  <data name="ListItemResource178.Value" xml:space="preserve">
+    <value>PT</value>
+  </data>
+  <data name="ListItemResource179.Text" xml:space="preserve">
+    <value>Puerto Rico</value>
+  </data>
+  <data name="ListItemResource179.Value" xml:space="preserve">
+    <value>PR</value>
+  </data>
+  <data name="ListItemResource18.Text" xml:space="preserve">
+    <value>Bahamas</value>
+  </data>
+  <data name="ListItemResource18.Value" xml:space="preserve">
+    <value>BS</value>
+  </data>
+  <data name="ListItemResource180.Text" xml:space="preserve">
+    <value>Qatar</value>
+  </data>
+  <data name="ListItemResource180.Value" xml:space="preserve">
+    <value>QA</value>
+  </data>
+  <data name="ListItemResource181.Text" xml:space="preserve">
+    <value>Reunion</value>
+  </data>
+  <data name="ListItemResource181.Value" xml:space="preserve">
+    <value>RE</value>
+  </data>
+  <data name="ListItemResource182.Text" xml:space="preserve">
+    <value>Romania</value>
+  </data>
+  <data name="ListItemResource182.Value" xml:space="preserve">
+    <value>RO</value>
+  </data>
+  <data name="ListItemResource183.Text" xml:space="preserve">
+    <value>Russian Federation</value>
+  </data>
+  <data name="ListItemResource183.Value" xml:space="preserve">
+    <value>RU</value>
+  </data>
+  <data name="ListItemResource184.Text" xml:space="preserve">
+    <value>Rwanda</value>
+  </data>
+  <data name="ListItemResource184.Value" xml:space="preserve">
+    <value>RW</value>
+  </data>
+  <data name="ListItemResource185.Text" xml:space="preserve">
+    <value>Saint Helena</value>
+  </data>
+  <data name="ListItemResource185.Value" xml:space="preserve">
+    <value>SH</value>
+  </data>
+  <data name="ListItemResource186.Text" xml:space="preserve">
+    <value>Saint Kitts and Nevis</value>
+  </data>
+  <data name="ListItemResource186.Value" xml:space="preserve">
+    <value>KN</value>
+  </data>
+  <data name="ListItemResource187.Text" xml:space="preserve">
+    <value>Saint Lucia</value>
+  </data>
+  <data name="ListItemResource187.Value" xml:space="preserve">
+    <value>LC</value>
+  </data>
+  <data name="ListItemResource188.Text" xml:space="preserve">
+    <value>Saint Pierre and Miquelon</value>
+  </data>
+  <data name="ListItemResource188.Value" xml:space="preserve">
+    <value>PM</value>
+  </data>
+  <data name="ListItemResource189.Text" xml:space="preserve">
+    <value>Saint Vincent and The Grenadines</value>
+  </data>
+  <data name="ListItemResource189.Value" xml:space="preserve">
+    <value>VC</value>
+  </data>
+  <data name="ListItemResource19.Text" xml:space="preserve">
+    <value>Bahrain</value>
+  </data>
+  <data name="ListItemResource19.Value" xml:space="preserve">
+    <value>BH</value>
+  </data>
+  <data name="ListItemResource190.Text" xml:space="preserve">
+    <value>Samoa</value>
+  </data>
+  <data name="ListItemResource190.Value" xml:space="preserve">
+    <value>WS</value>
+  </data>
+  <data name="ListItemResource191.Text" xml:space="preserve">
+    <value>San Marino</value>
+  </data>
+  <data name="ListItemResource191.Value" xml:space="preserve">
+    <value>SM</value>
+  </data>
+  <data name="ListItemResource192.Text" xml:space="preserve">
+    <value>Sao Tome and Principe</value>
+  </data>
+  <data name="ListItemResource192.Value" xml:space="preserve">
+    <value>ST</value>
+  </data>
+  <data name="ListItemResource193.Text" xml:space="preserve">
+    <value>Saudi Arabia</value>
+  </data>
+  <data name="ListItemResource193.Value" xml:space="preserve">
+    <value>SA</value>
+  </data>
+  <data name="ListItemResource194.Text" xml:space="preserve">
+    <value>Senegal</value>
+  </data>
+  <data name="ListItemResource194.Value" xml:space="preserve">
+    <value>SN</value>
+  </data>
+  <data name="ListItemResource195.Text" xml:space="preserve">
+    <value>Serbia</value>
+  </data>
+  <data name="ListItemResource195.Value" xml:space="preserve">
+    <value>RS</value>
+  </data>
+  <data name="ListItemResource196.Text" xml:space="preserve">
+    <value>Seychelles</value>
+  </data>
+  <data name="ListItemResource196.Value" xml:space="preserve">
+    <value>SC</value>
+  </data>
+  <data name="ListItemResource197.Text" xml:space="preserve">
+    <value>Sierra Leone</value>
+  </data>
+  <data name="ListItemResource197.Value" xml:space="preserve">
+    <value>SL</value>
+  </data>
+  <data name="ListItemResource198.Text" xml:space="preserve">
+    <value>Singapore</value>
+  </data>
+  <data name="ListItemResource198.Value" xml:space="preserve">
+    <value>SG</value>
+  </data>
+  <data name="ListItemResource199.Text" xml:space="preserve">
+    <value>Slovakia</value>
+  </data>
+  <data name="ListItemResource199.Value" xml:space="preserve">
+    <value>SK</value>
+  </data>
+  <data name="ListItemResource2.Text" xml:space="preserve">
+    <value>Afghanistan</value>
+  </data>
+  <data name="ListItemResource2.Value" xml:space="preserve">
+    <value>AF</value>
+  </data>
+  <data name="ListItemResource20.Text" xml:space="preserve">
+    <value>Bangladesh</value>
+  </data>
+  <data name="ListItemResource20.Value" xml:space="preserve">
+    <value>BD</value>
+  </data>
+  <data name="ListItemResource200.Text" xml:space="preserve">
+    <value>Slovenia</value>
+  </data>
+  <data name="ListItemResource200.Value" xml:space="preserve">
+    <value>SI</value>
+  </data>
+  <data name="ListItemResource201.Text" xml:space="preserve">
+    <value>Solomon Islands</value>
+  </data>
+  <data name="ListItemResource201.Value" xml:space="preserve">
+    <value>SB</value>
+  </data>
+  <data name="ListItemResource202.Text" xml:space="preserve">
+    <value>Somalia</value>
+  </data>
+  <data name="ListItemResource202.Value" xml:space="preserve">
+    <value>SO</value>
+  </data>
+  <data name="ListItemResource203.Text" xml:space="preserve">
+    <value>South Africa</value>
+  </data>
+  <data name="ListItemResource203.Value" xml:space="preserve">
+    <value>ZA</value>
+  </data>
+  <data name="ListItemResource204.Text" xml:space="preserve">
+    <value>South Georgia and The South Sandwich Islands</value>
+  </data>
+  <data name="ListItemResource204.Value" xml:space="preserve">
+    <value>GS</value>
+  </data>
+  <data name="ListItemResource205.Text" xml:space="preserve">
+    <value>Spain</value>
+  </data>
+  <data name="ListItemResource205.Value" xml:space="preserve">
+    <value>ES</value>
+  </data>
+  <data name="ListItemResource206.Text" xml:space="preserve">
+    <value>Sri Lanka</value>
+  </data>
+  <data name="ListItemResource206.Value" xml:space="preserve">
+    <value>LK</value>
+  </data>
+  <data name="ListItemResource207.Text" xml:space="preserve">
+    <value>Sudan</value>
+  </data>
+  <data name="ListItemResource207.Value" xml:space="preserve">
+    <value>SD</value>
+  </data>
+  <data name="ListItemResource208.Text" xml:space="preserve">
+    <value>Suriname</value>
+  </data>
+  <data name="ListItemResource208.Value" xml:space="preserve">
+    <value>SR</value>
+  </data>
+  <data name="ListItemResource209.Text" xml:space="preserve">
+    <value>Svalbard and Jan Mayen</value>
+  </data>
+  <data name="ListItemResource209.Value" xml:space="preserve">
+    <value>SJ</value>
+  </data>
+  <data name="ListItemResource21.Text" xml:space="preserve">
+    <value>Barbados</value>
+  </data>
+  <data name="ListItemResource21.Value" xml:space="preserve">
+    <value>BB</value>
+  </data>
+  <data name="ListItemResource210.Text" xml:space="preserve">
+    <value>Swaziland</value>
+  </data>
+  <data name="ListItemResource210.Value" xml:space="preserve">
+    <value>SZ</value>
+  </data>
+  <data name="ListItemResource211.Text" xml:space="preserve">
+    <value>Sweden</value>
+  </data>
+  <data name="ListItemResource211.Value" xml:space="preserve">
+    <value>SE</value>
+  </data>
+  <data name="ListItemResource212.Text" xml:space="preserve">
+    <value>Switzerland</value>
+  </data>
+  <data name="ListItemResource212.Value" xml:space="preserve">
+    <value>CH</value>
+  </data>
+  <data name="ListItemResource213.Text" xml:space="preserve">
+    <value>Syrian Arab Republic</value>
+  </data>
+  <data name="ListItemResource213.Value" xml:space="preserve">
+    <value>SY</value>
+  </data>
+  <data name="ListItemResource214.Text" xml:space="preserve">
+    <value>Taiwan, Province of China</value>
+  </data>
+  <data name="ListItemResource214.Value" xml:space="preserve">
+    <value>TW</value>
+  </data>
+  <data name="ListItemResource215.Text" xml:space="preserve">
+    <value>Tajikistan</value>
+  </data>
+  <data name="ListItemResource215.Value" xml:space="preserve">
+    <value>TJ</value>
+  </data>
+  <data name="ListItemResource216.Text" xml:space="preserve">
+    <value>Tanzania, United Republic of</value>
+  </data>
+  <data name="ListItemResource216.Value" xml:space="preserve">
+    <value>TZ</value>
+  </data>
+  <data name="ListItemResource217.Text" xml:space="preserve">
+    <value>Thailand</value>
+  </data>
+  <data name="ListItemResource217.Value" xml:space="preserve">
+    <value>TH</value>
+  </data>
+  <data name="ListItemResource218.Text" xml:space="preserve">
+    <value>Timor-leste</value>
+  </data>
+  <data name="ListItemResource218.Value" xml:space="preserve">
+    <value>TL</value>
+  </data>
+  <data name="ListItemResource219.Text" xml:space="preserve">
+    <value>Togo</value>
+  </data>
+  <data name="ListItemResource219.Value" xml:space="preserve">
+    <value>TG</value>
+  </data>
+  <data name="ListItemResource22.Text" xml:space="preserve">
+    <value>Belarus</value>
+  </data>
+  <data name="ListItemResource22.Value" xml:space="preserve">
+    <value>BY</value>
+  </data>
+  <data name="ListItemResource220.Text" xml:space="preserve">
+    <value>Tokelau</value>
+  </data>
+  <data name="ListItemResource220.Value" xml:space="preserve">
+    <value>TK</value>
+  </data>
+  <data name="ListItemResource221.Text" xml:space="preserve">
+    <value>Tonga</value>
+  </data>
+  <data name="ListItemResource221.Value" xml:space="preserve">
+    <value>TO</value>
+  </data>
+  <data name="ListItemResource222.Text" xml:space="preserve">
+    <value>Trinidad and Tobago</value>
+  </data>
+  <data name="ListItemResource222.Value" xml:space="preserve">
+    <value>TT</value>
+  </data>
+  <data name="ListItemResource223.Text" xml:space="preserve">
+    <value>Tunisia</value>
+  </data>
+  <data name="ListItemResource223.Value" xml:space="preserve">
+    <value>TN</value>
+  </data>
+  <data name="ListItemResource224.Text" xml:space="preserve">
+    <value>Turkey</value>
+  </data>
+  <data name="ListItemResource224.Value" xml:space="preserve">
+    <value>TR</value>
+  </data>
+  <data name="ListItemResource225.Text" xml:space="preserve">
+    <value>Turkmenistan</value>
+  </data>
+  <data name="ListItemResource225.Value" xml:space="preserve">
+    <value>TM</value>
+  </data>
+  <data name="ListItemResource226.Text" xml:space="preserve">
+    <value>Turks and Caicos Islands</value>
+  </data>
+  <data name="ListItemResource226.Value" xml:space="preserve">
+    <value>TC</value>
+  </data>
+  <data name="ListItemResource227.Text" xml:space="preserve">
+    <value>Tuvalu</value>
+  </data>
+  <data name="ListItemResource227.Value" xml:space="preserve">
+    <value>TV</value>
+  </data>
+  <data name="ListItemResource228.Text" xml:space="preserve">
+    <value>Uganda</value>
+  </data>
+  <data name="ListItemResource228.Value" xml:space="preserve">
+    <value>UG</value>
+  </data>
+  <data name="ListItemResource229.Text" xml:space="preserve">
+    <value>Ukraine</value>
+  </data>
+  <data name="ListItemResource229.Value" xml:space="preserve">
+    <value>UA</value>
+  </data>
+  <data name="ListItemResource23.Text" xml:space="preserve">
+    <value>Belgium</value>
+  </data>
+  <data name="ListItemResource23.Value" xml:space="preserve">
+    <value>BE</value>
+  </data>
+  <data name="ListItemResource230.Text" xml:space="preserve">
+    <value>United Arab Emirates</value>
+  </data>
+  <data name="ListItemResource230.Value" xml:space="preserve">
+    <value>AE</value>
+  </data>
+  <data name="ListItemResource231.Text" xml:space="preserve">
+    <value>United Kingdom</value>
+  </data>
+  <data name="ListItemResource231.Value" xml:space="preserve">
+    <value>GB</value>
+  </data>
+  <data name="ListItemResource232.Text" xml:space="preserve">
+    <value>United States</value>
+  </data>
+  <data name="ListItemResource232.Value" xml:space="preserve">
+    <value>US</value>
+  </data>
+  <data name="ListItemResource233.Text" xml:space="preserve">
+    <value>United States Minor Outlying Islands</value>
+  </data>
+  <data name="ListItemResource233.Value" xml:space="preserve">
+    <value>UM</value>
+  </data>
+  <data name="ListItemResource234.Text" xml:space="preserve">
+    <value>Uruguay</value>
+  </data>
+  <data name="ListItemResource234.Value" xml:space="preserve">
+    <value>UY</value>
+  </data>
+  <data name="ListItemResource235.Text" xml:space="preserve">
+    <value>Uzbekistan</value>
+  </data>
+  <data name="ListItemResource235.Value" xml:space="preserve">
+    <value>UZ</value>
+  </data>
+  <data name="ListItemResource236.Text" xml:space="preserve">
+    <value>Vanuatu</value>
+  </data>
+  <data name="ListItemResource236.Value" xml:space="preserve">
+    <value>VU</value>
+  </data>
+  <data name="ListItemResource237.Text" xml:space="preserve">
+    <value>Venezuela</value>
+  </data>
+  <data name="ListItemResource237.Value" xml:space="preserve">
+    <value>VE</value>
+  </data>
+  <data name="ListItemResource238.Text" xml:space="preserve">
+    <value>Viet Nam</value>
+  </data>
+  <data name="ListItemResource238.Value" xml:space="preserve">
+    <value>VN</value>
+  </data>
+  <data name="ListItemResource239.Text" xml:space="preserve">
+    <value>Virgin Islands, British</value>
+  </data>
+  <data name="ListItemResource239.Value" xml:space="preserve">
+    <value>VG</value>
+  </data>
+  <data name="ListItemResource24.Text" xml:space="preserve">
+    <value>Belize</value>
+  </data>
+  <data name="ListItemResource24.Value" xml:space="preserve">
+    <value>BZ</value>
+  </data>
+  <data name="ListItemResource240.Text" xml:space="preserve">
+    <value>Virgin Islands, U.S.</value>
+  </data>
+  <data name="ListItemResource240.Value" xml:space="preserve">
+    <value>VI</value>
+  </data>
+  <data name="ListItemResource241.Text" xml:space="preserve">
+    <value>Wallis and Futuna</value>
+  </data>
+  <data name="ListItemResource241.Value" xml:space="preserve">
+    <value>WF</value>
+  </data>
+  <data name="ListItemResource242.Text" xml:space="preserve">
+    <value>Western Sahara</value>
+  </data>
+  <data name="ListItemResource242.Value" xml:space="preserve">
+    <value>EH</value>
+  </data>
+  <data name="ListItemResource243.Text" xml:space="preserve">
+    <value>Yemen</value>
+  </data>
+  <data name="ListItemResource243.Value" xml:space="preserve">
+    <value>YE</value>
+  </data>
+  <data name="ListItemResource244.Text" xml:space="preserve">
+    <value>Zambia</value>
+  </data>
+  <data name="ListItemResource244.Value" xml:space="preserve">
+    <value>ZM</value>
+  </data>
+  <data name="ListItemResource245.Text" xml:space="preserve">
+    <value>Zimbabwe</value>
+  </data>
+  <data name="ListItemResource245.Value" xml:space="preserve">
+    <value>ZW</value>
+  </data>
+  <data name="ListItemResource246.Text" xml:space="preserve">
+    <value>leer..</value>
+  </data>
+  <data name="ListItemResource246.Value" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="ListItemResource247.Text" xml:space="preserve">
+    <value>Neuer</value>
+  </data>
+  <data name="ListItemResource247.Value" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="ListItemResource248.Text" xml:space="preserve">
+    <value>Neuer..</value>
+  </data>
+  <data name="ListItemResource248.Value" xml:space="preserve">
+    <value>nuovo</value>
+  </data>
+  <data name="ListItemResource249.Text" xml:space="preserve">
+    <value>emec</value>
+  </data>
+  <data name="ListItemResource249.Value" xml:space="preserve">
+    <value>emec&gt;emec1</value>
+  </data>
+  <data name="ListItemResource25.Text" xml:space="preserve">
+    <value>Benin</value>
+  </data>
+  <data name="ListItemResource25.Value" xml:space="preserve">
+    <value>BJ</value>
+  </data>
+  <data name="ListItemResource250.Text" xml:space="preserve">
+    <value>Neuer..</value>
+  </data>
+  <data name="ListItemResource250.Value" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="ListItemResource251.Text" xml:space="preserve">
+    <value>Italy - Roma - via arice, 1</value>
+  </data>
+  <data name="ListItemResource251.Value" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="ListItemResource26.Text" xml:space="preserve">
+    <value>Bermuda</value>
+  </data>
+  <data name="ListItemResource26.Value" xml:space="preserve">
+    <value>BM</value>
+  </data>
+  <data name="ListItemResource27.Text" xml:space="preserve">
+    <value>Bhutan</value>
+  </data>
+  <data name="ListItemResource27.Value" xml:space="preserve">
+    <value>BT</value>
+  </data>
+  <data name="ListItemResource28.Text" xml:space="preserve">
+    <value>Bolivia</value>
+  </data>
+  <data name="ListItemResource28.Value" xml:space="preserve">
+    <value>BO</value>
+  </data>
+  <data name="ListItemResource29.Text" xml:space="preserve">
+    <value>Bosnia and Herzegovina</value>
+  </data>
+  <data name="ListItemResource29.Value" xml:space="preserve">
+    <value>BA</value>
+  </data>
+  <data name="ListItemResource3.Text" xml:space="preserve">
+    <value>Åland Islands</value>
+  </data>
+  <data name="ListItemResource3.Value" xml:space="preserve">
+    <value>AX</value>
+  </data>
+  <data name="ListItemResource30.Text" xml:space="preserve">
+    <value>Botswana</value>
+  </data>
+  <data name="ListItemResource30.Value" xml:space="preserve">
+    <value>BW</value>
+  </data>
+  <data name="ListItemResource31.Text" xml:space="preserve">
+    <value>Bouvet Island</value>
+  </data>
+  <data name="ListItemResource31.Value" xml:space="preserve">
+    <value>BV</value>
+  </data>
+  <data name="ListItemResource32.Text" xml:space="preserve">
+    <value>Brazil</value>
+  </data>
+  <data name="ListItemResource32.Value" xml:space="preserve">
+    <value>BR</value>
+  </data>
+  <data name="ListItemResource33.Text" xml:space="preserve">
+    <value>British Indian Ocean Territory</value>
+  </data>
+  <data name="ListItemResource33.Value" xml:space="preserve">
+    <value>IO</value>
+  </data>
+  <data name="ListItemResource34.Text" xml:space="preserve">
+    <value>Brunei Darussalam</value>
+  </data>
+  <data name="ListItemResource34.Value" xml:space="preserve">
+    <value>BN</value>
+  </data>
+  <data name="ListItemResource35.Text" xml:space="preserve">
+    <value>Bulgaria</value>
+  </data>
+  <data name="ListItemResource35.Value" xml:space="preserve">
+    <value>BG</value>
+  </data>
+  <data name="ListItemResource36.Text" xml:space="preserve">
+    <value>Burkina Faso</value>
+  </data>
+  <data name="ListItemResource36.Value" xml:space="preserve">
+    <value>BF</value>
+  </data>
+  <data name="ListItemResource37.Text" xml:space="preserve">
+    <value>Burundi</value>
+  </data>
+  <data name="ListItemResource37.Value" xml:space="preserve">
+    <value>BI</value>
+  </data>
+  <data name="ListItemResource38.Text" xml:space="preserve">
+    <value>Cambodia</value>
+  </data>
+  <data name="ListItemResource38.Value" xml:space="preserve">
+    <value>KH</value>
+  </data>
+  <data name="ListItemResource39.Text" xml:space="preserve">
+    <value>Cameroon</value>
+  </data>
+  <data name="ListItemResource39.Value" xml:space="preserve">
+    <value>CM</value>
+  </data>
+  <data name="ListItemResource4.Text" xml:space="preserve">
+    <value>Albania</value>
+  </data>
+  <data name="ListItemResource4.Value" xml:space="preserve">
+    <value>AL</value>
+  </data>
+  <data name="ListItemResource40.Text" xml:space="preserve">
+    <value>Canada</value>
+  </data>
+  <data name="ListItemResource40.Value" xml:space="preserve">
+    <value>CA</value>
+  </data>
+  <data name="ListItemResource41.Text" xml:space="preserve">
+    <value>Cape Verde</value>
+  </data>
+  <data name="ListItemResource41.Value" xml:space="preserve">
+    <value>CV</value>
+  </data>
+  <data name="ListItemResource42.Text" xml:space="preserve">
+    <value>Cayman Islands</value>
+  </data>
+  <data name="ListItemResource42.Value" xml:space="preserve">
+    <value>KY</value>
+  </data>
+  <data name="ListItemResource43.Text" xml:space="preserve">
+    <value>Central African Republic</value>
+  </data>
+  <data name="ListItemResource43.Value" xml:space="preserve">
+    <value>CF</value>
+  </data>
+  <data name="ListItemResource44.Text" xml:space="preserve">
+    <value>Chad</value>
+  </data>
+  <data name="ListItemResource44.Value" xml:space="preserve">
+    <value>TD</value>
+  </data>
+  <data name="ListItemResource45.Text" xml:space="preserve">
+    <value>Chile</value>
+  </data>
+  <data name="ListItemResource45.Value" xml:space="preserve">
+    <value>CL</value>
+  </data>
+  <data name="ListItemResource46.Text" xml:space="preserve">
+    <value>China</value>
+  </data>
+  <data name="ListItemResource46.Value" xml:space="preserve">
+    <value>CN</value>
+  </data>
+  <data name="ListItemResource47.Text" xml:space="preserve">
+    <value>Christmas Island</value>
+  </data>
+  <data name="ListItemResource47.Value" xml:space="preserve">
+    <value>CX</value>
+  </data>
+  <data name="ListItemResource48.Text" xml:space="preserve">
+    <value>Cocos (Keeling) Islands</value>
+  </data>
+  <data name="ListItemResource48.Value" xml:space="preserve">
+    <value>CC</value>
+  </data>
+  <data name="ListItemResource49.Text" xml:space="preserve">
+    <value>Colombia</value>
+  </data>
+  <data name="ListItemResource49.Value" xml:space="preserve">
+    <value>CO</value>
+  </data>
+  <data name="ListItemResource5.Text" xml:space="preserve">
+    <value>Algeria</value>
+  </data>
+  <data name="ListItemResource5.Value" xml:space="preserve">
+    <value>DZ</value>
+  </data>
+  <data name="ListItemResource50.Text" xml:space="preserve">
+    <value>Comoros</value>
+  </data>
+  <data name="ListItemResource50.Value" xml:space="preserve">
+    <value>KM</value>
+  </data>
+  <data name="ListItemResource51.Text" xml:space="preserve">
+    <value>Congo</value>
+  </data>
+  <data name="ListItemResource51.Value" xml:space="preserve">
+    <value>CG</value>
+  </data>
+  <data name="ListItemResource52.Text" xml:space="preserve">
+    <value>Congo, The Democratic Republic of The</value>
+  </data>
+  <data name="ListItemResource52.Value" xml:space="preserve">
+    <value>CD</value>
+  </data>
+  <data name="ListItemResource53.Text" xml:space="preserve">
+    <value>Cook Islands</value>
+  </data>
+  <data name="ListItemResource53.Value" xml:space="preserve">
+    <value>CK</value>
+  </data>
+  <data name="ListItemResource54.Text" xml:space="preserve">
+    <value>Costa Rica</value>
+  </data>
+  <data name="ListItemResource54.Value" xml:space="preserve">
+    <value>CR</value>
+  </data>
+  <data name="ListItemResource55.Text" xml:space="preserve">
+    <value>Cote D'ivoire</value>
+  </data>
+  <data name="ListItemResource55.Value" xml:space="preserve">
+    <value>CI</value>
+  </data>
+  <data name="ListItemResource56.Text" xml:space="preserve">
+    <value>Croatia</value>
+  </data>
+  <data name="ListItemResource56.Value" xml:space="preserve">
+    <value>HR</value>
+  </data>
+  <data name="ListItemResource57.Text" xml:space="preserve">
+    <value>Cuba</value>
+  </data>
+  <data name="ListItemResource57.Value" xml:space="preserve">
+    <value>CU</value>
+  </data>
+  <data name="ListItemResource58.Text" xml:space="preserve">
+    <value>Cyprus</value>
+  </data>
+  <data name="ListItemResource58.Value" xml:space="preserve">
+    <value>CY</value>
+  </data>
+  <data name="ListItemResource59.Text" xml:space="preserve">
+    <value>Czech Republic</value>
+  </data>
+  <data name="ListItemResource59.Value" xml:space="preserve">
+    <value>CZ</value>
+  </data>
+  <data name="ListItemResource6.Text" xml:space="preserve">
+    <value>American Samoa</value>
+  </data>
+  <data name="ListItemResource6.Value" xml:space="preserve">
+    <value>AS</value>
+  </data>
+  <data name="ListItemResource60.Text" xml:space="preserve">
+    <value>Denmark</value>
+  </data>
+  <data name="ListItemResource60.Value" xml:space="preserve">
+    <value>DK</value>
+  </data>
+  <data name="ListItemResource61.Text" xml:space="preserve">
+    <value>Djibouti</value>
+  </data>
+  <data name="ListItemResource61.Value" xml:space="preserve">
+    <value>DJ</value>
+  </data>
+  <data name="ListItemResource62.Text" xml:space="preserve">
+    <value>Dominica</value>
+  </data>
+  <data name="ListItemResource62.Value" xml:space="preserve">
+    <value>DM</value>
+  </data>
+  <data name="ListItemResource63.Text" xml:space="preserve">
+    <value>Dominican Republic</value>
+  </data>
+  <data name="ListItemResource63.Value" xml:space="preserve">
+    <value>DO</value>
+  </data>
+  <data name="ListItemResource64.Text" xml:space="preserve">
+    <value>Ecuador</value>
+  </data>
+  <data name="ListItemResource64.Value" xml:space="preserve">
+    <value>EC</value>
+  </data>
+  <data name="ListItemResource65.Text" xml:space="preserve">
+    <value>Egypt</value>
+  </data>
+  <data name="ListItemResource65.Value" xml:space="preserve">
+    <value>EG</value>
+  </data>
+  <data name="ListItemResource66.Text" xml:space="preserve">
+    <value>El Salvador</value>
+  </data>
+  <data name="ListItemResource66.Value" xml:space="preserve">
+    <value>SV</value>
+  </data>
+  <data name="ListItemResource67.Text" xml:space="preserve">
+    <value>Equatorial Guinea</value>
+  </data>
+  <data name="ListItemResource67.Value" xml:space="preserve">
+    <value>GQ</value>
+  </data>
+  <data name="ListItemResource68.Text" xml:space="preserve">
+    <value>Eritrea</value>
+  </data>
+  <data name="ListItemResource68.Value" xml:space="preserve">
+    <value>ER</value>
+  </data>
+  <data name="ListItemResource69.Text" xml:space="preserve">
+    <value>Estonia</value>
+  </data>
+  <data name="ListItemResource69.Value" xml:space="preserve">
+    <value>EE</value>
+  </data>
+  <data name="ListItemResource7.Text" xml:space="preserve">
+    <value>Andorra</value>
+  </data>
+  <data name="ListItemResource7.Value" xml:space="preserve">
+    <value>AD</value>
+  </data>
+  <data name="ListItemResource70.Text" xml:space="preserve">
+    <value>Ethiopia</value>
+  </data>
+  <data name="ListItemResource70.Value" xml:space="preserve">
+    <value>ET</value>
+  </data>
+  <data name="ListItemResource71.Text" xml:space="preserve">
+    <value>Falkland Islands (Malvinas)</value>
+  </data>
+  <data name="ListItemResource71.Value" xml:space="preserve">
+    <value>FK</value>
+  </data>
+  <data name="ListItemResource72.Text" xml:space="preserve">
+    <value>Faroe Islands</value>
+  </data>
+  <data name="ListItemResource72.Value" xml:space="preserve">
+    <value>FO</value>
+  </data>
+  <data name="ListItemResource73.Text" xml:space="preserve">
+    <value>Fiji</value>
+  </data>
+  <data name="ListItemResource73.Value" xml:space="preserve">
+    <value>FJ</value>
+  </data>
+  <data name="ListItemResource74.Text" xml:space="preserve">
+    <value>Finland</value>
+  </data>
+  <data name="ListItemResource74.Value" xml:space="preserve">
+    <value>FI</value>
+  </data>
+  <data name="ListItemResource75.Text" xml:space="preserve">
+    <value>France</value>
+  </data>
+  <data name="ListItemResource75.Value" xml:space="preserve">
+    <value>FR</value>
+  </data>
+  <data name="ListItemResource76.Text" xml:space="preserve">
+    <value>French Guiana</value>
+  </data>
+  <data name="ListItemResource76.Value" xml:space="preserve">
+    <value>GF</value>
+  </data>
+  <data name="ListItemResource77.Text" xml:space="preserve">
+    <value>French Polynesia</value>
+  </data>
+  <data name="ListItemResource77.Value" xml:space="preserve">
+    <value>PF</value>
+  </data>
+  <data name="ListItemResource78.Text" xml:space="preserve">
+    <value>French Southern Territories</value>
+  </data>
+  <data name="ListItemResource78.Value" xml:space="preserve">
+    <value>TF</value>
+  </data>
+  <data name="ListItemResource79.Text" xml:space="preserve">
+    <value>Gabon</value>
+  </data>
+  <data name="ListItemResource79.Value" xml:space="preserve">
+    <value>GA</value>
+  </data>
+  <data name="ListItemResource8.Text" xml:space="preserve">
+    <value>Angola</value>
+  </data>
+  <data name="ListItemResource8.Value" xml:space="preserve">
+    <value>AO</value>
+  </data>
+  <data name="ListItemResource80.Text" xml:space="preserve">
+    <value>Gambia</value>
+  </data>
+  <data name="ListItemResource80.Value" xml:space="preserve">
+    <value>GM</value>
+  </data>
+  <data name="ListItemResource81.Text" xml:space="preserve">
+    <value>Georgia</value>
+  </data>
+  <data name="ListItemResource81.Value" xml:space="preserve">
+    <value>GE</value>
+  </data>
+  <data name="ListItemResource82.Text" xml:space="preserve">
+    <value>Germany</value>
+  </data>
+  <data name="ListItemResource82.Value" xml:space="preserve">
+    <value>DE</value>
+  </data>
+  <data name="ListItemResource83.Text" xml:space="preserve">
+    <value>Ghana</value>
+  </data>
+  <data name="ListItemResource83.Value" xml:space="preserve">
+    <value>GH</value>
+  </data>
+  <data name="ListItemResource84.Text" xml:space="preserve">
+    <value>Gibraltar</value>
+  </data>
+  <data name="ListItemResource84.Value" xml:space="preserve">
+    <value>GI</value>
+  </data>
+  <data name="ListItemResource85.Text" xml:space="preserve">
+    <value>Greece</value>
+  </data>
+  <data name="ListItemResource85.Value" xml:space="preserve">
+    <value>GR</value>
+  </data>
+  <data name="ListItemResource86.Text" xml:space="preserve">
+    <value>Greenland</value>
+  </data>
+  <data name="ListItemResource86.Value" xml:space="preserve">
+    <value>GL</value>
+  </data>
+  <data name="ListItemResource87.Text" xml:space="preserve">
+    <value>Grenada</value>
+  </data>
+  <data name="ListItemResource87.Value" xml:space="preserve">
+    <value>GD</value>
+  </data>
+  <data name="ListItemResource88.Text" xml:space="preserve">
+    <value>Guadeloupe</value>
+  </data>
+  <data name="ListItemResource88.Value" xml:space="preserve">
+    <value>GP</value>
+  </data>
+  <data name="ListItemResource89.Text" xml:space="preserve">
+    <value>Guam</value>
+  </data>
+  <data name="ListItemResource89.Value" xml:space="preserve">
+    <value>GU</value>
+  </data>
+  <data name="ListItemResource9.Text" xml:space="preserve">
+    <value>Anguilla</value>
+  </data>
+  <data name="ListItemResource9.Value" xml:space="preserve">
+    <value>AI</value>
+  </data>
+  <data name="ListItemResource90.Text" xml:space="preserve">
+    <value>Guatemala</value>
+  </data>
+  <data name="ListItemResource90.Value" xml:space="preserve">
+    <value>GT</value>
+  </data>
+  <data name="ListItemResource91.Text" xml:space="preserve">
+    <value>Guernsey</value>
+  </data>
+  <data name="ListItemResource91.Value" xml:space="preserve">
+    <value>GG</value>
+  </data>
+  <data name="ListItemResource92.Text" xml:space="preserve">
+    <value>Guinea</value>
+  </data>
+  <data name="ListItemResource92.Value" xml:space="preserve">
+    <value>GN</value>
+  </data>
+  <data name="ListItemResource93.Text" xml:space="preserve">
+    <value>Guinea-bissau</value>
+  </data>
+  <data name="ListItemResource93.Value" xml:space="preserve">
+    <value>GW</value>
+  </data>
+  <data name="ListItemResource94.Text" xml:space="preserve">
+    <value>Guyana</value>
+  </data>
+  <data name="ListItemResource94.Value" xml:space="preserve">
+    <value>GY</value>
+  </data>
+  <data name="ListItemResource95.Text" xml:space="preserve">
+    <value>Haiti</value>
+  </data>
+  <data name="ListItemResource95.Value" xml:space="preserve">
+    <value>HT</value>
+  </data>
+  <data name="ListItemResource96.Text" xml:space="preserve">
+    <value>Heard Island and Mcdonald Islands</value>
+  </data>
+  <data name="ListItemResource96.Value" xml:space="preserve">
+    <value>HM</value>
+  </data>
+  <data name="ListItemResource97.Text" xml:space="preserve">
+    <value>Holy See (Vatican City State)</value>
+  </data>
+  <data name="ListItemResource97.Value" xml:space="preserve">
+    <value>VA</value>
+  </data>
+  <data name="ListItemResource98.Text" xml:space="preserve">
+    <value>Honduras</value>
+  </data>
+  <data name="ListItemResource98.Value" xml:space="preserve">
+    <value>HN</value>
+  </data>
+  <data name="ListItemResource99.Text" xml:space="preserve">
+    <value>Hong Kong</value>
+  </data>
+  <data name="ListItemResource99.Value" xml:space="preserve">
+    <value>HK</value>
+  </data>
+  <data name="Literal10Resource1.Text" xml:space="preserve">
+    <value>Code</value>
+  </data>
+  <data name="Literal11Resource1.Text" xml:space="preserve">
+    <value>Geräteinformation</value>
+  </data>
+  <data name="Literal12Resource1.Text" xml:space="preserve">
+    <value>Geräteadresse</value>
+  </data>
+  <data name="Literal13Resource1.Text" xml:space="preserve">
+    <value>Gültige Adresse eingeben</value>
+  </data>
+  <data name="Literal14Resource1.Text" xml:space="preserve">
+    <value>Vorhandene Adresse verwenden</value>
+  </data>
+  <data name="Literal15Resource1.Text" xml:space="preserve">
+    <value>oder neue Adresse eingeben</value>
+  </data>
+  <data name="Literal16Resource1.Text" xml:space="preserve">
+    <value>Land</value>
+  </data>
+  <data name="Literal17Resource1.Text" xml:space="preserve">
+    <value>Stadt</value>
+  </data>
+  <data name="Literal18Resource1.Text" xml:space="preserve">
+    <value>Provinz</value>
+  </data>
+  <data name="Literal19Resource1.Text" xml:space="preserve">
+    <value>Strasse</value>
+  </data>
+  <data name="Literal1Resource1.Text" xml:space="preserve">
+    <value>Anlage hinzufügen</value>
+  </data>
+  <data name="Literal20Resource1.Text" xml:space="preserve">
+    <value>Nummer</value>
+  </data>
+  <data name="Literal21Resource1.Text" xml:space="preserve">
+    <value>Administrator</value>
+  </data>
+  <data name="Literal22Resource1.Text" xml:space="preserve">
+    <value>Administratordaten für diese Anlage hinzufügen</value>
+  </data>
+  <data name="Literal23Resource1.Text" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="Literal24Resource1.Text" xml:space="preserve">
+    <value>Hinweis: Bediener ist für die Wartung vom Administrator autorisiert</value>
+  </data>
+  <data name="Literal25Resource1.Text" xml:space="preserve">
+    <value>Telefon</value>
+  </data>
+  <data name="Literal26Resource1.Text" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="Literal27Resource1.Text" xml:space="preserve">
+    <value>Bediener</value>
+  </data>
+  <data name="Literal28Resource1.Text" xml:space="preserve">
+    <value>Bedienerinformation eingeben</value>
+  </data>
+  <data name="Literal29Resource1.Text" xml:space="preserve">
+    <value>Bedienername</value>
+  </data>
+  <data name="Literal2Resource1.Text" xml:space="preserve">
+    <value>Code</value>
+  </data>
+  <data name="Literal30Resource1.Text" xml:space="preserve">
+    <value>Passwort</value>
+  </data>
+  <data name="Literal31Resource1.Text" xml:space="preserve">
+    <value>Sollwert bearbeiten</value>
+  </data>
+  <data name="Literal32Resource1.Text" xml:space="preserve">
+    <value>Standort</value>
+  </data>
+  <data name="Literal33Resource1.Text" xml:space="preserve">
+    <value>Neues Gerät zum Standort hinzufügen</value>
+  </data>
+  <data name="Literal34Resource1.Text" xml:space="preserve">
+    <value>Vorhandenen Standort wählen</value>
+  </data>
+  <data name="Literal35Resource1.Text" xml:space="preserve">
+    <value>Neuer Standort</value>
+  </data>
+  <data name="Literal36Resource1.Text" xml:space="preserve">
+    <value>Gerät</value>
+  </data>
+  <data name="Literal37Resource1.Text" xml:space="preserve">
+    <value>Name des neuen Gerätes hinzufügen</value>
+  </data>
+  <data name="Literal38Resource1.Text" xml:space="preserve">
+    <value>Vorhandenes Gerät wählen</value>
+  </data>
+  <data name="Literal39Resource1.Text" xml:space="preserve">
+    <value>Neues Gerät</value>
+  </data>
+  <data name="Literal3Resource1.Text" xml:space="preserve">
+    <value>Adresse</value>
+  </data>
+  <data name="Literal40Resource1.Text" xml:space="preserve">
+    <value>Erste</value>
+  </data>
+  <data name="Literal41Resource1.Text" xml:space="preserve">
+    <value>Vorherige</value>
+  </data>
+  <data name="Literal42Resource1.Text" xml:space="preserve">
+    <value>Letzte</value>
+  </data>
+  <data name="Literal43Resource1.Text" xml:space="preserve">
+    <value>Nächste</value>
+  </data>
+  <data name="Literal4Resource1.Text" xml:space="preserve">
+    <value>Administrator</value>
+  </data>
+  <data name="Literal50Resource1.Text" xml:space="preserve">
+    <value>Bediener wählen</value>
+  </data>
+  <data name="Literal5Resource1.Text" xml:space="preserve">
+    <value>Standort</value>
+  </data>
+  <data name="Literal60Resource1.Text" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="Literal6Resource1.Text" xml:space="preserve">
+    <value>Gerät</value>
+  </data>
+  <data name="Literal7Resource1.Text" xml:space="preserve">
+    <value>Geräteinformation</value>
+  </data>
+  <data name="Literal8Resource1.Text" xml:space="preserve">
+    <value>Informationen über das neue Gerät eingeben</value>
+  </data>
+  <data name="Literal9Resource1.Text" xml:space="preserve">
+    <value>Bediener</value>
+  </data>
+  <data name="PageResource1.Title" xml:space="preserve">
+    <value>ERMES Communication software</value>
+  </data>
+  <data name="save_impianto_newResource1.Text" xml:space="preserve">
+    <value>Finish</value>
+  </data>
+  <data name="save_impianto_newResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="sottogruppiResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Text10Resource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Text10Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Text11Resource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Text11Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Text12Resource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Text12Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Text1Resource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Text1Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Text2Resource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Text2Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Text3Resource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Text3Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Text4Resource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Text4Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Text6Resource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Text6Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Text7Resource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Text7Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Text9Resource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Text9Resource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="textDescriptionResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="textDescriptionResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="textGruppoResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="textGruppoResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="utilizzatore_listResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Literal2_1Resource1.Text" xml:space="preserve">
+    <value>Step 3</value>
+  </data>
+  <data name="Literal3_1Resource1.Text" xml:space="preserve">
+    <value>Step 4</value>
+  </data>
+  <data name="Literal4_1Resource1.Text" xml:space="preserve">
+    <value>Step 5</value>
+  </data>
+  <data name="Literal5_1Resource1.Text" xml:space="preserve">
+    <value>Step 1</value>
+  </data>
+  <data name="Literal6_1Resource1.Text" xml:space="preserve">
+    <value>Step 2</value>
+  </data>
+  <data name="Literal9_1Resource1.Text" xml:space="preserve">
+    <value>Step 6</value>
+  </data>
+</root>

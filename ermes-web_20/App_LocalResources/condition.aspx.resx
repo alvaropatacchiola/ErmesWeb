@@ -1,0 +1,278 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="LiteralResource1.Text" xml:space="preserve">
+    <value>&lt;h1&gt;&lt;strong&gt;CONDIZIONI D'USO&lt;/strong&gt;
+&lt;/h1&gt;In vigore da: 1 gen 2013&lt;hr class="separator"&gt;
+		&lt;!-- Row --&gt;
+	  &lt;div class="row-fluid row-merge"&gt;
+		
+			&lt;!-- Column --&gt;
+		&lt;div class="span12"&gt;
+				&lt;div class="innerAll left"&gt;&lt;p&gt;&lt;strong&gt;CONDIZIONI D'USO&lt;/strong&gt;&lt;br&gt;
+  In vigore da: 1 gen 2013&lt;/p&gt;
+&lt;p&gt;EMEC SRL ed i suoi affiliati, nel caso indicati collettivamente come 'EMEC SRL', 'noi' e 'nostro' fabbricano, commercializzano e vendono prodotti di elettronica (il &amp;quot;Prodotto&amp;quot;). Forniamo anche funzionalità aggiuntive come (a) il sito web all'indirizzo http://www.ermes-server.com e più in generale tutte le URL e siti web amministrati da EMEC SRL o all'interno del dominio EMEC.it (il 'Sito'), (b) servizi disponibili sul Sito e / o forniti attraverso il Sito (il 'Servizi online'), (c) alcuni software che possono essere scaricati sul computer (il 'Software'), e (d) alcuni software che possono essere scaricati sul dispositivo mobile (il 'software mobile'). Come qui usato, il termine 'Software' si intende il Software Computer e il software mobile; il termine 'servizi &amp;quot; indicano il sito, Servizi Online, software per computer e software Mobile. I termini 'tu' o 'utente' si riferiscono a tutti gli individui e le entità che accedono e / o utilizzano tali servizi. Queste condizioni di utilizzo regolano l'accesso e l'utilizzo dei Servizi.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;1. OGGETTO E ACCETTAZIONE DEI TERMINI DI UTILIZZO.&lt;/strong&gt;&lt;br&gt;
+  1.1 Le presenti Condizioni di utilizzo e politica sulla privacy sono disponibili al http://www.ermes-server.com ('Informativa sulla Privacy'), il quale è completamente incorporato e costituisce, con i Termini di utilizzo, un solo e unico documento che disciplina l'accesso e l'utilizzo dei Servizi. Si prega di leggere attentamente.&lt;br&gt;
+  1.2 Effettuano la registrazione al sito, accesso e / o l'utilizzo in tutto o in parte dei Servizi, l'utente riconosce di aver letto e compreso, e accetta di essere vincolato dalle disposizioni di queste Condizioni d'Uso e Politica sulla Privacy. Se non siete d'accordo con tutto o parte di queste Condizioni d'Uso o sulla privacy, non la registrazione, l'accesso, navigare o utilizzare in tutto o parte dei Servizi.&lt;br&gt;
+  1.3 Possiamo modificare le presenti Condizioni di utilizzo in qualsiasi momento senza preavviso. Si può leggere la versione aggiornata e la versione effettiva di queste Condizioni d'Uso in qualsiasi momento sul sito. Le nuove condizioni di utilizzo diventeranno effettive dopo la pubblicazione sul sito. Qualsiasi uso dei Servizi dopo tale pubblicazione costituisce l'accettazione di tali modifiche. Se non siete d'accordo con tutti o parte dei Termini di utilizzo riveduti, non continuate ad utilizzare i Servizi e cancellate qualsiasi registrazione effettuata.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;2. UTILIZZO DEI SERVIZI.&lt;/strong&gt;&lt;br&gt;
+  2.1 I Servizi sono per l'uso da parte di utenti che hanno almeno 18 anni di età. Gli utenti di età inferiore ai 18 anni non sono autorizzati ad utilizzare i Servizi senza il consenso di un genitore o di un tutore legale. Con la registrazione, l'accesso o l'utilizzo dei Servizi, l'utente dichiara che le informazioni fornite tra cui l'età o il consenso di un genitore o tutore legale sono accurate e complete.&lt;br&gt;
+  2.2 Tutti i Servizi che contengono tutti i tipi di informazioni e di materiale, compreso ma non limitato a software, testo, grafica, comunicazione, misure, test, risultati, opinioni, fotografie, disegni, profili, messaggi, note, link siti web, musica, file video o altre immagini animate o non animate, disegni, musica, file audio o altri suoni, report, grafici e file di dati, e qualsiasi altro contenuto, sono di proprietà o concessi in licenza a EMEC SRL anche da parte di terzi, compresi gli altri utenti dei Servizi, ad esclusione del vostro User Generated Content e cioè Contenuto Generato dall&amp;rsquo;Utente, come di seguito definito 'Content'.&lt;br&gt;
+  2.3 I servizi e contenuti sono protetti dalle leggi sulla proprietà intellettuale italiane e qualsiasi altro diritto di proprietà intellettuale che può applicarsi. L'utente prende atto ed accetta che EMEC SRL (o dei suoi licenziatari) detengono tutti i diritti legali, titoli e interessi e ai Servizi e contenuti, inclusi i diritti di proprietà intellettuale che esistono sui Servizi e Contenuti (sia che quei diritti siano da registrare o no , e ovunque nel mondo possano esistere tali diritti). Lei inoltre riconosce che i Servizi possono contenere informazioni che sono qualificate come confidenziali da EMEC SRL e che non si devono divulgare tali informazioni senza il previo consenso scritto di EMEC SRL.&lt;/p&gt;
+&lt;p&gt;2.4 EMEC SRL ti dà una, in tutto il mondo, licenza personale priva di royalty, non cedibile, non trasferibile e non esclusiva di utilizzare il contenuto fornito come parte dei Servizi. Questa licenza ha il solo scopo di consentire di utilizzare e godere del beneficio del prodotto (i) che avete registrato sul Sito e, fino a quando si ha il diritto di essere registrati, di accedere o di utilizzare i servizi, in modalità consentite dalle presenti Condizioni d'Uso. Non deve, e non devi permettere a nessun altro di, copiare, riprodurre, modificare, tradurre, trasmettere, eseguire, visualizzare, distribuire, trasmettere, telaio, ripubblicare, scaricare, visualizzare, eseguire, pubblicare, trasmettere, vendere, fare un commerciale utilizzare, creare opere derivate, decodificare, decompilare o altrimenti tentare di estrarre qualsiasi codice dei Servizi e Contenuti salvo che EMEC SRL l&amp;rsquo;abbia espressamente riconosciuto per iscritto. L'utente accetta di non utilizzare metodi di raccolta dei dati come data mining, robots, sniffing, scraping o similari sistemi di estrapolazione dei dati.&lt;br&gt;
+  2.5 Nessun altro uso è consentito senza il nostro previo consenso scritto. È necessario mantenere i diritti d'autore e altri diritti di proprietà contenuti nel Content originale e su qualsiasi copia  del contenuto.&lt;br&gt;
+  2.6 I marchi, marchi di servizio, loghi, nomi di dominio e altri segni distintivi del marchio di EMEC SRL (il 'EMEC SRL', 'ERMES ') utilizzati e visualizzati sono registrati. Tutti i prodotti e servizi i nomi disponibili attraverso i Servizi possono essere marchi o marchi di servizio di proprietà di terzi. Oltre alle licenze e diritti espressamente concessi nel contesto di queste Condizioni d'Uso, nulla in servizi, contenuti o nelle presenti Condizioni di utilizzo deve essere interpretato come concessione, per implicazione, preclusione o altro, di qualsiasi licenza o diritto di utilizzare qualsiasi dei marchi visualizzati sui Servizi, senza il preventivo consenso scritto di EMEC SRL. I marchi di fabbrica non possono essere utilizzati per denigrare o arrecare danni in qualsiasi modo a EMEC SRL o terze parti applicabili, prodotti o servizi di terze parti di EMEC SRL o in qualsiasi modo (con giudizio commercialmente ragionevole) che potrebbero danneggiare l'eventuale attività dei suddetti . L'utilizzo di marchi come parte di un link o di qualsiasi sito web è vietato senza il preventivo consenso scritto di EMEC SRL. Tutto l&amp;rsquo;eventuale guadagno generato dall'uso di qualsiasi marchio di proprietà di EMEC SRL sarà imputabile a favore di EMEC SRL.&lt;br&gt;
+  2.7 L'utente si impegna a non: (a) intraprendere alcuna azione che imponga un carico eccessivo per le infrastrutture dei Servizi, (b) usare qualsiasi dispositivo, software o routine per interferire o tentare di interferire con il corretto funzionamento dei servizi o qualsiasi attività sia condotta sui servizi, (c) il tentativo di decifrare, decompilare, disassemblare o decodificare il software che comprende o che compongono i Servizi, (d) eliminare o modificare qualsiasi materiale pubblicato sul Sito da EMEC SRL o di qualsiasi altra persona o entità e / o (e) frame o link a qualsiasi dei materiali o delle informazioni disponibili sui Servizi.&lt;br&gt;
+  2.8 Alcuni elementi dei Servizi sono protetti da accordi commerciali, marchi di fabbrica, la concorrenza sleale e da altre leggi e non possono essere copiati o imitati in tutto o in parte, con qualsiasi mezzo, compreso ma non limitato a, l'uso di framing o mirroring, salvo quanto espressamente consentito dalla sezione 2.4 di queste Condizioni d'Uso. Nessuno dei contenuti per i Servizi può essere ritrasmesso senza l'esplicito consenso scritto da parte EMEC SRL per ogni istanza.&lt;br&gt;
+  2.9 Se credi in buona fede che i materiali sui servizi forniti da EMEC SRL violano il tuo copyright o diritti d'autore, voi (o il vostro agente), potete mandare un avviso che richiede che il materiale sia rimosso o l'accesso ad esso bloccato. Notifiche e comunicazioni in relazione ai Servizi devono essere inviate a EMEC SRL:&lt;/p&gt;
+&lt;p&gt;Per posta: EMEC Srl Sede Legale, Corso Vittorio Emanuele II, 15 - 20122 Milano (ITALIA)&lt;br&gt;
+  Per e-mail: copyright@emec.it&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;3. User Generated Content&lt;/strong&gt;&lt;br&gt;
+  3.1 La User Generated Content (la 'UGC') è tutto il tipo di informazioni e di materiale, incluso ma non limitato al software, testo grafico, comunicazione, le misure, le prove, i risultati, le opinioni, fotografie, disegni, profili, messaggi, note, sito web link, musica, video o altri file immagini animate o non animate, disegni, musica, file audio o altri suoni, report, grafici e file di dati, e qualsiasi altro contenuto, comprese le Valutazioni e presentazioni, come definito di seguito, che si pubblica, visualizza, carica, divulga, trasmette, archivia, condivide o rende disponibile (&amp;quot;post&amp;quot;) su o tramite i Servizi o l'utilizzo del prodotto. Questo include tutti i dati trasmessi, ricevuti ed elaborati dal vostro prodotto EMEC SRL  od affiliati / rivenditori da e verso il server ERMES WEB.&lt;br&gt;
+  3.2 Con la pubblicazione, la visualizzazione, il caricamento, la divulgazione, la trasmissione, l'archiviazione, la condivisione, invio o altrimenti reso disponibile il tuo UGC su o tramite i Servizi, l'utente concede a EMEC SRL una licenza perpetua, irrevocabile, non esclusiva, in tutto il mondo, license-free ed il diritto di concedere in sublicenza, copiare, riprodurre, modificare, tradurre, trasmettere, eseguire, visualizzare distribuire, trasmettere, ripubblicare, scaricare, visualizzare, eseguire, vendere, fare un uso commerciale e commerciale, creare opere derivate, decodificare, decompilare, estrarre qualsiasi parte di codice da uno dei tuoi UGC e di archiviarlo o distribuirlo su qualsiasi supporto ora esistente o in futuro sviluppati, compresi, senza limitazione su siti web, in formato audio, e in qualsiasi formato dei supporti di stampa. Si rinuncia a qualsiasi diritto di pubblicità e privacy rispetto al UGC e tutti gli altri diritti legali o morali che possano precludere l'uso di EMEC SRL della UGC o richiedere il vostro permesso per utilizzare la UGC. L'utente accetta di non far valere alcuna pretesa, fondati su illeciti, contratti o altra teoria legale, contro EMEC SRL o dei suoi sublicenziatari relativi a EMEC SRL, uso dei suoi sub licenziatari della UGC e con la presente solleva EMEC SRL ed i suoi sublicenziatari dal contestare tali accettazioni.&lt;br&gt;
+  3.3 Lei dichiara che UGC: (i) non viola il copyright, brevetti, marchi, segreti commerciali di terze parti o altri diritti di proprietà; (Ii) non viola alcuna legge, statuto, ordinanza o regolamento; (Iii) non contiene oscenità o materiale pedopornografico; (Iv) non contiene virus, worm, bombe a tempo o altro codice di programmazione di computer che è destinato a danneggiare, interferire negativamente, intercettare o espropriare qualsiasi sistema, dati o informazioni; (V) non violare i diritti di terzi di pubblicità o di privacy; e (vi) non sarà diffamatorio, illegalmente minacciosi o molesti, dannosi per i minori in qualsiasi modo, o comunque offensivi o inappropriati. Lei è responsabile del rispetto di tutte le leggi applicabili al vostro UGC.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;4. PUBBLICITA ', linking e framing.&lt;/strong&gt;&lt;br&gt;
+  Il Sito e Software possono contenere informazioni su, collegamenti da e / o pubblicità per i siti web gestiti da terzi (i &amp;quot;Siti di terzi&amp;quot;). Inoltre, e-mail inviate agli utenti dei Servizi possono contenere informazioni su, collegamenti da e / o pubblicità per siti di terze parti. Le informazioni fornite su, collegamenti da e annunci pubblicitari relativi siti di terze parti sono forniti solo per la vostra convenienza. Noi non controlliamo tali siti di terze parti e non siamo responsabili per il contenuto e le prestazioni di questi siti di terze parti e / o per le transazioni si può scegliere di condurre con gli operatori di siti di terzi. EMEC SRL suggerisce di leggere attentamente le condizioni di utilizzo e l'informativa sulla privacy (se del caso) applicabile ai siti di terze parti. Riconosci ed accetti che EMEC SRL non è responsabile per il contenuto dei siti collegati di terze parti, i siti inquadrati all'interno del sito o di terze parti pubblicità sul Sito e / o in email inviate da questo sito, e EMEC SRL non effettua alcuna dichiarazione riguardo il loro contenuto o la precisione. L'utilizzo di Siti terzi è a tuo rischio e soggetti ai termini e condizioni d'uso di tali siti.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;5. IDEE E SUGGERIMENTI NON RICHIESTI E RISPOSTE.&lt;/strong&gt;&lt;br&gt;
+  5.1 EMEC SRL apprezza il vostro interesse nei nostri prodotti e la nostra società e capisce che può ricevere commenti e suggerimenti. Tuttavia, EMEC SRL non vuole, e tu non dovresti inviare informazioni riservate o proprietarie a EMEC SRL attraverso i suoi servizi, o tramite qualsiasi altro mezzo. Si prega di notare che non si ha un accordo di riservatezza con EMEC SRL ed eventuali informazioni non richieste o materiale inviato a EMEC SRL non saranno considerati da EMEC SRL come informazioni riservate o proprietarie. Si potrebbe desiderare di consultarsi con un avvocato prima di effettuare qualsiasi presentazione non richiesta ad EMEC SRL in modo da poter capire quali saranno le conseguenze dell&amp;rsquo;operazione non richieste ad EMEC SRL. Se, tuttavia, si inviano informazioni e feedback non richiesti, compresi, senza limitazione, idee per nuove campagne pubblicitarie, nuove promozioni, prodotti nuovi o migliorati o tecnologie, miglioramenti di prodotto, processi, materiali, piani di marketing o nomi di nuovi prodotti (collettivamente, il ' Feedback '), si prega di essere consapevoli che, indipendentemente da ciò che la vostra lettera e / o di ogni altra documentazione di accompagnamento possa dire, siete d'accordo che le seguenti condizioni si applicano alla Risposte: (1) EMEC SRL, e coloro da noi designati, possono utilizzare o ridistribuire Feedback e / o eventuali parti di essi per qualsiasi scopo, inclusi scopi commerciali, e in alcun modo; senza alcun compenso per voi; (2) non vi è alcun obbligo per EMEC SRL di rivedere il feedback e / o fornire alcuna risposta o commento in merito alla stessa; e (3) non vi è alcun obbligo di conservare tutte le risposte riservate.&lt;br&gt;
+5.2 Dopo aver inviato risposte voi (1) garantite che siete lo sviluppatore originale e / o creatore del feedback e giuridicamente liberi di fare una tale divulgazione e di essere l'unico responsabile di eventuali danni derivanti dalla presentazione di qualsiasi informazione che è protetta attraverso copyright, legge sul segreto, diritto dei brevetti o altri diritti di proprietà e (2) capite la nostra politica di risposte, come stabilito nella presente sezione e accettate questa politica senza riserve.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;6. POLICY SULL&amp;rsquo;INVIO.&lt;/strong&gt;&lt;br&gt;
+  6.1 I Servizi possono fornire la possibilità di postare pubblicamente commenti, articoli e altri mezzi (collettivamente, le &amp;quot;presentazioni&amp;quot;). Pubblicando e / o in altro modo fornire iscrizioni ai servizi, si comprende pienamente e si accetta di concederci con i diritti di cui al paragrafo 5. È inoltre consentito a qualsiasi altro utenti di accedere, visualizzare, vedere, conservare e riprodurre tali Contributi per uso personale. L'utente prende atto che nella misura in cui si includono dati personali sui suoi Contributi, possiamo ripubblicare tali informazioni. EMEC SRL si riserva inoltre il diritto di modificare e modificare qualsiasi invio o rifiutare di accettare, pubblicare, visualizzare o trasmettere qualsiasi invio presentato a sua esclusiva discrezione.&lt;br&gt;
+  6.2 Anche se EMEC SRL non ha l'obbligo di monitorare le iscrizioni, si riconosce e accetta che noi possiamo svolgere una o tutte le seguenti attività: (i) monitorare le iscrizioni; (Ii) alterare, modificare o cancellare qualunque Materiale Presentato in tutto o in parte; o (iii) indicare eventuali iscrizioni. Le osservazioni pubblicate sul sito dagli utenti non indicano alcuna approvazione o l'avallo da EMEC SRL di tali invii. EMEC SRL non è responsabile e con la presente declina ogni e qualsiasi responsabilità che possono derivare dalle osservazioni.&lt;br&gt;
+  6.3 L'utente accetta di essere responsabile per il proprio utilizzo dei Servizi, per ogni invio e delle eventuali conseguenze. Lei accetta di utilizzare i Servizi in conformità a tutte le normative locali, statali, nazionali e internazionali leggi, norme e regolamenti, comprese le leggi relative alla trasmissione di dati tecnici esportati dal proprio Paese di residenza. Per fornire un forum dove le idee possono essere condivise in un ambiente produttivo e sicuro, non accetta di:&lt;br&gt;
+  (I) inviare informazioni private o in altro modo raccogliere o divulgare informazioni, di un altro senza il suo espresso consenso;&lt;br&gt;
+  (Ii) Pubblicare qualsiasi contenuto per il sito che è illegale, razzista, odioso, calunnioso, diffamatorio, osceno, o che discrimina intenzionalmente contro o molesta particolari individui o gruppi;&lt;br&gt;
+  (Iii) Pubblicare qualsiasi contenuto per il sito che viola la proprietà intellettuale di terze parti o di altri diritti;&lt;br&gt;
+  (Iv) Utilizzare i Servizi per scopi illegali, o trasmettere o altrimenti rendere disponibile in relazione ai servizi di qualsiasi materiale che possa dare luogo a responsabilità civile o penale;&lt;br&gt;
+  (V) utilizzare i Servizi per pubblicità, spam, sollecitazioni di indagine, posta indesiderata o altre sollecitazioni;&lt;br&gt;
+  (Vi) Impersonare qualsiasi persona o entità, compresi eventuali dipendenti EMEC SRL, o dichiarare il falso o altrimenti travisare la propria affiliazione con qualsiasi persona o entità;&lt;br&gt;
+  (Vii) implicano che EMEC SRL approva le tue affermazioni o posizioni;&lt;br&gt;
+  (Viii) intraprendere alcuna azione che imponga un carico irragionevole sul server;&lt;br&gt;
+  (Ix) Utilizzare qualsiasi dispositivo, software o routine per interferire o tentare di interferire con il corretto funzionamento dei Servizi o qualsiasi attività condotta sui Servizi;&lt;br&gt;
+  (X) tentare di decifrare, decompilare, disassemblare o decodificare qualsiasi software che comprende o la trasformazione dei Servizi; e / o&lt;br&gt;
+  (Xi) Eliminare o modificare qualsiasi materiale pubblicato da qualsiasi altra persona o entità.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;7. ESCLUSIONE DI CONTENUTO E GARANZIE.&lt;/strong&gt;&lt;br&gt;
+  7.1 La garanzia per il prodotto è esposto nella garanzia limitata disponibile su http://www.ermes-server.com.&lt;br&gt;
+  7.2 EMEC SRL, I SUOI ​​AFFILIATI, LORO RISPETTIVI, amministratori, dipendenti, agenti, fornitori, O LICENZIATARI non forniscono  garanzie o DICHIARAZIONI DI ALCUN TIPO, ESPLICITE O IMPLICITE, CIRCA IL CONTENUTO E SERVIZI, incluso ma non limitato al loro funzionamento, accuratezza, affidabilità, completezza, tempestività o affidabilità. EMEC SRL o LICENZIATARI NON GARANTISCONO CHE I SERVIZI opereranno senza ERRORI, saranno ininterrotti o DISPONIBILI IN QUALSIASI MOMENTO O DA QUALSIASI PARTICOLARE LOCATION, O CHE I SERVIZI, IL SERVER, O IL CONTENUTO, SONO PRIVI DI VIRUS O CONTAMINAZIONI SIMILI O CARATTERISTICHE DISTRUTTIVE. SE L'USO DEI SERVIZI O IL CONTENUTO CAUSA LA NECESSITÀ DI MANUTENZIONE O SOSTITUZIONE DI ATTREZZATURE O DATI,  EMEC SRL E LICENZIATARI NON SARANNO RESPONSABILI PER I COSTI. I SERVIZI E CONTENUTI SONO FORNITI 'COSÌ COM'È' E SU BASE 'COME DISPONIBILI' SENZA GARANZIE DI ALCUN TIPO, ESPRESSE O NON ESPRESSE. EMEC SRL E LINCENZIATARI NON FORNISCONO INOLTRE LE GARANZIE, COMPRESE, MA NON SOLO, DI TITOLO, COMMERCIABILITÀ, NON VIOLAZIONE DEI DIRITTI DI TERZI, E IDONEITÀ PER SCOPI SPECIFICI.&lt;br&gt;
+  7.3 I dati forniti dai  servizi sono presentati in maniera sommaria,  destinati ad essere utilizzati solo a scopo informativo. I dati, le misure così come qualsiasi altro tipo di contenuti forniti attraverso i servizi sono forniti senza alcuna garanzia di precisione e non devono essere utilizzati come fonte per prendere qualsiasi decisione.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;8. LIMITAZIONE DELLA RESPONSABILITÀ.&lt;/strong&gt;&lt;br&gt;
+  8.1 IN NESSUN CASO EMEC SRL PARTE SARA 'RESPONSABILE PER EVENTUALI DANNI INDIRETTI, ACCIDENTALI, PUNITIVI O CONSEGUENTI DI QUALSIASI TIPO (INCLUSI, SENZA LIMITAZIONE, PERDITA DI PROFITTI, DATI O INTERRUZIONE) DERIVANTI DALL'UTILIZZO O INCAPACITA' DI UTILIZZARE O DERIVANTI DA UTILIZZO DEI SERVIZI E IL LORO CONTENUTO, SIA CHE TALI DANNI SI FONDANO SU GARANZIA, CONTRATTO, TORTO (COMPRESA LA NEGLIGENZA), O QUALSIASI ALTRA TEORIA LEGALE, ANCHE SE QUALSIASI FACENTE PARTE DI EMEC SRL SIA STATO AVVISATO DELLA POSSIBILITÀ DI TALI DANNI. NESSUNO FACENTE PARTE DI EMEC SRL PUO&amp;rsquo; ESSERE SOGGETTO A RESPONSABILITÀ PER LA VERITÀ, ACCURATEZZA O COMPLETEZZA DEL CONTENUTO E SERVIZI, O QUALSIASI ALTRA informazioni trasmesse agli UTENTI, O PER ERRORI od omissioni, O PER EVENTUALI RITARDI O INTERRUZIONI DI DATI O INFORMAZIONI STREAM da qualsiasi causa. LEI ACCETTA DI USARE I SERVIZI E IL LORO CONTENUTO A VOSTRO RISCHIO E PERICOLO. LA RESPONSABILITÀ COMPLESSIVA DI EMEC SRL E LICENZIATARI, presi individualmente o collettivamente, DERIVANTI DA O RELATIVE AL SITO E SERVIZI (INDIPENDENTEMENTE DALLA FORMA DI azione o pretesa, come CONTRATTO, GARANZIA, ILLECITO, RESPONSABILITÀ OGGETTIVA, NEGLIGENZA, O QUALSIASI ALTRA TEORIA LEGALE ) è limitata alla somma di 100 € (euro cento).&lt;br&gt;
+  8.2 In alcuni paesi le leggi applicabile non consentono di determinare delle limitazioni o esclusioni, nel qual caso non possono applicarsi a voi. In tali paesi, LA RESPONSABILITA DI EMEC SRL E LICENZIATARI SARÀ LIMITATA NELLA MISURA MASSIMA CONSENTITA DALLA LEGGE.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;9. INDENNIZZO DI EMEC SRL.&lt;/strong&gt;&lt;br&gt;
+  Su semplice richiesta da noi, si accetta di difendere, indennizzare e manlevare EMEC SRL da e contro qualsiasi perdita, responsabilità, danni e costi, compresi, senza limitazione, le spese legali e contabili ragionevoli, derivanti o risultanti da qualsiasi pretesa, azione o richieste relative a (i) l'utilizzo o l'abuso dei servizi, comprese eventuali UGC; (Ii) violazione di queste Condizioni d'Uso; o (iii) qualsiasi violazione di qualsiasi proprietà intellettuale o altri diritti di terzi, o da qualsiasi legge applicabile in relazione all'uso dei Servizi. EMEC SRL fornisce preavviso di tale pretesa o procedimento. EMEC SRL si riserva il diritto di assumere la difesa esclusiva e il controllo di qualsiasi questione che è oggetto di indennizzo ai sensi della presente sezione. In tal caso, l'utente accetta di collaborare con tutte le richieste ragionevoli che forniscano difesa ad EMEC SRL su tale materia.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;10. FINE DEI SERVIZI.&lt;/strong&gt;&lt;br&gt;
+  10.1 Le presenti Condizioni di utilizzo continueranno ad applicarsi fino alla risoluzione da parte dell'utente o EMEC SRL come di seguito&amp;nbsp;:&lt;br&gt;
+  10.2 Se vuole risolvere il suo contratto con EMEC SRL, può farlo (a) notificando ad EMEC SRL in qualsiasi momento e (b) chiudendo il suo o suoi  account per i servizi che si utilizzano.&lt;br&gt;
+  10.3 EMEC SRL può, in qualsiasi momento, risolvere il contratto con lei se:&lt;br&gt;
+  a) avete violato qualsiasi disposizione di queste Condizioni d'uso (o ha agito in un modo che dimostra chiaramente che non intende o non è possibile, rispettare le disposizioni delle Condizioni di utilizzo); o&lt;br&gt;
+  b) EMEC SRL è tenuta a farlo per legge (ad esempio, in cui la fornitura dei Servizi nei suoi confronti è, o diviene, illegale); o&lt;br&gt;
+  c) il rapporto tra EMEC SRL e partner a cui EMEC SRL ha offerto i Servizi è stata interrotta o il partner ha deciso di non offrire più i servizi; o&lt;br&gt;
+  d) EMEC SRL sta effettuando transazioni per non fornire più i Servizi agli utenti nel Paese in cui lei è residente o da cui si utilizza la connessione, ad esempio nel caso dei servizi, a giudizio insindacabile di EMEC SRL, non più commercialmente fattibili.&lt;/p&gt;
+&lt;p&gt;10.4 Fatto salvo quanto sopra, EMEC SRL si riserva il diritto, a propria esclusiva discrezione, di limitare, sospendere o interrompere parti dei Servizi o del loro contenuto, in qualsiasi momento e per qualsiasi motivo senza preavviso o responsabilità. EMEC SRL si riserva il diritto di modificare, sospendere o interrompere tutti o parte dei Servizi o del loro contenuto, in qualsiasi momento e senza preavviso o responsabilità.&lt;br&gt;
+  L'utente riconosce e accetta che alcuni dei vostri UGC, come quelli mostrati nel vostro profilo, in qualsiasi parte del sito, o su qualsiasi piattaforme sociali, possono continuare ad apparire sul Sito o su altre piattaforme sociali, anche dopo che il vostro UGC viene rimosso dal il Sito o il vostro conto è terminato.&lt;br&gt;
+  10.5 Sezioni 2 (Utilizzo dei Servizi), 7 (Esclusione di contenuti e garanzie), 8 (Limitazione di responsabilità), 9 (Indennizzo EMEC SRL), 10 (Cessazione Condizioni di utilizzo), e 13 (Varie) sopravvivranno la cessazione di queste Condizioni d'Uso.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;11. UTENTE DEVE rispettare le leggi.&lt;/strong&gt;&lt;br&gt;
+  11.1 Tali servizi sono ospitati in ITALIA. Non abbiamo pretese, ne responsabilità in merito se il contenuto può essere scaricato, visto, o essere adeguato per l'uso al di fuori dell&amp;rsquo; ITALIA. Se si accede al contenuto o servizi al di fuori dell&amp;rsquo; ITALIA, lo si fa a proprio rischio e pericolo. Sia all'interno che al di fuori dell&amp;rsquo; ITALIA, lei è l'unico responsabile nel garantire il rispetto delle leggi della vostra giurisdizione specifica.&lt;br&gt;
+  11.2 L&amp;rsquo;ITALIA controlla le esportazioni di alcuni prodotti e informazioni. L'utente accetta espressamente di rispettare tali restrizioni e di non esportare o ri-esportare qualsiasi del Contenuto di Paesi o verso persone abitanti in Paese vietati ai sensi delle leggi sul controllo delle esportazioni. Scaricando il contenuto, lei esplicitamente accetta che non si trovi o colleghi da un Paese in cui sono vietate esportazioni o una persona fisica o giuridica per la quale è vietata tale esportazione. L'utente è responsabile del rispetto delle leggi in materia di importazione, esportazione o la riesportazione dei Contenuti.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;12. CREDITI  E CITAZIONI DI ALTRI MARCHI.&lt;/strong&gt;&lt;br&gt;
+  Tutti gli altri marchi sono di proprietà dei rispettivi proprietari.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;13. VARIE.&lt;/strong&gt;&lt;br&gt;
+  Queste condizioni di utilizzo sono regolate dalla legge italiana. Qualsiasi controversia derivante da queste Condizioni d'Uso sono di competenza esclusiva dei tribunali italiani competenti (Foro Competente Milano). Se una qualsiasi disposizione delle presenti Condizioni di Utilizzo sia ritenuta non valida da un tribunale competente, l'invalidità di tale disposizione non pregiudica la validità delle restanti disposizioni delle presenti Condizioni d'Uso, che rimarranno in vigore a tutti gli effetti.&lt;br&gt;
+  Il mancato comportamento di EMEC SRL nell&amp;rsquo;agire su o applicare a qualsiasi disposizione di queste Condizioni d'Uso non deve essere interpretata come una rinuncia a tale disposizione o qualsiasi altra disposizione in queste Condizioni d'Uso. Nessuna rinuncia deve essere efficace contro EMEC SRL se non fatta da un funzionario autorizzato di EMEC SRL per iscritto, e tale rinuncia deve essere interpretata come una rinuncia a qualsiasi altro o ulteriore istanza.&lt;br&gt;
+  Salvo quanto espressamente concordato tra EMEC SRL e licenziatari, le presenti Condizioni di Utilizzo costituiscono l'intero Condizioni di utilizzo tra voi e EMEC SRL rispetto alla materia, e sostituisce tutti gli accordi precedenti o contemporanee, sia scritti sia orali, tra lei e EMEC SRL in relazione alla materia in oggetto.&lt;br&gt;
+  I titoli delle sezioni sono previsti solo per comodità e non è data alcuna necessità legale.&lt;br&gt;
+  Le presenti Condizioni di utilizzo saranno in vigore a beneficio dei nostri successori, assegnatari, licenziatari, e sub licenziatarie.&lt;br&gt;
+  Le informazioni presentate o fornite dall'utente ai Servizi potrebbe essere accessibile al pubblico. Informazioni importanti e private ​​dovrebbero essere tutelati da voi. EMEC SRL non è responsabile per la tutela della privacy della posta elettronica o di altre informazioni trasferite tramite Internet o qualsiasi altra rete che è possibile utilizzare.&lt;br&gt;
+  La raccolta e il trattamento dei Dati Personali, fatto quando si utilizzano i servizi sono svolti secondo Legge n. 675 del 31 dicembre 1996 - Tutela delle PERSONE e di Altri soggetti RISPETTO al Trattamento dei Dati Personali in materia di tecnologie dell'informazione, i file e le libertà, noto come il trattamento dei dati personali nel rispetto del Decreto Legislativo 675/96. Per ulteriori informazioni sulla privacy si prega di leggere l&amp;rsquo; INFORMATIVA SULLA PRIVACY.&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;INFORMATIVA SULLA PRIVACY&lt;br&gt;
+  In vigore da: 1 gen 2013&lt;br&gt;
+  La tua privacy è molto importante per noi EMEC SRL ('EMEC SRL', 'noi', 'nostro'). Di conseguenza, abbiamo sviluppato la presente Informativa sulla Privacy  per spiegare la nostra politica per quanto riguarda i dati identificativi o che consentono di identificare, direttamente o indirettamente, una persona con uno o più elementi specifici ('Dati Personali') e altre informazioni e misure (le &amp;quot;misure&amp;quot; ). Dati personali e misure sono o generati o raccolti da EMEC SRL o date da voi quando utilizzando uno dei prodotti EMEC SRL (il 'prodotto'), il nostro sito web all'indirizzo http://www.ermes-server.com e più in generale tutti gli URL e siti web amministrati da EMEC SRL o all'interno del dominio EMEC SRL.it e ERMES-SERVER .COM (il 'Sito') ei suoi servizi e il nostro software (il 'Software', e 'Mobile Software '). Come qui usato, il termine 'servizi &amp;quot;, il sito, Site Services, software per computer e software Mobile.&lt;/p&gt;
+&lt;p&gt;1. PROTEZIONE DEI DATI PERSONALI AI SENSI DELLA LEGGE&lt;br&gt;
+  I dati saranno raccolti e trattati secondo la Normativa numero 2/2001, adottata il 17 maggio 2001 delle autorità europee per la protezione dei dati personali, al fine di individuare i requisiti minimi comuni per la raccolta on-line dei dati personali nell'Unione europea . Inoltre, la presente normativae fornisce valore aggiunto alle informazioni, ai sensi dell'articolo 13 del decreto legge del 30 giugno 2003 numero 196 - Codex, in materia di protezione dei dati personali e in base al trattamento dei dati personali nel rispetto del Decreto Legislativo Italiano 675 / 96. Avete il diritto di accedere, modificare, correggere ed eliminare i dati che vi riguardano in qualsiasi momento. Per esercitare tale diritto, è sufficiente inviare la richiesta per posta all'indirizzo della sede legale della EMEC SRL:&lt;/p&gt;
+&lt;p&gt;EMEC Srl Sede Legale, Corso Vittorio Emanuele II, 15 - 20122 Milano (ITALIA)&lt;/p&gt;
+&lt;p&gt;2. INFORMAZIONI CHE RACCOGLIAMO:&lt;br&gt;
+  Quando si interagisce con noi attraverso il Sito, possiamo raccogliere dati personali ed altre informazioni da voi, come descritto di seguito:&lt;br&gt;
+  Dati Personali che fornite attraverso la registrazione o l'utilizzo di servizi di EMEC SRL: Raccogliamo dati personali quando si registra attraverso il Sito o il software Mobile e creando un account. Questi dati personali includono email e password dell'account. Noi non raccogliamo dati di qualsiasi carta di credito o altre informazioni di natura economica. Raccogliamo anche informazioni durante la configurazione del prodotto EMEC SRL, come il setup da voi impostato. Raccogliamo i dati personali e le misure quando si utilizzano prodotti e servizi di EMEC SRL. Possiamo anche raccogliere dati personali o misure attraverso strumenti automatizzati che usiamo per monitorare o lavorare i Servizi, come ad esempio, ma non solo, informazioni sul prodotto, le sue capacità e le applicazioni, il modo in cui lo si utilizza, le vostre attività in / con i Servizi, il vostro indirizzo IP, il browser, etc.&lt;br&gt;
+  Dati personali forniti attraverso altri uso dei Servizi: ad esempio, raccogliamo dati personali, inviatici con un messaggio e-mail o per personalizzare i servizi.&lt;br&gt;
+  Fornendo volontariamente i vostri dati personali, acconsentite al nostro uso di esso in conformità con questa INFORMATIVA SULLA PRIVACY. Se si forniscono dati personali tramite i Servizi, l'utente riconosce e accetta che tali dati personali possono essere trasferiti dalla posizione corrente agli uffici e ai server di EMEC SRL ei terzi autorizzati di cui al presente documento che si trovano nell'Unione europea.&lt;/p&gt;
+&lt;p&gt;3. ALTRE INFORMAZIONI, COOKIES:&lt;br&gt;
+  Quando si accede alle EMEC SRL Servizi tramite il Sito, riceviamo e memorizzare alcune informazioni personali non identificabili. Tali informazioni, che vengono raccolti passivamente utilizzando varie tecnologie, non possono essere utilizzati per identificare specificamente. Pertanto, tali informazioni non sono considerate dati personali. EMEC SRL può archiviare tali informazioni per sé e / o tali informazioni possono essere incluse nei database di proprietà e gestiti da società affiliate di EMEC SRL, agenti o fornitori di servizi. Questo sito può utilizzare tali informazioni e piscina con altre informazioni per tenere traccia, per esempio, il numero totale di visitatori del nostro sito, il numero di visitatori di ogni pagina del nostro sito, e nomi a dominio dei fornitori di servizi Internet dei nostri visitatori. È importante notare che nessun dato personale è disponibile o utilizzato in questo processo. Per ottemperare a questo usianmo una tecnologia chiamata &amp;quot;cookies&amp;quot;. Un cookie è un pezzo di informazioni che il computer che ospita il nostro sito dà al vostro browser quando si accede al sito. I nostri cookie contribuiscono a fornire ulteriori funzionalità al sito e ci aiutano ad analizzare l'utilizzo del sito in modo più accurato. Ad esempio, il nostro sito può impostare un cookie sul vostro browser che consente di accedere al sito senza bisogno di ricordare e quindi immettere una password più di una volta durante una visita al sito. In alcuni casi, vi verrà chiesto di fornire il consenso preventivo scritto prima di usare certi tipi di cookie. In tutti i casi in cui utilizziamo i cookies, non raccoglieremo dati personali se non con il suo permesso. Sulla maggior parte dei browser web, troverete una sezione di 'aiuto' nella barra degli strumenti. Si prega di fare riferimento a questa sezione per informazioni su come attivare i cookies. Si consiglia di lasciare i cookie accesi perché consentono di sfruttare alcune delle funzionalità del sito.&lt;/p&gt;
+&lt;p&gt;4. Il nostro uso di dati personali e di ALTRE INFORMAZIONI.&lt;br&gt;
+  In ogni caso, EMEC SRL utilizza i dati personali in un modo conforme alla presente Informativa sulla Privacy.&lt;br&gt;
+  Usiamo i vostri dati personali e misure per lo scopo per il quale è stato previsto, compreso senza limitazione per gli scopi descritti nel seguito:&lt;br&gt;
+  Fornitura e monitoraggio dei servizi: Useremo i vostri dati personali per fornire l'accesso a e supportare l'uso dei Servizi e per monitorare l'utilizzo dei Servizi stessi. Come parte dei Servizi, possiamo utilizzare i vostri dati personali per fornire analisi e consigli personalizzati. &lt;br&gt;
+  Domande e richieste: Se ci contattate via e-mail o in altro modo, useremo i dati personali forniti per rispondere alla tua domanda o risolvere il vostro problema.&lt;br&gt;
+  Come contattare su prodotti, servizi ed eventi: con la registrazione ai servizi EMEC SRL si accetta che EMEC SRL può utilizzare di volta in volta i vostri dati personali per contattarvi in ​​futuro per consigliarvi nuovi prodotti, servizi ed eventi che possono essere di vostro interesse. Tali comunicazioni saranno forniti con la possibilità di opt-out in qualsiasi momento su semplice richiesta.&lt;br&gt;
+  Miglioramento del servizio: Possiamo usare i vostri dati personali, aggregati ai dati personali ed altri dati personali non identificabili raccolti attraverso i Servizi per aiutarci a migliorare il contenuto e la funzionalità dei servizi, di capire meglio i nostri utenti e per migliorare i servizi.&lt;/p&gt;
+&lt;p&gt;5. LA NOSTRA COMUNICAZIONE DEI DATI PERSONALI E ALTRE INFORMAZIONI.&lt;br&gt;
+  Consideriamo i vostri dati personali e la privacy come parte vitale del nostro rapporto con voi.&lt;br&gt;
+  Vi sono, tuttavia, alcune circostanze in cui i vostri dati personali e misure possono essere condivise con e da parte di talune terze parti senza ulteriore preavviso, come indicato di seguito:&lt;br&gt;
+  Trasferimenti di attività: Come sviluppiamo il nostro business, potremmo vendere o comprare aziende o beni. In caso di vendita, fusione, riorganizzazione, scioglimento o eventi simili, i dati personali possono essere parte dei beni trasferiti.&lt;br&gt;
+  Funzioni l'uso interno: EMEC SRL, come molte aziende, a volte noleggia altre società per svolgere determinate funzioni operative interne, come invio di materiale informativo, mantenimento dei database, revisione dei servizi, ecc. Quando impieghiamo un'altra società a svolgere una funzione di questo tipo , ci limitiamo a fornire loro le informazioni di cui hanno bisogno per svolgere la loro funzione specifica e le informazioni sono usate solo per propri scopi interni di EMEC SRL.&lt;br&gt;
+  Requisiti legali: EMEC SRL può divulgare i vostri dati personali se richiesto per legge o per buona fede ritenendo che tale azione sia necessaria per (i) rispettare un obbligo legale, (ii) proteggere e difendere i diritti o la proprietà di EMEC SRL, (iii) agire in circostanze estreme per proteggere la sicurezza personale degli utenti del Sito o del pubblico, o (iv) proteggersi contro la responsabilità legale.&lt;br&gt;
+  Cessione a Terzi su Azione utente o Autorizzazione: Se si sceglie di condividere i vostri dati personali o misurazioni su altre piattaforme rispetto al sito, come, ma non limitati a, i siti di social network, o di mettere a disposizione del pubblico sul sito i vostri dati personali o Misurazioni altri utenti e di terzi, è necessario essere consapevoli del fatto che i dati personali e misurazioni che si hanno scelto di condividere saranno disponibile per l'uso di terzi.&lt;br&gt;
+  Licenziatari, distributore / rivenditore e associati Caratteristiche: In alcuni casi, si può avere acquistato un prodotto EMEC SRL tramite terzi licenziatari, distributori o rivenditori di EMEC SRL . Tali soggetti possono richiedere tutto o parte dei Dati Personali o di misura per fornirvi tutte o parte dei servizi richiesti. In questo caso è necessario condividere i dati personali o di misura con tali terzi. Questa condivisione di dati personali o di misurazione verrà fornito con la possibilità di non divulgazione in qualsiasi momento su semplice richiesta. In caso di richiesta di non divulgazione, è espressamente riconosciuto e accettato di rinunciare a qualsiasi pretesa nei confronti di EMEC SRL riguardo al funzionamento non completo di caratteristiche associate a terze parti o del prodotto di EMEC SRL a causa della richiesta di non divulgazione. Inoltre, si deve essere consapevoli che una volta la condivisione delle informazioni ha avuto luogo, il terzo sarà l'unico responsabile verso di voi per il proprio uso dei Dati Personali o di misura, prima o dopo la richiesta di non divulgazione.&lt;br&gt;
+  De-identificazione Dati Personali: Come descritto in precedenza, possiamo condividere informazioni, sulla base dei dati personali raccolti, ma non in forma tale da rendere identificabile l&amp;rsquo;utente.Ad esempio, possiamo condividere un aggregato di informazioni in forma grezza o de-identificati i dati con gli inserzionisti, ricercatori, partner commerciali, pubblicazioni e altre terze parti.&lt;/p&gt;
+&lt;p&gt;6. LE TUE SCELTE.&lt;br&gt;
+  Se si sceglie di non fornire dati personali, si ricorda che non si potrà essere in grado di utilizzare alcune aree del Sito e / o taluni servizi o/e prodotti forniti da EMEC SRL.&lt;/p&gt;
+&lt;p&gt;7. ESCLUSIONI.&lt;br&gt;
+  La presente Informativa sulla Privacy non si applica ai dati personali raccolti da EMEC SRL diverse da dati personali e misurazioni raccolti dal sito, servizi e prodotti. Questa Informativa sulla Privacy non si applica a tutte le informazioni non richieste fornite a EMEC SRL attraverso questo sito o tramite qualsiasi altro mezzo. Questo include, ma non è limitato a, le informazioni pubblicate da tutte le aree pubbliche del sito, come ad esempio bacheche (collettivamente, &amp;quot;Aree pubbliche»), tutte le idee per nuovi prodotti o modifiche ai prodotti esistenti, e di altri mezzi non richiesti (collettivamente, 'informazioni non richieste'). Tutte le informazioni non richieste sono considerate non confidenziale da EMEC SRL che sarà libera di riprodurre, usare, divulgare e distribuire tali informazioni non richieste a terzi, senza limiti o attribuzione.&lt;/p&gt;
+&lt;p&gt;8. LINK AD ALTRI SITI WEB.&lt;br&gt;
+  La presente Informativa sulla Privacy si applica solo al Sito EMEC.IT e ERMES-SERVER.COM. Questo sito può contenere link ad altri siti web non gestiti o controllati da EMEC SRL (i &amp;quot;Siti di terzi&amp;quot;). Le politiche e le procedure che abbiamo descritto qui non si applicano ai siti di terze parti. I collegamenti di questo sito non implicano che EMEC SRL approva o ha esaminato i siti di terze parti. Vi consigliamo di contattare i siti direttamente per informazioni sulle loro politiche sulla privacy.&lt;/p&gt;
+&lt;p&gt;9. SICUREZZA.&lt;br&gt;
+  EMEC SRL prende misure ragionevoli per proteggere i dati personali forniti tramite il Sito da perdita, abuso, accesso non autorizzato, divulgazione, alterazione o distruzione. Tuttavia, nessuna connessione ad Internet o e-mail può essere considerata assolutamente sicura o esente da errori. In particolare, e-mail inviate da o verso questo sito potrebbero non essere sicure. Pertanto, si dovrebbe prestare particolare attenzione nel decidere quali informazioni inviarci tramite e-mail e / o trasmissione Internet. Si prega di tenere questo in mente quando vi accingete ad inserire i dati personali attraverso il Sito.&lt;/p&gt;
+&lt;p&gt;10. ALTRI TERMINI E CONDIZIONI.&lt;br&gt;
+  L'accesso e l'utilizzo dei servizi forniti da EMEC SRL attraverso il Sito è soggetto alle condizioni di utilizzo, disponibili su http://www.ermes-server.com.&lt;/p&gt;
+&lt;p&gt;11. MODIFICHE ALLE INFORMATIVA SULLA PRIVACY.&lt;br&gt;
+  Il Sito e il nostro business possono cambiare di volta in volta. Di conseguenza, a volte può essere necessario per EMEC SRL di apportare modifiche alla presente Informativa sulla Privacy. EMEC SRL si riserva il diritto di aggiornare o modificare la presente Informativa sulla Privacy in qualsiasi momento e di volta in volta senza preavviso. Si prega di rivedere questa informativa periodicamente, e soprattutto prima di fornire dati personali. L'uso continuato del Sito dopo eventuali modifiche o revisioni alla presente Informativa sulla Privacy deve indicare il vostro accordo con i termini di tale revisione sulla privacy.&lt;/p&gt;
+&lt;p&gt;12. ACCESSO ALLE INFORMAZIONI; CONTATTARE EMEC SRL.&lt;br&gt;
+  Per conservare i dati personali accurati, aggiornati e completi, si prega di visitare la sezione Il mio account del sito. Potete contattarci anche come di seguito specificato. Faremo quanto possibile per aggiornare o correggere i dati personali in nostro possesso che avete precedentemente inviato tramite questo sito. Si prega inoltre di non esitate a contattarci se avete dei dubbi sulla privacy di EMEC SRL o le pratiche di informazione di questo sito. Potete contattarci come segue: privacy@emec.it.&lt;/p&gt;
+&lt;/div&gt;
+		  &lt;/div&gt;
+		  &lt;!-- // Column END --&gt;
+			
+		  &lt;!-- Column --&gt;&lt;!-- // Column END --&gt;
+			
+		&lt;/div&gt;</value>
+  </data>
+  <data name="PageResource1.Title" xml:space="preserve">
+    <value>Termini e Condizioni</value>
+  </data>
+</root>

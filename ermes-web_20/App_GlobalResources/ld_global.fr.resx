@@ -1,0 +1,372 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="dosing_alarm" xml:space="preserve">
+    <value>Alarme de dosage</value>
+  </data>
+  <data name="flow" xml:space="preserve">
+    <value>Debit d'eau</value>
+  </data>
+  <data name="high_range_alarm" xml:space="preserve">
+    <value>Max valeur</value>
+  </data>
+  <data name="ingressi" xml:space="preserve">
+    <value>entrèe</value>
+  </data>
+  <data name="international" xml:space="preserve">
+    <value>Format affichage</value>
+  </data>
+  <data name="level" xml:space="preserve">
+    <value>niveau</value>
+  </data>
+  <data name="log_setup" xml:space="preserve">
+    <value>Reglage Historique</value>
+  </data>
+  <data name="low_range_alarm" xml:space="preserve">
+    <value>Min valeur</value>
+  </data>
+  <data name="max_ma" xml:space="preserve">
+    <value>max mA</value>
+  </data>
+  <data name="max_temperature" xml:space="preserve">
+    <value>Max Temperature</value>
+  </data>
+  <data name="ma_output" xml:space="preserve">
+    <value>Sorties Courant</value>
+  </data>
+  <data name="min_ma" xml:space="preserve">
+    <value>min mA</value>
+  </data>
+  <data name="min_max_high" xml:space="preserve">
+    <value>Max valeur</value>
+  </data>
+  <data name="min_max_low" xml:space="preserve">
+    <value>Min valeur</value>
+  </data>
+  <data name="min_temperature" xml:space="preserve">
+    <value>Min Temperature</value>
+  </data>
+  <data name="out_of_range_alarm" xml:space="preserve">
+    <value>alarme hors echelle</value>
+  </data>
+  <data name="parameters" xml:space="preserve">
+    <value>Parametres</value>
+  </data>
+  <data name="probe_failure" xml:space="preserve">
+    <value>sonde defectueuse</value>
+  </data>
+  <data name="pulse" xml:space="preserve">
+    <value>impulsion</value>
+  </data>
+  <data name="range_alarm" xml:space="preserve">
+    <value>Alarme hors echelle</value>
+  </data>
+  <data name="relay" xml:space="preserve">
+    <value>relais</value>
+  </data>
+  <data name="setpoint" xml:space="preserve">
+    <value>Point de consigne</value>
+  </data>
+  <data name="time" xml:space="preserve">
+    <value>Temps (min)</value>
+  </data>
+  <data name="uscite" xml:space="preserve">
+    <value>sortie</value>
+  </data>
+  <data name="standby" xml:space="preserve">
+    <value>Stand-By</value>
+  </data>
+  <data name="calibartion" xml:space="preserve">
+    <value>Calibration</value>
+  </data>
+  <data name="manual" xml:space="preserve">
+    <value>Manuel</value>
+  </data>
+  <data name="message" xml:space="preserve">
+    <value>Message</value>
+  </data>
+  <data name="calibration" xml:space="preserve">
+    <value>Calibration</value>
+  </data>
+  <data name="val_OFF" xml:space="preserve">
+    <value>OFF</value>
+  </data>
+  <data name="val_ON" xml:space="preserve">
+    <value>ON</value>
+  </data>
+  <data name="val_sec" xml:space="preserve">
+    <value>sec</value>
+  </data>
+  <data name="val_Mode" xml:space="preserve">
+    <value>Mode</value>
+  </data>
+  <data name="val_calibration" xml:space="preserve">
+    <value>Calibration</value>
+  </data>
+  <data name="val_canale" xml:space="preserve">
+    <value>Channel</value>
+  </data>
+  <data name="val_mvprobe" xml:space="preserve">
+    <value>mV Probe</value>
+  </data>
+  <data name="val_valuenew" xml:space="preserve">
+    <value>New Value</value>
+  </data>
+  <data name="val_valueprobe" xml:space="preserve">
+    <value>Probe Value</value>
+  </data>
+  <data name="Circulation" xml:space="preserve">
+    <value>Circulateur</value>
+  </data>
+  <data name="Self" xml:space="preserve">
+    <value>Autonettoyage</value>
+  </data>
+  <data name="Autosetpoint" xml:space="preserve">
+    <value>Automatique</value>
+  </data>
+  <data name="Alert" xml:space="preserve">
+    <value>Alert</value>
+  </data>
+  <data name="Assistenza" xml:space="preserve">
+    <value>Assistance</value>
+  </data>
+  <data name="Channels" xml:space="preserve">
+    <value>Voies</value>
+  </data>
+  <data name="Log" xml:space="preserve">
+    <value>Histo</value>
+  </data>
+  <data name="Filtro" xml:space="preserve">
+    <value>Net. Filtre</value>
+  </data>
+  <data name="Manutenzione" xml:space="preserve">
+    <value>entretien</value>
+  </data>
+  <data name="Sonde" xml:space="preserve">
+    <value>Cal. sonde</value>
+  </data>
+  <data name="Level_HCL" xml:space="preserve">
+    <value>HCl Level</value>
+  </data>
+  <data name="Level_NACLO2" xml:space="preserve">
+    <value>NaClO2 Level</value>
+  </data>
+  <data name="Level_STORAGE" xml:space="preserve">
+    <value>Storage Tank Full</value>
+  </data>
+  <data name="System" xml:space="preserve">
+    <value>System</value>
+  </data>
+  <data name="ld_ma_channel" xml:space="preserve">
+    <value>Voies</value>
+  </data>
+  <data name="ld_ma_date" xml:space="preserve">
+    <value>Date Heure</value>
+  </data>
+  <data name="livello_ldma" xml:space="preserve">
+    <value>Niveau bac</value>
+  </data>
+  <data name="totalizzatore_giornaliero_ldma" xml:space="preserve">
+    <value>Journalière</value>
+  </data>
+  <data name="totalizzatore_ldma" xml:space="preserve">
+    <value>Consommations</value>
+  </data>
+  <data name="Cicli" xml:space="preserve">
+    <value>Cicli</value>
+  </data>
+  <data name="calibrationB" xml:space="preserve">
+    <value>calibrage capteur</value>
+  </data>
+  <data name="flowB" xml:space="preserve">
+    <value>Debit d'eau</value>
+  </data>
+  <data name="internationalB" xml:space="preserve">
+    <value>heure</value>
+  </data>
+  <data name="log_setupB" xml:space="preserve">
+    <value>Reglage Historique</value>
+  </data>
+  <data name="parametersB" xml:space="preserve">
+    <value>reglage parametre</value>
+  </data>
+  <data name="setpointB" xml:space="preserve">
+    <value>Point de consigne</value>
+  </data>
+  <data name="ResetA" xml:space="preserve">
+    <value>remise</value>
+  </data>
+  <data name="AllRead" xml:space="preserve">
+    <value>Read Alarm</value>
+  </data>
+  <data name="Analog_Input" xml:space="preserve">
+    <value>Analog Input</value>
+  </data>
+  <data name="Batch_Tank_Empty" xml:space="preserve">
+    <value>Batch Tank Empty</value>
+  </data>
+  <data name="CLO2_limit" xml:space="preserve">
+    <value>ClO2 limit</value>
+  </data>
+  <data name="Contact_SEFL_Acid" xml:space="preserve">
+    <value>Contact SEFL Acid</value>
+  </data>
+  <data name="Contact_SEFL_Chlorite" xml:space="preserve">
+    <value>Contact SEFL Chlorite</value>
+  </data>
+  <data name="Flow_Control_Acid" xml:space="preserve">
+    <value>Flow Control Acid</value>
+  </data>
+  <data name="Flow_Control_Cloro" xml:space="preserve">
+    <value>Flow Control Cloro</value>
+  </data>
+  <data name="Flow_Control_Water" xml:space="preserve">
+    <value>Flow Control Water</value>
+  </data>
+  <data name="Flow_Water_Dlution" xml:space="preserve">
+    <value>Flow Water Dlution</value>
+  </data>
+  <data name="Level_acid" xml:space="preserve">
+    <value>Level Acid</value>
+  </data>
+  <data name="Level_cloro" xml:space="preserve">
+    <value>Level Chlorite</value>
+  </data>
+  <data name="Level_Water" xml:space="preserve">
+    <value>Level Water</value>
+  </data>
+  <data name="Overflow" xml:space="preserve">
+    <value>Oveflow</value>
+  </data>
+  <data name="Pre_Dilution_Water" xml:space="preserve">
+    <value>Pre Dilution Water</value>
+  </data>
+  <data name="Reactor_Leakage" xml:space="preserve">
+    <value>Reactor Leakage</value>
+  </data>
+  <data name="Service_And_Calibration_Required" xml:space="preserve">
+    <value>Service And Calibration Required</value>
+  </data>
+  <data name="Timeout" xml:space="preserve">
+    <value>Timeout</value>
+  </data>
+  <data name="salva_carica_dati" xml:space="preserve">
+    <value>Sauvegarder et charger les données</value>
+  </data>
+</root>
