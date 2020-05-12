@@ -7663,6 +7663,32 @@ Partial Public Class quey_db
         
         Private columnlevSoglia As Global.System.Data.DataColumn
         
+        Private columnflow11 As Global.System.Data.DataColumn
+        
+        Private columnflow2 As Global.System.Data.DataColumn
+        
+        Private columnlettura1 As Global.System.Data.DataColumn
+        
+        Private columnnaso1 As Global.System.Data.DataColumn
+        
+        Private columntemperatura1 As Global.System.Data.DataColumn
+        
+        Private columnlevSoglia1 As Global.System.Data.DataColumn
+        
+        Private columntotAcido As Global.System.Data.DataColumn
+        
+        Private columntotCloro As Global.System.Data.DataColumn
+        
+        Private columntotAcqua As Global.System.Data.DataColumn
+        
+        Private columntotAcidoDay As Global.System.Data.DataColumn
+        
+        Private columntotCloroDay As Global.System.Data.DataColumn
+        
+        Private columntotAcquaDay As Global.System.Data.DataColumn
+        
+        Private columnsetpoint As Global.System.Data.DataColumn
+        
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Sub New()
@@ -7915,6 +7941,110 @@ Partial Public Class quey_db
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property flow11Column() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnflow11
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property flow2Column() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnflow2
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property lettura1Column() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnlettura1
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property naso1Column() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnnaso1
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property temperatura1Column() As Global.System.Data.DataColumn
+            Get
+                Return Me.columntemperatura1
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property levSoglia1Column() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnlevSoglia1
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property totAcidoColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columntotAcido
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property totCloroColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columntotCloro
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property totAcquaColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columntotAcqua
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property totAcidoDayColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columntotAcidoDay
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property totCloroDayColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columntotCloroDay
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property totAcquaDayColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columntotAcquaDay
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property setpointColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnsetpoint
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Browsable(false)>  _
         Public ReadOnly Property Count() As Integer
@@ -7978,9 +8108,22 @@ Partial Public Class quey_db
                     ByVal lettura As Single,  _
                     ByVal naso As Single,  _
                     ByVal temperatura As Single,  _
-                    ByVal levSoglia As Boolean) As log_lta_ltu_ltdRow
+                    ByVal levSoglia As Boolean,  _
+                    ByVal flow11 As Single,  _
+                    ByVal flow2 As Single,  _
+                    ByVal lettura1 As Single,  _
+                    ByVal naso1 As Single,  _
+                    ByVal temperatura1 As Single,  _
+                    ByVal levSoglia1 As Boolean,  _
+                    ByVal totAcido As Single,  _
+                    ByVal totCloro As Single,  _
+                    ByVal totAcqua As Single,  _
+                    ByVal totAcidoDay As Single,  _
+                    ByVal totCloroDay As Single,  _
+                    ByVal totAcquaDay As Single,  _
+                    ByVal setpoint As Single) As log_lta_ltu_ltdRow
             Dim rowlog_lta_ltu_ltdRow As log_lta_ltu_ltdRow = CType(Me.NewRow,log_lta_ltu_ltdRow)
-            Dim columnValuesArray() As Object = New Object() {id, identificativo, id_485, data, Flow_Acid_L, Flow_Self_Water_L, Flow_Chlorite_L, Lev_Acid_L, Lev_Chlorite_L, Lev_Water_L, Sefl_Acid_L, Sefl_Chlorite_L, TimeOut_L, Flow_Water_dil_L, Service_F_L, Analog_L, Tank_Empty_L, Level_SW, BypassB, Lim_Dioxide, Lev_Alflow, Overf, flow1, lettura, naso, temperatura, levSoglia}
+            Dim columnValuesArray() As Object = New Object() {id, identificativo, id_485, data, Flow_Acid_L, Flow_Self_Water_L, Flow_Chlorite_L, Lev_Acid_L, Lev_Chlorite_L, Lev_Water_L, Sefl_Acid_L, Sefl_Chlorite_L, TimeOut_L, Flow_Water_dil_L, Service_F_L, Analog_L, Tank_Empty_L, Level_SW, BypassB, Lim_Dioxide, Lev_Alflow, Overf, flow1, lettura, naso, temperatura, levSoglia, flow11, flow2, lettura1, naso1, temperatura1, levSoglia1, totAcido, totCloro, totAcqua, totAcidoDay, totCloroDay, totAcquaDay, setpoint}
             rowlog_lta_ltu_ltdRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowlog_lta_ltu_ltdRow)
             Return rowlog_lta_ltu_ltdRow
@@ -8030,6 +8173,19 @@ Partial Public Class quey_db
             Me.columnnaso = MyBase.Columns("naso")
             Me.columntemperatura = MyBase.Columns("temperatura")
             Me.columnlevSoglia = MyBase.Columns("levSoglia")
+            Me.columnflow11 = MyBase.Columns("flow11")
+            Me.columnflow2 = MyBase.Columns("flow2")
+            Me.columnlettura1 = MyBase.Columns("lettura1")
+            Me.columnnaso1 = MyBase.Columns("naso1")
+            Me.columntemperatura1 = MyBase.Columns("temperatura1")
+            Me.columnlevSoglia1 = MyBase.Columns("levSoglia1")
+            Me.columntotAcido = MyBase.Columns("totAcido")
+            Me.columntotCloro = MyBase.Columns("totCloro")
+            Me.columntotAcqua = MyBase.Columns("totAcqua")
+            Me.columntotAcidoDay = MyBase.Columns("totAcidoDay")
+            Me.columntotCloroDay = MyBase.Columns("totCloroDay")
+            Me.columntotAcquaDay = MyBase.Columns("totAcquaDay")
+            Me.columnsetpoint = MyBase.Columns("setpoint")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -8089,12 +8245,51 @@ Partial Public Class quey_db
             MyBase.Columns.Add(Me.columntemperatura)
             Me.columnlevSoglia = New Global.System.Data.DataColumn("levSoglia", GetType(Boolean), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnlevSoglia)
+            Me.columnflow11 = New Global.System.Data.DataColumn("flow11", GetType(Single), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnflow11)
+            Me.columnflow2 = New Global.System.Data.DataColumn("flow2", GetType(Single), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnflow2)
+            Me.columnlettura1 = New Global.System.Data.DataColumn("lettura1", GetType(Single), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnlettura1)
+            Me.columnnaso1 = New Global.System.Data.DataColumn("naso1", GetType(Single), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnnaso1)
+            Me.columntemperatura1 = New Global.System.Data.DataColumn("temperatura1", GetType(Single), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columntemperatura1)
+            Me.columnlevSoglia1 = New Global.System.Data.DataColumn("levSoglia1", GetType(Boolean), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnlevSoglia1)
+            Me.columntotAcido = New Global.System.Data.DataColumn("totAcido", GetType(Single), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columntotAcido)
+            Me.columntotCloro = New Global.System.Data.DataColumn("totCloro", GetType(Single), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columntotCloro)
+            Me.columntotAcqua = New Global.System.Data.DataColumn("totAcqua", GetType(Single), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columntotAcqua)
+            Me.columntotAcidoDay = New Global.System.Data.DataColumn("totAcidoDay", GetType(Single), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columntotAcidoDay)
+            Me.columntotCloroDay = New Global.System.Data.DataColumn("totCloroDay", GetType(Single), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columntotCloroDay)
+            Me.columntotAcquaDay = New Global.System.Data.DataColumn("totAcquaDay", GetType(Single), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columntotAcquaDay)
+            Me.columnsetpoint = New Global.System.Data.DataColumn("setpoint", GetType(Single), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnsetpoint)
             Me.columnidentificativo.MaxLength = 50
             Me.columnid_485.MaxLength = 10
             Me.columnflow1.ReadOnly = true
             Me.columnlettura.ReadOnly = true
             Me.columnnaso.ReadOnly = true
             Me.columntemperatura.ReadOnly = true
+            Me.columnflow11.ReadOnly = true
+            Me.columnflow2.ReadOnly = true
+            Me.columnlettura1.ReadOnly = true
+            Me.columnnaso1.ReadOnly = true
+            Me.columntemperatura1.ReadOnly = true
+            Me.columnlevSoglia1.ReadOnly = true
+            Me.columntotAcido.ReadOnly = true
+            Me.columntotCloro.ReadOnly = true
+            Me.columntotAcqua.ReadOnly = true
+            Me.columntotAcidoDay.ReadOnly = true
+            Me.columntotCloroDay.ReadOnly = true
+            Me.columntotAcquaDay.ReadOnly = true
+            Me.columnsetpoint.ReadOnly = true
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -17411,6 +17606,201 @@ Partial Public Class quey_db
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property flow11() As Single
+            Get
+                Try 
+                    Return CType(Me(Me.tablelog_lta_ltu_ltd.flow11Column),Single)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("Il valore della colonna 'flow11' nella tabella 'log_lta_ltu_ltd' è DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tablelog_lta_ltu_ltd.flow11Column) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property flow2() As Single
+            Get
+                Try 
+                    Return CType(Me(Me.tablelog_lta_ltu_ltd.flow2Column),Single)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("Il valore della colonna 'flow2' nella tabella 'log_lta_ltu_ltd' è DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tablelog_lta_ltu_ltd.flow2Column) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property lettura1() As Single
+            Get
+                Try 
+                    Return CType(Me(Me.tablelog_lta_ltu_ltd.lettura1Column),Single)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("Il valore della colonna 'lettura1' nella tabella 'log_lta_ltu_ltd' è DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tablelog_lta_ltu_ltd.lettura1Column) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property naso1() As Single
+            Get
+                Try 
+                    Return CType(Me(Me.tablelog_lta_ltu_ltd.naso1Column),Single)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("Il valore della colonna 'naso1' nella tabella 'log_lta_ltu_ltd' è DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tablelog_lta_ltu_ltd.naso1Column) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property temperatura1() As Single
+            Get
+                Try 
+                    Return CType(Me(Me.tablelog_lta_ltu_ltd.temperatura1Column),Single)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("Il valore della colonna 'temperatura1' nella tabella 'log_lta_ltu_ltd' è DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tablelog_lta_ltu_ltd.temperatura1Column) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property levSoglia1() As Boolean
+            Get
+                Try 
+                    Return CType(Me(Me.tablelog_lta_ltu_ltd.levSoglia1Column),Boolean)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("Il valore della colonna 'levSoglia1' nella tabella 'log_lta_ltu_ltd' è DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tablelog_lta_ltu_ltd.levSoglia1Column) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property totAcido() As Single
+            Get
+                Try 
+                    Return CType(Me(Me.tablelog_lta_ltu_ltd.totAcidoColumn),Single)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("Il valore della colonna 'totAcido' nella tabella 'log_lta_ltu_ltd' è DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tablelog_lta_ltu_ltd.totAcidoColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property totCloro() As Single
+            Get
+                Try 
+                    Return CType(Me(Me.tablelog_lta_ltu_ltd.totCloroColumn),Single)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("Il valore della colonna 'totCloro' nella tabella 'log_lta_ltu_ltd' è DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tablelog_lta_ltu_ltd.totCloroColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property totAcqua() As Single
+            Get
+                Try 
+                    Return CType(Me(Me.tablelog_lta_ltu_ltd.totAcquaColumn),Single)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("Il valore della colonna 'totAcqua' nella tabella 'log_lta_ltu_ltd' è DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tablelog_lta_ltu_ltd.totAcquaColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property totAcidoDay() As Single
+            Get
+                Try 
+                    Return CType(Me(Me.tablelog_lta_ltu_ltd.totAcidoDayColumn),Single)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("Il valore della colonna 'totAcidoDay' nella tabella 'log_lta_ltu_ltd' è DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tablelog_lta_ltu_ltd.totAcidoDayColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property totCloroDay() As Single
+            Get
+                Try 
+                    Return CType(Me(Me.tablelog_lta_ltu_ltd.totCloroDayColumn),Single)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("Il valore della colonna 'totCloroDay' nella tabella 'log_lta_ltu_ltd' è DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tablelog_lta_ltu_ltd.totCloroDayColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property totAcquaDay() As Single
+            Get
+                Try 
+                    Return CType(Me(Me.tablelog_lta_ltu_ltd.totAcquaDayColumn),Single)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("Il valore della colonna 'totAcquaDay' nella tabella 'log_lta_ltu_ltd' è DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tablelog_lta_ltu_ltd.totAcquaDayColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property setpoint() As Single
+            Get
+                Try 
+                    Return CType(Me(Me.tablelog_lta_ltu_ltd.setpointColumn),Single)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("Il valore della colonna 'setpoint' nella tabella 'log_lta_ltu_ltd' è DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tablelog_lta_ltu_ltd.setpointColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Function IsidNull() As Boolean
             Return Me.IsNull(Me.tablelog_lta_ltu_ltd.idColumn)
         End Function
@@ -17731,6 +18121,162 @@ Partial Public Class quey_db
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Sub SetlevSogliaNull()
             Me(Me.tablelog_lta_ltu_ltd.levSogliaColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function Isflow11Null() As Boolean
+            Return Me.IsNull(Me.tablelog_lta_ltu_ltd.flow11Column)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub Setflow11Null()
+            Me(Me.tablelog_lta_ltu_ltd.flow11Column) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function Isflow2Null() As Boolean
+            Return Me.IsNull(Me.tablelog_lta_ltu_ltd.flow2Column)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub Setflow2Null()
+            Me(Me.tablelog_lta_ltu_ltd.flow2Column) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function Islettura1Null() As Boolean
+            Return Me.IsNull(Me.tablelog_lta_ltu_ltd.lettura1Column)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub Setlettura1Null()
+            Me(Me.tablelog_lta_ltu_ltd.lettura1Column) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function Isnaso1Null() As Boolean
+            Return Me.IsNull(Me.tablelog_lta_ltu_ltd.naso1Column)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub Setnaso1Null()
+            Me(Me.tablelog_lta_ltu_ltd.naso1Column) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function Istemperatura1Null() As Boolean
+            Return Me.IsNull(Me.tablelog_lta_ltu_ltd.temperatura1Column)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub Settemperatura1Null()
+            Me(Me.tablelog_lta_ltu_ltd.temperatura1Column) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IslevSoglia1Null() As Boolean
+            Return Me.IsNull(Me.tablelog_lta_ltu_ltd.levSoglia1Column)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetlevSoglia1Null()
+            Me(Me.tablelog_lta_ltu_ltd.levSoglia1Column) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IstotAcidoNull() As Boolean
+            Return Me.IsNull(Me.tablelog_lta_ltu_ltd.totAcidoColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SettotAcidoNull()
+            Me(Me.tablelog_lta_ltu_ltd.totAcidoColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IstotCloroNull() As Boolean
+            Return Me.IsNull(Me.tablelog_lta_ltu_ltd.totCloroColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SettotCloroNull()
+            Me(Me.tablelog_lta_ltu_ltd.totCloroColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IstotAcquaNull() As Boolean
+            Return Me.IsNull(Me.tablelog_lta_ltu_ltd.totAcquaColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SettotAcquaNull()
+            Me(Me.tablelog_lta_ltu_ltd.totAcquaColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IstotAcidoDayNull() As Boolean
+            Return Me.IsNull(Me.tablelog_lta_ltu_ltd.totAcidoDayColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SettotAcidoDayNull()
+            Me(Me.tablelog_lta_ltu_ltd.totAcidoDayColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IstotCloroDayNull() As Boolean
+            Return Me.IsNull(Me.tablelog_lta_ltu_ltd.totCloroDayColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SettotCloroDayNull()
+            Me(Me.tablelog_lta_ltu_ltd.totCloroDayColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IstotAcquaDayNull() As Boolean
+            Return Me.IsNull(Me.tablelog_lta_ltu_ltd.totAcquaDayColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SettotAcquaDayNull()
+            Me(Me.tablelog_lta_ltu_ltd.totAcquaDayColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IssetpointNull() As Boolean
+            Return Me.IsNull(Me.tablelog_lta_ltu_ltd.setpointColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetsetpointNull()
+            Me(Me.tablelog_lta_ltu_ltd.setpointColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
     
@@ -26379,6 +26925,19 @@ Namespace quey_dbTableAdapters
             tableMapping.ColumnMappings.Add("naso", "naso")
             tableMapping.ColumnMappings.Add("temperatura", "temperatura")
             tableMapping.ColumnMappings.Add("levSoglia", "levSoglia")
+            tableMapping.ColumnMappings.Add("flow11", "flow11")
+            tableMapping.ColumnMappings.Add("flow2", "flow2")
+            tableMapping.ColumnMappings.Add("lettura1", "lettura1")
+            tableMapping.ColumnMappings.Add("naso1", "naso1")
+            tableMapping.ColumnMappings.Add("temperatura1", "temperatura1")
+            tableMapping.ColumnMappings.Add("levSoglia1", "levSoglia1")
+            tableMapping.ColumnMappings.Add("totAcido", "totAcido")
+            tableMapping.ColumnMappings.Add("totCloro", "totCloro")
+            tableMapping.ColumnMappings.Add("totAcqua", "totAcqua")
+            tableMapping.ColumnMappings.Add("totAcidoDay", "totAcidoDay")
+            tableMapping.ColumnMappings.Add("totCloroDay", "totCloroDay")
+            tableMapping.ColumnMappings.Add("totAcquaDay", "totAcquaDay")
+            tableMapping.ColumnMappings.Add("setpoint", "setpoint")
             Me._adapter.TableMappings.Add(tableMapping)
             Me._adapter.InsertCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.InsertCommand.Connection = Me.Connection
@@ -26431,13 +26990,19 @@ Namespace quey_dbTableAdapters
             Me._commandCollection(0).Connection = Me.Connection
             Me._commandCollection(0).CommandText = "SELECT        id, identificativo, id_485, data, Flow_Acid_L, Flow_Self_Water_L, F"& _ 
                 "low_Chlorite_L, Lev_Acid_L, Lev_Chlorite_L, Lev_Water_L, Sefl_Acid_L, Sefl_Chlor"& _ 
-                "ite_L, TimeOut_L, Flow_Water_dil_L, Service_F_L, Analog_L, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                   "& _ 
-                "      Tank_Empty_L, Level_SW, BypassB, Lim_Dioxide, Lev_Alflow, Overf, ISNULL(fl"& _ 
+                "ite_L, TimeOut_L, Flow_Water_dil_L, Service_F_L, Analog_L, Tank_Empty_L, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"     "& _ 
+                "                    Level_SW, BypassB, Lim_Dioxide, Lev_Alflow, Overf, ISNULL(fl"& _ 
                 "ow1, 0) AS flow1, ISNULL(lettura, 0) AS lettura, ISNULL(naso, 0) AS naso, ISNULL"& _ 
-                "(temperatura, 0) AS temperatura, ISNULL(levSoglia, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         0)"& _ 
-                " AS levSoglia"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            log_lta_ltu_ltd"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (identificativo = @"& _ 
-                "identificativo) AND (id_485 = @i485 OR"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         id_485 = @i485_"& _ 
-                "1) AND (data BETWEEN @data1 AND @data2)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"ORDER BY data DESC"
+                "(temperatura, 0) AS temperatura, ISNULL(levSoglia, 0) AS levSoglia, ISNULL(flow1"& _ 
+                ", "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         0) AS flow1, ISNULL(flow2, 0) AS flow2, ISNULL(lett"& _ 
+                "ura, 0) AS lettura, ISNULL(naso, 0) AS naso, ISNULL(temperatura, 0) AS temperatu"& _ 
+                "ra, ISNULL(levSoglia, 0) AS levSoglia, ISNULL(totAcido, 0) AS totAcido, ISNULL(t"& _ 
+                "otCloro, 0) "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         AS totCloro, ISNULL(totAcqua, 0) AS totAc"& _ 
+                "qua, ISNULL(totAcidoDay, 0) AS totAcidoDay, ISNULL(totCloroDay, 0) AS totCloroDa"& _ 
+                "y, ISNULL(totAcquaDay, 0) AS totAcquaDay, ISNULL(setpoint, 0) AS setpoint"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM "& _ 
+                "           log_lta_ltu_ltd"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (identificativo = @identificativo) AND "& _ 
+                "(id_485 = @i485 OR"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         id_485 = @i485_1) AND (data BETWEEN"& _ 
+                " @data1 AND @data2)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"ORDER BY data DESC"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@identificativo", Global.System.Data.SqlDbType.NVarChar, 50, Global.System.Data.ParameterDirection.Input, 0, 0, "identificativo", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@i485", Global.System.Data.SqlDbType.NChar, 10, Global.System.Data.ParameterDirection.Input, 0, 0, "id_485", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))

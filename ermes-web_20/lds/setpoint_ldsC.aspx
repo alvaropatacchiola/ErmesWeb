@@ -121,7 +121,7 @@
                 <div class="row-fluid">
                	<div class="span2">
                        <div id="riga1_ph_pulse_perc4" class="control-group">
-              <h5 style="padding-top:10px"><asp:literal ID = "Literal99"  text="% at 0 mc/h" runat="server" meta:resourcekey="Literal99Resource1"></asp:literal></h5>
+              <h5 style="padding-top:10px"><asp:literal ID = "Literal99"  text="% at 0 m3/h" runat="server" meta:resourcekey="Literal99Resource1"></asp:literal></h5>
                        <asp:textbox ID="value2_ph_pulse_perc4" onblur="javascript: Changed_channel( 'value2_ph_pulse_perc4','riga1_ph_pulse_perc4',99, 0,0 );"  class="span12"  runat="server" MaxLength="2" meta:resourcekey="value2_ph_pulse_perc4Resource1" ></asp:textbox>
                 </div>
                        </div>
@@ -146,7 +146,7 @@
 
                     <div class="span2">
                        <div id="riga2_ph_pulse_mch" class="control-group">
-              <h5 style="padding-top:10px"><asp:literal ID = "Literal96"  text="mc/h" runat="server" meta:resourcekey="Literal96Resource1"></asp:literal></h5>
+              <h5 style="padding-top:10px"><asp:literal ID = "Literal96"  text="m3/h" runat="server" meta:resourcekey="Literal96Resource1"></asp:literal></h5>
                        <asp:textbox ID="value2_ph_pulse_mch"  onblur="javascript: Changed_channel( 'value2_ph_pulse_mch','riga2_ph_pulse_mch',599, 1,2 );" class="span12"  runat="server" MaxLength="5" meta:resourcekey="value2_ph_pulse_mchResource1" ></asp:textbox>
                 </div>
                        </div>
@@ -292,7 +292,7 @@
                 <div class="row-fluid">
                	<div class="span2">
                        <div id="riga1_ph_relay_perc4" class="control-group">
-              <h5 style="padding-top:10px"><asp:literal ID = "Literal93"  text="% at 0 mc/h" runat="server" meta:resourcekey="Literal93Resource1"></asp:literal></h5>
+              <h5 style="padding-top:10px"><asp:literal ID = "Literal93"  text="% at 0 m3/h" runat="server" meta:resourcekey="Literal93Resource1"></asp:literal></h5>
                        <asp:textbox ID="value2_ph_relay_perc4" onblur="javascript: Changed_channel( 'value2_ph_relay_perc4','riga1_ph_relay_perc4',99, 0,0 );"  class="span12"  runat="server" MaxLength="2" meta:resourcekey="value2_ph_relay_perc4Resource1" ></asp:textbox>
                 </div>
                        </div>
@@ -315,7 +315,7 @@
 
                     <div class="span2">
                        <div id="riga2_ph_relay_mch" class="control-group">
-              <h5 style="padding-top:10px"><asp:literal ID = "Literal91"  text="mc/h" runat="server" meta:resourcekey="Literal91Resource1"></asp:literal></h5>
+              <h5 style="padding-top:10px"><asp:literal ID = "Literal91"  text="m3/h" runat="server" meta:resourcekey="Literal91Resource1"></asp:literal></h5>
                        <asp:textbox ID="value2_ph_relay_mch"  onblur="javascript: Changed_channel( 'value2_ph_relay_mch','riga2_ph_relay_mch',599, 1,2 );" class="span12"  runat="server" MaxLength="5" meta:resourcekey="value2_ph_relay_mchResource1" ></asp:textbox>
                 </div>
                        </div>
@@ -450,7 +450,7 @@
                 <div class="row-fluid">
                	<div class="span2">
                        <div id="riga1_cl_pulse_perc4" class="control-group">
-              <h5 style="padding-top:10px"><asp:literal ID = "Literal1"  text="% at 0 mc/h" runat="server" meta:resourcekey="Literal88Resource1"></asp:literal></h5>
+              <h5 style="padding-top:10px"><asp:literal ID = "Literal1"  text="% at 0 m3/h" runat="server" meta:resourcekey="Literal88Resource1"></asp:literal></h5>
                        <asp:textbox ID="value2_cl_pulse_perc4" onblur="javascript: Changed_channel( 'value2_cl_pulse_perc4','riga1_cl_pulse_perc4',99, 0,0 );"  class="span12"  runat="server" MaxLength="2" meta:resourcekey="value2_cl_pulse_perc4Resource1" ></asp:textbox>
                 </div>
                        </div>
@@ -473,7 +473,7 @@
 
                     <div class="span2">
                        <div id="riga2_cl_pulse_mch" class="control-group">
-              <h5 style="padding-top:10px"><asp:literal ID = "Literal86"  text="mc/h" runat="server" meta:resourcekey="Literal86Resource1"></asp:literal></h5>
+              <h5 style="padding-top:10px"><asp:literal ID = "Literal86"  text="m3/h" runat="server" meta:resourcekey="Literal86Resource1"></asp:literal></h5>
                        <asp:textbox ID="value2_cl_pulse_mch"  onblur="javascript: Changed_channel( 'value2_cl_pulse_mch','riga2_cl_pulse_mch',599, 1,2 );" class="span12"  runat="server" MaxLength="5" meta:resourcekey="value2_cl_pulse_mchResource1" ></asp:textbox>
                 </div>
                        </div>
@@ -616,7 +616,7 @@
                 <div class="row-fluid">
                	<div class="span2">
                        <div id="riga1_cl_relay_perc4" class="control-group">
-              <h5 style="padding-top:10px"><asp:literal ID = "Literal83"  text="% at 0 mc/h" runat="server" meta:resourcekey="Literal83Resource1"></asp:literal></h5>
+              <h5 style="padding-top:10px"><asp:literal ID = "Literal83"  text="% at 0 m3/h" runat="server" meta:resourcekey="Literal83Resource1"></asp:literal></h5>
                        <asp:textbox ID="value2_cl_relay_perc4" onblur="javascript: Changed_channel( 'value2_cl_relay_perc4','riga1_cl_relay_perc4',99, 0,0 );"  class="span12"  runat="server" MaxLength="2" meta:resourcekey="value2_cl_relay_perc4Resource1" ></asp:textbox>
                 </div>
                        </div>
@@ -639,7 +639,7 @@
 
                     <div class="span2">
                        <div id="riga2_cl_relay_mch" class="control-group">
-              <h5 style="padding-top:10px"><asp:literal ID = "Literal81"  text="mc/h" runat="server" meta:resourcekey="Literal81Resource1"></asp:literal></h5>
+              <h5 style="padding-top:10px"><asp:literal ID = "Literal81"  text="m3/h" runat="server" meta:resourcekey="Literal81Resource1"></asp:literal></h5>
                        <asp:textbox ID="value2_cl_relay_mch"  onblur="javascript: Changed_channel( 'value2_cl_relay_mch','riga2_cl_relay_mch',599, 1,2 );" class="span12"  runat="server" MaxLength="5" meta:resourcekey="value2_cl_relay_mchResource1" ></asp:textbox>
                 </div>
                        </div>
@@ -772,7 +772,7 @@
 
                     <div class="span2">
                        <div id="riga_mch" class="control-group">
-              <h5 style="padding-top:10px"><asp:literal ID = "Literal71"  text="mc/h:" runat="server" meta:resourcekey="Literal71Resource1"></asp:literal></h5>
+              <h5 style="padding-top:10px"><asp:literal ID = "Literal71"  text="m3/h:" runat="server" meta:resourcekey="Literal71Resource1"></asp:literal></h5>
                        <asp:textbox ID="value_mch" onblur="javascript: Changed_channel( 'value_mch','riga_mch',5900, 1,1 );" class="span12"  runat="server" MaxLength="5" meta:resourcekey="value_mchResource1" ></asp:textbox>
                 </div>
                        </div>
@@ -846,7 +846,7 @@
                        <div id="Div6" class="control-group">
                            
                            <div id="riga_wm">
-                                <h5 style="padding-top:10px"><asp:literal ID = "Literal60"  text="mc/h:" runat="server" meta:resourcekey="Literal60Resource1"></asp:literal></h5>
+                                <h5 style="padding-top:10px"><asp:literal ID = "Literal60"  text="m3/h:" runat="server" meta:resourcekey="Literal60Resource1"></asp:literal></h5>
                            </div>
                        <asp:textbox ID="value_wm" onblur="javascript: Changed_channel( 'value_wm','riga_wm',5900, 0,1 );" class="span12"  runat="server" meta:resourcekey="value_wmResource1" ></asp:textbox>
                 </div>

@@ -116,7 +116,7 @@ inputlog {
               <div id="checkboxCh"><asp:checkbox Checked="True" runat="server" ID="m3h" class="inputlog"></asp:checkbox></div>
               <div id="checkboxCh"><asp:Label runat="server" ID="m3h_label" class="labellog" Text="m3/h" ></asp:Label> </div>
               <div id="checkboxCh"><asp:checkbox runat="server" ID="totalizer" class="inputlog"></asp:checkbox></div>
-              <div id="checkboxCh"><asp:Label runat="server" ID="totalizer_label" class="labellog" Text="Totalizer" ></asp:Label> </div>
+              <div id="checkboxCh"><asp:Label runat="server" ID="totalizer_label" class="labellog" Text="Totaliser" ></asp:Label> </div>
               </div>
 
         </div>

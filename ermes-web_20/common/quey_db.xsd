@@ -1476,9 +1476,10 @@ WHERE        (identificativo = @identificativo) AND (id_485 = @i485 OR
                 </InsertCommand>
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT        id, identificativo, id_485, data, Flow_Acid_L, Flow_Self_Water_L, Flow_Chlorite_L, Lev_Acid_L, Lev_Chlorite_L, Lev_Water_L, Sefl_Acid_L, Sefl_Chlorite_L, TimeOut_L, Flow_Water_dil_L, Service_F_L, Analog_L, 
-                         Tank_Empty_L, Level_SW, BypassB, Lim_Dioxide, Lev_Alflow, Overf, ISNULL(flow1, 0) AS flow1, ISNULL(lettura, 0) AS lettura, ISNULL(naso, 0) AS naso, ISNULL(temperatura, 0) AS temperatura, ISNULL(levSoglia, 
-                         0) AS levSoglia
+                    <CommandText>SELECT        id, identificativo, id_485, data, Flow_Acid_L, Flow_Self_Water_L, Flow_Chlorite_L, Lev_Acid_L, Lev_Chlorite_L, Lev_Water_L, Sefl_Acid_L, Sefl_Chlorite_L, TimeOut_L, Flow_Water_dil_L, Service_F_L, Analog_L, Tank_Empty_L, 
+                         Level_SW, BypassB, Lim_Dioxide, Lev_Alflow, Overf, ISNULL(flow1, 0) AS flow1, ISNULL(lettura, 0) AS lettura, ISNULL(naso, 0) AS naso, ISNULL(temperatura, 0) AS temperatura, ISNULL(levSoglia, 0) AS levSoglia, ISNULL(flow1, 
+                         0) AS flow1, ISNULL(flow2, 0) AS flow2, ISNULL(lettura, 0) AS lettura, ISNULL(naso, 0) AS naso, ISNULL(temperatura, 0) AS temperatura, ISNULL(levSoglia, 0) AS levSoglia, ISNULL(totAcido, 0) AS totAcido, ISNULL(totCloro, 0) 
+                         AS totCloro, ISNULL(totAcqua, 0) AS totAcqua, ISNULL(totAcidoDay, 0) AS totAcidoDay, ISNULL(totCloroDay, 0) AS totCloroDay, ISNULL(totAcquaDay, 0) AS totAcquaDay, ISNULL(setpoint, 0) AS setpoint
 FROM            log_lta_ltu_ltd
 WHERE        (identificativo = @identificativo) AND (id_485 = @i485 OR
                          id_485 = @i485_1) AND (data BETWEEN @data1 AND @data2)
@@ -1522,6 +1523,19 @@ ORDER BY data DESC</CommandText>
               <Mapping SourceColumn="naso" DataSetColumn="naso" />
               <Mapping SourceColumn="temperatura" DataSetColumn="temperatura" />
               <Mapping SourceColumn="levSoglia" DataSetColumn="levSoglia" />
+              <Mapping SourceColumn="flow11" DataSetColumn="flow11" />
+              <Mapping SourceColumn="flow2" DataSetColumn="flow2" />
+              <Mapping SourceColumn="lettura1" DataSetColumn="lettura1" />
+              <Mapping SourceColumn="naso1" DataSetColumn="naso1" />
+              <Mapping SourceColumn="temperatura1" DataSetColumn="temperatura1" />
+              <Mapping SourceColumn="levSoglia1" DataSetColumn="levSoglia1" />
+              <Mapping SourceColumn="totAcido" DataSetColumn="totAcido" />
+              <Mapping SourceColumn="totCloro" DataSetColumn="totCloro" />
+              <Mapping SourceColumn="totAcqua" DataSetColumn="totAcqua" />
+              <Mapping SourceColumn="totAcidoDay" DataSetColumn="totAcidoDay" />
+              <Mapping SourceColumn="totCloroDay" DataSetColumn="totCloroDay" />
+              <Mapping SourceColumn="totAcquaDay" DataSetColumn="totAcquaDay" />
+              <Mapping SourceColumn="setpoint" DataSetColumn="setpoint" />
             </Mappings>
             <Sources>
               <DbSource ConnectionRef="max_5ConnectionString (Web.config)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="DeleteQuery" Modifier="Public" Name="DeleteQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="DeleteQuery">
@@ -1851,7 +1865,7 @@ WHERE        (username = @username) AND (password = @password) AND (identificati
   <xs:element name="quey_db" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="quey_db" msprop:Generator_UserDSName="quey_db">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="strumenti" msprop:Generator_TableClassName="strumentiDataTable" msprop:Generator_TableVarName="tablestrumenti" msprop:Generator_RowChangedName="strumentiRowChanged" msprop:Generator_TablePropName="strumenti" msprop:Generator_RowDeletingName="strumentiRowDeleting" msprop:Generator_RowChangingName="strumentiRowChanging" msprop:Generator_RowEvHandlerName="strumentiRowChangeEventHandler" msprop:Generator_RowDeletedName="strumentiRowDeleted" msprop:Generator_RowClassName="strumentiRow" msprop:Generator_UserTableName="strumenti" msprop:Generator_RowEvArgName="strumentiRowChangeEvent">
+        <xs:element name="strumenti" msprop:Generator_TableClassName="strumentiDataTable" msprop:Generator_TableVarName="tablestrumenti" msprop:Generator_TablePropName="strumenti" msprop:Generator_RowDeletingName="strumentiRowDeleting" msprop:Generator_RowChangingName="strumentiRowChanging" msprop:Generator_RowEvHandlerName="strumentiRowChangeEventHandler" msprop:Generator_RowDeletedName="strumentiRowDeleted" msprop:Generator_UserTableName="strumenti" msprop:Generator_RowChangedName="strumentiRowChanged" msprop:Generator_RowEvArgName="strumentiRowChangeEvent" msprop:Generator_RowClassName="strumentiRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="data_aggiornamento" msprop:Generator_ColumnVarNameInTable="columndata_aggiornamento" msprop:Generator_ColumnPropNameInRow="data_aggiornamento" msprop:Generator_ColumnPropNameInTable="data_aggiornamentoColumn" msprop:Generator_UserColumnName="data_aggiornamento" type="xs:dateTime" minOccurs="0" />
@@ -2130,7 +2144,7 @@ WHERE        (username = @username) AND (password = @password) AND (identificati
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="super_user" msprop:Generator_TableClassName="super_userDataTable" msprop:Generator_TableVarName="tablesuper_user" msprop:Generator_TablePropName="super_user" msprop:Generator_RowDeletingName="super_userRowDeleting" msprop:Generator_RowChangingName="super_userRowChanging" msprop:Generator_RowEvHandlerName="super_userRowChangeEventHandler" msprop:Generator_RowDeletedName="super_userRowDeleted" msprop:Generator_UserTableName="super_user" msprop:Generator_RowChangedName="super_userRowChanged" msprop:Generator_RowEvArgName="super_userRowChangeEvent" msprop:Generator_RowClassName="super_userRow">
+        <xs:element name="super_user" msprop:Generator_TableClassName="super_userDataTable" msprop:Generator_TableVarName="tablesuper_user" msprop:Generator_RowChangedName="super_userRowChanged" msprop:Generator_TablePropName="super_user" msprop:Generator_RowDeletingName="super_userRowDeleting" msprop:Generator_RowChangingName="super_userRowChanging" msprop:Generator_RowEvHandlerName="super_userRowChangeEventHandler" msprop:Generator_RowDeletedName="super_userRowDeleted" msprop:Generator_RowClassName="super_userRow" msprop:Generator_UserTableName="super_user" msprop:Generator_RowEvArgName="super_userRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Id_super" msdata:DataType="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msprop:Generator_ColumnVarNameInTable="columnId_super" msprop:Generator_ColumnPropNameInRow="Id_super" msprop:Generator_ColumnPropNameInTable="Id_superColumn" msprop:Generator_UserColumnName="Id_super" type="xs:string" />
@@ -2180,7 +2194,7 @@ WHERE        (username = @username) AND (password = @password) AND (identificati
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="user" msprop:Generator_TableClassName="userDataTable" msprop:Generator_TableVarName="tableuser" msprop:Generator_TablePropName="user" msprop:Generator_RowDeletingName="userRowDeleting" msprop:Generator_RowChangingName="userRowChanging" msprop:Generator_RowEvHandlerName="userRowChangeEventHandler" msprop:Generator_RowDeletedName="userRowDeleted" msprop:Generator_UserTableName="user" msprop:Generator_RowChangedName="userRowChanged" msprop:Generator_RowEvArgName="userRowChangeEvent" msprop:Generator_RowClassName="userRow">
+        <xs:element name="user" msprop:Generator_TableClassName="userDataTable" msprop:Generator_TableVarName="tableuser" msprop:Generator_RowChangedName="userRowChanged" msprop:Generator_TablePropName="user" msprop:Generator_RowDeletingName="userRowDeleting" msprop:Generator_RowChangingName="userRowChanging" msprop:Generator_RowEvHandlerName="userRowChangeEventHandler" msprop:Generator_RowDeletedName="userRowDeleted" msprop:Generator_RowClassName="userRow" msprop:Generator_UserTableName="user" msprop:Generator_RowEvArgName="userRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Id_user" msdata:DataType="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msprop:Generator_ColumnVarNameInTable="columnId_user" msprop:Generator_ColumnPropNameInRow="Id_user" msprop:Generator_ColumnPropNameInTable="Id_userColumn" msprop:Generator_UserColumnName="Id_user" type="xs:string" />
@@ -2211,7 +2225,7 @@ WHERE        (username = @username) AND (password = @password) AND (identificati
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="impianto" msprop:Generator_TableClassName="impiantoDataTable" msprop:Generator_TableVarName="tableimpianto" msprop:Generator_TablePropName="impianto" msprop:Generator_RowDeletingName="impiantoRowDeleting" msprop:Generator_RowChangingName="impiantoRowChanging" msprop:Generator_RowEvHandlerName="impiantoRowChangeEventHandler" msprop:Generator_RowDeletedName="impiantoRowDeleted" msprop:Generator_UserTableName="impianto" msprop:Generator_RowChangedName="impiantoRowChanged" msprop:Generator_RowEvArgName="impiantoRowChangeEvent" msprop:Generator_RowClassName="impiantoRow">
+        <xs:element name="impianto" msprop:Generator_TableClassName="impiantoDataTable" msprop:Generator_TableVarName="tableimpianto" msprop:Generator_RowChangedName="impiantoRowChanged" msprop:Generator_TablePropName="impianto" msprop:Generator_RowDeletingName="impiantoRowDeleting" msprop:Generator_RowChangingName="impiantoRowChanging" msprop:Generator_RowEvHandlerName="impiantoRowChangeEventHandler" msprop:Generator_RowDeletedName="impiantoRowDeleted" msprop:Generator_RowClassName="impiantoRow" msprop:Generator_UserTableName="impianto" msprop:Generator_RowEvArgName="impiantoRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="nome_impianto" msprop:Generator_ColumnVarNameInTable="columnnome_impianto" msprop:Generator_ColumnPropNameInRow="nome_impianto" msprop:Generator_ColumnPropNameInTable="nome_impiantoColumn" msprop:Generator_UserColumnName="nome_impianto" minOccurs="0">
@@ -2313,7 +2327,7 @@ WHERE        (username = @username) AND (password = @password) AND (identificati
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="log" msprop:Generator_TableClassName="logDataTable" msprop:Generator_TableVarName="tablelog" msprop:Generator_TablePropName="log" msprop:Generator_RowDeletingName="logRowDeleting" msprop:Generator_RowChangingName="logRowChanging" msprop:Generator_RowEvHandlerName="logRowChangeEventHandler" msprop:Generator_RowDeletedName="logRowDeleted" msprop:Generator_UserTableName="log" msprop:Generator_RowChangedName="logRowChanged" msprop:Generator_RowEvArgName="logRowChangeEvent" msprop:Generator_RowClassName="logRow">
+        <xs:element name="log" msprop:Generator_TableClassName="logDataTable" msprop:Generator_TableVarName="tablelog" msprop:Generator_RowChangedName="logRowChanged" msprop:Generator_TablePropName="log" msprop:Generator_RowDeletingName="logRowDeleting" msprop:Generator_RowChangingName="logRowChanging" msprop:Generator_RowEvHandlerName="logRowChangeEventHandler" msprop:Generator_RowDeletedName="logRowDeleted" msprop:Generator_RowClassName="logRow" msprop:Generator_UserTableName="log" msprop:Generator_RowEvArgName="logRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id" msdata:DataType="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:string" minOccurs="0" />
@@ -2522,7 +2536,7 @@ WHERE        (username = @username) AND (password = @password) AND (identificati
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="ld_log" msprop:Generator_TableClassName="ld_logDataTable" msprop:Generator_TableVarName="tableld_log" msprop:Generator_TablePropName="ld_log" msprop:Generator_RowDeletingName="ld_logRowDeleting" msprop:Generator_RowChangingName="ld_logRowChanging" msprop:Generator_RowEvHandlerName="ld_logRowChangeEventHandler" msprop:Generator_RowDeletedName="ld_logRowDeleted" msprop:Generator_UserTableName="ld_log" msprop:Generator_RowChangedName="ld_logRowChanged" msprop:Generator_RowEvArgName="ld_logRowChangeEvent" msprop:Generator_RowClassName="ld_logRow">
+        <xs:element name="ld_log" msprop:Generator_TableClassName="ld_logDataTable" msprop:Generator_TableVarName="tableld_log" msprop:Generator_RowChangedName="ld_logRowChanged" msprop:Generator_TablePropName="ld_log" msprop:Generator_RowDeletingName="ld_logRowDeleting" msprop:Generator_RowChangingName="ld_logRowChanging" msprop:Generator_RowEvHandlerName="ld_logRowChangeEventHandler" msprop:Generator_RowDeletedName="ld_logRowDeleted" msprop:Generator_RowClassName="ld_logRow" msprop:Generator_UserTableName="ld_log" msprop:Generator_RowEvArgName="ld_logRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id" msdata:DataType="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:string" minOccurs="0" />
@@ -2626,7 +2640,7 @@ WHERE        (username = @username) AND (password = @password) AND (identificati
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="wd_log" msprop:Generator_TableClassName="wd_logDataTable" msprop:Generator_TableVarName="tablewd_log" msprop:Generator_RowChangedName="wd_logRowChanged" msprop:Generator_TablePropName="wd_log" msprop:Generator_RowDeletingName="wd_logRowDeleting" msprop:Generator_RowChangingName="wd_logRowChanging" msprop:Generator_RowEvHandlerName="wd_logRowChangeEventHandler" msprop:Generator_RowDeletedName="wd_logRowDeleted" msprop:Generator_RowClassName="wd_logRow" msprop:Generator_UserTableName="wd_log" msprop:Generator_RowEvArgName="wd_logRowChangeEvent">
+        <xs:element name="wd_log" msprop:Generator_TableClassName="wd_logDataTable" msprop:Generator_TableVarName="tablewd_log" msprop:Generator_TablePropName="wd_log" msprop:Generator_RowDeletingName="wd_logRowDeleting" msprop:Generator_RowChangingName="wd_logRowChanging" msprop:Generator_RowEvHandlerName="wd_logRowChangeEventHandler" msprop:Generator_RowDeletedName="wd_logRowDeleted" msprop:Generator_UserTableName="wd_log" msprop:Generator_RowChangedName="wd_logRowChanged" msprop:Generator_RowEvArgName="wd_logRowChangeEvent" msprop:Generator_RowClassName="wd_logRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id" msdata:DataType="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:string" minOccurs="0" />
@@ -2701,7 +2715,7 @@ WHERE        (username = @username) AND (password = @password) AND (identificati
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="ld4_log" msprop:Generator_TableClassName="ld4_logDataTable" msprop:Generator_TableVarName="tableld4_log" msprop:Generator_TablePropName="ld4_log" msprop:Generator_RowDeletingName="ld4_logRowDeleting" msprop:Generator_RowChangingName="ld4_logRowChanging" msprop:Generator_RowEvHandlerName="ld4_logRowChangeEventHandler" msprop:Generator_RowDeletedName="ld4_logRowDeleted" msprop:Generator_UserTableName="ld4_log" msprop:Generator_RowChangedName="ld4_logRowChanged" msprop:Generator_RowEvArgName="ld4_logRowChangeEvent" msprop:Generator_RowClassName="ld4_logRow">
+        <xs:element name="ld4_log" msprop:Generator_TableClassName="ld4_logDataTable" msprop:Generator_TableVarName="tableld4_log" msprop:Generator_RowChangedName="ld4_logRowChanged" msprop:Generator_TablePropName="ld4_log" msprop:Generator_RowDeletingName="ld4_logRowDeleting" msprop:Generator_RowChangingName="ld4_logRowChanging" msprop:Generator_RowEvHandlerName="ld4_logRowChangeEventHandler" msprop:Generator_RowDeletedName="ld4_logRowDeleted" msprop:Generator_RowClassName="ld4_logRow" msprop:Generator_UserTableName="ld4_log" msprop:Generator_RowEvArgName="ld4_logRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id" msdata:DataType="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:string" minOccurs="0" />
@@ -2745,7 +2759,7 @@ WHERE        (username = @username) AND (password = @password) AND (identificati
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="log_tower" msprop:Generator_TableClassName="log_towerDataTable" msprop:Generator_TableVarName="tablelog_tower" msprop:Generator_TablePropName="log_tower" msprop:Generator_RowDeletingName="log_towerRowDeleting" msprop:Generator_RowChangingName="log_towerRowChanging" msprop:Generator_RowEvHandlerName="log_towerRowChangeEventHandler" msprop:Generator_RowDeletedName="log_towerRowDeleted" msprop:Generator_UserTableName="log_tower" msprop:Generator_RowChangedName="log_towerRowChanged" msprop:Generator_RowEvArgName="log_towerRowChangeEvent" msprop:Generator_RowClassName="log_towerRow">
+        <xs:element name="log_tower" msprop:Generator_TableClassName="log_towerDataTable" msprop:Generator_TableVarName="tablelog_tower" msprop:Generator_RowChangedName="log_towerRowChanged" msprop:Generator_TablePropName="log_tower" msprop:Generator_RowDeletingName="log_towerRowDeleting" msprop:Generator_RowChangingName="log_towerRowChanging" msprop:Generator_RowEvHandlerName="log_towerRowChangeEventHandler" msprop:Generator_RowDeletedName="log_towerRowDeleted" msprop:Generator_RowClassName="log_towerRow" msprop:Generator_UserTableName="log_tower" msprop:Generator_RowEvArgName="log_towerRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id" msdata:DataType="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:string" minOccurs="0" />
@@ -2896,7 +2910,7 @@ WHERE        (username = @username) AND (password = @password) AND (identificati
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="wh_log" msprop:Generator_TableClassName="wh_logDataTable" msprop:Generator_TableVarName="tablewh_log" msprop:Generator_TablePropName="wh_log" msprop:Generator_RowDeletingName="wh_logRowDeleting" msprop:Generator_RowChangingName="wh_logRowChanging" msprop:Generator_RowEvHandlerName="wh_logRowChangeEventHandler" msprop:Generator_RowDeletedName="wh_logRowDeleted" msprop:Generator_UserTableName="wh_log" msprop:Generator_RowChangedName="wh_logRowChanged" msprop:Generator_RowEvArgName="wh_logRowChangeEvent" msprop:Generator_RowClassName="wh_logRow">
+        <xs:element name="wh_log" msprop:Generator_TableClassName="wh_logDataTable" msprop:Generator_TableVarName="tablewh_log" msprop:Generator_RowChangedName="wh_logRowChanged" msprop:Generator_TablePropName="wh_log" msprop:Generator_RowDeletingName="wh_logRowDeleting" msprop:Generator_RowChangingName="wh_logRowChanging" msprop:Generator_RowEvHandlerName="wh_logRowChangeEventHandler" msprop:Generator_RowDeletedName="wh_logRowDeleted" msprop:Generator_RowClassName="wh_logRow" msprop:Generator_UserTableName="wh_log" msprop:Generator_RowEvArgName="wh_logRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id" msdata:DataType="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:string" minOccurs="0" />
@@ -2938,7 +2952,7 @@ WHERE        (username = @username) AND (password = @password) AND (identificati
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="ltb_log" msprop:Generator_TableClassName="ltb_logDataTable" msprop:Generator_TableVarName="tableltb_log" msprop:Generator_TablePropName="ltb_log" msprop:Generator_RowDeletingName="ltb_logRowDeleting" msprop:Generator_RowChangingName="ltb_logRowChanging" msprop:Generator_RowEvHandlerName="ltb_logRowChangeEventHandler" msprop:Generator_RowDeletedName="ltb_logRowDeleted" msprop:Generator_UserTableName="ltb_log" msprop:Generator_RowChangedName="ltb_logRowChanged" msprop:Generator_RowEvArgName="ltb_logRowChangeEvent" msprop:Generator_RowClassName="ltb_logRow">
+        <xs:element name="ltb_log" msprop:Generator_TableClassName="ltb_logDataTable" msprop:Generator_TableVarName="tableltb_log" msprop:Generator_RowChangedName="ltb_logRowChanged" msprop:Generator_TablePropName="ltb_log" msprop:Generator_RowDeletingName="ltb_logRowDeleting" msprop:Generator_RowChangingName="ltb_logRowChanging" msprop:Generator_RowEvHandlerName="ltb_logRowChangeEventHandler" msprop:Generator_RowDeletedName="ltb_logRowDeleted" msprop:Generator_RowClassName="ltb_logRow" msprop:Generator_UserTableName="ltb_log" msprop:Generator_RowEvArgName="ltb_logRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id" msdata:DataType="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:string" minOccurs="0" />
@@ -2970,7 +2984,7 @@ WHERE        (username = @username) AND (password = @password) AND (identificati
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="log_ldma" msprop:Generator_TableClassName="log_ldmaDataTable" msprop:Generator_TableVarName="tablelog_ldma" msprop:Generator_RowChangedName="log_ldmaRowChanged" msprop:Generator_TablePropName="log_ldma" msprop:Generator_RowDeletingName="log_ldmaRowDeleting" msprop:Generator_RowChangingName="log_ldmaRowChanging" msprop:Generator_RowEvHandlerName="log_ldmaRowChangeEventHandler" msprop:Generator_RowDeletedName="log_ldmaRowDeleted" msprop:Generator_RowClassName="log_ldmaRow" msprop:Generator_UserTableName="log_ldma" msprop:Generator_RowEvArgName="log_ldmaRowChangeEvent">
+        <xs:element name="log_ldma" msprop:Generator_TableClassName="log_ldmaDataTable" msprop:Generator_TableVarName="tablelog_ldma" msprop:Generator_TablePropName="log_ldma" msprop:Generator_RowDeletingName="log_ldmaRowDeleting" msprop:Generator_RowChangingName="log_ldmaRowChanging" msprop:Generator_RowEvHandlerName="log_ldmaRowChangeEventHandler" msprop:Generator_RowDeletedName="log_ldmaRowDeleted" msprop:Generator_UserTableName="log_ldma" msprop:Generator_RowChangedName="log_ldmaRowChanged" msprop:Generator_RowEvArgName="log_ldmaRowChangeEvent" msprop:Generator_RowClassName="log_ldmaRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="data" msprop:Generator_ColumnVarNameInTable="columndata" msprop:Generator_ColumnPropNameInRow="data" msprop:Generator_ColumnPropNameInTable="dataColumn" msprop:Generator_UserColumnName="data" type="xs:dateTime" minOccurs="0" />
@@ -2982,7 +2996,7 @@ WHERE        (username = @username) AND (password = @password) AND (identificati
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="log_lta_ltu_ltd" msprop:Generator_TableClassName="log_lta_ltu_ltdDataTable" msprop:Generator_TableVarName="tablelog_lta_ltu_ltd" msprop:Generator_TablePropName="log_lta_ltu_ltd" msprop:Generator_RowDeletingName="log_lta_ltu_ltdRowDeleting" msprop:Generator_RowChangingName="log_lta_ltu_ltdRowChanging" msprop:Generator_RowEvHandlerName="log_lta_ltu_ltdRowChangeEventHandler" msprop:Generator_RowDeletedName="log_lta_ltu_ltdRowDeleted" msprop:Generator_UserTableName="log_lta_ltu_ltd" msprop:Generator_RowChangedName="log_lta_ltu_ltdRowChanged" msprop:Generator_RowEvArgName="log_lta_ltu_ltdRowChangeEvent" msprop:Generator_RowClassName="log_lta_ltu_ltdRow">
+        <xs:element name="log_lta_ltu_ltd" msprop:Generator_TableClassName="log_lta_ltu_ltdDataTable" msprop:Generator_TableVarName="tablelog_lta_ltu_ltd" msprop:Generator_RowChangedName="log_lta_ltu_ltdRowChanged" msprop:Generator_TablePropName="log_lta_ltu_ltd" msprop:Generator_RowDeletingName="log_lta_ltu_ltdRowDeleting" msprop:Generator_RowChangingName="log_lta_ltu_ltdRowChanging" msprop:Generator_RowEvHandlerName="log_lta_ltu_ltdRowChangeEventHandler" msprop:Generator_RowDeletedName="log_lta_ltu_ltdRowDeleted" msprop:Generator_RowClassName="log_lta_ltu_ltdRow" msprop:Generator_UserTableName="log_lta_ltu_ltd" msprop:Generator_RowEvArgName="log_lta_ltu_ltdRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id" msdata:DataType="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:string" minOccurs="0" />
@@ -3024,10 +3038,23 @@ WHERE        (username = @username) AND (password = @password) AND (identificati
               <xs:element name="naso" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnnaso" msprop:Generator_ColumnPropNameInRow="naso" msprop:Generator_ColumnPropNameInTable="nasoColumn" msprop:Generator_UserColumnName="naso" type="xs:float" minOccurs="0" />
               <xs:element name="temperatura" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columntemperatura" msprop:Generator_ColumnPropNameInRow="temperatura" msprop:Generator_ColumnPropNameInTable="temperaturaColumn" msprop:Generator_UserColumnName="temperatura" type="xs:float" minOccurs="0" />
               <xs:element name="levSoglia" msprop:Generator_ColumnVarNameInTable="columnlevSoglia" msprop:Generator_ColumnPropNameInRow="levSoglia" msprop:Generator_ColumnPropNameInTable="levSogliaColumn" msprop:Generator_UserColumnName="levSoglia" type="xs:boolean" minOccurs="0" />
+              <xs:element name="flow11" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnflow11" msprop:Generator_ColumnPropNameInRow="flow11" msprop:Generator_ColumnPropNameInTable="flow11Column" msprop:Generator_UserColumnName="flow11" type="xs:float" minOccurs="0" />
+              <xs:element name="flow2" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnflow2" msprop:Generator_ColumnPropNameInRow="flow2" msprop:Generator_ColumnPropNameInTable="flow2Column" msprop:Generator_UserColumnName="flow2" type="xs:float" minOccurs="0" />
+              <xs:element name="lettura1" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnlettura1" msprop:Generator_ColumnPropNameInRow="lettura1" msprop:Generator_ColumnPropNameInTable="lettura1Column" msprop:Generator_UserColumnName="lettura1" type="xs:float" minOccurs="0" />
+              <xs:element name="naso1" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnnaso1" msprop:Generator_ColumnPropNameInRow="naso1" msprop:Generator_ColumnPropNameInTable="naso1Column" msprop:Generator_UserColumnName="naso1" type="xs:float" minOccurs="0" />
+              <xs:element name="temperatura1" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columntemperatura1" msprop:Generator_ColumnPropNameInRow="temperatura1" msprop:Generator_ColumnPropNameInTable="temperatura1Column" msprop:Generator_UserColumnName="temperatura1" type="xs:float" minOccurs="0" />
+              <xs:element name="levSoglia1" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnlevSoglia1" msprop:Generator_ColumnPropNameInRow="levSoglia1" msprop:Generator_ColumnPropNameInTable="levSoglia1Column" msprop:Generator_UserColumnName="levSoglia1" type="xs:boolean" minOccurs="0" />
+              <xs:element name="totAcido" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columntotAcido" msprop:Generator_ColumnPropNameInRow="totAcido" msprop:Generator_ColumnPropNameInTable="totAcidoColumn" msprop:Generator_UserColumnName="totAcido" type="xs:float" minOccurs="0" />
+              <xs:element name="totCloro" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columntotCloro" msprop:Generator_ColumnPropNameInRow="totCloro" msprop:Generator_ColumnPropNameInTable="totCloroColumn" msprop:Generator_UserColumnName="totCloro" type="xs:float" minOccurs="0" />
+              <xs:element name="totAcqua" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columntotAcqua" msprop:Generator_ColumnPropNameInRow="totAcqua" msprop:Generator_ColumnPropNameInTable="totAcquaColumn" msprop:Generator_UserColumnName="totAcqua" type="xs:float" minOccurs="0" />
+              <xs:element name="totAcidoDay" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columntotAcidoDay" msprop:Generator_ColumnPropNameInRow="totAcidoDay" msprop:Generator_ColumnPropNameInTable="totAcidoDayColumn" msprop:Generator_UserColumnName="totAcidoDay" type="xs:float" minOccurs="0" />
+              <xs:element name="totCloroDay" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columntotCloroDay" msprop:Generator_ColumnPropNameInRow="totCloroDay" msprop:Generator_ColumnPropNameInTable="totCloroDayColumn" msprop:Generator_UserColumnName="totCloroDay" type="xs:float" minOccurs="0" />
+              <xs:element name="totAcquaDay" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columntotAcquaDay" msprop:Generator_ColumnPropNameInRow="totAcquaDay" msprop:Generator_ColumnPropNameInTable="totAcquaDayColumn" msprop:Generator_UserColumnName="totAcquaDay" type="xs:float" minOccurs="0" />
+              <xs:element name="setpoint" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnsetpoint" msprop:Generator_ColumnPropNameInRow="setpoint" msprop:Generator_ColumnPropNameInTable="setpointColumn" msprop:Generator_UserColumnName="setpoint" type="xs:float" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="log_ldlg" msprop:Generator_TableClassName="log_ldlgDataTable" msprop:Generator_TableVarName="tablelog_ldlg" msprop:Generator_TablePropName="log_ldlg" msprop:Generator_RowDeletingName="log_ldlgRowDeleting" msprop:Generator_RowChangingName="log_ldlgRowChanging" msprop:Generator_RowEvHandlerName="log_ldlgRowChangeEventHandler" msprop:Generator_RowDeletedName="log_ldlgRowDeleted" msprop:Generator_UserTableName="log_ldlg" msprop:Generator_RowChangedName="log_ldlgRowChanged" msprop:Generator_RowEvArgName="log_ldlgRowChangeEvent" msprop:Generator_RowClassName="log_ldlgRow">
+        <xs:element name="log_ldlg" msprop:Generator_TableClassName="log_ldlgDataTable" msprop:Generator_TableVarName="tablelog_ldlg" msprop:Generator_RowChangedName="log_ldlgRowChanged" msprop:Generator_TablePropName="log_ldlg" msprop:Generator_RowDeletingName="log_ldlgRowDeleting" msprop:Generator_RowChangingName="log_ldlgRowChanging" msprop:Generator_RowEvHandlerName="log_ldlgRowChangeEventHandler" msprop:Generator_RowDeletedName="log_ldlgRowDeleted" msprop:Generator_RowClassName="log_ldlgRow" msprop:Generator_UserTableName="log_ldlg" msprop:Generator_RowEvArgName="log_ldlgRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id" msdata:DataType="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:string" minOccurs="0" />
@@ -3061,7 +3088,7 @@ WHERE        (username = @username) AND (password = @password) AND (identificati
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="impianto_new" msprop:Generator_TableClassName="impianto_newDataTable" msprop:Generator_TableVarName="tableimpianto_new" msprop:Generator_RowChangedName="impianto_newRowChanged" msprop:Generator_TablePropName="impianto_new" msprop:Generator_RowDeletingName="impianto_newRowDeleting" msprop:Generator_RowChangingName="impianto_newRowChanging" msprop:Generator_RowEvHandlerName="impianto_newRowChangeEventHandler" msprop:Generator_RowDeletedName="impianto_newRowDeleted" msprop:Generator_RowClassName="impianto_newRow" msprop:Generator_UserTableName="impianto_new" msprop:Generator_RowEvArgName="impianto_newRowChangeEvent">
+        <xs:element name="impianto_new" msprop:Generator_TableClassName="impianto_newDataTable" msprop:Generator_TableVarName="tableimpianto_new" msprop:Generator_TablePropName="impianto_new" msprop:Generator_RowDeletingName="impianto_newRowDeleting" msprop:Generator_RowChangingName="impianto_newRowChanging" msprop:Generator_RowEvHandlerName="impianto_newRowChangeEventHandler" msprop:Generator_RowDeletedName="impianto_newRowDeleted" msprop:Generator_UserTableName="impianto_new" msprop:Generator_RowChangedName="impianto_newRowChanged" msprop:Generator_RowEvArgName="impianto_newRowChangeEvent" msprop:Generator_RowClassName="impianto_newRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id_super" msdata:DataType="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msprop:Generator_ColumnVarNameInTable="columnid_super" msprop:Generator_ColumnPropNameInRow="id_super" msprop:Generator_ColumnPropNameInTable="id_superColumn" msprop:Generator_UserColumnName="id_super" type="xs:string" />
@@ -3183,7 +3210,7 @@ WHERE        (username = @username) AND (password = @password) AND (identificati
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="webService" msprop:Generator_TableClassName="webServiceDataTable" msprop:Generator_TableVarName="tablewebService" msprop:Generator_TablePropName="webService" msprop:Generator_RowDeletingName="webServiceRowDeleting" msprop:Generator_RowChangingName="webServiceRowChanging" msprop:Generator_RowEvHandlerName="webServiceRowChangeEventHandler" msprop:Generator_RowDeletedName="webServiceRowDeleted" msprop:Generator_UserTableName="webService" msprop:Generator_RowChangedName="webServiceRowChanged" msprop:Generator_RowEvArgName="webServiceRowChangeEvent" msprop:Generator_RowClassName="webServiceRow">
+        <xs:element name="webService" msprop:Generator_TableClassName="webServiceDataTable" msprop:Generator_TableVarName="tablewebService" msprop:Generator_RowChangedName="webServiceRowChanged" msprop:Generator_TablePropName="webService" msprop:Generator_RowDeletingName="webServiceRowDeleting" msprop:Generator_RowChangingName="webServiceRowChanging" msprop:Generator_RowEvHandlerName="webServiceRowChangeEventHandler" msprop:Generator_RowDeletedName="webServiceRowDeleted" msprop:Generator_RowClassName="webServiceRow" msprop:Generator_UserTableName="webService" msprop:Generator_RowEvArgName="webServiceRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="identificativo" msprop:Generator_ColumnVarNameInTable="columnidentificativo" msprop:Generator_ColumnPropNameInRow="identificativo" msprop:Generator_ColumnPropNameInTable="identificativoColumn" msprop:Generator_UserColumnName="identificativo" minOccurs="0">

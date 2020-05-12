@@ -117,7 +117,7 @@ Public Class log_lta_ltu_ltd
         Dim fattore_divisione_temp As Integer
         Dim lunghezza_tabella As Integer
         Dim function_javascript As String = ""
-        Dim set_variable_javascript(18, 1) As String
+        Dim set_variable_javascript(25, 1) As String
         Dim java_script_variable As java_script = New java_script
         Dim java_script_function As java_script = New java_script
         Dim query As New query
@@ -170,6 +170,9 @@ Public Class log_lta_ltu_ltd
             Case "LTA"
                 ltd_ltu.Visible = False
                 lta_ltu.Visible = True
+                If number_version >= 221 Then ' la versione 
+                    lta_release.Visible = True
+                End If
             Case "LTU"
                 ltd_ltu.Visible = True
                 lta_ltu.Visible = True
@@ -260,11 +263,30 @@ Public Class log_lta_ltu_ltd
         set_variable_javascript(18, 0) = "array_minmax"
         set_variable_javascript(18, 1) = "["
 
+        set_variable_javascript(19, 0) = "array_totAcido"
+        set_variable_javascript(19, 1) = "["
+        set_variable_javascript(20, 0) = "array_totCloro"
+        set_variable_javascript(20, 1) = "["
+        set_variable_javascript(21, 0) = "array_totWater"
+        set_variable_javascript(21, 1) = "["
+
+        set_variable_javascript(22, 0) = "array_setpoint"
+        set_variable_javascript(22, 1) = "["
+
+        set_variable_javascript(23, 0) = "array_totAcidoDay"
+        set_variable_javascript(23, 1) = "["
+        set_variable_javascript(24, 0) = "array_totCloroDay"
+        set_variable_javascript(24, 1) = "["
+        set_variable_javascript(25, 0) = "array_totWaterDay"
+        set_variable_javascript(25, 1) = "["
+
 
         literal_script.Text = "<script>"
 
         lunghezza_tabella = table_log.Count
         Dim k As Integer
+        Dim dayPrecedent = 0
+        Dim virgolaDay As String = ""
         'For Each dc_log In table_log
         For k = lunghezza_tabella - 1 To 0 Step -1
             Dim dc_log As ermes_web_20.quey_db.log_lta_ltu_ltdRow
@@ -309,11 +331,23 @@ Public Class log_lta_ltu_ltd
             '    set_variable_javascript(1, 1) = set_variable_javascript(1, 1) + "[Date.UTC(" + dc_log.data.Year.ToString + "," + (dc_log.data.Month - 1).ToString + "," + dc_log.data.Day.ToString + "," + dc_log.data.Hour.ToString + "," + dc_log.data.Minute.ToString + ")," + Replace(dc_log.valore2.ToString(), ",", ".") + "]"
             set_variable_javascript(18, 1) = set_variable_javascript(18, 1) + "[Date.UTC(" + dc_log.data.Year.ToString + "," + (dc_log.data.Month - 1).ToString + "," + dc_log.data.Day.ToString + "," + dc_log.data.Hour.ToString + "," + dc_log.data.Minute.ToString + ")," + get_status_boolean(dc_log.levSoglia) + "]"
 
+            set_variable_javascript(19, 1) = set_variable_javascript(19, 1) + "[Date.UTC(" + dc_log.data.Year.ToString + "," + (dc_log.data.Month - 1).ToString + "," + dc_log.data.Day.ToString + "," + dc_log.data.Hour.ToString + "," + dc_log.data.Minute.ToString + ")," + Replace(dc_log.totAcido.ToString(), ",", ".") + "]"
+            set_variable_javascript(20, 1) = set_variable_javascript(20, 1) + "[Date.UTC(" + dc_log.data.Year.ToString + "," + (dc_log.data.Month - 1).ToString + "," + dc_log.data.Day.ToString + "," + dc_log.data.Hour.ToString + "," + dc_log.data.Minute.ToString + ")," + Replace(dc_log.totCloro.ToString(), ",", ".") + "]"
+            set_variable_javascript(21, 1) = set_variable_javascript(21, 1) + "[Date.UTC(" + dc_log.data.Year.ToString + "," + (dc_log.data.Month - 1).ToString + "," + dc_log.data.Day.ToString + "," + dc_log.data.Hour.ToString + "," + dc_log.data.Minute.ToString + ")," + Replace(dc_log.totAcqua.ToString(), ",", ".") + "]"
+            set_variable_javascript(22, 1) = set_variable_javascript(22, 1) + "[Date.UTC(" + dc_log.data.Year.ToString + "," + (dc_log.data.Month - 1).ToString + "," + dc_log.data.Day.ToString + "," + dc_log.data.Hour.ToString + "," + dc_log.data.Minute.ToString + ")," + Replace(dc_log.setpoint.ToString(), ",", ".") + "]"
+
+            If dayPrecedent = 0 Or dc_log.data.Day <> dayPrecedent Then
+                set_variable_javascript(23, 1) = set_variable_javascript(23, 1) + virgolaDay + "[Date.UTC(" + dc_log.data.Year.ToString + "," + (dc_log.data.Month - 1).ToString + "," + dc_log.data.Day.ToString + ")," + Replace(dc_log.totAcido.ToString(), ",", ".") + "]"
+                set_variable_javascript(24, 1) = set_variable_javascript(24, 1) + virgolaDay + "[Date.UTC(" + dc_log.data.Year.ToString + "," + (dc_log.data.Month - 1).ToString + "," + dc_log.data.Day.ToString + ")," + Replace(dc_log.totCloro.ToString(), ",", ".") + "]"
+                set_variable_javascript(25, 1) = set_variable_javascript(25, 1) + virgolaDay + "[Date.UTC(" + dc_log.data.Year.ToString + "," + (dc_log.data.Month - 1).ToString + "," + dc_log.data.Day.ToString + ")," + Replace(dc_log.totAcqua.ToString(), ",", ".") + "]"
+                virgolaDay = ","
+                dayPrecedent = dc_log.data.Day
+            End If
 
             index = index + 1
             If index < lunghezza_tabella Then
                 Dim j As Integer
-                For j = 0 To 18
+                For j = 0 To 22
                     set_variable_javascript(j, 1) = set_variable_javascript(j, 1) + "," + vbCrLf
                 Next
             End If
@@ -321,11 +355,14 @@ Public Class log_lta_ltu_ltd
         Next
         If index >= lunghezza_tabella Then
             Dim j As Integer
-            For j = 0 To 18
+            For j = 0 To 22
                 set_variable_javascript(j, 1) = set_variable_javascript(j, 1) + "]" + vbCrLf
             Next
         End If
 
+        set_variable_javascript(23, 1) = set_variable_javascript(23, 1) + "]"
+        set_variable_javascript(24, 1) = set_variable_javascript(24, 1) + "]"
+        set_variable_javascript(25, 1) = set_variable_javascript(25, 1) + "]"
         Dim data_prima_date As Date
         Dim data_seconda_date As Date
         If data_prima <> "" And data_seconda <> "" Then
@@ -351,7 +388,10 @@ Public Class log_lta_ltu_ltd
         "var BypassB_label='" + BypassB_label.Text + "';" + "var Lim_Dioxide_label='" + Lim_Dioxide_label.Text + "';" + "var Lev_Alflow_label='" + Lev_Alflow_label.Text + "';" + "var Overf_label='" + Overf_label.Text + "';" _
          + "var Flow_Water_dil_L_label='" + Flow_Water_dil_L_label.Text + "';" + "var Service_F_L_label='" + Service_F_L_label.Text + "';" _
          + "var Level_SW_label_label='" + Level_SW_label.Text + "';" + "var BypassB_label='" + BypassB_label.Text + "';" + "var Lim_Dioxide_label='" + Lim_Dioxide_label.Text + "';" + "var Lev_Alflow_label='" + Lev_Alflow_label.Text + "';" + "var flow1_label='" + flow1_label.Text + "';" + "var clo2_label='" + clo2_label.Text + "';" _
-         + "var naso_label='" + naso_label.Text + "';" + "var temperature_lt_label='" + temperature_lt_label.Text + "';" + "var MinMax_Label='" + MinMax_Label.Text + "';"
+         + "var naso_label='" + naso_label.Text + "';" + "var temperature_lt_label='" + temperature_lt_label.Text + "';" + "var MinMax_Label='" + MinMax_Label.Text + "';" _
+         + "var totAcido_label='" + totAcido_label.Text + "';" + "var totCloro_label='" + totCloro_label.Text + "';" + "var totWater_label='" + totWater_label.Text + "';" _
+         + "var totAcidoDay_label='" + totAcidoDay_label.Text + "';" + "var totCloroDay_label='" + totCloroDay_label.Text + "';" + "var totWaterDay_label='" + totWaterDay_label.Text + "';" _
+        + "var setpoint_label='" + setpoint_label.Text + "';"
 
 
         literal_script.Text = literal_script.Text + "var name_coockie='" + codice_impianto + "_" + id_485_impianto + "_log" + "';"
@@ -361,7 +401,7 @@ Public Class log_lta_ltu_ltd
         function_javascript = function_javascript + "manage_div();"
         function_javascript = function_javascript + "upgrate_chart();"
         function_javascript = function_javascript + "create_picker();"
-        java_script_variable.set_url_setpoint(Page, set_variable_javascript, 18)
+        java_script_variable.set_url_setpoint(Page, set_variable_javascript, 25)
         java_script_function.call_function_javascript_onload(Page, function_javascript)
     End Sub
     Public Function get_status_boolean(ByVal valore_bool As Boolean) As String

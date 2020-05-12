@@ -117,7 +117,40 @@ inputlog {
 </asp:placeholder>
               </div>
 </div>
+
         <!-- fine riga -->
+<asp:placeholder runat="server" id="lta_release" Visible="False">
+    <div class="row-fluid">    
+          <div class="span12">
+                    <h5 style="padding-top:10px"><asp:literal ID = "Literal7"  text="Totaliser" runat="server"  ></asp:literal></h5>
+                    <div id="checkboxCh"><asp:checkbox runat="server" ID="totAcido" class="inputlog" ></asp:checkbox></div>
+                    <div id="checkboxCh"><asp:Label runat="server" ID="totAcido_label" class="labellog" Text="Acid" ></asp:Label> </div> 
+                    <div id="checkboxCh"><asp:checkbox runat="server" ID="totCloro" class="inputlog" ></asp:checkbox></div>
+                    <div id="checkboxCh"><asp:Label runat="server" ID="totCloro_label" class="labellog" Text="Chlorine" ></asp:Label> </div> 
+                    <div id="checkboxCh"><asp:checkbox runat="server" ID="totWater" class="inputlog" ></asp:checkbox></div>
+                    <div id="checkboxCh"><asp:Label runat="server" ID="totWater_label" class="labellog" Text="Water" ></asp:Label> </div> 
+              </div>
+</div>
+    <div class="row-fluid">    
+          <div class="span12">
+                    <h5 style="padding-top:10px"><asp:literal ID = "Literal5"  text="Daily Totaliser" runat="server"  ></asp:literal></h5>
+                    <div id="checkboxCh"><asp:checkbox runat="server" ID="totAcidoDay" class="inputlog" ></asp:checkbox></div>
+                    <div id="checkboxCh"><asp:Label runat="server" ID="totAcidoDay_label" class="labellog" Text="Acid" ></asp:Label> </div> 
+                    <div id="checkboxCh"><asp:checkbox runat="server" ID="totCloroDay" class="inputlog" ></asp:checkbox></div>
+                    <div id="checkboxCh"><asp:Label runat="server" ID="totCloroDay_label" class="labellog" Text="Chlorine" ></asp:Label> </div> 
+                    <div id="checkboxCh"><asp:checkbox runat="server" ID="totWaterDay" class="inputlog" ></asp:checkbox></div>
+                    <div id="checkboxCh"><asp:Label runat="server" ID="totWaterDay_label" class="labellog" Text="Water" ></asp:Label> </div> 
+              </div>
+</div>
+<div class="row-fluid">    
+        <div class="span12">
+                    <h5 style="padding-top:10px"><asp:literal ID = "Literal6"  text="PPM" runat="server"  ></asp:literal></h5>
+                    <div id="checkboxCh"><asp:checkbox runat="server" ID="setpoint" class="inputlog" ></asp:checkbox></div>
+                    <div id="checkboxCh"><asp:Label runat="server" ID="setpoint_label" class="labellog" Text="Setpoint" ></asp:Label> </div> 
+         </div>
+</div>
+
+</asp:placeholder>
        
 
                 
@@ -154,7 +187,7 @@ inputlog {
        <asp:Button ID="refresh_log_server" runat="server" BackColor="Transparent" BorderColor="Transparent" meta:resourcekey="refresh_log_serverResource1"  />
     <asp:literal runat="server" ID="literal_script" meta:resourcekey="literal_scriptResource1" ></asp:literal>
 
-    <script type="text/javascript" src="chart/chart_manage_lta_ltu_ltd.js"></script>
+    <script type="text/javascript" src="chart/chart_manage_lta_ltu_ltd.js?v=1.0"></script>
    </div> 	
       
       

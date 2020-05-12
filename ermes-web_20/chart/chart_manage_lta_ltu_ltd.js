@@ -326,1088 +326,1297 @@ function upgrate_chart() {
     var yaxis_chart = [];
     //canale ch1
     //alert("entro")
-
+console.log("entro Grafico")
     //allarmi
+    if (($('#totAcidoDay').is(':checked')) || ($('#totCloroDay').is(':checked')) || ($('#totWaterDay').is(':checked')))
+    {
+        if (($('#totAcidoDay').is(':checked')) ) {
 
-    if (($('#Lev_Acid_L').is(':checked')) && (counter_series < 10)) {
-        series_chart.push({
-            id: 'ch3_val_series',
-            name: Lev_Acid_L_label,
-            data: array_Lev_Acid_L,
-            type: 'scatter',
-            tooltip: {
-                pointFormat: function () {
-                    return false;
+            series_chart.push({
+                name: totAcidoDay_label,
+                id: 'totAcidoDay_series',
+                data: array_totAcidoDay,
+                yAxis: numero_asse,
+                marker: {
+                    enabled: true,
+                    radius: 3
                 },
-                valueDecimals: 0
-            },
-            lineWidth: 2,
-
-            step: true,
-            yAxis: numero_asse
-        },
-        {
-            id: 'ch2_val_series',
-            name: Lev_Acid_L_label,
-            data: array_Lev_Acid_L,
-            //type:'line',
-            step: true,
-            shadow: false,
-            color: 'rgba(255,255,255,0.1)',
-            tooltip: {
-                //pointFormat: '<span style="#FFFFF">{series.name}:<b>{point.y}</b></span>',
-                // formatter: '<span style="#FFFFF">{series.name}:<b>{point.y}</b></span>',
-                pointFormat: '<span style="#FFFFF">{series.name}:<b>{point.y}</b></span><br/>',
-
-                valueDecimals: 0
-            },
-            lineWidth: 2,
-            shared: true,
-            yAxis: numero_asse
-        });
-        yaxis_chart.push({
-            labels: {
-                formatter: function () {
-                    if (this.value == 1) {
-                        return 'ON';
-                    }
-                    else {
-                        return 'OFF';
-                    }
+                tooltip: {
+                    valueDecimals: 2
                 }
-            },
-
-            title: {
-                text: Lev_Acid_L_label
-            },
-            opposite: false,
-            top: altezza,
-            height: 100,
-            offset: 0,
-            lineWidth: 2,
-            max: 2,
-            min: 0
-        });
-        altezza = altezza + 150;
-        numero_asse = numero_asse + 1;
-        counter_series = counter_series + 1;
-    }
-    if (($('#Flow_Acid_L').is(':checked')) && (counter_series < 10)) {
-        series_chart.push({
-            id: 'ch4_val_series',
-            name: Flow_Acid_L_label,
-            data: array_Flow_Acid_L,
-            type: 'scatter',
-            tooltip: {
-                pointFormat: function () {
-                    return false;
+            });
+            yaxis_chart.push({
+                title: {
+                    text: totAcidoDay_label
                 },
-                valueDecimals: 0
-            },
-            lineWidth: 2,
+                opposite: false,
+                id: 'totAcidoDay_y_val',
+                top: altezza,
+                height: 200,
+                lineWidth: 2
+            });
+            altezza = altezza + 300;
+            numero_asse = numero_asse + 1;
+            counter_series = counter_series + 1;
+        }
+        if (($('#totCloroDay').is(':checked'))) {
 
-            step: true,
-            yAxis: numero_asse
-        },
-        {
-            id: 'ch2_val_series',
-            name: Flow_Acid_L_label,
-            data: array_Flow_Acid_L,
-            //type:'line',
-            step: true,
-            shadow: false,
-            color: 'rgba(255,255,255,0.1)',
-            tooltip: {
-                //pointFormat: '<span style="#FFFFF">{series.name}:<b>{point.y}</b></span>',
-                // formatter: '<span style="#FFFFF">{series.name}:<b>{point.y}</b></span>',
-                pointFormat: '<span style="#FFFFF">{series.name}:<b>{point.y}</b></span><br/>',
-
-                valueDecimals: 0
-            },
-            lineWidth: 2,
-            shared: true,
-            yAxis: numero_asse
-        });
-        yaxis_chart.push({
-            labels: {
-                formatter: function () {
-                    if (this.value == 1) {
-                        return 'ON';
-                    }
-                    else {
-                        return 'OFF';
-                    }
-                }
-            },
-
-            title: {
-                text: Flow_Acid_L_label
-            },
-            opposite: false,
-            top: altezza,
-            height: 100,
-            offset: 0,
-            lineWidth: 2,
-            max: 2,
-            min: 0
-        });
-        altezza = altezza + 150;
-        numero_asse = numero_asse + 1;
-        counter_series = counter_series + 1;
-    }
-
-
-
-    if (($('#Flow_Self_Water_L').is(':checked')) && (counter_series < 10)) {
-        series_chart.push({
-            id: 'ch3_val_series',
-            name: Flow_Self_Water_L_label,
-            data: array_Flow_Self_Water_L,
-            type: 'scatter',
-            tooltip: {
-                pointFormat: function () {
-                    return false;
+            series_chart.push({
+                name: totCloroDay_label,
+                id: 'totCloroDay_series',
+                data: array_totCloroDay,
+                yAxis: numero_asse,
+                marker: {
+                    enabled: true,
+                    radius: 3
                 },
-                valueDecimals: 0
-            },
-            lineWidth: 2,
-
-            step: true,
-            yAxis: numero_asse
-        },
-        {
-            id: 'ch2_val_series',
-            name: Flow_Self_Water_L_label,
-            data: array_Flow_Self_Water_L,
-            //type:'line',
-            step: true,
-            shadow: false,
-            color: 'rgba(255,255,255,0.1)',
-            tooltip: {
-                //pointFormat: '<span style="#FFFFF">{series.name}:<b>{point.y}</b></span>',
-                // formatter: '<span style="#FFFFF">{series.name}:<b>{point.y}</b></span>',
-                pointFormat: '<span style="#FFFFF">{series.name}:<b>{point.y}</b></span><br/>',
-
-                valueDecimals: 0
-            },
-            lineWidth: 2,
-            shared: true,
-            yAxis: numero_asse
-        });
-        yaxis_chart.push({
-            labels: {
-                formatter: function () {
-                    if (this.value == 1) {
-                        return 'ON';
-                    }
-                    else {
-                        return 'OFF';
-                    }
+                tooltip: {
+                    valueDecimals: 2
                 }
-            },
-
-            title: {
-                text: Flow_Self_Water_L_label
-            },
-            opposite: false,
-            top: altezza,
-            height: 100,
-            offset: 0,
-            lineWidth: 2,
-            max: 2,
-            min: 0
-        });
-        altezza = altezza + 150;
-        numero_asse = numero_asse + 1;
-        counter_series = counter_series + 1;
-    }
-    //end  canale ch2
-    //timer
-    if (($('#Lev_Water_L').is(':checked')) && (counter_series < 10)) {
-        series_chart.push({
-            id: 'ch3_val_series',
-            name: Lev_Water_L_label,
-            data: array_Lev_Water_L,
-            type: 'scatter',
-            tooltip: {
-                pointFormat: function () {
-                    return false;
+            });
+            yaxis_chart.push({
+                title: {
+                    text: totCloroDay_label
                 },
-                valueDecimals: 0
-            },
-            lineWidth: 2,
+                opposite: false,
+                id: 'totCloroDay_y_val',
+                top: altezza,
+                height: 200,
+                lineWidth: 2
+            });
+            altezza = altezza + 300;
+            numero_asse = numero_asse + 1;
+            counter_series = counter_series + 1;
+        }
+        if (($('#totWaterDay').is(':checked'))) {
 
-            step: true,
-            yAxis: numero_asse
-        },
-        {
-            id: 'ch2_val_series',
-            name: Lev_Water_L_label,
-            data: array_Lev_Water_L,
-            //type:'line',
-            step: true,
-            shadow: false,
-            color: 'rgba(255,255,255,0.1)',
-            tooltip: {
-                //pointFormat: '<span style="#FFFFF">{series.name}:<b>{point.y}</b></span>',
-                // formatter: '<span style="#FFFFF">{series.name}:<b>{point.y}</b></span>',
-                pointFormat: '<span style="#FFFFF">{series.name}:<b>{point.y}</b></span><br/>',
-
-                valueDecimals: 0
-            },
-            lineWidth: 2,
-            shared: true,
-            yAxis: numero_asse
-        });
-        yaxis_chart.push({
-            labels: {
-                formatter: function () {
-                    if (this.value == 1) {
-                        return 'ON';
-                    }
-                    else {
-                        return 'OFF';
-                    }
-                }
-            },
-
-            title: {
-                text: Lev_Water_L_label
-            },
-            opposite: false,
-            top: altezza,
-            height: 100,
-            offset: 0,
-            lineWidth: 2,
-            max: 2,
-            min: 0
-        });
-        altezza = altezza + 150;
-        numero_asse = numero_asse + 1;
-        counter_series = counter_series + 1;
-    }
-    if (($('#Flow_Chlorite_L').is(':checked')) && (counter_series < 10)) {
-        series_chart.push({
-            id: 'ch3_val_series',
-            name: Flow_Chlorite_L_label,
-            data: array_Flow_Chlorite_L,
-            type: 'scatter',
-            tooltip: {
-                pointFormat: function () {
-                    return false;
+            series_chart.push({
+                name: totWaterDay_label,
+                id: 'totWaterDay_series',
+                data: array_totWaterDay,
+                yAxis: numero_asse,
+                marker: {
+                    enabled: true,
+                    radius: 3
                 },
-                valueDecimals: 0
-            },
-            lineWidth: 2,
-
-            step: true,
-            yAxis: numero_asse
-        },
-        {
-            id: 'ch2_val_series',
-            name: '3_val_series',
-            name: Flow_Chlorite_L_label,
-            data: array_Flow_Chlorite_L,
-            //type:'line',
-            step: true,
-            shadow: false,
-            color: 'rgba(255,255,255,0.1)',
-            tooltip: {
-                //pointFormat: '<span style="#FFFFF">{series.name}:<b>{point.y}</b></span>',
-                // formatter: '<span style="#FFFFF">{series.name}:<b>{point.y}</b></span>',
-                pointFormat: '<span style="#FFFFF">{series.name}:<b>{point.y}</b></span><br/>',
-
-                valueDecimals: 0
-            },
-            lineWidth: 2,
-            shared: true,
-            yAxis: numero_asse
-        });
-        yaxis_chart.push({
-            labels: {
-                formatter: function () {
-                    if (this.value == 1) {
-                        return 'ON';
-                    }
-                    else {
-                        return 'OFF';
-                    }
+                tooltip: {
+                    valueDecimals: 1
                 }
-            },
-
-            title: {
-                text: Flow_Chlorite_L_label
-            },
-            opposite: false,
-            top: altezza,
-            height: 100,
-            offset: 0,
-            lineWidth: 2,
-            max: 2,
-            min: 0
-        });
-        altezza = altezza + 150;
-        numero_asse = numero_asse + 1;
-        counter_series = counter_series + 1;
-    }
-    if (($('#Lev_Chlorite_L').is(':checked')) && (counter_series < 10)) {
-        series_chart.push({
-            id: 'ch3_val_series',
-            name: Lev_Chlorite_L_label,
-            data: array_Lev_Chlorite_L,
-            type: 'scatter',
-            tooltip: {
-                pointFormat: function () {
-                    return false;
+            });
+            yaxis_chart.push({
+                title: {
+                    text: totWaterDay_label
                 },
-                valueDecimals: 0
-            },
-            lineWidth: 2,
-
-            step: true,
-            yAxis: numero_asse
-        },
-        {
-            id: 'ch2_val_series',
-            name: Lev_Chlorite_L_label,
-            data: array_Lev_Chlorite_L,
-            //type:'line',
-            step: true,
-            shadow: false,
-            color: 'rgba(255,255,255,0.1)',
-            tooltip: {
-                //pointFormat: '<span style="#FFFFF">{series.name}:<b>{point.y}</b></span>',
-                // formatter: '<span style="#FFFFF">{series.name}:<b>{point.y}</b></span>',
-                pointFormat: '<span style="#FFFFF">{series.name}:<b>{point.y}</b></span><br/>',
-
-                valueDecimals: 0
-            },
-            lineWidth: 2,
-            shared: true,
-            yAxis: numero_asse
-        });
-        yaxis_chart.push({
-            labels: {
-                formatter: function () {
-                    if (this.value == 1) {
-                        return 'ON';
-                    }
-                    else {
-                        return 'OFF';
-                    }
-                }
-            },
-
-            title: {
-                text: Lev_Chlorite_L_label
-            },
-            opposite: false,
-            top: altezza,
-            height: 100,
-            offset: 0,
-            lineWidth: 2,
-            max: 2,
-            min: 0
-        });
-        altezza = altezza + 150;
-        numero_asse = numero_asse + 1;
-        counter_series = counter_series + 1;
+                opposite: false,
+                id: 'totWaterDay_y_val',
+                top: altezza,
+                height: 200,
+                lineWidth: 2
+            });
+            altezza = altezza + 300;
+            numero_asse = numero_asse + 1;
+            counter_series = counter_series + 1;
+        }
     }
+    else
+    {
+            if (($('#Lev_Acid_L').is(':checked')) && (counter_series < 10)) {
+                series_chart.push({
+                    id: 'ch3_val_series',
+                    name: Lev_Acid_L_label,
+                    data: array_Lev_Acid_L,
+                    type: 'scatter',
+                    tooltip: {
+                        pointFormat: function () {
+                            return false;
+                        },
+                        valueDecimals: 0
+                    },
+                    lineWidth: 2,
 
-    if (($('#Overf').is(':checked')) && (counter_series < 10)) {
-        series_chart.push({
-            id: 'ch3_val_series',
-            name: Overf_label,
-            data: array_Overf,
-            type: 'scatter',
-            tooltip: {
-                pointFormat: function () {
-                    return false;
+                    step: true,
+                    yAxis: numero_asse
                 },
-                valueDecimals: 0
-            },
-            lineWidth: 2,
+                {
+                    id: 'ch2_val_series',
+                    name: Lev_Acid_L_label,
+                    data: array_Lev_Acid_L,
+                    //type:'line',
+                    step: true,
+                    shadow: false,
+                    color: 'rgba(255,255,255,0.1)',
+                    tooltip: {
+                        //pointFormat: '<span style="#FFFFF">{series.name}:<b>{point.y}</b></span>',
+                        // formatter: '<span style="#FFFFF">{series.name}:<b>{point.y}</b></span>',
+                        pointFormat: '<span style="#FFFFF">{series.name}:<b>{point.y}</b></span><br/>',
 
-            step: true,
-            yAxis: numero_asse
-        },
-        {
-            id: 'ch2_val_series',
-            name: Overf_label,
-            data: array_Overf,
-            //type:'line',
-            step: true,
-            shadow: false,
-            color: 'rgba(255,255,255,0.1)',
-            tooltip: {
-                //pointFormat: '<span style="#FFFFF">{series.name}:<b>{point.y}</b></span>',
-                // formatter: '<span style="#FFFFF">{series.name}:<b>{point.y}</b></span>',
-                pointFormat: '<span style="#FFFFF">{series.name}:<b>{point.y}</b></span><br/>',
+                        valueDecimals: 0
+                    },
+                    lineWidth: 2,
+                    shared: true,
+                    yAxis: numero_asse
+                });
+                yaxis_chart.push({
+                    labels: {
+                        formatter: function () {
+                            if (this.value == 1) {
+                                return 'ON';
+                            }
+                            else {
+                                return 'OFF';
+                            }
+                        }
+                    },
 
-                valueDecimals: 0
-            },
-            lineWidth: 2,
-            shared: true,
-            yAxis: numero_asse
-        });
-        yaxis_chart.push({
-            labels: {
-                formatter: function () {
-                    if (this.value == 1) {
-                        return 'ON';
-                    }
-                    else {
-                        return 'OFF';
-                    }
-                }
-            },
-
-            title: {
-                text: Overf_label
-            },
-            opposite: false,
-            top: altezza,
-            height: 100,
-            offset: 0,
-            lineWidth: 2,
-            max: 2,
-            min: 0
-        });
-        altezza = altezza + 150;
-        numero_asse = numero_asse + 1;
-        counter_series = counter_series + 1;
-    }
-    if (($('#Flow_Water_dil_L').is(':checked')) && (counter_series < 10)) {
-        series_chart.push({
-            id: 'ch3_val_series',
-            name: Flow_Water_dil_L_label,
-            data: array_Flow_Water_dil_L,
-            type: 'scatter',
-            tooltip: {
-                pointFormat: function () {
-                    return false;
-                },
-                valueDecimals: 0
-            },
-            lineWidth: 2,
-
-            step: true,
-            yAxis: numero_asse
-        },
-        {
-            id: 'ch2_val_series',
-            name: Flow_Water_dil_L_label,
-            data: array_Flow_Water_dil_L,
-            //type:'line',
-            step: true,
-            shadow: false,
-            color: 'rgba(255,255,255,0.1)',
-            tooltip: {
-                //pointFormat: '<span style="#FFFFF">{series.name}:<b>{point.y}</b></span>',
-                // formatter: '<span style="#FFFFF">{series.name}:<b>{point.y}</b></span>',
-                pointFormat: '<span style="#FFFFF">{series.name}:<b>{point.y}</b></span><br/>',
-
-                valueDecimals: 0
-            },
-            lineWidth: 2,
-            shared: true,
-            yAxis: numero_asse
-        });
-        yaxis_chart.push({
-            labels: {
-                formatter: function () {
-                    if (this.value == 1) {
-                        return 'ON';
-                    }
-                    else {
-                        return 'OFF';
-                    }
-                }
-            },
-
-            title: {
-                text: Flow_Water_dil_L_label
-            },
-            opposite: false,
-            top: altezza,
-            height: 100,
-            offset: 0,
-            lineWidth: 2,
-            max: 2,
-            min: 0
-        });
-        altezza = altezza + 150;
-        numero_asse = numero_asse + 1;
-        counter_series = counter_series + 1;
-    }
-    if (($('#TimeOut_L').is(':checked')) && (counter_series < 10)) {
-        series_chart.push({
-            id: 'ch3_val_series',
-            name: TimeOut_L_label,
-            data: array_TimeOut_L,
-            type: 'scatter',
-            tooltip: {
-                pointFormat: function () {
-                    return false;
-                },
-                valueDecimals: 0
-            },
-            lineWidth: 2,
-
-            step: true,
-            yAxis: numero_asse
-        },
-        {
-            id: 'ch2_val_series',
-            name: TimeOut_L_label,
-            data: array_TimeOut_L,
-            //type:'line',
-            step: true,
-            shadow: false,
-            color: 'rgba(255,255,255,0.1)',
-            tooltip: {
-                //pointFormat: '<span style="#FFFFF">{series.name}:<b>{point.y}</b></span>',
-                // formatter: '<span style="#FFFFF">{series.name}:<b>{point.y}</b></span>',
-                pointFormat: '<span style="#FFFFF">{series.name}:<b>{point.y}</b></span><br/>',
-
-                valueDecimals: 0
-            },
-            lineWidth: 2,
-            shared: true,
-            yAxis: numero_asse
-        });
-        yaxis_chart.push({
-            labels: {
-                formatter: function () {
-                    if (this.value == 1) {
-                        return 'ON';
-                    }
-                    else {
-                        return 'OFF';
-                    }
-                }
-            },
-
-            title: {
-                text: TimeOut_L_label
-            },
-            opposite: false,
-            top: altezza,
-            height: 100,
-            offset: 0,
-            lineWidth: 2,
-            max: 2,
-            min: 0
-        });
-        altezza = altezza + 150;
-        numero_asse = numero_asse + 1;
-        counter_series = counter_series + 1;
-    }
-    if (($('#Service_F_L').is(':checked')) && (counter_series < 10)) {
-        series_chart.push({
-            id: 'ch3_val_series',
-            name: Service_F_L_label,
-            data: array_Service_F_L,
-            type: 'scatter',
-            tooltip: {
-                pointFormat: function () {
-                    return false;
-                },
-                valueDecimals: 0
-            },
-            lineWidth: 2,
-
-            step: true,
-            yAxis: numero_asse
-        },
-        {
-            id: 'ch2_val_series',
-            name: Service_F_L_label,
-            data: array_Service_F_L,
-            //type:'line',
-            step: true,
-            shadow: false,
-            color: 'rgba(255,255,255,0.1)',
-            tooltip: {
-                //pointFormat: '<span style="#FFFFF">{series.name}:<b>{point.y}</b></span>',
-                // formatter: '<span style="#FFFFF">{series.name}:<b>{point.y}</b></span>',
-                pointFormat: '<span style="#FFFFF">{series.name}:<b>{point.y}</b></span><br/>',
-
-                valueDecimals: 0
-            },
-            lineWidth: 2,
-            shared: true,
-            yAxis: numero_asse
-        });
-        yaxis_chart.push({
-            labels: {
-                formatter: function () {
-                    if (this.value == 1) {
-                        return 'ON';
-                    }
-                    else {
-                        return 'OFF';
-                    }
-                }
-            },
-
-            title: {
-                text: Service_F_L_label
-            },
-            opposite: false,
-            top: altezza,
-            height: 100,
-            offset: 0,
-            lineWidth: 2,
-            max: 2,
-            min: 0
-        });
-        altezza = altezza + 150;
-        numero_asse = numero_asse + 1;
-        counter_series = counter_series + 1;
-    }
-    if (($('#Level_SW').is(':checked')) && (counter_series < 10)) {
-        series_chart.push({
-            id: 'ch3_val_series',
-            name: Level_SW_label,
-            data: array_Level_SW,
-            type: 'scatter',
-            tooltip: {
-                pointFormat: function () {
-                    return false;
-                },
-                valueDecimals: 0
-            },
-            lineWidth: 2,
-
-            step: true,
-            yAxis: numero_asse
-        },
-        {
-            id: 'ch2_val_series',
-            name: Level_SW_label,
-            data: array_Level_SW,
-            //type:'line',
-            step: true,
-            shadow: false,
-            color: 'rgba(255,255,255,0.1)',
-            tooltip: {
-                //pointFormat: '<span style="#FFFFF">{series.name}:<b>{point.y}</b></span>',
-                // formatter: '<span style="#FFFFF">{series.name}:<b>{point.y}</b></span>',
-                pointFormat: '<span style="#FFFFF">{series.name}:<b>{point.y}</b></span><br/>',
-
-                valueDecimals: 0
-            },
-            lineWidth: 2,
-            shared: true,
-            yAxis: numero_asse
-        });
-        yaxis_chart.push({
-            labels: {
-                formatter: function () {
-                    if (this.value == 1) {
-                        return 'ON';
-                    }
-                    else {
-                        return 'OFF';
-                    }
-                }
-            },
-
-            title: {
-                text: Level_SW_label
-            },
-            opposite: false,
-            top: altezza,
-            height: 100,
-            offset: 0,
-            lineWidth: 2,
-            max: 2,
-            min: 0
-        });
-        altezza = altezza + 150;
-        numero_asse = numero_asse + 1;
-        counter_series = counter_series + 1;
-    }
-    if (($('#BypassB').is(':checked')) && (counter_series < 10)) {
-        series_chart.push({
-            id: 'ch3_val_series',
-            name: BypassB_label,
-            data: array_BypassB,
-            type: 'scatter',
-            tooltip: {
-                pointFormat: function () {
-                    return false;
-                },
-                valueDecimals: 0
-            },
-            lineWidth: 2,
-
-            step: true,
-            yAxis: numero_asse
-        },
-        {
-            id: 'ch2_val_series',
-            name: BypassB_label,
-            data: array_BypassB,
-            //type:'line',
-            step: true,
-            shadow: false,
-            color: 'rgba(255,255,255,0.1)',
-            tooltip: {
-                //pointFormat: '<span style="#FFFFF">{series.name}:<b>{point.y}</b></span>',
-                // formatter: '<span style="#FFFFF">{series.name}:<b>{point.y}</b></span>',
-                pointFormat: '<span style="#FFFFF">{series.name}:<b>{point.y}</b></span><br/>',
-
-                valueDecimals: 0
-            },
-            lineWidth: 2,
-            shared: true,
-            yAxis: numero_asse
-        });
-        yaxis_chart.push({
-            labels: {
-                formatter: function () {
-                    if (this.value == 1) {
-                        return 'ON';
-                    }
-                    else {
-                        return 'OFF';
-                    }
-                }
-            },
-
-            title: {
-                text: BypassB_label
-            },
-            opposite: false,
-            top: altezza,
-            height: 100,
-            offset: 0,
-            lineWidth: 2,
-            max: 2,
-            min: 0
-        });
-        altezza = altezza + 150;
-        numero_asse = numero_asse + 1;
-        counter_series = counter_series + 1;
-    }
-    if (($('#Lim_Dioxide').is(':checked')) && (counter_series < 10)) {
-        series_chart.push({
-            id: 'ch3_val_series',
-            name: Lim_Dioxide_label,
-            data: array_Lim_Dioxide,
-            type: 'scatter',
-            tooltip: {
-                pointFormat: function () {
-                    return false;
-                },
-                valueDecimals: 0
-            },
-            lineWidth: 2,
-
-            step: true,
-            yAxis: numero_asse
-        },
-        {
-            id: 'ch2_val_series',
-            name: Lim_Dioxide_label,
-            data: array_Lim_Dioxide,
-            //type:'line',
-            step: true,
-            shadow: false,
-            color: 'rgba(255,255,255,0.1)',
-            tooltip: {
-                //pointFormat: '<span style="#FFFFF">{series.name}:<b>{point.y}</b></span>',
-                // formatter: '<span style="#FFFFF">{series.name}:<b>{point.y}</b></span>',
-                pointFormat: '<span style="#FFFFF">{series.name}:<b>{point.y}</b></span><br/>',
-
-                valueDecimals: 0
-            },
-            lineWidth: 2,
-            shared: true,
-            yAxis: numero_asse
-        });
-        yaxis_chart.push({
-            labels: {
-                formatter: function () {
-                    if (this.value == 1) {
-                        return 'ON';
-                    }
-                    else {
-                        return 'OFF';
-                    }
-                }
-            },
-
-            title: {
-                text: Lim_Dioxide_label
-            },
-            opposite: false,
-            top: altezza,
-            height: 100,
-            offset: 0,
-            lineWidth: 2,
-            max: 2,
-            min: 0
-        });
-        altezza = altezza + 150;
-        numero_asse = numero_asse + 1;
-        counter_series = counter_series + 1;
-    }
-    if (($('#Lev_Alflow').is(':checked')) && (counter_series < 10)) {
-        series_chart.push({
-            id: 'ch3_val_series',
-            name: Lev_Alflow_label,
-            data: array_Lev_Alflow,
-            type: 'scatter',
-            tooltip: {
-                pointFormat: function () {
-                    return false;
-                },
-                valueDecimals: 0
-            },
-            lineWidth: 2,
-
-            step: true,
-            yAxis: numero_asse
-        },
-        {
-            id: 'ch2_val_series',
-            name: Lev_Alflow_label,
-            data: array_Lev_Alflow,
-            //type:'line',
-            step: true,
-            shadow: false,
-            color: 'rgba(255,255,255,0.1)',
-            tooltip: {
-                //pointFormat: '<span style="#FFFFF">{series.name}:<b>{point.y}</b></span>',
-                // formatter: '<span style="#FFFFF">{series.name}:<b>{point.y}</b></span>',
-                pointFormat: '<span style="#FFFFF">{series.name}:<b>{point.y}</b></span><br/>',
-
-                valueDecimals: 0
-            },
-            lineWidth: 2,
-            shared: true,
-            yAxis: numero_asse
-        });
-        yaxis_chart.push({
-            labels: {
-                formatter: function () {
-                    if (this.value == 1) {
-                        return 'ON';
-                    }
-                    else {
-                        return 'OFF';
-                    }
-                }
-            },
-
-            title: {
-                text: Lev_Alflow_label
-            },
-            opposite: false,
-            top: altezza,
-            height: 100,
-            offset: 0,
-            lineWidth: 2,
-            max: 2,
-            min: 0
-        });
-        altezza = altezza + 150;
-        numero_asse = numero_asse + 1;
-        counter_series = counter_series + 1;
-    }
-    //canale ch2
-    if (($('#flow1').is(':checked')) && (counter_series < 10)) {
-
-        series_chart.push({
-            name: flow1_label,
-            id: 'flow_series',
-            data: array_m3h,
-            yAxis: numero_asse,
-            marker: {
-                enabled: true,
-                radius: 3
-            },
-            tooltip: {
-                valueDecimals: 2
+                    title: {
+                        text: Lev_Acid_L_label
+                    },
+                    opposite: false,
+                    top: altezza,
+                    height: 100,
+                    offset: 0,
+                    lineWidth: 2,
+                    max: 2,
+                    min: 0
+                });
+                altezza = altezza + 150;
+                numero_asse = numero_asse + 1;
+                counter_series = counter_series + 1;
             }
-        });
-        yaxis_chart.push({
-            title: {
-                text: flow1_label
-            },
-            opposite: false,
-            id: 'flow_y_val',
-            top: altezza,
-            height: 200,
-            lineWidth: 2
-        });
-        altezza = altezza + 300;
-        numero_asse = numero_asse + 1;
-        counter_series = counter_series + 1;
-    }
-    if (($('#clo2').is(':checked')) && (counter_series < 10)) {
+            if (($('#Flow_Acid_L').is(':checked')) && (counter_series < 10)) {
+                series_chart.push({
+                    id: 'ch4_val_series',
+                    name: Flow_Acid_L_label,
+                    data: array_Flow_Acid_L,
+                    type: 'scatter',
+                    tooltip: {
+                        pointFormat: function () {
+                            return false;
+                        },
+                        valueDecimals: 0
+                    },
+                    lineWidth: 2,
 
-        series_chart.push({
-            name: clo2_label,
-            id: 'clo2_series',
-            data: array_lettura,
-            yAxis: numero_asse,
-            marker: {
-                enabled: true,
-                radius: 3
-            },
-            tooltip: {
-                valueDecimals: 3
-            }
-        });
-        yaxis_chart.push({
-            title: {
-                text: clo2_label
-            },
-            opposite: false,
-            id: 'clo2_y_val',
-            top: altezza,
-            height: 200,
-            lineWidth: 2
-        });
-        altezza = altezza + 300;
-        numero_asse = numero_asse + 1;
-        counter_series = counter_series + 1;
-    }
-    if (($('#naso').is(':checked')) && (counter_series < 10)) {
-
-        series_chart.push({
-            name: naso_label,
-            id: 'naso_series',
-            data: array_naso,
-            yAxis: numero_asse,
-            marker: {
-                enabled: true,
-                radius: 3
-            },
-            tooltip: {
-                valueDecimals: 2
-            }
-        });
-        yaxis_chart.push({
-            title: {
-                text: naso_label
-            },
-            opposite: false,
-            id: 'naso_y_val',
-            top: altezza,
-            height: 200,
-            lineWidth: 2
-        });
-        altezza = altezza + 300;
-        numero_asse = numero_asse + 1;
-        counter_series = counter_series + 1;
-    }
-    
-    if (($('#temperature_lt').is(':checked')) && (counter_series < 10)) {
-
-        series_chart.push({
-            name: temperature_lt_label,
-            id: 'temperature_series',
-            data: array_temp_lt,
-            yAxis: numero_asse,
-            marker: {
-                enabled: true,
-                radius: 3
-            },
-            tooltip: {
-                valueDecimals: 1
-            }
-        });
-        yaxis_chart.push({
-            title: {
-                text: temperature_lt_label
-            },
-            opposite: false,
-            id: 'temperature_y_val',
-            top: altezza,
-            height: 200,
-            lineWidth: 2
-        });
-        altezza = altezza + 300;
-        numero_asse = numero_asse + 1;
-        counter_series = counter_series + 1;
-    }
-    
-    
-    if (($('#MinMax').is(':checked')) && (counter_series < 10)) {
-        series_chart.push({
-            id: 'ch3_val_series',
-            name: MinMax_Label,
-            data: array_minmax,
-            type: 'scatter',
-            tooltip: {
-                pointFormat: function () {
-                    return false;
+                    step: true,
+                    yAxis: numero_asse
                 },
-                valueDecimals: 0
-            },
-            lineWidth: 2,
+                {
+                    id: 'ch2_val_series',
+                    name: Flow_Acid_L_label,
+                    data: array_Flow_Acid_L,
+                    //type:'line',
+                    step: true,
+                    shadow: false,
+                    color: 'rgba(255,255,255,0.1)',
+                    tooltip: {
+                        //pointFormat: '<span style="#FFFFF">{series.name}:<b>{point.y}</b></span>',
+                        // formatter: '<span style="#FFFFF">{series.name}:<b>{point.y}</b></span>',
+                        pointFormat: '<span style="#FFFFF">{series.name}:<b>{point.y}</b></span><br/>',
 
-            step: true,
-            yAxis: numero_asse
-        },
-        {
-            id: 'ch2_val_series',
-            name: MinMax_Label,
-            data: array_minmax,
-            //type:'line',
-            step: true,
-            shadow: false,
-            color: 'rgba(255,255,255,0.1)',
-            tooltip: {
-                //pointFormat: '<span style="#FFFFF">{series.name}:<b>{point.y}</b></span>',
-                // formatter: '<span style="#FFFFF">{series.name}:<b>{point.y}</b></span>',
-                pointFormat: '<span style="#FFFFF">{series.name}:<b>{point.y}</b></span><br/>',
+                        valueDecimals: 0
+                    },
+                    lineWidth: 2,
+                    shared: true,
+                    yAxis: numero_asse
+                });
+                yaxis_chart.push({
+                    labels: {
+                        formatter: function () {
+                            if (this.value == 1) {
+                                return 'ON';
+                            }
+                            else {
+                                return 'OFF';
+                            }
+                        }
+                    },
 
-                valueDecimals: 0
-            },
-            lineWidth: 2,
-            shared: true,
-            yAxis: numero_asse
-        });
-        yaxis_chart.push({
-            labels: {
-                formatter: function () {
-                    if (this.value == 1) {
-                        return 'ON';
+                    title: {
+                        text: Flow_Acid_L_label
+                    },
+                    opposite: false,
+                    top: altezza,
+                    height: 100,
+                    offset: 0,
+                    lineWidth: 2,
+                    max: 2,
+                    min: 0
+                });
+                altezza = altezza + 150;
+                numero_asse = numero_asse + 1;
+                counter_series = counter_series + 1;
+            }
+
+
+
+            if (($('#Flow_Self_Water_L').is(':checked')) && (counter_series < 10)) {
+                series_chart.push({
+                    id: 'ch3_val_series',
+                    name: Flow_Self_Water_L_label,
+                    data: array_Flow_Self_Water_L,
+                    type: 'scatter',
+                    tooltip: {
+                        pointFormat: function () {
+                            return false;
+                        },
+                        valueDecimals: 0
+                    },
+                    lineWidth: 2,
+
+                    step: true,
+                    yAxis: numero_asse
+                },
+                {
+                    id: 'ch2_val_series',
+                    name: Flow_Self_Water_L_label,
+                    data: array_Flow_Self_Water_L,
+                    //type:'line',
+                    step: true,
+                    shadow: false,
+                    color: 'rgba(255,255,255,0.1)',
+                    tooltip: {
+                        //pointFormat: '<span style="#FFFFF">{series.name}:<b>{point.y}</b></span>',
+                        // formatter: '<span style="#FFFFF">{series.name}:<b>{point.y}</b></span>',
+                        pointFormat: '<span style="#FFFFF">{series.name}:<b>{point.y}</b></span><br/>',
+
+                        valueDecimals: 0
+                    },
+                    lineWidth: 2,
+                    shared: true,
+                    yAxis: numero_asse
+                });
+                yaxis_chart.push({
+                    labels: {
+                        formatter: function () {
+                            if (this.value == 1) {
+                                return 'ON';
+                            }
+                            else {
+                                return 'OFF';
+                            }
+                        }
+                    },
+
+                    title: {
+                        text: Flow_Self_Water_L_label
+                    },
+                    opposite: false,
+                    top: altezza,
+                    height: 100,
+                    offset: 0,
+                    lineWidth: 2,
+                    max: 2,
+                    min: 0
+                });
+                altezza = altezza + 150;
+                numero_asse = numero_asse + 1;
+                counter_series = counter_series + 1;
+            }
+            //end  canale ch2
+            //timer
+            if (($('#Lev_Water_L').is(':checked')) && (counter_series < 10)) {
+                series_chart.push({
+                    id: 'ch3_val_series',
+                    name: Lev_Water_L_label,
+                    data: array_Lev_Water_L,
+                    type: 'scatter',
+                    tooltip: {
+                        pointFormat: function () {
+                            return false;
+                        },
+                        valueDecimals: 0
+                    },
+                    lineWidth: 2,
+
+                    step: true,
+                    yAxis: numero_asse
+                },
+                {
+                    id: 'ch2_val_series',
+                    name: Lev_Water_L_label,
+                    data: array_Lev_Water_L,
+                    //type:'line',
+                    step: true,
+                    shadow: false,
+                    color: 'rgba(255,255,255,0.1)',
+                    tooltip: {
+                        //pointFormat: '<span style="#FFFFF">{series.name}:<b>{point.y}</b></span>',
+                        // formatter: '<span style="#FFFFF">{series.name}:<b>{point.y}</b></span>',
+                        pointFormat: '<span style="#FFFFF">{series.name}:<b>{point.y}</b></span><br/>',
+
+                        valueDecimals: 0
+                    },
+                    lineWidth: 2,
+                    shared: true,
+                    yAxis: numero_asse
+                });
+                yaxis_chart.push({
+                    labels: {
+                        formatter: function () {
+                            if (this.value == 1) {
+                                return 'ON';
+                            }
+                            else {
+                                return 'OFF';
+                            }
+                        }
+                    },
+
+                    title: {
+                        text: Lev_Water_L_label
+                    },
+                    opposite: false,
+                    top: altezza,
+                    height: 100,
+                    offset: 0,
+                    lineWidth: 2,
+                    max: 2,
+                    min: 0
+                });
+                altezza = altezza + 150;
+                numero_asse = numero_asse + 1;
+                counter_series = counter_series + 1;
+            }
+            if (($('#Flow_Chlorite_L').is(':checked')) && (counter_series < 10)) {
+                series_chart.push({
+                    id: 'ch3_val_series',
+                    name: Flow_Chlorite_L_label,
+                    data: array_Flow_Chlorite_L,
+                    type: 'scatter',
+                    tooltip: {
+                        pointFormat: function () {
+                            return false;
+                        },
+                        valueDecimals: 0
+                    },
+                    lineWidth: 2,
+
+                    step: true,
+                    yAxis: numero_asse
+                },
+                {
+                    id: 'ch2_val_series',
+                    name: '3_val_series',
+                    name: Flow_Chlorite_L_label,
+                    data: array_Flow_Chlorite_L,
+                    //type:'line',
+                    step: true,
+                    shadow: false,
+                    color: 'rgba(255,255,255,0.1)',
+                    tooltip: {
+                        //pointFormat: '<span style="#FFFFF">{series.name}:<b>{point.y}</b></span>',
+                        // formatter: '<span style="#FFFFF">{series.name}:<b>{point.y}</b></span>',
+                        pointFormat: '<span style="#FFFFF">{series.name}:<b>{point.y}</b></span><br/>',
+
+                        valueDecimals: 0
+                    },
+                    lineWidth: 2,
+                    shared: true,
+                    yAxis: numero_asse
+                });
+                yaxis_chart.push({
+                    labels: {
+                        formatter: function () {
+                            if (this.value == 1) {
+                                return 'ON';
+                            }
+                            else {
+                                return 'OFF';
+                            }
+                        }
+                    },
+
+                    title: {
+                        text: Flow_Chlorite_L_label
+                    },
+                    opposite: false,
+                    top: altezza,
+                    height: 100,
+                    offset: 0,
+                    lineWidth: 2,
+                    max: 2,
+                    min: 0
+                });
+                altezza = altezza + 150;
+                numero_asse = numero_asse + 1;
+                counter_series = counter_series + 1;
+            }
+            if (($('#Lev_Chlorite_L').is(':checked')) && (counter_series < 10)) {
+                series_chart.push({
+                    id: 'ch3_val_series',
+                    name: Lev_Chlorite_L_label,
+                    data: array_Lev_Chlorite_L,
+                    type: 'scatter',
+                    tooltip: {
+                        pointFormat: function () {
+                            return false;
+                        },
+                        valueDecimals: 0
+                    },
+                    lineWidth: 2,
+
+                    step: true,
+                    yAxis: numero_asse
+                },
+                {
+                    id: 'ch2_val_series',
+                    name: Lev_Chlorite_L_label,
+                    data: array_Lev_Chlorite_L,
+                    //type:'line',
+                    step: true,
+                    shadow: false,
+                    color: 'rgba(255,255,255,0.1)',
+                    tooltip: {
+                        //pointFormat: '<span style="#FFFFF">{series.name}:<b>{point.y}</b></span>',
+                        // formatter: '<span style="#FFFFF">{series.name}:<b>{point.y}</b></span>',
+                        pointFormat: '<span style="#FFFFF">{series.name}:<b>{point.y}</b></span><br/>',
+
+                        valueDecimals: 0
+                    },
+                    lineWidth: 2,
+                    shared: true,
+                    yAxis: numero_asse
+                });
+                yaxis_chart.push({
+                    labels: {
+                        formatter: function () {
+                            if (this.value == 1) {
+                                return 'ON';
+                            }
+                            else {
+                                return 'OFF';
+                            }
+                        }
+                    },
+
+                    title: {
+                        text: Lev_Chlorite_L_label
+                    },
+                    opposite: false,
+                    top: altezza,
+                    height: 100,
+                    offset: 0,
+                    lineWidth: 2,
+                    max: 2,
+                    min: 0
+                });
+                altezza = altezza + 150;
+                numero_asse = numero_asse + 1;
+                counter_series = counter_series + 1;
+            }
+
+            if (($('#Overf').is(':checked')) && (counter_series < 10)) {
+                series_chart.push({
+                    id: 'ch3_val_series',
+                    name: Overf_label,
+                    data: array_Overf,
+                    type: 'scatter',
+                    tooltip: {
+                        pointFormat: function () {
+                            return false;
+                        },
+                        valueDecimals: 0
+                    },
+                    lineWidth: 2,
+
+                    step: true,
+                    yAxis: numero_asse
+                },
+                {
+                    id: 'ch2_val_series',
+                    name: Overf_label,
+                    data: array_Overf,
+                    //type:'line',
+                    step: true,
+                    shadow: false,
+                    color: 'rgba(255,255,255,0.1)',
+                    tooltip: {
+                        //pointFormat: '<span style="#FFFFF">{series.name}:<b>{point.y}</b></span>',
+                        // formatter: '<span style="#FFFFF">{series.name}:<b>{point.y}</b></span>',
+                        pointFormat: '<span style="#FFFFF">{series.name}:<b>{point.y}</b></span><br/>',
+
+                        valueDecimals: 0
+                    },
+                    lineWidth: 2,
+                    shared: true,
+                    yAxis: numero_asse
+                });
+                yaxis_chart.push({
+                    labels: {
+                        formatter: function () {
+                            if (this.value == 1) {
+                                return 'ON';
+                            }
+                            else {
+                                return 'OFF';
+                            }
+                        }
+                    },
+
+                    title: {
+                        text: Overf_label
+                    },
+                    opposite: false,
+                    top: altezza,
+                    height: 100,
+                    offset: 0,
+                    lineWidth: 2,
+                    max: 2,
+                    min: 0
+                });
+                altezza = altezza + 150;
+                numero_asse = numero_asse + 1;
+                counter_series = counter_series + 1;
+            }
+            if (($('#Flow_Water_dil_L').is(':checked')) && (counter_series < 10)) {
+                series_chart.push({
+                    id: 'ch3_val_series',
+                    name: Flow_Water_dil_L_label,
+                    data: array_Flow_Water_dil_L,
+                    type: 'scatter',
+                    tooltip: {
+                        pointFormat: function () {
+                            return false;
+                        },
+                        valueDecimals: 0
+                    },
+                    lineWidth: 2,
+
+                    step: true,
+                    yAxis: numero_asse
+                },
+                {
+                    id: 'ch2_val_series',
+                    name: Flow_Water_dil_L_label,
+                    data: array_Flow_Water_dil_L,
+                    //type:'line',
+                    step: true,
+                    shadow: false,
+                    color: 'rgba(255,255,255,0.1)',
+                    tooltip: {
+                        //pointFormat: '<span style="#FFFFF">{series.name}:<b>{point.y}</b></span>',
+                        // formatter: '<span style="#FFFFF">{series.name}:<b>{point.y}</b></span>',
+                        pointFormat: '<span style="#FFFFF">{series.name}:<b>{point.y}</b></span><br/>',
+
+                        valueDecimals: 0
+                    },
+                    lineWidth: 2,
+                    shared: true,
+                    yAxis: numero_asse
+                });
+                yaxis_chart.push({
+                    labels: {
+                        formatter: function () {
+                            if (this.value == 1) {
+                                return 'ON';
+                            }
+                            else {
+                                return 'OFF';
+                            }
+                        }
+                    },
+
+                    title: {
+                        text: Flow_Water_dil_L_label
+                    },
+                    opposite: false,
+                    top: altezza,
+                    height: 100,
+                    offset: 0,
+                    lineWidth: 2,
+                    max: 2,
+                    min: 0
+                });
+                altezza = altezza + 150;
+                numero_asse = numero_asse + 1;
+                counter_series = counter_series + 1;
+            }
+            if (($('#TimeOut_L').is(':checked')) && (counter_series < 10)) {
+                series_chart.push({
+                    id: 'ch3_val_series',
+                    name: TimeOut_L_label,
+                    data: array_TimeOut_L,
+                    type: 'scatter',
+                    tooltip: {
+                        pointFormat: function () {
+                            return false;
+                        },
+                        valueDecimals: 0
+                    },
+                    lineWidth: 2,
+
+                    step: true,
+                    yAxis: numero_asse
+                },
+                {
+                    id: 'ch2_val_series',
+                    name: TimeOut_L_label,
+                    data: array_TimeOut_L,
+                    //type:'line',
+                    step: true,
+                    shadow: false,
+                    color: 'rgba(255,255,255,0.1)',
+                    tooltip: {
+                        //pointFormat: '<span style="#FFFFF">{series.name}:<b>{point.y}</b></span>',
+                        // formatter: '<span style="#FFFFF">{series.name}:<b>{point.y}</b></span>',
+                        pointFormat: '<span style="#FFFFF">{series.name}:<b>{point.y}</b></span><br/>',
+
+                        valueDecimals: 0
+                    },
+                    lineWidth: 2,
+                    shared: true,
+                    yAxis: numero_asse
+                });
+                yaxis_chart.push({
+                    labels: {
+                        formatter: function () {
+                            if (this.value == 1) {
+                                return 'ON';
+                            }
+                            else {
+                                return 'OFF';
+                            }
+                        }
+                    },
+
+                    title: {
+                        text: TimeOut_L_label
+                    },
+                    opposite: false,
+                    top: altezza,
+                    height: 100,
+                    offset: 0,
+                    lineWidth: 2,
+                    max: 2,
+                    min: 0
+                });
+                altezza = altezza + 150;
+                numero_asse = numero_asse + 1;
+                counter_series = counter_series + 1;
+            }
+            if (($('#Service_F_L').is(':checked')) && (counter_series < 10)) {
+                series_chart.push({
+                    id: 'ch3_val_series',
+                    name: Service_F_L_label,
+                    data: array_Service_F_L,
+                    type: 'scatter',
+                    tooltip: {
+                        pointFormat: function () {
+                            return false;
+                        },
+                        valueDecimals: 0
+                    },
+                    lineWidth: 2,
+
+                    step: true,
+                    yAxis: numero_asse
+                },
+                {
+                    id: 'ch2_val_series',
+                    name: Service_F_L_label,
+                    data: array_Service_F_L,
+                    //type:'line',
+                    step: true,
+                    shadow: false,
+                    color: 'rgba(255,255,255,0.1)',
+                    tooltip: {
+                        //pointFormat: '<span style="#FFFFF">{series.name}:<b>{point.y}</b></span>',
+                        // formatter: '<span style="#FFFFF">{series.name}:<b>{point.y}</b></span>',
+                        pointFormat: '<span style="#FFFFF">{series.name}:<b>{point.y}</b></span><br/>',
+
+                        valueDecimals: 0
+                    },
+                    lineWidth: 2,
+                    shared: true,
+                    yAxis: numero_asse
+                });
+                yaxis_chart.push({
+                    labels: {
+                        formatter: function () {
+                            if (this.value == 1) {
+                                return 'ON';
+                            }
+                            else {
+                                return 'OFF';
+                            }
+                        }
+                    },
+
+                    title: {
+                        text: Service_F_L_label
+                    },
+                    opposite: false,
+                    top: altezza,
+                    height: 100,
+                    offset: 0,
+                    lineWidth: 2,
+                    max: 2,
+                    min: 0
+                });
+                altezza = altezza + 150;
+                numero_asse = numero_asse + 1;
+                counter_series = counter_series + 1;
+            }
+            if (($('#Level_SW').is(':checked')) && (counter_series < 10)) {
+                series_chart.push({
+                    id: 'ch3_val_series',
+                    name: Level_SW_label,
+                    data: array_Level_SW,
+                    type: 'scatter',
+                    tooltip: {
+                        pointFormat: function () {
+                            return false;
+                        },
+                        valueDecimals: 0
+                    },
+                    lineWidth: 2,
+
+                    step: true,
+                    yAxis: numero_asse
+                },
+                {
+                    id: 'ch2_val_series',
+                    name: Level_SW_label,
+                    data: array_Level_SW,
+                    //type:'line',
+                    step: true,
+                    shadow: false,
+                    color: 'rgba(255,255,255,0.1)',
+                    tooltip: {
+                        //pointFormat: '<span style="#FFFFF">{series.name}:<b>{point.y}</b></span>',
+                        // formatter: '<span style="#FFFFF">{series.name}:<b>{point.y}</b></span>',
+                        pointFormat: '<span style="#FFFFF">{series.name}:<b>{point.y}</b></span><br/>',
+
+                        valueDecimals: 0
+                    },
+                    lineWidth: 2,
+                    shared: true,
+                    yAxis: numero_asse
+                });
+                yaxis_chart.push({
+                    labels: {
+                        formatter: function () {
+                            if (this.value == 1) {
+                                return 'ON';
+                            }
+                            else {
+                                return 'OFF';
+                            }
+                        }
+                    },
+
+                    title: {
+                        text: Level_SW_label
+                    },
+                    opposite: false,
+                    top: altezza,
+                    height: 100,
+                    offset: 0,
+                    lineWidth: 2,
+                    max: 2,
+                    min: 0
+                });
+                altezza = altezza + 150;
+                numero_asse = numero_asse + 1;
+                counter_series = counter_series + 1;
+            }
+            if (($('#BypassB').is(':checked')) && (counter_series < 10)) {
+                series_chart.push({
+                    id: 'ch3_val_series',
+                    name: BypassB_label,
+                    data: array_BypassB,
+                    type: 'scatter',
+                    tooltip: {
+                        pointFormat: function () {
+                            return false;
+                        },
+                        valueDecimals: 0
+                    },
+                    lineWidth: 2,
+
+                    step: true,
+                    yAxis: numero_asse
+                },
+                {
+                    id: 'ch2_val_series',
+                    name: BypassB_label,
+                    data: array_BypassB,
+                    //type:'line',
+                    step: true,
+                    shadow: false,
+                    color: 'rgba(255,255,255,0.1)',
+                    tooltip: {
+                        //pointFormat: '<span style="#FFFFF">{series.name}:<b>{point.y}</b></span>',
+                        // formatter: '<span style="#FFFFF">{series.name}:<b>{point.y}</b></span>',
+                        pointFormat: '<span style="#FFFFF">{series.name}:<b>{point.y}</b></span><br/>',
+
+                        valueDecimals: 0
+                    },
+                    lineWidth: 2,
+                    shared: true,
+                    yAxis: numero_asse
+                });
+                yaxis_chart.push({
+                    labels: {
+                        formatter: function () {
+                            if (this.value == 1) {
+                                return 'ON';
+                            }
+                            else {
+                                return 'OFF';
+                            }
+                        }
+                    },
+
+                    title: {
+                        text: BypassB_label
+                    },
+                    opposite: false,
+                    top: altezza,
+                    height: 100,
+                    offset: 0,
+                    lineWidth: 2,
+                    max: 2,
+                    min: 0
+                });
+                altezza = altezza + 150;
+                numero_asse = numero_asse + 1;
+                counter_series = counter_series + 1;
+            }
+            if (($('#Lim_Dioxide').is(':checked')) && (counter_series < 10)) {
+                series_chart.push({
+                    id: 'ch3_val_series',
+                    name: Lim_Dioxide_label,
+                    data: array_Lim_Dioxide,
+                    type: 'scatter',
+                    tooltip: {
+                        pointFormat: function () {
+                            return false;
+                        },
+                        valueDecimals: 0
+                    },
+                    lineWidth: 2,
+
+                    step: true,
+                    yAxis: numero_asse
+                },
+                {
+                    id: 'ch2_val_series',
+                    name: Lim_Dioxide_label,
+                    data: array_Lim_Dioxide,
+                    //type:'line',
+                    step: true,
+                    shadow: false,
+                    color: 'rgba(255,255,255,0.1)',
+                    tooltip: {
+                        //pointFormat: '<span style="#FFFFF">{series.name}:<b>{point.y}</b></span>',
+                        // formatter: '<span style="#FFFFF">{series.name}:<b>{point.y}</b></span>',
+                        pointFormat: '<span style="#FFFFF">{series.name}:<b>{point.y}</b></span><br/>',
+
+                        valueDecimals: 0
+                    },
+                    lineWidth: 2,
+                    shared: true,
+                    yAxis: numero_asse
+                });
+                yaxis_chart.push({
+                    labels: {
+                        formatter: function () {
+                            if (this.value == 1) {
+                                return 'ON';
+                            }
+                            else {
+                                return 'OFF';
+                            }
+                        }
+                    },
+
+                    title: {
+                        text: Lim_Dioxide_label
+                    },
+                    opposite: false,
+                    top: altezza,
+                    height: 100,
+                    offset: 0,
+                    lineWidth: 2,
+                    max: 2,
+                    min: 0
+                });
+                altezza = altezza + 150;
+                numero_asse = numero_asse + 1;
+                counter_series = counter_series + 1;
+            }
+            if (($('#Lev_Alflow').is(':checked')) && (counter_series < 10)) {
+                series_chart.push({
+                    id: 'ch3_val_series',
+                    name: Lev_Alflow_label,
+                    data: array_Lev_Alflow,
+                    type: 'scatter',
+                    tooltip: {
+                        pointFormat: function () {
+                            return false;
+                        },
+                        valueDecimals: 0
+                    },
+                    lineWidth: 2,
+
+                    step: true,
+                    yAxis: numero_asse
+                },
+                {
+                    id: 'ch2_val_series',
+                    name: Lev_Alflow_label,
+                    data: array_Lev_Alflow,
+                    //type:'line',
+                    step: true,
+                    shadow: false,
+                    color: 'rgba(255,255,255,0.1)',
+                    tooltip: {
+                        //pointFormat: '<span style="#FFFFF">{series.name}:<b>{point.y}</b></span>',
+                        // formatter: '<span style="#FFFFF">{series.name}:<b>{point.y}</b></span>',
+                        pointFormat: '<span style="#FFFFF">{series.name}:<b>{point.y}</b></span><br/>',
+
+                        valueDecimals: 0
+                    },
+                    lineWidth: 2,
+                    shared: true,
+                    yAxis: numero_asse
+                });
+                yaxis_chart.push({
+                    labels: {
+                        formatter: function () {
+                            if (this.value == 1) {
+                                return 'ON';
+                            }
+                            else {
+                                return 'OFF';
+                            }
+                        }
+                    },
+
+                    title: {
+                        text: Lev_Alflow_label
+                    },
+                    opposite: false,
+                    top: altezza,
+                    height: 100,
+                    offset: 0,
+                    lineWidth: 2,
+                    max: 2,
+                    min: 0
+                });
+                altezza = altezza + 150;
+                numero_asse = numero_asse + 1;
+                counter_series = counter_series + 1;
+            }
+            //canale ch2
+            if (($('#flow1').is(':checked')) && (counter_series < 10)) {
+
+                series_chart.push({
+                    name: flow1_label,
+                    id: 'flow_series',
+                    data: array_m3h,
+                    yAxis: numero_asse,
+                    marker: {
+                        enabled: true,
+                        radius: 3
+                    },
+                    tooltip: {
+                        valueDecimals: 2
                     }
-                    else {
-                        return 'OFF';
-                    }
-                }
-            },
+                });
+                yaxis_chart.push({
+                    title: {
+                        text: flow1_label
+                    },
+                    opposite: false,
+                    id: 'flow_y_val',
+                    top: altezza,
+                    height: 200,
+                    lineWidth: 2
+                });
+                altezza = altezza + 300;
+                numero_asse = numero_asse + 1;
+                counter_series = counter_series + 1;
+            }
+            if (($('#clo2').is(':checked')) && (counter_series < 10)) {
 
-            title: {
-                text: MinMax_Label
-            },
-            opposite: false,
-            top: altezza,
-            height: 100,
-            offset: 0,
-            lineWidth: 2,
-            max: 2,
-            min: 0
-        });
-        altezza = altezza + 150;
-        numero_asse = numero_asse + 1;
-        counter_series = counter_series + 1;
-    }
+                series_chart.push({
+                    name: clo2_label,
+                    id: 'clo2_series',
+                    data: array_lettura,
+                    yAxis: numero_asse,
+                    marker: {
+                        enabled: true,
+                        radius: 3
+                    },
+                    tooltip: {
+                        valueDecimals: 3
+                    }
+                });
+                yaxis_chart.push({
+                    title: {
+                        text: clo2_label
+                    },
+                    opposite: false,
+                    id: 'clo2_y_val',
+                    top: altezza,
+                    height: 200,
+                    lineWidth: 2
+                });
+                altezza = altezza + 300;
+                numero_asse = numero_asse + 1;
+                counter_series = counter_series + 1;
+            }
+            if (($('#naso').is(':checked')) && (counter_series < 10)) {
+
+                series_chart.push({
+                    name: naso_label,
+                    id: 'naso_series',
+                    data: array_naso,
+                    yAxis: numero_asse,
+                    marker: {
+                        enabled: true,
+                        radius: 3
+                    },
+                    tooltip: {
+                        valueDecimals: 2
+                    }
+                });
+                yaxis_chart.push({
+                    title: {
+                        text: naso_label
+                    },
+                    opposite: false,
+                    id: 'naso_y_val',
+                    top: altezza,
+                    height: 200,
+                    lineWidth: 2
+                });
+                altezza = altezza + 300;
+                numero_asse = numero_asse + 1;
+                counter_series = counter_series + 1;
+            }
     
+            if (($('#temperature_lt').is(':checked')) && (counter_series < 10)) {
+
+                series_chart.push({
+                    name: temperature_lt_label,
+                    id: 'temperature_series',
+                    data: array_temp_lt,
+                    yAxis: numero_asse,
+                    marker: {
+                        enabled: true,
+                        radius: 3
+                    },
+                    tooltip: {
+                        valueDecimals: 1
+                    }
+                });
+                yaxis_chart.push({
+                    title: {
+                        text: temperature_lt_label
+                    },
+                    opposite: false,
+                    id: 'temperature_y_val',
+                    top: altezza,
+                    height: 200,
+                    lineWidth: 2
+                });
+                altezza = altezza + 300;
+                numero_asse = numero_asse + 1;
+                counter_series = counter_series + 1;
+            }
+    
+    
+            if (($('#MinMax').is(':checked')) && (counter_series < 10)) {
+                series_chart.push({
+                    id: 'ch3_val_series',
+                    name: MinMax_Label,
+                    data: array_minmax,
+                    type: 'scatter',
+                    tooltip: {
+                        pointFormat: function () {
+                            return false;
+                        },
+                        valueDecimals: 0
+                    },
+                    lineWidth: 2,
+
+                    step: true,
+                    yAxis: numero_asse
+                },
+                {
+                    id: 'ch2_val_series',
+                    name: MinMax_Label,
+                    data: array_minmax,
+                    //type:'line',
+                    step: true,
+                    shadow: false,
+                    color: 'rgba(255,255,255,0.1)',
+                    tooltip: {
+                        //pointFormat: '<span style="#FFFFF">{series.name}:<b>{point.y}</b></span>',
+                        // formatter: '<span style="#FFFFF">{series.name}:<b>{point.y}</b></span>',
+                        pointFormat: '<span style="#FFFFF">{series.name}:<b>{point.y}</b></span><br/>',
+
+                        valueDecimals: 0
+                    },
+                    lineWidth: 2,
+                    shared: true,
+                    yAxis: numero_asse
+                });
+                yaxis_chart.push({
+                    labels: {
+                        formatter: function () {
+                            if (this.value == 1) {
+                                return 'ON';
+                            }
+                            else {
+                                return 'OFF';
+                            }
+                        }
+                    },
+
+                    title: {
+                        text: MinMax_Label
+                    },
+                    opposite: false,
+                    top: altezza,
+                    height: 100,
+                    offset: 0,
+                    lineWidth: 2,
+                    max: 2,
+                    min: 0
+                });
+                altezza = altezza + 150;
+                numero_asse = numero_asse + 1;
+                counter_series = counter_series + 1;
+            }
+            if (($('#totAcido').is(':checked')) && (counter_series < 10)) {
+
+                series_chart.push({
+                    name: totAcido_label,
+                    id: 'Acido_series',
+                    data: array_totAcido,
+                    yAxis: numero_asse,
+                    marker: {
+                        enabled: true,
+                        radius: 3
+                    },
+                    tooltip: {
+                        valueDecimals: 2
+                    }
+                });
+                yaxis_chart.push({
+                    title: {
+                        text: totAcido_label
+                    },
+                    opposite: false,
+                    id: 'Acido_y_val',
+                    top: altezza,
+                    height: 200,
+                    lineWidth: 2
+                });
+                altezza = altezza + 300;
+                numero_asse = numero_asse + 1;
+                counter_series = counter_series + 1;
+            }
+            if (($('#totCloro').is(':checked')) && (counter_series < 10)) {
+
+                series_chart.push({
+                    name: totCloro_label,
+                    id: 'Cloro_series',
+                    data: array_totCloro,
+                    yAxis: numero_asse,
+                    marker: {
+                        enabled: true,
+                        radius: 3
+                    },
+                    tooltip: {
+                        valueDecimals: 2
+                    }
+                });
+                yaxis_chart.push({
+                    title: {
+                        text: totCloro_label
+                    },
+                    opposite: false,
+                    id: 'cloro_y_val',
+                    top: altezza,
+                    height: 200,
+                    lineWidth: 2
+                });
+                altezza = altezza + 300;
+                numero_asse = numero_asse + 1;
+                counter_series = counter_series + 1;
+            }
+            if (($('#totWater').is(':checked')) && (counter_series < 10)) {
+
+                series_chart.push({
+                    name: totWater_label,
+                    id: 'Water_series',
+                    data: array_totWater,
+                    yAxis: numero_asse,
+                    marker: {
+                        enabled: true,
+                        radius: 3
+                    },
+                    tooltip: {
+                        valueDecimals: 1
+                    }
+                });
+                yaxis_chart.push({
+                    title: {
+                        text: totWater_label
+                    },
+                    opposite: false,
+                    id: 'Water_y_val',
+                    top: altezza,
+                    height: 200,
+                    lineWidth: 2
+                });
+                altezza = altezza + 300;
+                numero_asse = numero_asse + 1;
+                counter_series = counter_series + 1;
+            }
+            if (($('#setpoint').is(':checked')) && (counter_series < 10)) {
+
+                series_chart.push({
+                    name: setpoint_label,
+                    id: 'setpoint_series',
+                    data: array_setpoint,
+                    yAxis: numero_asse,
+                    marker: {
+                        enabled: true,
+                        radius: 3
+                    },
+                    tooltip: {
+                        valueDecimals: 1
+                    }
+                });
+                yaxis_chart.push({
+                    title: {
+                        text: setpoint_label
+                    },
+                    opposite: false,
+                    id: 'setpoint_y_val',
+                    top: altezza,
+                    height: 200,
+                    lineWidth: 2
+                });
+                altezza = altezza + 300;
+                numero_asse = numero_asse + 1;
+                counter_series = counter_series + 1;
+            }
+    }
     altezza = altezza + 100;
 
     // series_chart[0].setData(array_ch1);
     // series_chart[1].setData(array_ch1);
     $("#chart_div").height(altezza);
+    
     create_chart(series_chart, yaxis_chart);
+    console.log("esco Grafico")
     draw_tabella();
 }
 function convertUTCDateToLocalDate(convertdLocalTime) {
@@ -1449,115 +1658,169 @@ function draw_tabella() {
         }
         string_array_precedent = series_chart_temp.name;
     });
-    i = array_Lev_Acid_L.length - 1;
-    $.each(array_Lev_Acid_L, function (row1, point1) {
-        var array_temp = [];
-        var date = new Date(array_Lev_Acid_L[i][0]);
-        date = convertUTCDateToLocalDate(date);
+    if (($('#totAcidoDay').is(':checked')) || ($('#totCloroDay').is(':checked')) || ($('#totWaterDay').is(':checked')))
+    {
+        var arrayTempDay = [];
+        if ($('#totAcidoDay').is(':checked'))
+            arrayTempDay = array_totAcidoDay;
+        if ($('#totCloroDay').is(':checked'))
+            arrayTempDay = array_totCloroDay;
+        if ($('#totWaterDay').is(':checked'))
+            arrayTempDay = array_totWaterDay;
+        i = arrayTempDay.length - 1;
+        $.each(arrayTempDay, function (row1, point1) {
+            var array_temp = [];
+            var date = new Date(arrayTempDay[i][0]);
+            date = convertUTCDateToLocalDate(date);
 
 
-        var theyear = date.getFullYear()
-        var themonth = date.getMonth() + 1;
-        var thetoday = date.getDate();
-        var ore = date.getHours();
-        var minuti = date.getMinutes();
-        var data_confronto = parseDate(thetoday + "/" + themonth + "/" + theyear, 'dd/mm/yy');
+            var theyear = date.getFullYear()
+            var themonth = date.getMonth() + 1;
+            var thetoday = date.getDate();
+            var ore = date.getHours();
+            var minuti = date.getMinutes();
+            var data_confronto = parseDate(thetoday + "/" + themonth + "/" + theyear, 'dd/mm/yy');
+            if ((data_confronto >= date1_ms) && (data_confronto <= date2_ms)) {
+                array_temp.push(get_numero_string(thetoday) + "/" + get_numero_string(themonth) + "/" + get_numero_string(theyear));
 
-        /*var data_stringa = date.toString("dd/MM/yy");
-        var data_finale = parseDate(data_stringa, 'dd/mm/yy');
-        alert(data_finale);
-        array_temp.push(data_finale.toString("dd/MM/yy"));
-        */
-        //alert(theyear + "/" + themonth + "/" + thetoday);
-        if ((data_confronto >= date1_ms) && (data_confronto <= date2_ms)) {
-            if (formato_data != "2") {// ' europeo
-                array_temp.push(get_numero_string(thetoday) + "/" + get_numero_string(themonth) + "/" + get_numero_string(theyear) + " " + get_numero_string(ore) + ":" + get_numero_string(minuti));
-            }
-            else {
-                var suffex = "";
-                // alert(ore_temp);
-                if (ore >= 12) {
-                    suffex = "pm";
+                if (($('#totAcidoDay').is(':checked'))) {
+                    array_temp.push(array_totAcidoDay[i][1]);
                 }
-                else {
-                    suffex = "am";
+                if (($('#totCloroDay').is(':checked'))) {
+                    array_temp.push(array_totCloroDay[i][1]);
                 }
-                if (ore > 12) {
-                    ore = ore - 12;
-                    if (ore == 0) ore = 12;
+                if (($('#totWaterDay').is(':checked'))) {
+                    array_temp.push(array_totWaterDay[i][1]);
                 }
+                header_value.push(array_temp);
+            }
+            i = i - 1;
+        });
 
-                array_temp.push(get_numero_string(thetoday) + "/" + get_numero_string(themonth) + "/" + get_numero_string(theyear) + " " + get_numero_string(ore) + ":" + get_numero_string(minuti) + " " + suffex);
-            }
-            if (($('#Lev_Acid_L').is(':checked'))) {
-                array_temp.push(on_off(array_Lev_Acid_L[i][1]));
-            }
-            if (($('#Flow_Acid_L').is(':checked'))) {
-                array_temp.push(on_off(array_Flow_Acid_L[i][1]));
-            }
-            if (($('#Flow_Self_Water_L').is(':checked'))) {
-                array_temp.push(on_off(array_Flow_Self_Water_L[i][1]));
-            }
-            if (($('#Lev_Water_L').is(':checked'))) {
-                array_temp.push(on_off(array_Lev_Water_L[i][1]));
-            }
-            if (($('#Flow_Chlorite_L').is(':checked'))) {
-                array_temp.push(on_off(array_Flow_Chlorite_L[i][1]));
-            }
-            if (($('#Lev_Chlorite_L').is(':checked'))) {
-                array_temp.push(on_off(array_Lev_Chlorite_L[i][1]));
-            }
+    }
+    else {
+                i = array_Lev_Acid_L.length - 1;
+                $.each(array_Lev_Acid_L, function (row1, point1) {
+                    var array_temp = [];
+                    var date = new Date(array_Lev_Acid_L[i][0]);
+                    date = convertUTCDateToLocalDate(date);
 
 
-            if (($('#Overf').is(':checked'))) {
-                array_temp.push(on_off(array_Overf[i][1]));
-            }
-            if (($('#Flow_Water_dil_L').is(':checked'))) {
-                array_temp.push(on_off(array_Flow_Water_dil_L[i][1]));
-            }
-            if (($('#TimeOut_L').is(':checked'))) {
-                array_temp.push(on_off(array_TimeOut_L[i][1]));
-            }
+                    var theyear = date.getFullYear()
+                    var themonth = date.getMonth() + 1;
+                    var thetoday = date.getDate();
+                    var ore = date.getHours();
+                    var minuti = date.getMinutes();
+                    var data_confronto = parseDate(thetoday + "/" + themonth + "/" + theyear, 'dd/mm/yy');
 
-            if (($('#Service_F_L').is(':checked'))) {
-                array_temp.push(on_off(array_Service_F_L[i][1]));
-            }
-            if (($('#Level_SW').is(':checked'))) {
-                array_temp.push(on_off(array_Level_SW[i][1]));
-            }
-            if (($('#BypassB').is(':checked'))) {
-                array_temp.push(on_off(array_BypassB[i][1]));
-            }
-            if (($('#Lim_Dioxide').is(':checked'))) {
-                array_temp.push(on_off(array_Lim_Dioxide[i][1]));
-            }
+                    /*var data_stringa = date.toString("dd/MM/yy");
+                    var data_finale = parseDate(data_stringa, 'dd/mm/yy');
+                    alert(data_finale);
+                    array_temp.push(data_finale.toString("dd/MM/yy"));
+                    */
+                    //alert(theyear + "/" + themonth + "/" + thetoday);
+                    if ((data_confronto >= date1_ms) && (data_confronto <= date2_ms)) {
+                        if (formato_data != "2") {// ' europeo
+                            array_temp.push(get_numero_string(thetoday) + "/" + get_numero_string(themonth) + "/" + get_numero_string(theyear) + " " + get_numero_string(ore) + ":" + get_numero_string(minuti));
+                        }
+                        else {
+                            var suffex = "";
+                            // alert(ore_temp);
+                            if (ore >= 12) {
+                                suffex = "pm";
+                            }
+                            else {
+                                suffex = "am";
+                            }
+                            if (ore > 12) {
+                                ore = ore - 12;
+                                if (ore == 0) ore = 12;
+                            }
 
-            if (($('#Lev_Alflow').is(':checked'))) {
-                array_temp.push(on_off(array_Lev_Alflow[i][1]));
-            }
-            if (($('#flow1').is(':checked'))) {
-                array_temp.push(array_m3h[i][1]);
-            }
-            if (($('#clo2').is(':checked'))) {
-                array_temp.push(array_lettura[i][1]);
-            }
-            if (($('#naso').is(':checked'))) {
-                array_temp.push(array_naso[i][1]);
-            }
-            if (($('#temperature_lt').is(':checked'))) {
-                array_temp.push(array_temp_lt[i][1]);
-            }
+                            array_temp.push(get_numero_string(thetoday) + "/" + get_numero_string(themonth) + "/" + get_numero_string(theyear) + " " + get_numero_string(ore) + ":" + get_numero_string(minuti) + " " + suffex);
+                        }
+                        if (($('#Lev_Acid_L').is(':checked'))) {
+                            array_temp.push(on_off(array_Lev_Acid_L[i][1]));
+                        }
+                        if (($('#Flow_Acid_L').is(':checked'))) {
+                            array_temp.push(on_off(array_Flow_Acid_L[i][1]));
+                        }
+                        if (($('#Flow_Self_Water_L').is(':checked'))) {
+                            array_temp.push(on_off(array_Flow_Self_Water_L[i][1]));
+                        }
+                        if (($('#Lev_Water_L').is(':checked'))) {
+                            array_temp.push(on_off(array_Lev_Water_L[i][1]));
+                        }
+                        if (($('#Flow_Chlorite_L').is(':checked'))) {
+                            array_temp.push(on_off(array_Flow_Chlorite_L[i][1]));
+                        }
+                        if (($('#Lev_Chlorite_L').is(':checked'))) {
+                            array_temp.push(on_off(array_Lev_Chlorite_L[i][1]));
+                        }
 
-            if (($('#MinMax').is(':checked'))) {
-                array_temp.push(on_off(array_minmax[i][1]));
-            }
+
+                        if (($('#Overf').is(':checked'))) {
+                            array_temp.push(on_off(array_Overf[i][1]));
+                        }
+                        if (($('#Flow_Water_dil_L').is(':checked'))) {
+                            array_temp.push(on_off(array_Flow_Water_dil_L[i][1]));
+                        }
+                        if (($('#TimeOut_L').is(':checked'))) {
+                            array_temp.push(on_off(array_TimeOut_L[i][1]));
+                        }
+
+                        if (($('#Service_F_L').is(':checked'))) {
+                            array_temp.push(on_off(array_Service_F_L[i][1]));
+                        }
+                        if (($('#Level_SW').is(':checked'))) {
+                            array_temp.push(on_off(array_Level_SW[i][1]));
+                        }
+                        if (($('#BypassB').is(':checked'))) {
+                            array_temp.push(on_off(array_BypassB[i][1]));
+                        }
+                        if (($('#Lim_Dioxide').is(':checked'))) {
+                            array_temp.push(on_off(array_Lim_Dioxide[i][1]));
+                        }
+
+                        if (($('#Lev_Alflow').is(':checked'))) {
+                            array_temp.push(on_off(array_Lev_Alflow[i][1]));
+                        }
+                        if (($('#flow1').is(':checked'))) {
+                            array_temp.push(array_m3h[i][1]);
+                        }
+                        if (($('#clo2').is(':checked'))) {
+                            array_temp.push(array_lettura[i][1]);
+                        }
+                        if (($('#naso').is(':checked'))) {
+                            array_temp.push(array_naso[i][1]);
+                        }
+                        if (($('#temperature_lt').is(':checked'))) {
+                            array_temp.push(array_temp_lt[i][1]);
+                        }
+
+                        if (($('#MinMax').is(':checked'))) {
+                            array_temp.push(on_off(array_minmax[i][1]));
+                        }
+
+                        if (($('#totAcido').is(':checked'))) {
+                            array_temp.push(array_totAcido[i][1]);
+                        }
+                        if (($('#totCloro').is(':checked'))) {
+                            array_temp.push(array_totCloro[i][1]);
+                        }
+                        if (($('#totWater').is(':checked'))) {
+                            array_temp.push(array_totWater[i][1]);
+                        }
+                        if (($('#setpoint').is(':checked'))) {
+                            array_temp.push(array_setpoint[i][1]);
+                        }
 
 
-            header_value.push(array_temp);
-        }
-        i = i - 1;
-    });
-
+                        header_value.push(array_temp);
+                    }
+                    i = i - 1;
+                });
+    }
     // header_array.push(string_array);
     $('#chart_table').html('<table cellpadding="0" cellspacing="0" border="0" class="display dynamicTable table table-striped table-bordered table-condensed" id="example"></table>');
 

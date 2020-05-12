@@ -446,6 +446,168 @@ Partial Public Class log_lta_ltu_ltd
     Protected WithEvents MinMax_Label As Global.System.Web.UI.WebControls.Label
     
     '''<summary>
+    '''Controllo lta_release.
+    '''</summary>
+    '''<remarks>
+    '''Campo generato automaticamente.
+    '''Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
+    '''</remarks>
+    Protected WithEvents lta_release As Global.System.Web.UI.WebControls.PlaceHolder
+    
+    '''<summary>
+    '''Controllo Literal7.
+    '''</summary>
+    '''<remarks>
+    '''Campo generato automaticamente.
+    '''Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
+    '''</remarks>
+    Protected WithEvents Literal7 As Global.System.Web.UI.WebControls.Literal
+    
+    '''<summary>
+    '''Controllo totAcido.
+    '''</summary>
+    '''<remarks>
+    '''Campo generato automaticamente.
+    '''Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
+    '''</remarks>
+    Protected WithEvents totAcido As Global.System.Web.UI.WebControls.CheckBox
+    
+    '''<summary>
+    '''Controllo totAcido_label.
+    '''</summary>
+    '''<remarks>
+    '''Campo generato automaticamente.
+    '''Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
+    '''</remarks>
+    Protected WithEvents totAcido_label As Global.System.Web.UI.WebControls.Label
+    
+    '''<summary>
+    '''Controllo totCloro.
+    '''</summary>
+    '''<remarks>
+    '''Campo generato automaticamente.
+    '''Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
+    '''</remarks>
+    Protected WithEvents totCloro As Global.System.Web.UI.WebControls.CheckBox
+    
+    '''<summary>
+    '''Controllo totCloro_label.
+    '''</summary>
+    '''<remarks>
+    '''Campo generato automaticamente.
+    '''Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
+    '''</remarks>
+    Protected WithEvents totCloro_label As Global.System.Web.UI.WebControls.Label
+    
+    '''<summary>
+    '''Controllo totWater.
+    '''</summary>
+    '''<remarks>
+    '''Campo generato automaticamente.
+    '''Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
+    '''</remarks>
+    Protected WithEvents totWater As Global.System.Web.UI.WebControls.CheckBox
+    
+    '''<summary>
+    '''Controllo totWater_label.
+    '''</summary>
+    '''<remarks>
+    '''Campo generato automaticamente.
+    '''Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
+    '''</remarks>
+    Protected WithEvents totWater_label As Global.System.Web.UI.WebControls.Label
+    
+    '''<summary>
+    '''Controllo Literal5.
+    '''</summary>
+    '''<remarks>
+    '''Campo generato automaticamente.
+    '''Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
+    '''</remarks>
+    Protected WithEvents Literal5 As Global.System.Web.UI.WebControls.Literal
+    
+    '''<summary>
+    '''Controllo totAcidoDay.
+    '''</summary>
+    '''<remarks>
+    '''Campo generato automaticamente.
+    '''Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
+    '''</remarks>
+    Protected WithEvents totAcidoDay As Global.System.Web.UI.WebControls.CheckBox
+    
+    '''<summary>
+    '''Controllo totAcidoDay_label.
+    '''</summary>
+    '''<remarks>
+    '''Campo generato automaticamente.
+    '''Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
+    '''</remarks>
+    Protected WithEvents totAcidoDay_label As Global.System.Web.UI.WebControls.Label
+    
+    '''<summary>
+    '''Controllo totCloroDay.
+    '''</summary>
+    '''<remarks>
+    '''Campo generato automaticamente.
+    '''Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
+    '''</remarks>
+    Protected WithEvents totCloroDay As Global.System.Web.UI.WebControls.CheckBox
+    
+    '''<summary>
+    '''Controllo totCloroDay_label.
+    '''</summary>
+    '''<remarks>
+    '''Campo generato automaticamente.
+    '''Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
+    '''</remarks>
+    Protected WithEvents totCloroDay_label As Global.System.Web.UI.WebControls.Label
+    
+    '''<summary>
+    '''Controllo totWaterDay.
+    '''</summary>
+    '''<remarks>
+    '''Campo generato automaticamente.
+    '''Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
+    '''</remarks>
+    Protected WithEvents totWaterDay As Global.System.Web.UI.WebControls.CheckBox
+    
+    '''<summary>
+    '''Controllo totWaterDay_label.
+    '''</summary>
+    '''<remarks>
+    '''Campo generato automaticamente.
+    '''Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
+    '''</remarks>
+    Protected WithEvents totWaterDay_label As Global.System.Web.UI.WebControls.Label
+    
+    '''<summary>
+    '''Controllo Literal6.
+    '''</summary>
+    '''<remarks>
+    '''Campo generato automaticamente.
+    '''Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
+    '''</remarks>
+    Protected WithEvents Literal6 As Global.System.Web.UI.WebControls.Literal
+    
+    '''<summary>
+    '''Controllo setpoint.
+    '''</summary>
+    '''<remarks>
+    '''Campo generato automaticamente.
+    '''Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
+    '''</remarks>
+    Protected WithEvents setpoint As Global.System.Web.UI.WebControls.CheckBox
+    
+    '''<summary>
+    '''Controllo setpoint_label.
+    '''</summary>
+    '''<remarks>
+    '''Campo generato automaticamente.
+    '''Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
+    '''</remarks>
+    Protected WithEvents setpoint_label As Global.System.Web.UI.WebControls.Label
+    
+    '''<summary>
     '''Controllo Literal11.
     '''</summary>
     '''<remarks>

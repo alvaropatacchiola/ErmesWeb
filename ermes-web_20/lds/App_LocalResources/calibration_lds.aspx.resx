@@ -156,8 +156,8 @@
   <data name="PageResource1.Title" xml:space="preserve">
     <value />
   </data>
-  <data name="save_temperature_newldsResource1.Text" xml:space="preserve">
-    <value>Salva e carica i dati</value>
+  <data name="save_calibration_newldsResource1.Text" xml:space="preserve">
+    <value>Save and Load Data</value>
   </data>
   <data name="save_temperature_newldsResource1.ToolTip" xml:space="preserve">
     <value />
