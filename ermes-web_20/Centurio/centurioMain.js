@@ -3787,15 +3787,31 @@ function CanvasNew(idCanvas, idDiv, idDivSub, labelpHId, valuePhId, fullscaleId,
             case 1:
                 this.enableRiga1 = enable;
                 this.da = statusString;
-                this.minSetpoint1 = valore1;
-                this.maxSetpoint1 = valore2;
+                if (valore1 < valore2 )
+                {
+                    this.minSetpoint1 = valore1;
+                    this.maxSetpoint1 = valore2;
+                }
+            else
+                {
+                this.minSetpoint1 = valore2;
+                this.maxSetpoint1 = valore1;
+                }
+
                 break;
             case 2:
                 this.enableRiga2 = enable;
                 this.db = statusString;
-                this.minSetpoint2 = valore1;
-                this.maxSetpoint2 = valore2;
-                
+                if (valore1 < valore2 )
+                {
+                    this.minSetpoint2 = valore1;
+                    this.maxSetpoint2 = valore2;
+                }
+                else
+                {
+                    this.minSetpoint2 = valore2;
+                    this.maxSetpoint2 = valore1;
+                }
                 break;
 
         }

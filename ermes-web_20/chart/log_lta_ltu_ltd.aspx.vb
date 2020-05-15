@@ -285,7 +285,8 @@ Public Class log_lta_ltu_ltd
 
         lunghezza_tabella = table_log.Count
         Dim k As Integer
-        Dim dayPrecedent = 0
+        Dim dayPrecedent As Integer = 0
+        Dim rigaPrecedente As ermes_web_20.quey_db.log_lta_ltu_ltdRow
         Dim virgolaDay As String = ""
         'For Each dc_log In table_log
         For k = lunghezza_tabella - 1 To 0 Step -1
@@ -293,6 +294,7 @@ Public Class log_lta_ltu_ltd
             dc_log = table_log.Item(k)
 
             If prima_volta Then
+                dayPrecedent = dc_log.data.Day
                 data_prima = Format(dc_log.data.Day, "00") + "/" + Format(dc_log.data.Month, "00") + "/" + Format(dc_log.data.Year Mod 100, "00")
             End If
             prima_volta = False
@@ -336,14 +338,19 @@ Public Class log_lta_ltu_ltd
             set_variable_javascript(21, 1) = set_variable_javascript(21, 1) + "[Date.UTC(" + dc_log.data.Year.ToString + "," + (dc_log.data.Month - 1).ToString + "," + dc_log.data.Day.ToString + "," + dc_log.data.Hour.ToString + "," + dc_log.data.Minute.ToString + ")," + Replace(dc_log.totAcqua.ToString(), ",", ".") + "]"
             set_variable_javascript(22, 1) = set_variable_javascript(22, 1) + "[Date.UTC(" + dc_log.data.Year.ToString + "," + (dc_log.data.Month - 1).ToString + "," + dc_log.data.Day.ToString + "," + dc_log.data.Hour.ToString + "," + dc_log.data.Minute.ToString + ")," + Replace(dc_log.setpoint.ToString(), ",", ".") + "]"
 
-            If dayPrecedent = 0 Or dc_log.data.Day <> dayPrecedent Then
-                set_variable_javascript(23, 1) = set_variable_javascript(23, 1) + virgolaDay + "[Date.UTC(" + dc_log.data.Year.ToString + "," + (dc_log.data.Month - 1).ToString + "," + dc_log.data.Day.ToString + ")," + Replace(dc_log.totAcido.ToString(), ",", ".") + "]"
-                set_variable_javascript(24, 1) = set_variable_javascript(24, 1) + virgolaDay + "[Date.UTC(" + dc_log.data.Year.ToString + "," + (dc_log.data.Month - 1).ToString + "," + dc_log.data.Day.ToString + ")," + Replace(dc_log.totCloro.ToString(), ",", ".") + "]"
-                set_variable_javascript(25, 1) = set_variable_javascript(25, 1) + virgolaDay + "[Date.UTC(" + dc_log.data.Year.ToString + "," + (dc_log.data.Month - 1).ToString + "," + dc_log.data.Day.ToString + ")," + Replace(dc_log.totAcqua.ToString(), ",", ".") + "]"
+
+            If k = 0 Or dc_log.data.Day <> dayPrecedent Then
+                If k = 0 Then
+                    rigaPrecedente = dc_log
+                End If
+                set_variable_javascript(23, 1) = set_variable_javascript(23, 1) + virgolaDay + "[Date.UTC(" + rigaPrecedente.data.Year.ToString + "," + (rigaPrecedente.data.Month - 1).ToString + "," + rigaPrecedente.data.Day.ToString + ")," + Replace(rigaPrecedente.totAcidoDay.ToString(), ",", ".") + "]"
+                set_variable_javascript(24, 1) = set_variable_javascript(24, 1) + virgolaDay + "[Date.UTC(" + rigaPrecedente.data.Year.ToString + "," + (rigaPrecedente.data.Month - 1).ToString + "," + rigaPrecedente.data.Day.ToString + ")," + Replace(rigaPrecedente.totCloroDay.ToString(), ",", ".") + "]"
+                set_variable_javascript(25, 1) = set_variable_javascript(25, 1) + virgolaDay + "[Date.UTC(" + rigaPrecedente.data.Year.ToString + "," + (rigaPrecedente.data.Month - 1).ToString + "," + rigaPrecedente.data.Day.ToString + ")," + Replace(rigaPrecedente.totAcquaDay.ToString(), ",", ".") + "]"
                 virgolaDay = ","
                 dayPrecedent = dc_log.data.Day
             End If
 
+            rigaPrecedente = dc_log
             index = index + 1
             If index < lunghezza_tabella Then
                 Dim j As Integer
