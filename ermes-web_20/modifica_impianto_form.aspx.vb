@@ -181,7 +181,7 @@
     <System.Web.Services.WebMethod()>
     Public Shared Sub updateList(ByVal parametro As String)
         parametro = parametro.Replace("""", "")
-        Dim parametroArray() As String = parametro.Split("$")
+        Dim parametroArray() As String = parametro.Split("^")
         utilizzatoreListTemp.Items.Clear()
 
         For Each elemento As String In parametroArray

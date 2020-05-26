@@ -288,10 +288,10 @@ inputlog {
           <div class="span6">
               <h5 style="padding-top:10px"><asp:literal ID = "Literal6"  text="Input" runat="server" meta:resourcekey="Literal6Resource1"></asp:literal></h5>
               <div id="checkboxCh"><asp:checkbox Checked="True" runat="server" ID="flow_select" class="inputlog" meta:resourcekey="flow_selectResource1"></asp:checkbox></div>
-              <div id="checkboxCh"><asp:Label runat="server" ID="label_flow_select" class="labellog" Text="Flow Alarm" meta:resourcekey="label_flow_selectResource1"></asp:Label> </div>
+              <div id="checkboxCh"><asp:Label runat="server" ID="label_flow_select" class="labellog" Text="Flow " meta:resourcekey="label_flow_selectResource1"></asp:Label> </div>
           <asp:placeholder runat="server" ID="flow2Doppia">
                 <div id="checkboxCh"><asp:checkbox  runat="server" ID="flow_select2" class="inputlog" meta:resourcekey="flow_selectResource1"></asp:checkbox></div>
-              <div id="checkboxCh"><asp:Label runat="server" ID="label_flow_select2" class="labellog" Text="Flow Alarm" meta:resourcekey="label_flow_selectResource1"></asp:Label> </div>
+              <div id="checkboxCh"><asp:Label runat="server" ID="label_flow_select2" class="labellog" Text="Flow " meta:resourcekey="label_flow_selectResource1"></asp:Label> </div>
         </asp:placeholder>
               <div id="checkboxCh"><asp:checkbox runat="server" ID="level1_select" class="inputlog" meta:resourcekey="level1_selectResource1" Visible="False"></asp:checkbox></div>
               <div id="checkboxCh"><asp:Label runat="server" ID="label_level1_select" class="labellog" Text="Level1" meta:resourcekey="label_level1_selectResource1" Visible="False"></asp:Label> </div>

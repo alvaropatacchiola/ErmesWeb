@@ -449,7 +449,7 @@
         
             </div>
 
-    <script type="text/javascript" src="common/validator_general_modificaimpianto.js"></script>
+    <script type="text/javascript" src="common/validator_general_modificaimpianto.js?v=1.1"></script>
     <script type="text/javascript" src="common/validator_general_notify.js"></script>
 
 </asp:Content>
