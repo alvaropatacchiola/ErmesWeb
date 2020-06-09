@@ -114,7 +114,9 @@
     <Content Include="Centurio\centurioRealTime.js" />
     <Content Include="Centurio\jcanvas.js" />
     <Content Include="Centurio\jquery.countdown360.js" />
+    <Content Include="Centurio\JwebService.aspx" />
     <Content Include="Centurio\login.aspx" />
+    <Content Include="Centurio\webRes.js" />
     <Content Include="Centurio\webService.aspx" />
     <Content Include="chart\localCent\buttons.dataTables.min.css" />
     <Content Include="chart\localCent\buttons.flash.min.js" />
@@ -16683,6 +16685,7 @@
       <SubType>Designer</SubType>
     </Content>
     <Content Include="ldtower.aspx" />
+    <Content Include="webRes.html" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="addimpianto.aspx.designer.vb">
@@ -17130,6 +17133,14 @@
     </Compile>
     <Compile Include="Centurio\centurioReal.aspx.vb">
       <DependentUpon>centurioReal.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Centurio\jsonConvertvb.vb" />
+    <Compile Include="Centurio\JwebService.aspx.designer.vb">
+      <DependentUpon>JwebService.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Centurio\JwebService.aspx.vb">
+      <DependentUpon>JwebService.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="Centurio\login.aspx.designer.vb">

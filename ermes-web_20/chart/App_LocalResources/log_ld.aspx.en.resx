@@ -280,7 +280,7 @@
     <value />
   </data>
   <data name="label_flow_selectResource1.Text" xml:space="preserve">
-    <value>Flow</value>
+    <value>Flow Alarm</value>
   </data>
   <data name="label_flow_selectResource1.ToolTip" xml:space="preserve">
     <value />
