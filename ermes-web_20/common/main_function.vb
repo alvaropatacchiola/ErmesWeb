@@ -1166,6 +1166,30 @@ Public Class main_function
             Return False
         End Try
     End Function
+    'funzioni per terzo e quarto canale
+    Public Shared Function alarm_ld_minmax_3(ByVal output_str() As String) As Boolean
+        Try
+            If Mid(output_str(15), 1, 1) <> "0" Then ' probe fail cl
+                Return True
+            Else
+                Return False
+            End If
+        Catch ex As Exception
+            Return False
+        End Try
+    End Function
+    Public Shared Function alarm_ld_minmax_4(ByVal output_str() As String) As Boolean
+        Try
+            If Mid(output_str(16), 1, 1) <> "0" Then ' probe fail cl
+                Return True
+            Else
+                Return False
+            End If
+        Catch ex As Exception
+            Return False
+        End Try
+    End Function
+
     '---------------------------------------------------
     'end gestione allarmi LD doppio
     '---------------------------------------------------

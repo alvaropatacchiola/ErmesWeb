@@ -1363,11 +1363,14 @@ nexLoopLabel:
         config_value = main_function.get_split_str(riga.value1)
         allrmr_value = main_function.get_split_str(riga.value3)
         check_alarm_general = False
-
-        If Mid(config_value(3), 3, 3) <> "306" Then ' terzo canale esistente
-            numero_canali = 3
+        If config_value.Length > 5 Then
+            numero_canali = 4
         Else
-            numero_canali = 2
+            If Mid(config_value(3), 3, 3) <> "306" Then ' terzo canale esistente
+                numero_canali = 3
+            Else
+                numero_canali = 2
+            End If
         End If
 
         intestazioneTemp = intestazioneTemp + "<div Class=""row-fluid"">"
@@ -1377,7 +1380,7 @@ nexLoopLabel:
         For i = 1 To numero_canali 'ld può essere duo o tre canali
             'intestazione = intestazione + "<tr class=""selectable"">"
             '  intestazione = intestazione + "<td class=""center"">"
-            label_canale_temp = main_function_config.get_tipo_strumento_ld_lds_wd(Mid(calibrz_value(i), 1, 2), fattore_divisione_temp)
+            label_canale_temp = main_function_config.get_tipo_strumento_ld_lds_wd(calibrz_value(i), fattore_divisione_temp)
 
             Select Case i
                 Case 1 'controllo allarmi canale 1
@@ -1399,12 +1402,30 @@ nexLoopLabel:
                         canale_allarme = False
                     End If
                 Case 3 'controllo allarmi canale 3
-                    canale_allarme = False 'non ci sono allarmi sul canale 3
+                    'canale_allarme = False 'non ci sono allarmi sul canale 3
+                    If main_function.alarm_ld_minmax_3(allrmr_value) Then
+                        canale_allarme = True
+                    Else
+                        canale_allarme = False
+
+                    End If
+                Case 4 'controllo allarmi canale 4
+                    If main_function.alarm_ld_minmax_4(allrmr_value) Then
+                        canale_allarme = True
+                    Else
+                        canale_allarme = False
+
+                    End If
+
             End Select
             If i = 3 Then
                 valore_canale_temp = Val(Mid(valuer_value(5), 1, 4)) / fattore_divisione_temp
             Else
-                valore_canale_temp = Val(Mid(valuer_value(i), 1, 4)) / fattore_divisione_temp
+                If i = 4 Then
+                    valore_canale_temp = Val(Mid(valuer_value(6), 1, 4)) / fattore_divisione_temp
+                Else
+                    valore_canale_temp = Val(Mid(valuer_value(i), 1, 4)) / fattore_divisione_temp
+                End If
             End If
             If canale_allarme Then ' canale in allarme
                 intestazioneTemp = intestazioneTemp + "<div class=""span2""> <span class=""unita alarm"">" + label_canale_temp + "</span>"

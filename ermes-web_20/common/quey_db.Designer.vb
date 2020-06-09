@@ -4062,6 +4062,12 @@ Partial Public Class quey_db
         
         Private columnStato_rele_ch2 As Global.System.Data.DataColumn
         
+        Private columnvalore4 As Global.System.Data.DataColumn
+        
+        Private columnfeed_limit_ch3 As Global.System.Data.DataColumn
+        
+        Private columnfeed_limit_ch4 As Global.System.Data.DataColumn
+        
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Sub New()
@@ -4306,6 +4312,30 @@ Partial Public Class quey_db
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property valore4Column() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnvalore4
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property feed_limit_ch3Column() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnfeed_limit_ch3
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property feed_limit_ch4Column() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnfeed_limit_ch4
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Browsable(false)>  _
         Public ReadOnly Property Count() As Integer
@@ -4368,9 +4398,12 @@ Partial Public Class quey_db
                     ByVal Stato_pulse2_ch1 As Integer,  _
                     ByVal Stato_pulse_ch2 As Integer,  _
                     ByVal Stato_rele_ch1 As Integer,  _
-                    ByVal Stato_rele_ch2 As Integer) As ld_logRow
+                    ByVal Stato_rele_ch2 As Integer,  _
+                    ByVal valore4 As Single,  _
+                    ByVal feed_limit_ch3 As Boolean,  _
+                    ByVal feed_limit_ch4 As Boolean) As ld_logRow
             Dim rowld_logRow As ld_logRow = CType(Me.NewRow,ld_logRow)
-            Dim columnValuesArray() As Object = New Object() {id, identificativo, id_485, data, valore1, valore2, valore3, flusso, feed_limit_ph, feed_limit_cl, dos_alarm_cl, dos_alarm_ph, probe_fail_ph, probe_fail_cl, livello1, livello2, temperatura, livello3, totalizer, m3h, stby, Stato_pulse1_ch1, Stato_pulse2_ch1, Stato_pulse_ch2, Stato_rele_ch1, Stato_rele_ch2}
+            Dim columnValuesArray() As Object = New Object() {id, identificativo, id_485, data, valore1, valore2, valore3, flusso, feed_limit_ph, feed_limit_cl, dos_alarm_cl, dos_alarm_ph, probe_fail_ph, probe_fail_cl, livello1, livello2, temperatura, livello3, totalizer, m3h, stby, Stato_pulse1_ch1, Stato_pulse2_ch1, Stato_pulse_ch2, Stato_rele_ch1, Stato_rele_ch2, valore4, feed_limit_ch3, feed_limit_ch4}
             rowld_logRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowld_logRow)
             Return rowld_logRow
@@ -4419,6 +4452,9 @@ Partial Public Class quey_db
             Me.columnStato_pulse_ch2 = MyBase.Columns("Stato_pulse_ch2")
             Me.columnStato_rele_ch1 = MyBase.Columns("Stato_rele_ch1")
             Me.columnStato_rele_ch2 = MyBase.Columns("Stato_rele_ch2")
+            Me.columnvalore4 = MyBase.Columns("valore4")
+            Me.columnfeed_limit_ch3 = MyBase.Columns("feed_limit_ch3")
+            Me.columnfeed_limit_ch4 = MyBase.Columns("feed_limit_ch4")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -4476,6 +4512,12 @@ Partial Public Class quey_db
             MyBase.Columns.Add(Me.columnStato_rele_ch1)
             Me.columnStato_rele_ch2 = New Global.System.Data.DataColumn("Stato_rele_ch2", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnStato_rele_ch2)
+            Me.columnvalore4 = New Global.System.Data.DataColumn("valore4", GetType(Single), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnvalore4)
+            Me.columnfeed_limit_ch3 = New Global.System.Data.DataColumn("feed_limit_ch3", GetType(Boolean), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnfeed_limit_ch3)
+            Me.columnfeed_limit_ch4 = New Global.System.Data.DataColumn("feed_limit_ch4", GetType(Boolean), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnfeed_limit_ch4)
             Me.columnidentificativo.MaxLength = 2147483647
             Me.columnid_485.MaxLength = 10
             Me.columnflusso.MaxLength = 10
@@ -4495,6 +4537,9 @@ Partial Public Class quey_db
             Me.columnStato_pulse_ch2.ReadOnly = true
             Me.columnStato_rele_ch1.ReadOnly = true
             Me.columnStato_rele_ch2.ReadOnly = true
+            Me.columnvalore4.ReadOnly = true
+            Me.columnfeed_limit_ch3.ReadOnly = true
+            Me.columnfeed_limit_ch4.ReadOnly = true
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -13801,6 +13846,51 @@ Partial Public Class quey_db
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property valore4() As Single
+            Get
+                Try 
+                    Return CType(Me(Me.tableld_log.valore4Column),Single)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("Il valore della colonna 'valore4' nella tabella 'ld_log' è DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableld_log.valore4Column) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property feed_limit_ch3() As Boolean
+            Get
+                Try 
+                    Return CType(Me(Me.tableld_log.feed_limit_ch3Column),Boolean)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("Il valore della colonna 'feed_limit_ch3' nella tabella 'ld_log' è DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableld_log.feed_limit_ch3Column) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property feed_limit_ch4() As Boolean
+            Get
+                Try 
+                    Return CType(Me(Me.tableld_log.feed_limit_ch4Column),Boolean)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("Il valore della colonna 'feed_limit_ch4' nella tabella 'ld_log' è DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableld_log.feed_limit_ch4Column) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Function IsidNull() As Boolean
             Return Me.IsNull(Me.tableld_log.idColumn)
         End Function
@@ -14109,6 +14199,42 @@ Partial Public Class quey_db
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Sub SetStato_rele_ch2Null()
             Me(Me.tableld_log.Stato_rele_ch2Column) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function Isvalore4Null() As Boolean
+            Return Me.IsNull(Me.tableld_log.valore4Column)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub Setvalore4Null()
+            Me(Me.tableld_log.valore4Column) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function Isfeed_limit_ch3Null() As Boolean
+            Return Me.IsNull(Me.tableld_log.feed_limit_ch3Column)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub Setfeed_limit_ch3Null()
+            Me(Me.tableld_log.feed_limit_ch3Column) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function Isfeed_limit_ch4Null() As Boolean
+            Return Me.IsNull(Me.tableld_log.feed_limit_ch4Column)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub Setfeed_limit_ch4Null()
+            Me(Me.tableld_log.feed_limit_ch4Column) = Global.System.Convert.DBNull
         End Sub
     End Class
     
@@ -23605,6 +23731,9 @@ Namespace quey_dbTableAdapters
             tableMapping.ColumnMappings.Add("Stato_pulse_ch2", "Stato_pulse_ch2")
             tableMapping.ColumnMappings.Add("Stato_rele_ch1", "Stato_rele_ch1")
             tableMapping.ColumnMappings.Add("Stato_rele_ch2", "Stato_rele_ch2")
+            tableMapping.ColumnMappings.Add("valore4", "valore4")
+            tableMapping.ColumnMappings.Add("feed_limit_ch3", "feed_limit_ch3")
+            tableMapping.ColumnMappings.Add("feed_limit_ch4", "feed_limit_ch4")
             Me._adapter.TableMappings.Add(tableMapping)
             Me._adapter.InsertCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.InsertCommand.Connection = Me.Connection
@@ -23651,14 +23780,16 @@ Namespace quey_dbTableAdapters
             Me._commandCollection(0).Connection = Me.Connection
             Me._commandCollection(0).CommandText = "SELECT        id, identificativo, id_485, data, valore1, valore2, valore3, flusso"& _ 
                 ", feed_limit_ph, feed_limit_cl, dos_alarm_cl, dos_alarm_ph, probe_fail_ph, probe"& _ 
-                "_fail_cl, livello1, livello2, temperatura, livello3, ISNULL(m3h, 0) "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"          "& _ 
-                "               AS m3h, ISNULL(totalizer, 0) AS totalizer, ISNULL(stby, 0) AS stb"& _ 
+                "_fail_cl, livello1, livello2, temperatura, livello3, ISNULL(m3h, 0) AS m3h, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"  "& _ 
+                "                       ISNULL(totalizer, 0) AS totalizer, ISNULL(stby, 0) AS stb"& _ 
                 "y, ISNULL(Stato_pulse1_ch1, 0) AS Stato_pulse1_ch1, ISNULL(Stato_pulse2_ch1, 0) "& _ 
-                "AS Stato_pulse2_ch1, ISNULL(Stato_pulse_ch2, 0) "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         AS St"& _ 
-                "ato_pulse_ch2, ISNULL(Stato_rele_ch1, 0) AS Stato_rele_ch1, ISNULL(Stato_rele_ch"& _ 
-                "2, 0) AS Stato_rele_ch2"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            ld_log"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (identificativo = "& _ 
-                "@identificativo) AND (id_485 = @i485 OR"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         id_485 = @i485"& _ 
-                "_1) AND (data BETWEEN @data1 AND @data2)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"ORDER BY data"
+                "AS Stato_pulse2_ch1, ISNULL(Stato_pulse_ch2, 0) AS Stato_pulse_ch2, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"          "& _ 
+                "               ISNULL(Stato_rele_ch1, 0) AS Stato_rele_ch1, ISNULL(Stato_rele_ch"& _ 
+                "2, 0) AS Stato_rele_ch2, ISNULL(valore4, 0) AS valore4, ISNULL(feed_limit_ch3, 0"& _ 
+                ") AS feed_limit_ch3, ISNULL(feed_limit_ch4, 0) AS feed_limit_ch4"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM          "& _ 
+                "  ld_log"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (identificativo = @identificativo) AND (id_485 = @i485 OR"& _ 
+                ""&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         id_485 = @i485_1) AND (data BETWEEN @data1 AND @data2"& _ 
+                ")"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"ORDER BY data"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@identificativo", Global.System.Data.SqlDbType.NVarChar, 2147483647, Global.System.Data.ParameterDirection.Input, 0, 0, "identificativo", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@i485", Global.System.Data.SqlDbType.NChar, 10, Global.System.Data.ParameterDirection.Input, 0, 0, "id_485", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))

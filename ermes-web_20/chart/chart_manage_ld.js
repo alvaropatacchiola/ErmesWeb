@@ -5,9 +5,12 @@ var to_difference = 0;
 var array_ch1 = [];
 var array_ch2 = [];
 var array_ch3 = [];
+var array_ch4 = [];
 
 var array_feed1 = [];
 var array_feed2 = [];
+var array_feed3 = [];
+var array_feed4 = [];
 
 var array_dos1 = [];
 var array_dos2 = [];
@@ -133,6 +136,9 @@ function get_data(parametro1, parametro2, parametro3, parametro4, parametro5) {
                 array_Stato_pulse_ch2.push([data, parseInt(res[25])]);
                 array_Stato_rele_ch2.push([data, parseInt(res[26])]);
 
+                array_ch4.push([data, parseFloat(res[27])]);
+                array_feed3.push([data, parseInt(res[28])]);
+                array_feed4.push([data, parseInt(res[29])]);
             });
             upgrate_chart();
         },
@@ -1185,11 +1191,166 @@ function upgrate_chart() {
         counter_series = counter_series + 1;
     }
     //allarmi
-  
+    if (($('#ch3_feed').is(':checked')) && (counter_series < 10)) {
+        series_chart.push({
+            name: 'Feed Limit',
+            id: 'ch3_val_series',
+            data: array_feed3,
+            step: true,
+            type: 'scatter',
+            tooltip: {
+                pointFormat: function () {
+                    return false;
+                },
+                valueDecimals: 0
+            },
+            lineWidth: 2,
+            yAxis: numero_asse
+        },
+        {
+            id: 'ch3_val_series',
+            name: 'Feed Limit',
+            data: array_feed3,
+            //type:'line',
+            step: true,
+            shadow: false,
+            color: 'rgba(255,255,255,0.1)',
+            tooltip: {
+                //pointFormat: '<span style="#FFFFF">{series.name}:<b>{point.y}</b></span>',
+                // formatter: '<span style="#FFFFF">{series.name}:<b>{point.y}</b></span>',
+                pointFormat: '<span style="#FFFFF">{series.name}:<b>{point.y}</b></span><br/>',
+
+                valueDecimals: 0
+            },
+            lineWidth: 2,
+            shared: true,
+            yAxis: numero_asse
+        });
+        yaxis_chart.push({
+            labels: {
+                formatter: function () {
+                    if (this.value == 1) {
+                        return 'ON';
+                    }
+                    else {
+                        return 'OFF';
+                    }
+                }
+            },
+
+            title: {
+                text: ch3_feed_label
+            },
+            opposite: false,
+            id: 'ch1_flow',
+            top: altezza,
+            height: 100,
+            offset: 0,
+            lineWidth: 2,
+            max: 2,
+            min: 0
+        });
+        altezza = altezza + 150;
+        numero_asse = numero_asse + 1;
+        counter_series = counter_series + 1;
+    }
     //end  canale ch3
     //canale ch4
- 
+    if (($('#ch4_val').is(':checked')) && (counter_series < 10)) {
+
+        series_chart.push({
+            name: label_ch4,
+            id: 'ch6_val_series',
+            data: array_ch4,
+            yAxis: numero_asse,
+            marker: {
+                enabled: true,
+                radius: 3
+            },
+            tooltip: {
+                valueDecimals: 2
+            }
+        });
+        yaxis_chart.push({
+            title: {
+                text: label_ch4
+            },
+            opposite: false,
+            id: 'ch1_val',
+            top: altezza,
+            height: 200,
+            lineWidth: 2
+        });
+        altezza = altezza + 300;
+        numero_asse = numero_asse + 1;
+        counter_series = counter_series + 1;
+    }
+    //allarmi
+    if (($('#ch4_feed').is(':checked')) && (counter_series < 10)) {
+        series_chart.push({
+            name: 'Feed Limit',
+            id: 'ch4_val_series',
+            data: array_feed4,
+            step: true,
+            type: 'scatter',
+            tooltip: {
+                pointFormat: function () {
+                    return false;
+                },
+                valueDecimals: 0
+            },
+            lineWidth: 2,
+            yAxis: numero_asse
+        },
+        {
+            id: 'ch4_val_series',
+            name: 'Feed Limit',
+            data: array_feed4,
+            //type:'line',
+            step: true,
+            shadow: false,
+            color: 'rgba(255,255,255,0.1)',
+            tooltip: {
+                //pointFormat: '<span style="#FFFFF">{series.name}:<b>{point.y}</b></span>',
+                // formatter: '<span style="#FFFFF">{series.name}:<b>{point.y}</b></span>',
+                pointFormat: '<span style="#FFFFF">{series.name}:<b>{point.y}</b></span><br/>',
+
+                valueDecimals: 0
+            },
+            lineWidth: 2,
+            shared: true,
+            yAxis: numero_asse
+        });
+        yaxis_chart.push({
+            labels: {
+                formatter: function () {
+                    if (this.value == 1) {
+                        return 'ON';
+                    }
+                    else {
+                        return 'OFF';
+                    }
+                }
+            },
+
+            title: {
+                text: ch4_feed_label
+            },
+            opposite: false,
+            id: 'ch1_flow',
+            top: altezza,
+            height: 100,
+            offset: 0,
+            lineWidth: 2,
+            max: 2,
+            min: 0
+        });
+        altezza = altezza + 150;
+        numero_asse = numero_asse + 1;
+        counter_series = counter_series + 1;
+    }
     //end  canale ch4
+    
     //canale ch5
     if (($('#temperature_select').is(':checked')) && (counter_series < 10)) {
 
@@ -1540,6 +1701,16 @@ function draw_tabella() {
             if (($('#ch3_val').is(':checked'))) {
                 array_temp.push(array_ch3[i][1]);
             }
+            if (($('#ch3_feed').is(':checked'))) {
+                array_temp.push(on_off(array_feed3[i][1]));
+            }
+            if (($('#ch4_val').is(':checked'))) {
+                array_temp.push(array_ch4[i][1]);
+            }
+            if (($('#ch4_feed').is(':checked'))) {
+                array_temp.push(on_off(array_feed4[i][1]));
+            }
+
             if (($('#temperature_select').is(':checked'))) {
                 array_temp.push(array_temperatura[i][1]);
             }

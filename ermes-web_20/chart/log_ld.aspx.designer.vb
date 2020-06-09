@@ -410,6 +410,78 @@ Partial Public Class log_ld
     Protected WithEvents ch3_val_label As Global.System.Web.UI.WebControls.Label
     
     '''<summary>
+    '''Controllo ch3_feed.
+    '''</summary>
+    '''<remarks>
+    '''Campo generato automaticamente.
+    '''Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
+    '''</remarks>
+    Protected WithEvents ch3_feed As Global.System.Web.UI.WebControls.CheckBox
+    
+    '''<summary>
+    '''Controllo ch3_feed_label.
+    '''</summary>
+    '''<remarks>
+    '''Campo generato automaticamente.
+    '''Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
+    '''</remarks>
+    Protected WithEvents ch3_feed_label As Global.System.Web.UI.WebControls.Label
+    
+    '''<summary>
+    '''Controllo ch4_enable.
+    '''</summary>
+    '''<remarks>
+    '''Campo generato automaticamente.
+    '''Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
+    '''</remarks>
+    Protected WithEvents ch4_enable As Global.System.Web.UI.WebControls.PlaceHolder
+    
+    '''<summary>
+    '''Controllo Literal5.
+    '''</summary>
+    '''<remarks>
+    '''Campo generato automaticamente.
+    '''Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
+    '''</remarks>
+    Protected WithEvents Literal5 As Global.System.Web.UI.WebControls.Literal
+    
+    '''<summary>
+    '''Controllo ch4_val.
+    '''</summary>
+    '''<remarks>
+    '''Campo generato automaticamente.
+    '''Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
+    '''</remarks>
+    Protected WithEvents ch4_val As Global.System.Web.UI.WebControls.CheckBox
+    
+    '''<summary>
+    '''Controllo ch4_val_label.
+    '''</summary>
+    '''<remarks>
+    '''Campo generato automaticamente.
+    '''Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
+    '''</remarks>
+    Protected WithEvents ch4_val_label As Global.System.Web.UI.WebControls.Label
+    
+    '''<summary>
+    '''Controllo ch4_feed.
+    '''</summary>
+    '''<remarks>
+    '''Campo generato automaticamente.
+    '''Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
+    '''</remarks>
+    Protected WithEvents ch4_feed As Global.System.Web.UI.WebControls.CheckBox
+    
+    '''<summary>
+    '''Controllo ch4_feed_label.
+    '''</summary>
+    '''<remarks>
+    '''Campo generato automaticamente.
+    '''Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
+    '''</remarks>
+    Protected WithEvents ch4_feed_label As Global.System.Web.UI.WebControls.Label
+    
+    '''<summary>
     '''Controllo flow_meter_enable.
     '''</summary>
     '''<remarks>

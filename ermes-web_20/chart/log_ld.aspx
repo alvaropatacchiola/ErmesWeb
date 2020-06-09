@@ -102,8 +102,25 @@ inputlog {
           <div class="span6">
               <h5 style="padding-top:10px"><asp:literal ID = "Literal3"  text="Ch3 Select" runat="server" meta:resourcekey="Literal3Resource1"></asp:literal></h5>
               
-                                <div id="checkboxCh"><asp:checkbox runat="server" ID="ch3_val" class="inputlog" meta:resourcekey="ch3_valResource1"></asp:checkbox></div>
+                    <div id="checkboxCh"><asp:checkbox runat="server" ID="ch3_val" class="inputlog" meta:resourcekey="ch3_valResource1"></asp:checkbox></div>
                     <div id="checkboxCh"><asp:Label runat="server" ID="ch3_val_label" class="labellog" Text="ch3" meta:resourcekey="ch3_val_labelResource1"></asp:Label> </div> 
+                    <div id="checkboxCh"><asp:checkbox runat="server" ID="ch3_feed" class="inputlog" meta:resourcekey="ch2_feedResource1"></asp:checkbox></div>
+                    <div id="checkboxCh"><asp:Label runat="server" ID="ch3_feed_label" class="labellog" Text="Feed Limit" meta:resourcekey="ch2_feed_labelResource1"></asp:Label> </div> 
+
+              </div>
+             </asp:placeholder>
+</div>
+        <!-- fine riga -->
+        <!-- riga -->
+<div class="row-fluid">            
+            <asp:placeholder runat="server" ID="ch4_enable">
+          <div class="span6">
+              <h5 style="padding-top:10px"><asp:literal ID = "Literal5"  text="Ch4 Select" runat="server" ></asp:literal></h5>
+              
+                    <div id="checkboxCh"><asp:checkbox runat="server" ID="ch4_val" class="inputlog" meta:resourcekey="ch3_valResource1"></asp:checkbox></div>
+                    <div id="checkboxCh"><asp:Label runat="server" ID="ch4_val_label" class="labellog" Text="ch3" meta:resourcekey="ch3_val_labelResource1"></asp:Label> </div> 
+                    <div id="checkboxCh"><asp:checkbox runat="server" ID="ch4_feed" class="inputlog" meta:resourcekey="ch2_feedResource1"></asp:checkbox></div>
+                    <div id="checkboxCh"><asp:Label runat="server" ID="ch4_feed_label" class="labellog" Text="Feed Limit" meta:resourcekey="ch2_feed_labelResource1"></asp:Label> </div> 
 
               </div>
              </asp:placeholder>

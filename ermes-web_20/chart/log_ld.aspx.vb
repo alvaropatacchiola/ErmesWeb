@@ -146,18 +146,26 @@ Public Class log_ld
                 ' ch2_val.Checked = False
                 'stby_enable.Visible = False
                 'flow_meter_enable.Visible = False
-
-                If Mid(config_value(3), 3, 3) <> "306" Then ' terzo canale esistente
+                If config_value.Length > 5 Then
                     ch1_enable.Visible = True
                     ch2_enable.Visible = True
                     ch3_enable.Visible = True
-                    numero_canali = 3
+                    ch4_enable.Visible = True
+                    numero_canali = 4
                 Else
-                    ch1_enable.Visible = True
-                    ch2_enable.Visible = True
-                    ch3_enable.Visible = False
-                    numero_canali = 2
+                    If Mid(config_value(3), 3, 3) <> "306" Then ' terzo canale esistente
+                        ch1_enable.Visible = True
+                        ch2_enable.Visible = True
+                        ch3_enable.Visible = True
+                        numero_canali = 3
+                    Else
+                        ch1_enable.Visible = True
+                        ch2_enable.Visible = True
+                        ch3_enable.Visible = False
+                        numero_canali = 2
+                    End If
                 End If
+
                 Dim versione As Integer = Val(main_function.get_version(riga_strumento.nome))
                 If versione < 800 Then
                     stby_enable.Visible = False
@@ -165,7 +173,7 @@ Public Class log_ld
                 End If
 
                 For i = 1 To numero_canali
-                    label_canale_temp = main_function_config.get_tipo_strumento_ld_lds_wd(Mid(calibrz_value(i), 1, 2))
+                    label_canale_temp = main_function_config.get_tipo_strumento_ld_lds_wd(calibrz_value(i))
                     Select Case i
                         Case 1
                             literal_script.Text = literal_script.Text + "var label_ch1='" + label_canale_temp + "';"
@@ -175,8 +183,14 @@ Public Class log_ld
                             literal_script.Text = literal_script.Text + "var label_ch2='" + label_canale_temp + "';"
                             ch2_val_label.Text = label_canale_temp
                         Case 3
+                            'label_canale_temp = main_function_config.get_tipo_strumento_ld_lds_wd(calibrz_value(5))
                             literal_script.Text = literal_script.Text + "var label_ch3='" + label_canale_temp + "';"
                             ch3_val_label.Text = label_canale_temp
+                        Case 4
+                            'label_canale_temp = main_function_config.get_tipo_strumento_ld_lds_wd(calibrz_value(6))
+                            literal_script.Text = literal_script.Text + "var label_ch4='" + label_canale_temp + "';"
+                            ch4_val_label.Text = label_canale_temp
+
                     End Select
                 Next
 
@@ -329,6 +343,10 @@ Public Class log_ld
 
         literal_script.Text = literal_script.Text + "var ch1_feed_label='" + ch1_feed_label.Text + "';" + "var ch1_dos_label='" + ch1_dos_label.Text + "';" + "var ch1_probe_label='" + ch1_probe_label.Text + "';" + "var ch1_livello1_label='" + ch1_livello1_label.Text + "';" + "var ch1_livello2_label='" + ch1_livello2_label.Text + "';"
         literal_script.Text = literal_script.Text + "var ch2_feed_label='" + ch2_feed_label.Text + "';" + "var ch2_dos_label='" + ch2_dos_label.Text + "';" + "var ch2_probe_label='" + ch2_probe_label.Text + "';" + "var ch2_level2_label='" + ch2_level2_label.Text + "';"
+
+        literal_script.Text = literal_script.Text + "var ch3_feed_label='" + ch3_feed_label.Text + "';"
+        literal_script.Text = literal_script.Text + "var ch4_feed_label='" + ch4_feed_label.Text + "';"
+
         literal_script.Text = literal_script.Text + "var label_flow_select='" + label_flow_select.Text + "';"
         literal_script.Text = literal_script.Text + "var label_temperature_select='" + label_temperature_select.Text + "';"
         literal_script.Text = literal_script.Text + "var label_stby='" + stby_label.Text + "';"

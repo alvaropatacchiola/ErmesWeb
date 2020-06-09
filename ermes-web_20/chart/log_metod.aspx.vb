@@ -101,7 +101,8 @@ Public Class log_metod
                 + "," + main_function.get_status_string(dc.livello1) + "," + main_function.get_status_string(dc.livello2) + "," + main_function.get_status_string(dc.livello3) _
                 + "," + main_function.get_status_string(dc.flusso) + "," + Replace(dc.temperatura.ToString, ",", ".") + "," + main_function.get_status_boolean(dc.stby) _
                 + "," + Replace(dc.m3h.ToString, ",", ".") + "," + Replace(dc.totalizer.ToString, ",", ".") + "," + dc.Stato_pulse1_ch1.ToString + "," + dc.Stato_pulse2_ch1.ToString _
-                + "," + dc.Stato_rele_ch1.ToString + "," + dc.Stato_pulse_ch2.ToString + "," + dc.Stato_rele_ch2.ToString
+                + "," + dc.Stato_rele_ch1.ToString + "," + dc.Stato_pulse_ch2.ToString + "," + dc.Stato_rele_ch2.ToString + "," + Replace(dc.valore4.ToString, ",", ".") _
+                + "," + dc.feed_limit_ch3.ToString + "," + dc.feed_limit_ch4.ToString
             array.Add(data_str)
 
 

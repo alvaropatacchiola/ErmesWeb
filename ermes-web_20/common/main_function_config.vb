@@ -595,6 +595,14 @@
                 label_setpoint = "mg/l"
 
                 Return "mg/l"
+            Case "104"
+                fattore_divisione = 100
+                full_scale = 20
+                str_terzo_canale = "ClCom"
+                label_setpoint = "ClCom"
+
+                Return "ClCom"
+
             Case "106"
                 fattore_divisione = 100
                 full_scale = 3

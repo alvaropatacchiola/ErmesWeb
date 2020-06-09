@@ -26,10 +26,11 @@
         Dim java_script_minmax1 As java_script = New java_script
         Dim java_script_minmax2 As java_script = New java_script
         Dim function_java As String = ""
-        Dim set_variable_javascript(5, 1) As String
+        Dim set_variable_javascript(11, 1) As String
 
         Dim minmax_value() As String
         Dim calibrz_value() As String
+        Dim config_value() As String
 
         Dim label_canale_temp As String = ""
         Dim fattore_divisione_temp As Integer = 0
@@ -51,7 +52,13 @@
 
         minmax_value = main_function.get_split_str(riga_strumento.value16)
         calibrz_value = main_function.get_split_str(riga_strumento.value4)
+        config_value = main_function.get_split_str(riga_strumento.value1)
 
+        If config_value.Length > 5 Then
+            enableLD4ch.Visible = True
+        Else
+            enableLD4ch.Visible = False
+        End If
 
         Dim mode_ch1_H As String
         Dim mode_ch1_L As String
@@ -59,17 +66,32 @@
         Dim mode_ch2_H As String
         Dim mode_ch2_L As String
 
+        Dim mode_ch3_H As String
+        Dim mode_ch3_L As String
+        Dim mode_ch4_H As String
+        Dim mode_ch4_L As String
+
         Dim value_ch1_H As String
         Dim value_ch1_L As String
 
         Dim value_ch2_H As String
         Dim value_ch2_L As String
 
+        Dim value_ch3_H As String
+        Dim value_ch3_L As String
+
+        Dim value_ch4_H As String
+        Dim value_ch4_L As String
+
         Dim dose_stop_ch1 As String
         Dim dose_stop_ch2 As String
+        Dim dose_stop_ch3 As String
+        Dim dose_stop_ch4 As String
 
         Dim time_ch1 As String
         Dim time_ch2 As String
+        Dim time_ch3 As String
+        Dim time_ch4 As String
 
         mode_ch1_H = Mid(minmax_value(1), 1, 1)
         mode_ch1_L = Mid(minmax_value(3), 1, 1)
@@ -131,6 +153,60 @@
             function_java = function_java + "enable_cl_alarm_dose();"
             'java_script_minmax6.call_function_javascript_onload(Page, "enable_cl_alarm_dose()")
         End If
+        If config_value.Length > 5 Then
+            mode_ch3_H = Mid(minmax_value(13), 1, 1)
+            mode_ch3_L = Mid(minmax_value(15), 1, 1)
+            mode_ch4_H = Mid(minmax_value(19), 1, 1)
+            mode_ch4_L = Mid(minmax_value(21), 1, 1)
+            If mode_ch3_H = "0" Then ' dis
+                function_java = function_java + "disable_ch3_alarm_high();"
+                disableH3.Checked = True 'disabled
+            Else
+                function_java = function_java + "enable_ch3_alarm_high();"
+                enableH3.Checked = True 'enabled
+            End If
+            If mode_ch4_H = "0" Then ' dis
+                function_java = function_java + "disable_ch4_alarm_high();"
+                disableH4.Checked = True 'disabled
+            Else
+                function_java = function_java + "enable_ch4_alarm_high();"
+                enableH4.Checked = True 'enabled
+            End If
+            If mode_ch3_L = "0" Then 'dis
+                function_java = function_java + "disable_ch3_alarm_low();"
+                'java_script_minmax5.call_function_javascript_onload(Page, "disable_cl_alarm_low()")
+                disableL3.Checked = True 'disabled
+            Else
+                function_java = function_java + "enable_ch3_alarm_low();"
+                'java_script_minmax5.call_function_javascript_onload(Page, "enable_cl_alarm_low()")
+                enableL3.Checked = True 'enabled
+            End If
+            If mode_ch4_L = "0" Then 'dis
+                function_java = function_java + "disable_ch4_alarm_low();"
+                'java_script_minmax5.call_function_javascript_onload(Page, "disable_cl_alarm_low()")
+                disableL4.Checked = True 'disabled
+            Else
+                function_java = function_java + "enable_ch4_alarm_low();"
+                'java_script_minmax5.call_function_javascript_onload(Page, "enable_cl_alarm_low()")
+                enableL4.Checked = True 'enabled
+            End If
+
+            If mode_ch3_H = "0" And mode_ch3_L = "0" Then ' tutti e due disabilitati
+                function_java = function_java + "disable_ch3_alarm_dose();"
+                'java_script_minmax6.call_function_javascript_onload(Page, "disable_cl_alarm_dose()")
+            Else
+                function_java = function_java + "enable_ch3_alarm_dose();"
+                'java_script_minmax6.call_function_javascript_onload(Page, "enable_cl_alarm_dose()")
+            End If
+            If mode_ch4_H = "0" And mode_ch4_L = "0" Then ' tutti e due disabilitati
+                function_java = function_java + "disable_ch4_alarm_dose();"
+                'java_script_minmax6.call_function_javascript_onload(Page, "disable_cl_alarm_dose()")
+            Else
+                function_java = function_java + "enable_ch4_alarm_dose();"
+                'java_script_minmax6.call_function_javascript_onload(Page, "enable_cl_alarm_dose()")
+            End If
+            'aspetta
+        End If
         value_ch1_H = Mid(minmax_value(2), 1, 4)
         value_ch1_L = Mid(minmax_value(4), 1, 4)
         label_canale_temp = main_function_config.get_tipo_strumento_ld_lds_wd(Mid(calibrz_value(1), 1, 2), fattore_divisione_temp, full_scale_temp, , etichetta_setpoint)
@@ -183,8 +259,81 @@
         set_variable_javascript(5, 0) = "max_fix_value_cl"
         set_variable_javascript(5, 1) = main_function.set_fullscale(full_scale_temp).ToString
 
+        If config_value.Length > 5 Then
+            'cloro totale
+            label_canale_temp = main_function_config.get_tipo_strumento_ld_lds_wd(calibrz_value(3), fattore_divisione_temp, full_scale_temp, , etichetta_setpoint)
+            tabld1_3.Text = label_canale_temp
+
+            value_ch3_H = Mid(minmax_value(14), 1, 4)
+            value_ch3_L = Mid(minmax_value(16), 1, 4)
+
+            Literal11.Text = out_range_traduzione + " " + label_canale_temp
+            Literal14.Text = out_range_traduzione_low + " " + label_canale_temp
+            temp_calc = Val(value_ch3_H) / fattore_divisione_temp 'on
+            maxch3.Text = Replace(temp_calc.ToString(), ",", ".")
+
+            temp_calc = Val(value_ch3_L) / fattore_divisione_temp 'on
+            minch3.Text = Replace(temp_calc.ToString(), ",", ".")
+
+            Literal12.Text = mim_max_h_traduzione + " - " + etichetta_setpoint
+            Literal15.Text = mim_max_l_traduzione + " - " + etichetta_setpoint
+            Literal16.Text = mode_traduzione
+            'semo arriati ecco
+            set_variable_javascript(6, 0) = "max_cl_value_3"
+            set_variable_javascript(6, 1) = full_scale_temp.ToString
+            set_variable_javascript(7, 0) = "min_cl_value_3"
+            set_variable_javascript(7, 1) = "0"
+            set_variable_javascript(8, 0) = "max_fix_value_cl_3"
+            set_variable_javascript(8, 1) = main_function.set_fullscale(full_scale_temp).ToString
+            'cloro combinato
+            label_canale_temp = main_function_config.get_tipo_strumento_ld_lds_wd(calibrz_value(4), fattore_divisione_temp, full_scale_temp, , etichetta_setpoint)
+            tabld1_4.Text = label_canale_temp
+
+            value_ch4_H = Mid(minmax_value(20), 1, 4)
+            value_ch4_L = Mid(minmax_value(22), 1, 4)
+
+            Literal18.Text = out_range_traduzione + " " + label_canale_temp
+            Literal20.Text = out_range_traduzione_low + " " + label_canale_temp
+            temp_calc = Val(value_ch4_H) / fattore_divisione_temp 'on
+            maxch4.Text = Replace(temp_calc.ToString(), ",", ".")
+
+            temp_calc = Val(value_ch4_L) / fattore_divisione_temp 'on
+            minch4.Text = Replace(temp_calc.ToString(), ",", ".")
+
+            Literal19.Text = mim_max_h_traduzione + " - " + etichetta_setpoint
+            Literal21.Text = mim_max_l_traduzione + " - " + etichetta_setpoint
+            Literal22.Text = mode_traduzione
+
+            set_variable_javascript(9, 0) = "max_cl_value_4"
+            set_variable_javascript(9, 1) = full_scale_temp.ToString
+            set_variable_javascript(10, 0) = "min_cl_value_4"
+            set_variable_javascript(10, 1) = "0"
+            set_variable_javascript(11, 0) = "max_fix_value_cl_4"
+            set_variable_javascript(11, 1) = main_function.set_fullscale(full_scale_temp).ToString
+        End If
+
         dose_stop_ch1 = Mid(minmax_value(5), 1, 1)
         dose_stop_ch2 = Mid(minmax_value(11), 1, 1)
+        If config_value.Length > 5 Then
+            dose_stop_ch3 = Mid(minmax_value(17), 1, 1)
+            dose_stop_ch4 = Mid(minmax_value(23), 1, 1)
+            time_ch3 = Mid(minmax_value(18), 1, 2)
+            time_ch4 = Mid(minmax_value(24), 1, 2)
+            Literal17.Text = time_traduzione
+            Literal23.Text = time_traduzione
+            If dose_stop_ch3 = "0" Then ' dose
+                dose3.Checked = True
+            Else
+                stop3.Checked = True
+            End If
+            If dose_stop_ch4 = "0" Then ' dose
+                dose4.Checked = True
+            Else
+                stop4.Checked = True
+            End If
+            time3.Text = Val(time_ch3).ToString
+            time4.Text = Val(time_ch4).ToString
+        End If
         time_ch1 = Mid(minmax_value(6), 1, 2)
         time_ch2 = Mid(minmax_value(12), 1, 2)
         Literal2.Text = time_traduzione
@@ -213,13 +362,15 @@
         value_ph_alarm_stop.Text = Val(time_ch1).ToString
         value_cl_alarm_stop.Text = Val(time_ch2).ToString
         java_script_minmax1.call_function_javascript_onload(Page, function_java)
-        java_script_minmax2.set_url_setpoint(Page, set_variable_javascript, 5)
+        java_script_minmax2.set_url_setpoint(Page, set_variable_javascript, 11)
     End Sub
     Private Function MakeMinMaxString() As String
 
         Dim riga_strumento As ermes_web_20.quey_db.strumentiRow
         Dim tabella_strumento As ermes_web_20.quey_db.strumentiDataTable
         Dim calibrz_value() As String
+        Dim config_value() As String
+
         Dim full_scale_temp As Single
 
         Dim fattore_divisione_temp As Integer = 0
@@ -232,20 +383,39 @@
         Dim app_mode_ch2_H As String
         Dim app_mode_ch2_L As String
 
+        Dim app_mode_ch3_H As String
+        Dim app_mode_ch3_L As String
+
+        Dim app_mode_ch4_H As String
+        Dim app_mode_ch4_L As String
+
         Dim app_value_ch1_H As String
         Dim app_value_ch1_L As String
 
         Dim app_value_ch2_H As String
         Dim app_value_ch2_L As String
 
+        Dim app_value_ch3_H As String
+        Dim app_value_ch3_L As String
+
+        Dim app_value_ch4_H As String
+        Dim app_value_ch4_L As String
+
         Dim app_dose_stop_ch1 As String
         Dim app_dose_stop_ch2 As String
 
+        Dim app_dose_stop_ch3 As String
+        Dim app_dose_stop_ch4 As String
+
         Dim app_time_ch1 As String
         Dim app_time_ch2 As String
+        Dim app_time_ch3 As String
+        Dim app_time_ch4 As String
 
         Dim fattore_ch1 As Integer
         Dim fattore_ch2 As Integer
+        Dim fattore_ch3 As Integer
+        Dim fattore_ch4 As Integer
 
         tabella_strumento = (Session("strumento"))
         For Each dc1 In tabella_strumento
@@ -254,6 +424,7 @@
             End If
         Next
         calibrz_value = main_function.get_split_str(riga_strumento.value4)
+        config_value = main_function.get_split_str(riga_strumento.value1)
 
         main_function_config.get_tipo_strumento_ld_lds_wd(Mid(calibrz_value(1), 1, 2), fattore_divisione_temp, full_scale_temp)
 
@@ -336,8 +507,98 @@
         app_time_ch1 = Format(Val(value_ph_alarm_stop.Text), "00")
         app_time_ch2 = Format(Val(value_cl_alarm_stop.Text), "00")
 
+        If config_value.Length > 5 Then
+            ' ch3
+            main_function_config.get_tipo_strumento_ld_lds_wd(Mid(calibrz_value(3), 1, 2), fattore_divisione_temp, full_scale_temp)
+            If enableH3.Checked = True Then 'enable ch3 H
+                app_mode_ch3_H = "1"
+                'app_value_ch2_H = Format(Val(value_cl_alarm_high.Text) * fattore_divisione_temp, "0000")
+                app = Val(maxch3.Text) * fattore_divisione_temp
 
-        Risultato = app_mode_ch1_H + app_value_ch1_H + app_mode_ch1_L + app_value_ch1_L + app_dose_stop_ch1 + app_time_ch1 + app_mode_ch2_H + app_value_ch2_H + app_mode_ch2_L + app_value_ch2_L + app_dose_stop_ch2 + app_time_ch2
+                If app >= 0 Then
+                    app_value_ch3_H = Format(Val(maxch3.Text) * fattore_divisione_temp, "0000")
+                Else
+                    app_value_ch3_H = Format(Val(maxch3.Text) * fattore_divisione_temp, "000")
+                End If
+
+            End If
+            If disableH3.Checked = True Then 'disable ch3 H
+                app_mode_ch3_H = "0"
+                app_value_ch3_H = Format(full_scale_temp * fattore_divisione_temp, "0000")
+            End If
+            If enableL3.Checked = True Then 'enable ch3 L
+                app_mode_ch3_L = "1"
+                'app_value_ch2_L = Format(Val(value_cl_alarm_low.Text) * fattore_divisione_temp, "0000")
+
+                app = Val(minch3.Text) * fattore_divisione_temp
+
+                If app >= 0 Then
+                    app_value_ch3_L = Format(Val(minch3.Text) * fattore_divisione_temp, "0000")
+                Else
+                    app_value_ch3_L = Format(Val(minch3.Text) * fattore_divisione_temp, "000")
+                End If
+
+            End If
+            If disableL3.Checked = True Then 'disable ch2 L
+                app_mode_ch3_L = "0"
+                app_value_ch3_L = "0000"
+            End If
+            If dose3.Checked = True Then
+                app_dose_stop_ch3 = "0" 'dose
+            Else
+                app_dose_stop_ch3 = "1" 'stop
+            End If
+            app_time_ch3 = Format(Val(time3.Text), "00")
+            'end ch3
+            ' ch4
+            main_function_config.get_tipo_strumento_ld_lds_wd(Mid(calibrz_value(4), 1, 2), fattore_divisione_temp, full_scale_temp)
+            If enableH4.Checked = True Then 'enable ch3 H
+                app_mode_ch4_H = "1"
+                'app_value_ch2_H = Format(Val(value_cl_alarm_high.Text) * fattore_divisione_temp, "0000")
+                app = Val(maxch4.Text) * fattore_divisione_temp
+
+                If app >= 0 Then
+                    app_value_ch4_H = Format(Val(maxch4.Text) * fattore_divisione_temp, "0000")
+                Else
+                    app_value_ch4_H = Format(Val(maxch4.Text) * fattore_divisione_temp, "000")
+                End If
+
+            End If
+            If disableH4.Checked = True Then 'disable ch3 H
+                app_mode_ch4_H = "0"
+                app_value_ch4_H = Format(full_scale_temp * fattore_divisione_temp, "0000")
+            End If
+            If enableL4.Checked = True Then 'enable ch3 L
+                app_mode_ch4_L = "1"
+                'app_value_ch2_L = Format(Val(value_cl_alarm_low.Text) * fattore_divisione_temp, "0000")
+
+                app = Val(minch4.Text) * fattore_divisione_temp
+
+                If app >= 0 Then
+                    app_value_ch4_L = Format(Val(minch4.Text) * fattore_divisione_temp, "0000")
+                Else
+                    app_value_ch4_L = Format(Val(minch4.Text) * fattore_divisione_temp, "000")
+                End If
+
+            End If
+            If disableL4.Checked = True Then 'disable ch2 L
+                app_mode_ch4_L = "0"
+                app_value_ch4_L = "0000"
+            End If
+            If dose4.Checked = True Then
+                app_dose_stop_ch4 = "0" 'dose
+            Else
+                app_dose_stop_ch4 = "1" 'stop
+            End If
+            app_time_ch4 = Format(Val(time4.Text), "00")
+            'end ch4
+        End If
+        If config_value.Length > 5 Then
+            Risultato = app_mode_ch1_H + app_value_ch1_H + app_mode_ch1_L + app_value_ch1_L + app_dose_stop_ch1 + app_time_ch1 + app_mode_ch2_H + app_value_ch2_H + app_mode_ch2_L + app_value_ch2_L + app_dose_stop_ch2 + app_time_ch2 + app_mode_ch3_H + app_value_ch3_H + app_mode_ch3_L + app_value_ch3_L + app_dose_stop_ch3 + app_time_ch3 + app_mode_ch4_H + app_value_ch4_H + app_mode_ch4_L + app_value_ch4_L + app_dose_stop_ch4 + app_time_ch4
+        Else
+            Risultato = app_mode_ch1_H + app_value_ch1_H + app_mode_ch1_L + app_value_ch1_L + app_dose_stop_ch1 + app_time_ch1 + app_mode_ch2_H + app_value_ch2_H + app_mode_ch2_L + app_value_ch2_L + app_dose_stop_ch2 + app_time_ch2
+        End If
+
 
 
         Return id_485_impianto + "minmxw" + Risultato + "minmxwend" & Chr(13)
