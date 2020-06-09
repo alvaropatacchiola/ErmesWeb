@@ -37,8 +37,13 @@
 
 
 
-    Public Function getJSONEnable(ByVal username As String, ByVal password As String, ByVal identificativo As String) As Boolean
+    Public Function getJSONEnable(ByVal username As String, ByVal password As String, ByVal identificativo As String, ByRef labelAlarm As String) As Boolean
+        labelAlarm = ""
         If (db_data_apiJson.GetData(username, password, identificativo).Count > 0) Then
+            For Each gdc In db_data_apiJson.GetData(username, password, identificativo)
+                labelAlarm = gdc.labelAlarm
+                Exit For
+            Next
             Return True
         Else
             Return False
@@ -216,6 +221,16 @@
         For i = 0 To 3
             Try
                 Return db_data_strumenti.get_data_codice(codice, id_485_impianto)
+            Catch ex As Exception
+
+            End Try
+        Next
+    End Function
+    Public Function get_strumenti_codice_list(ByVal codice As String) As ermes_web_20.quey_db.strumentiDataTable
+        Dim i As Integer
+        For i = 0 To 3
+            Try
+                Return db_data_strumenti.GetNumeroStrumenti(codice)
             Catch ex As Exception
 
             End Try

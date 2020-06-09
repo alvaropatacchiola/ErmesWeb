@@ -55,7 +55,13 @@ Public Class main_function
             Return "0"
         End If
     End Function
-
+    Public Shared Function get_status_stringInverse(ByVal valore_string As String) As String
+        If InStr(valore_string, "1") <> 0 Then
+            Return "0"
+        Else
+            Return "1"
+        End If
+    End Function
     '------------------------------------------------------------------------------------------------------------
     'Procedura di gestione legata al calcolo del numero di cifre dopo la virgola, necessaria per java scrip
     '---------------------------------------------------------------------------------------------------------

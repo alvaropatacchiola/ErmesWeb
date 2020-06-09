@@ -1107,6 +1107,68 @@ function upgrate_chart() {
         numero_asse = numero_asse + 1;
         counter_series = counter_series + 1;
     }
+    if (($('#ch3_level1').is(':checked')) && (counter_series < 10)) {
+        series_chart.push({
+            id: 'ch66_val_series',
+            name: 'Level 2',
+            data: array_level2,
+            step: true,
+            type: 'scatter',
+            tooltip: {
+                pointFormat: function () {
+                    return false;
+                },
+                valueDecimals: 0
+            },
+            lineWidth: 2,
+            yAxis: numero_asse
+        },
+        {
+            id: 'ch2_val_series',
+            name: 'Level 2',
+            data: array_level2,
+            //type:'line',
+            step: true,
+            shadow: false,
+            color: 'rgba(255,255,255,0.1)',
+            tooltip: {
+                //pointFormat: '<span style="#FFFFF">{series.name}:<b>{point.y}</b></span>',
+                // formatter: '<span style="#FFFFF">{series.name}:<b>{point.y}</b></span>',
+                pointFormat: '<span style="#FFFFF">{series.name}:<b>{point.y}</b></span><br/>',
+
+                valueDecimals: 0
+            },
+            lineWidth: 2,
+            shared: true,
+            yAxis: numero_asse
+        });
+        yaxis_chart.push({
+            labels: {
+                formatter: function () {
+                    if (this.value == 1) {
+                        return 'ON';
+                    }
+                    else {
+                        return 'OFF';
+                    }
+                }
+            },
+
+            title: {
+                text: "Level 2"
+            },
+            opposite: false,
+            top: altezza,
+            height: 100,
+            offset: 0,
+            lineWidth: 2,
+            max: 2,
+            min: 0
+        });
+        altezza = altezza + 150;
+        numero_asse = numero_asse + 1;
+        counter_series = counter_series + 1;
+    }
     if (($('#Stato_pulse_ch2').is(':checked')) && (counter_series < 10)) {
 
         series_chart.push({
@@ -1691,6 +1753,10 @@ function draw_tabella() {
             if (($('#ch2_level1').is(':checked'))) {
                 array_temp.push(on_off(array_level3[i][1]));
             }
+            if (($('#ch3_level1').is(':checked'))) {
+                array_temp.push(on_off(array_level2[i][1]));
+            }
+
             if (($('#Stato_pulse_ch2').is(':checked'))) {
                 array_temp.push(array_Stato_pulse_ch2[i][1]);
             }

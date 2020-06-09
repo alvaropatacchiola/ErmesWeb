@@ -56,7 +56,7 @@
             function_javascript = function_javascript + "set_name('" + level1_val_label.Text + "','" + level2_val_label.Text + "','" + _
                 level3_val_label.Text + "','" + level4_val_label.Text + "','" + level5_val_label.Text + "');"
 
-            function_javascript = function_javascript + "get_data(" + codice_impianto + "," + id_485_impianto + ");"
+            function_javascript = function_javascript + "get_data('" + codice_impianto + "'," + id_485_impianto + ");"
             function_javascript = function_javascript + "manage_div();"
             'function_javascript = function_javascript + "upgrate_chart();"
 

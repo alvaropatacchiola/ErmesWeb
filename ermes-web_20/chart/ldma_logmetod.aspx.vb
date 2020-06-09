@@ -17,6 +17,9 @@ Public Class ldma_logmetod
 
         temporaneo_id = Str(Val(parametri(1)))
         temporaneo_id = temporaneo_id.Replace(" ", "")
+        parametri(0) = parametri(0).Replace("""", "")
+        parametri(1) = parametri(1).Replace("""", "")
+
         table_log = query.get_log_ldma(parametri(0), parametri(1), temporaneo_id)
         For Each dc In table_log
             'Dim time As DateTime = DateTime.Parse(dc.data, New CultureInfo(culture, False))

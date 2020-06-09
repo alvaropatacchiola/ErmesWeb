@@ -44,7 +44,7 @@
             Dim posizione_trattino As Integer = message_value(j).IndexOf("-")
             If posizione_trattino > 0 Then
                 Dim stringa_temp As String = Mid(message_value(j), posizione_trattino + 2, 1)
-                If stringa_temp <> "-" Then
+                If stringa_temp <> "-" And posizione_trattino < message_value(j).Length - 1 Then
                     message_value(j) = Mid(message_value(j), 1, posizione_trattino) + "$" + Mid(message_value(j), posizione_trattino + 2, Len(message_value(j)))
 
                 End If

@@ -9478,6 +9478,8 @@ Partial Public Class quey_db
         
         Private columnidentificativo As Global.System.Data.DataColumn
         
+        Private columnlabelAlarm As Global.System.Data.DataColumn
+        
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Sub New()
@@ -9522,6 +9524,14 @@ Partial Public Class quey_db
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property labelAlarmColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnlabelAlarm
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Browsable(false)>  _
         Public ReadOnly Property Count() As Integer
@@ -9558,9 +9568,9 @@ Partial Public Class quey_db
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Overloads Function AddwebServiceRow(ByVal identificativo As String) As webServiceRow
+        Public Overloads Function AddwebServiceRow(ByVal identificativo As String, ByVal labelAlarm As String) As webServiceRow
             Dim rowwebServiceRow As webServiceRow = CType(Me.NewRow,webServiceRow)
-            Dim columnValuesArray() As Object = New Object() {identificativo}
+            Dim columnValuesArray() As Object = New Object() {identificativo, labelAlarm}
             rowwebServiceRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowwebServiceRow)
             Return rowwebServiceRow
@@ -9584,6 +9594,7 @@ Partial Public Class quey_db
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Friend Sub InitVars()
             Me.columnidentificativo = MyBase.Columns("identificativo")
+            Me.columnlabelAlarm = MyBase.Columns("labelAlarm")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -9591,7 +9602,11 @@ Partial Public Class quey_db
         Private Sub InitClass()
             Me.columnidentificativo = New Global.System.Data.DataColumn("identificativo", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnidentificativo)
+            Me.columnlabelAlarm = New Global.System.Data.DataColumn("labelAlarm", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnlabelAlarm)
             Me.columnidentificativo.MaxLength = 2147483647
+            Me.columnlabelAlarm.ReadOnly = true
+            Me.columnlabelAlarm.MaxLength = 2147483647
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -19415,6 +19430,21 @@ Partial Public Class quey_db
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property labelAlarm() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tablewebService.labelAlarmColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("Il valore della colonna 'labelAlarm' nella tabella 'webService' è DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tablewebService.labelAlarmColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Function IsidentificativoNull() As Boolean
             Return Me.IsNull(Me.tablewebService.identificativoColumn)
         End Function
@@ -19423,6 +19453,18 @@ Partial Public Class quey_db
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Sub SetidentificativoNull()
             Me(Me.tablewebService.identificativoColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IslabelAlarmNull() As Boolean
+            Return Me.IsNull(Me.tablewebService.labelAlarmColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetlabelAlarmNull()
+            Me(Me.tablewebService.labelAlarmColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
     
@@ -20242,7 +20284,7 @@ Namespace quey_dbTableAdapters
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Private Sub InitCommandCollection()
-            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(3) {}
+            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(4) {}
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
             Me._commandCollection(0).CommandText = "SELECT        strumenti.data_aggiornamento, strumenti.codice, strumenti.id_485, s"& _ 
@@ -20308,6 +20350,12 @@ Namespace quey_dbTableAdapters
             Me._commandCollection(3).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(3).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@codice", Global.System.Data.SqlDbType.NVarChar, 2147483647, Global.System.Data.ParameterDirection.Input, 0, 0, "codice", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(3).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@id_485", Global.System.Data.SqlDbType.NVarChar, 2147483647, Global.System.Data.ParameterDirection.Input, 0, 0, "id_485", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(4) = New Global.System.Data.SqlClient.SqlCommand()
+            Me._commandCollection(4).Connection = Me.Connection
+            Me._commandCollection(4).CommandText = "SELECT        data_aggiornamento, codice"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            strumenti"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE       "& _ 
+                " (codice = @codice)"
+            Me._commandCollection(4).CommandType = Global.System.Data.CommandType.Text
+            Me._commandCollection(4).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@codice", Global.System.Data.SqlDbType.NVarChar, 2147483647, Global.System.Data.ParameterDirection.Input, 0, 0, "codice", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -20436,6 +20484,22 @@ Namespace quey_dbTableAdapters
                 Me.Adapter.SelectCommand.Parameters(1).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.SelectCommand.Parameters(1).Value = CType(id_485,String)
+            End If
+            Dim dataTable As quey_db.strumentiDataTable = New quey_db.strumentiDataTable()
+            Me.Adapter.Fill(dataTable)
+            Return dataTable
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], false)>  _
+        Public Overloads Overridable Function GetNumeroStrumenti(ByVal codice As String) As quey_db.strumentiDataTable
+            Me.Adapter.SelectCommand = Me.CommandCollection(4)
+            If (codice Is Nothing) Then
+                Me.Adapter.SelectCommand.Parameters(0).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.SelectCommand.Parameters(0).Value = CType(codice,String)
             End If
             Dim dataTable As quey_db.strumentiDataTable = New quey_db.strumentiDataTable()
             Me.Adapter.Fill(dataTable)
@@ -28626,6 +28690,7 @@ Namespace quey_dbTableAdapters
             tableMapping.SourceTable = "Table"
             tableMapping.DataSetTable = "webService"
             tableMapping.ColumnMappings.Add("identificativo", "identificativo")
+            tableMapping.ColumnMappings.Add("labelAlarm", "labelAlarm")
             Me._adapter.TableMappings.Add(tableMapping)
             Me._adapter.InsertCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.InsertCommand.Connection = Me.Connection
@@ -28647,8 +28712,9 @@ Namespace quey_dbTableAdapters
             Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(0) {}
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "SELECT        identificativo"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            webService"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (username "& _ 
-                "= @username) AND (password = @password) AND (identificativo = @identificativo)"
+            Me._commandCollection(0).CommandText = "SELECT        identificativo, ISNULL(labelAlarm, '') AS labelAlarm"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM         "& _ 
+                "   webService"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (username = @username) AND (password = @password) AN"& _ 
+                "D (identificativo = @identificativo)"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@username", Global.System.Data.SqlDbType.NVarChar, 2147483647, Global.System.Data.ParameterDirection.Input, 0, 0, "username", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@password", Global.System.Data.SqlDbType.NVarChar, 2147483647, Global.System.Data.ParameterDirection.Input, 0, 0, "password", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))

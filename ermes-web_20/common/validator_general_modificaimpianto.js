@@ -219,7 +219,7 @@ function updateList() {
     var parametro1 = '';
 
     for (i = 0; i < array_inclusi.length; i++) {
-        parametro1 = parametro1 + array_inclusi[i] + '$';
+        parametro1 = parametro1 + array_inclusi[i] + '^';
     }
 
       $.ajax({

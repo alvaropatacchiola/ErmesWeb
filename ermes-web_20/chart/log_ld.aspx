@@ -84,6 +84,8 @@ inputlog {
                     <div id="checkboxCh"><asp:checkbox runat="server" ID="ch2_level1" class="inputlog" meta:resourcekey="ch2_level1Resource1"></asp:checkbox></div>
                     <div id="checkboxCh"><asp:Label runat="server" ID="ch2_level2_label"  class="labellog" Text="Level 1" meta:resourcekey="ch2_level2_labelResource1"></asp:Label> </div> 
 <asp:placeholder runat="server" ID="ch2_relay_enable">
+                    <div id="checkboxCh"><asp:checkbox runat="server" ID="ch3_level1" class="inputlog" meta:resourcekey="ch1_livello2Resource1"></asp:checkbox></div>
+                    <div id="checkboxCh"><asp:Label runat="server" ID="ch3_level2_label"  class="labellog" Text="Level 2"></asp:Label> </div> 
                      <div id="checkboxCh"><asp:checkbox runat="server" ID="Stato_pulse_ch2" class="inputlog" ></asp:checkbox></div>
                     <div id="checkboxCh"><asp:Label runat="server" ID="Stato_pulse_ch2_val"  class="labellog" Text="Pulse 1" ></asp:Label> </div> 
                      <div id="checkboxCh"><asp:checkbox runat="server" ID="Stato_rele_ch2" class="inputlog" ></asp:checkbox></div>
@@ -187,7 +189,7 @@ inputlog {
           <asp:Button ID="refresh_log_server" runat="server" BackColor="Transparent" BorderColor="Transparent" meta:resourcekey="refresh_log_serverResource1"  />
     <asp:literal runat="server" ID="literal_script" meta:resourcekey="literal_scriptResource1"></asp:literal>
 
-    <script type="text/javascript" src="chart/chart_manage_ld.js?v=1.4"></script>
+    <script type="text/javascript" src="chart/chart_manage_ld.js?v=1.5"></script>
    </div> 	
       
       

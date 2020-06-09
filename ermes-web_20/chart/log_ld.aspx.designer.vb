@@ -338,6 +338,24 @@ Partial Public Class log_ld
     Protected WithEvents ch2_relay_enable As Global.System.Web.UI.WebControls.PlaceHolder
     
     '''<summary>
+    '''Controllo ch3_level1.
+    '''</summary>
+    '''<remarks>
+    '''Campo generato automaticamente.
+    '''Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
+    '''</remarks>
+    Protected WithEvents ch3_level1 As Global.System.Web.UI.WebControls.CheckBox
+    
+    '''<summary>
+    '''Controllo ch3_level2_label.
+    '''</summary>
+    '''<remarks>
+    '''Campo generato automaticamente.
+    '''Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
+    '''</remarks>
+    Protected WithEvents ch3_level2_label As Global.System.Web.UI.WebControls.Label
+    
+    '''<summary>
     '''Controllo Stato_pulse_ch2.
     '''</summary>
     '''<remarks>

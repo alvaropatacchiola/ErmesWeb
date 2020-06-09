@@ -87,6 +87,7 @@ function set_name(name1_t, name2_t, name3_t, name4_t, name5_t) {
     
 }
 function get_data(parametro1, parametro2) {
+    //alert(parametro1)
     $.ajax({
         type: "POST",
         url: "chart/ldma_logmetod.aspx/get_log_ldma",
@@ -106,10 +107,11 @@ function get_data(parametro1, parametro2) {
             var intero4 = 0;
             var intero5 = 0;
             var indice = 0;
-
+            
 
             $.each(response.d, function (k, v) {
                 //htmlStr += v.id + ' ' + v.name + '<br />';
+                console.log("response:" + v)
                 switch (indice) {
                     case 0:
                         var res = v.split(",")
