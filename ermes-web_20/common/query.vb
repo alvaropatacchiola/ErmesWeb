@@ -521,6 +521,17 @@
         End If
 
     End Function
+    Public Function get_identificativo(ByVal identificativo As String) As ermes_web_20.quey_db.impianto_newDataTable
+
+        Dim i As Integer
+        For i = 0 To 3
+            Try
+                Return db_data_impianto.GetImpiantoJQ(identificativo)
+            Catch ex As Exception
+
+            End Try
+        Next
+    End Function
     Public Function insert_super_user(ByVal username As String, ByVal password As String, ByVal azienda As String, ByVal mail As String) As Boolean
         Dim result_insert As Integer
 

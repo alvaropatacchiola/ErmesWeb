@@ -19,4 +19,12 @@
         Return jsonCon.jsonStrumentiConnessi(serialNumber)
 
     End Function
+    <System.Web.Services.WebMethod()>
+    Public Shared Function jsonInfoCodice(ByVal serialNumber As String) As String
+        Dim jsonCon As New jsonConvertvb
+        serialNumber = Replace(serialNumber, """", "")
+        Return jsonCon.jsonInfoCodice(serialNumber)
+
+    End Function
+
 End Class

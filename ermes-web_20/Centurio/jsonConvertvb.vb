@@ -21,7 +21,20 @@
         Return stringJson
 
     End Function
+    Public Function jsonInfoCodice(ByVal serialNumber As String) As String
+        Dim tabella_impianto As ermes_web_20.quey_db.impianto_newDataTable
+        Dim query As New query
+        tabella_impianto = query.get_identificativo(serialNumber)
+        Dim stringJson As String = "{"
+        For Each dc1 In tabella_impianto
+            stringJson = stringJson + """impianto"":""" + dc1.nome_impianto + """"
+            stringJson = stringJson + ",""indirizzo"":""" + dc1.indirizzo + """"
+        Next
 
+        stringJson = stringJson + "}"
+        Return stringJson
+
+    End Function
     Public Function jsonResultGlobal(ByVal serialNumber As String, ByVal type As String, ByVal user As String, ByVal password As String, ByVal id_485_impianto As String) As String
         Dim query As New query
         Dim stringJson As String = "{"

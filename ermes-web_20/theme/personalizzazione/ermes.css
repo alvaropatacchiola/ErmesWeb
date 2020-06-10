@@ -44,7 +44,7 @@
 .cssmenu .dropdown-menu > .active > a,
 .cssmenu .dropdown-menu > .active > a:hover,
 .cssmenu .dropdown-menu > .active > a:focus {
-  background-color: #a4c408;
+  background-color: #2DC84D;
 }
 a,
 p a,
@@ -73,7 +73,7 @@ blockquote small,
 .shop-client-products.product-details .form-horizontal .price,
 .cssmenu ul li.active,
 .cssmenu ul li.active a {
-  color: #a4c408;
+  color: #2DC84D;
 }
 .btn-primary,
 .ui-slider-wrap .slider-primary .ui-slider-handle,
@@ -90,7 +90,7 @@ blockquote small,
 .pagination ul > li > a:hover,
 .pagination ul > li.primary > a,
 .widget-stats.primary {
-  border-color: #a4c408;
+  border-color: ##a6a6a6;
 }
 .table-primary tbody td {
   background-color: #f5fdce;
@@ -107,49 +107,49 @@ blockquote small,
 }
 .navbar.main .btn-navbar,
 .navbar.main .topnav > li > a {
-  background-color: #cdf50a;
-  box-shadow: 0 1px 0 #7b9306;
-  -webkit-box-shadow: 0 1px 0 #7b9306;
-  -moz-box-shadow: 0 1px 0 #7b9306;
+  background-color: #225B4F;
+  box-shadow: 0 1px 0 #173d35;
+  -webkit-box-shadow: 0 1px 0 #173d35;
+  -moz-box-shadow: 0 1px 0 #173d35;
 }
 .navbar.main .btn-navbar:hover,
 .navbar.main .topnav > li > a:hover {
-  background-color: #d7f73b;
+  background-color: #8c8c8c;
 }
 .bwizard-steps li.active:after,
 .sliderContainer .ui-rangeSlider-rightArrow .ui-rangeSlider-arrow-inner {
-  border-left-color: #a4c408;
+  border-left-color: #2DC84D;
 }
 .sliderContainer .ui-rangeSlider-leftArrow .ui-rangeSlider-arrow-inner {
-  border-right-color: #a4c408;
+  border-right-color: #2DC84D;
 }
 #tlyPageGuideWrapper #tlyPageGuide li.tlypageguide-active.tlypageguide_right:after,
 #tlyPageGuideWrapper #tlyPageGuide li.tlypageguide-active.tlypageguide_left:after,
 #tlyPageGuideWrapper #tlyPageGuide li.tlypageguide-active.tlypageguide_top:after {
-  border-top-color: #a4c408;
+  border-top-color: #2DC84D;
 }
 #tlyPageGuideWrapper #tlyPageGuide li.tlypageguide-active.tlypageguide_bottom:after {
-  border-bottom-color: #a4c408;
+  border-bottom-color: #2DC84D;
 }
 .btn-primary:active,
 .btn-primary.active {
-  background-color: #526204;
+  background-color: #225B4F;
 }
 .btn-primary:hover,
 .btn-primary:focus {
-  background-color: #8fac07;
+  background-color: #2DC84D;
 }
 .tlypageguide_shadow:after {
-  background-color: rgba(164, 196, 8, 0.2);
+  background-color: rgba(45, 200, 77, 0.2);
 }
 .widget .widget-body.list.list-2 ul li.active {
-  border-color: #d7f73b;
+  border-color: #cccccc;
 }
 .widget .widget-body.list.list-2 ul li a {
-  color: #d7f73b;
+  color: #cccccc;
 }
 .widget .widget-body.list.list-2 ul li a i:before {
-  background: #f5fdce;
+  background: #cccccc;
   color: #cdf50a;
-  border-color: #d7f73b;
+  border-color: #a6a6a6;
 }
