@@ -32,7 +32,8 @@
         Dim write_setpoint_new As write_setpoint = New write_setpoint
         local_connection = write_setpoint_new.client_connect()
         Dim url_result As String = ""
-        new_setpoint = "comando manettA"
+        '31gpd01&rescywokend
+        new_setpoint = id_485_impianto.ToString + "&rescywokend"
 
         If local_connection Then ' connessione OK
 
