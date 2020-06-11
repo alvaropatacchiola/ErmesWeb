@@ -140,9 +140,11 @@
 
                
 
-            <asp:literal ID="Label24" runat="server" Text="<li><a id ='wmeter_lta_id' href='#'>Water Meter</a></li>" meta:resourcekey="Label24Resource1"></asp:literal>
-
-            <asp:literal ID="Label14" runat="server" Text="<li><a id ='system_lta_id' href='#'>System</a></li>" meta:resourcekey="Label14Resource1"></asp:literal>
+         <asp:literal ID="Label24" runat="server" Text="<li><a id ='wmeter_lta_id' href='#'>Water Meter</a></li>" meta:resourcekey="Label24Resource1"></asp:literal>
+        <asp:PlaceHolder ID="enableResetTotaliser" runat="server">
+            <asp:literal ID="resetTotaliser" runat="server" Text="<li><a id ='resetTotaliser_lta_id' href='#'>ResetTotaliser</a></li>" meta:resourcekey="resetTotaliserResource1"></asp:literal>
+        </asp:PlaceHolder>
+        <asp:literal ID="Label14" runat="server" Text="<li><a id ='system_lta_id' href='#'>System</a></li>" meta:resourcekey="Label14Resource1"></asp:literal>
 
        <!-- <asp:literal ID="Literal1" runat="server" Text="<li><a id ='manual_ltb_id' href='#'>Manual</a></li>" meta:resourcekey="Literal1Resource1"></asp:literal>-->
         <asp:literal ID="Literal2" runat="server" Text="<li><a id ='messagge_lta_id' href='#'>Message</a></li>" meta:resourcekey="Literal2Resource1"></asp:literal>
@@ -314,7 +316,11 @@
                 StopRefresh();
                 $("#principale").load("lta/flow_minmax_lta.aspx?" + sPageURL);
                 break;
-
+            case 11:
+                evidenzia("", "#resetTotaliser_lta_id");
+                StopRefresh();
+                $("#principale").load("lta/resetTot.aspx?" + sPageURL);
+                break;
         }
     }
     function evidenzia(item_group, oggetto) {
@@ -377,6 +383,10 @@
     });
     $("#flow_minmax_lta").click(function () {
         carica_pagina(10);
+
+    });
+    $("#resetTotaliser_lta_id").click(function () {
+        carica_pagina(11);
 
     });
     /*

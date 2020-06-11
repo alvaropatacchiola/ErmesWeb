@@ -151,6 +151,8 @@
     <Content Include="image\temperature.png" />
     <Content Include="image\zep.css" />
     <Content Include="image\zep.png" />
+    <Content Include="lta\resetTot.aspx" />
+    <Content Include="lta\validator_resetTot.js" />
     <Content Include="mainCenturio.aspx" />
     <Content Include="Centurio\qrCode.aspx" />
     <Content Include="chart\chart_manage_ldlg.js" />
@@ -17173,6 +17175,13 @@
       <DependentUpon>eliminacontroller_query.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
+    <Compile Include="lta\resetTot.aspx.designer.vb">
+      <DependentUpon>resetTot.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="lta\resetTot.aspx.vb">
+      <DependentUpon>resetTot.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
     <Compile Include="mainCenturio.aspx.designer.vb">
       <DependentUpon>mainCenturio.aspx</DependentUpon>
     </Compile>
@@ -19509,6 +19518,10 @@
     <EmbeddedResource Include="login.aspx.resx">
       <DependentUpon>login.aspx.vb</DependentUpon>
     </EmbeddedResource>
+    <Content Include="lta\App_LocalResources\resetTot.aspx.resx" />
+    <Content Include="lta\App_LocalResources\resetTot.aspx.fr.resx" />
+    <Content Include="lta\App_LocalResources\resetTot.aspx.en.resx" />
+    <Content Include="lta\App_LocalResources\resetTot.aspx.de.resx" />
     <EmbeddedResource Include="My Project\licenses.licx" />
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>

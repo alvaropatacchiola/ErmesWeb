@@ -287,6 +287,11 @@
 
 
         End Select
+        If Val(main_function.get_version(riga_strumento.nome)) >= 221 Then
+            enableResetTotaliser.Visible = True
+        Else
+            enableResetTotaliser.Visible = False
+        End If
         'mappa
         literal_map.Text = ""
         literal_map.Text = literal_map.Text + "<h4>" + nome_impianto + "</h4>"
