@@ -148,8 +148,15 @@ Public Class dashboardNew
                         Dim sistemaUSA As String = ""
                         resultPipe = pipeClient.Main(split_codice(indiceCodice), "controller_type")
 
+                        Try
+                            Using writer As System.IO.StreamWriter = New System.IO.StreamWriter("c:\testLDOSIN.txt", True)
+                                writer.WriteLine("#" + split_codice(indiceCodice) + "#" + resultPipe + "#")
+                            End Using
+                        Catch ex As Exception
 
+                        End Try
 
+                        'MsgBox(resultPipe)
                         If resultPipe <> "null" And resultPipe <> "" Then
 
                             resultPipe = resultPipe

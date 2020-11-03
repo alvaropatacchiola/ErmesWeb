@@ -33,7 +33,7 @@
         local_connection = write_setpoint_new.client_connect()
         Dim url_result As String = ""
         '31gpd01&rescywokend
-        new_setpoint = id_485_impianto.ToString + "&rescywokend"
+        new_setpoint = id_485_impianto.ToString + "rescywend"
 
         If local_connection Then ' connessione OK
 

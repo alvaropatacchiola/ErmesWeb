@@ -20,6 +20,7 @@ var indiceSetpointSend = 0;
 var arrayRelay = [0, 0, 0, 0, 0, 0, 0, 0, 0]
 var arrayInput = [0, 0, 0, 0, 0, 0, 0, 0, 0]
 var arrayOpto = [0, 0, 0, 0, 0, 0, 0, 0, 0]
+var arrayMA = [0, 0, 0, 0, 0, 0, 0, 0, 0]
 var reloadSetpoint = false;
 var reloadLDLOG = false;
 var strumentoTouch = true;
@@ -1556,6 +1557,10 @@ function inputOutput(currentVal, typeOfList, previousSelect) {
             arrayOpto[previousSelect] = 0;
             arrayOpto[currenteSelectVal] = 1;
         }
+        if (typeOfList == "opto") {
+            arrayMA[previousSelect] = 0;
+            arrayMA[currenteSelectVal] = 1;
+        }
     }
     aggiornamentoListaOptoInputRelay();
 
@@ -1638,7 +1643,7 @@ function aggiornaWeekValueTen(indice_sub,indice,valore,id,newValore,giornoSettim
         newValoreNew = newValoreNew.replace(":", ",");
     
 
-    for (j = 0; j < splitValueItemNano.length; j++) {
+    for (j = 0; j < splitValueItemNano.length-1; j++) {
         var splitValueItem = splitValueItemNano[j].split("?");
         finalValue = "";
         for (i = 0; i < 10; i++) {
@@ -2007,7 +2012,12 @@ function sendSetpoint()
         var jsonParseSetpoint = JSON.parse(arraySetpointChange[indiceSetpointSend]);
         if (jsonParseSetpoint.errore == false) {
             almenoUnvalore = true;
-            stringSend = stringSend + replaceAll(jsonParseSetpoint.id, "_", ">") + ":" + jsonParseSetpoint.valore.replace(":", ",") + "$"
+            var modifyTemp = replaceAll(jsonParseSetpoint.id, "_", ">")
+            modifyTemp = modifyTemp.replace("-", "[")
+            modifyTemp = modifyTemp.replace("-", "]")
+            stringSend = stringSend + modifyTemp + ":" + jsonParseSetpoint.valore.replace(":", ",") + "$"
+            
+            console.log(stringSend)
         }
         if (stringSend.indexOf("communication>message"))
             stringSend = stringSend.replace("communication>message", "communication_message")
@@ -2210,7 +2220,12 @@ function updateValori(response, firstValue) {
                  //$("#" + jsonParse.variable[k]["chiave"]).text(jsonParse.variable[k]["valore"]);
 
                 if (((jsonParse.change == "1")||(firstValue))&&(jsonParse.variable[k]["chiave"].indexOf("_") >= 0)){ //modifica dei setpoint
-                    
+                    if (jsonParse.variable[k]["chiave"].indexOf("[") >= 0) {
+                        jsonParse.variable[k]["chiave"] = jsonParse.variable[k]["chiave"].replace("[", "-");
+                        jsonParse.variable[k]["chiave"] = jsonParse.variable[k]["chiave"].replace("]", "-");
+                        //console.log("newVAlue:" + jsonParse.variable[k]["chiave"])
+                                    }
+
                                 if (jsonParse.variable[k]["valore"].indexOf("OR|") >= 0) {
                                     orModeComponenti(jsonParse.variable[k]["chiave"],jsonParse.variable[k]["valore"]);
                                 }
@@ -2225,8 +2240,8 @@ function updateValori(response, firstValue) {
                                     if (jsonParse.variable[k]["valore"].indexOf(",") >= 0) { // time da impostare
                                         var splitTimeValue = (jsonParse.variable[k]["valore"]).split(",")
                                         //console.log("timeSplit:" + jsonParse.variable[k]["chiave"] + ":" + (parseInt(splitTimeValue[1])).toString())
-                                        $("#" + jsonParse.variable[k]["chiave"] + "> [value=" + (parseInt(splitTimeValue[0])).toString() + "]").attr("selected", "true");
-                                        $("#" + jsonParse.variable[k]["chiave"] + "_1> [value=" + (parseInt(splitTimeValue[1])).toString() + "]").attr("selected", "true");
+                                        $("#" + jsonParse.variable[k]["chiave"] + "> [value=" + (parseInt(splitTimeValue[0])).toString() + "]").prop("selected", true);
+                                        $("#" + jsonParse.variable[k]["chiave"] + "_1> [value=" + (parseInt(splitTimeValue[1])).toString() + "]").prop("selected", true);
                                     }
                                     else {
                                         var typrofList = $("#" + jsonParse.variable[k]["chiave"]).attr("typeoflist");
@@ -2244,7 +2259,7 @@ function updateValori(response, firstValue) {
                                         {
 
                                         }
-                                        $("#" + jsonParse.variable[k]["chiave"] + "> [value=" + jsonParse.variable[k]["valore"] + "]").attr("selected", "true");
+                                        $("#" + jsonParse.variable[k]["chiave"] + "> [value=" + jsonParse.variable[k]["valore"] + "]").prop("selected", true);
                                         if (jsonParse.variable[k]["chiave"].indexOf("_modework") >= 0) {
                                             console.log("Action:" + jsonParse.variable[k]["chiave"])
                                             selectActionValue(jsonParse.variable[k]["chiave"], jsonParse.variable[k]["valore"]);
@@ -2374,7 +2389,7 @@ function updateValori(response, firstValue) {
                     $(this).hide();
             }
             else {
-                if (attributoEnableVal == 1)
+                if (parseInt(attributoEnableVal) > 0)
                     $(this).show();
                 else
                     $(this).hide();
@@ -2406,6 +2421,20 @@ function updateValori(response, firstValue) {
                 $("#" + attributoLabel + "_log").html(labelCurrent)
             }
         });
+        $("[type*='pathName']").each(function () {
+            //console.log($(this).text());
+            var pathLabel = $(this).text().split(">");
+            if (pathLabel[0].indexOf("]") > 0) {
+                pathLabel[0] = pathLabel[0].replace("[", "");
+                pathLabel[0] = pathLabel[0].replace("]", "");
+                var pathLabelFinish = getValoreJson(pathLabel[0]);
+                if (pathLabel.length > 1) {
+                    pathLabelFinish = pathLabelFinish + " > " + pathLabel[1];
+                }
+                $(this).text(pathLabelFinish)
+            }
+        });
+
         //aggiornameto label del menu
         $("[type*='menuSopra']").each(function () {
             var labelTempJson = $(this).attr("attributo");
@@ -2961,10 +2990,12 @@ function aggiornamentoListaOptoInputRelay(){
                         var sizeTempOption = $("#" + idSelectTemp + " option").size();
                         for (i = 1; i < sizeTempOption; i++) {
                             if ((arrayOpto[i] != 0) && (i != $(this).val())) {
-                                $("#" + idSelectTemp + " option[value='" + i.toString() + "']").hide();
+                                //$("#" + idSelectTemp + " option[value='" + i.toString() + "']").hide();
+                                $("#" + idSelectTemp + " option[value='" + i.toString() + "']").attr('disabled', '');
                             }
                             else {
-                                $("#" + idSelectTemp + " option[value='" + i.toString() + "']").show();
+                                //$("#" + idSelectTemp + " option[value='" + i.toString() + "']").show();
+                                $("#" + idSelectTemp + " option[value='" + i.toString() + "']").removeAttr('disabled');
                             }
                         }
                         //console.log("opto:" + $("#" + idSelectTemp + " option").size());
@@ -2977,10 +3008,12 @@ function aggiornamentoListaOptoInputRelay(){
                         var sizeTempOption = $("#" + idSelectTemp + " option").size();
                         for (i = 1; i < sizeTempOption; i++) {
                             if ((arrayRelay[i] != 0) && (i != $(this).val())) {
-                                $("#" + idSelectTemp + " option[value='" + i.toString() + "']").hide();
+                                //$("#" + idSelectTemp + " option[value='" + i.toString() + "']").hide();
+                                $("#" + idSelectTemp + " option[value='" + i.toString() + "']").attr('disabled', '');
                             }
                             else {
-                                $("#" + idSelectTemp + " option[value='" + i.toString() + "']").show();
+                                //$("#" + idSelectTemp + " option[value='" + i.toString() + "']").show();
+                                $("#" + idSelectTemp + " option[value='" + i.toString() + "']").removeAttr('disabled');
                             }
                         }
                         //console.log("opto:" + $("#" + idSelectTemp + " option").size());
@@ -2993,10 +3026,12 @@ function aggiornamentoListaOptoInputRelay(){
                         var sizeTempOption = $("#" + idSelectTemp + " option").size();
                         for (i = 1; i < sizeTempOption; i++) {
                             if ((arrayInput[i] != 0) && (i != $(this).val())) {
-                                $("#" + idSelectTemp + " option[value='" + i.toString() + "']").hide();
+                                //$("#" + idSelectTemp + " option[value='" + i.toString() + "']").hide();
+                                $("#" + idSelectTemp + " option[value='" + i.toString() + "']").attr('disabled', '');
                             }
                             else {
-                                $("#" + idSelectTemp + " option[value='" + i.toString() + "']").show();
+                                //$("#" + idSelectTemp + " option[value='" + i.toString() + "']").show();
+                                $("#" + idSelectTemp + " option[value='" + i.toString() + "']").removeAttr('disabled');
                             }
                         }
                         //console.log("opto:" + $("#" + idSelectTemp + " option").size());
@@ -3758,16 +3793,18 @@ function CanvasNew(idCanvas, idDiv, idDivSub, labelpHId, valuePhId, fullscaleId,
         
         if (enable > 0) {
             enable = 1;
+            console.log("bleed deadStart:" + valore2)
             if (bleedFunction) {
                 
                 if (valore2 > 0) { //deadband positivo
                     valore2 = valore1 + valore2;
+                    console.log("bleed dead:" + valore2)
                     //valore1 = 0;
                 }
                 else {//deadband negativo
                     
-                    valore2 = valore1 - valore2;
-                    //console.log("bleed dead1:" + valore2)
+                    valore2 = valore1 + valore2;
+                    console.log("bleed dead1:" + valore2+" " + valore1)
                     //valore2 = this.maxSetpoint1;
                 }
             }

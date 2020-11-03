@@ -598,10 +598,10 @@
             Case "104"
                 fattore_divisione = 100
                 full_scale = 20
-                str_terzo_canale = "ClCom"
-                label_setpoint = "ClCom"
+                str_terzo_canale = "Clc"
+                label_setpoint = "Clc"
 
-                Return "ClCom"
+                Return "Clc"
 
             Case "106"
                 fattore_divisione = 100
@@ -864,10 +864,10 @@
                 If Mid(valore0, valore0.Length, 1) = "1" Then
                     full_scale1 = 30000
                 Else
-                    full_scale1 = 3000
+                    full_scale1 = 9999
                 End If
             Else
-                full_scale1 = 3000
+                full_scale1 = 9999
             End If
             str_sonda_1 = "Cd"
 
@@ -881,10 +881,10 @@
                 If Mid(valore0, valore0.Length, 1) = "1" Then
                     full_scale1 = 30000
                 Else
-                    full_scale1 = 3000
+                    full_scale1 = 9999
                 End If
             Else
-                full_scale1 = 3000
+                full_scale1 = 9999
             End If
             str_sonda_1 = "Cd"
             fattore_divisione2 = 100
@@ -900,10 +900,10 @@
                 If Mid(valore0, valore0.Length, 1) = "1" Then
                     full_scale1 = 30000
                 Else
-                    full_scale1 = 3000
+                    full_scale1 = 9999
                 End If
             Else
-                full_scale1 = 3000
+                full_scale1 = 9999
             End If
             str_sonda_1 = "Cd"
             fattore_divisione2 = 1
@@ -920,10 +920,10 @@
                 If Mid(valore0, valore0.Length, 1) = "1" Then
                     full_scale1 = 30000
                 Else
-                    full_scale1 = 3000
+                    full_scale1 = 9999
                 End If
             Else
-                full_scale1 = 3000
+                full_scale1 = 9999
             End If
             str_sonda_1 = "Cd"
             etichetta_setpoint_ch3 = ""
@@ -938,10 +938,10 @@
                 If Mid(valore0, valore0.Length, 1) = "1" Then
                     full_scale1 = 30000
                 Else
-                    full_scale1 = 3000
+                    full_scale1 = 9999
                 End If
             Else
-                full_scale1 = 3000
+                full_scale1 = 9999
             End If
             str_sonda_1 = "Cd"
             fattore_divisione2 = 100
@@ -960,10 +960,10 @@
                 If Mid(valore0, valore0.Length, 1) = "1" Then
                     full_scale1 = 30000
                 Else
-                    full_scale1 = 3000
+                    full_scale1 = 9999
                 End If
             Else
-                full_scale1 = 3000
+                full_scale1 = 9999
             End If
             str_sonda_1 = "Cd"
             fattore_divisione2 = 100
@@ -991,10 +991,10 @@
                 If Mid(valore0, valore0.Length, 1) = "1" Then
                     full_scale1 = 30000
                 Else
-                    full_scale1 = 3000
+                    full_scale1 = 9999
                 End If
             Else
-                full_scale1 = 3000
+                full_scale1 = 9999
             End If
             str_sonda_1 = "Cd"
             fattore_divisione2 = 1
@@ -1015,10 +1015,10 @@
                 If Mid(valore0, valore0.Length, 1) = "1" Then
                     full_scale1 = 30000
                 Else
-                    full_scale1 = 3000
+                    full_scale1 = 9999
                 End If
             Else
-                full_scale1 = 3000
+                full_scale1 = 9999
             End If
             str_sonda_1 = "Cd"
 
@@ -1038,10 +1038,10 @@
                 If Mid(valore0, valore0.Length, 1) = "1" Then
                     full_scale1 = 30000
                 Else
-                    full_scale1 = 3000
+                    full_scale1 = 9999
                 End If
             Else
-                full_scale1 = 3000
+                full_scale1 = 9999
             End If
             str_sonda_1 = "Cd"
 

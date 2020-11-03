@@ -451,7 +451,7 @@ nexLoopLabel:
                     'widgetHead = widgetHead + "<h3>" + pathNameText + "</h3>"
                     If Not ulTrueFalse Then
                         widgetHead = widgetHead + "<div Class=""widget widget-tabs"">"
-                        widgetHead = widgetHead + "<h5>" + pathNameText + "</h5>"
+                        widgetHead = widgetHead + "<h5 type = ""pathName"">" + pathNameText + "</h5>"
                         widgetHead = widgetHead + "<div Class=""widget-head""><ul>"
 
                         widgetbody = widgetbody + "<div Class=""widget-body"">"
@@ -717,11 +717,12 @@ nexLoopLabel:
         Try
             stringResult = stringResult + "<h5>" + LstNode.Item("stringa").InnerText + "</h5>"
             stringResult = stringResult + "<div Class=""row-fluid"">"
-            If (nomeOggetto = "modework") Then ' caso della scelta
-                stringResult = stringResult + "<Select calib = ""no"" action=""setpoint"" typeofList=""" + typeofList + """ data-original-title=""" + LstNode.Item("stringa").InnerText + """  path=""" + pathName + """  masterpath=""" + masterPathName + """  count=""" + idOggetto + """  attrib=""" + LstNode.Item("select").InnerText + """ id = """ + pathName + "_" + nomeOggetto + """ Class=""span3"">"
+            'If (nomeOggetto.IndexOf("modework") >= 0) Then ' caso della scelta
+            If (nomeOggetto.IndexOf("modeworkEnableDisable") >= 0) Then ' abilita e disabilita tutto
+                stringResult = stringResult + "<Select calib = ""no"" action=""setpoint"" typeofList=""" + typeofList + """ data-original-title=""" + LstNode.Item("stringa").InnerText + """  path=""" + pathName + """  masterpath=""" + masterPathName + """  count=""" + idOggetto + """  attrib=""null"" id = """ + pathName + "_" + nomeOggetto + """ Class=""span3"">"
             Else
-                If (nomeOggetto = "modeworkEnableDisable") Then ' abilita e disabilita tutto
-                    stringResult = stringResult + "<Select calib = ""no"" action=""setpoint"" typeofList=""" + typeofList + """ data-original-title=""" + LstNode.Item("stringa").InnerText + """  path=""" + pathName + """  masterpath=""" + masterPathName + """  count=""" + idOggetto + """  attrib=""null"" id = """ + pathName + "_" + nomeOggetto + """ Class=""span3"">"
+                If (nomeOggetto.IndexOf("modework") >= 0) Then ' abilita e disabilita tutto
+                    stringResult = stringResult + "<Select calib = ""no"" action=""setpoint"" typeofList=""" + typeofList + """ data-original-title=""" + LstNode.Item("stringa").InnerText + """  path=""" + pathName + """  masterpath=""" + masterPathName + """  count=""" + idOggetto + """  attrib=""" + LstNode.Item("select").InnerText + """ id = """ + pathName + "_" + nomeOggetto + """ Class=""span3"">"
                 Else
                     If (LstNode.Item("valore").InnerText.ToString = "noChange") Then
                         stringResult = stringResult + "<Select calib = ""ok"" action=""setpoint"" typeofList=""" + typeofList + """ data-original-title=""" + LstNode.Item("stringa").InnerText + """  path=""" + pathName + """  masterpath=""" + masterPathName + """  count=""" + idOggetto + """  attrib=""null"" id = """ + pathName + "_noChange"" Class=""span3"">"
@@ -1282,6 +1283,7 @@ nexLoopLabel:
                         Dim attributeDataConfigSplit() As String = attributeDataConfig.Value.Split("|")
                         Dim filterSplit() As String = filter.Split("|")
                         For Each v As String In attributeDataConfigSplit
+                            multiparameter = False
                             If (v.IndexOf("-x") > 0) Then
                                 v = v.Replace("x", "")
                                 multiparameter = True
@@ -1290,10 +1292,11 @@ nexLoopLabel:
                                         If (v1.IndexOf(v) >= 0) Then
                                             If v1.IndexOf("96") >= 0 Then
                                                 ldLodg = True
+                                            Else
+                                                contiene = True
+                                                Exit For
                                             End If
 
-                                            contiene = True
-                                            Exit For
                                         End If
                                     End If
                                 Next
@@ -1370,7 +1373,12 @@ nexLoopLabel:
 
                             End If
                             If (attributeDataNodes.Value = "alarm") Then
-                                intestazioneTemp = intestazioneTemp + "<div Class=""span3"">"
+                                If (oXMLNodeCanale.Attributes().ItemOf("enable") Is Nothing) Then
+                                    intestazioneTemp = intestazioneTemp + "<div Class=""span3"">"
+                                Else
+                                    intestazioneTemp = intestazioneTemp + "<div Class=""span3"" id=""" + oXMLNodeCanale.Attributes().ItemOf("enable").Value + "_log_enable"">"
+                                End If
+
                                 intestazioneTemp = intestazioneTemp + "<Label Class=""checkbox"" >"
                                 intestazioneTemp = intestazioneTemp + "<span Class=""ricerca""><input calib = ""no"" type=""checkbox""  graph=""" + oXMLNodeCanale.Attributes().ItemOf("graph").Value + """ id=""" + oXMLNodeCanale.InnerXml() + "_log_check""  ldlog = """" min ="" minlog""  Class=""checkbox"" value=""" + progressivo.ToString + """  ><span unit=""" + oXMLNodeCanale.InnerXml() + """    ldlog = """"  id=""" + oXMLNodeCanale.Attributes().ItemOf("label").Value + "_log_label"" ></span></span>"
                                 intestazioneTemp = intestazioneTemp + "</label>"
@@ -1560,18 +1568,27 @@ nexLoopLabel:
                     '    intestazioneBodySuperInput = intestazioneBodySuperInput + "label=""areainoutinput" + label + """><i></i></li>"
                     'End If
                     If (attributeDataNodes.Value = "out") Then
-                        intestazioneBodySuperOut = intestazioneBodySuperOut + "<li id = ""areainoutoutput" + oXMLNodeSub.InnerXml() + """ Class=""glyphicons circle_arrow_right"""
-                        label = oXMLNodeSub.Attributes().ItemOf("label").Value
-                        intestazioneBodySuperOut = intestazioneBodySuperOut + "label=""areainoutoutput" + label + """><i></i></li>"
+                        If oXMLNodeSub.Attributes().ItemOf("enable") IsNot Nothing Then
+                            intestazioneBodySuperOut = intestazioneBodySuperOut + "<li id = ""areainoutoutput" + oXMLNodeSub.InnerXml() + """ Class=""glyphicons circle_arrow_right"""
+                            label = oXMLNodeSub.Attributes().ItemOf("label").Value
+                            intestazioneBodySuperOut = intestazioneBodySuperOut + "label=""areainoutoutput" + label + """ enable=""" + oXMLNodeSub.Attributes().ItemOf("enable") + """><i></i></li>"
+
+                        Else
+                            intestazioneBodySuperOut = intestazioneBodySuperOut + "<li id = ""areainoutoutput" + oXMLNodeSub.InnerXml() + """ Class=""glyphicons circle_arrow_right"""
+                            label = oXMLNodeSub.Attributes().ItemOf("label").Value
+                            intestazioneBodySuperOut = intestazioneBodySuperOut + "label=""areainoutoutput" + label + """ enable=""""><i></i></li>"
+                        End If
+
+
 
                     End If
-                    'If (attributeDataNodes.Value = "outLabel") Then
-                    '    label = (oXMLNodeSub.InnerXml())
+                        'If (attributeDataNodes.Value = "outLabel") Then
+                        '    label = (oXMLNodeSub.InnerXml())
 
-                    '    intestazioneBodySuperOut = intestazioneBodySuperOut + "label=""areainoutoutput" + label + """><i></i></li>"
-                    'End If
+                        '    intestazioneBodySuperOut = intestazioneBodySuperOut + "label=""areainoutoutput" + label + """><i></i></li>"
+                        'End If
 
-                    If (attributeDataNodes.Value = "alarm") Then
+                        If (attributeDataNodes.Value = "alarm") Then
                         intestazioneBodySuperAlarm = intestazioneBodySuperAlarm + "<li id = ""areainoutalarm" + oXMLNodeSub.InnerXml() + """ Class=""glyphicons circle_exclamation_mark"""
                         label = oXMLNodeSub.Attributes().ItemOf("label").Value
                         intestazioneBodySuperAlarm = intestazioneBodySuperAlarm + "label=""areainoutalarm" + label + """><i></i></li>"
@@ -1651,6 +1668,7 @@ nexLoopLabel:
         Dim indiceCanale As Integer = 0
         Dim numeroHeader As Integer = 0
         Dim tipoCanale As String = ""
+        Dim currentCanale As String = ""
         Dim numeroSonda As String = ""
         Dim strumentoTouch As Integer = 1
         Dim multiparameter As Boolean = False
@@ -1700,10 +1718,12 @@ nexLoopLabel:
                                         If (v1.IndexOf(v) >= 0) Then
                                             If (v1.IndexOf("-96") >= 0) Or (v1.IndexOf("-97") >= 0) Then ' verifico se un laser
                                                 If v1 = v Then
+                                                    currentCanale = v1
                                                     contiene = True
                                                     Exit For
                                                 End If
                                             Else
+                                                currentCanale = v1
                                                 contiene = True
                                                 Exit For
                                             End If
@@ -1836,9 +1856,25 @@ nexLoopLabel:
                             End If
                             If (attributeDataNodes.Value = "minimo") Then
                                 idMinimo = oXMLNodeCanale.InnerXml()
+                                If idMinimo.IndexOf("|") > 0 Then
+                                    If currentCanale.IndexOf("-16") > 0 Then
+                                        idMinimo = (idMinimo.Split("|"))(1)
+                                    Else
+                                        idMinimo = (idMinimo.Split("|"))(0)
+                                    End If
+
+                                End If
                             End If
                             If (attributeDataNodes.Value = "massimo") Then
                                 idMassimo = oXMLNodeCanale.InnerXml()
+                                If idMassimo.IndexOf("|") > 0 Then
+                                    If currentCanale.IndexOf("-16") > 0 Then
+                                        idMassimo = (idMassimo.Split("|"))(1)
+                                    Else
+                                        idMassimo = (idMassimo.Split("|"))(0)
+                                    End If
+
+                                End If
                             End If
                             If (attributeDataNodes.Value = "digitalB") Then ' B sta per indicare se deve essere presente in barra
                                 idDigital = idDigital.Replace("'" + digitalCounter.ToString + "'", "'" + oXMLNodeCanale.InnerXml() + "'")

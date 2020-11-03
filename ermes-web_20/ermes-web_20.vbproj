@@ -116,6 +116,7 @@
     <Content Include="Centurio\jquery.countdown360.js" />
     <Content Include="Centurio\JwebService.aspx" />
     <Content Include="Centurio\login.aspx" />
+    <Content Include="Centurio\plantInfo.aspx" />
     <Content Include="Centurio\webRes.js" />
     <Content Include="Centurio\webService.aspx" />
     <Content Include="chart\localCent\buttons.dataTables.min.css" />
@@ -281,6 +282,32 @@
     <Content Include="max5\main_max5.aspx" />
     <Content Include="max5\script.js" />
     <Content Include="newTest.aspx" />
+    <Content Include="pool.html" />
+    <Content Include="pool\CSS\style_pool_inspector.css" />
+    <Content Include="pool\CSS\style_pool_inspector2.css" />
+    <Content Include="pool\PNG\SmilePool-bad.png" />
+    <Content Include="pool\PNG\SmilePool-good.png" />
+    <Content Include="pool\PNG\SmilePool-notgood.png" />
+    <Content Include="pool\SCRIPT\animation_pool_inspector.js" />
+    <Content Include="pool\SCRIPT\animation_pool_inspector2.js" />
+    <Content Include="pool\SCRIPT\jquery-latest.min.js" />
+    <Content Include="pool\SCRIPT\jquery-latest.min2.js" />
+    <Content Include="pool\SCRIPT\jquery-ui.min.js" />
+    <Content Include="pool\SCRIPT\jquery.easing.1.3.js" />
+    <Content Include="pool\SCRIPT\jquery.mobile-1.4.5.min.js" />
+    <Content Include="pool\SCRIPT\jquery.mobile-1.5.0-alpha.js" />
+    <Content Include="pool\SCRIPT\jquery.mobile-1.5.0-rc1.js" />
+    <Content Include="pool\SCRIPT\jquery.scrollTo.min.js" />
+    <Content Include="pool\SCRIPT\modernizr-custom.js" />
+    <Content Include="pool\SVG\ArrowPool-left.svg" />
+    <Content Include="pool\SVG\ArrowPool-right.svg" />
+    <Content Include="pool\SVG\ClosePool.svg" />
+    <Content Include="pool\SVG\Logo.svg" />
+    <Content Include="pool\SVG\MorePool.svg" />
+    <Content Include="pool\SVG\SmilePool-bad.svg" />
+    <Content Include="pool\SVG\SmilePool-good.svg" />
+    <Content Include="pool\SVG\SmilePool-notgood.svg" />
+    <Content Include="pool\SVG\SwipeUpPool.svg" />
     <Content Include="theme\css\dashboardNewCss.css" />
     <Content Include="theme\css\style-dark.min.css" />
     <Content Include="theme\images\lang\ES.png" />
@@ -17153,6 +17180,13 @@
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="Centurio\output.vb" />
+    <Compile Include="Centurio\plantInfo.aspx.designer.vb">
+      <DependentUpon>plantInfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Centurio\plantInfo.aspx.vb">
+      <DependentUpon>plantInfo.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
     <Compile Include="Centurio\queryDB.vb" />
     <Compile Include="Centurio\webService.aspx.designer.vb">
       <DependentUpon>webService.aspx</DependentUpon>
@@ -22655,6 +22689,8 @@
     <Content Include="theme\skins\less\purple-gray.less" />
     <Content Include="packages.config" />
     <Content Include="produzione.Master" />
+    <Content Include="pool\.DS_Store" />
+    <Content Include="pool\SVG\.DS_Store" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

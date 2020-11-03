@@ -1,4 +1,6 @@
-﻿Public Class JwebService
+﻿Imports System.Net
+
+Public Class JwebService
     Inherits System.Web.UI.Page
 
     <System.Web.Services.WebMethod()>
@@ -26,5 +28,14 @@
         Return jsonCon.jsonInfoCodice(serialNumber)
 
     End Function
+    <System.Web.Services.WebMethod()>
+    Public Shared Function jsonIPApi() As String
 
+        Dim client As New WebClient()
+        Dim bytes() As Byte = client.DownloadData("http://ip-api.com/json")
+        client.Dispose()
+        Return ""
+        ' Return jsonCon.jsonInfoCodice(serialNumber)
+
+    End Function
 End Class

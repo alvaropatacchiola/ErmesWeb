@@ -11,9 +11,9 @@
             For Each dc1 In tabella_strumento
                 Dim check_connected As Boolean = False
                 check_connected = main_function.check_is_connected(dc1.data_aggiornamento)
-                If check_connected Then
-                    countConnected = countConnected + 1
-                End If
+                'If check_connected Then
+                countConnected = countConnected + 1
+                'End If
             Next
             stringJson = stringJson + """count"":""" + countConnected.ToString + """"
         End If
@@ -518,10 +518,14 @@
                 formato_d = Mid(valuer_value(4), 1, 1)
 
             Case "LD"
-                If Mid(config_value(3), 3, 3) <> "306" Then ' terzo canale esistente
-                    numero_canali = 3
+                If config_value.Length > 5 Then
+                    numero_canali = 4
                 Else
-                    numero_canali = 2
+                    If Mid(config_value(3), 3, 3) <> "306" Then ' terzo canale esistente
+                        numero_canali = 3
+                    Else
+                        numero_canali = 2
+                    End If
                 End If
 
                 If InStr(nome_strumento(2), "LDDT") <> 0 Then
@@ -551,15 +555,19 @@
             For i = 1 To numero_canali 'ld può essere duo o tre canali
                 contatore_canale = contatore_canale + 1
                 If calibrz_value(i).Length > 2 Then
-                    label_canale_temp = main_function_config.get_tipo_strumento_ld_lds_wd(Mid(calibrz_value(i), 1, 3), fattore_divisione_temp)
+                    label_canale_temp = main_function_config.get_tipo_strumento_ld_lds_wd(calibrz_value(i), fattore_divisione_temp)
                 Else
-                    label_canale_temp = main_function_config.get_tipo_strumento_ld_lds_wd(Mid(calibrz_value(i), 1, 2), fattore_divisione_temp)
+                    label_canale_temp = main_function_config.get_tipo_strumento_ld_lds_wd(calibrz_value(i), fattore_divisione_temp)
                 End If
 
-                If i = 3 And numero_canali = 3 Then
+                If i = 3 Then
                     valore_canale_temp = Val(Mid(valuer_value(5), 1, 4)) / fattore_divisione_temp
                 Else
-                    valore_canale_temp = Val(Mid(valuer_value(i), 1, 4)) / fattore_divisione_temp
+                    If i = 4 Then
+                        valore_canale_temp = Val(Mid(valuer_value(6), 1, 4)) / fattore_divisione_temp
+                    Else
+                        valore_canale_temp = Val(Mid(valuer_value(i), 1, 4)) / fattore_divisione_temp
+                    End If
                 End If
                 stringJson = stringJson + crea_canale(contatore_canale, label_canale_temp, valore_canale_temp.ToString, allrmr_value,
                                                           riga_strumento.tipo_strumento, outputr_value)
@@ -664,6 +672,7 @@
 
 
             End Select
+            stringJson = stringJson + ",{""key"":""labelValue"", ""value"":""" + main_function.get_lebel_485(riga_strumento.nome) + """}"
         End If
         If (riga_strumento.tipo_strumento = "Tower") Then
             numero_canali = MTower_Type.Split("_").Length
@@ -925,6 +934,19 @@
 
                         Else
                             stringJson = stringJson + ",{""key"":""outRCh" + numero_canale.ToString + """, ""value"":""OFF""}"
+                        End If
+                    Case 3 ' canale 3
+                        If main_function.alarm_ld_minmax_3(alarm_canale) Then '' feed limit ph
+                            stringJson = stringJson + ",{""key"":""minMax" + numero_canale.ToString + """, ""value"":""ON""}"
+                        Else
+                            stringJson = stringJson + ",{""key"":""minMax" + numero_canale.ToString + """, ""value"":""OFF""}"
+                        End If
+
+                    Case 4 ' canale 4
+                        If main_function.alarm_ld_minmax_4(alarm_canale) Then '' feed limit ph
+                            stringJson = stringJson + ",{""key"":""minMax" + numero_canale.ToString + """, ""value"":""ON""}"
+                        Else
+                            stringJson = stringJson + ",{""key"":""minMax" + numero_canale.ToString + """, ""value"":""OFF""}"
                         End If
 
                 End Select

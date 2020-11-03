@@ -89,13 +89,13 @@
             If calibrz_value(i).Length > 2 Then
                 label_canale_temp = main_function_config.get_tipo_strumento_ld_lds_wd(calibrz_value(i), fattore_divisione_temp)
             Else
-                label_canale_temp = main_function_config.get_tipo_strumento_ld_lds_wd(Mid(calibrz_value(i), 1, 2), fattore_divisione_temp)
+                label_canale_temp = main_function_config.get_tipo_strumento_ld_lds_wd(calibrz_value(i), fattore_divisione_temp)
             End If
 
-            If i = 3 And numero_canali = 3 Then
+            If i = 3 Then
                 valore_canale_temp = Val(Mid(valuer_value(5), 1, 4)) / fattore_divisione_temp
             Else
-                If i = 4 And numero_canali = 4 Then
+                If i = 4 Then
                     valore_canale_temp = Val(Mid(valuer_value(6), 1, 4)) / fattore_divisione_temp
                 Else
                     valore_canale_temp = Val(Mid(valuer_value(i), 1, 4)) / fattore_divisione_temp

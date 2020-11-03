@@ -59,32 +59,32 @@
 
 
 
-        'Andrea Sortino 04-05-18
+        ''Andrea Sortino 04-05-18
         Label7.Text = GetLocalResourceObject("Label7Resource1.Text")
 
 
 
         If measure_unit = "uS" Then
-            Literal12.Text = "uS "
+            Literal12.Text = "ppm "
         Else
             Literal12.Text = "ppm "
         End If
 
-        'If InStr(version_str, "5.0.5") Then
+
 
         If full_scale_temp = 5000 Then
-                Literal12.Text = Literal12.Text + "0"
-            End If
-            set_variable_javascript(0, 0) = "max_us"
-            set_variable_javascript(0, 1) = "500"
+            Literal12.Text = Literal12.Text + "0"
+        End If
+        set_variable_javascript(0, 0) = "max_us"
+        set_variable_javascript(0, 1) = "500"
 
-        'End If
+
 
 
 
         Select Case Mid(inhibitor_value(0), 1, 3)
 
-            
+
             Case "MT3" 'Feed Water Meter
                 WM_inhib.Checked = True
                 value_min_inhib.Text = Format(Val(Mid(inhibitor_value(0), 4, 2)), "00") 'Time Hour
@@ -132,7 +132,7 @@
                     mode_d_bleed_lock.Checked = False
                 End If
 
-                function_java = function_java + "enable_WM_ppm_inhib();"
+                function_java = function_java + "enable_WM_ppm_inhib();enable_WM_l_h()"
 
             Case "MT5" 'Feed Water Meter ppm cc.st
                 WM_ppm_inhib.Checked = True
@@ -140,7 +140,7 @@
                 value_water_meter_ppm.Text = Format(Val(Mid(inhibitor_value(0), 4, 4)), "0000") 'ppm
                 value_water_meter_ppm_cc_st.Text = Replace(((Val(Mid(inhibitor_value(0), 8, 4))) / 100).ToString, ",", ".") 'cc/st
 
-                function_java = function_java + "enable_WM_ppm_inhib();"
+                function_java = function_java + "enable_WM_ppm_inhib();enable_WM_cc_st();"
 
 
         End Select

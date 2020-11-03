@@ -178,14 +178,10 @@ $("#WM_ppm_inhib").click(function () {
 });
 
 $("#enable_water_meter_ppm_l_h").click(function () {
-    $("#div_enable_water_meter_ppm_cc_st").hide();
-    $("#div_enable_water_meter_ppm_l_h").show();
-
+    enable_WM_l_h();
 });
 $("#enable_water_meter_ppm_cc_st").click(function () {
-    $("#div_enable_water_meter_ppm_cc_st").show();
-    $("#div_enable_water_meter_ppm_l_h").hide();
-
+    enable_WM_cc_st();
 });
 
 
@@ -206,6 +202,14 @@ function enable_WM_inhib() {
     $("#enable_value_water_meter_ppm").hide();
     
     reset_variable();
+}
+function enable_WM_l_h() {
+    $("#div_enable_water_meter_ppm_cc_st").hide();
+    $("#div_enable_water_meter_ppm_l_h").show();
+}
+function enable_WM_cc_st() {
+    $("#div_enable_water_meter_ppm_cc_st").show();
+    $("#div_enable_water_meter_ppm_l_h").hide();
 }
 
 function enable_WM_ppm_inhib() {
