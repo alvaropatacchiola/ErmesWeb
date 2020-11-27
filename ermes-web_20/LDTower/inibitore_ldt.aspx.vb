@@ -131,6 +131,9 @@
                 Else
                     mode_d_bleed_lock.Checked = False
                 End If
+                'Messo per evitare errore nel salvataggio dei dati
+                value_water_meter_ppm_cc_st.Text = Replace(((Val(Mid(inhibitor_value(0), 8, 4))) / 100).ToString, ",", ".") 'cc/st
+
 
                 function_java = function_java + "enable_WM_ppm_inhib();enable_WM_l_h()"
 
@@ -139,6 +142,8 @@
                 enable_water_meter_ppm_cc_st.Checked = True
                 value_water_meter_ppm.Text = Format(Val(Mid(inhibitor_value(0), 4, 4)), "0000") 'ppm
                 value_water_meter_ppm_cc_st.Text = Replace(((Val(Mid(inhibitor_value(0), 8, 4))) / 100).ToString, ",", ".") 'cc/st
+                'Messo per evitare errore nel salvataggio dei dati
+                value_water_meter_ppm_l_h.Text = Format(Val(Mid(inhibitor_value(0), 8, 3)), "000") 'litri/h
 
                 function_java = function_java + "enable_WM_ppm_inhib();enable_WM_cc_st();"
 

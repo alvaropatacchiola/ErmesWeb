@@ -39,6 +39,7 @@ Public Class login
 
         End Try
 
+        Session("personalizzazioneStefano") = ""
         If InStr(header_script, "emecfrance") <> 0 Then 'personalizzazione  emecfrance ermes
             bodyContent.Text = "<body class=""login"" >"
             Session("logo") = "<img src='image/logo_placeholder.png' alt='logo'>"
@@ -120,6 +121,10 @@ Public Class login
                                                                 Else
                                                                     Session("logo") = "<img src='image/logo_ermes.png' alt='logo'>"
                                                                     Session("stile") = "<link id='themer-stylesheet' href='theme/personalizzazione/ermes.css' rel='stylesheet' type='text/css' />"
+                                                                    literal_stefano.Text = "<link href=""theme/css/personalizzazione_stefano.css"" rel=""stylesheet"" type=""text/css""/>"
+                                                                    Session("personalizzazioneStefano") = "<link href=""theme/css/personalizzazione_stefano.css"" rel=""stylesheet"" type=""text/css""/>"
+
+
                                                                 End If
                                                             End If
                                                         End If

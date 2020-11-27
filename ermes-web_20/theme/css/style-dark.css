@@ -867,7 +867,7 @@ body > .container-fluid.documentation {
 }
 .navbar.main {
   height: 46px;
-  background: #e04545 url("../images/mosaic-pattern.png") repeat;
+  /*background: #e04545 url("../images/mosaic-pattern.png") repeat;*/
   margin: 0;
   position: relative;
 }

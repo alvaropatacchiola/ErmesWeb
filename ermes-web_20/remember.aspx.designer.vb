@@ -12,7 +12,7 @@ Option Explicit On
 
 
 Partial Public Class remember
-
+    
     '''<summary>
     '''Controllo Head1.
     '''</summary>
@@ -21,7 +21,16 @@ Partial Public Class remember
     '''Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
     '''</remarks>
     Protected WithEvents Head1 As Global.System.Web.UI.HtmlControls.HtmlHead
-
+    
+    '''<summary>
+    '''Controllo literal_stefano.
+    '''</summary>
+    '''<remarks>
+    '''Campo generato automaticamente.
+    '''Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
+    '''</remarks>
+    Protected WithEvents literal_stefano As Global.System.Web.UI.WebControls.Literal
+    
     '''<summary>
     '''Controllo literal_theme.
     '''</summary>
@@ -30,7 +39,7 @@ Partial Public Class remember
     '''Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
     '''</remarks>
     Protected WithEvents literal_theme As Global.System.Web.UI.WebControls.Literal
-
+    
     '''<summary>
     '''Controllo form1.
     '''</summary>
@@ -39,7 +48,7 @@ Partial Public Class remember
     '''Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
     '''</remarks>
     Protected WithEvents form1 As Global.System.Web.UI.HtmlControls.HtmlForm
-
+    
     '''<summary>
     '''Controllo Literal3.
     '''</summary>
@@ -48,7 +57,7 @@ Partial Public Class remember
     '''Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
     '''</remarks>
     Protected WithEvents Literal3 As Global.System.Web.UI.WebControls.Literal
-
+    
     '''<summary>
     '''Controllo Literal1.
     '''</summary>
@@ -57,7 +66,7 @@ Partial Public Class remember
     '''Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
     '''</remarks>
     Protected WithEvents Literal1 As Global.System.Web.UI.WebControls.Literal
-
+    
     '''<summary>
     '''Controllo Literal2.
     '''</summary>
@@ -66,7 +75,7 @@ Partial Public Class remember
     '''Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
     '''</remarks>
     Protected WithEvents Literal2 As Global.System.Web.UI.WebControls.Literal
-
+    
     '''<summary>
     '''Controllo Literal4.
     '''</summary>
@@ -75,7 +84,7 @@ Partial Public Class remember
     '''Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
     '''</remarks>
     Protected WithEvents Literal4 As Global.System.Web.UI.WebControls.Literal
-
+    
     '''<summary>
     '''Controllo email_val.
     '''</summary>
@@ -84,7 +93,7 @@ Partial Public Class remember
     '''Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
     '''</remarks>
     Protected WithEvents email_val As Global.System.Web.UI.WebControls.TextBox
-
+    
     '''<summary>
     '''Controllo Literal5.
     '''</summary>
@@ -93,7 +102,7 @@ Partial Public Class remember
     '''Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
     '''</remarks>
     Protected WithEvents Literal5 As Global.System.Web.UI.WebControls.Literal
-
+    
     '''<summary>
     '''Controllo Literal6.
     '''</summary>
@@ -102,7 +111,7 @@ Partial Public Class remember
     '''Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
     '''</remarks>
     Protected WithEvents Literal6 As Global.System.Web.UI.WebControls.Literal
-
+    
     '''<summary>
     '''Controllo Button1.
     '''</summary>
@@ -111,7 +120,7 @@ Partial Public Class remember
     '''Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
     '''</remarks>
     Protected WithEvents Button1 As Global.System.Web.UI.WebControls.Button
-
+    
     '''<summary>
     '''Controllo Button2.
     '''</summary>
@@ -120,7 +129,7 @@ Partial Public Class remember
     '''Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
     '''</remarks>
     Protected WithEvents Button2 As Global.System.Web.UI.WebControls.Button
-
+    
     '''<summary>
     '''Controllo java_script_local.
     '''</summary>

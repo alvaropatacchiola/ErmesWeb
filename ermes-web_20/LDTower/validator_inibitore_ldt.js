@@ -69,6 +69,9 @@ function Changed_channel(id1, id2, max_ch, min_ch, myfix) {
 function keypress_channel_number(evt) {
     var charCode = (evt.which) ? evt.which : event.keyCode
 
+    if (charCode == 46) return true;// carattere .
+
+
     if (charCode > 31 && (charCode < 48 || charCode > 57))
         return false;
 

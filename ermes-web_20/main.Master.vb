@@ -145,6 +145,7 @@ Partial Public Class main
         Literal2.Text = Literal2.Text + "<a href="""" class=""appbrand"">"
         'Literal2.Text = Literal2.Text + "<img src=""image/logo_ermes.png"" alt=""logo"">"
         Literal2.Text = Literal2.Text + Session("logo")
+        literal_stefano.Text = Session("personalizzazioneStefano")
 
         Literal2.Text = Literal2.Text + " </a>"
         Literal2.Text = Literal2.Text + "<button type=""button"" class=""btn btn-navbar"" style=""top:20px;"">"
@@ -225,7 +226,7 @@ Partial Public Class main
 
 
         Literal2.Text = Literal2.Text + "<li class=""hidden-phone"">"
-        Literal2.Text = Literal2.Text + "<a href=""communication.aspx"" data-toggle=""collapse"" data-target=""#"" class=""glyphicons notes""><i></i>" + GetGlobalResourceObject("main_master_global", "communication") + "</a>"
+        Literal2.Text = Literal2.Text + "<a href=""communication.aspx"" data-toggle=""collapse"" data-target=""#"" class=""glyphicons notes""><i></i><p class =""testo"">" + GetGlobalResourceObject("main_master_global", "communication") + "</p></a>"
         'Literal2.Text = Literal2.Text + "<ul class=""dropdown-menu pull-right"">"
 
         'Literal2.Text = Literal2.Text + "<li class=""dropdown submenu"">"
@@ -239,7 +240,7 @@ Partial Public Class main
 
         Literal2.Text = Literal2.Text + "<li class=""dropdown visible-abc"">"
         If Session("super_user") Then
-            Literal2.Text = Literal2.Text + "<a href="""" data-toggle=""dropdown"" class=""glyphicons cogwheel""><i></i>" + GetGlobalResourceObject("main_master_global", "impianti") + "<span class=""caret""></span></a>"
+            Literal2.Text = Literal2.Text + "<a href="""" data-toggle=""dropdown"" class=""glyphicons cogwheel""><i></i><p class =""testo"">" + GetGlobalResourceObject("main_master_global", "impianti") + "</p><span class=""caret""></span></a>"
             Literal2.Text = Literal2.Text + "<ul style=""width:100px"" class=""dropdown-menu pull-left"">"
 
             Literal2.Text = Literal2.Text + "<li class=""dropdown submenu"">"
@@ -254,7 +255,7 @@ Partial Public Class main
             Literal2.Text = Literal2.Text + "</li>"
 
             Literal2.Text = Literal2.Text + "<li class=""dropdown visible-abc"">"
-            Literal2.Text = Literal2.Text + "<a href="""" data-toggle=""dropdown"" class=""glyphicons upload""><i></i>" + GetGlobalResourceObject("main_master_global", "usbManager") + "<span class=""caret""></span></a>"
+            Literal2.Text = Literal2.Text + "<a href="""" data-toggle=""dropdown"" class=""glyphicons upload""><i></i> <p class =""testo"">" + GetGlobalResourceObject("main_master_global", "usbManager") + "</p><span class=""caret""></span></a>"
             Literal2.Text = Literal2.Text + "<ul style=""width:100px"" class=""dropdown-menu pull-left"">"
 
             Literal2.Text = Literal2.Text + "<li class=""dropdown submenu"">"
@@ -270,7 +271,7 @@ Partial Public Class main
 
 
             Literal2.Text = Literal2.Text + "<li class=""dropdown visible-abc"">"
-            Literal2.Text = Literal2.Text + "<a href="""" data-toggle=""dropdown"" class=""glyphicons user""><i></i>" + GetGlobalResourceObject("main_master_global", "utilizzatore") + "<span class=""caret""></span></a>"
+            Literal2.Text = Literal2.Text + "<a href="""" data-toggle=""dropdown"" class=""glyphicons user""><i></i><p class =""testo"">" + GetGlobalResourceObject("main_master_global", "utilizzatore") + "</p><span class=""caret""></span></a>"
             Literal2.Text = Literal2.Text + "<ul style=""width:100px"" class=""dropdown-menu pull-left"">"
 
             Literal2.Text = Literal2.Text + "<li class=""dropdown submenu"">"

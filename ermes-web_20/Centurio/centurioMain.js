@@ -3285,7 +3285,9 @@ function get_data(serialNumber, firstValue) {
     if (firstValue){
         readCookie(serialNumber);
         bootbox.dialog();
-        bootbox.dialog("<div class = \"widget\"><div class=\"widget-head\" style=\"text-align:center\"><h4 id = \"spinnerLoadText\" class=\"heading\" >Loading .. </h4></div><div id = \"spinnerLoad\" class=\"widget-body\"><script type=\"text/javascript\">carica_spinner('spinnerLoad');</script></div></div>");
+        //bootbox.dialog("<div class = \"widget\"><div class=\"widget-head\" style=\"text-align:center\"><h4 id = \"spinnerLoadText\" class=\"heading\" >Loading .. </h4></div><div id = \"spinnerLoad\" class=\"widget-body\"><script type=\"text/javascript\">carica_spinner('spinnerLoad');</script></div></div>");
+        bootbox.dialog("<img src=\"theme/images/loading.gif\">");
+
         $("#spinnerLoadText" ).text("Loading ..");
 
     }

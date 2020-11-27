@@ -684,7 +684,7 @@
                     Case 1 'controllo canale 1
                         main_function_config.get_tipo_strumento_tower(personalizzazione_aquacare, config_value(0), config_value(1), config_value(2), config_value(3), version_str, fattore_divisione_temp,
                                                                   , , scala_temp, , , label_canale_temp)
-                        If scala_temp = 3000 Then
+                        If scala_temp = 9999 Then
                             valore_canale_temp = Val(Mid(valuer_value(0), 3, 4)) / fattore_divisione_temp
                         Else
                             valore_canale_temp = (Val(Mid(valuer_value(0), 3, 4)) * 10) / fattore_divisione_temp

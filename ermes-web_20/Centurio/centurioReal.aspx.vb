@@ -243,7 +243,22 @@ Public Class centurioReal
         Return stringJson
 
     End Function
-
+    <System.Web.Services.WebMethod()>
+    Public Shared Function leggiLogConnessione(ByVal serialNumber As String) As String
+        Dim stringJson As String = ""
+        serialNumber = Replace(serialNumber, """", "")
+        Using r As StreamReader = New StreamReader("c:\logCenturio.txt")
+            Dim line As String
+            line = r.ReadLine
+            Do While (Not line Is Nothing)
+                If line.IndexOf(serialNumber) >= 0 Then
+                    stringJson = stringJson + "<p>" + line + "</p>"
+                End If
+                line = r.ReadLine
+            Loop
+        End Using
+        Return stringJson
+    End Function
 
     Private Shared Function getConfigFromFile(ByVal serialReference As String) As String
         Dim virgola As String = ""

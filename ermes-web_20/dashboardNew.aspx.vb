@@ -105,7 +105,12 @@ Public Class dashboardNew
                     If calcoloRiga Mod 2 = 0 Then
                         intestazione = intestazione + "<div Class=""row-fluid"" >"
                     End If
-                    intestazione = intestazione + "<div class=""span6"">"
+                    If split_impianto.Length = 2 Then
+                        intestazione = intestazione + "<div class=""span12"">"
+                    Else
+                        intestazione = intestazione + "<div class=""span6"">"
+                    End If
+
                     intestazione = intestazione + "<div class=""widget"">"
                     intestazione = intestazione + "<div class=""navbar main "" style=""height:46px""><div class=""impianto"">" + subImpinato + "</div></div>"
 
@@ -149,7 +154,7 @@ Public Class dashboardNew
                         resultPipe = pipeClient.Main(split_codice(indiceCodice), "controller_type")
 
                         Try
-                            Using writer As System.IO.StreamWriter = New System.IO.StreamWriter("c:\testLDOSIN.txt", True)
+                            Using writer As System.IO.StreamWriter = New System.IO.StreamWriter("testLDOSIN.txt", True)
                                 writer.WriteLine("#" + split_codice(indiceCodice) + "#" + resultPipe + "#")
                             End Using
                         Catch ex As Exception
@@ -688,7 +693,7 @@ nexLoopLabel:
                                                                   , , scala_temp, , , label_canale_temp)
 
                     End If
-                    If scala_temp = 3000 Or scala_temp = 5000 Or scala_temp = 500 Then
+                    If scala_temp = 9999 Or scala_temp = 5000 Or scala_temp = 500 Then
                         valore_canale_temp = Val(Mid(valuer_value(0), 3, 4)) / fattore_divisione_temp
                     Else
                         valore_canale_temp = (Val(Mid(valuer_value(0), 3, 4)) * 10) / fattore_divisione_temp

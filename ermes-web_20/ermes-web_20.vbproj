@@ -117,6 +117,7 @@
     <Content Include="Centurio\JwebService.aspx" />
     <Content Include="Centurio\login.aspx" />
     <Content Include="Centurio\plantInfo.aspx" />
+    <Content Include="Centurio\testSerial.js" />
     <Content Include="Centurio\webRes.js" />
     <Content Include="Centurio\webService.aspx" />
     <Content Include="chart\localCent\buttons.dataTables.min.css" />
@@ -308,7 +309,9 @@
     <Content Include="pool\SVG\SmilePool-good.svg" />
     <Content Include="pool\SVG\SmilePool-notgood.svg" />
     <Content Include="pool\SVG\SwipeUpPool.svg" />
+    <Content Include="serial.html" />
     <Content Include="theme\css\dashboardNewCss.css" />
+    <Content Include="theme\css\personalizzazione_stefano.css" />
     <Content Include="theme\css\style-dark.min.css" />
     <Content Include="theme\images\lang\ES.png" />
     <Content Include="theme\personalizzazione\aloes.css" />
@@ -19556,6 +19559,16 @@
     <Content Include="lta\App_LocalResources\resetTot.aspx.fr.resx" />
     <Content Include="lta\App_LocalResources\resetTot.aspx.en.resx" />
     <Content Include="lta\App_LocalResources\resetTot.aspx.de.resx" />
+    <Content Include="lta\App_LocalResources\flow_lta.aspx.es.resx" />
+    <Content Include="lta\App_LocalResources\logsetup_lta.aspx.es.resx">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="lta\App_LocalResources\main_lta.aspx.es.resx" />
+    <Content Include="lta\App_LocalResources\message_lta.aspx.es.resx" />
+    <Content Include="lta\App_LocalResources\resetTot.aspx.es.resx" />
+    <Content Include="lta\App_LocalResources\setpoint_lta.aspx.es.resx" />
+    <Content Include="lta\App_LocalResources\system_lta.aspx.es.resx" />
+    <Content Include="lta\App_LocalResources\wmeter_lta.aspx.es.resx" />
     <EmbeddedResource Include="My Project\licenses.licx" />
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>

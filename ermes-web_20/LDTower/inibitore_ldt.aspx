@@ -166,7 +166,7 @@
         </div>       
 
 
-    <script type="text/javascript" src="LDTower/validator_inibitore_ldt.js"></script>
+    <script type="text/javascript" src="LDTower/validator_inibitore_ldt.js?v=1.1"></script>
             <script type="text/javascript" src="common/validator_general_notify.js?v=1.1"></script>
 <script src="theme/scripts/demo/notifications.js"></script>
 

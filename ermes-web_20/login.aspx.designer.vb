@@ -14,6 +14,15 @@ Option Explicit On
 Partial Public Class login
     
     '''<summary>
+    '''Controllo literal_stefano.
+    '''</summary>
+    '''<remarks>
+    '''Campo generato automaticamente.
+    '''Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
+    '''</remarks>
+    Protected WithEvents literal_stefano As Global.System.Web.UI.WebControls.Literal
+    
+    '''<summary>
     '''Controllo literal_theme.
     '''</summary>
     '''<remarks>

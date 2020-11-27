@@ -7,6 +7,7 @@ Public Class signup
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
 
+        literal_stefano.Text = Session("personalizzazioneStefano")
 
         java_script_local.Text = "<script>"
         java_script_local.Text = java_script_local.Text + "var username='"

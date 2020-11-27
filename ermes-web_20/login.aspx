@@ -14,8 +14,8 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=7; IE=EDGE" />
 	
 	<!-- Bootstrap -->
-	<link href="bootstrap/css/bootstrap.css" rel="stylesheet" />
-	<link href="bootstrap/css/responsive.css" rel="stylesheet" />
+	<link href="bootstrap/css/bootstrap.css?v=1.0" rel="stylesheet" />
+	<link href="bootstrap/css/responsive.css?v=1.0" rel="stylesheet" />
 	
 	<!-- Glyphicons Font Icons -->
 	<link href="theme/css/glyphicons.css" rel="stylesheet" />
@@ -24,10 +24,13 @@
 	<link href="theme/scripts/plugins/forms/pixelmatrix-uniform/css/uniform.default.css" rel="stylesheet" />
 	
 	<!-- Main Theme Stylesheet :: CSS -->
-	<link href="theme/css/style-dark.min.css?1366720685" rel="stylesheet" />
+	<link href="theme/css/style-dark.min.css?1366720687" rel="stylesheet" />
 <!-- COLOR Stylesheet :: CSS -->
 	<link href="theme/skins/css/default.css" rel="stylesheet" type="text/css" />	
-	
+	    <!-- Main Theme Stylesheet :: CSS 
+	<link href="theme/css/personalizzazione_stefano.css" rel="stylesheet" />-->
+    <asp:Literal ID="literal_stefano" Text="" runat="server"></asp:Literal>
+
 	<!-- LESS.js Library -->
 	<script src="theme/scripts/plugins/system/less.min.js"></script>
 
