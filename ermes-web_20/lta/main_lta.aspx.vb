@@ -128,7 +128,7 @@
 
         End Select
         '                                                                                                                                                                                   7                                       8                                                   9                                                             10                                                             11                                                                     12
-        crea_header(formato_d, clockr_value, valuer_value, GetGlobalResourceObject("max5_global", "temperature"), allrmr_value, riga_strumento.tipo_strumento, GetGlobalResourceObject("ld_global", "flow"), GetGlobalResourceObject("ld_global", "Level_acid"), GetGlobalResourceObject("ld_global", "Level_cloro"), GetGlobalResourceObject("ld_global", "Flow_Control_Acid"), GetGlobalResourceObject("ld_global", "Flow_Control_Water"), GetGlobalResourceObject("ld_global", "Flow_Control_Cloro"), GetGlobalResourceObject("ld_global", "Level_Water"), GetGlobalResourceObject("ld_global", "Contact_SEFL_Acid"), GetGlobalResourceObject("ld_global", "Contact_SEFL_Chlorite"), GetGlobalResourceObject("ld_global", "Timeout "), GetGlobalResourceObject("ld_global", "Batch_Tank_Empty"), GetGlobalResourceObject("ld_global", "Flow_Water_Dlution"), GetGlobalResourceObject("ld_global", "Service_And_Calibration_Required"), GetGlobalResourceObject("ld_global", "Analog_Input"), GetGlobalResourceObject("ld_global", "Reactor_Leakage"), GetGlobalResourceObject("ld_global", "Pre_Dilution_Water"), GetGlobalResourceObject("ld_global", "Overflow"), GetGlobalResourceObject("ld_global", "CLO2_limit"), Val(main_function.get_version(riga_strumento.nome)), cicli_value)
+        crea_header(formato_d, clockr_value, valuer_value, GetGlobalResourceObject("max5_global", "temperature"), allrmr_value, riga_strumento.tipo_strumento, GetGlobalResourceObject("ld_global", "flow"), GetGlobalResourceObject("ld_global", "Level_acid"), GetGlobalResourceObject("ld_global", "Level_cloro"), GetGlobalResourceObject("ld_global", "Flow_Control_Acid"), GetGlobalResourceObject("ld_global", "Flow_Control_Water"), GetGlobalResourceObject("ld_global", "Flow_Control_Cloro"), GetGlobalResourceObject("ld_global", "Level_Water"), GetGlobalResourceObject("ld_global", "Contact_SEFL_Acid"), GetGlobalResourceObject("ld_global", "Contact_SEFL_Chlorite"), GetGlobalResourceObject("ld_global", "Timeout "), GetGlobalResourceObject("ld_global", "Batch_Tank_Empty"), GetGlobalResourceObject("ld_global", "Flow_Water_Dlution"), GetGlobalResourceObject("ld_global", "Service_And_Calibration_Required"), GetGlobalResourceObject("ld_global", "Analog_Input"), GetGlobalResourceObject("ld_global", "Reactor_Leakage"), GetGlobalResourceObject("ld_global", "Pre_Dilution_Water"), GetGlobalResourceObject("ld_global", "Overflow"), GetGlobalResourceObject("ld_global", "CLO2_limit"), Val(main_function.get_version(riga_strumento.nome)), cicli_value, GetGlobalResourceObject("ld_global", "waiting"), GetGlobalResourceObject("ld_global", "Flow_M"), GetGlobalResourceObject("ld_global", "Acido_"), GetGlobalResourceObject("ld_global", "Chlorite_"), GetGlobalResourceObject("ld_global", "WMeter"))
     End Sub
 
 
@@ -394,7 +394,8 @@
                                  ByVal Flow_Control_Cloro_traduzione As String, ByVal Level_Water_traduzione As String, ByVal Contact_SEFL_Acid_traduzione As String,
                                  ByVal Contact_SEFL_Chlorite_traduzione As String, ByVal Timeout_traduzione As String, ByVal Batch_Tank_Empty_traduzione As String,
                                  ByVal Flow_Water_Dlution_traduzione As String, ByVal Service_And_Calibration_Required_traduzione As String, ByVal Analog_Input_traduzione As String,
-                                 ByVal Reactor_Leakage_traduzione As String, ByVal Pre_Dilution_Water_traduzione As String, ByVal Overflow_traduzione As String, ByVal ClO2_traduzione As String, ByVal versione As Integer, ByVal cicli_value() As String) As String
+                                 ByVal Reactor_Leakage_traduzione As String, ByVal Pre_Dilution_Water_traduzione As String, ByVal Overflow_traduzione As String, ByVal ClO2_traduzione As String, ByVal versione As Integer, ByVal cicli_value() As String, ByVal Waiting_traduzione As String,
+                                 ByVal FLOW_M_traduzione As String, ByVal Acido_traduzione As String, ByVal Cloro_traduzione As String, ByVal WMeter_traduzione As String) As String
 
 
 
@@ -501,7 +502,15 @@
         ' creazione widget flusso instantaneo/totalizzatore
         intestazione = "<a href="""" class=""widget-stats widget-stats-2 widget-stats-easy-pie txt-single"">"
         intestazione = intestazione + "<div style=""margin-top: -10px;margin-left: 20px;"">"
-        intestazione = intestazione + "<span>Flow Meter:</span>"
+        'intestazione = intestazione + "<span>Flow Meter:</span>"
+
+        intestazione = intestazione + "<span>" + FLOW_M_traduzione + "</span>"
+
+
+
+        'ByVal FLOW_M_traduzione As String, ByVal Acido_traduzione As String, ByVal Cloro_traduzione As String) As String
+
+
         Dim m3h_valore As Single = 0
         'm3h_valore = Val(valuer_value(5)) * 10
 
@@ -527,9 +536,18 @@
             ' creazione widget flusso instantaneo/totalizzatore
             '  intestazione = "<a href="""" class=""widget-stats widget-stats-2 widget-stats-easy-pie txt-single"">"
             '  intestazione = intestazione + "<div style=""margin-top: 10px;margin-left: 20px;"">"
-            intestazione = intestazione + "<span>Acid:</span>" + cicli_value(1) + "</strong></span> [ltr] <br/>"
-            intestazione = intestazione + "<span>Chlorite:</span>" + cicli_value(2) + "</strong></span> [ltr] <br/>"
-            intestazione = intestazione + "<span>Water Meter:</span>" + cicli_value(3) + "</strong></span> [cbm] <br/>"
+
+
+            'intestazione = intestazione + "<span>Acid:</span>" + cicli_value(1) + "</strong></span> [ltr] <br/>"
+            'intestazione = intestazione + "<span>Chlorite:</span>" + cicli_value(2) + "</strong></span> [ltr] <br/>"
+            'intestazione = intestazione + "<span>Water Meter:</span>" + cicli_value(3) + "</strong></span> [cbm] <br/>"
+
+
+            intestazione = intestazione + "<span>" + Acido_traduzione + "</span>" + cicli_value(1) + "</strong></span> [ltr] <br/>"
+            intestazione = intestazione + "<span>" + Cloro_traduzione + "</span>" + cicli_value(2) + "</strong></span> [ltr] <br/>"
+            intestazione = intestazione + "<span>" + WMeter_traduzione + "</span>" + cicli_value(3) + "</strong></span> [cbm] <br/>"
+
+
         End If
 
 
@@ -746,10 +764,10 @@
 
                     intestazione = intestazione + "<tr>"
                     If main_function.alarm_lta_generico(alarm_value) Then
-                        intestazione = intestazione + "<td width=""32%"">" + "Waiting for Restart" + "</td>"
+                        intestazione = intestazione + "<td width=""32%"">" + Waiting_traduzione + "</td>"
                         intestazione = intestazione + "<td width=""33%"" align=""center""><img src=""theme/images/allarme_on.png"" alt=""allarme_on""></td>"
                     Else
-                        intestazione = intestazione + "<td width=""32%"">" + "Waiting for Restart" + "</td>"
+                        intestazione = intestazione + "<td width=""32%"">" + Waiting_traduzione + "</td>"
                         intestazione = intestazione + "<td width=""33%"" align=""center""><img src=""theme/images/allarme_off.png"" alt=""allarme_off""></td>"
 
                     End If
@@ -881,10 +899,10 @@
 
                     intestazione = intestazione + "<tr>"
                     If main_function.alarm_lta_generico(alarm_value) Then
-                        intestazione = intestazione + "<td width=""32%"">" + "Waiting for Restart" + "</td>"
+                        intestazione = intestazione + "<td width=""32%"">" + Waiting_traduzione + "</td>"
                         intestazione = intestazione + "<td width=""33%"" align=""center""><img src=""theme/images/allarme_on.png"" alt=""allarme_on""></td>"
                     Else
-                        intestazione = intestazione + "<td width=""32%"">" + "Waiting for Restart" + "</td>"
+                        intestazione = intestazione + "<td width=""32%"">" + Waiting_traduzione + "</td>"
                         intestazione = intestazione + "<td width=""33%"" align=""center""><img src=""theme/images/allarme_off.png"" alt=""allarme_off""></td>"
 
                     End If
@@ -1018,10 +1036,10 @@
 
                     intestazione = intestazione + "<tr>"
                     If main_function.alarm_lta_generico(alarm_value) Then
-                        intestazione = intestazione + "<td width=""32%"">" + "Waiting for Restart" + "</td>"
+                        intestazione = intestazione + "<td width=""32%"">" + Waiting_traduzione + "</td>"
                         intestazione = intestazione + "<td width=""33%"" align=""center""><img src=""theme/images/allarme_on.png"" alt=""allarme_on""></td>"
                     Else
-                        intestazione = intestazione + "<td width=""32%"">" + "Waiting for Restart" + "</td>"
+                        intestazione = intestazione + "<td width=""32%"">" + Waiting_traduzione + "</td>"
                         intestazione = intestazione + "<td width=""33%"" align=""center""><img src=""theme/images/allarme_off.png"" alt=""allarme_off""></td>"
 
                     End If

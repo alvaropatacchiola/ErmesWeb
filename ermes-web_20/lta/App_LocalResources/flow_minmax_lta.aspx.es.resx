@@ -117,16 +117,73 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="alarm_flow_directResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="alarm_flow_directResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="alarm_flow_disableResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="alarm_flow_disableResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="alarm_flow_reverseResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="alarm_flow_reverseResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="alarm_minmax_disableResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="alarm_minmax_disableResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="alarm_minmax_enResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="alarm_minmax_enResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Label7Resource1.Text" xml:space="preserve">
+    <value>Modo</value>
+  </data>
+  <data name="Literal4Resource1.Text" xml:space="preserve">
+    <value>Min:</value>
+  </data>
+  <data name="LiteralResource1.Text" xml:space="preserve">
+    <value>Habilitar</value>
+  </data>
+  <data name="LiteralResource2.Text" xml:space="preserve">
+    <value>Inverso</value>
+  </data>
+  <data name="LiteralResource3.Text" xml:space="preserve">
+    <value>Deshabilitar</value>
+  </data>
   <data name="message_channelResource1.Text" xml:space="preserve">
-    <value>Reset Totalizador</value>
+    <value> </value>
   </data>
   <data name="PageResource1.Title" xml:space="preserve">
     <value />
   </data>
-  <data name="save_message_newltaResource1.Text" xml:space="preserve">
+  <data name="save_flow_minmax_newResource1.Text" xml:space="preserve">
     <value>Guardar y cargar datos</value>
   </data>
-  <data name="save_message_newltaResource1.ToolTip" xml:space="preserve">
+  <data name="save_flow_minmax_newResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_alarm_flow_timeResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_alarm_flow_timeResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_alarm_minmax_timeResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="value_alarm_minmax_timeResource1.ToolTip" xml:space="preserve">
     <value />
   </data>
 </root>

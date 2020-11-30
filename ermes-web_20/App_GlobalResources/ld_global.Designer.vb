@@ -65,6 +65,15 @@ Namespace Resources
         End Property
         
         '''<summary>
+        '''  Cerca una stringa localizzata simile a Acid:.
+        '''</summary>
+        Friend Shared ReadOnly Property Acido_() As String
+            Get
+                Return ResourceManager.GetString("Acido_", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Cerca una stringa localizzata simile a Alert.
         '''</summary>
         Friend Shared ReadOnly Property Alert() As String
@@ -151,6 +160,15 @@ Namespace Resources
         Friend Shared ReadOnly Property Channels() As String
             Get
                 Return ResourceManager.GetString("Channels", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Cerca una stringa localizzata simile a Chlorite:.
+        '''</summary>
+        Friend Shared ReadOnly Property Chlorite_() As String
+            Get
+                Return ResourceManager.GetString("Chlorite_", resourceCulture)
             End Get
         End Property
         
@@ -268,6 +286,15 @@ Namespace Resources
         Friend Shared ReadOnly Property Flow_Control_Water() As String
             Get
                 Return ResourceManager.GetString("Flow_Control_Water", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Cerca una stringa localizzata simile a Flow meter:.
+        '''</summary>
+        Friend Shared ReadOnly Property Flow_M() As String
+            Get
+                Return ResourceManager.GetString("Flow_M", resourceCulture)
             End Get
         End Property
         
@@ -844,6 +871,24 @@ Namespace Resources
         Friend Shared ReadOnly Property val_valueprobe() As String
             Get
                 Return ResourceManager.GetString("val_valueprobe", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Cerca una stringa localizzata simile a Wating for Restart.
+        '''</summary>
+        Friend Shared ReadOnly Property waiting() As String
+            Get
+                Return ResourceManager.GetString("waiting", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Cerca una stringa localizzata simile a Water Meter:.
+        '''</summary>
+        Friend Shared ReadOnly Property WMeter() As String
+            Get
+                Return ResourceManager.GetString("WMeter", resourceCulture)
             End Get
         End Property
     End Class

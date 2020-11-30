@@ -265,10 +265,10 @@
     <value>Cal.Sonda</value>
   </data>
   <data name="Level_HCL" xml:space="preserve">
-    <value>Livello HCl</value>
+    <value>Nivel HCl</value>
   </data>
   <data name="Level_NACLO2" xml:space="preserve">
-    <value>Livello NaClO2</value>
+    <value>Nivel NaClO2</value>
   </data>
   <data name="Level_STORAGE" xml:space="preserve">
     <value>Serbatoio Stoccaggio Pieno</value>
@@ -280,7 +280,7 @@
     <value>Sistema</value>
   </data>
   <data name="Meter" xml:space="preserve">
-    <value>Contatore</value>
+    <value>Contador</value>
   </data>
   <data name="ld_ma_channel" xml:space="preserve">
     <value>Channels</value>
@@ -322,7 +322,7 @@
     <value>Reset</value>
   </data>
   <data name="AllRead" xml:space="preserve">
-    <value>Read Alarm</value>
+    <value>Read Alarma</value>
   </data>
   <data name="Analog_Input" xml:space="preserve">
     <value>Analog Input</value>
@@ -331,7 +331,7 @@
     <value>Batch Tank Empty</value>
   </data>
   <data name="CLO2_limit" xml:space="preserve">
-    <value>ClO2 limit</value>
+    <value>Limite CLO2</value>
   </data>
   <data name="Contact_SEFL_Acid" xml:space="preserve">
     <value>Contact SEFL Acid</value>
@@ -340,34 +340,34 @@
     <value>Contact SEFL Chlorite</value>
   </data>
   <data name="Flow_Control_Acid" xml:space="preserve">
-    <value>Flow Control Acid</value>
+    <value>Control Caudal Ácido</value>
   </data>
   <data name="Flow_Control_Cloro" xml:space="preserve">
-    <value>Flow Control Cloro</value>
+    <value>Control Caudal Clorito</value>
   </data>
   <data name="Flow_Control_Water" xml:space="preserve">
-    <value>Flow Control Water</value>
+    <value>Contro Caudal agua</value>
   </data>
   <data name="Flow_Water_Dlution" xml:space="preserve">
     <value>Flow Water Dlution</value>
   </data>
   <data name="Level_acid" xml:space="preserve">
-    <value>Level Acid</value>
+    <value>Nivel Ácido</value>
   </data>
   <data name="Level_cloro" xml:space="preserve">
-    <value>Level Chlorite</value>
+    <value>Nivel Clorito</value>
   </data>
   <data name="Level_Water" xml:space="preserve">
     <value>Level Water</value>
   </data>
   <data name="Overflow" xml:space="preserve">
-    <value>Overflow</value>
+    <value>Exceso caudal</value>
   </data>
   <data name="Pre_Dilution_Water" xml:space="preserve">
-    <value>Pre Dilution Water</value>
+    <value>Pre Dilución Agua</value>
   </data>
   <data name="Reactor_Leakage" xml:space="preserve">
-    <value>Reactor Leakage</value>
+    <value>Fuga reactor</value>
   </data>
   <data name="Service_And_Calibration_Required" xml:space="preserve">
     <value>Service And Calibration Required</value>
@@ -377,5 +377,20 @@
   </data>
   <data name="salva_carica_dati" xml:space="preserve">
     <value>Salvar y cargar datos</value>
+  </data>
+  <data name="Acido_" xml:space="preserve">
+    <value>Ácido:</value>
+  </data>
+  <data name="Chlorite_" xml:space="preserve">
+    <value>Clorito:</value>
+  </data>
+  <data name="Flow_M" xml:space="preserve">
+    <value>Caudalímetro:</value>
+  </data>
+  <data name="waiting" xml:space="preserve">
+    <value>Esperando para Reiniciar</value>
+  </data>
+  <data name="WMeter" xml:space="preserve">
+    <value>Contador de agua:</value>
   </data>
 </root>

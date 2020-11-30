@@ -19569,6 +19569,10 @@
     <Content Include="lta\App_LocalResources\setpoint_lta.aspx.es.resx" />
     <Content Include="lta\App_LocalResources\system_lta.aspx.es.resx" />
     <Content Include="lta\App_LocalResources\wmeter_lta.aspx.es.resx" />
+    <Content Include="lta\App_LocalResources\flow_minmax_lta.aspx.resx" />
+    <Content Include="lta\App_LocalResources\flow_minmax_lta.aspx.es.resx" />
+    <Content Include="lta\App_LocalResources\allread_lta.aspx.resx" />
+    <Content Include="lta\App_LocalResources\allread_lta.aspx.es.resx" />
     <EmbeddedResource Include="My Project\licenses.licx" />
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>

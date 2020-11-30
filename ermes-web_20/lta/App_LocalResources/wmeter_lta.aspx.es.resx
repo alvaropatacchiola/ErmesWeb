@@ -124,10 +124,10 @@
     <value />
   </data>
   <data name="Label7Resource1.Text" xml:space="preserve">
-    <value>Mode</value>
+    <value>Modo</value>
   </data>
   <data name="Label8Resource1.Text" xml:space="preserve">
-    <value>Resolution</value>
+    <value>Resolución</value>
   </data>
   <data name="lit_impResource1.Text" xml:space="preserve">
     <value />
@@ -136,13 +136,13 @@
     <value />
   </data>
   <data name="Literal4Resource1.Text" xml:space="preserve">
-    <value>Value</value>
+    <value>Valor</value>
   </data>
   <data name="Literal7Resource1.Text" xml:space="preserve">
-    <value>Max Flow [cmb/h]</value>
+    <value>Flujo máximo (m3/h)</value>
   </data>
   <data name="Literal8Resource1.Text" xml:space="preserve">
-    <value>Timeout</value>
+    <value>Time out</value>
   </data>
   <data name="LiteralResource1.Text" xml:space="preserve">
     <value>Imp / Lit</value>
@@ -166,7 +166,7 @@
     <value />
   </data>
   <data name="message_channelResource1.Text" xml:space="preserve">
-    <value>Water Meter</value>
+    <value>Contador</value>
   </data>
   <data name="PageResource1.Title" xml:space="preserve">
     <value />
@@ -178,7 +178,7 @@
     <value />
   </data>
   <data name="save_wmeterlta_newResource1.Text" xml:space="preserve">
-    <value>Save and Load Data</value>
+    <value>Guardar y cargar datos</value>
   </data>
   <data name="save_wmeterlta_newResource1.ToolTip" xml:space="preserve">
     <value />

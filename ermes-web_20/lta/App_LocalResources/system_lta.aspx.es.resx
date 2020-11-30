@@ -169,28 +169,28 @@
     <value>Format</value>
   </data>
   <data name="Literal_dos_Resource19.Text" xml:space="preserve">
-    <value>Dose Check:</value>
+    <value>Control dosificación</value>
   </data>
   <data name="Literal_user_Resource19.Text" xml:space="preserve">
     <value>User Password:</value>
   </data>
   <data name="Literal2Resource1.Text" xml:space="preserve">
-    <value>Date Time</value>
+    <value>Fecha y hora</value>
   </data>
   <data name="LiteralResource1.Text" xml:space="preserve">
-    <value>English</value>
+    <value>Inglés</value>
   </data>
   <data name="LiteralResource10.Text" xml:space="preserve">
-    <value>View Cl</value>
+    <value>Mostrar Cl</value>
   </data>
   <data name="LiteralResource11.Text" xml:space="preserve">
-    <value>View mV</value>
+    <value>Mostrar mV</value>
   </data>
   <data name="LiteralResource12.Text" xml:space="preserve">
-    <value>Stand by Mode</value>
+    <value>Stand by Modo</value>
   </data>
   <data name="LiteralResource13.Text" xml:space="preserve">
-    <value>Disable</value>
+    <value>Deshabilitar</value>
   </data>
   <data name="LiteralResource14.Text" xml:space="preserve">
     <value>N.O.</value>
@@ -208,19 +208,19 @@
     <value>Dos Only</value>
   </data>
   <data name="LiteralResource19.Text" xml:space="preserve">
-    <value>OLD Password</value>
+    <value>Antigua contraseña</value>
   </data>
   <data name="LiteralResource2.Text" xml:space="preserve">
-    <value>English USA</value>
+    <value>Inglés USA</value>
   </data>
   <data name="LiteralResource20.Text" xml:space="preserve">
-    <value>New Password</value>
+    <value>Nueva contraseña</value>
   </data>
   <data name="LiteralResource21.Text" xml:space="preserve">
-    <value>Confirm Password</value>
+    <value>Confirmar contraseña</value>
   </data>
   <data name="LiteralResource22.Text" xml:space="preserve">
-    <value>German</value>
+    <value>Alemán</value>
   </data>
   <data name="LiteralResource3.Text" xml:space="preserve">
     <value>Yes</value>
@@ -235,7 +235,7 @@
     <value>No</value>
   </data>
   <data name="LiteralResource7.Text" xml:space="preserve">
-    <value>View Temp</value>
+    <value>Mostrar Temp</value>
   </data>
   <data name="LiteralResource8.Text" xml:space="preserve">
     <value>Yes</value>
@@ -280,7 +280,7 @@
     <value />
   </data>
   <data name="save_systemlta_newResource1.Text" xml:space="preserve">
-    <value>Save and Load Data</value>
+    <value>Guardar y cargar datos</value>
   </data>
   <data name="save_systemlta_newResource1.ToolTip" xml:space="preserve">
     <value />
@@ -307,7 +307,7 @@
     <value>General</value>
   </data>
   <data name="tabld1_2Resource1.Text" xml:space="preserve">
-    <value>Password</value>
+    <value>Contraseña</value>
   </data>
   <data name="value_dos_checkResource1.Text" xml:space="preserve">
     <value />
@@ -338,5 +338,8 @@
   </data>
   <data name="yes_tempResource1.ToolTip" xml:space="preserve">
     <value />
+  </data>
+  <data name="tedescoResource1" xml:space="preserve">
+    <value>Alemán</value>
   </data>
 </root>

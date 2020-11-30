@@ -42,7 +42,7 @@
                     <asp:radiobutton ID="german"  runat="server"  GroupName="GROUP6" meta:resourcekey="tedescoResource1"></asp:radiobutton>
 </div>
 <div class="controlli_testo_box">
-                       <asp:literal runat="server" text ="German" meta:resourcekey="tedescoResource22"></asp:literal>
+                       <asp:literal runat="server" text ="German" meta:resourcekey="LiteralResource22"></asp:literal>
 </div>
                 </div>
                 </div>

@@ -375,4 +375,19 @@
   <data name="salva_carica_dati" xml:space="preserve">
     <value>Zapisać  dane</value>
   </data>
+  <data name="Acido_" xml:space="preserve">
+    <value>Acid:</value>
+  </data>
+  <data name="Chlorite_" xml:space="preserve">
+    <value>Chlorite:</value>
+  </data>
+  <data name="Flow_M" xml:space="preserve">
+    <value>Flow meter:</value>
+  </data>
+  <data name="waiting" xml:space="preserve">
+    <value>Wating for Restart</value>
+  </data>
+  <data name="WMeter" xml:space="preserve">
+    <value>Water Meter:</value>
+  </data>
 </root>
