@@ -166,13 +166,13 @@
     <value />
   </data>
   <data name="Label7Resource1.Text" xml:space="preserve">
-    <value>Format</value>
+    <value>Formato</value>
   </data>
   <data name="Literal_dos_Resource19.Text" xml:space="preserve">
     <value>Control dosificación</value>
   </data>
   <data name="Literal_user_Resource19.Text" xml:space="preserve">
-    <value>User Password:</value>
+    <value>Contraseña Usuario:</value>
   </data>
   <data name="Literal2Resource1.Text" xml:space="preserve">
     <value>Fecha y hora</value>
