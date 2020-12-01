@@ -12,7 +12,16 @@ Option Explicit On
 
 
 Partial Public Class main_lta
-
+    
+    '''<summary>
+    '''Controllo Literal_Status.
+    '''</summary>
+    '''<remarks>
+    '''Campo generato automaticamente.
+    '''Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
+    '''</remarks>
+    Protected WithEvents Literal_Status As Global.System.Web.UI.WebControls.Literal
+    
     '''<summary>
     '''Controllo literal3.
     '''</summary>
@@ -21,7 +30,7 @@ Partial Public Class main_lta
     '''Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
     '''</remarks>
     Protected WithEvents literal3 As Global.System.Web.UI.WebControls.Literal
-
+    
     '''<summary>
     '''Controllo literal2.
     '''</summary>
@@ -30,7 +39,7 @@ Partial Public Class main_lta
     '''Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
     '''</remarks>
     Protected WithEvents literal2 As Global.System.Web.UI.WebControls.Literal
-
+    
     '''<summary>
     '''Controllo literal4.
     '''</summary>
@@ -39,7 +48,7 @@ Partial Public Class main_lta
     '''Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
     '''</remarks>
     Protected WithEvents literal4 As Global.System.Web.UI.WebControls.Literal
-
+    
     '''<summary>
     '''Controllo literal5.
     '''</summary>
@@ -48,7 +57,7 @@ Partial Public Class main_lta
     '''Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
     '''</remarks>
     Protected WithEvents literal5 As Global.System.Web.UI.WebControls.Literal
-
+    
     '''<summary>
     '''Controllo literal6.
     '''</summary>
@@ -57,7 +66,7 @@ Partial Public Class main_lta
     '''Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
     '''</remarks>
     Protected WithEvents literal6 As Global.System.Web.UI.WebControls.Literal
-
+    
     '''<summary>
     '''Controllo literal1.
     '''</summary>

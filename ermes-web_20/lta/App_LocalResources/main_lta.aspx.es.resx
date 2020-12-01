@@ -138,4 +138,7 @@
   <data name="PageResource1.Title" xml:space="preserve">
     <value />
   </data>
+  <data name="Literal_StatusResource1.Text" xml:space="preserve">
+    <value>Estados</value>
+  </data>
 </root>

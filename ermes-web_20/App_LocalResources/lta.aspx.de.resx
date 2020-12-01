@@ -255,4 +255,7 @@
   <data name="resetTotaliserResource1.Text" xml:space="preserve">
     <value>&lt;li&gt;&lt;a id ='resetTotaliser_lta_id' href='#'&gt;ResetTotaliser&lt;/a&gt;&lt;/li&gt;</value>
   </data>
+  <data name="Literal_DASHResource1.Text" xml:space="preserve">
+    <value>Dashboard</value>
+  </data>
 </root>

@@ -184,7 +184,7 @@
     <value />
   </data>
   <data name="Label35Resource1.Text" xml:space="preserve">
-    <value>&lt;li&gt;&lt;a id ='Log_1' href='#'&gt;Log Graph&lt;/a&gt;&lt;/li&gt;</value>
+    <value>&lt;li&gt;&lt;a id ='Log_1' href='#'&gt;Registro&lt;/a&gt;&lt;/li&gt;</value>
   </data>
   <data name="Label3Resource1.Text" xml:space="preserve">
     <value>Daniele Leonetti</value>
@@ -217,13 +217,13 @@
     <value />
   </data>
   <data name="Label8Resource1.Text" xml:space="preserve">
-    <value>Dati impianto</value>
+    <value>Datos instalación</value>
   </data>
   <data name="Label8Resource1.ToolTip" xml:space="preserve">
     <value />
   </data>
   <data name="Label9Resource1.Text" xml:space="preserve">
-    <value>Mappa</value>
+    <value>Mapa</value>
   </data>
   <data name="Label9Resource1.ToolTip" xml:space="preserve">
     <value />
@@ -253,6 +253,9 @@
     <value />
   </data>
   <data name="resetTotaliserResource1.Text" xml:space="preserve">
-    <value>&lt;li&gt;&lt;a id ='resetTotaliser_lta_id' href='#'&gt;ResetTotaliser&lt;/a&gt;&lt;/li&gt;</value>
+    <value>&lt;li&gt;&lt;a id ='resetTotaliser_lta_id' href='#'&gt;ResetTotalizador&lt;/a&gt;&lt;/li&gt;</value>
+  </data>
+  <data name="Literal_DASHResource1.Text" xml:space="preserve">
+    <value>Tablero</value>
   </data>
 </root>

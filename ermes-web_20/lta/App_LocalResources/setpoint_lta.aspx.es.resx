@@ -196,13 +196,13 @@
     <value>Proporcional ppm</value>
   </data>
   <data name="LiteralResource2.Text" xml:space="preserve">
-    <value>Costante</value>
+    <value>Constante</value>
   </data>
   <data name="LiteralResource20.Text" xml:space="preserve">
-    <value>Costante 1 %</value>
+    <value>Constante 1 %</value>
   </data>
   <data name="LiteralResource21.Text" xml:space="preserve">
-    <value>Costante 2 %</value>
+    <value>Constante 2 %</value>
   </data>
   <data name="LiteralResource3.Text" xml:space="preserve">
     <value>Proporcional y lectura</value>
@@ -259,7 +259,7 @@
     <value>Proporcional (WM)</value>
   </data>
   <data name="tabld1_3Resource1.Text" xml:space="preserve">
-    <value>Constant</value>
+    <value>Constante</value>
   </data>
   <data name="tabld1_4Resource1.Text" xml:space="preserve">
     <value>Proporcional (WM) + lectura</value>

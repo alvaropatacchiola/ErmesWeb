@@ -5,7 +5,7 @@
  <div class="span12">
     <div class="widget">
 				<div class="widget-head" >
-				  <h3 class="heading" >Status </h3>
+				  <h3 class="heading" ><asp:literal ID="Literal_Status" runat="server" Text="Status" meta:resourcekey="Literal_StatusResource1"></asp:literal> </h3>
           </div>
 				<div class="widget-body">
 				  

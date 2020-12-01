@@ -158,6 +158,15 @@ Partial Public Class lta
     Protected WithEvents HyperLink1 As Global.System.Web.UI.WebControls.HyperLink
     
     '''<summary>
+    '''Controllo Literal_DASH.
+    '''</summary>
+    '''<remarks>
+    '''Campo generato automaticamente.
+    '''Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
+    '''</remarks>
+    Protected WithEvents Literal_DASH As Global.System.Web.UI.WebControls.Literal
+    
+    '''<summary>
     '''Controllo Label17.
     '''</summary>
     '''<remarks>

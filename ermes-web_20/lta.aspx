@@ -105,7 +105,7 @@
 </div>
 </div>
 <div id="indietro" class="btn-primary">
-                            <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/dashboardNew.aspx" ><b class="btn-primary btn-icon glyphicons circle_arrow_left" ><i></i>Dashboard</b></asp:HyperLink></div>
+                            <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/dashboardNew.aspx" ><b class="btn-primary btn-icon glyphicons circle_arrow_left" ><i></i><asp:literal ID="Literal_DASH" runat="server" Text="Dashboard" meta:resourcekey="Literal_DASHResource1"></asp:literal></b></asp:HyperLink></div>
 </div>
 </div>
 

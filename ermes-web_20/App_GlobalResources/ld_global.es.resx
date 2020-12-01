@@ -322,7 +322,7 @@
     <value>Reset</value>
   </data>
   <data name="AllRead" xml:space="preserve">
-    <value>Read Alarma</value>
+    <value>Alarmas</value>
   </data>
   <data name="Analog_Input" xml:space="preserve">
     <value>Analog Input</value>
@@ -346,7 +346,7 @@
     <value>Control Caudal Clorito</value>
   </data>
   <data name="Flow_Control_Water" xml:space="preserve">
-    <value>Contro Caudal agua</value>
+    <value>Control Caudal agua</value>
   </data>
   <data name="Flow_Water_Dlution" xml:space="preserve">
     <value>Flow Water Dlution</value>
