@@ -198,7 +198,7 @@ function leggiDatiGraficoLDLOG(listaIngressi) {
 function leggiDatiGrafico() {
     
     var dateTo = $.datepicker.parseDate("dd-mm-yy", $("#logFrom").val());
-    var dateFrom = new Date();
+    var dateFrom = new Date(dateTo);
     dateFrom.setDate(dateTo.getDate() - parseInt($("#logTypeDays").val()));
     dateTo.setDate(dateTo.getDate() + 1);
     //console.log(dateFrom + "," + dateTo);
@@ -1817,7 +1817,7 @@ function listSetpoint()
     strFinal = strFinal + "<div class=\"widget-head\">"
     strFinal = strFinal + "<h4 class=\"heading glyphicons history\"><i></i>List Update</h4>"
     strFinal = strFinal + "</div>" // end widget head
-    strFinal = strFinal + "<div class=\"widget-body center\">"
+    strFinal = strFinal + "<div class=\"widget-bodySave center\">"
     //strFinal = strFinal + "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.aaaaaaaaaaaaaaaaaaaaaaaaasf egt eeeeeeeeetrt             retyeryery rey eryrrrrrrrrrrrrrrrrrrrrrrrrr reyeryeryerererererererererererererererererererererer re ery              reyerrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr eryery eryyyyyyyyyyyyyyyyyyyy";
     //strFinal = strFinal + "<ul>"
     //strFinal = strFinal + "<li Class=\" glyphicons no-js ok_2\"><i></i> value1</li>"
@@ -2539,9 +2539,13 @@ function updateValori(response, firstValue) {
                     //console.log(jsonParse.variable)
                     areainoutgenericEnable = true;
                     //console.log(resultTextValore)
-                    $(this).text("");
-                    $(this).append("<i></i>" + createLabelGlobal(labelArea) + " " + resultTextValore);
-                    $(this).show();
+                    if (resultTextValore != ""){
+                        $(this).text("");
+                        $(this).append("<i></i>" + createLabelGlobal(labelArea) + " " + resultTextValore);
+                        $(this).show();
+                    }
+                    else
+                        $(this).hide();
                 }
                 
                /* if (resultcanaleValore) {

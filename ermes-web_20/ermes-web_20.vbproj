@@ -143,6 +143,7 @@
     <Content Include="eliminacontroller_query.aspx" />
     <Content Include="image\aquaprox.png" />
     <Content Include="image\background.jpg" />
+    <Content Include="image\bwt.png" />
     <Content Include="image\henkel.png" />
     <Content Include="image\hydrotech.png" />
     <Content Include="image\hydrox.png" />
@@ -317,6 +318,7 @@
     <Content Include="theme\personalizzazione\aloes.css" />
     <Content Include="theme\personalizzazione\aquaprox.css" />
     <Content Include="theme\personalizzazione\astral.css" />
+    <Content Include="theme\personalizzazione\bwt.css" />
     <Content Include="theme\personalizzazione\certidos.css" />
     <Content Include="theme\personalizzazione\cleanwater.css" />
     <Content Include="theme\personalizzazione\ermes.css" />

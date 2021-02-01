@@ -2870,18 +2870,22 @@ Public Class main_function
     Public Shared Function checkUserAdmin(ByVal idUserList As String, ByVal idUser As String, ByVal idCheckList As String) As Boolean
         Dim idUserListSplit() As String = idUserList.Split(",")
         Dim indice As Integer = 0
-        For Each idUserTemp As String In idUserListSplit
+        Try
+            For Each idUserTemp As String In idUserListSplit
 
-            If InStr(idUserTemp, idUser) > 0 Then
-                Exit For
+                If InStr(idUserTemp, idUser) > 0 Then
+                    Exit For
+                End If
+                indice = indice + 1
+            Next
+            Dim idCheckListSplit() As String = idCheckList.Split(",")
+
+            If (idCheckListSplit(indice)) = "True" Then
+                Return True
             End If
-            indice = indice + 1
-        Next
-        Dim idCheckListSplit() As String = idCheckList.Split(",")
+        Catch ex As Exception
 
-        If (idCheckListSplit(indice)) = "True" Then
-            Return True
-        End If
+        End Try
         Return False
     End Function
 End Class

@@ -1,4 +1,6 @@
-﻿Public Class newTest
+﻿Imports System.IO
+
+Public Class newTest
     Inherits System.Web.UI.Page
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
@@ -56,14 +58,27 @@
             'tabella_centurio = query.getRuntimeSchema("OSIN01")
 
         Else
-            Dim strinxXML As String = query.getConfigGlobal(1)
+            'Dim strinxXML As String = query.getConfigGlobal(1)
+            Dim strinxXML As String = getConfigFromFile(serialNumber)
             resultPipe = mainFunctionCenturio.getFileInfoXML(serialNumber, strinxXML, 2)
+            'resultConfigurationInput = mainFunctionCenturio.getFileInfoXML(split_codice(indiceCodice), strinxXML, 3)
             resultConfigurationInput = mainFunctionCenturio.getFileInfoXML(serialNumber, strinxXML, 3)
+            'resultPipe = mainFunctionCenturio.getFileInfoXML(resultPipe = mainFunctionCenturio.getFileInfoXML(split_codice(indiceCodice), strinxXML, 2)
+            'resultConfigurationInput = mainFunctionCenturio.getFileInfoXML(split_codice(indiceCodice), strinxXML, 3)
+
+            'resultConfigurationInput = mainFunctionCenturio.getFileInfoXML(serialNumber, strinxXML, 3)
         End If
 
-        Response.Redirect("mainCenturio.aspx?serial=" + serialNumber + "&codice=" + resultPipe + "&configuration=" + resultConfigurationInput + "&user=andrea&pass=andrea")
+        Response.Redirect("mainCenturio.aspx?serial=" + serialNumber + "&codice=" + resultPipe + "&configuration=" + resultConfigurationInput + "&user=andrea&pass=andrea&sistemaUSA=0")
 
     End Sub
 
+    Private Function getConfigFromFile(ByVal serialReference As String) As String
+        If File.Exists("c:\centurio\" + serialReference + "_xml.txt") Then
+            'Return XmlReader.Create(New StringReader(My.Computer.FileSystem.ReadAllText("c:\centurio\" + serialReference + "_xml.txt")))
+            Return My.Computer.FileSystem.ReadAllText("c:\centurio\" + serialReference + "_xml.txt")
+        End If
+        Return ""
+    End Function
 
 End Class

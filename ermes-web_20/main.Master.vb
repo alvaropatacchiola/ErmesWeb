@@ -33,6 +33,9 @@ Partial Public Class main
         If user IsNot Nothing And password IsNot Nothing Then
             Session("username") = user
             Session("password") = password
+            Session("logo") = "<img src='image/logo_ermes.png' alt='logo'>"
+            Session("stile") = "<link id='themer-stylesheet' href='theme/personalizzazione/ermes.css' rel='stylesheet' type='text/css' />"
+            Session("personalizzazioneStefano") = "<link href=""theme/css/personalizzazione_stefano.css?v=1.5"" rel=""stylesheet"" type=""text/css""/>"
         End If
 
         table_super = query.login_super_user(Session("username"), Session("password"))

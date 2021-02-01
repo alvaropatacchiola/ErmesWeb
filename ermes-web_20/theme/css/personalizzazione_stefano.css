@@ -45,7 +45,7 @@
 .cssmenu .dropdown-menu > .active > a,
 .cssmenu .dropdown-menu > .active > a:hover,
 .cssmenu .dropdown-menu > .active > a:focus {
-  background-color: #025f16 !important;
+  background-color: #005144 !important;
 }
 a.pull-right {
     color: #fff;
@@ -69,6 +69,7 @@ a.btn.btn-default.btn-mini.pull-right {
 }span.strumento {
     font-weight: 400 !important;
 }
+#menu .profile{    border-bottom: none!important;}
 a,
 p a,
 .widget .widget-body.list ul li .count,
@@ -143,9 +144,9 @@ blockquote small,
 }
 .navbar.main .btn-navbar,
 .navbar.main .topnav > li > a {
-      background-color: #035f17 !important;
+      background-color: #005144 !important;
     box-shadow: 0 1px 0 #7b9306 !important;
-    -webkit-box-shadow: 0 1px 0 #035f17 !important;
+    -webkit-box-shadow: none !important;
     -moz-box-shadow: 0 1px 0 #7b9306 !important;
 }
 .heading-buttons {
@@ -227,28 +228,43 @@ blockquote small,
 .btn-info {
     background: #1ca23a;
 }
+#menu .slim-scroll>ul>li a:hover, #menu>ul>li a:hover {background: #4a606d !important;}
+
 .heading-buttons {
   
-    border-left: solid 4px #0b4006;
-    background: #1f481b !important;
+    border-left: solid 4px #3e4c54;
+    background: #4a606d !important;
 
 }
+
+.navbar.main .topnav>li.open .dropdown-menu li{border-bottom: 1px solid #245245 !important;
+    /* border: tomato; */
+    border-top: solid 1px #245245 !important;}
+
+
+.dropdown-menu li>a:hover {background: #2e3d49 !important}
+
+@media (max-width: 767px)
+ .container-fluid {
+    padding: 0 !important;
+}
 #menu {
-    background: #153213;
+    background: #2e3d49 !important;
 }
 #menu .slim-scroll>ul>li.active>a, #menu>ul>li.active>a {
-    background: #1f481b;
+    background: #4a606d !important;
 }
-    #menu .slim-scroll > ul > li, #menu > ul > li {    border-top: solid 1px #183a16;
-    border-bottom: 1px solid #052904;
+    #menu .slim-scroll > ul > li, #menu > ul > li {    border-top: solid 1px #34424e;
+    border-bottom: 1px solid #253542;
     }
     #menu .slim-scroll > ul, #menu > ul {
-        background: #153213;
-        border-top: 1px solid #0b4a09;
+            background: #2e3d49;
+    border-top: 1px solid #2e3944;
     }
-#footer { background:#05290d;
+#footer { background:#2e3d49;
 }
-#menu .slim-scroll > ul > li .count, #menu > ul > li .count { background:#438540;
+#menu .slim-scroll > ul > li .count, #menu > ul > li .count { background:#245245;
 }
-#content .heading-mosaic {    background: #1f481b;
+#content .heading-mosaic {    background: #4a606d;
 }
+.navbar.main .topnav>li.open .dropdown-menu li>a, .navbar.main .topnav>li.open .dropdown-menu li>a:hover, .navbar.main .topnav>li.open .dropdown-menu li>span{color:#fff !important; background: #245245 ;}

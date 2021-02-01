@@ -58,7 +58,8 @@ Public Class dashboardNew
                     Session("mid_super").ToString = "091eeeb4-7d61-4a04-a8fb-804652eb980f" Or
                     Session("mid_super").ToString = "c97c4283-7763-45ab-8ba1-35f2a2912d8b" Or
                     Session("mid_super").ToString = "63216ade-252d-4016-acc2-d100f19b8578" Or
-                    Session("mid_super").ToString = "d03dfb93-095f-4f2a-b0ed-2b1c3059e2f1" Then
+                    Session("mid_super").ToString = "d03dfb93-095f-4f2a-b0ed-2b1c3059e2f1" Or
+                    Session("mid_super").ToString = "564629ca-0d28-4f3e-808b-585424b93dd6" Then
                     block_yagel = False
                     Exit For
                 End If

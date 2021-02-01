@@ -272,7 +272,7 @@
 <asp:Content ID="Content4" ContentPlaceHolderID="script_at_end" runat="server">
          <script src="theme/scripts/demo/calendar_new.js"></script>
         <link href="bootstrap/css/jquery-ui-timepicker-addon.css" rel="stylesheet" />
-        <script type="text/javascript" src="Centurio/centurioMain.js?v=1.40"></script>
+        <script type="text/javascript" src="Centurio/centurioMain.js?v=1.44"></script>
         <asp:Literal ID="javaScriptLiteral" runat="server"></asp:Literal>    
 
     	<script src="theme/scripts/plugins/notifications/Gritter/js/jquery.gritter.min.js"></script>

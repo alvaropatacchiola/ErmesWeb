@@ -393,10 +393,14 @@ nexLoopLabel:
             tabMenu.Text = tabMenu.Text + "<div class='btn-primary'>"
             tabMenu.Text = tabMenu.Text + "<b class='btn-primary btn-icon glyphicons ok'><button id=""modals-bootbox-confirm"" class=""btn btn-primary"" style=""margin-top:-3px;"">" + GetGlobalResourceObject("centurio_global", "saveAndLoad") + "</button><i></i></b></div>"
         Else
-            If main_function.checkUserAdmin(identificativoUser, Session("mid_user").ToString, modificaSetpoint) Then
-                tabMenu.Text = tabMenu.Text + "<div class='btn-primary'>"
-                tabMenu.Text = tabMenu.Text + "<b class='btn-primary btn-icon glyphicons ok'><button id=""modals-bootbox-confirm"" class=""btn btn-primary"" style=""margin-top:-3px;"">" + GetGlobalResourceObject("centurio_global", "saveAndLoad") + "</button><i></i></b></div>"
-            End If
+            Try
+                If main_function.checkUserAdmin(identificativoUser, Session("mid_user").ToString, modificaSetpoint) Then
+                    tabMenu.Text = tabMenu.Text + "<div class='btn-primary'>"
+                    tabMenu.Text = tabMenu.Text + "<b class='btn-primary btn-icon glyphicons ok'><button id=""modals-bootbox-confirm"" class=""btn btn-primary"" style=""margin-top:-3px;"">" + GetGlobalResourceObject("centurio_global", "saveAndLoad") + "</button><i></i></b></div>"
+                End If
+            Catch ex As Exception
+
+            End Try
         End If
         'tabMenu.Text = tabMenu.Text + "</div>"
         Return stringaIstanza

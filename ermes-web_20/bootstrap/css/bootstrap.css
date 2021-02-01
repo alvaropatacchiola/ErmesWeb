@@ -4354,7 +4354,7 @@ input[type="submit"].btn.btn-mini {
   position: absolute;
   top: 50%;
   left: 50%;
-	height:300px;
+	
   z-index: 1050;
 	overflow: hidden;
   width:300px;
@@ -4377,6 +4377,7 @@ border-radius: 50%;
 .modal.fade.in {
   top: 30%;
 	border-radius: 5%;
+    overflow:auto !important
 }
 .modal-header {
   padding: 9px 15px;
@@ -4391,8 +4392,8 @@ border-radius: 50%;
 }
 .modal-body {
  
-  max-height: 300px;
-	height:300px;
+  /*max-height: 300px;
+	height:300px;*/
 	width:100%;
  
 }

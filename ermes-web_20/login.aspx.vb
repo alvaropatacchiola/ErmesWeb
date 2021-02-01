@@ -119,10 +119,18 @@ Public Class login
                                                                     Session("stile") = "<link id='themer-stylesheet' href='theme/personalizzazione/hydrotech.css' rel='stylesheet' type='text/css' />"
 
                                                                 Else
-                                                                    Session("logo") = "<img src='image/logo_ermes.png' alt='logo'>"
-                                                                    Session("stile") = "<link id='themer-stylesheet' href='theme/personalizzazione/ermes.css' rel='stylesheet' type='text/css' />"
-                                                                    literal_stefano.Text = "<link href=""theme/css/personalizzazione_stefano.css"" rel=""stylesheet"" type=""text/css""/>"
-                                                                    Session("personalizzazioneStefano") = "<link href=""theme/css/personalizzazione_stefano.css"" rel=""stylesheet"" type=""text/css""/>"
+                                                                    If InStr(header_script, "bwt") <> 0 Then 'personalizzazione 
+                                                                        Session("logo") = "<img src='image/bwt.png' alt='logo'>"
+                                                                        Session("stile") = "<link id='themer-stylesheet' href='theme/personalizzazione/bwt.css' rel='stylesheet' type='text/css' />"
+                                                                    Else
+                                                                        'Session("logo") = "<img src='image/bwt.png' alt='logo'>"
+                                                                        'Session("stile") = "<link id='themer-stylesheet' href='theme/personalizzazione/bwt.css' rel='stylesheet' type='text/css' />"
+
+                                                                        Session("logo") = "<img src='image/logo_ermes.png' alt='logo'>"
+                                                                        Session("stile") = "<link id='themer-stylesheet' href='theme/personalizzazione/ermes.css' rel='stylesheet' type='text/css' />"
+                                                                        literal_stefano.Text = "<link href=""theme/css/personalizzazione_stefano.css"" rel=""stylesheet"" type=""text/css""/>"
+                                                                        Session("personalizzazioneStefano") = "<link href=""theme/css/personalizzazione_stefano.css?v=1.5"" rel=""stylesheet"" type=""text/css""/>"
+                                                                    End If
 
 
                                                                 End If
