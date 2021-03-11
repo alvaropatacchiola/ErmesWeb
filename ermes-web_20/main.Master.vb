@@ -33,9 +33,9 @@ Partial Public Class main
         If user IsNot Nothing And password IsNot Nothing Then
             Session("username") = user
             Session("password") = password
-            Session("logo") = "<img src='image/logo_ermes.png' alt='logo'>"
-            Session("stile") = "<link id='themer-stylesheet' href='theme/personalizzazione/ermes.css' rel='stylesheet' type='text/css' />"
-            Session("personalizzazioneStefano") = "<link href=""theme/css/personalizzazione_stefano.css?v=1.5"" rel=""stylesheet"" type=""text/css""/>"
+            Session("logo") = "<img src='" + ResolveUrl("~/") + "/image/logo_ermes.png' alt='logo'>"
+            Session("stile") = "<link id='themer-stylesheet' href='" + ResolveUrl("~/") + "/theme/personalizzazione/ermes.css' rel='stylesheet' type='text/css' />"
+            Session("personalizzazioneStefano") = "<link href=""" + ResolveUrl("~/") + "/theme/css/personalizzazione_stefano.css?v=1.5"" rel=""stylesheet"" type=""text/css""/>"
         End If
 
         table_super = query.login_super_user(Session("username"), Session("password"))
@@ -166,62 +166,62 @@ Partial Public Class main
 
         Select Case Session("selectedLanguage")
             Case "en"
-                Literal2.Text = Literal2.Text + "<a href=""#"" data-toggle=""dropdown""><img src=""theme/images/lang/en.png"" alt=""en""/></a>"
+                Literal2.Text = Literal2.Text + "<a href=""#"" data-toggle=""dropdown""><img src=""" + ResolveUrl("~/") + "theme/images/lang/en.png"" alt=""en""/></a>"
                 Literal2.Text = Literal2.Text + "<ul class=""dropdown-menu pull-left"">"
-                Literal2.Text = Literal2.Text + "<li class=""active""><a href=""#"" title=""English""><img src=""theme/images/lang/en.png"" alt=""English""> English</a></li>"
-                Literal2.Text = Literal2.Text + "<li><a href=""login.aspx?lang=it"" title=""Italian""><img src=""theme/images/lang/it.png"" alt=""Italian""> Italian</a></li>"
-                Literal2.Text = Literal2.Text + "<li><a href=""login.aspx?lang=de"" title=""Deutsch""><img src=""theme/images/lang/de.png"" alt=""Deutsch""> Deutsch</a></li>"
-                Literal2.Text = Literal2.Text + "<li ><a href='login.aspx?lang=fr' title='French'><img src='theme/images/lang/fr.png' alt='French'> French</a></li>"
-                Literal2.Text = Literal2.Text + "<li ><a href='login.aspx?lang=pl' title='Polish'><img src='theme/images/lang/pl.png' alt='Polish'> Polish</a></li>"
-                Literal2.Text = Literal2.Text + "<li ><a href='login.aspx?lang=es' title='Spanish'><img src='theme/images/lang/ES.png' alt='Spanish'> Spanish</a></li>"
+                Literal2.Text = Literal2.Text + "<li class=""active""><a href=""#"" title=""English""><img src=""" + ResolveUrl("~/") + "theme/images/lang/en.png"" alt=""English""> English</a></li>"
+                Literal2.Text = Literal2.Text + "<li><a href=""" + ResolveUrl("~/") + "/login.aspx?lang=it"" title=""Italian""><img src=""" + ResolveUrl("~/") + "theme/images/lang/it.png"" alt=""Italian""> Italian</a></li>"
+                Literal2.Text = Literal2.Text + "<li><a href=""" + ResolveUrl("~/") + "/login.aspx?lang=de"" title=""Deutsch""><img src=""" + ResolveUrl("~/") + "theme/images/lang/de.png"" alt=""Deutsch""> Deutsch</a></li>"
+                Literal2.Text = Literal2.Text + "<li ><a href='" + ResolveUrl("~/") + "/login.aspx?lang=fr' title='French'><img src='" + ResolveUrl("~/") + "theme/images/lang/fr.png' alt='French'> French</a></li>"
+                Literal2.Text = Literal2.Text + "<li ><a href='" + ResolveUrl("~/") + "/login.aspx?lang=pl' title='Polish'><img src='" + ResolveUrl("~/") + "theme/images/lang/pl.png' alt='Polish'> Polish</a></li>"
+                Literal2.Text = Literal2.Text + "<li ><a href='" + ResolveUrl("~/") + "/login.aspx?lang=es' title='Spanish'><img src='" + ResolveUrl("~/") + "theme/images/lang/ES.png' alt='Spanish'> Spanish</a></li>"
 
             Case "it"
-                Literal2.Text = Literal2.Text + "<a href=""#"" data-toggle=""dropdown""><img src=""theme/images/lang/it.png"" alt=""it""/></a>"
+                Literal2.Text = Literal2.Text + "<a href=""#"" data-toggle=""dropdown""><img src=""" + ResolveUrl("~/") + "theme/images/lang/it.png"" alt=""it""/></a>"
                 Literal2.Text = Literal2.Text + "<ul class=""dropdown-menu pull-left"">"
-                Literal2.Text = Literal2.Text + "<li class=""active""><a href=""#"" title=""Italiano""><img src=""theme/images/lang/it.png"" alt=""Italiano""> Italiano</a></li>"
-                Literal2.Text = Literal2.Text + "<li><a href=""login.aspx?lang=de"" title=""Tedesco""><img src=""theme/images/lang/de.png"" alt=""Tedesco""> Tedesco</a></li>"
-                Literal2.Text = Literal2.Text + "<li><a href=""login.aspx?lang=en"" title=""Inglese""><img src=""theme/images/lang/en.png"" alt=""Inglese""> Inglese</a></li>"
-                Literal2.Text = Literal2.Text + "<li ><a href='login.aspx?lang=fr' title='Francese'><img src='theme/images/lang/fr.png' alt='Francese'> Francese</a></li>"
-                Literal2.Text = Literal2.Text + "<li ><a href='login.aspx?lang=pl' title='Polish'><img src='theme/images/lang/pl.png' alt='Polish'> Polish</a></li>"
-                Literal2.Text = Literal2.Text + "<li ><a href='login.aspx?lang=es' title='Spanish'><img src='theme/images/lang/ES.png' alt='Spanish'> Spagnolo</a></li>"
+                Literal2.Text = Literal2.Text + "<li class=""active""><a href=""#"" title=""Italiano""><img src=""" + ResolveUrl("~/") + "theme/images/lang/it.png"" alt=""Italiano""> Italiano</a></li>"
+                Literal2.Text = Literal2.Text + "<li><a href=""" + ResolveUrl("~/") + "/login.aspx?lang=de"" title=""Tedesco""><img src=""" + ResolveUrl("~/") + "theme/images/lang/de.png"" alt=""Tedesco""> Tedesco</a></li>"
+                Literal2.Text = Literal2.Text + "<li><a href=""" + ResolveUrl("~/") + "/login.aspx?lang=en"" title=""Inglese""><img src=""" + ResolveUrl("~/") + "theme/images/lang/en.png"" alt=""Inglese""> Inglese</a></li>"
+                Literal2.Text = Literal2.Text + "<li ><a href='" + ResolveUrl("~/") + "/login.aspx?lang=fr' title='Francese'><img src='" + ResolveUrl("~/") + "theme/images/lang/fr.png' alt='Francese'> Francese</a></li>"
+                Literal2.Text = Literal2.Text + "<li ><a href='" + ResolveUrl("~/") + "/login.aspx?lang=pl' title='Polish'><img src='" + ResolveUrl("~/") + "theme/images/lang/pl.png' alt='Polish'> Polish</a></li>"
+                Literal2.Text = Literal2.Text + "<li ><a href='" + ResolveUrl("~/") + "/login.aspx?lang=es' title='Spanish'><img src='" + ResolveUrl("~/") + "theme/images/lang/ES.png' alt='Spanish'> Spagnolo</a></li>"
 
             Case "de"
-                Literal2.Text = Literal2.Text + "<a href=""#"" data-toggle=""dropdown""><img src=""theme/images/lang/de.png"" alt=""de""/></a>"
+                Literal2.Text = Literal2.Text + "<a href=""#"" data-toggle=""dropdown""><img src=""" + ResolveUrl("~/") + "theme/images/lang/de.png"" alt=""de""/></a>"
                 Literal2.Text = Literal2.Text + "<ul class=""dropdown-menu pull-left"">"
-                Literal2.Text = Literal2.Text + "<li class=""active""><a href=""#"" title=""Deutsch""><img src=""theme/images/lang/de.png"" alt=""Deutsch""> Deutsch</a></li>"
-                Literal2.Text = Literal2.Text + "<li><a href=""login.aspx?lang=it"" title=""Italienisch""><img src=""theme/images/lang/it.png"" alt=""Italienisch""> Italienisch</a></li>"
-                Literal2.Text = Literal2.Text + "<li><a href=""login.aspx?lang=en"" title=""Englisch""><img src=""theme/images/lang/en.png"" alt=""Englisch""> Englisch</a></li>"
-                Literal2.Text = Literal2.Text + "<li ><a href='login.aspx?lang=fr' title='Französisch'><img src='theme/images/lang/fr.png' alt='Französisch'> Französisch</a></li>"
-                Literal2.Text = Literal2.Text + "<li ><a href='login.aspx?lang=pl' title='Polish'><img src='theme/images/lang/pl.png' alt='Polish'> Polish</a></li>"
-                Literal2.Text = Literal2.Text + "<li ><a href='login.aspx?lang=es' title='Spanish'><img src='theme/images/lang/ES.png' alt='Spanish'> Spanisch</a></li>"
+                Literal2.Text = Literal2.Text + "<li class=""active""><a href=""#"" title=""Deutsch""><img src=""" + ResolveUrl("~/") + "theme/images/lang/de.png"" alt=""Deutsch""> Deutsch</a></li>"
+                Literal2.Text = Literal2.Text + "<li><a href=""" + ResolveUrl("~/") + "/login.aspx?lang=it"" title=""Italienisch""><img src=""" + ResolveUrl("~/") + "theme/images/lang/it.png"" alt=""Italienisch""> Italienisch</a></li>"
+                Literal2.Text = Literal2.Text + "<li><a href=""" + ResolveUrl("~/") + "/login.aspx?lang=en"" title=""Englisch""><img src=""" + ResolveUrl("~/") + "theme/images/lang/en.png"" alt=""Englisch""> Englisch</a></li>"
+                Literal2.Text = Literal2.Text + "<li ><a href='" + ResolveUrl("~/") + "/login.aspx?lang=fr' title='Französisch'><img src='" + ResolveUrl("~/") + "theme/images/lang/fr.png' alt='Französisch'> Französisch</a></li>"
+                Literal2.Text = Literal2.Text + "<li ><a href='" + ResolveUrl("~/") + "/login.aspx?lang=pl' title='Polish'><img src='" + ResolveUrl("~/") + "theme/images/lang/pl.png' alt='Polish'> Polish</a></li>"
+                Literal2.Text = Literal2.Text + "<li ><a href='" + ResolveUrl("~/") + "/login.aspx?lang=es' title='Spanish'><img src='" + ResolveUrl("~/") + "theme/images/lang/ES.png' alt='Spanish'> Spanisch</a></li>"
             Case "fr"
-                Literal2.Text = Literal2.Text + "<a href='#' data-toggle='dropdown'><img src='theme/images/lang/fr.png' alt='fr' /></a>"
+                Literal2.Text = Literal2.Text + "<a href='#' data-toggle='dropdown'><img src='" + ResolveUrl("~/") + "theme/images/lang/fr.png' alt='fr' /></a>"
                 Literal2.Text = Literal2.Text + "<ul class=""dropdown-menu pull-left"">"
-                Literal2.Text = Literal2.Text + "<li class='active'><a href='login.aspx?lang=fr' title='Français'><img src='theme/images/lang/fr.png' alt='Français'> Français</a></li>"
-                Literal2.Text = Literal2.Text + "<li ><a href='login.aspx?lang=it' title='Italien'><img src='theme/images/lang/it.png' alt='Italien'> Italien</a></li>"
-                Literal2.Text = Literal2.Text + "<li ><a href='login.aspx?lang=en' title='Anglais'><img src='theme/images/lang/en.png' alt='Anglais'> Anglais</a></li>"
-                Literal2.Text = Literal2.Text + "<li ><a href='login.aspx?lang=de' title='Allemand'><img src='theme/images/lang/de.png' alt='Allemand'> Allemand</a></li>"
-                Literal2.Text = Literal2.Text + "<li ><a href='login.aspx?lang=pl' title='Polish'><img src='theme/images/lang/pl.png' alt='Polish'> Polish</a></li>"
-                Literal2.Text = Literal2.Text + "<li ><a href='login.aspx?lang=es' title='Spanish'><img src='theme/images/lang/ES.png' alt='Spanish'> Espagnol</a></li>"
+                Literal2.Text = Literal2.Text + "<li class='active'><a href='" + ResolveUrl("~/") + "/login.aspx?lang=fr' title='Français'><img src='" + ResolveUrl("~/") + "theme/images/lang/fr.png' alt='Français'> Français</a></li>"
+                Literal2.Text = Literal2.Text + "<li ><a href='" + ResolveUrl("~/") + "/login.aspx?lang=it' title='Italien'><img src='" + ResolveUrl("~/") + "theme/images/lang/it.png' alt='Italien'> Italien</a></li>"
+                Literal2.Text = Literal2.Text + "<li ><a href='" + ResolveUrl("~/") + "/login.aspx?lang=en' title='Anglais'><img src='" + ResolveUrl("~/") + "theme/images/lang/en.png' alt='Anglais'> Anglais</a></li>"
+                Literal2.Text = Literal2.Text + "<li ><a href='" + ResolveUrl("~/") + "/login.aspx?lang=de' title='Allemand'><img src='" + ResolveUrl("~/") + "theme/images/lang/de.png' alt='Allemand'> Allemand</a></li>"
+                Literal2.Text = Literal2.Text + "<li ><a href='" + ResolveUrl("~/") + "/login.aspx?lang=pl' title='Polish'><img src='" + ResolveUrl("~/") + "theme/images/lang/pl.png' alt='Polish'> Polish</a></li>"
+                Literal2.Text = Literal2.Text + "<li ><a href='" + ResolveUrl("~/") + "/login.aspx?lang=es' title='Spanish'><img src='" + ResolveUrl("~/") + "theme/images/lang/ES.png' alt='Spanish'> Espagnol</a></li>"
 
             Case "pl"
-                Literal2.Text = Literal2.Text + "<a href=""#"" data-toggle=""dropdown""><img src=""theme/images/lang/pl.png"" alt=""pl""/></a>"
+                Literal2.Text = Literal2.Text + "<a href=""#"" data-toggle=""dropdown""><img src=""" + ResolveUrl("~/") + "theme/images/lang/pl.png"" alt=""pl""/></a>"
                 Literal2.Text = Literal2.Text + "<ul class=""dropdown-menu pull-left"">"
-                Literal2.Text = Literal2.Text + "<li class=""active""><a href=""#"" title=""Polish""><img src=""theme/images/lang/en.png"" alt=""Polish""> Polish</a></li>"
-                Literal2.Text = Literal2.Text + "<li><a href=""login.aspx?lang=it"" title=""Italian""><img src=""theme/images/lang/it.png"" alt=""Italian""> Italian</a></li>"
-                Literal2.Text = Literal2.Text + "<li><a href=""login.aspx?lang=de"" title=""Deutsch""><img src=""theme/images/lang/de.png"" alt=""Deutsch""> Deutsch</a></li>"
-                Literal2.Text = Literal2.Text + "<li ><a href='login.aspx?lang=fr' title='French'><img src='theme/images/lang/fr.png' alt='French'> French</a></li>"
-                Literal2.Text = Literal2.Text + "<li><a href=""login.aspx?lang=en"" title=""English""><img src=""theme/images/lang/en.png"" alt=""English""> English</a></li>"
-                Literal2.Text = Literal2.Text + "<li ><a href='login.aspx?lang=es' title='Spanish'><img src='theme/images/lang/ES.png' alt='Spanish'> Hiszpański</a></li>"
+                Literal2.Text = Literal2.Text + "<li class=""active""><a href=""#"" title=""Polish""><img src=""" + ResolveUrl("~/") + "theme/images/lang/en.png"" alt=""Polish""> Polish</a></li>"
+                Literal2.Text = Literal2.Text + "<li><a href=""" + ResolveUrl("~/") + "/login.aspx?lang=it"" title=""Italian""><img src=""" + ResolveUrl("~/") + "theme/images/lang/it.png"" alt=""Italian""> Italian</a></li>"
+                Literal2.Text = Literal2.Text + "<li><a href=""" + ResolveUrl("~/") + "/login.aspx?lang=de"" title=""Deutsch""><img src=""" + ResolveUrl("~/") + "theme/images/lang/de.png"" alt=""Deutsch""> Deutsch</a></li>"
+                Literal2.Text = Literal2.Text + "<li ><a href='" + ResolveUrl("~/") + "/login.aspx?lang=fr' title='French'><img src='" + ResolveUrl("~/") + "theme/images/lang/fr.png' alt='French'> French</a></li>"
+                Literal2.Text = Literal2.Text + "<li><a href=""" + ResolveUrl("~/") + "/login.aspx?lang=en"" title=""English""><img src=""" + ResolveUrl("~/") + "theme/images/lang/en.png"" alt=""English""> English</a></li>"
+                Literal2.Text = Literal2.Text + "<li ><a href='" + ResolveUrl("~/") + "/login.aspx?lang=es' title='Spanish'><img src='" + ResolveUrl("~/") + "theme/images/lang/ES.png' alt='Spanish'> Hiszpański</a></li>"
             Case "es"
-                Literal2.Text = Literal2.Text + "<a href='#' data-toggle='dropdown'><img src='theme/images/lang/ES.png' alt='es' /></a>"
+                Literal2.Text = Literal2.Text + "<a href='#' data-toggle='dropdown'><img src='" + ResolveUrl("~/") + "theme/images/lang/ES.png' alt='es' /></a>"
                 Literal2.Text = Literal2.Text + "<ul class=""dropdown-menu pull-left"">"
-                Literal2.Text = Literal2.Text + "<li class=""active""><a href=""#"" title=""Polish""><img src=""theme/images/lang/ES.png"" alt=""Polish""> español</a></li>"
-                Literal2.Text = Literal2.Text + "<li ><a href='login.aspx?lang=pl' title='Polish'><img src='theme/images/lang/pl.png' alt='Polish'> Polaco</a></li>"
-                Literal2.Text = Literal2.Text + "<li ><a href='login.aspx?lang=it' title='Italian'><img src='theme/images/lang/it.png' alt='Italian'> Italiano</a></li>"
-                Literal2.Text = Literal2.Text + "<li ><a href='login.aspx?lang=de' title='Deutsch'><img src='theme/images/lang/de.png' alt='Deutsch'> Alemán</a></li>"
-                Literal2.Text = Literal2.Text + "<li ><a href='login.aspx?lang=fr' title='French'><img src='theme/images/lang/fr.png' alt='French'> Francés</a></li>"
-                Literal2.Text = Literal2.Text + "<li ><a href='login.aspx?lang=en' title='Inglese'><img src='theme/images/lang/en.png' alt='English'> Inglés</a></li>"
+                Literal2.Text = Literal2.Text + "<li class=""active""><a href=""#"" title=""Polish""><img src=""" + ResolveUrl("~/") + "theme/images/lang/ES.png"" alt=""Polish""> español</a></li>"
+                Literal2.Text = Literal2.Text + "<li ><a href='vlogin.aspx?lang=pl' title='Polish'><img src='" + ResolveUrl("~/") + "theme/images/lang/pl.png' alt='Polish'> Polaco</a></li>"
+                Literal2.Text = Literal2.Text + "<li ><a href='" + ResolveUrl("~/") + "/login.aspx?lang=it' title='Italian'><img src='" + ResolveUrl("~/") + "theme/images/lang/it.png' alt='Italian'> Italiano</a></li>"
+                Literal2.Text = Literal2.Text + "<li ><a href='" + ResolveUrl("~/") + "/login.aspx?lang=de' title='Deutsch'><img src='" + ResolveUrl("~/") + "theme/images/lang/de.png' alt='Deutsch'> Alemán</a></li>"
+                Literal2.Text = Literal2.Text + "<li ><a href='" + ResolveUrl("~/") + "/login.aspx?lang=fr' title='French'><img src='" + ResolveUrl("~/") + "theme/images/lang/fr.png' alt='French'> Francés</a></li>"
+                Literal2.Text = Literal2.Text + "<li ><a href='" + ResolveUrl("~/") + "/login.aspx?lang=en' title='Inglese'><img src='" + ResolveUrl("~/") + "theme/images/lang/en.png' alt='English'> Inglés</a></li>"
 
         End Select
         Literal2.Text = Literal2.Text + "</ul>"
@@ -229,7 +229,7 @@ Partial Public Class main
 
 
         Literal2.Text = Literal2.Text + "<li class=""hidden-phone"">"
-        Literal2.Text = Literal2.Text + "<a href=""communication.aspx"" data-toggle=""collapse"" data-target=""#"" class=""glyphicons notes""><i></i><p class =""testo"">" + GetGlobalResourceObject("main_master_global", "communication") + "</p></a>"
+        Literal2.Text = Literal2.Text + "<a href=""" + ResolveUrl("~/") + "/communication.aspx"" data-toggle=""collapse"" data-target=""#"" class=""glyphicons notes""><i></i><p class =""testo"">" + GetGlobalResourceObject("main_master_global", "communication") + "</p></a>"
         'Literal2.Text = Literal2.Text + "<ul class=""dropdown-menu pull-right"">"
 
         'Literal2.Text = Literal2.Text + "<li class=""dropdown submenu"">"
@@ -249,10 +249,10 @@ Partial Public Class main
             Literal2.Text = Literal2.Text + "<li class=""dropdown submenu"">"
 
 
-            Literal2.Text = Literal2.Text + "<li><a href=""addimpianto.aspx"">" + GetGlobalResourceObject("main_master_global", "aggiungi") + "</a></li>"
-            Literal2.Text = Literal2.Text + "<li><a href=""modifica_impianto.aspx"">" + GetGlobalResourceObject("main_master_global", "modifica") + "</a></li>"
-            Literal2.Text = Literal2.Text + "<li><a href=""eliminaimpianto.aspx"">" + GetGlobalResourceObject("main_master_global", "elimina") + "</a></li>"
-            Literal2.Text = Literal2.Text + "<li><a href=""eliminaController.aspx"">" + GetGlobalResourceObject("main_master_global", "eliminaController") + "</a></li>"
+            Literal2.Text = Literal2.Text + "<li><a href=""" + ResolveUrl("~/") + "addimpianto.aspx"">" + GetGlobalResourceObject("main_master_global", "aggiungi") + "</a></li>"
+            Literal2.Text = Literal2.Text + "<li><a href=""" + ResolveUrl("~/") + "modifica_impianto.aspx"">" + GetGlobalResourceObject("main_master_global", "modifica") + "</a></li>"
+            Literal2.Text = Literal2.Text + "<li><a href=""" + ResolveUrl("~/") + "eliminaimpianto.aspx"">" + GetGlobalResourceObject("main_master_global", "elimina") + "</a></li>"
+            Literal2.Text = Literal2.Text + "<li><a href=""" + ResolveUrl("~/") + "eliminaController.aspx"">" + GetGlobalResourceObject("main_master_global", "eliminaController") + "</a></li>"
 
             Literal2.Text = Literal2.Text + "</ul>"
             Literal2.Text = Literal2.Text + "</li>"
@@ -264,8 +264,8 @@ Partial Public Class main
             Literal2.Text = Literal2.Text + "<li class=""dropdown submenu"">"
 
 
-            Literal2.Text = Literal2.Text + "<li><a href=""drag_usb_log.aspx"">" + GetGlobalResourceObject("main_master_global", "uploadFile") + "</a></li>"
-            Literal2.Text = Literal2.Text + "<li><a href=""log_usb_list.aspx"">" + GetGlobalResourceObject("main_master_global", "latestLog") + "</a></li>"
+            Literal2.Text = Literal2.Text + "<li><a href=""" + ResolveUrl("~/") + "drag_usb_log.aspx"">" + GetGlobalResourceObject("main_master_global", "uploadFile") + "</a></li>"
+            Literal2.Text = Literal2.Text + "<li><a href=""" + ResolveUrl("~/") + "log_usb_list.aspx"">" + GetGlobalResourceObject("main_master_global", "latestLog") + "</a></li>"
             'Literal2.Text = Literal2.Text + "<li><a href=""modifica_utilizzatore.aspx"">" + GetGlobalResourceObject("main_master_global", "modifica") + "</a></li>"
             'Literal2.Text = Literal2.Text + "<li><a href=""eliminautilizzatore.aspx"">" + GetGlobalResourceObject("main_master_global", "elimina") + "</a></li>"
 
@@ -280,9 +280,9 @@ Partial Public Class main
             Literal2.Text = Literal2.Text + "<li class=""dropdown submenu"">"
 
 
-            Literal2.Text = Literal2.Text + "<li><a href=""addutilizzatore.aspx"">" + GetGlobalResourceObject("main_master_global", "aggiungi") + "</a></li>"
-            Literal2.Text = Literal2.Text + "<li><a href=""modifica_utilizzatore.aspx"">" + GetGlobalResourceObject("main_master_global", "modifica") + "</a></li>"
-            Literal2.Text = Literal2.Text + "<li><a href=""eliminautilizzatore.aspx"">" + GetGlobalResourceObject("main_master_global", "elimina") + "</a></li>"
+            Literal2.Text = Literal2.Text + "<li><a href=""" + ResolveUrl("~/") + "addutilizzatore.aspx"">" + GetGlobalResourceObject("main_master_global", "aggiungi") + "</a></li>"
+            Literal2.Text = Literal2.Text + "<li><a href=""" + ResolveUrl("~/") + "modifica_utilizzatore.aspx"">" + GetGlobalResourceObject("main_master_global", "modifica") + "</a></li>"
+            Literal2.Text = Literal2.Text + "<li><a href=""" + ResolveUrl("~/") + "eliminautilizzatore.aspx"">" + GetGlobalResourceObject("main_master_global", "elimina") + "</a></li>"
 
             Literal2.Text = Literal2.Text + "</ul>"
             Literal2.Text = Literal2.Text + "</li>"
@@ -299,7 +299,7 @@ Partial Public Class main
         Literal2.Text = Literal2.Text + "<li class=""highlight profile"">"
         Literal2.Text = Literal2.Text + "<span>"
         If Session("super_user") Then
-            Literal2.Text = Literal2.Text + "<span class=""heading"">Profile <a href=""modifica_utente.aspx"" class=""pull-right"">" + GetGlobalResourceObject("main_master_global", "edit") + "</a></span>"
+            Literal2.Text = Literal2.Text + "<span class=""heading"">Profile <a href=""" + ResolveUrl("~/") + "modifica_utente.aspx"" class=""pull-right"">" + GetGlobalResourceObject("main_master_global", "edit") + "</a></span>"
         End If
         Literal2.Text = Literal2.Text + "<span class=""img""></span>"
         Literal2.Text = Literal2.Text + " <span class=""details"">"
@@ -312,7 +312,7 @@ Partial Public Class main
         Literal2.Text = Literal2.Text + "</li>"
         Literal2.Text = Literal2.Text + "<li>"
         Literal2.Text = Literal2.Text + "<span>"
-        Literal2.Text = Literal2.Text + "<a class=""btn btn-default btn-mini pull-right"" href=""session_destroy.aspx"">" + GetGlobalResourceObject("main_master_global", "signout") + "</a>"
+        Literal2.Text = Literal2.Text + "<a class=""btn btn-default btn-mini pull-right"" href=""" + ResolveUrl("~/") + "session_destroy.aspx"">" + GetGlobalResourceObject("main_master_global", "signout") + "</a>"
         Literal2.Text = Literal2.Text + "</span>"
         Literal2.Text = Literal2.Text + "</li>"
         Literal2.Text = Literal2.Text + "</ul>"
@@ -357,7 +357,7 @@ Partial Public Class main
         intestazione = intestazione + "<a href="""" class=""glyphicons right_arrow"">" + Session("username") + "<i></i></a>" +
                 "</span></span>"
         intestazione = intestazione + "<ul id=""leftMenuCenturio"">" +
-                "<li class=""glyphicons display active""><a href=""dashboardNew.aspx""><i></i><span>" + GetGlobalResourceObject("main_master_global", "dashboard") + "</span></a></li>"
+                "<li class=""glyphicons display active""><a href=""" + ResolveUrl("~/") + "dashboardNew.aspx""><i></i><span>" + GetGlobalResourceObject("main_master_global", "dashboard") + "</span></a></li>"
         precedente_impianto = ""
         For Each dc In tabella_impianto.Rows
             Dim alarm_color As String = ""
@@ -578,7 +578,7 @@ Partial Public Class main
             intestazione_1 = intestazione_1 + "</li>"
         Else ' non c'è nessun impianto
             If Session("super_user") Then
-                intestazione_1 = "<li class=""hasSubmenu glyphicons circle_plus""><a data-toggle=""collapse"" href=""addimpianto.aspx?layout_type=fluid&amp;menu_position=menu-left&amp;style=style-dark""><i></i><span>" + GetGlobalResourceObject("main_master_global", "aggiungi_impianto") + "</span></a></li>"
+                intestazione_1 = "<li class=""hasSubmenu glyphicons circle_plus""><a data-toggle=""collapse"" href=""" + ResolveUrl("~/") + "addimpianto.aspx?layout_type=fluid&amp;menu_position=menu-left&amp;style=style-dark""><i></i><span>" + GetGlobalResourceObject("main_master_global", "aggiungi_impianto") + "</span></a></li>"
             Else
                 intestazione_1 = "<li class=""hasSubmenu glyphicons circle_plus""><a data-toggle=""collapse"" href=""#menu_components""><i></i><span>" + GetGlobalResourceObject("main_master_global", "nessun_impianto") + "</span></a></li>"
             End If

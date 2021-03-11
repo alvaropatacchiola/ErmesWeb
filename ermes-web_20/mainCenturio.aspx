@@ -54,7 +54,9 @@
 									<li class="glyphicons envelope primary"><i></i><asp:Literal ID="indirizzoMail" runat="server"></asp:Literal></li>
 								</ul>
 							</span>
-							<br><asp:Literal ID="codiceSeriale" runat="server"></asp:Literal></br>
+							<br><asp:Literal ID="codiceSeriale" runat="server"></asp:Literal>
+                        <br>
+                        </br>
 					</div>
 					
 					<div class="widget widget-tabs">
@@ -63,7 +65,7 @@
 						
 							<div id='cssmenu2' class="cssmenu">
 								<ul>
-								   <li class="dashboard"><a href='DashboardNew.aspx'><asp:Literal ID="dashboard" runat="server" Text="Dashboard"></asp:Literal></a></li>
+                                    <li class="dashboard"><a href='DashboardNew.aspx'><asp:Literal ID="dashboard" runat="server" Text="Dashboard"></asp:Literal></a></li>
                                     <asp:Literal ID="setNameStrumento" runat="server" Text="<li id='labelCenturioR_li'  class='active' style='padding:17px'>Centurio</li>"></asp:Literal>
 
 								</ul>
@@ -103,7 +105,13 @@
 								   <li  class="dropdown active"><a href="#mainChannel" data-toggle="tab"><asp:Literal ID="channels" runat="server" Text="Channels"></asp:Literal></a></li>
 
                                     <asp:Literal ID="listMenu" runat="server" Text="Channels"></asp:Literal>
-                                    <li  class="dropdown"><a href="#mainLogGraph" data-toggle="tab"><asp:Literal ID="Literal1" runat="server" Text="Log Graph"></asp:Literal></a></li>
+                                    <li class="dropdown"><a  class="dropdown-toggle" data-toggle="dropdown" href='#'>Log</a>
+                                        <ul class="dropdown-menu"> 
+                                            <li ><a href="#mainLogGraph" data-toggle="tab"><asp:Literal ID="Literal2" runat="server" Text="Log Graph"></asp:Literal><!--<asp:Literal ID="Literal1" runat="server" Text="Log Graph"></asp:Literal>--></a></li>
+                                            <li ><a href="#mainLogReport" data-toggle="tab">Text Report</a></li>
+                                        </ul>
+                                    </li>
+
                                     <!--
 								   <li class="dropdown"><a  class="dropdown-toggle" data-toggle="dropdown" href='#'>Service</a>
 								   	 <ul class="dropdown-menu"> 
@@ -251,7 +259,57 @@
                     </div>
 
             </div>
-		</div>	
+            <div id="mainLogReport" class="tab-pane widget-body-regular">
+                <div class="row-fluid"> <h5>Report</h5>
+                    <div class="span3">
+                        </div>
+                </div>
+                <div class="row-fluid"> <h5></h5>
+                    <div class="span3">
+                        </div>
+                </div>
+                <div class="row-fluid"> <h5></h5>
+                    <div class="span3">
+                        </div>
+                </div>
+
+                <div class="row-fluid"> <h5>Date Time Range</h5>
+                    <div class="span3">
+                        <h5>From:</h5>
+                         <input calib = "no" data-placement="right" type = "text" value=""  id = "reportFrom" min ="minlog"></input>
+                    </div>
+                       <div class="span3">
+                        <h5>To:</h5>
+                           <input calib = "no" data-placement="right" type = "text" value=""  id = "reportTo" min ="minlog"></input>
+                    </div>
+
+                </div>
+                <div class="row-fluid"> <h5>File Format</h5>
+                <div class="span3">
+                    <h5>PDF:</h5>
+                    <input calib = "no" type="radio"  min ="minlog" id="pdfReport" checked="checked" name="radio" value="1" >
+                </div>
+                <div class="span3">
+                    <h5>EXCEL:</h5>
+                    <input calib = "no" type="radio"  min ="minlog" id="xlsReport" name="radio" value="1" >
+                </div>
+                <div class="span3">
+                    <h5>CSV:</h5>
+                    <input calib = "no" type="radio"  min ="minlog" id="csvReport" name="radio" value="1" >
+                </div>
+                <div class="row-fluid"> <h5></h5>
+                    <div class="span3">
+                        </div>
+                </div>
+
+            </div>
+            <div class="row-fluid"><div class='btn-primary'><b class='btn-primary btn-icon glyphicons ok'><button  id="refreshReport" class="btn btn-primary" style="margin-top:-0px;">Create Report</button><i></i></b></div></div>
+                <div class="row-fluid"> <h5></h5>
+                    <div class="span3">
+                        </div>
+                </div>
+
+		</div>
 
 
 
@@ -263,6 +321,7 @@
 
 		
     
+    </div>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="script_footer" runat="server">
         <script src="Centurio/jcanvas.js"></script>
@@ -272,7 +331,7 @@
 <asp:Content ID="Content4" ContentPlaceHolderID="script_at_end" runat="server">
          <script src="theme/scripts/demo/calendar_new.js"></script>
         <link href="bootstrap/css/jquery-ui-timepicker-addon.css" rel="stylesheet" />
-        <script type="text/javascript" src="Centurio/centurioMain.js?v=1.44"></script>
+        <script type="text/javascript" src="Centurio/centurioMain.js?v=1.51"></script>
         <asp:Literal ID="javaScriptLiteral" runat="server"></asp:Literal>    
 
     	<script src="theme/scripts/plugins/notifications/Gritter/js/jquery.gritter.min.js"></script>

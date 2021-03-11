@@ -34,7 +34,7 @@
                	<div class="span3">
                        <div id="riga1_cl_alarm_failure" class="control-group">
                            <h5 style="padding-top:10px"><asp:literal ID = "Literal6"  text="Time Alarm(min)" runat="server" meta:resourcekey="Literal6Resource1"></asp:literal></h5>
-                       <asp:textbox ID="value_cl_alarm_failure" onblur="javascript: Changed_channel( 'value_cl_alarm_failure','riga1_cl_alarm_failure',99, 0,0 );" class="span12"  runat="server" MaxLength="2" meta:resourcekey="value_cl_alarm_failureResource1" ></asp:textbox>
+                       <asp:textbox ID="value_cl_alarm_failure" onblur="javascript: Changed_channel( 'value_cl_alarm_failure','riga1_cl_alarm_failure',999, 99,0 );" class="span12"  runat="server" MaxLength="3" meta:resourcekey="value_cl_alarm_failureResource1" ></asp:textbox>
                 </div>
                        </div>
 

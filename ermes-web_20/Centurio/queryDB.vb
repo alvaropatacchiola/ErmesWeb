@@ -12,7 +12,7 @@ Public Class queryDB
         End If
 
         If local Then
-            con.ConnectionString = "Data Source=192.168.4.200;Initial Catalog=max_5;Integrated Security=True"
+            con.ConnectionString = "Data Source=192.168.29.251;Initial Catalog=max_5;Integrated Security=True"
         Else
             con.ConnectionString = "Data Source=localhost;Database=max_5;User ID=max55;Password=max55"
         End If
@@ -220,6 +220,41 @@ Public Class queryDB
 
             Next
             virgola = ","
+        Loop
+        '    sqlDataRead.NextResult()
+        'Loop
+        Return ""
+    End Function
+    Public Shared Function selectQueryMainReport(ByVal querySTR As String, ByRef listLogRiempire As List(Of String)) As String
+        Dim resultQuery As Integer = 0
+        Dim indiceData As Integer = 0
+        Dim indiceType As Integer = 0
+        Dim virgola As String = ""
+        Dim baseDate As DateTime = New DateTime(1970, 1, 1)
+        If querySTR = "" Then
+            Return True
+        End If
+        cmd.CommandText = querySTR
+        Dim sqlDataRead As SqlDataReader = cmd.ExecuteReader()
+        'While sqlDataRead.Read
+        '    ReadSingleRow(CType(sqlDataRead, IDataRecord))
+        'End While
+        ' Do While sqlDataRead.HasRows
+
+        Do While sqlDataRead.Read()
+
+            Dim localString As String = ""
+            virgola = ""
+            For i = 0 To sqlDataRead.FieldCount - 1
+                'And (sqlDataRead.GetName(i) <> "typeLog") 
+                If IsDBNull(sqlDataRead(i)) Then
+                    localString = localString + virgola + "0"
+                Else
+                    localString = localString + virgola + (sqlDataRead(i).ToString).Replace(",", ".")
+                End If
+                virgola = ","
+            Next
+            listLogRiempire.Add(localString)
         Loop
         '    sqlDataRead.NextResult()
         'Loop

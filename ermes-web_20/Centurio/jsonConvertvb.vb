@@ -462,6 +462,8 @@
         Dim allrmr_value() As String
         Dim outputr_value() As String
         Dim clockr_value() As String
+        Dim tota1() As String
+        Dim tota2() As String
         Dim check_connected As Boolean = False
         Dim time_connected As Long
         Dim stringJson As String = ""
@@ -656,18 +658,18 @@
 
                 Case "LDS"
                     If num_versione < 430 Then
+                    Else
                         If formato_d = "1" Then ' americano
                             stringJson = stringJson + ",{""key"":""flowMeter"", ""value"":""" + valuer_value(5).ToString + "G/h""}"
                         Else
                             stringJson = stringJson + ",{""key"":""flowMeter"", ""value"":""" + valuer_value(5).ToString + "m3/h""}"
                         End If
                         stringJson = stringJson + ",{""key"":""totalizer"", ""value"":""" + valuer_value(6) + """}"
-                        If main_function.alarm_lds_flusso(allrmr_value) Then
-                            stringJson = stringJson + ",{""key"":""flowAlarm"", ""value"":""ON""}"
-                        Else
-                            stringJson = stringJson + ",{""key"":""flowAlarm"", ""value"":""OFF""}"
-                        End If
+                    End If
+                    If main_function.alarm_lds_flusso(allrmr_value) Then
+                        stringJson = stringJson + ",{""key"":""flowAlarm"", ""value"":""ON""}"
                     Else
+                        stringJson = stringJson + ",{""key"":""flowAlarm"", ""value"":""OFF""}"
                     End If
 
 
@@ -678,6 +680,8 @@
             numero_canali = MTower_Type.Split("_").Length
             valuer_value = main_function.get_split_str(riga_strumento.value2)
             clockr_value = main_function.get_split_str(riga_strumento.value5)
+            tota1 = main_function.get_split_str(riga_strumento.value8)
+            tota2 = main_function.get_split_str(riga_strumento.value9)
 
             For i = 1 To numero_canali 'Tower può essere uno, due o tre canali
                 Select Case i
@@ -728,7 +732,13 @@
             Else
                 stringJson = stringJson + ",{""key"":""temperature"", ""value"":""" + temperature_value.ToString + "°F""}"
             End If
-
+            If main_function.alarm_tower_flow(allrmr_value) Then ' allarme di flusso
+                stringJson = stringJson + ",{""key"":""flowAlarm"", ""value"":""ON""}"
+            Else
+                stringJson = stringJson + ",{""key"":""flowAlarm"", ""value"":""OFF""}"
+            End If
+            stringJson = stringJson + ",{""key"":""wmi"", ""value"":""" + Mid(tota1(0), 3, 10) + """}"
+            stringJson = stringJson + ",{""key"":""wmb"", ""value"":""" + Mid(tota2(0), 3, 10) + """}"
         End If
         Return stringJson
     End Function

@@ -22,7 +22,7 @@ Namespace Resources
     '''<summary>
     '''  Classe di risorse fortemente tipizzata per la ricerca di stringhe localizzate e così via.
     '''</summary>
-    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Web.Application.StronglyTypedResourceProxyBuilder", "11.0.0.0"),  _
+    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Web.Application.StronglyTypedResourceProxyBuilder", "14.0.0.0"),  _
      Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.Runtime.CompilerServices.CompilerGeneratedAttribute()>  _
     Friend Class ldtower_global
@@ -37,7 +37,7 @@ Namespace Resources
         End Sub
         
         '''<summary>
-        '''  Restituisce l'istanza di ResourceManager nella cache utilizzata da questa classe.
+        '''  Restituisce l'istanza di ResourceManager memorizzata nella cache da questa classe.
         '''</summary>
         <Global.System.ComponentModel.EditorBrowsableAttribute(Global.System.ComponentModel.EditorBrowsableState.Advanced)>  _
         Friend Shared ReadOnly Property ResourceManager() As Global.System.Resources.ResourceManager
@@ -52,7 +52,7 @@ Namespace Resources
         
         '''<summary>
         '''  Esegue l'override della proprietà CurrentUICulture del thread corrente per tutte
-        '''  le ricerche di risorse che utilizzano questa classe di risorse fortemente tipizzata.
+        '''  le ricerche di risorse eseguite con questa classe di risorse fortemente tipizzata.
         '''</summary>
         <Global.System.ComponentModel.EditorBrowsableAttribute(Global.System.ComponentModel.EditorBrowsableState.Advanced)>  _
         Friend Shared Property Culture() As Global.System.Globalization.CultureInfo

@@ -134,79 +134,73 @@ Public Class dashboardNew
                             ' end   strumento impianto
                         Next
                     Else
-                        Dim mainFunctionConfig As String = mainFunctionCenturio.getConfigCentrurio(split_codice(indiceCodice))
-                        Dim tabella_centurio As ermes_web_20.centurioQuery.centurioConfigDataTable
-                        Dim query As New query
-                        'Dim querydb As New queryDB
+                        'verifica se è pompa o centurio
+                        Dim typeStrumento As Integer = 0
+                        For Each dc In tabella_impianto
+                            If dc.identificativo = split_codice(indiceCodice) Then
+                                typeStrumento = dc.Expr2
+                            End If
+                        Next
+                        If typeStrumento = 0 Then
+                            Dim mainFunctionConfig As String = mainFunctionCenturio.getConfigCentrurio(split_codice(indiceCodice))
+                            Dim tabella_centurio As ermes_web_20.centurioQuery.centurioConfigDataTable
+                            Dim query As New query
+                            'Dim querydb As New queryDB
 
-                        'intestazione = intestazione + "<div Class=""row-fluid"" >"
-                        'intestazione = intestazione + "<div Class=""span12 border""><span class=""idnumero"">00000000000000000 </span><span Class=""nome"">Centurio</span>"
-                        'intestazione = intestazione + "<span Class=""pull-right"" style=""margin-right: 10px;""><h4 class=""glyphicons single circle_arrow_right""><i></i></h4></span></div>"
-                        'intestazione = intestazione + "</div>"
-                        'intestazione = intestazione + "<div Class=""row-fluid"">"
-                        'intestazione = intestazione + "<div Class=""span12"">"
 
 
-                        'If mainFunctionConfig <> "null" Then ' null sta ad identificare non connesso altrimenti ho il codice
-                        Dim pipeClient As New centurioRealTime
-                        Dim resultPipe As String = ""
-                        Dim resultConfigurationInput As String = ""
-                        Dim sistemaUSA As String = ""
-                        resultPipe = pipeClient.Main(split_codice(indiceCodice), "controller_type")
+                            'If mainFunctionConfig <> "null" Then ' null sta ad identificare non connesso altrimenti ho il codice
+                            Dim pipeClient As New centurioRealTime
+                            Dim resultPipe As String = ""
+                            Dim resultConfigurationInput As String = ""
+                            Dim sistemaUSA As String = ""
+                            resultPipe = pipeClient.Main(split_codice(indiceCodice), "controller_type")
 
-                        Try
-                            Using writer As System.IO.StreamWriter = New System.IO.StreamWriter("testLDOSIN.txt", True)
-                                writer.WriteLine("#" + split_codice(indiceCodice) + "#" + resultPipe + "#")
-                            End Using
-                        Catch ex As Exception
+                            'MsgBox(resultPipe)
+                            If resultPipe <> "null" And resultPipe <> "" Then
 
-                        End Try
+                                resultPipe = resultPipe
+                                resultConfigurationInput = pipeClient.Main(split_codice(indiceCodice), "configurationFinal")
+                                sistemaUSA = pipeClient.Main(split_codice(indiceCodice), "sistemaUSA")
+                                If sistemaUSA = "true" Then
+                                    sistemaUSA = "1"
+                                Else
+                                    sistemaUSA = "0"
+                                End If
+                                'tabella_centurio = query.getRuntimeSchema("OSIN01")
 
-                        'MsgBox(resultPipe)
-                        If resultPipe <> "null" And resultPipe <> "" Then
-
-                            resultPipe = resultPipe
-                            resultConfigurationInput = pipeClient.Main(split_codice(indiceCodice), "configurationFinal")
-                            sistemaUSA = pipeClient.Main(split_codice(indiceCodice), "sistemaUSA")
-                            If sistemaUSA = "true" Then
-                                sistemaUSA = "1"
                             Else
+                                'Dim strinxXML As String = query.getConfigGlobal(1)
+                                Dim strinxXML As String = getConfigFromFile(split_codice(indiceCodice))
+                                sistemaUSA = "0"
+                                'resultPipe = mainFunctionCenturio.getFileInfoXML(split_codice(indiceCodice), strinxXML, 2)
+                                If (strinxXML <> "") Then
+                                    resultPipe = mainFunctionCenturio.getFileInfoXML(split_codice(indiceCodice), strinxXML, 2)
+                                    'resultConfigurationInput = mainFunctionCenturio.getFileInfoXML(split_codice(indiceCodice), strinxXML, 3)
+                                    resultConfigurationInput = mainFunctionCenturio.getFileInfoXML(split_codice(indiceCodice), strinxXML, 3)
+                                    'MsgBox(resultPipe + " " + resultConfigurationInput)
+                                Else
+                                    strinxXML = query.getConfigGlobal(1)
+                                    resultPipe = mainFunctionCenturio.getFileInfoXML(split_codice(indiceCodice), strinxXML, 2)
+                                    resultConfigurationInput = mainFunctionCenturio.getFileInfoXML(split_codice(indiceCodice), strinxXML, 3)
+                                    'MsgBox(resultPipe + " XM " + resultConfigurationInput)
+                                End If
+                            End If
+
+                            tabella_centurio = query.getRuntimeSchema(resultPipe)
+                            If sistemaUSA = "" Then
                                 sistemaUSA = "0"
                             End If
-                            'tabella_centurio = query.getRuntimeSchema("OSIN01")
-
-                        Else
-                            'Dim strinxXML As String = query.getConfigGlobal(1)
-                            Dim strinxXML As String = getConfigFromFile(split_codice(indiceCodice))
-                            sistemaUSA = "0"
-                            'resultPipe = mainFunctionCenturio.getFileInfoXML(split_codice(indiceCodice), strinxXML, 2)
-                            If (strinxXML <> "") Then
-                                resultPipe = mainFunctionCenturio.getFileInfoXML(split_codice(indiceCodice), strinxXML, 2)
-                                'resultConfigurationInput = mainFunctionCenturio.getFileInfoXML(split_codice(indiceCodice), strinxXML, 3)
-                                resultConfigurationInput = mainFunctionCenturio.getFileInfoXML(split_codice(indiceCodice), strinxXML, 3)
-                                'MsgBox(resultPipe + " " + resultConfigurationInput)
-                            Else
-                                strinxXML = query.getConfigGlobal(1)
-                                resultPipe = mainFunctionCenturio.getFileInfoXML(split_codice(indiceCodice), strinxXML, 2)
-                                resultConfigurationInput = mainFunctionCenturio.getFileInfoXML(split_codice(indiceCodice), strinxXML, 3)
-                                'MsgBox(resultPipe + " XM " + resultConfigurationInput)
-                            End If
-                        End If
-
-                        tabella_centurio = query.getRuntimeSchema(resultPipe)
-                        If sistemaUSA = "" Then
-                            sistemaUSA = "0"
-                        End If
-                        'tabella_centurio = query.getRuntimeSchemaLanguage(Session("selectedLanguage"), resultPipe)
-                        If (resultConfigurationInput = "5|16|16|0|0|") Then ' caso cd ma ma
+                            'tabella_centurio = query.getRuntimeSchemaLanguage(Session("selectedLanguage"), resultPipe)
+                            If (resultConfigurationInput = "5|16|16|0|0|") Then ' caso cd ma ma
                                 resultConfigurationInput = "5|16|161|0|0|"
                             End If
                             intestazione = intestazione + "<a href=""mainCenturio.aspx?serial=" + split_codice(indiceCodice) + "&codice=" + resultPipe + "&sistemaUSA=" + sistemaUSA + "&configuration=" + resultConfigurationInput + """ Class=""block"">"
 
-                        listCenturio.Add("mainCenturio.aspx?serial=" + split_codice(indiceCodice) + "&codice=" + resultPipe + "&sistemaUSA=" + sistemaUSA + "&configuration=" + resultConfigurationInput)
+                            listCenturio.Add("mainCenturio.aspx?serial=" + split_codice(indiceCodice) + "&codice=" + resultPipe + "&sistemaUSA=" + sistemaUSA + "&configuration=" + resultConfigurationInput)
 
 
-                        intestazione = intestazione + "<div class=""row-fluid"" id=""" + split_codice(indiceCodice) + "_main""" + "></div>"
+                            intestazione = intestazione + "<div class=""row-fluid"" id=""" + split_codice(indiceCodice) + "_main""" + "></div>"
 
                             intestazione = intestazione + "</a>"
 
@@ -268,25 +262,46 @@ Public Class dashboardNew
                                 End If
 
 
-                            javaScriptLiteral.Text = javaScriptLiteral.Text + "get_data('" + split_codice(indiceCodice) + "','" + stringJson + "','" + stringJsonGlobal + "','" + dc1.nomeStrumento + "','" + stringJsonDecimal + "','" + stringJsonLabel + "','" + resultPipe + "','" + resultConfigurationInput + "','" + stringJsonGlobalInputOutput + "','" + sistemaUSA + "');"
-                            scriptCenturioReal = scriptCenturioReal + "serialNumber = '" + split_codice(indiceCodice) + "';" + "stringJson='" + stringJson + "';" + "stringGlobal='" + stringJsonGlobal + "';" + "stringLabel='" + stringJsonLabel + "';" + "nomeLabel='" + dc1.nomeStrumento + "';" + "resultPipe='" + resultPipe + "';" + "resultConfigurationInput='" + resultConfigurationInput + "';" + "stringJsonGlobalInputOutput='" + stringJsonGlobalInputOutput + "';" + "sistemaUSA='" + sistemaUSA + "';" +
-                                    "stringDecimal='" + stringJsonDecimal + "';get_data(serialNumber,stringJson,stringGlobal,nomeLabel,stringDecimal,stringLabel,resultPipe,resultConfigurationInput,stringJsonGlobalInputOutput,sistemaUSA);"
-                        Next
+                                javaScriptLiteral.Text = javaScriptLiteral.Text + "get_data('" + split_codice(indiceCodice) + "','" + stringJson + "','" + stringJsonGlobal + "','" + dc1.nomeStrumento + "','" + stringJsonDecimal + "','" + stringJsonLabel + "','" + resultPipe + "','" + resultConfigurationInput + "','" + stringJsonGlobalInputOutput + "','" + sistemaUSA + "');"
+                                scriptCenturioReal = scriptCenturioReal + "serialNumber = '" + split_codice(indiceCodice) + "';" + "stringJson='" + stringJson + "';" + "stringGlobal='" + stringJsonGlobal + "';" + "stringLabel='" + stringJsonLabel + "';" + "nomeLabel='" + dc1.nomeStrumento + "';" + "resultPipe='" + resultPipe + "';" + "resultConfigurationInput='" + resultConfigurationInput + "';" + "stringJsonGlobalInputOutput='" + stringJsonGlobalInputOutput + "';" + "sistemaUSA='" + sistemaUSA + "';" +
+                                        "stringDecimal='" + stringJsonDecimal + "';get_data(serialNumber,stringJson,stringGlobal,nomeLabel,stringDecimal,stringLabel,resultPipe,resultConfigurationInput,stringJsonGlobalInputOutput,sistemaUSA);"
+                            Next
+                        Else 'strumenti e pompe di nuova comunicazione
+                            Select Case typeStrumento
+                                Case 1 ' pompa prisma
+                                    intestazione = intestazione + "<div class=""row-fluid"" id=""" + split_codice(indiceCodice) + "_pump"" >"
+                                    'intestazione = intestazione + "<script type = ""text/javascript"" src=""pompe/pumpsCommunication.js?v=1.8""></script>"
+                                    intestazione = intestazione + "<h1 id =""messageStart" + split_codice(indiceCodice) + """></h1>"
+                                    intestazione = intestazione + "<script type = ""text/javascript"" >"
+                                    intestazione = intestazione + "var NarrayReadRealTime = [1];"
+                                    intestazione = intestazione + "var NserialNumber = """ + split_codice(indiceCodice) + """;"
+                                    intestazione = intestazione + "var NarrayReadSetpoint = [2, 3, 4, 5, 6];console.log(""carico i dati"");"
+                                    intestazione = intestazione + "var Pompa" + split_codice(indiceCodice) + " = new OggettoPompa({serialNumber:NserialNumber, arrayReadRealTime:NarrayReadRealTime, arrayReadSetpoint:NarrayReadSetpoint});"
+                                    intestazione = intestazione + "Pompa" + split_codice(indiceCodice) + ".createConnection();"
+                                    intestazione = intestazione + "</script>"
+                                    intestazione = intestazione + "</div>"
 
+                                Case 2
+                            End Select
 
-
-
-                            ' intestazione = intestazione + "</a>"
-
-
-                            'End If
-
-                            'intestazione = intestazione + "</div>"
-                            'intestazione = intestazione + "</div>"
-
-                            'intestazione = intestazione + "</div>" ' end row-fluid regular-gray
 
                         End If
+
+
+
+
+
+                        ' intestazione = intestazione + "</a>"
+
+
+                        'End If
+
+                        'intestazione = intestazione + "</div>"
+                        'intestazione = intestazione + "</div>"
+
+                        'intestazione = intestazione + "</div>" ' end row-fluid regular-gray
+
+                    End If
 
                         intestazione = Replace(intestazione, "$", "&statistica=" + (contatore_strumenti).ToString + "," + (contatore_strumenti_disconnected).ToString + "," + (contatore_strumenti_allarme).ToString)
 

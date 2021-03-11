@@ -4,10 +4,13 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     
     <link href="theme/css/dashboardNewCss.css" rel="stylesheet" />
+    
+
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 <div id="content" style="background-color:#dfdfdf;">
-    
+    <script type = "text/javascript" src="pompe/pumpsCommunication.js?v=1.25"></script>
+
        <asp:Literal ID="Literal_script" runat="server" meta:resourcekey="Literal_scriptResource1" ></asp:Literal>              
     <div id="content-notification" class="notyfy_container_error i-am-new"></div>
 
@@ -60,6 +63,7 @@
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="script_footer" runat="server">
     <script type="text/javascript" src="Centurio/centurioRealTime.js?v=1.6"></script>
+    
     <asp:Literal ID="javaScriptLiteral" runat="server" meta:resourcekey="javaScriptLiteralResource1"></asp:Literal>
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="script_at_end" runat="server">

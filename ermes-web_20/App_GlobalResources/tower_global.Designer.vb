@@ -52,7 +52,7 @@ Namespace Resources
         
         '''<summary>
         '''  Esegue l'override della proprietà CurrentUICulture del thread corrente per tutte
-        '''  le ricerche di risorse che utilizzano questa classe di risorse fortemente tipizzata.
+        '''  le ricerche di risorse eseguite con questa classe di risorse fortemente tipizzata.
         '''</summary>
         <Global.System.ComponentModel.EditorBrowsableAttribute(Global.System.ComponentModel.EditorBrowsableState.Advanced)>  _
         Friend Shared Property Culture() As Global.System.Globalization.CultureInfo

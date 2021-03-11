@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -13,7 +13,7 @@
     <OutputType>Library</OutputType>
     <RootNamespace>ermes_web_20</RootNamespace>
     <AssemblyName>ermes-web_20</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <MyType>Custom</MyType>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
@@ -25,6 +25,7 @@
     <SccAuxPath>SAK</SccAuxPath>
     <SccProvider>SAK</SccProvider>
     <UseGlobalApplicationHostFile />
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -55,16 +56,23 @@
       <HintPath>..\packages\iTextSharp.5.5.0\lib\itextsharp.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Microsoft.Web.Infrastructure">
-      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    <Reference Include="MQTTnet, Version=3.0.13.0, Culture=neutral, PublicKeyToken=b69712f52770c0a7, processorArchitecture=MSIL">
+      <HintPath>..\packages\MQTTnet.3.0.13\lib\net452\MQTTnet.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MQTTnet.Extensions.ManagedClient, Version=3.0.13.0, Culture=neutral, PublicKeyToken=b69712f52770c0a7, processorArchitecture=MSIL">
+      <HintPath>..\packages\MQTTnet.Extensions.ManagedClient.3.0.13\lib\net452\MQTTnet.Extensions.ManagedClient.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Net.Http.WebRequest" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <Private>True</Private>
@@ -75,10 +83,10 @@
       <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.4.0.20710.0\lib\net40\System.Web.Http.WebHost.dll</HintPath>
     </Reference>
     <Reference Include="System.Web.Services" />
-    <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Web" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Configuration" />
+    <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
     <Import Include="Microsoft.VisualBasic" />
@@ -116,6 +124,7 @@
     <Content Include="Centurio\jquery.countdown360.js" />
     <Content Include="Centurio\JwebService.aspx" />
     <Content Include="Centurio\login.aspx" />
+    <Content Include="Centurio\memSerial.aspx" />
     <Content Include="Centurio\plantInfo.aspx" />
     <Content Include="Centurio\testSerial.js" />
     <Content Include="Centurio\webRes.js" />
@@ -141,6 +150,7 @@
     <Content Include="cssmenu\styles.css" />
     <Content Include="eliminaController.aspx" />
     <Content Include="eliminacontroller_query.aspx" />
+    <Content Include="generateReport.aspx" />
     <Content Include="image\aquaprox.png" />
     <Content Include="image\background.jpg" />
     <Content Include="image\bwt.png" />
@@ -284,6 +294,13 @@
     <Content Include="max5\main_max5.aspx" />
     <Content Include="max5\script.js" />
     <Content Include="newTest.aspx" />
+    <Content Include="pompe\M0101.aspx" />
+    <Content Include="pompe\M0101.js" />
+    <Content Include="pompe\P0101.aspx" />
+    <Content Include="pompe\P0101.js" />
+    <Content Include="pompe\pumpsCommunication.js" />
+    <Content Include="pompe\pumpService.aspx" />
+    <Content Include="pompe\testWebSocket.aspx" />
     <Content Include="pool.html" />
     <Content Include="pool\CSS\style_pool_inspector.css" />
     <Content Include="pool\CSS\style_pool_inspector2.css" />
@@ -310,6 +327,10 @@
     <Content Include="pool\SVG\SmilePool-good.svg" />
     <Content Include="pool\SVG\SmilePool-notgood.svg" />
     <Content Include="pool\SVG\SwipeUpPool.svg" />
+    <Content Include="pompe\websocket.ashx" />
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
     <Content Include="serial.html" />
     <Content Include="theme\css\dashboardNewCss.css" />
     <Content Include="theme\css\personalizzazione_stefano.css" />
@@ -17184,6 +17205,13 @@
       <DependentUpon>login.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
+    <Compile Include="Centurio\memSerial.aspx.designer.vb">
+      <DependentUpon>memSerial.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Centurio\memSerial.aspx.vb">
+      <DependentUpon>memSerial.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
     <Compile Include="Centurio\output.vb" />
     <Compile Include="Centurio\plantInfo.aspx.designer.vb">
       <DependentUpon>plantInfo.aspx</DependentUpon>
@@ -17212,6 +17240,13 @@
     </Compile>
     <Compile Include="eliminacontroller_query.aspx.vb">
       <DependentUpon>eliminacontroller_query.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="generateReport.aspx.designer.vb">
+      <DependentUpon>generateReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="generateReport.aspx.vb">
+      <DependentUpon>generateReport.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="lta\resetTot.aspx.designer.vb">
@@ -17663,6 +17698,38 @@
     <Compile Include="newTest.aspx.vb">
       <DependentUpon>newTest.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="pompe\M0101.aspx.designer.vb">
+      <DependentUpon>M0101.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pompe\M0101.aspx.vb">
+      <DependentUpon>M0101.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="pompe\P0101.aspx.designer.vb">
+      <DependentUpon>P0101.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pompe\P0101.aspx.vb">
+      <DependentUpon>P0101.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pompe\mqtt.vb" />
+    <Compile Include="pompe\pumpService.aspx.designer.vb">
+      <DependentUpon>pumpService.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pompe\pumpService.aspx.vb">
+      <DependentUpon>pumpService.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="pompe\testWebSocket.aspx.designer.vb">
+      <DependentUpon>testWebSocket.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pompe\testWebSocket.aspx.vb">
+      <DependentUpon>testWebSocket.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="pompe\websocket.ashx.vb">
+      <DependentUpon>websocket.ashx</DependentUpon>
     </Compile>
     <Compile Include="tower\bleed_boiler.aspx.designer.vb">
       <DependentUpon>bleed_boiler.aspx</DependentUpon>
@@ -22710,6 +22777,7 @@
     <Content Include="produzione.Master" />
     <Content Include="pool\.DS_Store" />
     <Content Include="pool\SVG\.DS_Store" />
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -1510,7 +1510,11 @@ nexLoopLabel:
         intestazione = intestazione + "</div>"
 
         'intestazione = intestazione + "<div class=""row-fluid""><div Class=""widget-head"" style=""background-color:#a4c408;""><button  id=""refreshLog"" class=""btn btn-primary"" style=""margin-top:-0px;"">Refresh Log</button></div></div>"
-        intestazione = intestazione + "<div class=""row-fluid""><div class='btn-primary'><b class='btn-primary btn-icon glyphicons ok'><button  id=""refreshLog"" class=""btn btn-primary"" style=""margin-top:-0px;"">Refresh Log</button><i></i></b></div>"
+        intestazione = intestazione + "<div class=""row-fluid""><div class='btn-primary'><b class='btn-primary btn-icon glyphicons ok'><button  id=""refreshLog"" class=""btn btn-primary"" style=""margin-top:-0px;"">Refresh Log</button><i></i></b></div></div>"
+
+
+        'report
+        javaScriptLiteral.Text = javaScriptLiteral.Text + "activate_date_picker('reportFrom'); activate_date_picker('reportTo');"
 
 
 
@@ -2021,4 +2025,6 @@ nexLoopLabel:
 
 
     End Function
+
+
 End Class

@@ -131,6 +131,15 @@ Partial Public Class mainCenturio
     Protected WithEvents listMenu As Global.System.Web.UI.WebControls.Literal
     
     '''<summary>
+    '''Controllo Literal2.
+    '''</summary>
+    '''<remarks>
+    '''Campo generato automaticamente.
+    '''Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
+    '''</remarks>
+    Protected WithEvents Literal2 As Global.System.Web.UI.WebControls.Literal
+    
+    '''<summary>
     '''Controllo Literal1.
     '''</summary>
     '''<remarks>

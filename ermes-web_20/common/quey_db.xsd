@@ -1654,9 +1654,9 @@ WHERE        (identificativo = @identificativo) AND (id_485 = @i485 OR
               <DbSource ConnectionRef="max_5ConnectionString (Web.config)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData_super" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData_super" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData_super" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT        super_user.azienda_persona, super_user.stato, super_user.mail, super_user.personalizzazione, impianto_new.nome_impianto, impianto_new.descrizione_impianato, impianto_new.identificativo, 
-                         impianto_new.referente, impianto_new.note, impianto_new.data_gestione, impianto_new.comunicazioni, impianto_new.telefono_referente, impianto_new.mail_referente, impianto_new.indirizzo, 
-                         impianto_new.id_super, impianto_new.id_user, impianto_new.modifica_setpoint_user, impianto_new.id_impianto, ISNULL(impianto_new.mailAlarm, 0) AS Expr1
+                    <CommandText>SELECT        super_user.azienda_persona, super_user.stato, super_user.mail, super_user.personalizzazione, impianto_new.nome_impianto, impianto_new.descrizione_impianato, impianto_new.identificativo, impianto_new.referente, 
+                         impianto_new.note, impianto_new.data_gestione, impianto_new.comunicazioni, impianto_new.telefono_referente, impianto_new.mail_referente, impianto_new.indirizzo, impianto_new.id_super, impianto_new.id_user, 
+                         impianto_new.modifica_setpoint_user, impianto_new.id_impianto, ISNULL(impianto_new.mailAlarm, 0) AS Expr1, ISNULL(impianto_new.typeStrumento, 0) AS Expr2
 FROM            impianto_new INNER JOIN
                          super_user ON impianto_new.id_super = super_user.Id_super
 WHERE        (super_user.utente = @username) AND (super_user.password = @password)
@@ -1688,7 +1688,8 @@ ORDER BY impianto_new.nome_impianto</CommandText>
               <Mapping SourceColumn="id_user" DataSetColumn="id_user" />
               <Mapping SourceColumn="modifica_setpoint_user" DataSetColumn="modifica_setpoint_user1" />
               <Mapping SourceColumn="id_impianto" DataSetColumn="id_impianto" />
-              <Mapping SourceColumn="Expr1" DataSetColumn="Expr1" />
+              <Mapping SourceColumn="Expr1" DataSetColumn="Expr11" />
+              <Mapping SourceColumn="Expr2" DataSetColumn="Expr2" />
             </Mappings>
             <Sources>
               <DbSource ConnectionRef="max_5ConnectionString (Web.config)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="DeleteQuery_impianto" Modifier="Public" Name="DeleteQuery_impianto" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="DeleteQuery_impianto">
@@ -1705,9 +1706,9 @@ WHERE        (identificativo = @identificativo)</CommandText>
               <DbSource ConnectionRef="max_5ConnectionString (Web.config)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillBy" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData_user" GeneratorSourceName="FillBy" GetMethodModifier="Public" GetMethodName="GetData_user" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData_user" UserSourceName="FillBy">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT        impianto_new.nome_impianto, impianto_new.descrizione_impianato, impianto_new.identificativo, impianto_new.referente, impianto_new.note, [user].setpoint, impianto_new.data_gestione, 
-                         impianto_new.comunicazioni, impianto_new.mail_referente, impianto_new.telefono_referente, impianto_new.indirizzo, impianto_new.id_impianto, impianto_new.id_super, impianto_new.id_user, 
-                         impianto_new.modifica_setpoint_user
+                    <CommandText>SELECT        impianto_new.nome_impianto, impianto_new.descrizione_impianato, impianto_new.identificativo, impianto_new.referente, impianto_new.note, [user].setpoint, impianto_new.data_gestione, impianto_new.comunicazioni, 
+                         impianto_new.mail_referente, impianto_new.telefono_referente, impianto_new.indirizzo, impianto_new.id_impianto, impianto_new.id_super, impianto_new.id_user, impianto_new.modifica_setpoint_user, 
+                         ISNULL(impianto_new.typeStrumento, 0) AS Expr2
 FROM            impianto_new INNER JOIN
                          [user] ON impianto_new.id_user LIKE '%' + CONVERT(varchar(MAX), [user].Id_user) + '%'
 WHERE        ([user].username = @username) AND ([user].password = @password)
@@ -1722,9 +1723,9 @@ ORDER BY impianto_new.nome_impianto</CommandText>
               <DbSource ConnectionRef="max_5ConnectionString (Web.config)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillBy1" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="get_identificativo" GeneratorSourceName="FillBy1" GetMethodModifier="Public" GetMethodName="get_identificativo" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="get_identificativo" UserSourceName="FillBy1">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT        super_user.azienda_persona, super_user.stato, super_user.mail, super_user.personalizzazione, impianto_new.nome_impianto, impianto_new.descrizione_impianato, impianto_new.identificativo, 
-                         impianto_new.referente, impianto_new.note, impianto_new.data_gestione, impianto_new.comunicazioni, impianto_new.telefono_referente, impianto_new.mail_referente, impianto_new.indirizzo, 
-                         super_user.Id_super, impianto_new.modifica_setpoint_user, ISNULL(impianto_new.mailAlarm, 0) AS Expr1
+                    <CommandText>SELECT        super_user.azienda_persona, super_user.stato, super_user.mail, super_user.personalizzazione, impianto_new.nome_impianto, impianto_new.descrizione_impianato, impianto_new.identificativo, impianto_new.referente, 
+                         impianto_new.note, impianto_new.data_gestione, impianto_new.comunicazioni, impianto_new.telefono_referente, impianto_new.mail_referente, impianto_new.indirizzo, super_user.Id_super, 
+                         impianto_new.modifica_setpoint_user, ISNULL(impianto_new.mailAlarm, 0) AS Expr1, ISNULL(impianto_new.typeStrumento, 0) AS Expr2
 FROM            impianto_new INNER JOIN
                          super_user ON impianto_new.id_super = super_user.Id_super
 WHERE        (impianto_new.identificativo = @identificativo)</CommandText>
@@ -1786,9 +1787,9 @@ VALUES        (NEWID(),@id_super,@id_user,@nome_impianto,@descrizione_impianato,
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>INSERT INTO impianto_new
-                         (id_impianto, id_super, id_user, nome_impianto, descrizione_impianato, identificativo, referente, note, data_gestione, comunicazioni, telefono_referente, mail_referente, indirizzo, modifica_setpoint_user, 
-                         mailAlarm)
-VALUES        (NEWID(),@id_super,@id_user,@nome_impianto,@descrizione_impianato,@identificativo,@referente,@note,@data_gestione,@comunicazioni,@telefono_referente,@mail_referente,@indirizzo,@modifica_setpoint_user,@mailAlarm)</CommandText>
+                         (id_impianto, id_super, id_user, nome_impianto, descrizione_impianato, identificativo, referente, note, data_gestione, comunicazioni, telefono_referente, mail_referente, indirizzo, modifica_setpoint_user, mailAlarm, 
+                         typeStrumento)
+VALUES        (NEWID(),@id_super,@id_user,@nome_impianto,@descrizione_impianato,@identificativo,@referente,@note,@data_gestione,@comunicazioni,@telefono_referente,@mail_referente,@indirizzo,@modifica_setpoint_user,@mailAlarm,@typeStrumento)</CommandText>
                     <Parameters>
                       <Parameter AllowDbNull="false" AutogeneratedName="id_super" ColumnName="id_super" DataSourceName="max_5.dbo.impianto_new" DataTypeServer="uniqueidentifier" DbType="Guid" Direction="Input" ParameterName="@id_super" Precision="0" ProviderType="UniqueIdentifier" Scale="0" Size="16" SourceColumn="id_super" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="id_user" ColumnName="id_user" DataSourceName="max_5.dbo.impianto_new" DataTypeServer="varchar(MAX)" DbType="AnsiString" Direction="Input" ParameterName="@id_user" Precision="0" ProviderType="VarChar" Scale="0" Size="2147483647" SourceColumn="id_user" SourceColumnNullMapping="false" SourceVersion="Current" />
@@ -1803,7 +1804,8 @@ VALUES        (NEWID(),@id_super,@id_user,@nome_impianto,@descrizione_impianato,
                       <Parameter AllowDbNull="true" AutogeneratedName="mail_referente" ColumnName="mail_referente" DataSourceName="max_5.dbo.impianto_new" DataTypeServer="nvarchar(50)" DbType="String" Direction="Input" ParameterName="@mail_referente" Precision="0" ProviderType="NVarChar" Scale="0" Size="50" SourceColumn="mail_referente" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="indirizzo" ColumnName="indirizzo" DataSourceName="max_5.dbo.impianto_new" DataTypeServer="nvarchar(MAX)" DbType="String" Direction="Input" ParameterName="@indirizzo" Precision="0" ProviderType="NVarChar" Scale="0" Size="2147483647" SourceColumn="indirizzo" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="modifica_setpoint_user" ColumnName="modifica_setpoint_user" DataSourceName="max_5.dbo.impianto_new" DataTypeServer="varchar(MAX)" DbType="AnsiString" Direction="Input" ParameterName="@modifica_setpoint_user" Precision="0" ProviderType="VarChar" Scale="0" Size="2147483647" SourceColumn="modifica_setpoint_user" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="mailAlarm" ColumnName="mailAlarm" DataSourceName="max_5.dbo.impianto_new" DataTypeServer="nvarchar(50)" DbType="String" Direction="Input" ParameterName="@mailAlarm" Precision="0" ProviderType="NVarChar" Scale="0" Size="50" SourceColumn="mailAlarm" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="mailAlarm" ColumnName="mailAlarm" DataSourceName="max_5.dbo.impianto_new" DataTypeServer="bit" DbType="Boolean" Direction="Input" ParameterName="@mailAlarm" Precision="0" ProviderType="Bit" Scale="0" Size="1" SourceColumn="mailAlarm" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="typeStrumento" ColumnName="typeStrumento" DataSourceName="max_5.dbo.impianto_new" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@typeStrumento" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="typeStrumento" SourceColumnNullMapping="false" SourceVersion="Current" />
                     </Parameters>
                   </DbCommand>
                 </SelectCommand>
@@ -1885,6 +1887,51 @@ WHERE        (username = @username) AND (password = @password) AND (identificati
               <Mapping SourceColumn="labelAlarm" DataSetColumn="labelAlarm" />
             </Mappings>
             <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="typeSerialNumberTableAdapter" GeneratorDataComponentClassName="typeSerialNumberTableAdapter" Name="typeSerialNumber" UserDataComponentName="typeSerialNumberTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="max_5ConnectionString (Web.config)" DbObjectName="max_5.dbo.typeSerialNumber" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO [typeSerialNumber] ([dataProduzione], [serialNumber], [type]) VALUES (@dataProduzione, @serialNumber, @type)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@dataProduzione" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="dataProduzione" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@serialNumber" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="serialNumber" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@type" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="type" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT        dataProduzione, serialNumber, type
+FROM            typeSerialNumber
+WHERE        (serialNumber = @serialNumber)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="serialNumber" ColumnName="serialNumber" DataSourceName="max_5.dbo.typeSerialNumber" DataTypeServer="nvarchar(17)" DbType="String" Direction="Input" ParameterName="@serialNumber" Precision="0" ProviderType="NVarChar" Scale="0" Size="17" SourceColumn="serialNumber" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="dataProduzione" DataSetColumn="dataProduzione" />
+              <Mapping SourceColumn="serialNumber" DataSetColumn="serialNumber" />
+              <Mapping SourceColumn="type" DataSetColumn="type" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="max_5ConnectionString (Web.config)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="InsertQuery" Modifier="Public" Name="InsertQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="InsertQuery">
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>INSERT INTO [dbo].[typeSerialNumber] ([dataProduzione], [serialNumber], [type]) VALUES (@dataProduzione, @serialNumber, @type)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="dataProduzione" ColumnName="dataProduzione" DataSourceName="max_5.dbo.typeSerialNumber" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@dataProduzione" Precision="0" ProviderType="DateTime" Scale="0" Size="8" SourceColumn="dataProduzione" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="serialNumber" ColumnName="serialNumber" DataSourceName="max_5.dbo.typeSerialNumber" DataTypeServer="nvarchar(17)" DbType="String" Direction="Input" ParameterName="@serialNumber" Precision="0" ProviderType="NVarChar" Scale="0" Size="17" SourceColumn="serialNumber" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="type" ColumnName="type" DataSourceName="max_5.dbo.typeSerialNumber" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@type" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="type" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+              </DbSource>
+            </Sources>
           </TableAdapter>
         </Tables>
         <Sources />
@@ -3239,6 +3286,8 @@ WHERE        (username = @username) AND (password = @password) AND (identificati
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
+              <xs:element name="Expr11" msdata:ReadOnly="true" msdata:Caption="Expr1" msprop:Generator_ColumnVarNameInTable="columnExpr11" msprop:Generator_ColumnPropNameInRow="Expr11" msprop:Generator_ColumnPropNameInTable="Expr11Column" msprop:Generator_UserColumnName="Expr11" type="xs:boolean" minOccurs="0" />
+              <xs:element name="Expr2" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnExpr2" msprop:Generator_ColumnPropNameInRow="Expr2" msprop:Generator_ColumnPropNameInTable="Expr2Column" msprop:Generator_UserColumnName="Expr2" type="xs:int" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -3259,6 +3308,21 @@ WHERE        (username = @username) AND (password = @password) AND (identificati
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="typeSerialNumber" msprop:Generator_TableClassName="typeSerialNumberDataTable" msprop:Generator_TableVarName="tabletypeSerialNumber" msprop:Generator_RowChangedName="typeSerialNumberRowChanged" msprop:Generator_TablePropName="typeSerialNumber" msprop:Generator_RowDeletingName="typeSerialNumberRowDeleting" msprop:Generator_RowChangingName="typeSerialNumberRowChanging" msprop:Generator_RowEvHandlerName="typeSerialNumberRowChangeEventHandler" msprop:Generator_RowDeletedName="typeSerialNumberRowDeleted" msprop:Generator_RowClassName="typeSerialNumberRow" msprop:Generator_UserTableName="typeSerialNumber" msprop:Generator_RowEvArgName="typeSerialNumberRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="dataProduzione" msprop:Generator_ColumnVarNameInTable="columndataProduzione" msprop:Generator_ColumnPropNameInRow="dataProduzione" msprop:Generator_ColumnPropNameInTable="dataProduzioneColumn" msprop:Generator_UserColumnName="dataProduzione" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="serialNumber" msprop:Generator_ColumnVarNameInTable="columnserialNumber" msprop:Generator_ColumnPropNameInRow="serialNumber" msprop:Generator_ColumnPropNameInTable="serialNumberColumn" msprop:Generator_UserColumnName="serialNumber" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="17" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="type" msprop:Generator_ColumnVarNameInTable="columntype" msprop:Generator_ColumnPropNameInRow="type" msprop:Generator_ColumnPropNameInTable="typeColumn" msprop:Generator_UserColumnName="type" type="xs:int" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

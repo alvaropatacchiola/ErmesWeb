@@ -96,6 +96,9 @@
     
     Private Sub save_impianto_new_Click(sender As Object, e As EventArgs) Handles save_impianto_new.Click
         Dim tabella_impianto As ermes_web_20.quey_db.impianto_newDataTable
+
+        Dim tabella_pompe As ermes_web_20.quey_db.typeSerialNumberDataTable
+
         Dim function_java As String = ""
         Dim java_script_impianti As java_script = New java_script
         Dim query As New query
@@ -103,6 +106,7 @@
         Dim nome_impianto As String = ""
         Dim result_query As Boolean = False
         Dim stringa_user As String = ""
+        Dim typeStrumento As Integer = 0
 
         If indirizzi.SelectedValue = "nuovo" Then
             indirizzo = countries.SelectedValue + "-"
@@ -133,10 +137,15 @@
                 If utilizzatore_list.SelectedValue = "1" Then ' nuovo user aggiunto
                     If query.check_user(Text9.Text, Text10.Text) Then ' user ok
                         Dim codice_user As Guid
+
+                        For Each dc1 In query.getTypeSerialNumber(inputCodice.Text)
+                            typeStrumento = dc1.type
+                            Exit For
+                        Next
                         codice_user = Guid.NewGuid()
                         query.insert_user(codice_user, Master.id_super_container, Text9.Text, Text10.Text, check1.Checked, Text12.Text)
                         result_query = query.insert_impianto(Master.id_super_container, codice_user.ToString, indirizzo, nome_impianto, textDescription.Text,
-                                                       inputCodice.Text, Text4.Text, Now, Text6.Text, Text7.Text, check1.Checked)
+                                                       inputCodice.Text, Text4.Text, Now, Text6.Text, Text7.Text, check1.Checked, typeStrumento)
                     Else
                         function_java = function_java + "user_presente();"
                         java_script_impianti.call_function_javascript_onload(Page, function_java)
@@ -146,14 +155,22 @@
                 Else 'utilizzatore gia presente selezionare
                     Dim split_stringa_user() As String = utilizzatore_list.SelectedValue.Split(",")
                     Dim codice_user As Guid = New Guid(split_stringa_user(0))
+                    For Each dc1 In query.getTypeSerialNumber(inputCodice.Text)
+                        typeStrumento = dc1.type
+                        Exit For
+                    Next
                     result_query = query.insert_impianto(Master.id_super_container, codice_user.ToString, indirizzo, nome_impianto, textDescription.Text,
-                                                   inputCodice.Text, Text4.Text, Now, Text6.Text, Text7.Text, check1.Checked)
+                                                   inputCodice.Text, Text4.Text, Now, Text6.Text, Text7.Text, check1.Checked, typeStrumento)
 
                 End If
 
             Else ' nessun user aggiunto
+                For Each dc1 In query.getTypeSerialNumber(inputCodice.Text)
+                    typeStrumento = dc1.type
+                    Exit For
+                Next
                 result_query = query.insert_impianto(Master.id_super_container, "00000000-0000-0000-0000-000000000000", indirizzo, nome_impianto, textDescription.Text,
-                                               inputCodice.Text, Text4.Text, Now, Text6.Text, Text7.Text, False)
+                                               inputCodice.Text, Text4.Text, Now, Text6.Text, Text7.Text, False, typeStrumento)
             End If
         End If
         If result_query Then

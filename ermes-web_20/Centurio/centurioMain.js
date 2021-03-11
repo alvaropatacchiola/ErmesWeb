@@ -959,6 +959,48 @@ $("#refreshLog").click(function () {
     //console.log($.datepicker.parseDate("dd-mm-yy", $("#logFrom").val()))
     return false;
 });
+$("#refreshReport").click(function () {
+    var typeFile = "0";
+    var listDataF = "";
+    var dateFrom = $.datepicker.parseDate("dd-mm-yy", $("#reportFrom").val());
+    var dateTo = $.datepicker.parseDate("dd-mm-yy", $("#reportTo").val());
+
+    dateTo.setDate(dateTo.getDate() + 1);
+
+    $("#reportFrom").next('p').remove();
+
+    if (dateFrom < dateTo){
+
+    }
+    else {
+        $("#reportFrom").after('<p class="error help-block"><span class="label label-important">*Invalid Data </span></p>');
+        return false;
+    }
+
+        //data: { check1: false, check1_1: true, check1_2: false, check2: false, check2_1: true, check2_2: false, check3: false, check3_1:true, check3_2:false, check4: false, check4_1:true, check4_2:false },
+        //data: "{'serialNumber':'" + JSON.stringify(serialNumber) + "','deateFrom':'" + JSON.stringify(stringSend) + "'}",
+        //data: "{'serialNumber':'"+JSON.stringify(serialNumberGlobal)+"','dateFrom':'" + (dateFrom.getDate()).toString() + "/" + (dateFrom.getMonth() + 1).toString() + "/" + dateFrom.getFullYear().toString() + "','dateTo':'" + (dateTo.getDate()).toString() + "/" + (dateTo.getMonth() + 1).toString() + "/" + dateTo.getFullYear().toString() + "'}",
+        //data: "{'serialNumber':'" + JSON.stringify(serialNumberGlobal) + "','dateFrom':'" + dateFrom.getFullYear().toString() + "/" + (dateFrom.getMonth() + 1).toString() + "/" + (dateFrom.getDate()).toString() + "','dateTo':'" + dateTo.getFullYear().toString() + "/" + (dateTo.getMonth() + 1).toString() + "/" + (dateTo.getDate()).toString() + "'}",
+        //da reimpostare
+
+    if ($("#pdfReport").is(':checked')) {
+        typeFile = "1";
+    }
+    if ($("#xlsReport").is(':checked')) {
+        typeFile = "2";
+    }
+    if ($("#csvReport").is(':checked')) {
+        typeFile = "3";
+    }
+    var canaleIndex = 0;
+    for (canaleIndex = 0; canaleIndex < arrayOggettiCanale.length; canaleIndex++) {
+        var oggettoCanaleTemp = arrayOggettiCanale[canaleIndex];
+        listDataF = listDataF + oggettoCanaleTemp.valuePhId + "|" + createLabelGlobal(oggettoCanaleTemp.labelpHId) + ";"
+        //valuePhId
+    }
+    window.location.href = "generateReport.aspx?dateFrom=" + dateFrom.getFullYear().toString() + "/" + (dateFrom.getMonth() + 1).toString() + "/" + (dateFrom.getDate()).toString()  + "&dateTo=" + dateTo.getFullYear().toString() + "/" + (dateTo.getMonth() + 1).toString() + "/" + (dateTo.getDate()).toString() + "&type=" + typeFile + "&listDataF=" + listDataF + "&serial=" + serialNumberGlobal;
+    return false;
+});
 //gestione log
 function updateSetpointWeek(id, valore, giornoSettimana, indice_sub) {
     var aggiungi = true;
@@ -3286,7 +3328,8 @@ function calcolaMinimoMassimo(oggetto, attributi)
     
 function get_data(serialNumber, firstValue) {
 
-    if (firstValue){
+    if (firstValue) {
+        //alert("partenza")
         readCookie(serialNumber);
         bootbox.dialog();
         //bootbox.dialog("<div class = \"widget\"><div class=\"widget-head\" style=\"text-align:center\"><h4 id = \"spinnerLoadText\" class=\"heading\" >Loading .. </h4></div><div id = \"spinnerLoad\" class=\"widget-body\"><script type=\"text/javascript\">carica_spinner('spinnerLoad');</script></div></div>");

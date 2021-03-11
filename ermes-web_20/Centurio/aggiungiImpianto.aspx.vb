@@ -13,14 +13,19 @@
         Dim listResult As New Dictionary(Of String, List(Of String))
         Dim stringaResult As String = "{"
         Dim virgola As String = ""
+        Dim typeStrumento As Integer = 0
 
         sito = Page.Request("sito")
         impianto = Page.Request("impianto")
         serial = Page.Request("serial")
         idsuper = Page.Request("idsuper")
         Dim codice_super As Guid = New Guid(idsuper)
+        For Each dc1 In query.getTypeSerialNumber(serial)
+            typeStrumento = dc1.type
+            Exit For
+        Next
         result_query = query.insert_impianto(codice_super, "00000000-0000-0000-0000-000000000000", "", sito + ">" + impianto, "",
-                                               serial, "", Now, "", "", False)
+                                               serial, "", Now, "", "", False, typeStrumento)
         If result_query Then
             stringaResult = stringaResult + """errore"":""ok""}"
         Else

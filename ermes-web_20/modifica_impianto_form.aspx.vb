@@ -71,7 +71,7 @@
                     Text6.Text = dc.telefono_referente 'referente telefono
                     Text7.Text = dc.mail_referente 'referente mail
 
-                    alarmMail.Checked = dc.Expr1
+                    alarmMail.Checked = dc.Expr11
 
                     textGruppo.Text = nome_gruppo(0) 'gruppo
                     Text11.Text = nome_gruppo(1) 'sottogruppo

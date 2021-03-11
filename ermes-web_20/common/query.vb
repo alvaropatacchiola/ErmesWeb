@@ -34,9 +34,30 @@
     Public db_data_xml_runtime As centurioQueryTableAdapters.centurioConfigTableAdapter = New centurioQueryTableAdapters.centurioConfigTableAdapter
     Public db_data_xml_probeList As centurioQueryTableAdapters.xmlConfigTableAdapter = New centurioQueryTableAdapters.xmlConfigTableAdapter
     Public db_data_xml_configGlobal As centurioQueryTableAdapters.xmlConfigGlobalTableAdapter = New centurioQueryTableAdapters.xmlConfigGlobalTableAdapter
+    ' database serial Number
+    Public db_serialNumber As quey_dbTableAdapters.typeSerialNumberTableAdapter = New quey_dbTableAdapters.typeSerialNumberTableAdapter
 
+    ' database serial Number
+    Public Function getTypeSerialNumber(ByVal serialNumber As String) As ermes_web_20.quey_db.typeSerialNumberDataTable
+        Dim i As Integer
+        For i = 0 To 3
+            Try
+                Return db_serialNumber.GetData(serialNumber)
+            Catch ex As Exception
 
+            End Try
+        Next
 
+    End Function
+    Public Function insertNewSerialPump(ByVal serialNumber As String, ByVal type As String) As Boolean
+        Dim result_insert As Integer
+        result_insert = db_serialNumber.InsertQuery(Now, serialNumber, CInt(type))
+        If result_insert > 0 Then
+            Return True
+        Else
+            Return False
+        End If
+    End Function
     Public Function getJSONEnable(ByVal username As String, ByVal password As String, ByVal identificativo As String, ByRef labelAlarm As String) As Boolean
         labelAlarm = ""
         If (db_data_apiJson.GetData(username, password, identificativo).Count > 0) Then
@@ -557,9 +578,9 @@
     End Function
     Public Function insert_impianto(ByVal id_super As Guid, ByVal id_user As String, ByVal indirizzo As String, ByVal nome_impianto As String,
                                 ByVal descrizione_impianto As String, ByVal identificativo As String, ByVal referente As String, data_gestione As Date,
-                                ByVal telefono_referente As String, ByVal mail_referente As String, ByVal modifica_setpoint_user As String) As Boolean
+                                ByVal telefono_referente As String, ByVal mail_referente As String, ByVal modifica_setpoint_user As String, ByVal tipoStrumento As Integer) As Boolean
         Dim result_insert As Integer
-        result_insert = db_data_impianto.InsertQuery_impianto(id_super, id_user, nome_impianto, descrizione_impianto, identificativo, referente, "", Now, "", telefono_referente, mail_referente, indirizzo, modifica_setpoint_user, False)
+        result_insert = db_data_impianto.InsertQuery_impianto(id_super, id_user, nome_impianto, descrizione_impianto, identificativo, referente, "", Now, "", telefono_referente, mail_referente, indirizzo, modifica_setpoint_user, False, tipoStrumento)
 
         If result_insert > 0 Then
             Return True
