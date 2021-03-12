@@ -5810,6 +5810,8 @@ Partial Public Class quey_db
         
         Private columntot_bleed As Global.System.Data.DataColumn
         
+        Private columnPower_On As Global.System.Data.DataColumn
+        
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Sub New()
@@ -6046,6 +6048,14 @@ Partial Public Class quey_db
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property Power_OnColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnPower_On
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Browsable(false)>  _
         Public ReadOnly Property Count() As Integer
@@ -6107,9 +6117,10 @@ Partial Public Class quey_db
                     ByVal ch3_low As String,  _
                     ByVal ch3_level As String,  _
                     ByVal tot_input As String,  _
-                    ByVal tot_bleed As String) As log_towerRow
+                    ByVal tot_bleed As String,  _
+                    ByVal Power_On As Boolean) As log_towerRow
             Dim rowlog_towerRow As log_towerRow = CType(Me.NewRow,log_towerRow)
-            Dim columnValuesArray() As Object = New Object() {id, identificativo, id_485, data, valore1, valore2, valore3, temperatura, cd_high, cd_low, bleed_timeout, flow, level_inhibitor, level_prebiocide1, level_prebiocide2, level_biocide1, level_biocide2, ch2_high, ch2_low, ch2_level, ch3_high, ch3_low, ch3_level, tot_input, tot_bleed}
+            Dim columnValuesArray() As Object = New Object() {id, identificativo, id_485, data, valore1, valore2, valore3, temperatura, cd_high, cd_low, bleed_timeout, flow, level_inhibitor, level_prebiocide1, level_prebiocide2, level_biocide1, level_biocide2, ch2_high, ch2_low, ch2_level, ch3_high, ch3_low, ch3_level, tot_input, tot_bleed, Power_On}
             rowlog_towerRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowlog_towerRow)
             Return rowlog_towerRow
@@ -6157,6 +6168,7 @@ Partial Public Class quey_db
             Me.columnch3_level = MyBase.Columns("ch3_level")
             Me.columntot_input = MyBase.Columns("tot_input")
             Me.columntot_bleed = MyBase.Columns("tot_bleed")
+            Me.columnPower_On = MyBase.Columns("Power_On")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -6212,6 +6224,8 @@ Partial Public Class quey_db
             MyBase.Columns.Add(Me.columntot_input)
             Me.columntot_bleed = New Global.System.Data.DataColumn("tot_bleed", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columntot_bleed)
+            Me.columnPower_On = New Global.System.Data.DataColumn("Power_On", GetType(Boolean), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnPower_On)
             Me.columnidentificativo.MaxLength = 50
             Me.columnid_485.MaxLength = 10
             Me.columntemperatura.MaxLength = 2147483647
@@ -6232,6 +6246,7 @@ Partial Public Class quey_db
             Me.columnch3_level.MaxLength = 2147483647
             Me.columntot_input.MaxLength = 2147483647
             Me.columntot_bleed.MaxLength = 2147483647
+            Me.columnPower_On.ReadOnly = true
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -6974,6 +6989,8 @@ Partial Public Class quey_db
         
         Private columnlev_errata As Global.System.Data.DataColumn
         
+        Private columntotAcqua As Global.System.Data.DataColumn
+        
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Sub New()
@@ -7122,6 +7139,14 @@ Partial Public Class quey_db
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property totAcquaColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columntotAcqua
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Browsable(false)>  _
         Public ReadOnly Property Count() As Integer
@@ -7158,9 +7183,9 @@ Partial Public Class quey_db
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Overloads Function Addltb_logRow(ByVal id As System.Guid, ByVal identificativo As String, ByVal id_485 As String, ByVal data As Date, ByVal valore1 As Single, ByVal valore2 As Single, ByVal temperatura As Single, ByVal flusso As Boolean, ByVal lev_hcl As Boolean, ByVal lev_naclo2 As Boolean, ByVal lev_k6 As Boolean, ByVal temp_max As Boolean, ByVal _stop As Boolean, ByVal lev_errata As Boolean) As ltb_logRow
+        Public Overloads Function Addltb_logRow(ByVal id As System.Guid, ByVal identificativo As String, ByVal id_485 As String, ByVal data As Date, ByVal valore1 As Single, ByVal valore2 As Single, ByVal temperatura As Single, ByVal flusso As Boolean, ByVal lev_hcl As Boolean, ByVal lev_naclo2 As Boolean, ByVal lev_k6 As Boolean, ByVal temp_max As Boolean, ByVal _stop As Boolean, ByVal lev_errata As Boolean, ByVal totAcqua As Single) As ltb_logRow
             Dim rowltb_logRow As ltb_logRow = CType(Me.NewRow,ltb_logRow)
-            Dim columnValuesArray() As Object = New Object() {id, identificativo, id_485, data, valore1, valore2, temperatura, flusso, lev_hcl, lev_naclo2, lev_k6, temp_max, _stop, lev_errata}
+            Dim columnValuesArray() As Object = New Object() {id, identificativo, id_485, data, valore1, valore2, temperatura, flusso, lev_hcl, lev_naclo2, lev_k6, temp_max, _stop, lev_errata, totAcqua}
             rowltb_logRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowltb_logRow)
             Return rowltb_logRow
@@ -7197,6 +7222,7 @@ Partial Public Class quey_db
             Me.columntemp_max = MyBase.Columns("temp_max")
             Me.columnstop = MyBase.Columns("stop")
             Me.columnlev_errata = MyBase.Columns("lev_errata")
+            Me.columntotAcqua = MyBase.Columns("totAcqua")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -7233,6 +7259,8 @@ Partial Public Class quey_db
             MyBase.Columns.Add(Me.columnstop)
             Me.columnlev_errata = New Global.System.Data.DataColumn("lev_errata", GetType(Boolean), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnlev_errata)
+            Me.columntotAcqua = New Global.System.Data.DataColumn("totAcqua", GetType(Single), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columntotAcqua)
             Me.columnidentificativo.MaxLength = 50
             Me.columnid_485.MaxLength = 10
         End Sub
@@ -16129,6 +16157,21 @@ Partial Public Class quey_db
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property Power_On() As Boolean
+            Get
+                Try 
+                    Return CType(Me(Me.tablelog_tower.Power_OnColumn),Boolean)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("Il valore della colonna 'Power_On' nella tabella 'log_tower' è DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tablelog_tower.Power_OnColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Function IsidNull() As Boolean
             Return Me.IsNull(Me.tablelog_tower.idColumn)
         End Function
@@ -16425,6 +16468,18 @@ Partial Public Class quey_db
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Sub Settot_bleedNull()
             Me(Me.tablelog_tower.tot_bleedColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsPower_OnNull() As Boolean
+            Return Me.IsNull(Me.tablelog_tower.Power_OnColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetPower_OnNull()
+            Me(Me.tablelog_tower.Power_OnColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
     
@@ -17319,6 +17374,21 @@ Partial Public Class quey_db
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property totAcqua() As Single
+            Get
+                Try 
+                    Return CType(Me(Me.tableltb_log.totAcquaColumn),Single)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("Il valore della colonna 'totAcqua' nella tabella 'ltb_log' è DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableltb_log.totAcquaColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Function IsidNull() As Boolean
             Return Me.IsNull(Me.tableltb_log.idColumn)
         End Function
@@ -17483,6 +17553,18 @@ Partial Public Class quey_db
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Sub Setlev_errataNull()
             Me(Me.tableltb_log.lev_errataColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IstotAcquaNull() As Boolean
+            Return Me.IsNull(Me.tableltb_log.totAcquaColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SettotAcquaNull()
+            Me(Me.tableltb_log.totAcquaColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
     
@@ -25807,6 +25889,7 @@ Namespace quey_dbTableAdapters
             tableMapping.ColumnMappings.Add("ch3_level", "ch3_level")
             tableMapping.ColumnMappings.Add("tot_input", "tot_input")
             tableMapping.ColumnMappings.Add("tot_bleed", "tot_bleed")
+            tableMapping.ColumnMappings.Add("Power_On", "Power_On")
             Me._adapter.TableMappings.Add(tableMapping)
             Me._adapter.InsertCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.InsertCommand.Connection = Me.Connection
@@ -25862,10 +25945,11 @@ Namespace quey_dbTableAdapters
             Me._commandCollection(0).Connection = Me.Connection
             Me._commandCollection(0).CommandText = "SELECT        id, identificativo, id_485, data, valore1, valore2, valore3, temper"& _ 
                 "atura, cd_high, cd_low, bleed_timeout, flow, level_inhibitor, level_prebiocide1,"& _ 
-                " level_prebiocide2, level_biocide1, level_biocide2, ch2_high, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                "& _ 
-                "         ch2_low, ch2_level, ch3_high, ch3_low, ch3_level, tot_input, tot_bleed"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            log_tower"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (identificativo = @identificativo) AND "& _ 
-                "(id_485 = @i485 OR"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         id_485 = @i485_1) AND (data BETWEEN"& _ 
-                " @data1 AND @data2)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"ORDER BY data"
+                " level_prebiocide2, level_biocide1, level_biocide2, ch2_high, ch2_low, ch2_level"& _ 
+                ", "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         ch3_high, ch3_low, ch3_level, tot_input, tot_bleed,"& _ 
+                " ISNULL(Power_On, 0) AS Power_On"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            log_tower"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (ident"& _ 
+                "ificativo = @identificativo) AND (id_485 = @i485 OR"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         id"& _ 
+                "_485 = @i485_1) AND (data BETWEEN @data1 AND @data2)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"ORDER BY data"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@identificativo", Global.System.Data.SqlDbType.NVarChar, 50, Global.System.Data.ParameterDirection.Input, 0, 0, "identificativo", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@i485", Global.System.Data.SqlDbType.NChar, 10, Global.System.Data.ParameterDirection.Input, 0, 0, "id_485", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
@@ -26864,6 +26948,7 @@ Namespace quey_dbTableAdapters
             tableMapping.ColumnMappings.Add("temp_max", "temp_max")
             tableMapping.ColumnMappings.Add("stop", "stop")
             tableMapping.ColumnMappings.Add("lev_errata", "lev_errata")
+            tableMapping.ColumnMappings.Add("totAcqua", "totAcqua")
             Me._adapter.TableMappings.Add(tableMapping)
             Me._adapter.InsertCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.InsertCommand.Connection = Me.Connection
@@ -26903,9 +26988,10 @@ Namespace quey_dbTableAdapters
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
             Me._commandCollection(0).CommandText = "SELECT        id, identificativo, id_485, data, valore1, valore2, temperatura, fl"& _ 
-                "usso, lev_hcl, lev_naclo2, lev_k6, temp_max, stop, lev_errata"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            l"& _ 
-                "tb_log"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (identificativo = @identificativo) AND (id_485 = @i485 OR"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)& _ 
-                "                         id_485 = @i485_1) AND (data BETWEEN @data1 AND @data2)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"ORDER BY data"
+                "usso, lev_hcl, lev_naclo2, lev_k6, temp_max, stop, lev_errata, ISNULL(totAcqua, "& _ 
+                "0) AS totAcqua"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            ltb_log"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (identificativo = @identif"& _ 
+                "icativo) AND (id_485 = @i485 OR"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         id_485 = @i485_1) AND "& _ 
+                "(data BETWEEN @data1 AND @data2)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"ORDER BY data"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@identificativo", Global.System.Data.SqlDbType.NVarChar, 50, Global.System.Data.ParameterDirection.Input, 0, 0, "identificativo", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@i485", Global.System.Data.SqlDbType.NChar, 10, Global.System.Data.ParameterDirection.Input, 0, 0, "id_485", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))

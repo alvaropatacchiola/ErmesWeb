@@ -85,6 +85,8 @@ Public Class log_ltb
         Dim lunghezza_tabella As Integer
         Dim function_javascript As String = ""
 
+        Dim release_value() As String
+
         Dim java_script_variable As java_script = New java_script
         Dim java_script_function As java_script = New java_script
         Dim query As New query
@@ -127,6 +129,16 @@ Public Class log_ltb
         config_value = main_function.get_split_str(riga_strumento.value1)
         calibrz_value = main_function.get_split_str(riga_strumento.value4)
         valuer_value = main_function.get_split_str(riga_strumento.value2)
+        release_value = main_function.get_split_str(riga_strumento.nome)
+
+        number_version = Mid(release_value(3), 1, 3)
+
+        If number_version >= 213 Then
+            ltb_release.Visible = True
+        Else
+            ltb_release.Visible = False
+        End If
+
 
         formato_d = Mid(valuer_value(4), 1, 1)
 
@@ -263,8 +275,9 @@ Public Class log_ltb
 
         literal_script.Text = literal_script.Text + "var graph_log='" + GetGlobalResourceObject("javascript_global", "graph_log") + " " + nome_impianto + "';"
 
-        literal_script.Text = literal_script.Text + "var flow_label='" + flow_label.Text + "';" + "var lev_hcl_label='" + lev_hcl_label.Text + "';" + "var lev_naclo2_label='" + lev_naclo2_label.Text + "';" + _
-         "var lev_k6_label='" + lev_k6_label.Text + "';" + "var stop_label='" + stop_label.Text + "';" + "var lev_errata_label='" + lev_errata_label.Text + "';" + "var temp_max_label='" + temp_max_label.Text + "';" + "var temperature_val_label='" + temperature_val_label.Text + "';"
+        literal_script.Text = literal_script.Text + "var flow_label='" + flow_label.Text + "';" + "var lev_hcl_label='" + lev_hcl_label.Text + "';" + "var lev_naclo2_label='" + lev_naclo2_label.Text + "';" +
+         "var lev_k6_label='" + lev_k6_label.Text + "';" + "var stop_label='" + stop_label.Text + "';" + "var lev_errata_label='" + lev_errata_label.Text + "';" + "var temp_max_label='" + temp_max_label.Text + "';" + "var temperature_val_label='" + temperature_val_label.Text + "';" _
+         + "var totAcqua_val_label='" + totWater_label.Text + "';"
 
 
 

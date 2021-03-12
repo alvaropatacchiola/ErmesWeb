@@ -12,7 +12,7 @@ Option Explicit On
 
 
 Partial Public Class log_tower
-
+    
     '''<summary>
     '''Controllo form_log.
     '''</summary>
@@ -21,7 +21,7 @@ Partial Public Class log_tower
     '''Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
     '''</remarks>
     Protected WithEvents form_log As Global.System.Web.UI.HtmlControls.HtmlForm
-
+    
     '''<summary>
     '''Controllo log_setting_id.
     '''</summary>
@@ -30,7 +30,7 @@ Partial Public Class log_tower
     '''Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
     '''</remarks>
     Protected WithEvents log_setting_id As Global.System.Web.UI.WebControls.Literal
-
+    
     '''<summary>
     '''Controllo ch1_enable.
     '''</summary>
@@ -39,7 +39,7 @@ Partial Public Class log_tower
     '''Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
     '''</remarks>
     Protected WithEvents ch1_enable As Global.System.Web.UI.WebControls.PlaceHolder
-
+    
     '''<summary>
     '''Controllo Literal1.
     '''</summary>
@@ -48,7 +48,7 @@ Partial Public Class log_tower
     '''Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
     '''</remarks>
     Protected WithEvents Literal1 As Global.System.Web.UI.WebControls.Literal
-
+    
     '''<summary>
     '''Controllo ch1_val.
     '''</summary>
@@ -57,7 +57,7 @@ Partial Public Class log_tower
     '''Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
     '''</remarks>
     Protected WithEvents ch1_val As Global.System.Web.UI.WebControls.CheckBox
-
+    
     '''<summary>
     '''Controllo ch1_val_label.
     '''</summary>
@@ -66,7 +66,7 @@ Partial Public Class log_tower
     '''Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
     '''</remarks>
     Protected WithEvents ch1_val_label As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''Controllo ch1_high.
     '''</summary>
@@ -75,7 +75,7 @@ Partial Public Class log_tower
     '''Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
     '''</remarks>
     Protected WithEvents ch1_high As Global.System.Web.UI.WebControls.CheckBox
-
+    
     '''<summary>
     '''Controllo ch1_high_label.
     '''</summary>
@@ -84,7 +84,7 @@ Partial Public Class log_tower
     '''Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
     '''</remarks>
     Protected WithEvents ch1_high_label As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''Controllo ch1_low.
     '''</summary>
@@ -93,7 +93,7 @@ Partial Public Class log_tower
     '''Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
     '''</remarks>
     Protected WithEvents ch1_low As Global.System.Web.UI.WebControls.CheckBox
-
+    
     '''<summary>
     '''Controllo ch1_low_label.
     '''</summary>
@@ -102,7 +102,7 @@ Partial Public Class log_tower
     '''Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
     '''</remarks>
     Protected WithEvents ch1_low_label As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''Controllo ch1_bleed.
     '''</summary>
@@ -111,7 +111,7 @@ Partial Public Class log_tower
     '''Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
     '''</remarks>
     Protected WithEvents ch1_bleed As Global.System.Web.UI.WebControls.CheckBox
-
+    
     '''<summary>
     '''Controllo ch1_bleed_label.
     '''</summary>
@@ -120,7 +120,7 @@ Partial Public Class log_tower
     '''Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
     '''</remarks>
     Protected WithEvents ch1_bleed_label As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''Controllo ch1_livello_inhibitor.
     '''</summary>
@@ -129,7 +129,7 @@ Partial Public Class log_tower
     '''Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
     '''</remarks>
     Protected WithEvents ch1_livello_inhibitor As Global.System.Web.UI.WebControls.CheckBox
-
+    
     '''<summary>
     '''Controllo ch1_livello_inhibitor_label.
     '''</summary>
@@ -138,7 +138,7 @@ Partial Public Class log_tower
     '''Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
     '''</remarks>
     Protected WithEvents ch1_livello_inhibitor_label As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''Controllo ch1_livello_prebiocide1.
     '''</summary>
@@ -147,7 +147,7 @@ Partial Public Class log_tower
     '''Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
     '''</remarks>
     Protected WithEvents ch1_livello_prebiocide1 As Global.System.Web.UI.WebControls.CheckBox
-
+    
     '''<summary>
     '''Controllo ch1_livello_prebiocide1_label.
     '''</summary>
@@ -156,7 +156,7 @@ Partial Public Class log_tower
     '''Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
     '''</remarks>
     Protected WithEvents ch1_livello_prebiocide1_label As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''Controllo ch1_livello_prebiocide2.
     '''</summary>
@@ -165,7 +165,7 @@ Partial Public Class log_tower
     '''Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
     '''</remarks>
     Protected WithEvents ch1_livello_prebiocide2 As Global.System.Web.UI.WebControls.CheckBox
-
+    
     '''<summary>
     '''Controllo ch1_livello_prebiocide2_label.
     '''</summary>
@@ -174,7 +174,7 @@ Partial Public Class log_tower
     '''Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
     '''</remarks>
     Protected WithEvents ch1_livello_prebiocide2_label As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''Controllo ch1_livello_biocide1.
     '''</summary>
@@ -183,7 +183,7 @@ Partial Public Class log_tower
     '''Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
     '''</remarks>
     Protected WithEvents ch1_livello_biocide1 As Global.System.Web.UI.WebControls.CheckBox
-
+    
     '''<summary>
     '''Controllo ch1_livello_biocide1_label.
     '''</summary>
@@ -192,7 +192,7 @@ Partial Public Class log_tower
     '''Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
     '''</remarks>
     Protected WithEvents ch1_livello_biocide1_label As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''Controllo ch1_livello_biocide2.
     '''</summary>
@@ -201,7 +201,7 @@ Partial Public Class log_tower
     '''Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
     '''</remarks>
     Protected WithEvents ch1_livello_biocide2 As Global.System.Web.UI.WebControls.CheckBox
-
+    
     '''<summary>
     '''Controllo ch1_livello_biocide2_label.
     '''</summary>
@@ -210,7 +210,7 @@ Partial Public Class log_tower
     '''Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
     '''</remarks>
     Protected WithEvents ch1_livello_biocide2_label As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''Controllo ch2_enable.
     '''</summary>
@@ -219,7 +219,7 @@ Partial Public Class log_tower
     '''Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
     '''</remarks>
     Protected WithEvents ch2_enable As Global.System.Web.UI.WebControls.PlaceHolder
-
+    
     '''<summary>
     '''Controllo Literal2.
     '''</summary>
@@ -228,7 +228,7 @@ Partial Public Class log_tower
     '''Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
     '''</remarks>
     Protected WithEvents Literal2 As Global.System.Web.UI.WebControls.Literal
-
+    
     '''<summary>
     '''Controllo ch2_val.
     '''</summary>
@@ -237,7 +237,7 @@ Partial Public Class log_tower
     '''Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
     '''</remarks>
     Protected WithEvents ch2_val As Global.System.Web.UI.WebControls.CheckBox
-
+    
     '''<summary>
     '''Controllo ch2_val_label.
     '''</summary>
@@ -246,7 +246,7 @@ Partial Public Class log_tower
     '''Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
     '''</remarks>
     Protected WithEvents ch2_val_label As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''Controllo ch2_high.
     '''</summary>
@@ -255,7 +255,7 @@ Partial Public Class log_tower
     '''Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
     '''</remarks>
     Protected WithEvents ch2_high As Global.System.Web.UI.WebControls.CheckBox
-
+    
     '''<summary>
     '''Controllo ch2_high_label.
     '''</summary>
@@ -264,7 +264,7 @@ Partial Public Class log_tower
     '''Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
     '''</remarks>
     Protected WithEvents ch2_high_label As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''Controllo ch2_low.
     '''</summary>
@@ -273,7 +273,7 @@ Partial Public Class log_tower
     '''Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
     '''</remarks>
     Protected WithEvents ch2_low As Global.System.Web.UI.WebControls.CheckBox
-
+    
     '''<summary>
     '''Controllo ch2_low_label.
     '''</summary>
@@ -282,7 +282,7 @@ Partial Public Class log_tower
     '''Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
     '''</remarks>
     Protected WithEvents ch2_low_label As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''Controllo ch2_livello.
     '''</summary>
@@ -291,7 +291,7 @@ Partial Public Class log_tower
     '''Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
     '''</remarks>
     Protected WithEvents ch2_livello As Global.System.Web.UI.WebControls.CheckBox
-
+    
     '''<summary>
     '''Controllo ch2_livello_label.
     '''</summary>
@@ -300,7 +300,7 @@ Partial Public Class log_tower
     '''Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
     '''</remarks>
     Protected WithEvents ch2_livello_label As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''Controllo ch3_enable.
     '''</summary>
@@ -309,7 +309,7 @@ Partial Public Class log_tower
     '''Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
     '''</remarks>
     Protected WithEvents ch3_enable As Global.System.Web.UI.WebControls.PlaceHolder
-
+    
     '''<summary>
     '''Controllo Literal3.
     '''</summary>
@@ -318,7 +318,7 @@ Partial Public Class log_tower
     '''Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
     '''</remarks>
     Protected WithEvents Literal3 As Global.System.Web.UI.WebControls.Literal
-
+    
     '''<summary>
     '''Controllo ch3_val.
     '''</summary>
@@ -327,7 +327,7 @@ Partial Public Class log_tower
     '''Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
     '''</remarks>
     Protected WithEvents ch3_val As Global.System.Web.UI.WebControls.CheckBox
-
+    
     '''<summary>
     '''Controllo ch3_val_label.
     '''</summary>
@@ -336,7 +336,7 @@ Partial Public Class log_tower
     '''Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
     '''</remarks>
     Protected WithEvents ch3_val_label As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''Controllo ch3_high.
     '''</summary>
@@ -345,7 +345,7 @@ Partial Public Class log_tower
     '''Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
     '''</remarks>
     Protected WithEvents ch3_high As Global.System.Web.UI.WebControls.CheckBox
-
+    
     '''<summary>
     '''Controllo ch3_high_label.
     '''</summary>
@@ -354,7 +354,7 @@ Partial Public Class log_tower
     '''Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
     '''</remarks>
     Protected WithEvents ch3_high_label As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''Controllo ch3_low.
     '''</summary>
@@ -363,7 +363,7 @@ Partial Public Class log_tower
     '''Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
     '''</remarks>
     Protected WithEvents ch3_low As Global.System.Web.UI.WebControls.CheckBox
-
+    
     '''<summary>
     '''Controllo ch3_low_label.
     '''</summary>
@@ -372,7 +372,7 @@ Partial Public Class log_tower
     '''Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
     '''</remarks>
     Protected WithEvents ch3_low_label As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''Controllo ch3_livello.
     '''</summary>
@@ -381,7 +381,7 @@ Partial Public Class log_tower
     '''Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
     '''</remarks>
     Protected WithEvents ch3_livello As Global.System.Web.UI.WebControls.CheckBox
-
+    
     '''<summary>
     '''Controllo ch3_livello_label.
     '''</summary>
@@ -390,7 +390,7 @@ Partial Public Class log_tower
     '''Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
     '''</remarks>
     Protected WithEvents ch3_livello_label As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''Controllo Placeholder1.
     '''</summary>
@@ -399,7 +399,7 @@ Partial Public Class log_tower
     '''Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
     '''</remarks>
     Protected WithEvents Placeholder1 As Global.System.Web.UI.WebControls.PlaceHolder
-
+    
     '''<summary>
     '''Controllo Literal6.
     '''</summary>
@@ -408,7 +408,7 @@ Partial Public Class log_tower
     '''Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
     '''</remarks>
     Protected WithEvents Literal6 As Global.System.Web.UI.WebControls.Literal
-
+    
     '''<summary>
     '''Controllo flow_select.
     '''</summary>
@@ -417,7 +417,7 @@ Partial Public Class log_tower
     '''Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
     '''</remarks>
     Protected WithEvents flow_select As Global.System.Web.UI.WebControls.CheckBox
-
+    
     '''<summary>
     '''Controllo label_flow_select.
     '''</summary>
@@ -426,7 +426,7 @@ Partial Public Class log_tower
     '''Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
     '''</remarks>
     Protected WithEvents label_flow_select As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''Controllo temperature_select.
     '''</summary>
@@ -435,7 +435,7 @@ Partial Public Class log_tower
     '''Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
     '''</remarks>
     Protected WithEvents temperature_select As Global.System.Web.UI.WebControls.CheckBox
-
+    
     '''<summary>
     '''Controllo label_temperature_select.
     '''</summary>
@@ -444,7 +444,7 @@ Partial Public Class log_tower
     '''Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
     '''</remarks>
     Protected WithEvents label_temperature_select As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''Controllo wmi.
     '''</summary>
@@ -453,7 +453,7 @@ Partial Public Class log_tower
     '''Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
     '''</remarks>
     Protected WithEvents wmi As Global.System.Web.UI.WebControls.CheckBox
-
+    
     '''<summary>
     '''Controllo wmi_label.
     '''</summary>
@@ -462,7 +462,7 @@ Partial Public Class log_tower
     '''Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
     '''</remarks>
     Protected WithEvents wmi_label As Global.System.Web.UI.WebControls.Label
-
+    
     '''<summary>
     '''Controllo wmb.
     '''</summary>
@@ -471,7 +471,7 @@ Partial Public Class log_tower
     '''Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
     '''</remarks>
     Protected WithEvents wmb As Global.System.Web.UI.WebControls.CheckBox
-
+    
     '''<summary>
     '''Controllo wmb_label.
     '''</summary>
@@ -480,7 +480,34 @@ Partial Public Class log_tower
     '''Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
     '''</remarks>
     Protected WithEvents wmb_label As Global.System.Web.UI.WebControls.Label
-
+    
+    '''<summary>
+    '''Controllo Placeholder2.
+    '''</summary>
+    '''<remarks>
+    '''Campo generato automaticamente.
+    '''Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
+    '''</remarks>
+    Protected WithEvents Placeholder2 As Global.System.Web.UI.WebControls.PlaceHolder
+    
+    '''<summary>
+    '''Controllo Literal4.
+    '''</summary>
+    '''<remarks>
+    '''Campo generato automaticamente.
+    '''Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
+    '''</remarks>
+    Protected WithEvents Literal4 As Global.System.Web.UI.WebControls.Literal
+    
+    '''<summary>
+    '''Controllo Power_On.
+    '''</summary>
+    '''<remarks>
+    '''Campo generato automaticamente.
+    '''Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
+    '''</remarks>
+    Protected WithEvents Power_On As Global.System.Web.UI.WebControls.CheckBox
+    
     '''<summary>
     '''Controllo Literal11.
     '''</summary>
@@ -489,7 +516,7 @@ Partial Public Class log_tower
     '''Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
     '''</remarks>
     Protected WithEvents Literal11 As Global.System.Web.UI.WebControls.Literal
-
+    
     '''<summary>
     '''Controllo Literal10.
     '''</summary>
@@ -498,7 +525,7 @@ Partial Public Class log_tower
     '''Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
     '''</remarks>
     Protected WithEvents Literal10 As Global.System.Web.UI.WebControls.Literal
-
+    
     '''<summary>
     '''Controllo graph_log_from.
     '''</summary>
@@ -507,7 +534,7 @@ Partial Public Class log_tower
     '''Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
     '''</remarks>
     Protected WithEvents graph_log_from As Global.System.Web.UI.WebControls.TextBox
-
+    
     '''<summary>
     '''Controllo Literal9.
     '''</summary>
@@ -516,7 +543,7 @@ Partial Public Class log_tower
     '''Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
     '''</remarks>
     Protected WithEvents Literal9 As Global.System.Web.UI.WebControls.Literal
-
+    
     '''<summary>
     '''Controllo graph_log_to.
     '''</summary>
@@ -525,7 +552,7 @@ Partial Public Class log_tower
     '''Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
     '''</remarks>
     Protected WithEvents graph_log_to As Global.System.Web.UI.WebControls.TextBox
-
+    
     '''<summary>
     '''Controllo refresh_graph.
     '''</summary>
@@ -534,7 +561,7 @@ Partial Public Class log_tower
     '''Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
     '''</remarks>
     Protected WithEvents refresh_graph As Global.System.Web.UI.WebControls.Button
-
+    
     '''<summary>
     '''Controllo refresh_log_server.
     '''</summary>
@@ -543,7 +570,7 @@ Partial Public Class log_tower
     '''Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
     '''</remarks>
     Protected WithEvents refresh_log_server As Global.System.Web.UI.WebControls.Button
-
+    
     '''<summary>
     '''Controllo literal_script.
     '''</summary>

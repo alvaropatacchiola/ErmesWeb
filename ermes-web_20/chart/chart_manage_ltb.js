@@ -18,6 +18,8 @@ var array_temp_max = [];
 var array_stop = [];
 var array_lev_errata = [];
 
+var array_tot_Acqua = [];
+
 function get_data(parametro1, parametro2, parametro3, parametro4, parametro5) {
 
     $.ajax({
@@ -55,6 +57,7 @@ function get_data(parametro1, parametro2, parametro3, parametro4, parametro5) {
                 array_temp_max.push([data, parseInt(res[12])]);
                 array_stop.push([data, parseInt(res[13])]);
                 array_lev_errata.push([data, parseInt(res[14])]);
+                array_tot_Acqua.push([data, parseFloat(res[15])]);
 
             });
             upgrate_chart();
@@ -844,6 +847,36 @@ function upgrate_chart() {
         counter_series = counter_series + 1;
     }
 
+    // tot Acqua
+    if (($('#totWater').is(':checked')) && (counter_series < 10)) {
+
+        series_chart.push({
+            name: label_ch1,
+            id: 'ch1_val_series',
+            data: array_tot_Acqua,
+            yAxis: numero_asse,
+            marker: {
+                enabled: true,
+                radius: 3
+            },
+            tooltip: {
+                valueDecimals: 2
+            }
+        });
+        yaxis_chart.push({
+            title: {
+                text: totAcqua_val_label
+            },
+            opposite: false,
+            id: 'tot_Acqua',
+            height: 200,
+            lineWidth: 2
+        });
+        altezza = altezza + 300;
+        numero_asse = numero_asse + 1;
+        counter_series = counter_series + 1;
+    }
+
     altezza = altezza + 100;
 
     // series_chart[0].setData(array_ch1);
@@ -963,7 +996,9 @@ function draw_tabella() {
             if (($('#lev_errata').is(':checked'))) {
                 array_temp.push(on_off(array_lev_errata[i][1]));
             }
-
+            if (($('#totWater').is(':checked'))) {
+                array_temp.push(array_tot_Acqua[i][1]);
+            }
 
 
             

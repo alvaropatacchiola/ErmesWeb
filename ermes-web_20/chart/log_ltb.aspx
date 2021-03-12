@@ -108,7 +108,17 @@ inputlog {
 </div>
         <!-- fine riga -->
        
+<asp:placeholder runat="server" id="ltb_release" Visible="False">
+    <div class="row-fluid">    
+          <div class="span12">
+                    <h5 style="padding-top:10px"><asp:literal ID = "Literal7"  text="Totaliser" runat="server"  ></asp:literal></h5>
+                     <div id="checkboxCh"><asp:checkbox runat="server" ID="totWater" class="inputlog" ></asp:checkbox></div>
+                    <div id="checkboxCh"><asp:Label runat="server" ID="totWater_label" class="labellog" Text="Water" ></asp:Label> </div> 
+              </div>
+</div>
 
+
+</asp:placeholder>
                 
         <!-- fine riga -->
 

@@ -212,6 +212,20 @@ inputlog {
                             </div>
                             </div>
                         </asp:PlaceHolder>
+
+                <asp:PlaceHolder ID="Placeholder2" runat="server">
+                            <div class="span12">
+                                <h5 style="padding-top:10px">
+                                    <asp:Literal ID="Literal4" runat="server" text="Power On"></asp:Literal>
+                                </h5>
+                                <div id="checkboxCh">
+                                    <asp:CheckBox ID="Power_On" runat="server" Checked="False" Text="Power On" class="inputlog"  />
+                                </div>
+                                
+
+                            </div>
+                            </div>
+                        </asp:PlaceHolder>
         <!-- fine riga -->
      <!-- riga -->
 <div class="row-fluid">

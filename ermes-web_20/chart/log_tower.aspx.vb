@@ -423,6 +423,7 @@ Public Class log_tower
 
         literal_script.Text = literal_script.Text + "var label_wmi_select='" + wmi_label.Text + "';"
         literal_script.Text = literal_script.Text + "var label_wmb_select='" + wmb_label.Text + "';"
+        literal_script.Text = literal_script.Text + "var label_poweron_select='" + Power_On.Text + "';"
 
         literal_script.Text = literal_script.Text + "var name_coockie='" + codice_impianto + "_" + id_485_impianto + "_log" + "';"
 

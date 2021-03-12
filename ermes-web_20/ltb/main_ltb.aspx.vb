@@ -504,7 +504,9 @@
                 End If
                 intestazione = intestazione + "</tr>"
 
+
                 If release >= 125 Then
+                    intestazione = intestazione + "<tr>"
                     If main_function.alarm_ltb_lev_diox(alarm_value) Then
                         intestazione = intestazione + "<td width=""32%"">" + "ClO2 Air Alarm" + "</td>"
                         intestazione = intestazione + "<td width=""33%"" align=""center""><img src=""theme/images/allarme_on.png"" alt=""allarme_on""></td>"
@@ -515,6 +517,14 @@
                     intestazione = intestazione + "</tr>"
                 End If
 
+                If release >= 213 Then
+                    intestazione = intestazione + "<tr>"
+
+                    intestazione = intestazione + "<td width=""32%"">" + "Storage Pump" + "</td>"
+                    intestazione = intestazione + "<td width=""33%"" align=""center"">" + Mid(valuer_value(10), 1, 3) + " PM </td>"
+
+                    intestazione = intestazione + "</tr>"
+                End If
 
         End Select
         literal6.Text = intestazione

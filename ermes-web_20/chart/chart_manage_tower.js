@@ -33,6 +33,9 @@ var array_flow=[];
 var array_temperatura=[];
 var array_wmi=[];
 var array_wmb = [];
+
+var array_power_on = [];
+
 function get_data(parametro1, parametro2, parametro3, parametro4, parametro5) {
 
     $.ajax({
@@ -81,6 +84,9 @@ function get_data(parametro1, parametro2, parametro3, parametro4, parametro5) {
                 array_temperatura.push([data, parseFloat(res[23])]);
                 array_wmi.push([data, parseFloat(res[24])]);
                 array_wmb.push([data, parseFloat(res[25])]);
+
+                array_power_on.push([data, parseInt(res[26])]);
+
 
 
             });
@@ -1598,6 +1604,73 @@ function upgrate_chart() {
         numero_asse = numero_asse + 1;
         counter_series = counter_series + 1;
     }
+
+    if (($('#Power_On').is(':checked')) && (counter_series < 10)) {
+        series_chart.push({
+            name: label_poweron_select,
+            id: 'power_on_val_series',
+            data: array_power_on,
+            step: true,
+            type: 'scatter',
+
+            tooltip: {
+                pointFormat: function () {
+                    return false;
+                },
+                valueDecimals: 0
+            },
+            lineWidth: 2,
+
+            yAxis: numero_asse
+        },
+        {
+            id: 'power_on_val_series',
+            name: label_poweron_select,
+            data: array_power_on,
+            //type:'line',
+            step: true,
+            shadow: false,
+            color: 'rgba(255,255,255,0.1)',
+            tooltip: {
+                //pointFormat: '<span style="#FFFFF">{series.name}:<b>{point.y}</b></span>',
+                // formatter: '<span style="#FFFFF">{series.name}:<b>{point.y}</b></span>',
+                pointFormat: '<span style="#FFFFF">{series.name}:<b>{point.y}</b></span><br/>',
+
+                valueDecimals: 0
+            },
+            lineWidth: 2,
+            shared: true,
+            yAxis: numero_asse
+        });
+        yaxis_chart.push({
+            labels: {
+                formatter: function () {
+                    if (this.value == 1) {
+                        return on_label;
+                    }
+                    else {
+                        return off_label;
+                    }
+                }
+            },
+
+            title: {
+                text: label_poweron_select
+            },
+            opposite: false,
+            id: 'Power_On',
+            top: altezza,
+            height: 100,
+            offset: 0,
+            lineWidth: 2,
+            max: 2,
+            min: 0
+        });
+        altezza = altezza + 150;
+        numero_asse = numero_asse + 1;
+        counter_series = counter_series + 1;
+    }
+
     altezza = altezza + 100;
 
     // series_chart[0].setData(array_ch1);
@@ -1924,6 +1997,18 @@ function draw_tabella() {
                 //array_temp.push(array_wmb[i][1]);
             }
 
+            if (($('#Power_On').is(':checked'))) {
+                //array_temp.push(on_off(array_ch3_livello[i][1]));
+                if (frequenza_lettura)
+                    array_temp.push('<span style="color:blue">' + on_off(array_power_on[i][1]) + '</span>');
+                else {
+                    if (array_power_on[i][1] == 1)
+                        array_temp.push('<span style="color:red">' + on_off(array_power_on[i][1]) + '</span>');
+                    else
+                        array_temp.push(on_off(array_power_on[i][1]));
+                }
+
+            }
             
             header_value.push(array_temp);
         }

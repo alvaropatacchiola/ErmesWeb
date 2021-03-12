@@ -154,7 +154,7 @@ Public Class log_metod
             data_str = data_str + "," + Replace(dc.valore1.ToString, ",", ".") + "," + Replace(dc.valore2.ToString, ",", ".") + "," + Replace(dc.temperatura.ToString, ",", ".") _
                + "," + main_function.get_status_string(dc.flusso) + "," + main_function.get_status_string(dc.lev_hcl) + "," + main_function.get_status_string(dc.lev_naclo2) + "," + main_function.get_status_string(dc.lev_k6) _
                 + "," + main_function.get_status_string(dc.temp_max) + "," + main_function.get_status_string(dc._stop) _
-                + "," + main_function.get_status_string(dc.lev_errata)
+                + "," + main_function.get_status_string(dc.lev_errata) + "," + Replace(dc.totAcqua.ToString, ",", ".")
             array.Add(data_str)
 
 
@@ -305,14 +305,15 @@ Public Class log_metod
         For Each dc In table_log
             'Dim time As DateTime = DateTime.Parse(dc.data, New CultureInfo(culture, False))
             Dim data_str As String = "" + (dc.data.Year).ToString + "," + (dc.data.Month - 1).ToString + "," + dc.data.Day.ToString + "," + dc.data.Hour.ToString + "," + dc.data.Minute.ToString + ""
-            data_str = data_str + "," + Replace(dc.valore1.ToString, ",", ".") + "," + Replace(dc.valore2.ToString, ",", ".") + "," + Replace(dc.valore3.ToString, ",", ".")  _
-               +"," + main_function.get_status_string(dc.cd_high) + "," + main_function.get_status_string(dc.cd_low) + "," + main_function.get_status_string(dc.bleed_timeout) + "," + main_function.get_status_string(dc.level_inhibitor) _
+            data_str = data_str + "," + Replace(dc.valore1.ToString, ",", ".") + "," + Replace(dc.valore2.ToString, ",", ".") + "," + Replace(dc.valore3.ToString, ",", ".") _
+               + "," + main_function.get_status_string(dc.cd_high) + "," + main_function.get_status_string(dc.cd_low) + "," + main_function.get_status_string(dc.bleed_timeout) + "," + main_function.get_status_string(dc.level_inhibitor) _
                 + "," + main_function.get_status_string(dc.level_prebiocide1) + "," + main_function.get_status_string(dc.level_prebiocide2) _
                 + "," + main_function.get_status_string(dc.level_biocide1) + "," + main_function.get_status_string(dc.level_biocide2) _
                 + "," + main_function.get_status_string(dc.ch2_high) + "," + main_function.get_status_string(dc.ch2_low) + "," + main_function.get_status_string(dc.ch2_level) _
                 + "," + main_function.get_status_string(dc.ch3_high) + "," + main_function.get_status_string(dc.ch3_low) + "," + main_function.get_status_string(dc.ch3_level) _
                 + "," + main_function.get_status_string(dc.flow) _
-                + "," + Replace(dc.temperatura.ToString, ",", ".") + "," + Replace(dc.tot_input.ToString, ",", ".") + "," + Replace(dc.tot_bleed.ToString, ",", ".")
+                + "," + Replace(dc.temperatura.ToString, ",", ".") + "," + Replace(dc.tot_input.ToString, ",", ".") + "," + Replace(dc.tot_bleed.ToString, ",", ".") _
+                + "," + main_function.get_status_string(dc.Power_On)
 
 
             array.Add(data_str)
