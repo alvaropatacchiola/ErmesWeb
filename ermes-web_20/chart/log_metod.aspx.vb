@@ -313,7 +313,7 @@ Public Class log_metod
                 + "," + main_function.get_status_string(dc.ch3_high) + "," + main_function.get_status_string(dc.ch3_low) + "," + main_function.get_status_string(dc.ch3_level) _
                 + "," + main_function.get_status_string(dc.flow) _
                 + "," + Replace(dc.temperatura.ToString, ",", ".") + "," + Replace(dc.tot_input.ToString, ",", ".") + "," + Replace(dc.tot_bleed.ToString, ",", ".") _
-                + "," + main_function.get_status_string(dc.Power_On)
+                + "," + main_function.get_status_boolean(dc.Power_On)
 
 
             array.Add(data_str)

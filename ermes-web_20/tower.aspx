@@ -78,7 +78,9 @@
 							<ul class="unstyled icons">
                                 <li class='glyphicons calendar'>
                                 <asp:Label ID="Label12" runat="server" Text="<i></i> <span class='label'>10</span> <span class='label'>July</span> <span class='label'>1986</span> <span class='label'>18:56</span>" meta:resourcekey="Label12Resource1"></asp:Label>
+                                    <!--
                                     <asp:HyperLink ID="refresh_link" runat="server" ClientIDMode="Static" ImageUrl="~/image/refresh.png" NavigateUrl="~/impianto.aspx"></asp:HyperLink>
+                                        -->
                                     </li>
 								<!-- 
 								<li class="glyphicons tie"><i></i> Working at <a href="http://www.mosaicpro.biz">MosaicPro</a></li>
@@ -127,7 +129,8 @@
     <ul class="nav nav-pills">
         <asp:literal ID="Label14" runat="server" Text="<li class='active'><a id ='channels_id' href='#'>Channels</a></li>" meta:resourcekey="channels_idResource1"></asp:literal>
         <asp:literal ID="Label29" runat="server" Text="<li><a id ='inhibitor_id' href='#'>Inhibitor</a></li>" meta:resourcekey="Label29Resource1"></asp:literal>
-            <li class="dropdown" id ="biocide_li"><a class="dropdown-toggle" data-toggle="dropdown" href='#'><asp:Label ID="Label19" runat="server" Text="Biocide" meta:resourcekey="Label19Resource1"></asp:Label><span class="caret"></span></a>
+            <li class="dropdown" id ="biocide_li">
+        <a class="dropdown-toggle" data-toggle="dropdown" href='#'><asp:Label ID="Label19" runat="server" Text="Biocide" meta:resourcekey="Label19Resource1"></asp:Label><span class="caret"></span></a>
                 <ul class="dropdown-menu">
                     
                     <asp:literal ID="Label30" runat="server" Text="<li><a id ='biocide1_id' href='#'>Biocide1</a></li>" meta:resourcekey="Label30Resource1"></asp:literal>
@@ -136,7 +139,8 @@
             </li>
         <asp:literal ID="Label32" runat="server" Text="<li><a id ='bleed_id' href='#'>Bleed</a></li>" meta:resourcekey="Label32Resource1"></asp:literal>
 
-            <li class="dropdown" id ="setpoint_li"><a class="dropdown-toggle" data-toggle="dropdown" href='#'><asp:Label ID="Label16" runat="server" Text="SetPoint" meta:resourcekey="Label16Resource1"></asp:Label><span class="caret"></span></a>
+            <li class="dropdown" id ="setpoint_li">
+        <a class="dropdown-toggle" data-toggle="dropdown" href='#'><asp:Label ID="Label16" runat="server" Text="SetPoint" meta:resourcekey="Label16Resource1"></asp:Label><span class="caret"></span></a>
                 <ul class="dropdown-menu">
                     <asp:literal ID="Label33" runat="server" Text="<li><a id ='setpoint2_id' href='#'>SetPoint CH2</a></li>" meta:resourcekey="Label33Resource1"></asp:literal>
                     
@@ -148,8 +152,10 @@
 
             <asp:literal ID="Label18" runat="server" Text="<li><a id ='service_id' href='#'>Service</a></li>" meta:resourcekey="Label18Resource1"></asp:literal>
             <asp:literal ID="Label20" runat="server" Text="<li><a id ='calibration_id' href='#'>Calibration</a></li>" meta:resourcekey="Label20Resource1"></asp:literal>
+            <asp:literal ID="Literal2" runat="server" Text="<li><a id ='messagge_ld_id' href='#'>Message</a></li>"></asp:literal>
 
-            <li class="dropdown" id ="setting_li"><a class="dropdown-toggle" data-toggle="dropdown" href='#'><asp:Label ID="Label22" runat="server" Text="Settings" meta:resourcekey="Label22Resource1"></asp:Label><span class="caret"></span></a>
+            <li class="dropdown" id ="setting_li">
+        <a class="dropdown-toggle" data-toggle="dropdown" href='#'><asp:Label ID="Label22" runat="server" Text="Settings" meta:resourcekey="Label22Resource1"></asp:Label><span class="caret"></span></a>
                 <ul class="dropdown-menu">
                     <asp:literal ID="Label21" runat="server" Text="<li><a id ='flowmeter_id' href='#'>Flow Meter</a></li>" meta:resourcekey="Label21Resource1"></asp:literal>
                     <asp:literal ID="Label24" runat="server" Text="<li><a id ='alarm_id' href='#'>Alarm</a></li>" meta:resourcekey="Label24Resource1"></asp:literal>
@@ -316,8 +322,14 @@
                 StopRefresh();
                 $("#principale").load("tower/bleed_boiler.aspx?" + sPageURL);
                 break;
+            case 17:
+                evidenzia("", "#messagge_ld_id");
+                StopRefresh();
+                $("#principale").load("tower/message_tw.aspx?" + sPageURL);
+                break;
 
 
+                
         }
     }
 
@@ -407,7 +419,13 @@
         carica_pagina(16);
 
     });
+    $("#messagge_ld_id").click(function () {
+        carica_pagina(17);
 
+    });
+
+
+    
     /*
             
             gestione refresh pagina

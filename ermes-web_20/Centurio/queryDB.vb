@@ -62,6 +62,12 @@ Public Class queryDB
         If querySTR = "" Then
             Return True
         End If
+
+        'If con.State = ConnectionState.Open Then
+        '    con.Close()
+        '    connectToDb(True)
+        'End If
+
         cmd.CommandText = querySTR
         Dim sqlDataRead As SqlDataReader = cmd.ExecuteReader()
         'While sqlDataRead.Read

@@ -257,7 +257,7 @@ inputlog {
            <asp:Button ID="refresh_log_server" runat="server" BackColor="Transparent" BorderColor="Transparent" meta:resourcekey="refresh_log_serverResource1"  />
     <asp:literal runat="server" ID="literal_script" meta:resourcekey="literal_scriptResource1"></asp:literal>
 
-    <script type="text/javascript" src="chart/chart_manage_tower.js"></script>
+    <script type="text/javascript" src="chart/chart_manage_tower.js?v=1.1"></script>
         </div>
     </div>
 </form>

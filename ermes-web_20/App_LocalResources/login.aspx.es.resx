@@ -192,4 +192,28 @@
   <data name="remember_meResource.Text" xml:space="preserve">
     <value>Recuérdame</value>
   </data>
+  <data name="Button1NResource1.Text" xml:space="preserve">
+    <value>iniciar sesión</value>
+  </data>
+  <data name="Button1NResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CheckBox1NResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CheckBox1NResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Label2NResource1.Text" xml:space="preserve">
+    <value>&lt;b style='color:red'&gt;Nombre de usuario incorrecto y / o contraseña&lt;b&gt;</value>
+  </data>
+  <data name="Label2Resource1.Text1" xml:space="preserve">
+    <value>Contraseña &lt;a class='password' href=''&gt;¿Olvidaste tu contraseña?&lt;/a&gt;</value>
+  </data>
+  <data name="remember_meNResource1.Text" xml:space="preserve">
+    <value>Recuerda</value>
+  </data>
+  <data name="remember_meNResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
 </root>

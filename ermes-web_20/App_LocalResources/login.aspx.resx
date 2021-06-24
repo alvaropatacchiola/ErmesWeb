@@ -117,6 +117,12 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Button1NResource1.Text" xml:space="preserve">
+    <value>Sign in</value>
+  </data>
+  <data name="Button1NResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
   <data name="Button1Resource1.Text" xml:space="preserve">
     <value>Entra</value>
   </data>
@@ -135,11 +141,20 @@
   <data name="Button3Resource1.ToolTip" xml:space="preserve">
     <value />
   </data>
+  <data name="CheckBox1NResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CheckBox1NResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
   <data name="Label1Resource1.Text" xml:space="preserve">
     <value>Nome Utente</value>
   </data>
   <data name="Label1Resource1.ToolTip" xml:space="preserve">
     <value />
+  </data>
+  <data name="Label2NResource1.Text" xml:space="preserve">
+    <value>&lt;b style='color:red'&gt;Username e/o Password errato&lt;b&gt;</value>
   </data>
   <data name="Label2Resource1.Text" xml:space="preserve">
     <value>Password &lt;a class='password' href=''&gt;Password Dimenticata?&lt;/a&gt;</value>
@@ -156,8 +171,14 @@
   <data name="Literal1Resource2.Text" xml:space="preserve">
     <value>&lt;a class='password' href='remember.aspx'&gt;Password Dimenticata?&lt;/a&gt;</value>
   </data>
+  <data name="Literal1Resource3.Text" xml:space="preserve">
+    <value>forgot your password?</value>
+  </data>
   <data name="Literal2Resource1.Text" xml:space="preserve">
     <value>&lt;li class='active'&gt;&lt;a href='' title='English'&gt;&lt;img src='theme/images/lang/en.png' alt='English'&gt; English&lt;/a&gt;&lt;/li&gt;</value>
+  </data>
+  <data name="Literal2Resource2.Text" xml:space="preserve">
+    <value>Sign Up</value>
   </data>
   <data name="Literal3Resource1.Text" xml:space="preserve">
     <value>&lt;a href='#' data-toggle='dropdown'&gt;&lt;img src='theme/images/lang/en.png' alt='en' /&gt;&lt;/a&gt;</value>
@@ -171,11 +192,29 @@
   <data name="PageResource1.Title" xml:space="preserve">
     <value>Ermes-Server</value>
   </data>
+  <data name="PageResource2.Title" xml:space="preserve">
+    <value>ERMES - Emec , Simple as Water</value>
+  </data>
+  <data name="remember_meNResource1.Text" xml:space="preserve">
+    <value>Remember me</value>
+  </data>
+  <data name="remember_meNResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="remember_meResource.Text" xml:space="preserve">
+    <value>Ricordami</value>
+  </data>
   <data name="rememberResource1.Text" xml:space="preserve">
     <value />
   </data>
   <data name="rememberResource1.ToolTip" xml:space="preserve">
     <value />
+  </data>
+  <data name="TextBox1NResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TextBox1NResource1.ToolTip" xml:space="preserve">
+    <value>Username</value>
   </data>
   <data name="TextBox1Resource1.Text" xml:space="preserve">
     <value />
@@ -183,13 +222,16 @@
   <data name="TextBox1Resource1.ToolTip" xml:space="preserve">
     <value />
   </data>
+  <data name="TextBox2NResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TextBox2NResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
   <data name="TextBox2Resource1.Text" xml:space="preserve">
     <value />
   </data>
   <data name="TextBox2Resource1.ToolTip" xml:space="preserve">
     <value />
-  </data>
-  <data name="remember_meResource.Text" xml:space="preserve">
-    <value>Ricordami</value>
   </data>
 </root>

@@ -80,7 +80,9 @@
 							<ul class="unstyled icons">
                                 <li class="glyphicons calendar"">
                                 <asp:Label ID="Label12" runat="server" Text="<i></i> <span class='label'>10</span> <span class='label'>July</span> <span class='label'>1986</span> <span class='label'>18:56</span>" meta:resourcekey="Label12Resource1"></asp:Label>
+                                    <!--
                                     <asp:HyperLink ID="refresh_link" runat="server" ClientIDMode="Static" ImageUrl="~/image/refresh.png" NavigateUrl="~/impianto.aspx"></asp:HyperLink>
+                                        -->
                                 </li>
                                 
 								<!-- <asp:Button runat="server" Text="Button"></asp:Button>

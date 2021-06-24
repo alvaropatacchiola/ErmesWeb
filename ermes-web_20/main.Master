@@ -202,14 +202,19 @@
 <script src="chart/js/highstock.js"></script>
 
             -->
-<script src="https://code.highcharts.com/stock/highstock.js?v=1.0"></script>
+<script src="https://code.highcharts.com/stock/highstock.js?v=1.1"></script>
+<script src="https://code.highcharts.com/stock/modules/data.js"></script>
 <!--
-<script src="https://code.highcharts.com/highcharts.js?v=1.0"></script>
+<script src="https://code.highcharts.com/stock/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/stock/modules/export-data.js"></script>
+    -->
+<!--
+<script src="https://code.highcharts.com/highcharts.js?v=1.1"></script>
         -->
-<script src="https://code.highcharts.com/highcharts-more.js?v=1.0"></script>
+<script src="https://code.highcharts.com/highcharts-more.js?v=1.1"></script>
 
 <script src="http://code.highcharts.com/modules/solid-gauge.js"></script>
-<script src="<%# ResolveUrl("~/")%>/chart/js/modules/exporting.js"></script>
+<script src="<%# ResolveUrl("~/")%>/chart/js/modules/exporting.js?v=1.1"></script>
 
     
     	

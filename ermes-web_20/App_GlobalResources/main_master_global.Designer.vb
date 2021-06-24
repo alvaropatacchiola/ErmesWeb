@@ -101,6 +101,15 @@ Namespace Resources
         End Property
         
         '''<summary>
+        '''  Cerca una stringa localizzata simile a Documentation.
+        '''</summary>
+        Friend Shared ReadOnly Property documentation() As String
+            Get
+                Return ResourceManager.GetString("documentation", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Cerca una stringa localizzata simile a Modifica.
         '''</summary>
         Friend Shared ReadOnly Property edit() As String
@@ -124,6 +133,15 @@ Namespace Resources
         Friend Shared ReadOnly Property eliminaController() As String
             Get
                 Return ResourceManager.GetString("eliminaController", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Cerca una stringa localizzata simile a Getting Started.
+        '''</summary>
+        Friend Shared ReadOnly Property gettingDashboard() As String
+            Get
+                Return ResourceManager.GetString("gettingDashboard", resourceCulture)
             End Get
         End Property
         

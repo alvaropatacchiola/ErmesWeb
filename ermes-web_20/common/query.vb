@@ -161,6 +161,17 @@
         Next
 
     End Function
+    Public Function login_super_user_Personalizzazione(ByVal id_super As System.Guid) As ermes_web_20.quey_db.super_userDataTable
+        Dim i As Integer
+        For i = 0 To 3
+            Try
+                Return db_data_super.getPersonalizzazione(id_super)
+            Catch ex As Exception
+
+            End Try
+        Next
+
+    End Function
     Public Function get_mail_super(ByVal mail As String) As ermes_web_20.quey_db.super_userDataTable
         Dim i As Integer
         For i = 0 To 3
@@ -174,9 +185,19 @@
 
     End Function
 
-    Public Function update_super_user(ByVal username As String, ByVal password As String, ByVal azienda_persona As String, ByVal mail As String, ByVal id_super As System.Guid) As Boolean
+    Public Function update_super_user(ByVal username As String, ByVal password As String, ByVal azienda_persona As String, ByVal mail As String, ByVal id_super As System.Guid, ByVal colorBody As String, ByVal colorSide As String, ByVal colorPrimary As String) As Boolean
         Dim update_row As Integer
-        update_row = db_data_super.update_super(Now, username, password, azienda_persona, mail, id_super)
+        update_row = db_data_super.update_super(Now, username, password, azienda_persona, mail, colorBody, colorSide, colorPrimary, id_super)
+        If update_row > 0 Then
+            Return True
+        Else
+            Return False
+        End If
+
+    End Function
+    Public Function update_super_userLogo(ByVal id_super As System.Guid, ByVal colorBody As String, ByVal colorSide As String, ByVal colorPrimary As String, ByVal logo As String, ByVal aziendaPersonalizzazione As String) As Boolean
+        Dim update_row As Integer
+        update_row = db_data_super.UpdateQueryFile(colorBody, colorSide, logo, colorPrimary, aziendaPersonalizzazione, id_super)
         If update_row > 0 Then
             Return True
         Else
@@ -556,7 +577,7 @@
     Public Function insert_super_user(ByVal username As String, ByVal password As String, ByVal azienda As String, ByVal mail As String) As Boolean
         Dim result_insert As Integer
 
-        result_insert = db_data_super.Insert_super_user(Now, username, password, azienda, "active", mail, "PErmes")
+        result_insert = db_data_super.Insert_super_user(Now, username, password, azienda, "active", mail, "PErmes", "#f0f1f5", "#1d1f2b", "logo.png", "#1d1f2b")
         If result_insert > 0 Then
             Return True
         Else

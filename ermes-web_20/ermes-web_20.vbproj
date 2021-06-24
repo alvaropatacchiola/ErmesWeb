@@ -56,12 +56,20 @@
       <HintPath>..\packages\iTextSharp.5.5.0\lib\itextsharp.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="MQTTnet, Version=3.0.13.0, Culture=neutral, PublicKeyToken=b69712f52770c0a7, processorArchitecture=MSIL">
       <HintPath>..\packages\MQTTnet.3.0.13\lib\net452\MQTTnet.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="MQTTnet.Extensions.ManagedClient, Version=3.0.13.0, Culture=neutral, PublicKeyToken=b69712f52770c0a7, processorArchitecture=MSIL">
       <HintPath>..\packages\MQTTnet.Extensions.ManagedClient.3.0.13\lib\net452\MQTTnet.Extensions.ManagedClient.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
@@ -120,6 +128,7 @@
     <Content Include="Centurio\centurioMain.js" />
     <Content Include="Centurio\centurioReal.aspx" />
     <Content Include="Centurio\centurioRealTime.js" />
+    <Content Include="Centurio\centurioRealTimeAssets.js" />
     <Content Include="Centurio\jcanvas.js" />
     <Content Include="Centurio\jquery.countdown360.js" />
     <Content Include="Centurio\JwebService.aspx" />
@@ -145,12 +154,18 @@
     <Content Include="chart\localCent\pdfmake.min.js" />
     <Content Include="chart\localCent\vfs_fonts.js" />
     <Content Include="common\validator_general_eliminacontroller.js" />
+    <Content Include="common\validator_picker.js" />
+    <Content Include="common\validator_plants.js" />
+    <Content Include="common\validator_settings.js" />
+    <Content Include="common\validator_utilizzatore.js" />
     <Content Include="cssmenu\biocide.css" />
     <Content Include="cssmenu\script.js" />
     <Content Include="cssmenu\styles.css" />
+    <Content Include="dashboardAssets.aspx" />
     <Content Include="eliminaController.aspx" />
     <Content Include="eliminacontroller_query.aspx" />
     <Content Include="generateReport.aspx" />
+    <Content Include="Global.asax" />
     <Content Include="image\aquaprox.png" />
     <Content Include="image\background.jpg" />
     <Content Include="image\bwt.png" />
@@ -158,12 +173,17 @@
     <Content Include="image\hydrotech.png" />
     <Content Include="image\hydrox.png" />
     <Content Include="image\logo_cleanwater.png" />
+    <Content Include="image\lotec.png" />
     <Content Include="image\proguard.png" />
     <Content Include="image\proquimia.png" />
     <Content Include="image\realtime.jpg" />
     <Content Include="image\temperature.png" />
     <Content Include="image\zep.css" />
     <Content Include="image\zep.png" />
+    <Content Include="language.aspx" />
+    <Content Include="LDTower\message_ldt.aspx" />
+    <Content Include="LDTower\validator_ldt_message.js" />
+    <Content Include="loginold.aspx" />
     <Content Include="lta\resetTot.aspx" />
     <Content Include="lta\validator_resetTot.js" />
     <Content Include="mainCenturio.aspx" />
@@ -294,6 +314,9 @@
     <Content Include="max5\main_max5.aspx" />
     <Content Include="max5\script.js" />
     <Content Include="newTest.aspx" />
+    <Content Include="picker.aspx" />
+    <Content Include="plant.aspx" />
+    <Content Include="plantDelete.aspx" />
     <Content Include="pompe\M0101.aspx" />
     <Content Include="pompe\M0101.js" />
     <Content Include="pompe\P0101.aspx" />
@@ -301,6 +324,7 @@
     <Content Include="pompe\pumpsCommunication.js" />
     <Content Include="pompe\pumpService.aspx" />
     <Content Include="pompe\testWebSocket.aspx" />
+    <Content Include="pompe\traduzioni\T0101.js" />
     <Content Include="pool.html" />
     <Content Include="pool\CSS\style_pool_inspector.css" />
     <Content Include="pool\CSS\style_pool_inspector2.css" />
@@ -328,10 +352,12 @@
     <Content Include="pool\SVG\SmilePool-notgood.svg" />
     <Content Include="pool\SVG\SwipeUpPool.svg" />
     <Content Include="pompe\websocket.ashx" />
+    <Content Include="MainNew.Master" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <Content Include="serial.html" />
+    <Content Include="settings.aspx" />
     <Content Include="theme\css\dashboardNewCss.css" />
     <Content Include="theme\css\personalizzazione_stefano.css" />
     <Content Include="theme\css\style-dark.min.css" />
@@ -347,13 +373,18 @@
     <Content Include="theme\personalizzazione\hydrotech.css" />
     <Content Include="theme\personalizzazione\hydrox.css" />
     <Content Include="theme\personalizzazione\kurita.css" />
+    <Content Include="theme\personalizzazione\lotec.css" />
     <Content Include="theme\personalizzazione\proquimia.css" />
     <Content Include="theme\personalizzazione\realtime.css" />
     <Content Include="theme\personalizzazione\sealedAir.css" />
     <Content Include="theme\personalizzazione\zep.css" />
     <Content Include="theme\scripts\demo\themer.js" />
     <Content Include="tower\bleed_boiler.aspx" />
+    <Content Include="tower\message_tw.aspx" />
+    <Content Include="tower\validator_message_tower.js" />
     <Content Include="tower\validator_tower_bleed_boiler.js" />
+    <Content Include="utilizzatore.aspx" />
+    <Content Include="utilizzatoreDelete.aspx" />
     <Content Include="wd\alert.aspx" />
     <Content Include="wd\assistenza.aspx" />
     <Content Include="wd\auto_sepoint.aspx" />
@@ -529,7 +560,6 @@
     <Content Include="eliminauser_query.aspx" />
     <Content Include="eliminautilizzatore.aspx" />
     <Content Include="error.aspx" />
-    <Content Include="Global.asax" />
     <Content Include="image\._logo_ermes.png" />
     <Content Include="image\logo_ermes.png" />
     <Content Include="image\logo_placeholder.png" />
@@ -17228,6 +17258,13 @@
       <DependentUpon>webService.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
+    <Compile Include="dashboardAssets.aspx.designer.vb">
+      <DependentUpon>dashboardAssets.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="dashboardAssets.aspx.vb">
+      <DependentUpon>dashboardAssets.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
     <Compile Include="eliminaController.aspx.designer.vb">
       <DependentUpon>eliminaController.aspx</DependentUpon>
     </Compile>
@@ -17247,6 +17284,30 @@
     </Compile>
     <Compile Include="generateReport.aspx.vb">
       <DependentUpon>generateReport.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Global.asax.vb">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="language.aspx.designer.vb">
+      <DependentUpon>language.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="language.aspx.vb">
+      <DependentUpon>language.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="LDTower\message_ldt.aspx.designer.vb">
+      <DependentUpon>message_ldt.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LDTower\message_ldt.aspx.vb">
+      <DependentUpon>message_ldt.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="loginold.aspx.designer.vb">
+      <DependentUpon>loginold.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="loginold.aspx.vb">
+      <DependentUpon>loginold.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="lta\resetTot.aspx.designer.vb">
@@ -17685,6 +17746,13 @@
       <DependentUpon>wmeter_ltb.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
+    <Compile Include="MainNew.Master.designer.vb">
+      <DependentUpon>MainNew.Master</DependentUpon>
+    </Compile>
+    <Compile Include="MainNew.Master.vb">
+      <DependentUpon>MainNew.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
     <Compile Include="max5\main_max5.aspx.designer.vb">
       <DependentUpon>main_max5.aspx</DependentUpon>
     </Compile>
@@ -17697,6 +17765,27 @@
     </Compile>
     <Compile Include="newTest.aspx.vb">
       <DependentUpon>newTest.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="picker.aspx.designer.vb">
+      <DependentUpon>picker.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="picker.aspx.vb">
+      <DependentUpon>picker.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="plant.aspx.designer.vb">
+      <DependentUpon>plant.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="plant.aspx.vb">
+      <DependentUpon>plant.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="plantDelete.aspx.designer.vb">
+      <DependentUpon>plantDelete.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="plantDelete.aspx.vb">
+      <DependentUpon>plantDelete.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="pompe\M0101.aspx.designer.vb">
@@ -17731,11 +17820,39 @@
     <Compile Include="pompe\websocket.ashx.vb">
       <DependentUpon>websocket.ashx</DependentUpon>
     </Compile>
+    <Compile Include="settings.aspx.designer.vb">
+      <DependentUpon>settings.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="settings.aspx.vb">
+      <DependentUpon>settings.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
     <Compile Include="tower\bleed_boiler.aspx.designer.vb">
       <DependentUpon>bleed_boiler.aspx</DependentUpon>
     </Compile>
     <Compile Include="tower\bleed_boiler.aspx.vb">
       <DependentUpon>bleed_boiler.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="tower\message_tw.aspx.designer.vb">
+      <DependentUpon>message_tw.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="tower\message_tw.aspx.vb">
+      <DependentUpon>message_tw.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="utilizzatore.aspx.designer.vb">
+      <DependentUpon>utilizzatore.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="utilizzatore.aspx.vb">
+      <DependentUpon>utilizzatore.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="utilizzatoreDelete.aspx.designer.vb">
+      <DependentUpon>utilizzatoreDelete.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="utilizzatoreDelete.aspx.vb">
+      <DependentUpon>utilizzatoreDelete.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="wd\alert.aspx.designer.vb">
@@ -17901,9 +18018,6 @@
     <Compile Include="error.aspx.vb">
       <DependentUpon>error.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
-    </Compile>
-    <Compile Include="Global.asax.vb">
-      <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="impianto.aspx.designer.vb">
       <DependentUpon>impianto.aspx</DependentUpon>
@@ -19567,6 +19681,28 @@
       <LastGenOutput>centurio_global.pl.designer.vb</LastGenOutput>
     </Content>
     <Content Include="chart\App_LocalResources\log_tower.aspx.es.resx" />
+    <Content Include="App_LocalResources\plant.aspx.resx" />
+    <Content Include="App_LocalResources\plant.aspx.fr.resx" />
+    <Content Include="App_LocalResources\plant.aspx.es.resx" />
+    <Content Include="App_LocalResources\plant.aspx.en.resx" />
+    <Content Include="App_LocalResources\plant.aspx.de.resx" />
+    <Content Include="App_LocalResources\plant.aspx.pl.resx" />
+    <Content Include="App_LocalResources\utilizzatore.aspx.resx" />
+    <Content Include="App_LocalResources\utilizzatore.aspx.pl.resx" />
+    <Content Include="App_LocalResources\utilizzatore.aspx.fr.resx" />
+    <Content Include="App_LocalResources\utilizzatore.aspx.es.resx" />
+    <Content Include="App_LocalResources\utilizzatore.aspx.de.resx" />
+    <Content Include="App_LocalResources\utilizzatore.aspx.en.resx" />
+    <Content Include="App_LocalResources\dashboardAssets.aspx.resx" />
+    <Content Include="App_LocalResources\dashboardAssets.aspx.fr.resx" />
+    <Content Include="App_LocalResources\dashboardAssets.aspx.en.resx" />
+    <Content Include="App_LocalResources\dashboardAssets.aspx.de.resx" />
+    <Content Include="App_LocalResources\dashboardAssets.aspx.es.resx" />
+    <Content Include="App_LocalResources\settings.aspx.resx" />
+    <Content Include="App_LocalResources\settings.aspx.en.resx" />
+    <Content Include="App_LocalResources\settings.aspx.fr.resx" />
+    <Content Include="App_LocalResources\settings.aspx.de.resx" />
+    <Content Include="App_LocalResources\settings.aspx.es.resx" />
     <EmbeddedResource Include="LDTower\App_LocalResources\clock_ldt.aspx.en.resx" />
     <EmbeddedResource Include="LDTower\App_LocalResources\clock_ldt.aspx.de.resx" />
     <EmbeddedResource Include="LDTower\App_LocalResources\clock_ldt.aspx.resx" />
@@ -22786,6 +22922,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="assets\" />
     <Folder Include="FileCaricati\" />
     <Folder Include="theme\scripts\plugins\forms\plupload\examples\uploads\" />
     <Folder Include="theme\scripts\plugins\other\excanvas\examples\.svn\props\" />

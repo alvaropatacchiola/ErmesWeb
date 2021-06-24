@@ -7,7 +7,7 @@ Public Class signup
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
 
-        literal_stefano.Text = Session("personalizzazioneStefano")
+        'literal_stefano.Text = Session("personalizzazioneStefano")
 
         java_script_local.Text = "<script>"
         java_script_local.Text = java_script_local.Text + "var username='"
@@ -27,11 +27,11 @@ Public Class signup
 
         java_script_local.Text = java_script_local.Text + "</script>"
         Try
-            Literal1.Text = "<a href='login.aspx?lang=" + Session("selectedLanguage") + "'>" + GetGlobalResourceObject("signup_global", "sign_in") + "</a>"
+            'Literal1.Text = "<a href='login.aspx?lang=" + Session("selectedLanguage") + "'>" + GetGlobalResourceObject("signup_global", "sign_in") + "</a>"
         Catch ex As Exception
-            Literal1.Text = "<a href='login.aspx'>" + GetGlobalResourceObject("signup_global", "sign_in") + "</a>"
+            'Literal1.Text = "<a href='login.aspx'>" + GetGlobalResourceObject("signup_global", "sign_in") + "</a>"
         End Try
-        literal_theme.Text = Session("stile")
+        'literal_theme.Text = Session("stile")
 
     End Sub
 

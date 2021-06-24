@@ -1223,13 +1223,30 @@
                 literal6.Text = intestazione
             Case "LD4"
                 intestazione = "<tr style="""">"
-                If main_function.alarm_ld_flusso(alarm_value) Then
+                If main_function.alarm_ld4_flusso(alarm_value) Then
                     intestazione = intestazione + "<td width=""32%"">" + flow_traduzione + "</td>"
                     intestazione = intestazione + "<td width=""33%"" align=""center""><img src=""theme/images/allarme_on.png"" alt=""allarme_on""></td>"
                 Else
                     intestazione = intestazione + "<td width=""32%"">" + flow_traduzione + "</td>"
                     intestazione = intestazione + "<td width=""33%"" align=""center""><img src=""theme/images/allarme_off.png"" alt=""allarme_off""></td>"
                 End If
+                intestazione = intestazione + "<tr style="""">"
+                If main_function.alarm_ld4_stby(alarm_value) Then
+                    intestazione = intestazione + "<td width=""32%"">STBY</td>"
+                    intestazione = intestazione + "<td width=""33%"" align=""center""><img src=""theme/images/allarme_on.png"" alt=""allarme_on""></td>"
+                Else
+                    intestazione = intestazione + "<td width=""32%"">STBY</td>"
+                    intestazione = intestazione + "<td width=""33%"" align=""center""><img src=""theme/images/allarme_off.png"" alt=""allarme_off""></td>"
+                End If
+                intestazione = intestazione + "<tr style="""">"
+                If main_function.alarm_ld4_flowmeterLow(alarm_value) Then
+                    intestazione = intestazione + "<td width=""32%"">Flow Meter Alarm</td>"
+                    intestazione = intestazione + "<td width=""33%"" align=""center""><img src=""theme/images/allarme_on.png"" alt=""allarme_on""></td>"
+                Else
+                    intestazione = intestazione + "<td width=""32%"">Flow Meter Alarm</td>"
+                    intestazione = intestazione + "<td width=""33%"" align=""center""><img src=""theme/images/allarme_off.png"" alt=""allarme_off""></td>"
+                End If
+
                 literal6.Text = intestazione
         End Select
 

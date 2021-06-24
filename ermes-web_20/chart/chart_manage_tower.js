@@ -86,7 +86,7 @@ function get_data(parametro1, parametro2, parametro3, parametro4, parametro5) {
                 array_wmb.push([data, parseFloat(res[25])]);
 
                 array_power_on.push([data, parseInt(res[26])]);
-
+                
 
 
             });

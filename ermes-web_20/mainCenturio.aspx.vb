@@ -390,13 +390,21 @@ nexLoopLabel:
         'tabMenu.Text = tabMenu.Text + "<div Class=""widget"" style=""margin-bottom:0px;"">"
         'tabMenu.Text = tabMenu.Text + "<div Class=""widget-head"" style=""background-color:#a4c408;"">"
         If Session("super_user") Then
+            enableManualPulse.Visible = True
+            enableManualRelay.Visible = True
             tabMenu.Text = tabMenu.Text + "<div class='btn-primary'>"
             tabMenu.Text = tabMenu.Text + "<b class='btn-primary btn-icon glyphicons ok'><button id=""modals-bootbox-confirm"" class=""btn btn-primary"" style=""margin-top:-3px;"">" + GetGlobalResourceObject("centurio_global", "saveAndLoad") + "</button><i></i></b></div>"
         Else
             Try
                 If main_function.checkUserAdmin(identificativoUser, Session("mid_user").ToString, modificaSetpoint) Then
+                    enableManualPulse.Visible = True
+                    enableManualRelay.Visible = True
                     tabMenu.Text = tabMenu.Text + "<div class='btn-primary'>"
                     tabMenu.Text = tabMenu.Text + "<b class='btn-primary btn-icon glyphicons ok'><button id=""modals-bootbox-confirm"" class=""btn btn-primary"" style=""margin-top:-3px;"">" + GetGlobalResourceObject("centurio_global", "saveAndLoad") + "</button><i></i></b></div>"
+                Else
+                    enableManualPulse.Visible = False
+                    enableManualRelay.Visible = False
+
                 End If
             Catch ex As Exception
 
@@ -674,7 +682,7 @@ nexLoopLabel:
         Try
             stringResult = stringResult + "<h5>" + LstNode.Item("stringa").InnerText + "</h5>"
             stringResult = stringResult + "<div Class=""row-fluid"">"
-            stringResult = stringResult + "<Select calib = ""no"" action=""setpoint"" typeofList=""" + typeofList + """ data-original-title=""" + LstNode.Item("stringa").InnerText + """  path=""" + pathName + """  masterpath=""" + masterPathName + """  count=""" + idOggetto + """  attrib=""null"" id = """ + pathName + "_" + nomeOggetto + """ Class=""span3"">"
+            stringResult = stringResult + "<Select manualRemote = ""no"" calib = ""no"" action=""setpoint"" typeofList=""" + typeofList + """ data-original-title=""" + LstNode.Item("stringa").InnerText + """  path=""" + pathName + """  masterpath=""" + masterPathName + """  count=""" + idOggetto + """  attrib=""null"" id = """ + pathName + "_" + nomeOggetto + """ Class=""span3"">"
             If textListRadio.IndexOf("|") > 0 Then
                 If sistemaUSA = "1" Then
                     textListRadio = (textListRadio.Split("|"))(1)
@@ -723,15 +731,15 @@ nexLoopLabel:
             stringResult = stringResult + "<div Class=""row-fluid"">"
             'If (nomeOggetto.IndexOf("modework") >= 0) Then ' caso della scelta
             If (nomeOggetto.IndexOf("modeworkEnableDisable") >= 0) Then ' abilita e disabilita tutto
-                stringResult = stringResult + "<Select calib = ""no"" action=""setpoint"" typeofList=""" + typeofList + """ data-original-title=""" + LstNode.Item("stringa").InnerText + """  path=""" + pathName + """  masterpath=""" + masterPathName + """  count=""" + idOggetto + """  attrib=""null"" id = """ + pathName + "_" + nomeOggetto + """ Class=""span3"">"
+                stringResult = stringResult + "<Select manualRemote = ""no"" calib = ""no"" action=""setpoint"" typeofList=""" + typeofList + """ data-original-title=""" + LstNode.Item("stringa").InnerText + """  path=""" + pathName + """  masterpath=""" + masterPathName + """  count=""" + idOggetto + """  attrib=""null"" id = """ + pathName + "_" + nomeOggetto + """ Class=""span3"">"
             Else
                 If (nomeOggetto.IndexOf("modework") >= 0) Then ' abilita e disabilita tutto
-                    stringResult = stringResult + "<Select calib = ""no"" action=""setpoint"" typeofList=""" + typeofList + """ data-original-title=""" + LstNode.Item("stringa").InnerText + """  path=""" + pathName + """  masterpath=""" + masterPathName + """  count=""" + idOggetto + """  attrib=""" + LstNode.Item("select").InnerText + """ id = """ + pathName + "_" + nomeOggetto + """ Class=""span3"">"
+                    stringResult = stringResult + "<Select manualRemote = ""no"" calib = ""no"" action=""setpoint"" typeofList=""" + typeofList + """ data-original-title=""" + LstNode.Item("stringa").InnerText + """  path=""" + pathName + """  masterpath=""" + masterPathName + """  count=""" + idOggetto + """  attrib=""" + LstNode.Item("select").InnerText + """ id = """ + pathName + "_" + nomeOggetto + """ Class=""span3"">"
                 Else
                     If (LstNode.Item("valore").InnerText.ToString = "noChange") Then
-                        stringResult = stringResult + "<Select calib = ""ok"" action=""setpoint"" typeofList=""" + typeofList + """ data-original-title=""" + LstNode.Item("stringa").InnerText + """  path=""" + pathName + """  masterpath=""" + masterPathName + """  count=""" + idOggetto + """  attrib=""null"" id = """ + pathName + "_noChange"" Class=""span3"">"
+                        stringResult = stringResult + "<Select manualRemote = ""no"" calib = ""ok"" action=""setpoint"" typeofList=""" + typeofList + """ data-original-title=""" + LstNode.Item("stringa").InnerText + """  path=""" + pathName + """  masterpath=""" + masterPathName + """  count=""" + idOggetto + """  attrib=""null"" id = """ + pathName + "_noChange"" Class=""span3"">"
                     Else
-                        stringResult = stringResult + "<Select calib = ""no"" action=""setpoint"" typeofList=""" + typeofList + """ data-original-title=""" + LstNode.Item("stringa").InnerText + """  path=""" + pathName + """  masterpath=""" + masterPathName + """  count=""" + idOggetto + """  attrib=""null"" id = """ + pathName + "_" + nomeOggetto + """ Class=""span3"">"
+                        stringResult = stringResult + "<Select manualRemote = ""no"" calib = ""no"" action=""setpoint"" typeofList=""" + typeofList + """ data-original-title=""" + LstNode.Item("stringa").InnerText + """  path=""" + pathName + """  masterpath=""" + masterPathName + """  count=""" + idOggetto + """  attrib=""null"" id = """ + pathName + "_" + nomeOggetto + """ Class=""span3"">"
 
                     End If
 
@@ -762,13 +770,13 @@ nexLoopLabel:
 
         stringResult = stringResult + "<h5>" + LstNode.Item("stringa").InnerText + "(" + unitList(0) + "," + unitList(1) + ")" + "</h5>"
         stringResult = stringResult + "<div Class=""row-fluid"">"
-        stringResult = stringResult + "<Select calib = ""no"" oreminuti = ""ore"" action=""setpoint"" data-original-title=""" + LstNode.Item("stringa").InnerText + """  id = """ + pathName + "_" + nomeOggetto + """  count=""" + idOggetto + """ Class=""span2"">"
+        stringResult = stringResult + "<Select manualRemote = ""no"" calib = ""no"" oreminuti = ""ore"" action=""setpoint"" data-original-title=""" + LstNode.Item("stringa").InnerText + """  id = """ + pathName + "_" + nomeOggetto + """  count=""" + idOggetto + """ Class=""span2"">"
         For i = Val(minList(0)) To Val(maxList(0))
             stringResult = stringResult + "<Option value=""" + i.ToString + """ >" + i.ToString + "</Option>"
         Next
 
         stringResult = stringResult + "</Select>"
-        stringResult = stringResult + "<Select calib = ""no"" oreminuti = ""minuti"" action=""setpoint""  id = """ + pathName + "_" + nomeOggetto + "_1""  data-original-title=""" + LstNode.Item("stringa").InnerText + """ count=""" + idOggetto + """ Class=""span2"">"
+        stringResult = stringResult + "<Select manualRemote = ""no"" calib = ""no"" oreminuti = ""minuti"" action=""setpoint""  id = """ + pathName + "_" + nomeOggetto + "_1""  data-original-title=""" + LstNode.Item("stringa").InnerText + """ count=""" + idOggetto + """ Class=""span2"">"
         For i = Val(minList(1)) To Val(maxList(1))
             stringResult = stringResult + "<Option value=""" + i.ToString + """ >" + i.ToString + "</Option>"
         Next
@@ -788,7 +796,7 @@ nexLoopLabel:
         dictionaryList = mainFunctionCenturio.getResultXml("week", Session("selectedLanguage"), tabella_probeList)
 
 
-        stringResult = stringResult + "<input calib = ""no""  type = ""hidden""  id = """ + pathName + "_" + nomeOggetto + """  count=""" + idOggetto +
+        stringResult = stringResult + "<input manualRemote = ""no"" calib = ""no""  type = ""hidden""  id = """ + pathName + "_" + nomeOggetto + """  count=""" + idOggetto +
             """  min=""" + LstNode.Item("minimo").InnerText + """  minB=""" + LstNode.Item("minimo").InnerText + """  max  decimali  Error value="""" Class=""span3"">"
 
         For Each weekProgramSingle As String In weekProgram
@@ -811,7 +819,7 @@ nexLoopLabel:
                     stringResult = stringResult + "<div Class=""span2"">"
                     stringResult = stringResult + "<h5>" + LstNode.Item("stringa").InnerText + "</h5>"
 
-                    stringResult = stringResult + "<input calib = ""no"" action=""setpoint""  type = ""text""  id = """ + pathName + "_" + nomeOggetto + "_time_" + counteW.ToString() + """  data-original-title=""" + LstNode.Item("stringa").InnerText + """ count=""" + idOggetto +
+                    stringResult = stringResult + "<input manualRemote = ""no"" calib = ""no"" action=""setpoint""  type = ""text""  id = """ + pathName + "_" + nomeOggetto + "_time_" + counteW.ToString() + """  data-original-title=""" + LstNode.Item("stringa").InnerText + """ count=""" + idOggetto +
                 """  min=""" + LstNode.Item("minimo").InnerText + """  minB=""" + LstNode.Item("minimo").InnerText + """ mainId =""" + pathName + "_" + nomeOggetto + """  max=""null""  decimali=""null""  Error="""" value=""00:00"">"
 
                     'stringResult = stringResult + "<input type=""text"" id=""datepicker"" value="""" class=""hasDatepicker"">"
@@ -823,7 +831,7 @@ nexLoopLabel:
                     stringResult = stringResult + "<div Class=""span2"">"
                     stringResult = stringResult + "<h5>Feed Time Hr</h5>"
 
-                    stringResult = stringResult + "<Select calib = ""no"" action=""setpoint"" data-original-title=""" + LstNode.Item("stringa").InnerText + """  id = """ + pathName + "_" + nomeOggetto + "_feed_" + counteW.ToString() + """  min=""" + LstNode.Item("minimo").InnerText + """ mainId =""" + pathName + "_" + nomeOggetto + """ count=""" + idOggetto + """>"
+                    stringResult = stringResult + "<Select manualRemote = ""no"" calib = ""no"" action=""setpoint"" data-original-title=""" + LstNode.Item("stringa").InnerText + """  id = """ + pathName + "_" + nomeOggetto + "_feed_" + counteW.ToString() + """  min=""" + LstNode.Item("minimo").InnerText + """ mainId =""" + pathName + "_" + nomeOggetto + """ count=""" + idOggetto + """>"
                     For i = 0 To 99
                         stringResult = stringResult + "<Option value=""" + i.ToString + """ >" + i.ToString + "</Option>"
                     Next
@@ -832,7 +840,7 @@ nexLoopLabel:
                     stringResult = stringResult + "</div>"
                     stringResult = stringResult + "<div Class=""span2"">"
                     stringResult = stringResult + "<h5>Feed Time Min</h5>"
-                    stringResult = stringResult + "<Select calib = ""no"" action=""setpoint"" data-original-title=""" + LstNode.Item("stringa").InnerText + """   id = """ + pathName + "_" + nomeOggetto + "_1" + "_feed_" + counteW.ToString() + """  min=""" + LstNode.Item("minimo").InnerText + """  minB=""" + LstNode.Item("minimo").InnerText + """ mainId =""" + pathName + "_" + nomeOggetto + """  count=""" + idOggetto + """>"
+                    stringResult = stringResult + "<Select manualRemote = ""no"" calib = ""no"" action=""setpoint"" data-original-title=""" + LstNode.Item("stringa").InnerText + """   id = """ + pathName + "_" + nomeOggetto + "_1" + "_feed_" + counteW.ToString() + """  min=""" + LstNode.Item("minimo").InnerText + """  minB=""" + LstNode.Item("minimo").InnerText + """ mainId =""" + pathName + "_" + nomeOggetto + """  count=""" + idOggetto + """>"
                     For i = 0 To 99
                         stringResult = stringResult + "<Option value=""" + i.ToString + """ >" + i.ToString + "</Option>"
                     Next
@@ -859,7 +867,7 @@ nexLoopLabel:
 
         stringResult = stringResult + "<h5>" + LstNode.Item("stringa").InnerText + "</h5>"
         stringResult = stringResult + "<div Class=""row-fluid"">"
-        stringResult = stringResult + "<input  calib = ""no"" action=""setpoint""  type = ""text"" data-original-title=""" + LstNode.Item("stringa").InnerText + """ id = """ + pathName + "_" + nomeOggetto + """  count=""" + idOggetto +
+        stringResult = stringResult + "<input manualRemote = ""no""  calib = ""no"" action=""setpoint""  type = ""text"" data-original-title=""" + LstNode.Item("stringa").InnerText + """ id = """ + pathName + "_" + nomeOggetto + """  count=""" + idOggetto +
             """  min=""timeDataOraR"" minB=""timeDataOraR""  max=""null""  decimali=""null""  Error="""" value=""00:00"">"
 
         stringResult = stringResult + "</input>"
@@ -875,7 +883,7 @@ nexLoopLabel:
 
         stringResult = stringResult + "<h5>" + LstNode.Item("stringa").InnerText + "</h5>"
         stringResult = stringResult + "<div Class=""row-fluid"">"
-        stringResult = stringResult + "<input calib = ""no"" action=""setpoint""  type = ""text"" data-original-title=""" + LstNode.Item("stringa").InnerText + """  id = """ + pathName + "_" + nomeOggetto + """  count=""" + idOggetto +
+        stringResult = stringResult + "<input manualRemote = ""no"" calib = ""no"" action=""setpoint""  type = ""text"" data-original-title=""" + LstNode.Item("stringa").InnerText + """  id = """ + pathName + "_" + nomeOggetto + """  count=""" + idOggetto +
             """  min=""timeDataOraS""  min=""timeDataOraS""  max=""null""  decimali=""null""  Error="""" value=""00:00"">"
 
         stringResult = stringResult + "</input>"
@@ -897,11 +905,11 @@ nexLoopLabel:
 
         stringResult = stringResult + "<h5>" + LstNode.Item("stringa").InnerText + "</h5>"
         stringResult = stringResult + "<div Class=""row-fluid"">"
-        stringResult = stringResult + "<input calib = ""no"" multi = ""ok"" action=""setpoint""   type = ""text"" data-original-title=""" + LstNode.Item("stringa").InnerText + """  id = """ + pathName + "_" + nomeOggetto + """  count=""" + idOggetto +
+        stringResult = stringResult + "<input manualRemote = ""no"" calib = ""no"" multi = ""ok"" action=""setpoint""   type = ""text"" data-original-title=""" + LstNode.Item("stringa").InnerText + """  id = """ + pathName + "_" + nomeOggetto + """  count=""" + idOggetto +
             """  min=""" + minimoSplit(0) + """  minB=""" + minimoSplit(0) + """  max=""" + massimoSplit(0) + """  maxB=""" + massimoSplit(0) + """  decimali=""" + decimaliSplit(0) + """  decimaliB=""" + decimaliSplit(0) + """  Error=""" + errorSplit(0) + """ value="""" Class=""span3"">"
         stringResult = stringResult + "<span id = ""misura_multi""  attrMisura = """ + misuraSplit(0) + """> </span>"
 
-        stringResult = stringResult + "<input calib = ""no"" multi = ""ok"" action=""setpoint"" data-original-title=""" + LstNode.Item("stringa").InnerText + """  type = ""text""  id = """ + pathName + "_" + nomeOggetto + "_1""  count=""" + idOggetto +
+        stringResult = stringResult + "<input manualRemote = ""no"" calib = ""no"" multi = ""ok"" action=""setpoint"" data-original-title=""" + LstNode.Item("stringa").InnerText + """  type = ""text""  id = """ + pathName + "_" + nomeOggetto + "_1""  count=""" + idOggetto +
             """  min=""" + minimoSplit(1) + """  minB=""" + minimoSplit(1) + """  max=""" + massimoSplit(1) + """  maxB=""" + massimoSplit(1) + """  decimali=""" + decimaliSplit(0) + """  decimaliB=""" + decimaliSplit(0) + """  Error=""" + errorSplit(1) + """ value="""" Class=""span3"">"
 
         stringResult = stringResult + "</input>"
@@ -952,7 +960,7 @@ nexLoopLabel:
 
 
         'stringResult = stringResult + "</input>"
-        stringResult = stringResult + "<input calib = ""ok"" typeAction =""remoteCalib"" type=""button"" id = """ + pathName + "_" + nomeOggetto + """ actionValue=""" + nomeOggetto + """ getValue=""" + pathName + "_noChange"" Class=""btn btn-primary"" value=""Start Calibration"">"
+        stringResult = stringResult + "<input manualRemote = ""no"" calib = ""ok"" typeAction =""remoteCalib"" type=""button"" id = """ + pathName + "_" + nomeOggetto + """ actionValue=""" + nomeOggetto + """ getValue=""" + pathName + "_noChange"" Class=""btn btn-primary"" value=""Start Calibration"">"
 
         stringResult = stringResult + "</div></div>"
         Return stringResult
@@ -966,10 +974,10 @@ nexLoopLabel:
         stringResult = stringResult + "<h5>" + LstNode.Item("stringa").InnerText + "</h5>"
         stringResult = stringResult + "<div Class=""row-fluid"">"
         If (LstNode.Item("valore").InnerText.ToString = "noChange") Then
-            stringResult = stringResult + "<input calib = ""ok"" multi = ""no"" action=""setpoint"" data-original-title=""" + LstNode.Item("stringa").InnerText + """  type = ""text""  id = """ + pathName + "_noChange""  count=""" + idOggetto +
+            stringResult = stringResult + "<input manualRemote = ""no"" calib = ""ok"" multi = ""no"" action=""setpoint"" data-original-title=""" + LstNode.Item("stringa").InnerText + """  type = ""text""  id = """ + pathName + "_noChange""  count=""" + idOggetto +
             """  min=""" + LstNode.Item("minimo").InnerText + """  minB=""" + LstNode.Item("minimo").InnerText + """  max=""" + LstNode.Item("massimo").InnerText + """  maxB=""" + LstNode.Item("massimo").InnerText + """  decimali=""" + LstNode.Item("numerodecimali").InnerText + """  decimaliB=""" + LstNode.Item("numerodecimali").InnerText + """  Error=""" + LstNode.Item("errorkeyboard").InnerText + """ value="""" Class=""span3"">"
         Else
-            stringResult = stringResult + "<input calib = ""no"" multi = ""no"" action=""setpoint"" data-original-title=""" + LstNode.Item("stringa").InnerText + """  type = ""text""  id = """ + pathName + "_" + nomeOggetto + """  count=""" + idOggetto +
+            stringResult = stringResult + "<input manualRemote = ""no"" calib = ""no"" multi = ""no"" action=""setpoint"" data-original-title=""" + LstNode.Item("stringa").InnerText + """  type = ""text""  id = """ + pathName + "_" + nomeOggetto + """  count=""" + idOggetto +
             """  min=""" + LstNode.Item("minimo").InnerText + """  minB=""" + LstNode.Item("minimo").InnerText + """  max=""" + LstNode.Item("massimo").InnerText + """  maxB=""" + LstNode.Item("massimo").InnerText + """  decimali=""" + LstNode.Item("numerodecimali").InnerText + """  decimaliB=""" + LstNode.Item("numerodecimali").InnerText + """  Error=""" + LstNode.Item("errorkeyboard").InnerText + """ value="""" Class=""span3"">"
         End If
 
@@ -993,7 +1001,7 @@ nexLoopLabel:
 
         stringResult = stringResult + "<h5>" + LstNode.Item("stringa").InnerText + "</h5>"
         stringResult = stringResult + "<div Class=""row-fluid"">"
-        stringResult = stringResult + "<input calib = ""no"" action=""setpoint"" type = ""text"" data-original-title=""" + LstNode.Item("stringa").InnerText + """  id = """ + pathName + "_" + nomeOggetto + """  count=""" + idOggetto +
+        stringResult = stringResult + "<input manualRemote = ""no"" calib = ""no"" action=""setpoint"" type = ""text"" data-original-title=""" + LstNode.Item("stringa").InnerText + """  id = """ + pathName + "_" + nomeOggetto + """  count=""" + idOggetto +
             """  min=""null""  max=""null""  decimali=""null""  Error="""" value="""">"
 
         'stringResult = stringResult + "<input type=""text"" id=""datepicker"" value="""" Class=""hasDatepicker"">"
@@ -1260,15 +1268,15 @@ nexLoopLabel:
         Dim ldLodg As Boolean = False
         Dim multiparameter As Boolean = False
         intestazione = "<div class=""row-fluid""> <div Class=""span2""> <h5>" + "Log Type" + "</h5>"
-        intestazione = intestazione + "<Select calib = ""no"" id=""logTypeAlarmEvery"" data-original-title=""Log Type"" data-placement=""right"" >"
+        intestazione = intestazione + "<Select manualRemote = ""no"" calib = ""no"" id=""logTypeAlarmEvery"" data-original-title=""Log Type"" data-placement=""right"" >"
         intestazione = intestazione + "<Option value=""0"" >Scheduled</Option>"
         intestazione = intestazione + "<Option value=""1"" >Alarm</Option>"
         intestazione = intestazione + "</select></div>"
 
-        intestazione = intestazione + "<div Class=""span2""><h5>" + "Merge" + "</h5> <Label Class=""checkbox"" ><span Class=""ricerca""><input calib = ""no"" type=""checkbox"" id=""mergeGraph"" Class=""checkbox"" min =""minlog""><span>Merge Channel</span></span> </label>"
+        intestazione = intestazione + "<div Class=""span2""><h5>" + "Merge" + "</h5> <Label Class=""checkbox"" ><span Class=""ricerca""><input manualRemote = ""no"" calib = ""no"" type=""checkbox"" id=""mergeGraph"" Class=""checkbox"" min =""minlog""><span>Merge Channel</span></span> </label>"
         intestazione = intestazione + "</div>"
 
-        intestazione = intestazione + "<div Class=""span2""><h5>" + "Setpoint" + "</h5> <Label Class=""checkbox"" ><span Class=""ricerca""><input calib = ""no"" type=""checkbox"" id=""setpointGraph"" Class=""checkbox"" min =""minlog""><span>Setpoints</span></span> </label>"
+        intestazione = intestazione + "<div Class=""span2""><h5>" + "Setpoint" + "</h5> <Label Class=""checkbox"" ><span Class=""ricerca""><input manualRemote = ""no"" calib = ""no"" type=""checkbox"" id=""setpointGraph"" Class=""checkbox"" min =""minlog""><span>Setpoints</span></span> </label>"
         intestazione = intestazione + "</div>"
 
 
@@ -1350,16 +1358,16 @@ nexLoopLabel:
                                 intestazioneTemp = intestazioneTemp + "<Label Class=""checkbox"" >"
                                 If (progressivo = 0) Then
                                     If (oXMLNodeCanale.Attributes().ItemOf("setpointEN") Is Nothing) Then
-                                        intestazioneTemp = intestazioneTemp + "<span Class=""ricerca""><input calib = ""no"" type=""checkbox"" minLog="""" maxLog="""" setpointen="""" setpointlabel="""" setpointmin="""" setpointmax=""""  graph=""" + oXMLNodeCanale.Attributes().ItemOf("graph").Value + """ id=""" + oXMLNodeCanale.InnerXml() + "_log_check""  ldlog = """" min =""minlog"" Class=""checkbox""  value=""" + progressivo.ToString + """ checked=""checked"" ><span unit=""" + oXMLNodeCanale.InnerXml() + """  ldlog = """"  id=""" + oXMLNodeCanale.Attributes().ItemOf("label").Value + "_log_label"" ></span></span>"
+                                        intestazioneTemp = intestazioneTemp + "<span Class=""ricerca""><input manualRemote = ""no"" calib = ""no"" type=""checkbox"" minLog="""" maxLog="""" setpointen="""" setpointlabel="""" setpointmin="""" setpointmax=""""  graph=""" + oXMLNodeCanale.Attributes().ItemOf("graph").Value + """ id=""" + oXMLNodeCanale.InnerXml() + "_log_check""  ldlog = """" min =""minlog"" Class=""checkbox""  value=""" + progressivo.ToString + """ checked=""checked"" ><span unit=""" + oXMLNodeCanale.InnerXml() + """  ldlog = """"  id=""" + oXMLNodeCanale.Attributes().ItemOf("label").Value + "_log_label"" ></span></span>"
                                     Else
-                                        intestazioneTemp = intestazioneTemp + "<span Class=""ricerca""><input calib = ""no"" type=""checkbox""  maxLog=""" + oXMLNodeCanale.Attributes().ItemOf("max").Value + """ minLog=""" + oXMLNodeCanale.Attributes().ItemOf("min").Value + """ setpointlabel=""" + oXMLNodeCanale.Attributes().ItemOf("setpointLABEL").Value + """ setpointen=""" + oXMLNodeCanale.Attributes().ItemOf("setpointEN").Value + """ setpointmin=""" + oXMLNodeCanale.Attributes().ItemOf("setpointMIN").Value + """ setpointmax=""" + oXMLNodeCanale.Attributes().ItemOf("setpointMAX").Value + """ graph=""" + oXMLNodeCanale.Attributes().ItemOf("graph").Value + """ id=""" + oXMLNodeCanale.InnerXml() + "_log_check""  ldlog = """" min =""minlog"" Class=""checkbox""  value=""" + progressivo.ToString + """ checked=""checked"" ><span unit=""" + oXMLNodeCanale.InnerXml() + """  ldlog = """"  id=""" + oXMLNodeCanale.Attributes().ItemOf("label").Value + "_log_label"" ></span></span>"
+                                        intestazioneTemp = intestazioneTemp + "<span Class=""ricerca""><input manualRemote = ""no"" calib = ""no"" type=""checkbox""  maxLog=""" + oXMLNodeCanale.Attributes().ItemOf("max").Value + """ minLog=""" + oXMLNodeCanale.Attributes().ItemOf("min").Value + """ setpointlabel=""" + oXMLNodeCanale.Attributes().ItemOf("setpointLABEL").Value + """ setpointen=""" + oXMLNodeCanale.Attributes().ItemOf("setpointEN").Value + """ setpointmin=""" + oXMLNodeCanale.Attributes().ItemOf("setpointMIN").Value + """ setpointmax=""" + oXMLNodeCanale.Attributes().ItemOf("setpointMAX").Value + """ graph=""" + oXMLNodeCanale.Attributes().ItemOf("graph").Value + """ id=""" + oXMLNodeCanale.InnerXml() + "_log_check""  ldlog = """" min =""minlog"" Class=""checkbox""  value=""" + progressivo.ToString + """ checked=""checked"" ><span unit=""" + oXMLNodeCanale.InnerXml() + """  ldlog = """"  id=""" + oXMLNodeCanale.Attributes().ItemOf("label").Value + "_log_label"" ></span></span>"
 
                                     End If
                                 Else
                                     If (oXMLNodeCanale.Attributes().ItemOf("setpointEN") Is Nothing) Then
-                                        intestazioneTemp = intestazioneTemp + "<span Class=""ricerca""><input calib = ""no"" type=""checkbox"" minLog="""" maxLog="""" setpointen="""" setpointlabel="""" setpointmin="""" setpointmax=""""  graph=""" + oXMLNodeCanale.Attributes().ItemOf("graph").Value + """ id=""" + oXMLNodeCanale.InnerXml() + "_log_check""  ldlog = """" min =""minlog"" Class=""checkbox"" value=""" + progressivo.ToString + """  ><span unit=""" + oXMLNodeCanale.InnerXml() + """    ldlog = """"  id=""" + oXMLNodeCanale.Attributes().ItemOf("label").Value + "_log_label"" ></span></span>"
+                                        intestazioneTemp = intestazioneTemp + "<span Class=""ricerca""><input manualRemote = ""no"" calib = ""no"" type=""checkbox"" minLog="""" maxLog="""" setpointen="""" setpointlabel="""" setpointmin="""" setpointmax=""""  graph=""" + oXMLNodeCanale.Attributes().ItemOf("graph").Value + """ id=""" + oXMLNodeCanale.InnerXml() + "_log_check""  ldlog = """" min =""minlog"" Class=""checkbox"" value=""" + progressivo.ToString + """  ><span unit=""" + oXMLNodeCanale.InnerXml() + """    ldlog = """"  id=""" + oXMLNodeCanale.Attributes().ItemOf("label").Value + "_log_label"" ></span></span>"
                                     Else
-                                        intestazioneTemp = intestazioneTemp + "<span Class=""ricerca""><input calib = ""no"" type=""checkbox""  maxLog=""" + oXMLNodeCanale.Attributes().ItemOf("max").Value + """ minLog=""" + oXMLNodeCanale.Attributes().ItemOf("min").Value + """ setpointlabel=""" + oXMLNodeCanale.Attributes().ItemOf("setpointLABEL").Value + """ setpointen=""" + oXMLNodeCanale.Attributes().ItemOf("setpointEN").Value + """ setpointmin=""" + oXMLNodeCanale.Attributes().ItemOf("setpointMIN").Value + """ setpointmax=""" + oXMLNodeCanale.Attributes().ItemOf("setpointMAX").Value + """  graph=""" + oXMLNodeCanale.Attributes().ItemOf("graph").Value + """ id=""" + oXMLNodeCanale.InnerXml() + "_log_check""  ldlog = """" min =""minlog"" Class=""checkbox"" value=""" + progressivo.ToString + """  ><span unit=""" + oXMLNodeCanale.InnerXml() + """    ldlog = """"  id=""" + oXMLNodeCanale.Attributes().ItemOf("label").Value + "_log_label"" ></span></span>"
+                                        intestazioneTemp = intestazioneTemp + "<span Class=""ricerca""><input manualRemote = ""no"" calib = ""no"" type=""checkbox""  maxLog=""" + oXMLNodeCanale.Attributes().ItemOf("max").Value + """ minLog=""" + oXMLNodeCanale.Attributes().ItemOf("min").Value + """ setpointlabel=""" + oXMLNodeCanale.Attributes().ItemOf("setpointLABEL").Value + """ setpointen=""" + oXMLNodeCanale.Attributes().ItemOf("setpointEN").Value + """ setpointmin=""" + oXMLNodeCanale.Attributes().ItemOf("setpointMIN").Value + """ setpointmax=""" + oXMLNodeCanale.Attributes().ItemOf("setpointMAX").Value + """  graph=""" + oXMLNodeCanale.Attributes().ItemOf("graph").Value + """ id=""" + oXMLNodeCanale.InnerXml() + "_log_check""  ldlog = """" min =""minlog"" Class=""checkbox"" value=""" + progressivo.ToString + """  ><span unit=""" + oXMLNodeCanale.InnerXml() + """    ldlog = """"  id=""" + oXMLNodeCanale.Attributes().ItemOf("label").Value + "_log_label"" ></span></span>"
                                     End If
                                 End If
 
@@ -1370,7 +1378,7 @@ nexLoopLabel:
                             If (attributeDataNodes.Value = "temperature") Then
                                 intestazioneTemp = intestazioneTemp + "<div Class=""span3"" id=""" + oXMLNodeCanale.Attributes().ItemOf("enable").Value + "_log_enable"">"
                                 intestazioneTemp = intestazioneTemp + "<Label Class=""checkbox"" >"
-                                intestazioneTemp = intestazioneTemp + "<span Class=""ricerca""><input calib = ""no"" type=""checkbox"" setpointen="""" setpointlabel="""" setpointmin="""" setpointmax="""" graph=""" + oXMLNodeCanale.Attributes().ItemOf("graph").Value + """ id=""" + oXMLNodeCanale.InnerXml() + "_log_check""  ldlog = """" min ="" minlog"" Class=""checkbox"" value=""" + progressivo.ToString + """  ><span>Temperature</span></span>"
+                                intestazioneTemp = intestazioneTemp + "<span Class=""ricerca""><input manualRemote = ""no"" calib = ""no"" type=""checkbox"" setpointen="""" setpointlabel="""" setpointmin="""" setpointmax="""" graph=""" + oXMLNodeCanale.Attributes().ItemOf("graph").Value + """ id=""" + oXMLNodeCanale.InnerXml() + "_log_check""  ldlog = """" min ="" minlog"" Class=""checkbox"" value=""" + progressivo.ToString + """  ><span>Temperature</span></span>"
                                 intestazioneTemp = intestazioneTemp + "</label>"
                                 intestazioneTemp = intestazioneTemp + "</div>"
                                 progressivo = progressivo + 1
@@ -1384,7 +1392,7 @@ nexLoopLabel:
                                 End If
 
                                 intestazioneTemp = intestazioneTemp + "<Label Class=""checkbox"" >"
-                                intestazioneTemp = intestazioneTemp + "<span Class=""ricerca""><input calib = ""no"" type=""checkbox""  graph=""" + oXMLNodeCanale.Attributes().ItemOf("graph").Value + """ id=""" + oXMLNodeCanale.InnerXml() + "_log_check""  ldlog = """" min ="" minlog""  Class=""checkbox"" value=""" + progressivo.ToString + """  ><span unit=""" + oXMLNodeCanale.InnerXml() + """    ldlog = """"  id=""" + oXMLNodeCanale.Attributes().ItemOf("label").Value + "_log_label"" ></span></span>"
+                                intestazioneTemp = intestazioneTemp + "<span Class=""ricerca""><input manualRemote = ""no"" calib = ""no"" type=""checkbox""  graph=""" + oXMLNodeCanale.Attributes().ItemOf("graph").Value + """ id=""" + oXMLNodeCanale.InnerXml() + "_log_check""  ldlog = """" min ="" minlog""  Class=""checkbox"" value=""" + progressivo.ToString + """  ><span unit=""" + oXMLNodeCanale.InnerXml() + """    ldlog = """"  id=""" + oXMLNodeCanale.Attributes().ItemOf("label").Value + "_log_label"" ></span></span>"
                                 intestazioneTemp = intestazioneTemp + "</label>"
                                 intestazioneTemp = intestazioneTemp + "</div>"
                                 progressivo = progressivo + 1
@@ -1392,14 +1400,14 @@ nexLoopLabel:
                             If (attributeDataNodes.Value = "digital") Then
                                 intestazioneTemp = intestazioneTemp + "<div Class=""span3"">"
                                 intestazioneTemp = intestazioneTemp + "<Label Class=""checkbox"" >"
-                                intestazioneTemp = intestazioneTemp + "<span Class=""ricerca""><input calib = ""no"" type=""checkbox""  graph=""" + oXMLNodeCanale.Attributes().ItemOf("graph").Value + """ id=""" + oXMLNodeCanale.InnerXml() + "_log_check""  ldlog = """" min ="" minlog""  Class=""checkbox"" value=""" + progressivo.ToString + """  ><span unit=""" + oXMLNodeCanale.InnerXml() + """    ldlog = """"  id=""" + oXMLNodeCanale.Attributes().ItemOf("label").Value + "_log_label"" ></span></span>"
+                                intestazioneTemp = intestazioneTemp + "<span Class=""ricerca""><input manualRemote = ""no"" calib = ""no"" type=""checkbox""  graph=""" + oXMLNodeCanale.Attributes().ItemOf("graph").Value + """ id=""" + oXMLNodeCanale.InnerXml() + "_log_check""  ldlog = """" min ="" minlog""  Class=""checkbox"" value=""" + progressivo.ToString + """  ><span unit=""" + oXMLNodeCanale.InnerXml() + """    ldlog = """"  id=""" + oXMLNodeCanale.Attributes().ItemOf("label").Value + "_log_label"" ></span></span>"
                                 intestazioneTemp = intestazioneTemp + "</label>"
                                 intestazioneTemp = intestazioneTemp + "</div>"
                                 progressivo = progressivo + 1
                             End If
                             If (attributeDataNodes.Value = "hide") Then ' campo nascosto
                                 intestazioneTemp = intestazioneTemp + "<div Class=""span3"">"
-                                intestazioneTemp = intestazioneTemp + "<input calib = ""no"" type =""checkbox""  graph=""" + oXMLNodeCanale.Attributes().ItemOf("graph").Value + """  reference=""" + oXMLNodeCanale.Attributes().ItemOf("label").Value + """ id=""" + oXMLNodeCanale.InnerXml() + "_log_check""  ldlog = ""ldlog"" min =""minlog""  Class=""checkbox"" value=""" + progressivo.ToString + """ style=""display:none"" >"
+                                intestazioneTemp = intestazioneTemp + "<input manualRemote = ""no"" calib = ""no"" type =""checkbox""  graph=""" + oXMLNodeCanale.Attributes().ItemOf("graph").Value + """  reference=""" + oXMLNodeCanale.Attributes().ItemOf("label").Value + """ id=""" + oXMLNodeCanale.InnerXml() + "_log_check""  ldlog = ""ldlog"" min =""minlog""  Class=""checkbox"" value=""" + progressivo.ToString + """ style=""display:none"" >"
                                 intestazioneTemp = intestazioneTemp + "</div>"
                             End If
 
@@ -1421,9 +1429,9 @@ nexLoopLabel:
                                 intestazioneTemp = intestazioneTemp + "<div Class=""span3"">"
                                 intestazioneTemp = intestazioneTemp + "<Label Class=""checkbox"" >"
                                 If (progressivo = 0) Then
-                                    intestazioneTemp = intestazioneTemp + "<span Class=""ricerca""><input calib = ""no"" setpointen="""" setpointlabel="""" setpointmin="""" setpointmax="""" type=""checkbox"" graph=""" + oXMLNodeCanale.Attributes().ItemOf("graph").Value + """ id=""" + oXMLNodeCanale.InnerXml() + "_log_check"" ldlog = """" min =""minlog"" Class=""checkbox""  value=""" + progressivo.ToString + """ checked=""checked"" ><span  unit=""" + oXMLNodeCanale.InnerXml() + """   id=""" + oXMLNodeCanale.Attributes().ItemOf("label").Value + "_log_label"" ldlog = """" ></span></span>"
+                                    intestazioneTemp = intestazioneTemp + "<span Class=""ricerca""><input manualRemote = ""no"" calib = ""no"" setpointen="""" setpointlabel="""" setpointmin="""" setpointmax="""" type=""checkbox"" graph=""" + oXMLNodeCanale.Attributes().ItemOf("graph").Value + """ id=""" + oXMLNodeCanale.InnerXml() + "_log_check"" ldlog = """" min =""minlog"" Class=""checkbox""  value=""" + progressivo.ToString + """ checked=""checked"" ><span  unit=""" + oXMLNodeCanale.InnerXml() + """   id=""" + oXMLNodeCanale.Attributes().ItemOf("label").Value + "_log_label"" ldlog = """" ></span></span>"
                                 Else
-                                    intestazioneTemp = intestazioneTemp + "<span Class=""ricerca""><input calib = ""no"" setpointen="""" setpointlabel="""" setpointmin="""" setpointmax="""" type=""checkbox"" graph=""" + oXMLNodeCanale.Attributes().ItemOf("graph").Value + """ id=""" + oXMLNodeCanale.InnerXml() + "_log_check"" ldlog = """" min =""minlog"" Class=""checkbox"" value=""" + progressivo.ToString + """  ><span unit=""" + oXMLNodeCanale.InnerXml() + """   id=""" + oXMLNodeCanale.Attributes().ItemOf("label").Value + "_log_label"" ldlog = """" ></span></span>"
+                                    intestazioneTemp = intestazioneTemp + "<span Class=""ricerca""><input manualRemote = ""no"" calib = ""no"" setpointen="""" setpointlabel="""" setpointmin="""" setpointmax="""" type=""checkbox"" graph=""" + oXMLNodeCanale.Attributes().ItemOf("graph").Value + """ id=""" + oXMLNodeCanale.InnerXml() + "_log_check"" ldlog = """" min =""minlog"" Class=""checkbox"" value=""" + progressivo.ToString + """  ><span unit=""" + oXMLNodeCanale.InnerXml() + """   id=""" + oXMLNodeCanale.Attributes().ItemOf("label").Value + "_log_label"" ldlog = """" ></span></span>"
                                 End If
 
                                 intestazioneTemp = intestazioneTemp + "</label>"
@@ -1447,9 +1455,9 @@ nexLoopLabel:
                                 intestazioneTemp = intestazioneTemp + "<div Class=""span3"">"
                                 intestazioneTemp = intestazioneTemp + "<Label Class=""checkbox"" >"
                                 If (progressivo = 0) Then
-                                    intestazioneTemp = intestazioneTemp + "<span Class=""ricerca""><input calib = ""no"" type=""checkbox"" graph=""" + oXMLNodeCanale.Attributes().ItemOf("graph").Value + """ id=""" + oXMLNodeCanale.InnerXml() + "_log_check"" ldlog = """" min =""minlog"" Class=""checkbox""  value=""" + progressivo.ToString + """ checked=""checked"" ><span>Flow Alarm</span></span>"
+                                    intestazioneTemp = intestazioneTemp + "<span Class=""ricerca""><input manualRemote = ""no"" calib = ""no"" type=""checkbox"" graph=""" + oXMLNodeCanale.Attributes().ItemOf("graph").Value + """ id=""" + oXMLNodeCanale.InnerXml() + "_log_check"" ldlog = """" min =""minlog"" Class=""checkbox""  value=""" + progressivo.ToString + """ checked=""checked"" ><span>Flow Alarm</span></span>"
                                 Else
-                                    intestazioneTemp = intestazioneTemp + "<span Class=""ricerca""><input calib = ""no"" type=""checkbox"" graph=""" + oXMLNodeCanale.Attributes().ItemOf("graph").Value + """ id=""" + oXMLNodeCanale.InnerXml() + "_log_check"" ldlog = """" min =""minlog"" Class=""checkbox"" value=""" + progressivo.ToString + """  ><span >Flow Alarm</span></span>"
+                                    intestazioneTemp = intestazioneTemp + "<span Class=""ricerca""><input manualRemote = ""no"" calib = ""no"" type=""checkbox"" graph=""" + oXMLNodeCanale.Attributes().ItemOf("graph").Value + """ id=""" + oXMLNodeCanale.InnerXml() + "_log_check"" ldlog = """" min =""minlog"" Class=""checkbox"" value=""" + progressivo.ToString + """  ><span >Flow Alarm</span></span>"
                                 End If
 
                                 intestazioneTemp = intestazioneTemp + "</label>"
@@ -1468,14 +1476,14 @@ nexLoopLabel:
         If ldLodg Then
             intestazione = intestazione + "<div Class=""row-fluid""> <h5>" + "Report Tank" + "</h5>"
             intestazione = intestazione + "<div Class=""span3"">"
-            intestazione = intestazione + "<input calib = ""no"" type=""radio""  min =""minlog"" id=""radiodisableldlog"" name=""radio"" checked=""checked"" value=""1"" > "
+            intestazione = intestazione + "<input manualRemote = ""no"" calib = ""no"" type=""radio""  min =""minlog"" id=""radiodisableldlog"" name=""radioLaser"" checked  > "
             intestazione = intestazione + "<Label Class=""radio""> Disable </label><br>"
 
-            intestazione = intestazione + "<input calib = ""no"" type=""radio""  min =""minlog"" id=""radiodayldlog"" name=""radio"" value=""1"" > "
+            intestazione = intestazione + "<input manualRemote = ""no"" calib = ""no"" type=""radio""  min =""minlog"" id=""radiodayldlog"" name=""radioLaser"" > "
             intestazione = intestazione + " <Label Class=""radio"">Daily </label><br>"
-            intestazione = intestazione + "<input calib = ""no"" type=""radio""  min =""minlog"" id=""radiomonthldlog"" name=""radio"" value=""1"" > "
+            intestazione = intestazione + "<input manualRemote = ""no"" calib = ""no"" type=""radio""  min =""minlog"" id=""radiomonthldlog"" name=""radioLaser""  > "
             intestazione = intestazione + " <Label Class=""radio"">Monthly </label><br>"
-            intestazione = intestazione + "<input calib = ""no"" type=""radio""  min =""minlog"" id=""radioyearldlog"" name=""radio"" value=""1"" > "
+            intestazione = intestazione + "<input manualRemote = ""no"" calib = ""no"" type=""radio""  min =""minlog"" id=""radioyearldlog"" name=""radioLaser""  > "
             intestazione = intestazione + " <Label Class=""radio"">Yearly </label><br>"
             intestazione = intestazione + "</div>"
             intestazione = intestazione + "</div>"
@@ -1484,7 +1492,7 @@ nexLoopLabel:
         intestazione = intestazione + "<div Class=""row-fluid""> <h5>" + GetGlobalResourceObject("centurio_global", "range") + "</h5>"
         intestazione = intestazione + "<div Class=""span3"">"
         Dim data_prima_date As Date = Now
-        intestazione = intestazione + "<h5>" + GetGlobalResourceObject("centurio_global", "from") + "</h5><input calib = ""no"" data-placement=""right"" type = ""text"" value = """ + data_prima_date.ToString("dd-MM-yyyy") + """  id = ""logFrom"" min =""minlog""></input>"
+        intestazione = intestazione + "<h5>" + GetGlobalResourceObject("centurio_global", "from") + "</h5><input manualRemote = ""no"" calib = ""no"" data-placement=""right"" type = ""text"" value = """ + data_prima_date.ToString("dd-MM-yyyy") + """  id = ""logFrom"" min =""minlog""></input>"
         javaScriptLiteral.Text = javaScriptLiteral.Text + "activate_date_picker('logFrom');"
         intestazione = intestazione + "</div>"
         intestazione = intestazione + "<div Class=""span3"">"
@@ -1494,7 +1502,7 @@ nexLoopLabel:
 
 
 
-        intestazione = intestazione + "<Select calib = ""no"" id=""logTypeDays"" data-original-title=""Log Type"" data-placement=""right""  min =""minlog"" Class=""span3"">"
+        intestazione = intestazione + "<Select manualRemote = ""no"" calib = ""no"" id=""logTypeDays"" data-original-title=""Log Type"" data-placement=""right""  min =""minlog"" Class=""span3"">"
         For i = 1 To 30
             If i < 30 Then
                 intestazione = intestazione + "<Option value=""" + i.ToString + """ >" + i.ToString + "</Option>"
@@ -1579,7 +1587,7 @@ nexLoopLabel:
                         If oXMLNodeSub.Attributes().ItemOf("enable") IsNot Nothing Then
                             intestazioneBodySuperOut = intestazioneBodySuperOut + "<li id = ""areainoutoutput" + oXMLNodeSub.InnerXml() + """ Class=""glyphicons circle_arrow_right"""
                             label = oXMLNodeSub.Attributes().ItemOf("label").Value
-                            intestazioneBodySuperOut = intestazioneBodySuperOut + "label=""areainoutoutput" + label + """ enable=""" + oXMLNodeSub.Attributes().ItemOf("enable") + """><i></i></li>"
+                            intestazioneBodySuperOut = intestazioneBodySuperOut + "label=""areainoutoutput" + label + """ enable=""" + oXMLNodeSub.Attributes().ItemOf("enable").ToString + """><i></i></li>"
 
                         Else
                             intestazioneBodySuperOut = intestazioneBodySuperOut + "<li id = ""areainoutoutput" + oXMLNodeSub.InnerXml() + """ Class=""glyphicons circle_arrow_right"""

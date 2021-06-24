@@ -129,6 +129,9 @@
   <data name="dashboard" xml:space="preserve">
     <value>Dashboard</value>
   </data>
+  <data name="documentation" xml:space="preserve">
+    <value>Documentation</value>
+  </data>
   <data name="edit" xml:space="preserve">
     <value>Edit</value>
   </data>
@@ -137,6 +140,9 @@
   </data>
   <data name="eliminaController" xml:space="preserve">
     <value>Delete Controller</value>
+  </data>
+  <data name="gettingDashboard" xml:space="preserve">
+    <value>Getting Started</value>
   </data>
   <data name="impianti" xml:space="preserve">
     <value>Plants</value>

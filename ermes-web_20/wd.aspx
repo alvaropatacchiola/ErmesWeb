@@ -77,7 +77,9 @@
 							<ul class="unstyled icons">
                                 <li class='glyphicons calendar'>
                                 <asp:Label ID="Label12" runat="server" Text="<i></i> <span class='label'>10</span> <span class='label'>July</span> <span class='label'>1986</span> <span class='label'>18:56</span>" meta:resourcekey="Label12Resource1"></asp:Label>
+                                    <!--
                                     <asp:HyperLink ID="refresh_link" runat="server" ClientIDMode="Static" ImageUrl="~/image/refresh.png" NavigateUrl="~/impianto.aspx"></asp:HyperLink>
+                                        -->
                                     </li>
 								<!-- 
 								<li class="glyphicons tie"><i></i> Working at <a href="http://www.mosaicpro.biz">MosaicPro</a></li>
@@ -126,6 +128,7 @@
        <div id="menu_strumento">
                
     <ul class="nav nav-pills">
+           </ul>
         <asp:literal ID="Label33" runat="server" Text="<li class='active'><a id ='channels_id' href='#'>Channels</a></li>" ></asp:literal>
             <li class="dropdown" id="setpoint_li"><a class="dropdown-toggle" data-toggle="dropdown" href='#'><asp:Label ID="Label19" runat="server" Text="Set Point" meta:resourcekey="Label19Resource1"></asp:Label><span class="caret"></span></a>
                 <ul class="dropdown-menu">
@@ -137,7 +140,8 @@
             </li>
 
 
-            <li class="dropdown" id="alarm_li"><a class="dropdown-toggle" data-toggle="dropdown" href='#'><asp:Label ID="Label21" runat="server" Text="Alarm" meta:resourcekey="Label21Resource1"></asp:Label><span class="caret"></span></a>
+            <li class="dropdown" id="alarm_li"></li>
+           <a class="dropdown-toggle" data-toggle="dropdown" href='#'><asp:Label ID="Label21" runat="server" Text="Alarm" meta:resourcekey="Label21Resource1"></asp:Label><span class="caret"></span></a>
                 <ul class="dropdown-menu">
 
                         <asp:literal ID="Label10" runat="server" Text="<li><a id ='flow_wd' href='#'>Flow</a></li>" meta:resourcekey="Label10Resource1"></asp:literal>

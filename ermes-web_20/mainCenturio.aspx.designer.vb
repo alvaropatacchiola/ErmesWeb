@@ -185,6 +185,24 @@ Partial Public Class mainCenturio
     Protected WithEvents footerText As Global.System.Web.UI.WebControls.Literal
     
     '''<summary>
+    '''Controllo enableManualPulse.
+    '''</summary>
+    '''<remarks>
+    '''Campo generato automaticamente.
+    '''Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
+    '''</remarks>
+    Protected WithEvents enableManualPulse As Global.System.Web.UI.WebControls.PlaceHolder
+    
+    '''<summary>
+    '''Controllo enableManualRelay.
+    '''</summary>
+    '''<remarks>
+    '''Campo generato automaticamente.
+    '''Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
+    '''</remarks>
+    Protected WithEvents enableManualRelay As Global.System.Web.UI.WebControls.PlaceHolder
+    
+    '''<summary>
     '''Controllo tabMenu.
     '''</summary>
     '''<remarks>

@@ -275,6 +275,15 @@ Partial Public Class tower
     Protected WithEvents Label20 As Global.System.Web.UI.WebControls.Literal
     
     '''<summary>
+    '''Controllo Literal2.
+    '''</summary>
+    '''<remarks>
+    '''Campo generato automaticamente.
+    '''Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
+    '''</remarks>
+    Protected WithEvents Literal2 As Global.System.Web.UI.WebControls.Literal
+    
+    '''<summary>
     '''Controllo Label22.
     '''</summary>
     '''<remarks>

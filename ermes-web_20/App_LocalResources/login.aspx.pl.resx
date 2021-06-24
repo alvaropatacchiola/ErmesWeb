@@ -192,4 +192,31 @@
   <data name="remember_meResource.Text" xml:space="preserve">
     <value>Pamiętaj mnie</value>
   </data>
+  <data name="Button1NResource1.Text" xml:space="preserve">
+    <value>Zaloguj</value>
+  </data>
+  <data name="Button1NResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CheckBox1NResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CheckBox1NResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Label2NResource1.Text" xml:space="preserve">
+    <value>&lt;b style='color:red'&gt;Wrong Username e/o Password&lt;b&gt;</value>
+  </data>
+  <data name="remember_meNResource1.Text" xml:space="preserve">
+    <value>Pamiętaj mnie</value>
+  </data>
+  <data name="remember_meNResource1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TextBox1NResource1.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TextBox1NResource1.ToolTip" xml:space="preserve">
+    <value>Uzytkownik</value>
+  </data>
 </root>

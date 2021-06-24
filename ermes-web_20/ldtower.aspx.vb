@@ -68,7 +68,7 @@
         Dim tabella_impianto As ermes_web_20.quey_db.impianto_newDataTable
         Dim riga_strumento As ermes_web_20.quey_db.strumentiRow
         Dim riga_impianto As ermes_web_20.quey_db.impianto_newRow
-        Dim statistica_impianto() As String = statistica.Split(",")
+        'Dim statistica_impianto() As String = statistica.Split(",")
         Dim contatore_strumenti As Integer = 1
         Dim contatore_strumenti_disconnected As Integer = 0
         Dim contatore_strumenti_allarme As Integer = 0
@@ -89,18 +89,18 @@
         Dim time_connected As Long
 
 
-        If statistica_impianto.Length > 0 Then
-            'posizione 0 - contatore strumenti
-            contatore_strumenti = Val(statistica_impianto(0))
-        End If
-        If statistica_impianto.Length > 1 Then
-            'posizione 1 - contatore strumenti disconnessi
-            contatore_strumenti_disconnected = Val(statistica_impianto(1))
-        End If
-        If statistica_impianto.Length > 2 Then
-            'posizione 2 - contatore strumenti allarmi
-            contatore_strumenti_allarme = Val(statistica_impianto(2))
-        End If
+        'If statistica_impianto.Length > 0 Then
+        '    'posizione 0 - contatore strumenti
+        '    contatore_strumenti = Val(statistica_impianto(0))
+        'End If
+        'If statistica_impianto.Length > 1 Then
+        '    'posizione 1 - contatore strumenti disconnessi
+        '    contatore_strumenti_disconnected = Val(statistica_impianto(1))
+        'End If
+        'If statistica_impianto.Length > 2 Then
+        '    'posizione 2 - contatore strumenti allarmi
+        '    contatore_strumenti_allarme = Val(statistica_impianto(2))
+        'End If
         tabella_impianto = Master.tabella_impianto_container
         tabella_strumento = Session("strumento")
         literal_script.Text = "<script>"
@@ -126,6 +126,13 @@
                 riga_strumento = dc1
             End If
         Next
+
+        'controllo visualizzazione menu message
+        If riga_strumento.value6.IndexOf("#") > 0 Then
+            Literal2.Visible = True
+        Else
+            Literal2.Visible = False
+        End If
         check_connected = main_function.check_is_connected(riga_strumento.data_aggiornamento, time_connected)
         Label6.Text = "<h4>" + Replace(riga_impianto.nome_impianto, ">", " : ") + "</h4>"
         Page.Title = Replace(riga_impianto.nome_impianto, ">", " : ")
@@ -158,26 +165,26 @@
         End If
 
 
-        Label13.Text = "<div class=""span4"">"
-        Label13.Text = Label13.Text + "<a href="""" class=""widget-stats widget-stats-2 widget-stats-easy-pie txt-single"">"
-        Label13.Text = Label13.Text + "<div data-percent=""" + Replace(((100 * (contatore_strumenti - contatore_strumenti_disconnected)) / contatore_strumenti).ToString, " ", "") + _
-            """ class=""easy-pie danger easyPieChart"" style=""width: 50px; height: 50px; line-height: 50px;"">"
-        Label13.Text = Label13.Text + "<span class=""value"">" + Replace((contatore_strumenti - contatore_strumenti_disconnected).ToString, " ", "") + "</span><canvas width=""50"" height=""50""></canvas><canvas width=""50"" height=""50""></canvas></div>"
-        Label13.Text = Label13.Text + "<span class=""txt"">" + Strumenti_attivi_traduzione + "</span>"
-        Label13.Text = Label13.Text + "<div class=""clearfix""></div>"
-        Label13.Text = Label13.Text + "</a>"
-        Label13.Text = Label13.Text + "</div>"
-        Label13.Text = Label13.Text + "<div class=""span4"">"
-        Label13.Text = Label13.Text + "<a href="""" class=""widget-stats margin-bottom-none"">"
-        Label13.Text = Label13.Text + "<span class=""glyphicons remove""><i></i></span>"
-        Label13.Text = Label13.Text + "<span class=""txt"">" + allarmi_traduzione + "</span>"
-        Label13.Text = Label13.Text + "<div class=""clearfix""></div>"
-        Label13.Text = Label13.Text + "<span class=""count label label-important"">" + (contatore_strumenti_allarme).ToString + "</span>"
-        Label13.Text = Label13.Text + "</a>"
-        Label13.Text = Label13.Text + "</div>"
+        'Label13.Text = "<div class=""span4"">"
+        'Label13.Text = Label13.Text + "<a href="""" class=""widget-stats widget-stats-2 widget-stats-easy-pie txt-single"">"
+        'Label13.Text = Label13.Text + "<div data-percent=""" + Replace(((100 * (contatore_strumenti - contatore_strumenti_disconnected)) / contatore_strumenti).ToString, " ", "") + _
+        '    """ class=""easy-pie danger easyPieChart"" style=""width: 50px; height: 50px; line-height: 50px;"">"
+        'Label13.Text = Label13.Text + "<span class=""value"">" + Replace((contatore_strumenti - contatore_strumenti_disconnected).ToString, " ", "") + "</span><canvas width=""50"" height=""50""></canvas><canvas width=""50"" height=""50""></canvas></div>"
+        'Label13.Text = Label13.Text + "<span class=""txt"">" + Strumenti_attivi_traduzione + "</span>"
+        'Label13.Text = Label13.Text + "<div class=""clearfix""></div>"
+        'Label13.Text = Label13.Text + "</a>"
+        'Label13.Text = Label13.Text + "</div>"
+        'Label13.Text = Label13.Text + "<div class=""span4"">"
+        'Label13.Text = Label13.Text + "<a href="""" class=""widget-stats margin-bottom-none"">"
+        'Label13.Text = Label13.Text + "<span class=""glyphicons remove""><i></i></span>"
+        'Label13.Text = Label13.Text + "<span class=""txt"">" + allarmi_traduzione + "</span>"
+        'Label13.Text = Label13.Text + "<div class=""clearfix""></div>"
+        'Label13.Text = Label13.Text + "<span class=""count label label-important"">" + (contatore_strumenti_allarme).ToString + "</span>"
+        'Label13.Text = Label13.Text + "</a>"
+        'Label13.Text = Label13.Text + "</div>"
 
         ' HyperLink1.NavigateUrl = "~/impianto.aspx?nome_impianto=" + nome_impianto
-        HyperLink1.NavigateUrl = "~/dashboardNew.aspx"
+        HyperLink1.NavigateUrl = "~/dashboardAssets.aspx"
 
         Label17.Text = "<h3 class=""heading-mosaic"">" + id_485_impianto + " | " + main_function.get_tipo_strumento(riga_strumento.tipo_strumento) + " " + main_function.get_lebel_485(riga_strumento.nome) + "</h3>"
         new_version = main_function_config.chek_ldtower_version(riga_strumento.nome, tipo_versione)

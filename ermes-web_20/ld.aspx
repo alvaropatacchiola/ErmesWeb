@@ -76,7 +76,9 @@
 							<ul class="unstyled icons">
                                 <li class='glyphicons calendar'>
                                 <asp:Label ID="Label12" runat="server" Text="<i></i> <span class='label'>10</span> <span class='label'>July</span> <span class='label'>1986</span> <span class='label'>18:56</span>" meta:resourcekey="Label12Resource1"></asp:Label>
+                                    <!--
                                     <asp:HyperLink ID="refresh_link" runat="server" ClientIDMode="Static" ImageUrl="~/image/refresh.png" NavigateUrl="~/impianto.aspx"></asp:HyperLink>
+                                        -->
                                     </li>
 								<!-- 
 								<li class="glyphicons tie"><i></i> Working at <a href="http://www.mosaicpro.biz">MosaicPro</a></li>
@@ -171,7 +173,7 @@
 <asp:PlaceHolder ID="enable_ld4_log" runat="server">
         
      
-    <asp:literal ID="Literal4" runat="server" Text="<li><a id ='Log4_2' href='#'>Log Graph</a></li>" meta:resourcekey="Label15Resource1"></asp:literal>
+    <asp:literal ID="Literal4" runat="server" Text="<li><a id ='Log4_1' href='#'>Log Graph</a></li>" ></asp:literal>
 
 
 </asp:PlaceHolder>

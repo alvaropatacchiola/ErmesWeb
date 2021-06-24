@@ -74,11 +74,29 @@ Namespace Resources
         End Property
         
         '''<summary>
+        '''  Cerca una stringa localizzata simile a 06/04/2017|ERMES è sempre più user-friendly|Da lunedì 10 aprile è infatti disponibile la nuova dashboard ERMES, per avere una lettura ancora più immediata di tutti i parametri e le informazioni che riguardano i tuoi impianti gestiti a distanza. Anche da mobile, grazie alla nuova interfaccia, il controllo remoto sui tuoi impianti non è mai stato così semplice e immediato.|&amp;17/05/2016|Aggiornamento di sistema!||&amp;19/01/2017| Manutenzione sistema ERMES!|Nella giornata di giovedì 19-01-2017 il sistema ermes non  [stringa troncata]&quot;;.
+        '''</summary>
+        Friend Shared ReadOnly Property globaliNew() As String
+            Get
+                Return ResourceManager.GetString("globaliNew", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Cerca una stringa localizzata simile a &lt;h4&gt;17/05/2016 Aggiornamento di sistema!&lt;/h4&gt;&lt;p&gt;Ogni account può contenere un numero illimitato di utenti che possono modificare i parametri dell impianto&lt;/p&gt;.
         '''</summary>
         Friend Shared ReadOnly Property ultime() As String
             Get
                 Return ResourceManager.GetString("ultime", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Cerca una stringa localizzata simile a 17/05/2016|Aggiornamento di sistema!|Ogni account può contenere un numero illimitato di utenti che possono modificare i parametri dell impianto|.
+        '''</summary>
+        Friend Shared ReadOnly Property ultimeNew() As String
+            Get
+                Return ResourceManager.GetString("ultimeNew", resourceCulture)
             End Get
         End Property
     End Class

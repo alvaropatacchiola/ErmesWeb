@@ -59,7 +59,9 @@ Public Class dashboardNew
                     Session("mid_super").ToString = "c97c4283-7763-45ab-8ba1-35f2a2912d8b" Or
                     Session("mid_super").ToString = "63216ade-252d-4016-acc2-d100f19b8578" Or
                     Session("mid_super").ToString = "d03dfb93-095f-4f2a-b0ed-2b1c3059e2f1" Or
-                    Session("mid_super").ToString = "564629ca-0d28-4f3e-808b-585424b93dd6" Then
+                    Session("mid_super").ToString = "564629ca-0d28-4f3e-808b-585424b93dd6" Or
+                    Session("mid_super").ToString = "ab4d51a9-91ad-40a9-82f3-37cebd476e0d" Then
+
                     block_yagel = False
                     Exit For
                 End If
@@ -344,7 +346,7 @@ Public Class dashboardNew
             End If
 
         End If
-        javaScriptLiteral.Text = javaScriptLiteral.Text + "setInterval(explode, 4000);function explode() {" + scriptCenturioReal + "}"
+        javaScriptLiteral.Text = javaScriptLiteral.Text + "setInterval(explode, 4000);function explode() {" + scriptCenturioReal + "};"
         javaScriptLiteral.Text = javaScriptLiteral.Text + "</script>"
         Session.Remove("centurioList")
         Session("centurioList") = listCenturio
@@ -2391,7 +2393,7 @@ nexLoopLabel:
         check_alarm_general = False
 
 
-        numero_canali = 4
+        numero_canali = 5
 
         intestazioneTemp = intestazioneTemp + "<div Class=""row-fluid"">"
         intestazioneTemp = intestazioneTemp + "<div Class=""span12"">"
@@ -2400,7 +2402,12 @@ nexLoopLabel:
         For i = 1 To numero_canali 'ld può essere duo o tre canali
 
             '  intestazione = intestazione + "<td class=""center"">"
-            label_canale_temp = main_function_config.get_tipo_strumento_ld_lds_wd(Mid(calibrz_value(i), 1, 2), fattore_divisione_temp)
+            If i < 5 Then
+                label_canale_temp = main_function_config.get_tipo_strumento_ld_lds_wd(Mid(calibrz_value(i), 1, 2), fattore_divisione_temp)
+            Else
+                label_canale_temp = "m3/h"
+            End If
+
             Select Case i
                 Case 1 'controllo allarmi canale 1
                     If main_function.alarm_ld4_livello_ph(allrmr_value) _
@@ -2434,10 +2441,23 @@ nexLoopLabel:
                     Else
                         canale_allarme = False
                     End If
+                Case 5 'controllo allarmi canale 4
+                    If main_function.alarm_ld4_flowmeterLow(allrmr_value) Then
+                        check_alarm_general = True
+                        canale_allarme = True
+                    Else
+                        canale_allarme = False
+                    End If
 
             End Select
+            If i < 5 Then
+                valore_canale_temp = Val(Mid(valuer_value(i), 1, 4)) / fattore_divisione_temp
+            Else
+                Dim m3h_valore As Single = 0
+                m3h_valore = Val(valuer_value(7)) / 100
+                valore_canale_temp = (m3h_valore / 10).ToString
+            End If
 
-            valore_canale_temp = Val(Mid(valuer_value(i), 1, 4)) / fattore_divisione_temp
 
 
             If canale_allarme Then ' canale in allarme
@@ -2487,15 +2507,22 @@ nexLoopLabel:
         Else
 
 
-            If main_function.alarm_ld_flusso(allrmr_value) Then
+            If main_function.alarm_ld4_flusso(allrmr_value) Or main_function.alarm_ld4_stby(allrmr_value) Then
                 checkAlarm = True
-                main_function.calcola_ore_minuti(riga.time_no_flow, ore_flow, minuti_flow)
+                If main_function.alarm_ld4_flusso(allrmr_value) Then
+                    main_function.calcola_ore_minuti(riga.time_no_flow, ore_flow, minuti_flow)
 
-                If ore_flow = 0 Then
-                    statoHtmlTesto = noflow_traduzione + " " + Str(minuti_flow) + " min"
-                Else
-                    statoHtmlTesto = noflow_traduzione + " " + Str(ore_flow) + " h" + " " + Str(minuti_flow) + " min"
+                    If ore_flow = 0 Then
+                        statoHtmlTesto = statoHtmlTesto + noflow_traduzione + " " + Str(minuti_flow) + " min"
+                    Else
+                        statoHtmlTesto = statoHtmlTesto + noflow_traduzione + " " + Str(ore_flow) + " h" + " " + Str(minuti_flow) + " min"
+                    End If
+
                 End If
+                If main_function.alarm_ld4_stby(allrmr_value) Then
+                    statoHtmlTesto = statoHtmlTesto + " STBY "
+                End If
+
                 intestazione = intestazione + "<div class=""row-fluid noflow"">"
                 intestazione = intestazione + "<div Class=""span8""><span class=""idnumero"">" + id_strumento + " </span><span Class=""strumento"">" + tipo_strumento_label + "</span></div>"
                 intestazione = intestazione + "<div Class=""span4""><span class=""strumento"">" + statoHtmlTesto + "</span><span class=""pull-right"" style=""margin-right: 10px;""><h4 class=""glyphicons single circle_arrow_right""><i></i></h4></span></div>"

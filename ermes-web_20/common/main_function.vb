@@ -1631,6 +1631,29 @@ Public Class main_function
             Return False
         End Try
     End Function
+    Public Shared Function alarm_ld4_stby(ByVal output_str() As String) As Boolean
+        Try
+            If Mid(output_str(12), 1, 1) <> "0" Then ' probe fail cl
+                Return True
+            Else
+                Return False
+            End If
+        Catch ex As Exception
+            Return False
+        End Try
+    End Function
+    Public Shared Function alarm_ld4_flowmeterLow(ByVal output_str() As String) As Boolean
+        Try
+            If Mid(output_str(13), 1, 1) <> "0" Then ' probe fail cl
+                Return True
+            Else
+                Return False
+            End If
+        Catch ex As Exception
+            Return False
+        End Try
+    End Function
+
     '---------------------------------------------------
     'end gestione allarmi LD4 
     '---------------------------------------------------
@@ -2314,6 +2337,7 @@ Public Class main_function
     '---------------------------------------------------
     'gestione allarmi TOWER
     '---------------------------------------------------
+
     Public Shared Function check_tower_alarm(ByVal output_str As String, Optional ByRef contatore_strumenti_flusso As Integer = 0, Optional ByVal configurazione_canali As String = "") As Boolean
         Dim data() As String = get_split_str(output_str)
         Dim alarm_ckeck_temp As Boolean = False
@@ -2393,6 +2417,7 @@ Public Class main_function
             Return False
         End Try
     End Function
+
     Public Shared Function alarm_tower_flow(ByVal output_str() As String) As Boolean
         Try
             If (Val(Mid(output_str(0), 4, 1))) Then ' flow
@@ -2404,6 +2429,7 @@ Public Class main_function
             Return False
         End Try
     End Function
+
     Public Shared Function alarm_tower_high_conductivity(ByVal output_str() As String) As Boolean
         Try
             If (Val(Mid(output_str(0), 5, 1))) Then ' High Conductivity
@@ -2415,6 +2441,7 @@ Public Class main_function
             Return False
         End Try
     End Function
+
     Public Shared Function alarm_tower_low_conductivity(ByVal output_str() As String) As Boolean
         Try
             If (Val(Mid(output_str(0), 6, 1))) Then ' Low Conductivity
@@ -2437,6 +2464,7 @@ Public Class main_function
             Return False
         End Try
     End Function
+
     Public Shared Function alarm_tower_level_biocide1(ByVal output_str() As String) As Boolean
         Try
             If (Val(Mid(output_str(0), 8, 1))) Then ' Level biocide 1
@@ -2459,9 +2487,21 @@ Public Class main_function
             Return False
         End Try
     End Function
+
     Public Shared Function alarm_tower_level_biocide2(ByVal output_str() As String) As Boolean
         Try
             If (Val(Mid(output_str(0), 10, 1))) Then ' Level biocide 2
+                Return True
+            Else
+                Return False
+            End If
+        Catch ex As Exception
+            Return False
+        End Try
+    End Function
+    Public Shared Function alarm_ldstower_level_inhibitor(ByVal output_str() As String) As Boolean
+        Try
+            If (Val(Mid(output_str(0), 9, 1))) Then ' Level inhibitor
                 Return True
             Else
                 Return False
@@ -2853,9 +2893,9 @@ Public Class main_function
             oMessage1.From = New System.Net.Mail.MailAddress("ermes@ermes-server.com")
             oMessage1.To.Add(New System.Net.Mail.MailAddress("alvaro.patacchiola@emec.it"))
             oMessage1.CC.Add(New System.Net.Mail.MailAddress("andrea.manetta@emec.it"))
-            oMessage1.CC.Add(New System.Net.Mail.MailAddress("gianluca.pasquali@emec.it"))
-            oMessage1.CC.Add(New System.Net.Mail.MailAddress("alessandro.rinaldi@emec.it"))
-            oMessage1.CC.Add(New System.Net.Mail.MailAddress("daniele.leonetti@emec.it"))
+            'oMessage1.CC.Add(New System.Net.Mail.MailAddress("gianluca.pasquali@emec.it"))
+            'oMessage1.CC.Add(New System.Net.Mail.MailAddress("alessandro.rinaldi@emec.it"))
+            'oMessage1.CC.Add(New System.Net.Mail.MailAddress("daniele.leonetti@emec.it"))
             oMessage1.Subject = oggetto_web_master
             oMessage1.Body = body_web_master
             client.EnableSsl = True

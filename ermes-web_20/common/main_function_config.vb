@@ -642,9 +642,17 @@
                 If indice = 0 Then
                     indice = InStr(output_str, "S")
                 End If
-                full_scale = Val(Mid(output_str, indice - 7, 4))
-                fattore_divisione = get_scale(Mid(output_str, indice - 3, 1), full_scale)
-                Return get_sonda(Val(Mid(output_str, indice - 2, 2)), fattore_divisione_com)
+                If numero_canale = 1 Then
+                    full_scale = Val(Mid(output_str, indice - 8, 4))
+                    fattore_divisione = get_scale(Mid(output_str, indice - 4, 1), full_scale)
+                    Return get_sonda(Val(Mid(output_str, indice - 3, 2)), fattore_divisione_com)
+                Else
+                    full_scale = Val(Mid(output_str, indice - 7, 4))
+                    fattore_divisione = get_scale(Mid(output_str, indice - 3, 1), full_scale)
+                    Return get_sonda(Val(Mid(output_str, indice - 2, 2)), fattore_divisione_com)
+                End If
+
+
             Case "4"
                 If numero_canale = 1 Then
                     full_scale = Val(Mid(output_str, Len(output_str) - 5, 4))

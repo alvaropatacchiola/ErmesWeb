@@ -1766,6 +1766,16 @@ Partial Public Class quey_db
         
         Private columnpersonalizzazione As Global.System.Data.DataColumn
         
+        Private columncolorBody As Global.System.Data.DataColumn
+        
+        Private columncolorSide As Global.System.Data.DataColumn
+        
+        Private columnlogo As Global.System.Data.DataColumn
+        
+        Private columncolorPrimary As Global.System.Data.DataColumn
+        
+        Private columnaziendaPersonalizzazione As Global.System.Data.DataColumn
+        
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Sub New()
@@ -1866,6 +1876,46 @@ Partial Public Class quey_db
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property colorBodyColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columncolorBody
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property colorSideColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columncolorSide
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property logoColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnlogo
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property colorPrimaryColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columncolorPrimary
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property aziendaPersonalizzazioneColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnaziendaPersonalizzazione
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Browsable(false)>  _
         Public ReadOnly Property Count() As Integer
@@ -1902,9 +1952,9 @@ Partial Public Class quey_db
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Overloads Function Addsuper_userRow(ByVal Id_super As System.Guid, ByVal data_registrazione As Date, ByVal utente As String, ByVal password As String, ByVal azienda_persona As String, ByVal stato As String, ByVal mail As String, ByVal personalizzazione As String) As super_userRow
+        Public Overloads Function Addsuper_userRow(ByVal Id_super As System.Guid, ByVal data_registrazione As Date, ByVal utente As String, ByVal password As String, ByVal azienda_persona As String, ByVal stato As String, ByVal mail As String, ByVal personalizzazione As String, ByVal colorBody As String, ByVal colorSide As String, ByVal logo As String, ByVal colorPrimary As String, ByVal aziendaPersonalizzazione As String) As super_userRow
             Dim rowsuper_userRow As super_userRow = CType(Me.NewRow,super_userRow)
-            Dim columnValuesArray() As Object = New Object() {Id_super, data_registrazione, utente, password, azienda_persona, stato, mail, personalizzazione}
+            Dim columnValuesArray() As Object = New Object() {Id_super, data_registrazione, utente, password, azienda_persona, stato, mail, personalizzazione, colorBody, colorSide, logo, colorPrimary, aziendaPersonalizzazione}
             rowsuper_userRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowsuper_userRow)
             Return rowsuper_userRow
@@ -1941,6 +1991,11 @@ Partial Public Class quey_db
             Me.columnstato = MyBase.Columns("stato")
             Me.columnmail = MyBase.Columns("mail")
             Me.columnpersonalizzazione = MyBase.Columns("personalizzazione")
+            Me.columncolorBody = MyBase.Columns("colorBody")
+            Me.columncolorSide = MyBase.Columns("colorSide")
+            Me.columnlogo = MyBase.Columns("logo")
+            Me.columncolorPrimary = MyBase.Columns("colorPrimary")
+            Me.columnaziendaPersonalizzazione = MyBase.Columns("aziendaPersonalizzazione")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -1962,6 +2017,16 @@ Partial Public Class quey_db
             MyBase.Columns.Add(Me.columnmail)
             Me.columnpersonalizzazione = New Global.System.Data.DataColumn("personalizzazione", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnpersonalizzazione)
+            Me.columncolorBody = New Global.System.Data.DataColumn("colorBody", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columncolorBody)
+            Me.columncolorSide = New Global.System.Data.DataColumn("colorSide", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columncolorSide)
+            Me.columnlogo = New Global.System.Data.DataColumn("logo", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnlogo)
+            Me.columncolorPrimary = New Global.System.Data.DataColumn("colorPrimary", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columncolorPrimary)
+            Me.columnaziendaPersonalizzazione = New Global.System.Data.DataColumn("aziendaPersonalizzazione", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnaziendaPersonalizzazione)
             Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnId_super}, true))
             Me.columnId_super.AllowDBNull = false
             Me.columnId_super.Unique = true
@@ -1971,6 +2036,11 @@ Partial Public Class quey_db
             Me.columnstato.MaxLength = 2147483647
             Me.columnmail.MaxLength = 2147483647
             Me.columnpersonalizzazione.MaxLength = 2147483647
+            Me.columncolorBody.MaxLength = 7
+            Me.columncolorSide.MaxLength = 7
+            Me.columnlogo.MaxLength = 40
+            Me.columncolorPrimary.MaxLength = 7
+            Me.columnaziendaPersonalizzazione.MaxLength = 30
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -9044,6 +9114,16 @@ Partial Public Class quey_db
         
         Private columnExpr2 As Global.System.Data.DataColumn
         
+        Private columncolorBody As Global.System.Data.DataColumn
+        
+        Private columncolorSide As Global.System.Data.DataColumn
+        
+        Private columnlogo As Global.System.Data.DataColumn
+        
+        Private columncolorPrimary As Global.System.Data.DataColumn
+        
+        Private columnaziendaPersonalizzazione As Global.System.Data.DataColumn
+        
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Sub New()
@@ -9256,6 +9336,46 @@ Partial Public Class quey_db
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property colorBodyColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columncolorBody
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property colorSideColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columncolorSide
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property logoColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnlogo
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property colorPrimaryColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columncolorPrimary
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property aziendaPersonalizzazioneColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnaziendaPersonalizzazione
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Browsable(false)>  _
         Public ReadOnly Property Count() As Integer
@@ -9314,9 +9434,14 @@ Partial Public Class quey_db
                     ByVal id_impianto As System.Guid,  _
                     ByVal Expr1 As String,  _
                     ByVal Expr11 As Boolean,  _
-                    ByVal Expr2 As Integer) As impianto_newRow
+                    ByVal Expr2 As Integer,  _
+                    ByVal colorBody As String,  _
+                    ByVal colorSide As String,  _
+                    ByVal logo As String,  _
+                    ByVal colorPrimary As String,  _
+                    ByVal aziendaPersonalizzazione As String) As impianto_newRow
             Dim rowimpianto_newRow As impianto_newRow = CType(Me.NewRow,impianto_newRow)
-            Dim columnValuesArray() As Object = New Object() {id_super, nome_impianto, descrizione_impianato, identificativo, referente, note, data_gestione, comunicazioni, telefono_referente, mail_referente, indirizzo, modifica_setpoint_user, azienda_persona, stato, mail, personalizzazione, id_user, modifica_setpoint_user1, id_impianto, Expr1, Expr11, Expr2}
+            Dim columnValuesArray() As Object = New Object() {id_super, nome_impianto, descrizione_impianato, identificativo, referente, note, data_gestione, comunicazioni, telefono_referente, mail_referente, indirizzo, modifica_setpoint_user, azienda_persona, stato, mail, personalizzazione, id_user, modifica_setpoint_user1, id_impianto, Expr1, Expr11, Expr2, colorBody, colorSide, logo, colorPrimary, aziendaPersonalizzazione}
             rowimpianto_newRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowimpianto_newRow)
             Return rowimpianto_newRow
@@ -9361,6 +9486,11 @@ Partial Public Class quey_db
             Me.columnExpr1 = MyBase.Columns("Expr1")
             Me.columnExpr11 = MyBase.Columns("Expr11")
             Me.columnExpr2 = MyBase.Columns("Expr2")
+            Me.columncolorBody = MyBase.Columns("colorBody")
+            Me.columncolorSide = MyBase.Columns("colorSide")
+            Me.columnlogo = MyBase.Columns("logo")
+            Me.columncolorPrimary = MyBase.Columns("colorPrimary")
+            Me.columnaziendaPersonalizzazione = MyBase.Columns("aziendaPersonalizzazione")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -9410,6 +9540,16 @@ Partial Public Class quey_db
             MyBase.Columns.Add(Me.columnExpr11)
             Me.columnExpr2 = New Global.System.Data.DataColumn("Expr2", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnExpr2)
+            Me.columncolorBody = New Global.System.Data.DataColumn("colorBody", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columncolorBody)
+            Me.columncolorSide = New Global.System.Data.DataColumn("colorSide", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columncolorSide)
+            Me.columnlogo = New Global.System.Data.DataColumn("logo", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnlogo)
+            Me.columncolorPrimary = New Global.System.Data.DataColumn("colorPrimary", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columncolorPrimary)
+            Me.columnaziendaPersonalizzazione = New Global.System.Data.DataColumn("aziendaPersonalizzazione", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnaziendaPersonalizzazione)
             Me.columnid_super.AllowDBNull = false
             Me.columnnome_impianto.MaxLength = 2147483647
             Me.columndescrizione_impianato.MaxLength = 2147483647
@@ -9433,6 +9573,11 @@ Partial Public Class quey_db
             Me.columnExpr11.ReadOnly = true
             Me.columnExpr11.Caption = "Expr1"
             Me.columnExpr2.ReadOnly = true
+            Me.columncolorBody.MaxLength = 7
+            Me.columncolorSide.MaxLength = 7
+            Me.columnlogo.MaxLength = 40
+            Me.columncolorPrimary.MaxLength = 7
+            Me.columnaziendaPersonalizzazione.MaxLength = 30
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -11474,6 +11619,82 @@ Partial Public Class quey_db
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property colorBody() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tablesuper_user.colorBodyColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("Il valore della colonna 'colorBody' nella tabella 'super_user' è DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tablesuper_user.colorBodyColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property colorSide() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tablesuper_user.colorSideColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("Il valore della colonna 'colorSide' nella tabella 'super_user' è DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tablesuper_user.colorSideColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property logo() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tablesuper_user.logoColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("Il valore della colonna 'logo' nella tabella 'super_user' è DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tablesuper_user.logoColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property colorPrimary() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tablesuper_user.colorPrimaryColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("Il valore della colonna 'colorPrimary' nella tabella 'super_user' è DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tablesuper_user.colorPrimaryColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property aziendaPersonalizzazione() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tablesuper_user.aziendaPersonalizzazioneColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("Il valore della colonna 'aziendaPersonalizzazione' nella tabella 'super_user' è D"& _ 
+                            "BNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tablesuper_user.aziendaPersonalizzazioneColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Function Isdata_registrazioneNull() As Boolean
             Return Me.IsNull(Me.tablesuper_user.data_registrazioneColumn)
         End Function
@@ -11554,6 +11775,66 @@ Partial Public Class quey_db
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Sub SetpersonalizzazioneNull()
             Me(Me.tablesuper_user.personalizzazioneColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IscolorBodyNull() As Boolean
+            Return Me.IsNull(Me.tablesuper_user.colorBodyColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetcolorBodyNull()
+            Me(Me.tablesuper_user.colorBodyColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IscolorSideNull() As Boolean
+            Return Me.IsNull(Me.tablesuper_user.colorSideColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetcolorSideNull()
+            Me(Me.tablesuper_user.colorSideColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IslogoNull() As Boolean
+            Return Me.IsNull(Me.tablesuper_user.logoColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetlogoNull()
+            Me(Me.tablesuper_user.logoColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IscolorPrimaryNull() As Boolean
+            Return Me.IsNull(Me.tablesuper_user.colorPrimaryColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetcolorPrimaryNull()
+            Me(Me.tablesuper_user.colorPrimaryColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsaziendaPersonalizzazioneNull() As Boolean
+            Return Me.IsNull(Me.tablesuper_user.aziendaPersonalizzazioneColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetaziendaPersonalizzazioneNull()
+            Me(Me.tablesuper_user.aziendaPersonalizzazioneColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
     
@@ -19640,6 +19921,82 @@ Partial Public Class quey_db
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property colorBody() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableimpianto_new.colorBodyColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("Il valore della colonna 'colorBody' nella tabella 'impianto_new' è DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableimpianto_new.colorBodyColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property colorSide() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableimpianto_new.colorSideColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("Il valore della colonna 'colorSide' nella tabella 'impianto_new' è DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableimpianto_new.colorSideColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property logo() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableimpianto_new.logoColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("Il valore della colonna 'logo' nella tabella 'impianto_new' è DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableimpianto_new.logoColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property colorPrimary() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableimpianto_new.colorPrimaryColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("Il valore della colonna 'colorPrimary' nella tabella 'impianto_new' è DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableimpianto_new.colorPrimaryColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property aziendaPersonalizzazione() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableimpianto_new.aziendaPersonalizzazioneColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("Il valore della colonna 'aziendaPersonalizzazione' nella tabella 'impianto_new' è"& _ 
+                            " DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableimpianto_new.aziendaPersonalizzazioneColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Function Isnome_impiantoNull() As Boolean
             Return Me.IsNull(Me.tableimpianto_new.nome_impiantoColumn)
         End Function
@@ -19876,6 +20233,66 @@ Partial Public Class quey_db
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Sub SetExpr2Null()
             Me(Me.tableimpianto_new.Expr2Column) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IscolorBodyNull() As Boolean
+            Return Me.IsNull(Me.tableimpianto_new.colorBodyColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetcolorBodyNull()
+            Me(Me.tableimpianto_new.colorBodyColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IscolorSideNull() As Boolean
+            Return Me.IsNull(Me.tableimpianto_new.colorSideColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetcolorSideNull()
+            Me(Me.tableimpianto_new.colorSideColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IslogoNull() As Boolean
+            Return Me.IsNull(Me.tableimpianto_new.logoColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetlogoNull()
+            Me(Me.tableimpianto_new.logoColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IscolorPrimaryNull() As Boolean
+            Return Me.IsNull(Me.tableimpianto_new.colorPrimaryColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetcolorPrimaryNull()
+            Me(Me.tableimpianto_new.colorPrimaryColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsaziendaPersonalizzazioneNull() As Boolean
+            Return Me.IsNull(Me.tableimpianto_new.aziendaPersonalizzazioneColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetaziendaPersonalizzazioneNull()
+            Me(Me.tableimpianto_new.aziendaPersonalizzazioneColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
     
@@ -21566,6 +21983,11 @@ Namespace quey_dbTableAdapters
             tableMapping.ColumnMappings.Add("stato", "stato")
             tableMapping.ColumnMappings.Add("mail", "mail")
             tableMapping.ColumnMappings.Add("personalizzazione", "personalizzazione")
+            tableMapping.ColumnMappings.Add("colorBody", "colorBody")
+            tableMapping.ColumnMappings.Add("colorSide", "colorSide")
+            tableMapping.ColumnMappings.Add("logo", "logo")
+            tableMapping.ColumnMappings.Add("colorPrimary", "colorPrimary")
+            tableMapping.ColumnMappings.Add("aziendaPersonalizzazione", "aziendaPersonalizzazione")
             Me._adapter.TableMappings.Add(tableMapping)
             Me._adapter.DeleteCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.DeleteCommand.Connection = Me.Connection
@@ -21575,9 +21997,11 @@ Namespace quey_dbTableAdapters
             Me._adapter.InsertCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.InsertCommand.Connection = Me.Connection
             Me._adapter.InsertCommand.CommandText = "INSERT INTO [super_user] ([Id_super], [data_registrazione], [utente], [password],"& _ 
-                " [azienda_persona], [stato], [mail], [personalizzazione]) VALUES (@Id_super, @da"& _ 
-                "ta_registrazione, @utente, @password, @azienda_persona, @stato, @mail, @personal"& _ 
-                "izzazione)"
+                " [azienda_persona], [stato], [mail], [personalizzazione], [colorBody], [colorSid"& _ 
+                "e], [logo], [colorPrimary], [aziendaPersonalizzazione]) VALUES (@Id_super, @data"& _ 
+                "_registrazione, @utente, @password, @azienda_persona, @stato, @mail, @personaliz"& _ 
+                "zazione, @colorBody, @colorSide, @logo, @colorPrimary, @aziendaPersonalizzazione"& _ 
+                ")"
             Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Id_super", Global.System.Data.SqlDbType.UniqueIdentifier, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Id_super", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@data_registrazione", Global.System.Data.SqlDbType.DateTime, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "data_registrazione", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
@@ -21587,12 +22011,19 @@ Namespace quey_dbTableAdapters
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@stato", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "stato", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@mail", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "mail", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@personalizzazione", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "personalizzazione", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@colorBody", Global.System.Data.SqlDbType.NChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "colorBody", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@colorSide", Global.System.Data.SqlDbType.NChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "colorSide", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@logo", Global.System.Data.SqlDbType.NChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "logo", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@colorPrimary", Global.System.Data.SqlDbType.NChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "colorPrimary", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@aziendaPersonalizzazione", Global.System.Data.SqlDbType.NChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "aziendaPersonalizzazione", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.UpdateCommand.Connection = Me.Connection
             Me._adapter.UpdateCommand.CommandText = "UPDATE [super_user] SET [Id_super] = @Id_super, [data_registrazione] = @data_regi"& _ 
                 "strazione, [utente] = @utente, [password] = @password, [azienda_persona] = @azie"& _ 
                 "nda_persona, [stato] = @stato, [mail] = @mail, [personalizzazione] = @personaliz"& _ 
-                "zazione WHERE (([Id_super] = @Original_Id_super))"
+                "zazione, [colorBody] = @colorBody, [colorSide] = @colorSide, [logo] = @logo, [co"& _ 
+                "lorPrimary] = @colorPrimary, [aziendaPersonalizzazione] = @aziendaPersonalizzazi"& _ 
+                "one WHERE (([Id_super] = @Original_Id_super))"
             Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Id_super", Global.System.Data.SqlDbType.UniqueIdentifier, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Id_super", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@data_registrazione", Global.System.Data.SqlDbType.DateTime, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "data_registrazione", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
@@ -21602,6 +22033,11 @@ Namespace quey_dbTableAdapters
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@stato", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "stato", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@mail", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "mail", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@personalizzazione", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "personalizzazione", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@colorBody", Global.System.Data.SqlDbType.NChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "colorBody", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@colorSide", Global.System.Data.SqlDbType.NChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "colorSide", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@logo", Global.System.Data.SqlDbType.NChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "logo", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@colorPrimary", Global.System.Data.SqlDbType.NChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "colorPrimary", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@aziendaPersonalizzazione", Global.System.Data.SqlDbType.NChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "aziendaPersonalizzazione", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Id_super", Global.System.Data.SqlDbType.UniqueIdentifier, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Id_super", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
         End Sub
         
@@ -21615,20 +22051,21 @@ Namespace quey_dbTableAdapters
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Private Sub InitCommandCollection()
-            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(6) {}
+            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(8) {}
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
             Me._commandCollection(0).CommandText = "SELECT        Id_super, data_registrazione, utente, password, azienda_persona, st"& _ 
-                "ato, mail, personalizzazione"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            super_user"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (utente ="& _ 
-                " @utente) AND (password = @password)"
+                "ato, mail, personalizzazione, colorBody, colorSide, logo, colorPrimary, aziendaP"& _ 
+                "ersonalizzazione"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            super_user"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (utente = @utente) AN"& _ 
+                "D (password = @password)"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@utente", Global.System.Data.SqlDbType.NVarChar, 2147483647, Global.System.Data.ParameterDirection.Input, 0, 0, "utente", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@password", Global.System.Data.SqlDbType.NVarChar, 2147483647, Global.System.Data.ParameterDirection.Input, 0, 0, "password", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(1) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(1).Connection = Me.Connection
-            Me._commandCollection(1).CommandText = "SELECT        Id_super, data_registrazione, utente, password, azienda_persona, st"& _ 
-                "ato, mail, personalizzazione"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            super_user"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (utente ="& _ 
-                " @username) AND (password = @password)"
+            Me._commandCollection(1).CommandText = "SELECT Id_super, aziendaPersonalizzazione, azienda_persona, colorBody, colorPrima"& _ 
+                "ry, colorSide, data_registrazione, logo, mail, password, personalizzazione, stat"& _ 
+                "o, utente FROM super_user WHERE (utente = @username) AND (password = @password)"
             Me._commandCollection(1).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@username", Global.System.Data.SqlDbType.NVarChar, 2147483647, Global.System.Data.ParameterDirection.Input, 0, 0, "utente", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@password", Global.System.Data.SqlDbType.NVarChar, 2147483647, Global.System.Data.ParameterDirection.Input, 0, 0, "password", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
@@ -21642,9 +22079,9 @@ Namespace quey_dbTableAdapters
             Me._commandCollection(2).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@password", Global.System.Data.SqlDbType.NVarChar, 2147483647, Global.System.Data.ParameterDirection.Input, 0, 0, "password", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(3) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(3).Connection = Me.Connection
-            Me._commandCollection(3).CommandText = "SELECT        Id_super, data_registrazione, utente, password, azienda_persona, st"& _ 
-                "ato, mail, personalizzazione"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            super_user"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (mail = @"& _ 
-                "mail) "
+            Me._commandCollection(3).CommandText = "SELECT Id_super, aziendaPersonalizzazione, azienda_persona, colorBody, colorPrima"& _ 
+                "ry, colorSide, data_registrazione, logo, mail, password, personalizzazione, stat"& _ 
+                "o, utente FROM super_user WHERE (mail = @mail)"
             Me._commandCollection(3).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(3).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@mail", Global.System.Data.SqlDbType.NVarChar, 2147483647, Global.System.Data.ParameterDirection.Input, 0, 0, "mail", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(4) = New Global.System.Data.SqlClient.SqlCommand()
@@ -21658,30 +22095,58 @@ Namespace quey_dbTableAdapters
             Me._commandCollection(4).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@id_user", Global.System.Data.SqlDbType.UniqueIdentifier, 16, Global.System.Data.ParameterDirection.Input, 0, 0, "Id_user", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(5) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(5).Connection = Me.Connection
-            Me._commandCollection(5).CommandText = "INSERT INTO [super_user] ([Id_super], [data_registrazione], [utente], [password],"& _ 
-                " [azienda_persona], [stato], [mail], [personalizzazione]) VALUES (NEWID(), @data"& _ 
-                "_registrazione, @utente, @password, @azienda_persona, @stato, @mail, @personaliz"& _ 
-                "zazione)"
+            Me._commandCollection(5).CommandText = "SELECT Id_super, aziendaPersonalizzazione, azienda_persona, colorBody, colorPrima"& _ 
+                "ry, colorSide, data_registrazione, logo, mail, password, personalizzazione, stat"& _ 
+                "o, utente FROM super_user WHERE (Id_super = @Id_super)"
             Me._commandCollection(5).CommandType = Global.System.Data.CommandType.Text
-            Me._commandCollection(5).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@data_registrazione", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "data_registrazione", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._commandCollection(5).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@utente", Global.System.Data.SqlDbType.NVarChar, 2147483647, Global.System.Data.ParameterDirection.Input, 0, 0, "utente", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._commandCollection(5).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@password", Global.System.Data.SqlDbType.NVarChar, 2147483647, Global.System.Data.ParameterDirection.Input, 0, 0, "password", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._commandCollection(5).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@azienda_persona", Global.System.Data.SqlDbType.NVarChar, 2147483647, Global.System.Data.ParameterDirection.Input, 0, 0, "azienda_persona", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._commandCollection(5).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@stato", Global.System.Data.SqlDbType.NVarChar, 2147483647, Global.System.Data.ParameterDirection.Input, 0, 0, "stato", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._commandCollection(5).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@mail", Global.System.Data.SqlDbType.NVarChar, 2147483647, Global.System.Data.ParameterDirection.Input, 0, 0, "mail", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._commandCollection(5).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@personalizzazione", Global.System.Data.SqlDbType.NVarChar, 2147483647, Global.System.Data.ParameterDirection.Input, 0, 0, "personalizzazione", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(5).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Id_super", Global.System.Data.SqlDbType.UniqueIdentifier, 16, Global.System.Data.ParameterDirection.Input, 0, 0, "Id_super", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(6) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(6).Connection = Me.Connection
-            Me._commandCollection(6).CommandText = "UPDATE       super_user"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SET                data_registrazione = @data_registrazi"& _ 
-                "one, utente = @utente, password = @password, azienda_persona = @azienda_persona,"& _ 
-                " mail = @mail"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (Id_super = @id_super)"
+            Me._commandCollection(6).CommandText = "INSERT INTO super_user"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         (Id_super, data_registrazione, u"& _ 
+                "tente, password, azienda_persona, stato, mail, personalizzazione, colorBody, col"& _ 
+                "orSide, logo, colorPrimary)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"VALUES        (NEWID(),@data_registrazione,@utente,"& _ 
+                "@password,@azienda_persona,@stato,@mail,@personalizzazione,@colorBody,@colorSide"& _ 
+                ",@logo,@colorPrimary)"
             Me._commandCollection(6).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(6).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@data_registrazione", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "data_registrazione", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(6).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@utente", Global.System.Data.SqlDbType.NVarChar, 2147483647, Global.System.Data.ParameterDirection.Input, 0, 0, "utente", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(6).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@password", Global.System.Data.SqlDbType.NVarChar, 2147483647, Global.System.Data.ParameterDirection.Input, 0, 0, "password", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(6).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@azienda_persona", Global.System.Data.SqlDbType.NVarChar, 2147483647, Global.System.Data.ParameterDirection.Input, 0, 0, "azienda_persona", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(6).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@stato", Global.System.Data.SqlDbType.NVarChar, 2147483647, Global.System.Data.ParameterDirection.Input, 0, 0, "stato", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(6).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@mail", Global.System.Data.SqlDbType.NVarChar, 2147483647, Global.System.Data.ParameterDirection.Input, 0, 0, "mail", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._commandCollection(6).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@id_super", Global.System.Data.SqlDbType.UniqueIdentifier, 16, Global.System.Data.ParameterDirection.Input, 0, 0, "Id_super", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._commandCollection(6).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@personalizzazione", Global.System.Data.SqlDbType.NVarChar, 2147483647, Global.System.Data.ParameterDirection.Input, 0, 0, "personalizzazione", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(6).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@colorBody", Global.System.Data.SqlDbType.NChar, 7, Global.System.Data.ParameterDirection.Input, 0, 0, "colorBody", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(6).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@colorSide", Global.System.Data.SqlDbType.NChar, 7, Global.System.Data.ParameterDirection.Input, 0, 0, "colorSide", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(6).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@logo", Global.System.Data.SqlDbType.NChar, 40, Global.System.Data.ParameterDirection.Input, 0, 0, "logo", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(6).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@colorPrimary", Global.System.Data.SqlDbType.NChar, 7, Global.System.Data.ParameterDirection.Input, 0, 0, "colorPrimary", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(7) = New Global.System.Data.SqlClient.SqlCommand()
+            Me._commandCollection(7).Connection = Me.Connection
+            Me._commandCollection(7).CommandText = "UPDATE       super_user"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SET                data_registrazione = @data_registrazi"& _ 
+                "one, utente = @utente, password = @password, azienda_persona = @azienda_persona,"& _ 
+                " mail = @mail, colorBody = @colorBody, colorSide = @colorSide, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"               "& _ 
+                "          colorPrimary = @colorPrimary"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (Id_super = @id_super)"
+            Me._commandCollection(7).CommandType = Global.System.Data.CommandType.Text
+            Me._commandCollection(7).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@data_registrazione", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "data_registrazione", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(7).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@utente", Global.System.Data.SqlDbType.NVarChar, 2147483647, Global.System.Data.ParameterDirection.Input, 0, 0, "utente", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(7).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@password", Global.System.Data.SqlDbType.NVarChar, 2147483647, Global.System.Data.ParameterDirection.Input, 0, 0, "password", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(7).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@azienda_persona", Global.System.Data.SqlDbType.NVarChar, 2147483647, Global.System.Data.ParameterDirection.Input, 0, 0, "azienda_persona", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(7).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@mail", Global.System.Data.SqlDbType.NVarChar, 2147483647, Global.System.Data.ParameterDirection.Input, 0, 0, "mail", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(7).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@colorBody", Global.System.Data.SqlDbType.NChar, 7, Global.System.Data.ParameterDirection.Input, 0, 0, "colorBody", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(7).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@colorSide", Global.System.Data.SqlDbType.NChar, 7, Global.System.Data.ParameterDirection.Input, 0, 0, "colorSide", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(7).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@colorPrimary", Global.System.Data.SqlDbType.NChar, 7, Global.System.Data.ParameterDirection.Input, 0, 0, "colorPrimary", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(7).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@id_super", Global.System.Data.SqlDbType.UniqueIdentifier, 16, Global.System.Data.ParameterDirection.Input, 0, 0, "Id_super", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._commandCollection(8) = New Global.System.Data.SqlClient.SqlCommand()
+            Me._commandCollection(8).Connection = Me.Connection
+            Me._commandCollection(8).CommandText = "UPDATE       super_user"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SET                colorBody = @colorBody, colorSide = @"& _ 
+                "colorSide, logo = @logo, colorPrimary = @colorPrimary, aziendaPersonalizzazione "& _ 
+                "= @aziendaPersonalizzazione"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (Id_super = @id_super)"
+            Me._commandCollection(8).CommandType = Global.System.Data.CommandType.Text
+            Me._commandCollection(8).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@colorBody", Global.System.Data.SqlDbType.NChar, 7, Global.System.Data.ParameterDirection.Input, 0, 0, "colorBody", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(8).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@colorSide", Global.System.Data.SqlDbType.NChar, 7, Global.System.Data.ParameterDirection.Input, 0, 0, "colorSide", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(8).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@logo", Global.System.Data.SqlDbType.NChar, 40, Global.System.Data.ParameterDirection.Input, 0, 0, "logo", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(8).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@colorPrimary", Global.System.Data.SqlDbType.NChar, 7, Global.System.Data.ParameterDirection.Input, 0, 0, "colorPrimary", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(8).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@aziendaPersonalizzazione", Global.System.Data.SqlDbType.NChar, 30, Global.System.Data.ParameterDirection.Input, 0, 0, "aziendaPersonalizzazione", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(8).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@id_super", Global.System.Data.SqlDbType.UniqueIdentifier, 16, Global.System.Data.ParameterDirection.Input, 0, 0, "Id_super", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -21898,6 +22363,18 @@ Namespace quey_dbTableAdapters
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], false)>  _
+        Public Overloads Overridable Function getPersonalizzazione(ByVal Id_super As System.Guid) As quey_db.super_userDataTable
+            Me.Adapter.SelectCommand = Me.CommandCollection(5)
+            Me.Adapter.SelectCommand.Parameters(0).Value = CType(Id_super,System.Guid)
+            Dim dataTable As quey_db.super_userDataTable = New quey_db.super_userDataTable()
+            Me.Adapter.Fill(dataTable)
+            Return dataTable
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
         Public Overloads Overridable Function Update(ByVal dataTable As quey_db.super_userDataTable) As Integer
             Return Me.Adapter.Update(dataTable)
@@ -21949,7 +22426,7 @@ Namespace quey_dbTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, true)>  _
-        Public Overloads Overridable Function Insert(ByVal Id_super As System.Guid, ByVal data_registrazione As Global.System.Nullable(Of Date), ByVal utente As String, ByVal password As String, ByVal azienda_persona As String, ByVal stato As String, ByVal mail As String, ByVal personalizzazione As String) As Integer
+        Public Overloads Overridable Function Insert(ByVal Id_super As System.Guid, ByVal data_registrazione As Global.System.Nullable(Of Date), ByVal utente As String, ByVal password As String, ByVal azienda_persona As String, ByVal stato As String, ByVal mail As String, ByVal personalizzazione As String, ByVal colorBody As String, ByVal colorSide As String, ByVal logo As String, ByVal colorPrimary As String, ByVal aziendaPersonalizzazione As String) As Integer
             Me.Adapter.InsertCommand.Parameters(0).Value = CType(Id_super,System.Guid)
             If (data_registrazione.HasValue = true) Then
                 Me.Adapter.InsertCommand.Parameters(1).Value = CType(data_registrazione.Value,Date)
@@ -21986,6 +22463,31 @@ Namespace quey_dbTableAdapters
             Else
                 Me.Adapter.InsertCommand.Parameters(7).Value = CType(personalizzazione,String)
             End If
+            If (colorBody Is Nothing) Then
+                Me.Adapter.InsertCommand.Parameters(8).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.InsertCommand.Parameters(8).Value = CType(colorBody,String)
+            End If
+            If (colorSide Is Nothing) Then
+                Me.Adapter.InsertCommand.Parameters(9).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.InsertCommand.Parameters(9).Value = CType(colorSide,String)
+            End If
+            If (logo Is Nothing) Then
+                Me.Adapter.InsertCommand.Parameters(10).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.InsertCommand.Parameters(10).Value = CType(logo,String)
+            End If
+            If (colorPrimary Is Nothing) Then
+                Me.Adapter.InsertCommand.Parameters(11).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.InsertCommand.Parameters(11).Value = CType(colorPrimary,String)
+            End If
+            If (aziendaPersonalizzazione Is Nothing) Then
+                Me.Adapter.InsertCommand.Parameters(12).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.InsertCommand.Parameters(12).Value = CType(aziendaPersonalizzazione,String)
+            End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.InsertCommand.Connection.State
             If ((Me.Adapter.InsertCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -22005,7 +22507,7 @@ Namespace quey_dbTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update(ByVal Id_super As System.Guid, ByVal data_registrazione As Global.System.Nullable(Of Date), ByVal utente As String, ByVal password As String, ByVal azienda_persona As String, ByVal stato As String, ByVal mail As String, ByVal personalizzazione As String, ByVal Original_Id_super As System.Guid) As Integer
+        Public Overloads Overridable Function Update(ByVal Id_super As System.Guid, ByVal data_registrazione As Global.System.Nullable(Of Date), ByVal utente As String, ByVal password As String, ByVal azienda_persona As String, ByVal stato As String, ByVal mail As String, ByVal personalizzazione As String, ByVal colorBody As String, ByVal colorSide As String, ByVal logo As String, ByVal colorPrimary As String, ByVal aziendaPersonalizzazione As String, ByVal Original_Id_super As System.Guid) As Integer
             Me.Adapter.UpdateCommand.Parameters(0).Value = CType(Id_super,System.Guid)
             If (data_registrazione.HasValue = true) Then
                 Me.Adapter.UpdateCommand.Parameters(1).Value = CType(data_registrazione.Value,Date)
@@ -22042,7 +22544,32 @@ Namespace quey_dbTableAdapters
             Else
                 Me.Adapter.UpdateCommand.Parameters(7).Value = CType(personalizzazione,String)
             End If
-            Me.Adapter.UpdateCommand.Parameters(8).Value = CType(Original_Id_super,System.Guid)
+            If (colorBody Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(8).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(8).Value = CType(colorBody,String)
+            End If
+            If (colorSide Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(9).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(9).Value = CType(colorSide,String)
+            End If
+            If (logo Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(10).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(10).Value = CType(logo,String)
+            End If
+            If (colorPrimary Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(11).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(11).Value = CType(colorPrimary,String)
+            End If
+            If (aziendaPersonalizzazione Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(12).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(12).Value = CType(aziendaPersonalizzazione,String)
+            End If
+            Me.Adapter.UpdateCommand.Parameters(13).Value = CType(Original_Id_super,System.Guid)
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.UpdateCommand.Connection.State
             If ((Me.Adapter.UpdateCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -22062,16 +22589,15 @@ Namespace quey_dbTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update(ByVal data_registrazione As Global.System.Nullable(Of Date), ByVal utente As String, ByVal password As String, ByVal azienda_persona As String, ByVal stato As String, ByVal mail As String, ByVal personalizzazione As String, ByVal Original_Id_super As System.Guid) As Integer
-            Return Me.Update(Original_Id_super, data_registrazione, utente, password, azienda_persona, stato, mail, personalizzazione, Original_Id_super)
+        Public Overloads Overridable Function Update(ByVal data_registrazione As Global.System.Nullable(Of Date), ByVal utente As String, ByVal password As String, ByVal azienda_persona As String, ByVal stato As String, ByVal mail As String, ByVal personalizzazione As String, ByVal colorBody As String, ByVal colorSide As String, ByVal logo As String, ByVal colorPrimary As String, ByVal aziendaPersonalizzazione As String, ByVal Original_Id_super As System.Guid) As Integer
+            Return Me.Update(Original_Id_super, data_registrazione, utente, password, azienda_persona, stato, mail, personalizzazione, colorBody, colorSide, logo, colorPrimary, aziendaPersonalizzazione, Original_Id_super)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, false)>  _
-        Public Overloads Overridable Function Insert_super_user(ByVal data_registrazione As Global.System.Nullable(Of Date), ByVal utente As String, ByVal password As String, ByVal azienda_persona As String, ByVal stato As String, ByVal mail As String, ByVal personalizzazione As String) As Integer
-            Dim command As Global.System.Data.SqlClient.SqlCommand = Me.CommandCollection(5)
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+        Public Overloads Overridable Function Insert_super_user(ByVal data_registrazione As Global.System.Nullable(Of Date), ByVal utente As String, ByVal password As String, ByVal azienda_persona As String, ByVal stato As String, ByVal mail As String, ByVal personalizzazione As String, ByVal colorBody As String, ByVal colorSide As String, ByVal logo As String, ByVal colorPrimary As String) As Integer
+            Dim command As Global.System.Data.SqlClient.SqlCommand = Me.CommandCollection(6)
             If (data_registrazione.HasValue = true) Then
                 command.Parameters(0).Value = CType(data_registrazione.Value,Date)
             Else
@@ -22107,6 +22633,26 @@ Namespace quey_dbTableAdapters
             Else
                 command.Parameters(6).Value = CType(personalizzazione,String)
             End If
+            If (colorBody Is Nothing) Then
+                command.Parameters(7).Value = Global.System.DBNull.Value
+            Else
+                command.Parameters(7).Value = CType(colorBody,String)
+            End If
+            If (colorSide Is Nothing) Then
+                command.Parameters(8).Value = Global.System.DBNull.Value
+            Else
+                command.Parameters(8).Value = CType(colorSide,String)
+            End If
+            If (logo Is Nothing) Then
+                command.Parameters(9).Value = Global.System.DBNull.Value
+            Else
+                command.Parameters(9).Value = CType(logo,String)
+            End If
+            If (colorPrimary Is Nothing) Then
+                command.Parameters(10).Value = Global.System.DBNull.Value
+            Else
+                command.Parameters(10).Value = CType(colorPrimary,String)
+            End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = command.Connection.State
             If ((command.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -22125,10 +22671,9 @@ Namespace quey_dbTableAdapters
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, false)>  _
-        Public Overloads Overridable Function update_super(ByVal data_registrazione As Global.System.Nullable(Of Date), ByVal utente As String, ByVal password As String, ByVal azienda_persona As String, ByVal mail As String, ByVal id_super As System.Guid) As Integer
-            Dim command As Global.System.Data.SqlClient.SqlCommand = Me.CommandCollection(6)
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+        Public Overloads Overridable Function update_super(ByVal data_registrazione As Global.System.Nullable(Of Date), ByVal utente As String, ByVal password As String, ByVal azienda_persona As String, ByVal mail As String, ByVal colorBody As String, ByVal colorSide As String, ByVal colorPrimary As String, ByVal id_super As System.Guid) As Integer
+            Dim command As Global.System.Data.SqlClient.SqlCommand = Me.CommandCollection(7)
             If (data_registrazione.HasValue = true) Then
                 command.Parameters(0).Value = CType(data_registrazione.Value,Date)
             Else
@@ -22153,6 +22698,68 @@ Namespace quey_dbTableAdapters
                 command.Parameters(4).Value = Global.System.DBNull.Value
             Else
                 command.Parameters(4).Value = CType(mail,String)
+            End If
+            If (colorBody Is Nothing) Then
+                command.Parameters(5).Value = Global.System.DBNull.Value
+            Else
+                command.Parameters(5).Value = CType(colorBody,String)
+            End If
+            If (colorSide Is Nothing) Then
+                command.Parameters(6).Value = Global.System.DBNull.Value
+            Else
+                command.Parameters(6).Value = CType(colorSide,String)
+            End If
+            If (colorPrimary Is Nothing) Then
+                command.Parameters(7).Value = Global.System.DBNull.Value
+            Else
+                command.Parameters(7).Value = CType(colorPrimary,String)
+            End If
+            command.Parameters(8).Value = CType(id_super,System.Guid)
+            Dim previousConnectionState As Global.System.Data.ConnectionState = command.Connection.State
+            If ((command.Connection.State And Global.System.Data.ConnectionState.Open)  _
+                        <> Global.System.Data.ConnectionState.Open) Then
+                command.Connection.Open
+            End If
+            Dim returnValue As Integer
+            Try 
+                returnValue = command.ExecuteNonQuery
+            Finally
+                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
+                    command.Connection.Close
+                End If
+            End Try
+            Return returnValue
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+        Public Overloads Overridable Function UpdateQueryFile(ByVal colorBody As String, ByVal colorSide As String, ByVal logo As String, ByVal colorPrimary As String, ByVal aziendaPersonalizzazione As String, ByVal id_super As System.Guid) As Integer
+            Dim command As Global.System.Data.SqlClient.SqlCommand = Me.CommandCollection(8)
+            If (colorBody Is Nothing) Then
+                command.Parameters(0).Value = Global.System.DBNull.Value
+            Else
+                command.Parameters(0).Value = CType(colorBody,String)
+            End If
+            If (colorSide Is Nothing) Then
+                command.Parameters(1).Value = Global.System.DBNull.Value
+            Else
+                command.Parameters(1).Value = CType(colorSide,String)
+            End If
+            If (logo Is Nothing) Then
+                command.Parameters(2).Value = Global.System.DBNull.Value
+            Else
+                command.Parameters(2).Value = CType(logo,String)
+            End If
+            If (colorPrimary Is Nothing) Then
+                command.Parameters(3).Value = Global.System.DBNull.Value
+            Else
+                command.Parameters(3).Value = CType(colorPrimary,String)
+            End If
+            If (aziendaPersonalizzazione Is Nothing) Then
+                command.Parameters(4).Value = Global.System.DBNull.Value
+            Else
+                command.Parameters(4).Value = CType(aziendaPersonalizzazione,String)
             End If
             command.Parameters(5).Value = CType(id_super,System.Guid)
             Dim previousConnectionState As Global.System.Data.ConnectionState = command.Connection.State
@@ -28712,6 +29319,11 @@ Namespace quey_dbTableAdapters
             tableMapping.ColumnMappings.Add("id_impianto", "id_impianto")
             tableMapping.ColumnMappings.Add("Expr1", "Expr11")
             tableMapping.ColumnMappings.Add("Expr2", "Expr2")
+            tableMapping.ColumnMappings.Add("colorBody", "colorBody")
+            tableMapping.ColumnMappings.Add("colorSide", "colorSide")
+            tableMapping.ColumnMappings.Add("logo", "logo")
+            tableMapping.ColumnMappings.Add("colorPrimary", "colorPrimary")
+            tableMapping.ColumnMappings.Add("aziendaPersonalizzazione", "aziendaPersonalizzazione")
             Me._adapter.TableMappings.Add(tableMapping)
         End Sub
         
@@ -28735,11 +29347,12 @@ Namespace quey_dbTableAdapters
                 "oni, impianto_new.telefono_referente, impianto_new.mail_referente, impianto_new."& _ 
                 "indirizzo, impianto_new.id_super, impianto_new.id_user, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                      "& _ 
                 "   impianto_new.modifica_setpoint_user, impianto_new.id_impianto, ISNULL(impiant"& _ 
-                "o_new.mailAlarm, 0) AS Expr1, ISNULL(impianto_new.typeStrumento, 0) AS Expr2"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FR"& _ 
-                "OM            impianto_new INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         super_user ON im"& _ 
-                "pianto_new.id_super = super_user.Id_super"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (super_user.utente = @us"& _ 
-                "ername) AND (super_user.password = @password)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"ORDER BY impianto_new.nome_impian"& _ 
-                "to"
+                "o_new.mailAlarm, 0) AS Expr1, ISNULL(impianto_new.typeStrumento, 0) AS Expr2, su"& _ 
+                "per_user.colorBody, super_user.colorSide, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         super_user."& _ 
+                "logo, super_user.colorPrimary, super_user.aziendaPersonalizzazione"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM        "& _ 
+                "    impianto_new INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         super_user ON impianto_new"& _ 
+                ".id_super = super_user.Id_super"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (super_user.utente = @username) AN"& _ 
+                "D (super_user.password = @password)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"ORDER BY impianto_new.nome_impianto"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@username", Global.System.Data.SqlDbType.NVarChar, 2147483647, Global.System.Data.ParameterDirection.Input, 0, 0, "utente", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@password", Global.System.Data.SqlDbType.NVarChar, 2147483647, Global.System.Data.ParameterDirection.Input, 0, 0, "password", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))

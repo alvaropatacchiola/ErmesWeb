@@ -207,21 +207,21 @@
         intestazione = intestazione + "<tbody>"
         Select Case numero_canale
             Case 1 ' canale 1 
-                If main_function.alarm_tower_bleed_timeout(alarm_canale) Then
+                If main_function.alarm_ldtower_bleed_timeout(alarm_canale) Then
                     prima_colonna(indice_prima_colonna) = "<td width=""33%""  ><span style=""font-weight:bold;"">" + bleed_timeout_traduzione + "</span><span style=""float:right;"" ><img src=""theme/images/allarme_on.png"" alt=""allarme_on""> </span></td>"
                     indice_prima_colonna = indice_prima_colonna + 1
                 Else
                     prima_colonna(indice_prima_colonna) = "<td width=""33%""  ><span style=""font-weight:bold;"">" + bleed_timeout_traduzione + "</span><span style=""float:right;"" ><img src=""theme/images/allarme_off.png"" alt=""allarme_off""> </span></td>"
                     indice_prima_colonna = indice_prima_colonna + 1
                 End If
-                If main_function.alarm_tower_high_conductivity(alarm_canale) Then
+                If main_function.alarm_ldtower_high_conductivity(alarm_canale) Then
                     prima_colonna(indice_prima_colonna) = "<td width=""33%""  ><span style=""font-weight:bold;"">" + high_conductivity_traduzione + "</span><span style=""float:right;"" ><img src=""theme/images/allarme_on.png"" alt=""allarme_on""> </span></td>"
                     indice_prima_colonna = indice_prima_colonna + 1
                 Else
                     prima_colonna(indice_prima_colonna) = "<td width=""33%""  ><span style=""font-weight:bold;"">" + high_conductivity_traduzione + "</span><span style=""float:right;"" ><img src=""theme/images/allarme_off.png"" alt=""allarme_off""> </span></td>"
                     indice_prima_colonna = indice_prima_colonna + 1
                 End If
-                If main_function.alarm_tower_low_conductivity(alarm_canale) Then
+                If main_function.alarm_ldtower_low_conductivity(alarm_canale) Then
                     prima_colonna(indice_prima_colonna) = "<td width=""33%""  ><span style=""font-weight:bold;"">" + low_conductivity_traduzione + "</span><span style=""float:right;"" ><img src=""theme/images/allarme_on.png"" alt=""allarme_on""> </span></td>"
                     indice_prima_colonna = indice_prima_colonna + 1
                 Else
@@ -238,7 +238,7 @@
                 'indice_seconda_colonna = indice_seconda_colonna + 1
                 'End If
 
-                If main_function.alarm_tower_level_biocide1(alarm_canale) Then
+                If main_function.alarm_ldtower_level_biocide1(alarm_canale) Then
                     seconda_colonna(indice_seconda_colonna) = "<td width=""33%""  ><span style=""font-weight:bold;"">" + level_biocide_traduzione + " 1</span><span style=""float:right;"" ><img src=""theme/images/allarme_on.png"" alt=""allarme_on""> </span></td>"
                     indice_seconda_colonna = indice_seconda_colonna + 1
                 Else
@@ -254,7 +254,7 @@
                 ' indice_seconda_colonna = indice_seconda_colonna + 1
 
                 'End If
-                If main_function.alarm_tower_level_biocide2(alarm_canale) Then
+                If main_function.alarm_ldtower_level_biocide2(alarm_canale) Then
                     seconda_colonna(indice_seconda_colonna) = "<td width=""33%""  ><span style=""font-weight:bold;"">" + level_biocide_traduzione + " 2</span><span style=""float:right;"" ><img src=""theme/images/allarme_on.png"" alt=""allarme_on""> </span></td>"
                     indice_seconda_colonna = indice_seconda_colonna + 1
                 Else
@@ -262,7 +262,7 @@
                     indice_seconda_colonna = indice_seconda_colonna + 1
 
                 End If
-                If main_function.alarm_tower_level_inhibitor(alarm_canale) Then
+                If main_function.alarm_ldtower_level_inhibitor(alarm_canale) Then
                     seconda_colonna(indice_seconda_colonna) = "<td width=""33%""  ><span style=""font-weight:bold;"">" + level_inhibitor_traduzione + "</span><span style=""float:right;"" ><img src=""theme/images/allarme_on.png"" alt=""allarme_on""> </span></td>"
                     indice_seconda_colonna = indice_seconda_colonna + 1
                 Else

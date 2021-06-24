@@ -98,7 +98,7 @@ Public Class centurioReal
 
         resultPipe = pipeClient.Main(serialNumber, "writeSetpoint^$" + setpoint)
         If (resultPipe = "ok") Then
-            For indiceCount = 0 To 80
+            For indiceCount = 0 To 160
                 Thread.Sleep(400)
                 resultPipe = pipeClient.Main(serialNumber, "waitSetpoint")
                 If Val(resultPipe) > 0 Then

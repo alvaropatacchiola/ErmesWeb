@@ -851,8 +851,8 @@ function upgrate_chart() {
     if (($('#totWater').is(':checked')) && (counter_series < 10)) {
 
         series_chart.push({
-            name: label_ch1,
-            id: 'ch1_val_series',
+            name: totAcqua_val_label,
+            id: 'ch8_val_series',
             data: array_tot_Acqua,
             yAxis: numero_asse,
             marker: {
@@ -868,13 +868,15 @@ function upgrate_chart() {
                 text: totAcqua_val_label
             },
             opposite: false,
-            id: 'tot_Acqua',
+            id: 'ch1_val',
+            top: altezza,
             height: 200,
             lineWidth: 2
         });
         altezza = altezza + 300;
         numero_asse = numero_asse + 1;
         counter_series = counter_series + 1;
+     
     }
 
     altezza = altezza + 100;

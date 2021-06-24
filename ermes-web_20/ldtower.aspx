@@ -77,7 +77,9 @@
 							<ul class="unstyled icons">
                                 <li class='glyphicons calendar'>
                                 <asp:Label ID="Label12" runat="server" Text="<i></i> <span class='label'>10</span> <span class='label'>July</span> <span class='label'>1986</span> <span class='label'>18:56</span>" meta:resourcekey="Label12Resource1"></asp:Label>
+                                    <!--
                                     <asp:HyperLink ID="refresh_link" runat="server" ClientIDMode="Static" ImageUrl="~/image/refresh.png" NavigateUrl="~/impianto.aspx" meta:resourcekey="refresh_linkResource1"></asp:HyperLink>
+                                        -->
                                     </li>
 								<!-- 
 								<li class="glyphicons tie"><i></i> Working at <a href="http://www.mosaicpro.biz">MosaicPro</a></li>
@@ -148,7 +150,8 @@
 
     
             
-            <li class="dropdown" id ="setting_li"><a class="dropdown-toggle" data-toggle="dropdown" href='#'><asp:Label ID="Label22" runat="server" Text="Settings" meta:resourcekey="Label22Resource1"></asp:Label><span class="caret"></span></a>
+            <li class="dropdown" id ="setting_li">
+        <a class="dropdown-toggle" data-toggle="dropdown" href='#'><asp:Label ID="Label22" runat="server" Text="Settings" meta:resourcekey="Label22Resource1"></asp:Label><span class="caret"></span></a>
                 <ul class="dropdown-menu">
                     <asp:literal ID="Label21" runat="server" Text="<li><a id ='flowmeter_id' href='#'>Flow Meter</a></li>" meta:resourcekey="Label21Resource1"></asp:literal>
                     <asp:literal ID="Label24" runat="server" Text="<li><a id ='alarm_id' href='#'>Alarm</a></li>" meta:resourcekey="Label24Resource1"></asp:literal>
@@ -161,6 +164,7 @@
             </li>	
 
             <asp:literal ID="Label20" runat="server" Text="<li><a id ='calibration_id' href='#'>Calibration</a></li>" meta:resourcekey="Label20Resource1"></asp:literal>
+            <asp:literal ID="Literal2" runat="server" Text="<li><a id ='messagge_ld_id' href='#'>Message</a></li>"></asp:literal>
 
             <asp:literal ID="Literal1" runat="server" Text="<li><a id ='Log_1' href='#'>Log</a></li>" meta:resourcekey="Label15Resource1"></asp:literal>
 
@@ -308,6 +312,11 @@
                 StopRefresh();
                 $("#principale").load("LDTower/calibration_ldt.aspx?" + sPageURL);
                 break;
+            case 14:
+                evidenzia("", "#messagge_ld_id");
+                StopRefresh();
+                $("#principale").load("LDTower/message_ldt.aspx?" + sPageURL);
+                break;
 
 
 
@@ -383,7 +392,11 @@
     $("#calibration_id").click(function () {
         carica_pagina(13);
     });
+    $("#messagge_ld_id").click(function () {
+        carica_pagina(14);
+    });
 
+    
     /*            
         gestione refresh pagina
     */

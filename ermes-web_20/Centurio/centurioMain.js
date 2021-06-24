@@ -49,13 +49,13 @@ var target = 'principale';
 var spinner;
 function setCookie(stringa)
 {
-    console.log("cookieWrite:"+stringa)
+    //console.log("cookieWrite:"+stringa)
     $.cookie(serialNumberGlobal, stringa, { expires: 365 });
 }
 function readCookie(serialNumberTemp)
 {
     var cookieStringaTemp = $.cookie(serialNumberTemp);
-    console.log("cookieread:"+serialNumberTemp +","+ cookieStringaTemp)
+    //console.log("cookieread:"+serialNumberTemp +","+ cookieStringaTemp)
     if (cookieStringaTemp != null){
         var cookieStringaTempSplit = cookieStringaTemp.split(",");
         var k =0;
@@ -181,6 +181,7 @@ function leggiDatiGraficoLDLOG(listaIngressi) {
         dataType: "json",
         //timeout: 6000, //3 second timeout
         success: function (response) {
+            //console.log(response.d)
             stop_spinner();
             jsonParseLDLog = JSON.parse(response.d);
             reloadLDLOG = true;
@@ -429,7 +430,7 @@ function aggiornGrafico()
                                 }
                                 labelMaxMinRate = getValoreJson(setpointLabel[k]);
                                 
-                                console.log("rateValue:" + minRate + " " + maxRate + " " + setpointMin[k])
+                               // console.log("rateValue:" + minRate + " " + maxRate + " " + setpointMin[k])
                                 plotLineRange.push(createLineRange(labelMaxMinRate, minRate, "green"))
                                 plotLineRange.push(createLineRange(labelMaxMinRate, maxRate, "red"))
 
@@ -814,7 +815,62 @@ function draw_tabellaLDLOG(header_value) {
 $('a[href="#mainLogGraph"]').click(function () {
     leggiDatiGrafico();
 });
-var incrementoCalibrazioneGlobal=0;
+
+$('#relayStartRemote').click(function () {
+    var result = ""
+    result = result + getStringManualeRelay("checkmanualRelay1", "oremanualRelay1", "minutimanualRelay1") + "|"
+    result = result + getStringManualeRelay("checkmanualRelay2", "oremanualRelay2", "minutimanualRelay2") + "|"
+    result = result + getStringManualeRelay("checkmanualRelay3", "oremanualRelay3", "minutimanualRelay3") + "|"
+    result = result + getStringManualeRelay("checkmanualRelay4", "oremanualRelay4", "minutimanualRelay4") + "|"
+    result = result + getStringManualeRelay("checkmanualRelay5", "oremanualRelay5", "minutimanualRelay5") + "|"
+    result = result + getStringManualeRelay("checkmanualRelay6", "oremanualRelay6", "minutimanualRelay6") + "|"
+    result = result + getStringManualeRelay("checkmanualRelay7", "oremanualRelay7", "minutimanualRelay7") + "|"
+    result = result + getStringManualeRelay("checkmanualRelay8", "oremanualRelay8", "minutimanualRelay8") + "|"
+
+    $("#relayStartRemote").val("Sending Data");
+    sendManualAction("outManualRelay", result, "relayStartRemote")
+
+});
+
+$('#pulseStartRemote').click(function () {
+    var result = ""
+    result = result + getStringManualePulse("checkmanualPulse1", "oremanualPulse1", "minutimanualPulse1", "pulsemanualPulse1") + "|"
+    result = result + getStringManualePulse("checkmanualPulse2", "oremanualPulse2", "minutimanualPulse2", "pulsemanualPulse2") + "|"
+    result = result + getStringManualePulse("checkmanualPulse3", "oremanualPulse3", "minutimanualPulse3", "pulsemanualPulse3") + "|"
+    result = result + getStringManualePulse("checkmanualPulse4", "oremanualPulse4", "minutimanualPulse4", "pulsemanualPulse4") + "|"
+    result = result + getStringManualePulse("checkmanualPulse5", "oremanualPulse5", "minutimanualPulse5", "pulsemanualPulse5") + "|"
+    result = result + getStringManualePulse("checkmanualPulse6", "oremanualPulse6", "minutimanualPulse6", "pulsemanualPulse6") + "|"
+    result = result + getStringManualePulse("checkmanualPulse7", "oremanualPulse7", "minutimanualPulse7", "pulsemanualPulse7") + "|"
+    result = result + getStringManualePulse("checkmanualPulse8", "oremanualPulse8", "minutimanualPulse8", "pulsemanualPulse8") + "|"
+
+    $("#pulseStartRemote").val("Sending Data");
+    sendManualAction("outManualPulse", result, "pulseStartRemote")
+    
+});
+
+function getStringManualePulse(valore1, valore2, valore3, valore4) {
+    var result = ""
+        if ($("#" + valore1).is(':checked'))
+            result = "1,";//upkeep enable
+        else
+            result = "0,";
+        result = result + ((parseInt($("#" + valore2).val()) * 3600) + (parseInt($("#" + valore3).val()) * 60)).toString() + ","
+        result = result + (parseInt($("#" + valore4).val())).toString() + ",";
+
+        return result;
+}
+function getStringManualeRelay(valore1, valore2, valore3) {
+    var result = ""
+    if ($("#" + valore1).is(':checked'))
+        result = "1,";//upkeep enable
+    else
+        result = "0,";
+    result = result + ((parseInt($("#" + valore2).val()) * 3600) + (parseInt($("#" + valore3).val()) * 60)).toString() + ","
+
+    return result;
+}
+
+var incrementoCalibrazioneGlobal = 0;
 $('input[typeAction="remoteCalib"]').click(function () {
     //leggiDatiGrafico();
     var idLavoro = $(this).attr("id");
@@ -859,16 +915,16 @@ $('input[typeAction="remoteCalib"]').click(function () {
         varsCountDown[idLavoro+ "_countdown"].start();
         $("#" + idLavoro + "_count").show();
         //avvio fase di calibrazione
-        console.log("actionCali:" + $(this).attr("actionValue") +","+ $("#" + idDatoDaPrendere).find(":selected").val())
+        //console.log("actionCali:" + $(this).attr("actionValue") +","+ $("#" + idDatoDaPrendere).find(":selected").val())
         resultrStatusCalibrazione = sendCalibrationAction($(this).attr("actionValue"),$("#" + idDatoDaPrendere).val(),idLavoro)
      
     }
 
-    console.log("azione:" + $(this).attr("id")+"," + $("#" + idDatoDaPrendere).val(),$(this).attr("actionValue"))
+    //console.log("azione:" + $(this).attr("id")+"," + $("#" + idDatoDaPrendere).val(),$(this).attr("actionValue"))
 });
 function countdownCalibration(idLavoro,risultatoCalibrazione)
 {
-    console.log("intervallo:",idLavoro,risultatoCalibrazione)
+    //console.log("intervallo:",idLavoro,risultatoCalibrazione)
     incrementoCalibrazioneGlobal++;
     
     if (risultatoCalibrazione == 255)
@@ -1317,6 +1373,7 @@ $("input").change(function () {
     var multi = $(this).attr("multi");
     var decimali = parseInt($(this).attr("decimali"))
     var calib = $(this).attr("calib");
+    var manualRemote = $(this).attr("manualRemote");
     var valore = $(this).val();
     $("#" + $(this).attr("id") + "_div").removeClass("control-group");
     $("#" + $(this).attr("id") + "_div").removeClass("control-group error");
@@ -1324,7 +1381,7 @@ $("input").change(function () {
 
     
 
-    if ((minimo == "0,0,0,0") || (minimo == "minlog") || (minimo == "timeDataOraR") || (minimo == "timeDataOraS")|| (calib == "ok")) {//caso week
+    if ((minimo == "0,0,0,0") || (minimo == "minlog") || (minimo == "timeDataOraR") || (minimo == "timeDataOraS") || (calib == "ok") || (manualRemote == "ok")) {//caso week
 
     }
     else {
@@ -1365,6 +1422,7 @@ $("input").keypress(function (event) {
     var multi = $(this).attr("multi");
     var massimo = $(this).attr("max");
     var calib = $(this).attr("calib");
+    var manualRemote = $(this).attr("manualRemote");
     var decimali = parseInt($(this).attr("decimali"))
     var c = String.fromCharCode(event.which);
     var valore = $(this).val() + c;
@@ -1376,7 +1434,7 @@ $("input").keypress(function (event) {
     $("#" + $(this).attr("id") + "_div").removeClass("control-group error");
     $(this).next('p').remove();
 
-    if ((minimo == "0,0,0,0") || (minimo == "minlog") || (minimo == "timeDataOraR") || (minimo == "timeDataOraS")|| (calib == "ok")) {//caso week
+    if ((minimo == "0,0,0,0") || (minimo == "minlog") || (minimo == "timeDataOraR") || (minimo == "timeDataOraS")|| (calib == "ok")||(manualRemote == "ok")) {//caso week
 
     }
     else{
@@ -1449,12 +1507,14 @@ $("select").focus(function () {
       var masterPath = $(this).attr("masterpath");
       var count = $(this).attr("count");
       var calibrazione = $(this).attr("calib");
+      var manualRemote = $(this).attr("manualRemote");
       var modeComponentiStr = $("#" + masterPath).attr("modecomponenti");
       var patStr = $("#" + masterPath).attr("path");
       var min = $(this).attr("min"); // serve per la gestione del week al biocide
       var typeOfList = $(this).attr("typeoflist"); // serve per la gestione del week al biocide
 
       if (calibrazione == "ok") return ""; // nel caso della calibrazione non devo aggiornare
+      if (manualRemote == "ok") return "";// nel caso del manual remote non devo aggiornare
 
       if (min != undefined) {
           if (min == "minlog") {//caso del log
@@ -1951,6 +2011,36 @@ function closeAllbootbox(){
     bootbox.hideAll();
 }
 */
+function sendManualAction(actionText, actionValue,oggettoStart) {
+    var stringSend = "";
+    stringSend = stringSend + replaceAll(actionText, "_", ">") + ":" + actionValue.replace(":", ",") + "$";
+    stringSend = stringSend + "&";
+    $.ajax({
+        type: "POST",
+        url: "Centurio/centurioReal.aspx/saveSetpointAction",
+        //data: {check1: $("#rms_all").is(':checked') ,check1_1: $("#rms_medio").is(':checked'),  check1_2:  $("#rms_max").is(':checked') ,check2 : $("#picco_all").is(':checked') , check2_1 : $("#picco_medio").is(':checked') , check2_2 : $("#picco_max").is(':checked') , check3: $("#vm_rms_all").is(':checked') , check3_1: $("#vm_rms_medio").is(':checked') , check3_2 : $("#vm_rms_max").is(':checked') , check4 : $("#vm_picco_all").is(':checked') , check4_1 : $("#vm_picco_medio").is(':checked') , check4_2: $("#vm_picco_max").is(':checked')   },
+        //data: { check1: false, check1_1: true, check1_2: false, check2: false, check2_1: true, check2_2: false, check3: false, check3_1:true, check3_2:false, check4: false, check4_1:true, check4_2:false },
+        data: "{'serialNumber':'" + JSON.stringify(serialNumberGlobal) + "','setpoint':'" + JSON.stringify(stringSend) + "'}",
+        contentType: "application/json; charset=utf-8",
+        dataType: "json",
+        //timeout: 6000, //3 second timeout
+        success: function (response) {
+            var jsonResponse = JSON.parse(response.d);
+            var valoreCalibrazioneRestituire = 0;
+            if (jsonResponse.errore == "ok") {//risposta positiva
+                //valoreCalibrazioneRestituire = parseInt(jsonResponse.count)
+                $("#"+oggettoStart).val("Data Transfered");
+            }
+            if (jsonResponse.errore == "error") {//risposta positiva
+                $("#" + oggettoStart).val("Communication Error");
+                //valoreCalibrazioneRestituire = 254;
+            }
+        },
+        failure: function (response) {
+        }
+
+    });
+}
 function sendCalibrationAction(actionText,actionValue,idLavoro) {
     var stringSend = "";
     stringSend = stringSend + replaceAll(actionText, "_", ">") + ":" + actionValue.replace(":", ",") + "$";
@@ -1967,9 +2057,9 @@ function sendCalibrationAction(actionText,actionValue,idLavoro) {
         success: function (response) {
             var jsonResponse = JSON.parse(response.d);
             var valoreCalibrazioneRestituire=0;
-            console.log("close window:"+parseInt(jsonResponse.count) + "," + jsonResponse.errore)
+           // console.log("close window:"+parseInt(jsonResponse.count) + "," + jsonResponse.errore)
             if (jsonResponse.errore == "ok") {//risposta positiva
-                console.log("close window1:"+parseInt(jsonResponse.count) + "," + jsonResponse.errore)
+             //   console.log("close window1:"+parseInt(jsonResponse.count) + "," + jsonResponse.errore)
                 valoreCalibrazioneRestituire =  parseInt(jsonResponse.count)
             }
             if (jsonResponse.errore == "error") {//risposta positiva
@@ -2059,7 +2149,7 @@ function sendSetpoint()
             modifyTemp = modifyTemp.replace("-", "]")
             stringSend = stringSend + modifyTemp + ":" + jsonParseSetpoint.valore.replace(":", ",") + "$"
             
-            console.log(stringSend)
+            //console.log(stringSend)
         }
         if (stringSend.indexOf("communication>message"))
             stringSend = stringSend.replace("communication>message", "communication_message")
@@ -2249,6 +2339,22 @@ function updateValori(response, firstValue) {
         type: 'information' // alert|error|success|information|warning|primary|confirm
     });*/
     if ((jsonParse.errore == "ok") || (jsonParse.errore == "disconnected")) {
+        //controllo manual da remoto
+        var controllerType = getValoreJson("controller_type");
+        var versionType = "";
+        if (controllerType.indexOf("MP") >= 0) {
+            versionType = parseInt(getValoreJson("versionR").replaceAll(".", ""))
+            if (versionType >= 168)
+                $("#manualCenturioEnable").show();
+            
+        }
+        if (controllerType.indexOf("PS") >= 0) {
+            versionType = parseInt(getValoreJson("versionR").replaceAll(".", ""))
+            if (versionType >= 138)
+                $("#manualCenturioEnable").show();
+
+        }
+        
         if (jsonParse.errore == "disconnected"){
             $("#notConnectedMain").show();
             clearInterval(refreshIntervalId);
@@ -2303,7 +2409,7 @@ function updateValori(response, firstValue) {
                                         }
                                         $("#" + jsonParse.variable[k]["chiave"] + "> [value=" + jsonParse.variable[k]["valore"] + "]").prop("selected", true);
                                         if (jsonParse.variable[k]["chiave"].indexOf("_modework") >= 0) {
-                                            console.log("Action:" + jsonParse.variable[k]["chiave"])
+                                            //console.log("Action:" + jsonParse.variable[k]["chiave"])
                                             selectActionValue(jsonParse.variable[k]["chiave"], jsonParse.variable[k]["valore"]);
                                         }
                                     }
@@ -2423,7 +2529,8 @@ function updateValori(response, firstValue) {
         $("[id$='_log_enable']").each(function () {
             var attributoEnable = $(this).attr("id").replace("_log_enable", "");
             var attributoEnableVal = getValoreJson(attributoEnable);
-            if (attributoEnable.indexOf("tempSR")) {//caso della remperatura
+            
+            if (attributoEnable.indexOf("tempSR") > 0) {//caso della remperatura
                 //console.log("enableTemperature:" + attributoEnable + "," + attributoEnableVal)
                 if (attributoEnableVal == 0)
                     $(this).show();
@@ -2431,6 +2538,7 @@ function updateValori(response, firstValue) {
                     $(this).hide();
             }
             else {
+                //console.log("enableLevelN:" + attributoEnable + "," + parseInt(attributoEnableVal));
                 if (parseInt(attributoEnableVal) > 0)
                     $(this).show();
                 else
@@ -2488,7 +2596,7 @@ function updateValori(response, firstValue) {
         //aggiornameto main label
         $("[type*='mainLabel']").each(function () {
             var idMainLabel = $(this).attr("id").replace("_mainLabel", "");
-            console.log(getValoreJson(idMainLabel))
+            //console.log(getValoreJson(idMainLabel))
             $("#" + idMainLabel + "_mainLabel").text(getValoreJson(idMainLabel));
 
         });
@@ -2544,7 +2652,7 @@ function updateValori(response, firstValue) {
 
             var TextReadValue = getValoreJson(labelTempJson);
             $(this).text(TextReadValue);
-            console.log("textRead:" + labelTempJson,TextReadValue)
+           // console.log("textRead:" + labelTempJson,TextReadValue)
         });
         //end aggiornamento textRead
         //generic
@@ -2577,7 +2685,7 @@ function updateValori(response, firstValue) {
                 }
                 else {
                     var resultTextValore = getValoreJson(statusCheck);
-                    console.log("valore:" + statusCheck + " " + resultTextValore)
+                    //console.log("valore:" + statusCheck + " " + resultTextValore)
                     //console.log(jsonParse.variable)
                     areainoutgenericEnable = true;
                     //console.log(resultTextValore)
@@ -3111,6 +3219,8 @@ function createMisura(stringaMisura){
             return createLabelGlobal("ch8unitEuR")
         if (stringDef == "[probeCh9]")
             return createLabelGlobal("ch9unitEuR")
+        if (stringDef == "[probeCh10]")
+            return createLabelGlobal("ch10unitEuR")
 
         if (stringDef == "[ch1tempR]")
             return  sistemaUSA == "0" ? "°C" : "°F"
@@ -3123,6 +3233,14 @@ function createMisura(stringaMisura){
         if (stringDef == "[ch5tempR]")
             return sistemaUSA == "0" ? "°C" : "°F"
         if (stringDef == "[ch6tempR]")
+            return sistemaUSA == "0" ? "°C" : "°F"
+        if (stringDef == "[ch7tempR]")
+            return sistemaUSA == "0" ? "°C" : "°F"
+        if (stringDef == "[ch8tempR]")
+            return sistemaUSA == "0" ? "°C" : "°F"
+        if (stringDef == "[ch9tempR]")
+            return sistemaUSA == "0" ? "°C" : "°F"
+        if (stringDef == "[ch10tempR]")
             return sistemaUSA == "0" ? "°C" : "°F"
 
         if (stringDef == "[watermeter1R]")
@@ -3842,18 +3960,18 @@ function CanvasNew(idCanvas, idDiv, idDivSub, labelpHId, valuePhId, fullscaleId,
         
         if (enable > 0) {
             enable = 1;
-            console.log("bleed deadStart:" + valore2)
+            //console.log("bleed deadStart:" + valore2)
             if (bleedFunction) {
                 
                 if (valore2 > 0) { //deadband positivo
                     valore2 = valore1 + valore2;
-                    console.log("bleed dead:" + valore2)
+                    //console.log("bleed dead:" + valore2)
                     //valore1 = 0;
                 }
                 else {//deadband negativo
                     
                     valore2 = valore1 + valore2;
-                    console.log("bleed dead1:" + valore2+" " + valore1)
+                    //console.log("bleed dead1:" + valore2+" " + valore1)
                     //valore2 = this.maxSetpoint1;
                 }
             }

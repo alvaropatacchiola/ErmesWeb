@@ -31,7 +31,7 @@
 
         tabella_impianto = Master.tabella_impianto_container
         For Each dc In tabella_impianto
-            result_update = query.update_super_user(Username.Text, password.Text, inputcompany.Text, email_val.Text, dc.id_super)
+            result_update = query.update_super_user(Username.Text, password.Text, inputcompany.Text, email_val.Text, dc.id_super, "#f0f1f5", "#1d1f2b", "#1d1f2b")
             Exit For
         Next
         If result_update Then ' aggiornamento avvenuto con successo
