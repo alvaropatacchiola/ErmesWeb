@@ -223,9 +223,35 @@ function get_data(serialNumber, stringJson, stringGlobal, nomeLabel, stringDecim
 
                 }
                 //---end controllo allarme
-
+                
             }
             
+            $("#sidebar-menu").find("a[id*='_left']").each(function () {
+                console.log("ricerca Asset")
+                var id = $(this).attr("id").replace("_left", "")
+                try {
+                    if (id == serialNumber) {
+                        $(this).attr("href", "mainCenturio.aspx?serial=" + serialNumber + "&codice=" + resultPipe + "&sistemaUSA=" + sistemaUSA + "&configuration=" + resultConfigurationInput);
+                        var attributoinf = $(this).attr("inf");
+                        var attributosup = $(this).attr("sup");
+
+                        // $("#" + attributosup + "_sup").attr('style', 'color:red;')
+                        //$("#" + attributoinf + "_inf").attr('style', 'color:red;')
+
+                        if (allarmeGlobal) {
+                            $("#" + attributosup + "_sup").attr('style', 'color:red;')
+                            $("#" + attributoinf + "_inf").attr('style', 'color:red;')
+                            $(this).attr('style', 'color:red;');
+                        }
+                        else
+                            $(this).attr('style', 'color:white;');
+                    }
+                }
+                catch (err) {
+
+                }
+                //console.log("trovato:" + attributosupinf )
+            });
             //gestione strumento connesso
         },
             failure: function (response) {

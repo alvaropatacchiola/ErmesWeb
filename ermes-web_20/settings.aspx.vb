@@ -43,7 +43,7 @@ Public Class settings
             Exit For
         Next
 
-        result_update = query.update_super_user(Username.Text, password.Text, inputcompany.Text, email_val.Text, dcRow.id_super, dcRow.colorBody, dcRow.colorSide, dcRow.colorPrimary)
+        result_update = query.update_super_user(Username.Text, password.Text, inputcompany.Text, email_val.Text, dcRow.id_super, dcRow.colorBody, dcRow.colorSide, dcRow.colorPrimary, dcRow.colorLink)
 
         'Display the success message.
         'lblMessage.Text = Path.GetFileName(FileUpload1.FileName) + " has been uploaded."

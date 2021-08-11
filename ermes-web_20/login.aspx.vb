@@ -20,6 +20,8 @@ Public Class login
 
         header_script = HttpContext.Current.Request.Url.Host
 
+        'redirect login old
+        'Response.Redirect("loginold.aspx")
 
         Label2N.Visible = False
         Try

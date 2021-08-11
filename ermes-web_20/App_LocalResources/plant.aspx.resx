@@ -1708,10 +1708,10 @@
     <value>Modifica il Sito di appartenenza dell'impianto</value>
   </data>
   <data name="Literal34Resource1.Text" xml:space="preserve">
-    <value>Seleziona un Gruppo già esistente</value>
+    <value>Seleziona un Sito già esistente</value>
   </data>
   <data name="Literal35Resource1.Text" xml:space="preserve">
-    <value>Modifica o crea un nuovo gruppo</value>
+    <value>Modifica o crea un nuovo Sito</value>
   </data>
   <data name="Literal36Resource1.Text" xml:space="preserve">
     <value>Modifica l'impianto del Sito</value>
@@ -1720,10 +1720,10 @@
     <value>Aggiungi il nuovo impianto ad uno esistente</value>
   </data>
   <data name="Literal38Resource1.Text" xml:space="preserve">
-    <value>Seleziona un Sotto Gruppo già esistente</value>
+    <value>Seleziona un Impianto già esistente</value>
   </data>
   <data name="Literal39Resource1.Text" xml:space="preserve">
-    <value>Modifica o Crea un nuovo Sotto Gruppo</value>
+    <value>Modifica o Crea un nuovo Impianto</value>
   </data>
   <data name="Literal50Resource1.Text" xml:space="preserve">
     <value>Seleziona un Utilizzatore</value>

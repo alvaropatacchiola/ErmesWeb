@@ -36,7 +36,7 @@
                        </div>
                         <div class="form-group ">
 						     <label for="exampleFormControlPassword4" ><asp:Literal ID="Literal10" runat="server" Text="Codice" meta:resourcekey="Literal10Resource1"></asp:Literal></label>
- 					         <asp:TextBox ID="inputCodice" ClientIDMode="Static" onblur="javascript: Changed_channel( 'inputCodice',6);" class="span6" placeholder="" runat="server" MaxLength="6" ReadOnly="True" meta:resourcekey="inputCodiceResource1" CssClass="form-control border-success"></asp:TextBox>
+ 					         <asp:TextBox ID="inputCodice" ClientIDMode="Static" onblur="javascript: Changed_channel( 'inputCodice',17);" class="span6" placeholder="" runat="server" MaxLength="17" ReadOnly="True" meta:resourcekey="inputCodiceResource1" CssClass="form-control border-success"></asp:TextBox>
 						</div>
                       <div class="form-group ">
                            <label for="exampleFormControlPassword4" ><asp:Literal ID="Literal11" runat="server" Text="Descrizione" meta:resourcekey="Literal11Resource1"></asp:Literal></label>

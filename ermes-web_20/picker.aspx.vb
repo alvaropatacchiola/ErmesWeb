@@ -12,6 +12,7 @@ Public Class picker
                 color_body.Text = dc.colorBody
                 color.Text = dc.colorSide
                 color_primary.Text = dc.colorPrimary
+                color_links.Text = dc.colorLink
 
                 logoAssents.Text = "<img src=""assets/img/" + dc.logo + """ alt=""Mono"">"
                 slide.Text = Replace(dc.aziendaPersonalizzazione, " ", "")
@@ -52,7 +53,7 @@ Public Class picker
                     function_java = function_java + "invalidFileSize();"
                 Else
                     FileUpload1.SaveAs(folderPath + dcRow.id_super.ToString + extension)
-                    result_update = query.update_super_userLogo(dcRow.id_super, color_body.Text, color.Text, color_primary.Text, dcRow.id_super.ToString + extension, slide.Text)
+                    result_update = query.update_super_userLogo(dcRow.id_super, color_body.Text, color.Text, color_primary.Text, color_links.Text, dcRow.id_super.ToString + extension, slide.Text)
                 End If
             Else
                 function_java = function_java + "invalidFileSize();"
@@ -63,7 +64,7 @@ Public Class picker
             If FileUpload1.FileName <> "" Then
                 function_java = function_java + "invalidFileFormat();"
             Else
-                result_update = query.update_super_userLogo(dcRow.id_super, color_body.Text, color.Text, color_primary.Text, dcRow.logo, slide.Text)
+                result_update = query.update_super_userLogo(dcRow.id_super, color_body.Text, color.Text, color_primary.Text, color_links.Text, dcRow.logo, slide.Text)
             End If
         End If
         If result_update Then ' aggiornamento avvenuto con successo

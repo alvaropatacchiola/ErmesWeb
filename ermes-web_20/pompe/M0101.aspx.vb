@@ -33,6 +33,7 @@
             Catch ex As Exception
 
             End Try
+            plantName.Text = nomeImpiantoString
             javaScriptText = "<script type = ""text/javascript"" >"
             javaScriptText = javaScriptText + "var NserialNumber = """ + serial_impianto + """;"
             javaScriptText = javaScriptText + "var NarrayReadRealTime = [1];"
@@ -42,6 +43,7 @@
 
             javaScriptText = javaScriptText + "var PompaOggetto = new OggettoPompa({serialNumber: NserialNumber, arrayReadRealTime: NarrayReadRealTime, arrayReadAll: NarrayReadSetpoint ,languageSet:Nlanguage,plantName:NplantName});"
             javaScriptText = javaScriptText + "PompaOggetto.createConnection();"
+            javaScriptText = javaScriptText + "aggiungiSocket(PompaOggetto );"
             javaScriptText = javaScriptText + "</script>"
             javaScriptHeader.Text = javaScriptText
 

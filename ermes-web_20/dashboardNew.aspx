@@ -9,7 +9,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 <div id="content" style="background-color:#dfdfdf;">
-    <script type = "text/javascript" src="pompe/pumpsCommunication.js?v=1.25"></script>
+    <script type = "text/javascript" src="pompe/pumpsCommunication.js?v=1.27"></script>
 
        <asp:Literal ID="Literal_script" runat="server" meta:resourcekey="Literal_scriptResource1" ></asp:Literal>              
     <div id="content-notification" class="notyfy_container_error i-am-new"></div>

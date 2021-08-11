@@ -60,6 +60,8 @@
   <![endif]-->
   <script src="<%# ResolveUrl("~/")%>/assets/plugins/nprogress/nprogress.js"></script>
   <script src="<%# ResolveUrl("~/")%>/assets/plugins/jquery/jquery.min.js"></script>
+  <!-- mantiene la lista delle cobnnessioni web socket -->
+  <script src="<%# ResolveUrl("~/")%>/pompe/activeSocket.js?v=1.02"></script>
 </head>
 
  <body class="navbar-fixed sidebar-fixed" id="body">
@@ -175,7 +177,7 @@
                     
                 </li>
 				<li>
-                    <a class="sidenav-item-link" href="getting-started.html">
+                    <a class="sidenav-item-link" href="getting-started.aspx">
                       <i class="mdi mdi-airplane"></i>
                       <span class="nav-text"><asp:Literal ID="gettingDashboard" runat="server"></asp:Literal></span>
                     </a>
@@ -388,6 +390,16 @@
     });
   });
 });</script>
+
+<script>
+ $(document).ready(function () {
+  $(".color_button_links").click(function(){
+    $(".sidebar .sidebar-inner > li > a").css({
+      color: $("#color_links").val()
+    });
+  });
+});</script>
+
 <script>
     $(document).ready(function () {
 
@@ -445,10 +457,11 @@
 							
 var qsRegex;
 var buttonFilter;
+var $grid;
 function filterStart() {
     // init Isotope
     console.log("filter Start")
-    var $grid = $('.grid').isotope({
+    $grid = $('.grid').isotope({
         itemSelector: '.plant',
         layoutMode: 'fitRows',
         filter: function () {

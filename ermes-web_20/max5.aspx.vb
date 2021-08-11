@@ -183,9 +183,11 @@
         '    riga_strumento.data_aggiornamento.Year.ToString + "</span> <span class=""label"">" + _
         '    Format(riga_strumento.data_aggiornamento.Hour, "00") + ":" + Format(riga_strumento.data_aggiornamento.Minute, "00") + "</span>"
         If check_connected Then
-            Label12.Text = "<i></i> <span class=""label"">" + time_connected.ToString + _
+            refresh_link.Visible = True
+            Label12.Text = "<i></i> <span class=""label"">" + time_connected.ToString +
             " min</span>"
         Else
+            refresh_link.Visible = False
             Label12.Text = "<i></i> <span class=""label"">" + GetGlobalResourceObject("impianto_global", "no_connected") + _
             "</span>"
         End If

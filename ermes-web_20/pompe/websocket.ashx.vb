@@ -82,12 +82,16 @@ Public Class websocket
     End Function
     Private Async Sub messageReceived(ByVal payload() As Byte, ByVal socketPointer As Net.WebSockets.WebSocket)
         Dim ticksRequest = New ArraySegment(Of Byte)(payload)
-        If socketPointer.State = Net.WebSockets.WebSocketState.Open Then
+        Try
+            If socketPointer.State = Net.WebSockets.WebSocketState.Open Then
 
-            Await socketPointer.SendAsync(ticksRequest, Net.WebSockets.WebSocketMessageType.Binary, True, CancellationToken.None)
-        Else
+                Await socketPointer.SendAsync(ticksRequest, Net.WebSockets.WebSocketMessageType.Binary, True, CancellationToken.None)
+            Else
                 clients.Remove(socketPointer)
-        End If
+            End If
+        Catch ex As Exception
+
+        End Try
 
     End Sub
     ReadOnly Property IsReusable() As Boolean Implements IHttpHandler.IsReusable

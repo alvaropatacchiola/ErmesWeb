@@ -10,6 +10,7 @@ var classePompa = ["impiantoacceso", "impiantospento", "allarme"];
 });
 */
 //function OggettoPompa(serialNumberTemp, arrayReadRealTimeTemp, arrayReadSetpointTemp)
+
 var OggettoPompa = function (options)
 {
 
@@ -29,7 +30,8 @@ var OggettoPompa = function (options)
         waitConnectionPompa: null,
         numeroTentativiRichieste: 0,
         reader: null,
-        PompaSub:null
+        PompaSub: null,
+        counterConnection: 0
 
     };
     //var socket;
@@ -53,22 +55,46 @@ var OggettoPompa = function (options)
 
     this.construct(options);
 
+    this.closeConnection = function () {
+        varsInternal.socket.close();
+        varsInternal.counterConnection = 4;
+    }
+
     this.createConnection = function ()
     {
-        console.log("verifica:" + varsInternal.stateConnection)
+        //console.log("verifica:" + varsInternal.stateConnection)
         //messaggioTesto("Check Connection.");
         
+        setTimeout(manageConnection, 1000);
+
+    }
+    function manageConnection() {
+        console.log("verifica:" + varsInternal.stateConnection)
+        //messaggioTesto("Check Connection.");
+
         if (typeof (WebSocket) !== 'undefined') {
-            varsInternal.socket = new WebSocket("ws://localhost:10154/pompe/websocket.ashx");
+            varsInternal.socket = new WebSocket("ws://192.168.1.72/pompe/websocket.ashx");
+            //varsInternal.socket = new WebSocket("ws://localhost:10154/pompe/websocket.ashx");
         } else {
-            varsInternal.socket = new MozWebSocket("ws://localhost:10154/pompe/websocket.ashx");
+            varsInternal.socket = new MozWebSocket("ws://192.168.1.72/pompe/websocket.ashx");
         }
         varsInternal.socket.onclose = function () {
-            //alert("socket closed")
+            varsInternal.counterConnection = varsInternal.counterConnection + 1;
+            alert("socket closed" + varsInternal.counterConnection)
+            varsInternal.socket = null;
+            if (varsInternal.counterConnection < 3) {
+                varsInternal.stateConnection = state.connection;
+                manageConnection();
+                console.log("re connessione")
+            }
+
+        }
+        varsInternal.socket.onerror = function (msg) {
+            console.log("error:" + msg)
         }
         varsInternal.socket.onopen = function () {
             //alert("send Publish")
-            
+            console.log("invia opubblicazione")
             varsInternal.socket.send("PUBLISH" + vars.serialNumber);
         }
         varsInternal.socket.onmessage = function (msg) {
@@ -76,7 +102,7 @@ var OggettoPompa = function (options)
             /*if (checkTimeoutGlobal) {
                 varsInternal.socket.close();
             }*/
-            
+
             varsInternal.reader = new FileReader();
 
             varsInternal.reader.onloadend = () => {
@@ -120,8 +146,8 @@ var OggettoPompa = function (options)
                                 var arrayToStringValueSplit = arrayToStringValue.split("|");
                                 console.log(vars.serialNumber)
                                 $("#" + vars.serialNumber + "_pump").load("pompe/P" + arrayToStringValueSplit[1] + ".aspx", function (response, status, xhr) {
-                                    if (varsInternal.PompaSub == null){
-                                        varsInternal.PompaSub = new OggettoPompaSub({ serialNumber: vars.serialNumber, arrayReadRealTime: vars.arrayReadRealTime, arrayReadSetpoint: vars.arrayReadSetpoint, plantName: vars.plantName, languageSet: vars.languageSet });
+                                    if (varsInternal.PompaSub == null) {
+                                        varsInternal.PompaSub = new OggettoPompaSub({ serialNumber: vars.serialNumber, arrayReadRealTime: vars.arrayReadRealTime, arrayReadSetpoint: vars.arrayReadSetpoint, plantName: vars.plantName, languageSet: vars.languageSet, pumpCode: arrayToStringValueSplit[1] });
                                     }
                                     varsInternal.PompaSub.startDocument();
                                     varsInternal.PompaSub.waitConnection();
@@ -152,7 +178,7 @@ var OggettoPompa = function (options)
                                 if (checksumCalcolata == array[array.length - 1]) { //verifico la checksum ricevuta
                                     console.log("checksum OK")
                                 }
-                                else{
+                                else {
                                     console.log("checksum errata")
                                     break;
                                 }
@@ -161,24 +187,30 @@ var OggettoPompa = function (options)
                                 console.log("pacchetto errato")
                                 break;
                             }
-                                
+
                             // - ------ - end ------ controllo valori ricevuti rispettano cechsum
                             varsInternal.numeroTentativiRichieste = 0;
-                           // $("#messages").text((arrayToData(array, 11, 4) / 1000) + " l/h")
+                            // $("#messages").text((arrayToData(array, 11, 4) / 1000) + " l/h")
                             // $("#messages1").text((arrayToData(array, 15, 4) / 1000) + " %")
 
                             if (localReadSetpoint) {
                                 varsInternal.PompaSub.updateValoriSetpoint(array, varsInternal.indexGlobalProtocollo);
+                                $grid.isotope();
+                                //console.log("loadsetpoint")
                             }
-                            else{
-                                varsInternal.PompaSub.updateValoriRuntime(array, varsInternal.indexGlobalProtocollo);
-                                if (varsInternal.PompaSub.checkReSyncSetpoint()) {
-                                    vars.readSetpoint = true;
-                                    varsInternal.indexGlobalProtocollo=0;
-                                    console.log("reloadSetpoint")
-                                    clearTimeout(varsInternal.waitPompaVar); // blocco timeout
-                                    varsInternal.socket.send(createArraytoSend())
-                                    break;
+                            else {
+                                if (array[1] == vars.arrayReadRealTime[varsInternal.indexGlobalProtocollo]) {
+                                    varsInternal.PompaSub.updateValoriRuntime(array, varsInternal.indexGlobalProtocollo);
+                                    $grid.isotope();
+                                    //console.log("updateData:" + array[1] )
+                                    if (varsInternal.PompaSub.checkReSyncSetpoint()) {
+                                        vars.readSetpoint = true;
+                                        varsInternal.indexGlobalProtocollo = 0;
+                                        //console.log("reloadSetpoint")
+                                        clearTimeout(varsInternal.waitPompaVar); // blocco timeout
+                                        varsInternal.socket.send(createArraytoSend())
+                                        break;
+                                    }
                                 }
                             }
 
@@ -194,7 +226,7 @@ var OggettoPompa = function (options)
                 //console.log("Result: " + array + "," + varsInternal.stateConnection + "," + uint8arrayToStringMethod(array) + "," + vars.serialNumber);
             };
             //console.log("Result: " + msg.data + "," + varsInternal.stateConnection + "," + uint8arrayToStringMethod(msg.data) + "," + vars.serialNumber);
-            
+
             varsInternal.reader.readAsArrayBuffer(msg.data);
             //var $el = document.createElement('p');
             //$el.innerHTML = msg.data;
@@ -218,6 +250,7 @@ var OggettoPompa = function (options)
     }
     function timeoutConnessione(){
         console.log("pompa non connessa");
+        
         messaggioTesto("Not Connected.");
     }
     function retryPompa() {
@@ -271,6 +304,7 @@ var OggettoPompa = function (options)
         }
         $("#headerColor" + vars.serialNumber).addClass(classePompaColor[0]);
         $("#hrefNext" + vars.serialNumber).hide();
+        $("#" + vars.serialNumber + "_pumpLeft").attr("href", "#");//blocco del lef connessione
         
     }
 }

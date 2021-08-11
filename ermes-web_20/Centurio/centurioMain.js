@@ -260,11 +260,19 @@ function aggiornLDGrafico()
 
                  var k = 0;
                  var arrayLogTemp = []
+                 var calcNumberDecimal = 0;
                  for (k = 0; k < jsonParseLDLog[idLog].length; k++) {
+                     var splitDataLog = jsonParseLDLog[idLog][k].valoreP.split(".")
+                     if (splitDataLog.length > 1)
+                     {
+                         if (splitDataLog[1].length > calcNumberDecimal)
+                             calcNumberDecimal = splitDataLog[1].length;
+                     }
                      arrayLogTemp.push([parseInt(jsonParseLDLog[idLog][k].data), parseFloat(jsonParseLDLog[idLog][k].valoreP)]);
+                     
                  }
                  arrayLogTemp.sort();
-                 series_chart.push(createGraphLineSeries(arrayLogTemp, numero_asse, label));
+                 series_chart.push(createGraphLineSeries(arrayLogTemp, numero_asse, label, calcNumberDecimal));
                  numero_asse = numero_asse + 1;
                  
                  yaxis_chart.push(createGraphLineY(label, altezza, 200));
@@ -444,9 +452,16 @@ function aggiornGrafico()
                     //jsonParseLog[idLog] //array valory
                     var k = 0;
                     var arrayLogTemp = []
+                    var calcNumberDecimal = 0;
                     for (k = 0; k < jsonParseLog[idLog].length; k++) {
                         if (parseInt($("#logTypeAlarmEvery").val()) == parseInt(jsonParseLog["typeLog"][k].valoreP)) {
                             //console.log("typoLog:" + jsonParseLog["typeLog"][k].valoreP)
+                            var splitDataLog = jsonParseLog[idLog][k].valoreP.split(".")
+                            if (splitDataLog.length > 1) {
+                                if (splitDataLog[1].length > calcNumberDecimal)
+                                    calcNumberDecimal = splitDataLog[1].length;
+                            }
+
                             arrayLogTemp.push([parseInt(jsonParseLog[idLog][k].data), parseFloat(jsonParseLog[idLog][k].valoreP)]);
 
                         }
@@ -456,7 +471,7 @@ function aggiornGrafico()
                     //createGraphLineSeries(jsonParseLog[$(this).attr("id")])
                     //var arrayLogTemp = [jsonParseLog[idLog]];
                     arrayLogTemp.sort();
-                    series_chart.push(createGraphLineSeries(arrayLogTemp, numero_asse, $(this).next().html()));
+                    series_chart.push(createGraphLineSeries(arrayLogTemp, numero_asse, $(this).next().html(), calcNumberDecimal));
                     numero_asse = numero_asse + 1;
                     /*if ($("#mergeGraph").is(':checked')) {
 
@@ -590,7 +605,7 @@ function convertUTCDateToLocalDate(convertdLocalTime) {
 
     return convertdLocalTime;
 }
-function createGraphLineSeries(arrayStepTemp, numero_asse, strStepTemp) {
+function createGraphLineSeries(arrayStepTemp, numero_asse, strStepTemp,numeroDecimaliLog) {
     return ({
         name: strStepTemp,
         id: 'ch1_val_series',
@@ -601,7 +616,7 @@ function createGraphLineSeries(arrayStepTemp, numero_asse, strStepTemp) {
             radius: 3
         },
         tooltip: {
-            valueDecimals: 2
+            valueDecimals: numeroDecimaliLog
         }
     });
 }

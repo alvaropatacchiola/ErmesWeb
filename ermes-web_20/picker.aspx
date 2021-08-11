@@ -14,11 +14,11 @@
                   </div>
 
                   <div class="card-body">
-                      <h2>CUSTOM LOGO</h2><br>
+                      <h4>CUSTOM LOGO</h4><br>
                       <form>
                           <div class="col-sm-8 col-lg-12">
 				            <div class="form-group row mb-6">
-                                <asp:Literal ID="logoAssents" runat="server" Text='<img src="assets/img/logo.png" alt="Mono">'></asp:Literal>
+                                <div style="margin:0 0 20px 0"><asp:Literal ID="logoAssents" runat="server" Text='<img src="assets/img/logo.png" alt="Mono">'></asp:Literal></div>
                         <label for="coverImage" class="col-sm-4 col-lg-6 col-form-label"></label><br>
                           <div class="custom-file mb-1">
 				  
@@ -26,7 +26,7 @@
                               
                             <div class="invalid-feedback">Example invalid custom file feedback</div>
                           </div>
-                          <span class="d-block ">Upload a new cover image, JPG 128x128</span>
+                          <span class="d-block " style="font-style: italic; font-size: 12px;">Upload a new cover image, JPG 128x128</span>
                         </div>
                       </div>
 <div id="text">
@@ -34,11 +34,11 @@
     <!--<input id="slide" type="text" value=""onchange="updateText(this.value);" />-->
     <asp:TextBox  ClientIDMode="Static" ID="slide" runat="server" onchange="updateText(this.value);" MaxLength="30"></asp:TextBox>
     </div>
-                          <br><br><h2>CUSTOM THEME COLORS</h2><br>
+                          <br><br><h4>CUSTOM THEME COLORS</h4><br>
                         <div class="row mb-2">
 			                                     <div class="col-lg-4">
 				                                     <div class="form-group">
-					                                     <label>Color of Body </label><br><br>
+					                                     <label>Body Color</label><br><br>
 					                                     <!--<input type="color" id="color_body">-->
                                                          <asp:TextBox type="color" ClientIDMode="Static" ID="color_body" runat="server"></asp:TextBox>
                                     <a class="color_button_body">Change</a>
@@ -53,11 +53,19 @@
 		                                      </div>
 			                                     <div class="col-lg-4">
 				                                     <div class="form-group">
-			                                      <label>Color of Sidebar</label><br><br>
+			                                      <label>Sidebar background color<</label><br><br>
 					                                    <!--<input type="color" id="color">-->
                                                          <asp:TextBox ID="color" type="color" ClientIDMode="Static" runat="server"></asp:TextBox>
 					                                    <a class="color_button">Change</a>
-				                                     </div></div>
+				                                     </div>
+                                                     
+							                         <br><br>
+							                         <div class="form-group">
+					                                     <label>Sidebar links Color</label><br><br>
+					                                     <!--<input type="color" id="color_body">-->
+                                                         <asp:TextBox type="color" ClientIDMode="Static" ID="color_links" runat="server"></asp:TextBox>
+                                                            <a class="color_button_links">Change</a>
+				                                     </div>		</div>
 
 		                                      </div>
                         <div class="d-flex justify-content-end mt-6">

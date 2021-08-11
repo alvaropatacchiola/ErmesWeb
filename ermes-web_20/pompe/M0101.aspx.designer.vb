@@ -14,6 +14,15 @@ Option Explicit On
 Partial Public Class M0101
     
     '''<summary>
+    '''Controllo plantName.
+    '''</summary>
+    '''<remarks>
+    '''Campo generato automaticamente.
+    '''Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
+    '''</remarks>
+    Protected WithEvents plantName As Global.System.Web.UI.WebControls.Literal
+    
+    '''<summary>
     '''Controllo weeklyLoadServer.
     '''</summary>
     '''<remarks>

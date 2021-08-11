@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/MainNew.Master" CodeBehind="dashboardAssets.aspx.vb" Inherits="ermes_web_20.dashboardAssets" culture="auto" meta:resourcekey="PageResource1" uiculture="auto" %>
 <%@ MasterType VirtualPath="~/MainNew.Master"%>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-<script type = "text/javascript" src="pompe/pumpsCommunication.js?v=1.35"></script>
+<script type = "text/javascript" src="pompe/pumpsCommunication.js?v=1.46"></script>
 <div class="content-wrapper">
     <div class="content">  <!-- Search impianti-->
         <div class="input-group mb-3">
@@ -31,58 +31,7 @@
 			      <!-- End Impianti -->
 
 				<!-- LOG AND COMMUNICATION -->
-                <div class="row">
-					<!--COMMUNICATION -->
-                  <div class="col-xl-4">
-                  
-                      
-                      <div class="card card-default chat">
-                        <div class="card-header">
-                          <h2>Communications</h2>
-                          
-                        </div>
-                        <div class="card-body pb-0" data-simplebar style="height: 363px;">
-                        
-                          <div class="media media-chat">
-                          
-                            <div class="media-body">
-                              <div class="text-content">
-                                <span class="message">Da lunedì 10 aprile è infatti disponibile la nuova dashboard ERMES, per avere una lettura ancora più immediata di tutti i parametri e le informazioni che riguardano i tuoi impianti gestiti a distanza. Anche da mobile, grazie alla nuova interfaccia, il controllo remoto sui tuoi impianti non è mai stato così semplice e immediato.</span>
-                                <time class="time">06/04/2017</time>
-                              </div>
-                            </div>
-                          </div>
-
-                          
-                          <div class="media media-chat">
-                            <img src="assets/img/user/user-sm-01.jpg" class="rounded-circle" alt="Avata Image">
-                            <div class="media-body">
-                              <div class="text-content">
-                                <span class="message">Nella giornata di giovedì 19-01-2017 il sistema ermes non sarà garantito per aggiornamenti del server</span>
-                                <time class="time">06/04/2017</time>
-                              </div>
-                            </div>
-                          </div>
-							
-							
-							<div class="media media-chat">
-                          
-                            <div class="media-body">
-                              <div class="text-content">
-                                <span class="message">Da lunedì 10 aprile è infatti disponibile la nuova dashboard ERMES, per avere una lettura ancora più immediata di tutti i parametri e le informazioni che riguardano i tuoi impianti gestiti a distanza. Anche da mobile, grazie alla nuova interfaccia, il controllo remoto sui tuoi impianti non è mai stato così semplice e immediato.</span>
-                                <time class="time">06/04/2017</time>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="chat-footer">
-                          
-                        </div>
-                      </div>
-
-                </div>
-					<!--END COMMUNICATION -->
-                </div>
+               
 				<!-- END LOG AND COMMUNICATION -->
 
 
@@ -221,7 +170,7 @@
 
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="script_footerAssets" runat="server">
-    <script type="text/javascript" src="Centurio/centurioRealTimeAssets.js?v=1.6"></script>
+    <script type="text/javascript" src="Centurio/centurioRealTimeAssets.js?v=1.7"></script>
     
     <asp:Literal ID="javaScriptLiteral" runat="server" meta:resourcekey="javaScriptLiteralResource1"></asp:Literal>
 </asp:Content>

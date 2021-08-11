@@ -8,7 +8,8 @@
               <div class="col-xl-12">
                   <div class="card card-default">
                       <div class="card-header">
-                              <h2>LDOSIN - 20117930500000001</h2>
+                              <h2>
+                                  <asp:Literal ID="plantName" runat="server"></asp:Literal></h2>
                        </div>
    					   <!-- DATI -->
 					  <div class="card-body">
@@ -233,7 +234,7 @@
 													<div class="form-group ">
 														<label for="exampleFormControlPassword4" data-translate="constantSetpoint" ></label>
                                                         <label for="exampleFormControlPassword4"  id="constantDosaggioUnit"></label>
-														<input type="number" class="form-control border-success numerico" id="constantDosaggio" min ="0.000" max ="99.000" labelMSG="constantDos" labelMSGError="constantDosAlarm" step="0.001" decimal ="3" maxlength="6" data-mask="00.000" placeholder="">
+														<input type="number" class="form-control border-success numerico" id="constantDosaggio" min ="0.000" max ="99.000" labelMSG="constantDos" labelMSGError="constantDosAlarm" step="0.001" decimal ="3" maxlength="6" placeholder="">
                                                         <!--border-info border-warning border-danger 
                                                         <div class="text-success small mt-1">
                                                             Looks good!
@@ -267,7 +268,7 @@
 													<div class="form-group" aria-haspopup="True">
 														<label for="exampleFormControlPassword4" data-translate="ccPulseSetpoint" ></label>
                                                         <label for="exampleFormControlPassword4" > ml/Pulse</label>
-														<input type="number" class="form-control border-success numerico" id="ccPulseSetpoint" min ="0.0000" max ="99.0000" step="0.0001" labelMSG="ccPulseInfo" labelMSGError="ccPulseAlarm" decimal ="4" maxlength="7" data-mask="00.0000" placeholder="">
+														<input type="number" class="form-control border-success numerico" id="ccPulseSetpoint" min ="0.0000" max ="99.0000" step="0.0001" labelMSG="ccPulseInfo" labelMSGError="ccPulseAlarm" decimal ="4" maxlength="7"  placeholder="">
                                                         <!--border-info border-warning border-danger 
                                                         <div class="text-success small mt-1">
                                                             Looks good!
@@ -284,7 +285,7 @@
 													</div>
 													<div class="custom-control custom-radio d-inline-block mr-3 mb-3">
 														<label for="exampleFormControlPassword4" data-translate="waterMeterKSetpoint" ></label>
-														<input type="number" class="form-control border-success numerico" id ="waterMeterKCCPulseSetpoint"  min ="0.0" max ="1200.0" step="0.1" labelMSG="waterMeterKInfo" labelMSGError="waterMeterKAlarm" decimal ="1" maxlength="6" data-mask="0000.0" placeholder="">
+														<input type="number" class="form-control border-success numerico" id ="waterMeterKCCPulseSetpoint"  min ="0.0" max ="1200.0" step="0.1" labelMSG="waterMeterKInfo" labelMSGError="waterMeterKAlarm" decimal ="1" maxlength="6"  placeholder="">
                                                         <!--border-info border-warning border-danger 
                                                         <div class="text-success small mt-1">
                                                             Looks good!
@@ -314,12 +315,12 @@
 													<div class="form-group" aria-haspopup="True">
 														<label for="exampleFormControlPassword4" data-translate="ppmSetpoint" ></label>
                                                         <label for="exampleFormControlPassword4" > ppm</label>
-														<input type="number" class="form-control border-success numerico" id="ppmSetpoint" min ="0.01" max ="9999.99" step="0.01" labelMSG="ppmInfo" labelMSGError="ppmAlarm" decimal ="2" maxlength="7" data-mask="0000.00" placeholder="">
+														<input type="number" class="form-control border-success numerico" id="ppmSetpoint" min ="0.01" max ="9999.99" step="0.01" labelMSG="ppmInfo" labelMSGError="ppmAlarm" decimal ="2" maxlength="7"  placeholder="">
 													</div>
 													<div class="form-group" aria-haspopup="True">
 														<label for="exampleFormControlPassword4" data-translate="concentrazioneSetpoint" ></label>
                                                         <label for="exampleFormControlPassword4" > %</label>
-														<input type="number" class="form-control border-success numerico" id="concentrazioneSetpoint" min ="0.1" max ="100.0" step="0.1" labelMSG="concentrazioneInfo" labelMSGError="concentrazioneAlarm" decimal ="1" maxlength="5" data-mask="000.0" placeholder="">
+														<input type="number" class="form-control border-success numerico" id="concentrazioneSetpoint" min ="0.1" max ="100.0" step="0.1" labelMSG="concentrazioneInfo" labelMSGError="concentrazioneAlarm" decimal ="1" maxlength="5"  placeholder="">
 													</div>
                                                      <div class="custom-control custom-radio d-inline-block mr-3 mb-3">
 															<label for="exampleFormControlSelect15" data-translate="waterMeterSetpoint"></label>
@@ -330,7 +331,7 @@
 													</div>
 													<div class="custom-control custom-radio d-inline-block mr-3 mb-3">
 														<label for="exampleFormControlPassword4" data-translate="waterMeterKSetpoint" ></label>
-														<input type="number" class="form-control border-success numerico" id ="waterMeterKPPMSetpoint"  min ="0.0" max ="1200.0" step="0.1" labelMSG="waterMeterKInfo" labelMSGError="waterMeterKAlarm" decimal ="1" maxlength="6" data-mask="0000.0" placeholder="">
+														<input type="number" class="form-control border-success numerico" id ="waterMeterKPPMSetpoint"  min ="0.0" max ="1200.0" step="0.1" labelMSG="waterMeterKInfo" labelMSGError="waterMeterKAlarm" decimal ="1" maxlength="6"  placeholder="">
                                                         <!--border-info border-warning border-danger 
                                                         <div class="text-success small mt-1">
                                                             Looks good!
@@ -441,7 +442,7 @@
 													    <div class="form-group ">
 														    <label for="exampleFormControlPassword4" data-translate="constantSetpoint" ></label>
                                                             <label for="exampleFormControlPassword4"  id="upkeepDosaggioPPMUnit"></label>
-														    <input type="number" class="form-control border-success numerico" id="upkeepDosaggioPPM" min ="0.000" max ="99.000" labelMSG="constantDos" labelMSGError="constantDosAlarm" step="0.001" decimal ="3" maxlength="6" data-mask="00.000" placeholder="">
+														    <input type="number" class="form-control border-success numerico" id="upkeepDosaggioPPM" min ="0.000" max ="99.000" labelMSG="constantDos" labelMSGError="constantDosAlarm" step="0.001" decimal ="3" maxlength="6"  placeholder="">
                                                             <!--border-info border-warning border-danger 
                                                             <div class="text-success small mt-1">
                                                                 Looks good!
@@ -472,12 +473,12 @@
 													<div class="form-group" aria-haspopup="True">
 														<label for="exampleFormControlPassword4" data-translate="percSetpoint" ></label>
                                                         <label for="exampleFormControlPassword4" > %</label>
-														<input type="number" class="form-control border-success numerico" id="percSetpoint" min ="0.01" max ="100.00" step="0.01" labelMSG="percInfo" labelMSGError="percAlarm" decimal ="2" maxlength="6" data-mask="000.00" placeholder="">
+														<input type="number" class="form-control border-success numerico" id="percSetpoint" min ="0.01" max ="100.00" step="0.01" labelMSG="percInfo" labelMSGError="percAlarm" decimal ="2" maxlength="6"  placeholder="">
 													</div>
 													<div class="form-group" aria-haspopup="True">
 														<label for="exampleFormControlPassword4" data-translate="concentrazioneSetpoint" ></label>
                                                         <label for="exampleFormControlPassword4" > %</label>
-														<input type="number" class="form-control border-success numerico" id="concentrazionePercSetpoint" min ="0.1" max ="100.0" step="0.1" labelMSG="concentrazioneInfo" labelMSGError="concentrazioneAlarm" decimal ="1" maxlength="5" data-mask="000.0" placeholder="">
+														<input type="number" class="form-control border-success numerico" id="concentrazionePercSetpoint" min ="0.1" max ="100.0" step="0.1" labelMSG="concentrazioneInfo" labelMSGError="concentrazioneAlarm" decimal ="1" maxlength="5"  placeholder="">
 													</div>
                                                      <div class="custom-control custom-radio d-inline-block mr-3 mb-3">
 															<label for="exampleFormControlSelect15" data-translate="waterMeterSetpoint"></label>
@@ -488,7 +489,7 @@
 													</div>
 													<div class="custom-control custom-radio d-inline-block mr-3 mb-3">
 														<label for="exampleFormControlPassword4" data-translate="waterMeterKSetpoint" ></label>
-														<input type="number" class="form-control border-success numerico " id ="waterMeterKPercSetpoint"  min ="0.0" max ="1200.0" step="0.1" labelMSG="waterMeterKInfo" labelMSGError="waterMeterKAlarm" decimal ="1" maxlength="6" data-mask="0000.0" placeholder="">
+														<input type="number" class="form-control border-success numerico " id ="waterMeterKPercSetpoint"  min ="0.0" max ="1200.0" step="0.1" labelMSG="waterMeterKInfo" labelMSGError="waterMeterKAlarm" decimal ="1" maxlength="6"  placeholder="">
                                                         <!--border-info border-warning border-danger 
                                                         <div class="text-success small mt-1">
                                                             Looks good!
@@ -599,7 +600,7 @@
 													    <div class="form-group ">
 														    <label for="exampleFormControlPassword4" data-translate="constantSetpoint" ></label>
                                                             <label for="exampleFormControlPassword4"  id="upkeepDosaggioPercUnit"></label>
-														    <input type="number" class="form-control border-success numerico" id="upkeepDosaggioPerc" min ="0.000" max ="99.000" labelMSG="constantDos" labelMSGError="constantDosAlarm" step="0.001" decimal ="3" maxlength="6" data-mask="00.000" placeholder="">
+														    <input type="number" class="form-control border-success numerico" id="upkeepDosaggioPerc" min ="0.000" max ="99.000" labelMSG="constantDos" labelMSGError="constantDosAlarm" step="0.001" decimal ="3" maxlength="6"  placeholder="">
                                                             <!--border-info border-warning border-danger 
                                                             <div class="text-success small mt-1">
                                                                 Looks good!
@@ -631,12 +632,12 @@
 													<div class="form-group" aria-haspopup="True">
 														<label for="exampleFormControlPassword4" data-translate="mlqSetpoint" ></label>
                                                         <label for="exampleFormControlPassword4" > ppm</label>
-														<input type="number" class="form-control border-success numerico" id="mlqSetpoint" min ="0.01" max ="1000.00" step="0.01" labelMSG="mlqInfo" labelMSGError="mlqAlarm" decimal ="2" maxlength="7" data-mask="0000.00" placeholder="">
+														<input type="number" class="form-control border-success numerico" id="mlqSetpoint" min ="0.01" max ="1000.00" step="0.01" labelMSG="mlqInfo" labelMSGError="mlqAlarm" decimal ="2" maxlength="7"  placeholder="">
 													</div>
 													<div class="form-group" aria-haspopup="True">
 														<label for="exampleFormControlPassword4" data-translate="concentrazioneSetpoint" ></label>
                                                         <label for="exampleFormControlPassword4" > %</label>
-														<input type="number" class="form-control border-success numerico" id="concentrazionemlqSetpoint" min ="0.1" max ="100.0" step="0.1" labelMSG="concentrazioneInfo" labelMSGError="concentrazioneAlarm" decimal ="1" maxlength="5" data-mask="000.0" placeholder="">
+														<input type="number" class="form-control border-success numerico" id="concentrazionemlqSetpoint" min ="0.1" max ="100.0" step="0.1" labelMSG="concentrazioneInfo" labelMSGError="concentrazioneAlarm" decimal ="1" maxlength="5"  placeholder="">
 													</div>
                                                      <div class="custom-control custom-radio d-inline-block mr-3 mb-3">
 															<label for="exampleFormControlSelect15" data-translate="waterMeterSetpoint"></label>
@@ -647,7 +648,7 @@
 													</div>
 													<div class="custom-control custom-radio d-inline-block mr-3 mb-3">
 														<label for="exampleFormControlPassword4" data-translate="waterMeterKSetpoint" ></label>
-														<input type="number" class="form-control border-success numerico " id ="waterMeterKmlqSetpoint"  min ="0.0" max ="1200.0" step="0.1" labelMSG="waterMeterKInfo" labelMSGError="waterMeterKAlarm" decimal ="1" maxlength="6" data-mask="0000.0" placeholder="">
+														<input type="number" class="form-control border-success numerico " id ="waterMeterKmlqSetpoint"  min ="0.0" max ="1200.0" step="0.1" labelMSG="waterMeterKInfo" labelMSGError="waterMeterKAlarm" decimal ="1" maxlength="6"  placeholder="">
                                                         <!--border-info border-warning border-danger 
                                                         <div class="text-success small mt-1">
                                                             Looks good!
@@ -758,7 +759,7 @@
 													    <div class="form-group ">
 														    <label for="exampleFormControlPassword4" data-translate="constantSetpoint" ></label>
                                                             <label for="exampleFormControlPassword4"  id="upkeepDosaggiomlqUnit"></label>
-														    <input type="number" class="form-control border-success numerico" id="upkeepDosaggiomlq" min ="0.000" max ="99.000" labelMSG="constantDos" labelMSGError="constantDosAlarm" step="0.001" decimal ="3" maxlength="6" data-mask="00.000" placeholder="">
+														    <input type="number" class="form-control border-success numerico" id="upkeepDosaggiomlq" min ="0.000" max ="99.000" labelMSG="constantDos" labelMSGError="constantDosAlarm" step="0.001" decimal ="3" maxlength="6"  placeholder="">
                                                             <!--border-info border-warning border-danger 
                                                             <div class="text-success small mt-1">
                                                                 Looks good!
@@ -790,7 +791,7 @@
 													<div class="form-group" aria-haspopup="True">
 														<label for="exampleFormControlPassword4" data-translate="batchSetpoint" ></label>
                                                         <label for="exampleFormControlPassword4" id="batchUnit"> </label>
-														<input type="number" class="form-control border-success numerico" id="batchSetpoint" min ="0.000" max ="100.000" step="0.001" labelMSG="batchInfo" labelMSGError="batchAlarm" decimal ="3" maxlength="7" data-mask="000.000" placeholder="">
+														<input type="number" class="form-control border-success numerico" id="batchSetpoint" min ="0.000" max ="100.000" step="0.001" labelMSG="batchInfo" labelMSGError="batchAlarm" decimal ="3" maxlength="7"  placeholder="">
 													</div>
                                                      <div class="custom-control custom-radio d-inline-block mr-3 mb-3">
 															<label for="exampleFormControlSelect15" data-translate="contactSetpoint"></label>
@@ -822,23 +823,23 @@
                                                     <div class="custom-control custom-radio d-inline-block mr-6 mb-6">
    														<label for="exampleFormControlPassword4" data-translate="voltHighSetpoint" ></label>
                                                         <label for="exampleFormControlPassword4"  >V</label>
-														<input type="number" class="form-control border-success numerico" id="voltHighSetpoint" min ="0.0" max ="10.0" labelMSG="voltInfo" labelMSGError="voltAlarm" step="0.1" decimal ="1" maxlength="4" data-mask="00.0" placeholder="">
+														<input type="number" class="form-control border-success numerico" id="voltHighSetpoint" min ="0.0" max ="10.0" labelMSG="voltInfo" labelMSGError="voltAlarm" step="0.1" decimal ="1" maxlength="4"  placeholder="">
                                                      </div>
                                                     <div class="custom-control custom-radio d-inline-block mr-6 mb-6">
 														<label for="exampleFormControlPassword4" data-translate="constantSetpoint" ></label>
                                                         <label for="exampleFormControlPassword4"  id="voltHighDosaggioUnit"></label>
-														<input type="number" class="form-control border-success numerico" id="voltHighDosaggio" min ="0.000" max ="99.000" labelMSG="constantDos" labelMSGError="constantDosAlarm" step="0.001" decimal ="3" maxlength="6" data-mask="00.000" placeholder="">
+														<input type="number" class="form-control border-success numerico" id="voltHighDosaggio" min ="0.000" max ="99.000" labelMSG="constantDos" labelMSGError="constantDosAlarm" step="0.001" decimal ="3" maxlength="6"  placeholder="">
                                                     </div>
                                                     <div class="form-group" aria-haspopup="True">
                                                         <div class="custom-control custom-radio d-inline-block mr-6 mb-6">
    														    <label for="exampleFormControlPassword4" data-translate="voltLowSetpoint" ></label>
                                                             <label for="exampleFormControlPassword4"  >V</label>
-														    <input type="number" class="form-control border-success numerico" id="voltLowSetpoint" min ="0.0" max ="10.0" labelMSG="voltInfo" labelMSGError="voltAlarm" step="0.1" decimal ="1" maxlength="4" data-mask="00.0" placeholder="">
+														    <input type="number" class="form-control border-success numerico" id="voltLowSetpoint" min ="0.0" max ="10.0" labelMSG="voltInfo" labelMSGError="voltAlarm" step="0.1" decimal ="1" maxlength="4"  placeholder="">
                                                          </div>
                                                         <div class="custom-control custom-radio d-inline-block mr-6 mb-6">
 														    <label for="exampleFormControlPassword4" data-translate="constantSetpoint" ></label>
                                                             <label for="exampleFormControlPassword4"  id="voltLowDosaggioUnit"></label>
-														    <input type="number" class="form-control border-success numerico" id="voltLowDosaggio" min ="0.000" max ="99.000" labelMSG="constantDos" labelMSGError="constantDosAlarm" step="0.001" decimal ="3" maxlength="6" data-mask="00.000" placeholder="">
+														    <input type="number" class="form-control border-success numerico" id="voltLowDosaggio" min ="0.000" max ="99.000" labelMSG="constantDos" labelMSGError="constantDosAlarm" step="0.001" decimal ="3" maxlength="6"  placeholder="">
                                                         </div>
                                                     </div>
                                                     <div class="form-footer ModeSendLoad"  style="display: none;">
@@ -864,23 +865,23 @@
                                                     <div class="custom-control custom-radio d-inline-block mr-6 mb-6">
    														<label for="exampleFormControlPassword4" data-translate="maHighSetpoint" ></label>
                                                         <label for="exampleFormControlPassword4"  >mA</label>
-														<input type="number" class="form-control border-success numerico" id="maHighSetpoint" min ="0.0" max ="20.0" labelMSG="maInfo" labelMSGError="maAlarm" step="0.1" decimal ="1" maxlength="4" data-mask="00.0" placeholder="">
+														<input type="number" class="form-control border-success numerico" id="maHighSetpoint" min ="0.0" max ="20.0" labelMSG="maInfo" labelMSGError="maAlarm" step="0.1" decimal ="1" maxlength="4"  placeholder="">
                                                      </div>
                                                     <div class="custom-control custom-radio d-inline-block mr-6 mb-6">
 														<label for="exampleFormControlPassword4" data-translate="constantSetpoint" ></label>
                                                         <label for="exampleFormControlPassword4"  id="maHighDosaggioUnit"></label>
-														<input type="number" class="form-control border-success numerico" id="maHighDosaggio" min ="0.000" max ="99.000" labelMSG="constantDos" labelMSGError="constantDosAlarm" step="0.001" decimal ="3" maxlength="6" data-mask="00.000" placeholder="">
+														<input type="number" class="form-control border-success numerico" id="maHighDosaggio" min ="0.000" max ="99.000" labelMSG="constantDos" labelMSGError="constantDosAlarm" step="0.001" decimal ="3" maxlength="6"  placeholder="">
                                                     </div>
                                                     <div class="form-group" aria-haspopup="True">
                                                         <div class="custom-control custom-radio d-inline-block mr-6 mb-6">
    														    <label for="exampleFormControlPassword4" data-translate="maLowSetpoint" ></label>
                                                             <label for="exampleFormControlPassword4"  >mA</label>
-														    <input type="number" class="form-control border-success numerico" id="maLowSetpoint" min ="0.0" max ="20.0" labelMSG="maInfo" labelMSGError="maAlarm" step="0.1" decimal ="1" maxlength="4" data-mask="00.0" placeholder="">
+														    <input type="number" class="form-control border-success numerico" id="maLowSetpoint" min ="0.0" max ="20.0" labelMSG="maInfo" labelMSGError="maAlarm" step="0.1" decimal ="1" maxlength="4"  placeholder="">
                                                          </div>
                                                         <div class="custom-control custom-radio d-inline-block mr-6 mb-6">
 														    <label for="exampleFormControlPassword4" data-translate="constantSetpoint" ></label>
                                                             <label for="exampleFormControlPassword4"  id="maLowDosaggioUnit"></label>
-														    <input type="number" class="form-control border-success numerico" id="maLowDosaggio" min ="0.000" max ="99.000" labelMSG="constantDos" labelMSGError="constantDosAlarm" step="0.001" decimal ="3" maxlength="6" data-mask="00.000" placeholder="">
+														    <input type="number" class="form-control border-success numerico" id="maLowDosaggio" min ="0.000" max ="99.000" labelMSG="constantDos" labelMSGError="constantDosAlarm" step="0.001" decimal ="3" maxlength="6"  placeholder="">
                                                         </div>
                                                     </div>
                                                     <div class="form-footer ModeSendLoad"  style="display: none;">
@@ -906,23 +907,23 @@
                                                     <div class="custom-control custom-radio d-inline-block mr-6 mb-6">
    														<label for="exampleFormControlPassword4" data-translate="pulseHighSetpoint" ></label>
                                                         <label for="exampleFormControlPassword4"  >P/m</label>
-														<input type="number" class="form-control border-success numerico" id="pulseHighSetpoint" min ="0" max ="7200" labelMSG="pulseInfo" labelMSGError="pulseAlarm" step="1" decimal ="0" maxlength="4" data-mask="0000" placeholder="">
+														<input type="number" class="form-control border-success numerico" id="pulseHighSetpoint" min ="0" max ="7200" labelMSG="pulseInfo" labelMSGError="pulseAlarm" step="1" decimal ="0" maxlength="4"  placeholder="">
                                                      </div>
                                                     <div class="custom-control custom-radio d-inline-block mr-6 mb-6">
 														<label for="exampleFormControlPassword4" data-translate="constantSetpoint" ></label>
                                                         <label for="exampleFormControlPassword4"  id="pulseHighDosaggioUnit"></label>
-														<input type="number" class="form-control border-success numerico" id="pulseHighDosaggio" min ="0.000" max ="99.000" labelMSG="constantDos" labelMSGError="constantDosAlarm" step="0.001" decimal ="3" maxlength="6" data-mask="00.000" placeholder="">
+														<input type="number" class="form-control border-success numerico" id="pulseHighDosaggio" min ="0.000" max ="99.000" labelMSG="constantDos" labelMSGError="constantDosAlarm" step="0.001" decimal ="3" maxlength="6"  placeholder="">
                                                     </div>
                                                     <div class="form-group" aria-haspopup="True">
                                                         <div class="custom-control custom-radio d-inline-block mr-6 mb-6">
    														    <label for="exampleFormControlPassword4" data-translate="pulseLowSetpoint" ></label>
                                                             <label for="exampleFormControlPassword4"  >P/m</label>
-														    <input type="number" class="form-control border-success numerico" id="pulseLowSetpoint" min ="0" max ="7200" labelMSG="pulseInfo" labelMSGError="pulseAlarm" step="1" decimal ="0" maxlength="4" data-mask="0000" placeholder="">
+														    <input type="number" class="form-control border-success numerico" id="pulseLowSetpoint" min ="0" max ="7200" labelMSG="pulseInfo" labelMSGError="pulseAlarm" step="1" decimal ="0" maxlength="4"  placeholder="">
                                                          </div>
                                                         <div class="custom-control custom-radio d-inline-block mr-6 mb-6">
 														    <label for="exampleFormControlPassword4" data-translate="constantSetpoint" ></label>
                                                             <label for="exampleFormControlPassword4"  id="pulseLowDosaggioUnit"></label>
-														    <input type="number" class="form-control border-success numerico" id="pulseLowDosaggio" min ="0.000" max ="99.000" labelMSG="constantDos" labelMSGError="constantDosAlarm" step="0.001" decimal ="3" maxlength="6" data-mask="00.000" placeholder="">
+														    <input type="number" class="form-control border-success numerico" id="pulseLowDosaggio" min ="0.000" max ="99.000" labelMSG="constantDos" labelMSGError="constantDosAlarm" step="0.001" decimal ="3" maxlength="6"  placeholder="">
                                                         </div>
                                                     </div>
 
@@ -949,17 +950,17 @@
                                                    	<div class="form-group" aria-haspopup="True">
 														<label for="exampleFormControlPassword4" data-translate="lavoroSetpoint" ></label>
                                                         <label for="exampleFormControlPassword4" > min</label>
-														<input type="number" class="form-control border-success numerico" id="lavoroSetpoint" min ="0" max ="999" step="1" labelMSG="pausaInfo" labelMSGError="pausaAlarm" decimal ="0" maxlength="3" data-mask="000" placeholder="">
+														<input type="number" class="form-control border-success numerico" id="lavoroSetpoint" min ="0" max ="999" step="1" labelMSG="pausaInfo" labelMSGError="pausaAlarm" decimal ="0" maxlength="3"  placeholder="">
 													</div>
                                                    	<div class="form-group" aria-haspopup="True">
 														<label for="exampleFormControlPassword4" data-translate="pausaSetpoint" ></label>
                                                         <label for="exampleFormControlPassword4" > min</label>
-														<input type="number" class="form-control border-success numerico" id="pausaSetpoint" min ="0" max ="999" step="1" labelMSG="pausaInfo" labelMSGError="pausaAlarm" decimal ="0" maxlength="3" data-mask="000" placeholder="">
+														<input type="number" class="form-control border-success numerico" id="pausaSetpoint" min ="0" max ="999" step="1" labelMSG="pausaInfo" labelMSGError="pausaAlarm" decimal ="0" maxlength="3"  placeholder="">
 													</div>
 													<div class="form-group ">
 														<label for="exampleFormControlPassword4" data-translate="constantSetpoint" ></label>
                                                         <label for="exampleFormControlPassword4"  id="pausalavoroDosaggioUnit"></label>
-														<input type="number" class="form-control border-success numerico" id="pausalavoroDosaggio" min ="0.000" max ="99.000" labelMSG="constantDos" labelMSGError="constantDosAlarm" step="0.001" decimal ="3" maxlength="6" data-mask="00.000" placeholder="">
+														<input type="number" class="form-control border-success numerico" id="pausalavoroDosaggio" min ="0.000" max ="99.000" labelMSG="constantDos" labelMSGError="constantDosAlarm" step="0.001" decimal ="3" maxlength="6"  placeholder="">
 													</div>
                                                     <div class="form-footer ModeSendLoad"  style="display: none;">
                                                         <div class="progress mb-3" >
@@ -1065,7 +1066,11 @@
 																aria-controls="nav-tabs" aria-selected="false">
 															<i class="mdi mdi-arrow-right-drop-circle-outline"></i> <span data-translate="alarmOut"> </span></a>
 														</li>
-								
+														<li class="nav-item">
+															<a class="nav-link" id="nav-profile-mailSetting" data-toggle="pill" href="#nav-tabs-mailSetting" role="tab"
+																aria-controls="nav-tabs" aria-selected="false">
+															<i class="mdi mdi-arrow-right-drop-circle-outline"></i> <span data-translate="mailSetting"> </span></a>
+														</li>								
 												  </ul>
 												  <!-- end menu modalità lavoro -->
 												  <!-- menu settings modalità lavoro -->
@@ -1076,12 +1081,12 @@
 													        <div class="form-group ">
 														        <label for="exampleFormControlPassword4" data-translate="pumpCapacityFlow" ></label>
                                                                 <label for="exampleFormControlPassword4"  id="pumpCapacityUnit"></label>
-														        <input type="number" class="form-control border-success numerico" id="pumpCapacityFlow" min ="0.000" max ="99.000" labelMSG="constantDos" labelMSGError="constantDosAlarm" step="0.001" decimal ="3" maxlength="6" data-mask="00.000" placeholder="">
+														        <input type="number" class="form-control border-success numerico" id="pumpCapacityFlow" min ="0.000" max ="99.000" labelMSG="constantDos" labelMSGError="constantDosAlarm" step="0.001" decimal ="3" maxlength="6"  placeholder="">
 													        </div>
 													        <div class="form-group" aria-haspopup="True">
 														        <label for="exampleFormControlPassword4" data-translate="pumpCapacitySlowMode" ></label>
                                                                 <label for="exampleFormControlPassword4" > %</label>
-														        <input type="number" class="form-control border-success numerico" id="pumpCapacitySlowMode" min ="1" max ="100" step="1" labelMSG="pumpCapacitySlowModeInfo" labelMSGError="pumpCapacitySlowModeAlarm" decimal ="0" maxlength="3" data-mask="000" placeholder="">
+														        <input type="number" class="form-control border-success numerico" id="pumpCapacitySlowMode" min ="1" max ="100" step="1" labelMSG="pumpCapacitySlowModeInfo" labelMSGError="pumpCapacitySlowModeAlarm" decimal ="0" maxlength="3"  placeholder="">
 													        </div>
 														    <div class="form-footer ModeSendLoad"  style="display: none;">
                                                                 <div class="progress mb-3" >
@@ -1110,7 +1115,7 @@
 													            <div class="form-group" aria-haspopup="True">
 														            <label for="exampleFormControlPassword4" data-translate="levelAlarmRiserva" ></label>
                                                                     <label for="exampleFormControlPassword4" id="levelAlarmRiservaUnit" > </label>
-														            <input type="number" class="form-control border-success numerico" id="levelAlarmRiserva" min ="0" max ="100.000" step="0.001" labelMSG="levelAlarmRiservaInfo" labelMSGError="levelAlarmRiservaAlarm" decimal ="3" maxlength="7" data-mask="000.000" placeholder="">
+														            <input type="number" class="form-control border-success numerico" id="levelAlarmRiserva" min ="0" max ="100.000" step="0.001" labelMSG="levelAlarmRiservaInfo" labelMSGError="levelAlarmRiservaAlarm" decimal ="3" maxlength="7"  placeholder="">
 													            </div>
                                                                  <div class="custom-control custom-radio d-inline-block mr-3 mb-3">
 															            <label for="exampleFormControlSelect15" data-translate="contactSetpoint"></label>
@@ -1175,7 +1180,7 @@
 														<form>
                                                             <div class="form-group" aria-haspopup="True">
 															        <input type="checkbox" class="custom-control-input" id="externalInputEnable" checked="checked" onclick="$(this).prop('checked') ? $('#externalInputGroup').show() : $('#externalInputGroup').hide()">
-															        <label class="custom-control-label" for="standbyEnable" data-translate="modalita12"></label>
+															        <label class="custom-control-label" for="externalInputEnable" data-translate="modalita12"></label>
 													        </div>
                                                             <div id ="externalInputGroup">
                                                                  <div class="custom-control custom-radio d-inline-block mr-3 mb-3">
@@ -1188,7 +1193,7 @@
 													            <div class="form-group" aria-haspopup="True">
 														            <label for="exampleFormControlPassword4" data-translate="batchSetpoint" ></label>
                                                                     <label for="exampleFormControlPassword4" id="externalInputQuantityUnit" > </label>
-                                                                    <input type="number" class="form-control border-success numerico" id="externalInputQuantity" min ="0.000" max ="100.000" step="0.001" labelMSG="constantDosInfo" labelMSGError="constantDosAlarm" decimal ="3" maxlength="7" data-mask="000.000" placeholder="">
+                                                                    <input type="number" class="form-control border-success numerico" id="externalInputQuantity" min ="0.000" max ="99.999" step="0.001" labelMSG="externalInputInfo" labelMSGError="externalInputAlarm" decimal ="3" maxlength="6"  placeholder="">
 													            </div>
                                                             </div>
 														    <div class="form-footer ModeSendLoad"  style="display: none;">
@@ -1220,7 +1225,7 @@
 													        </div>
 													        <div class="custom-control custom-radio d-inline-block mr-3 mb-3">
 														        <label for="exampleFormControlPassword4" data-translate="waterMeterKSetpoint" ></label>
-														        <input type="number" class="form-control border-success numerico " id ="waterMeterKMoreSetpoint"  min ="0.0" max ="1200.0" step="0.1" labelMSG="waterMeterKInfo" labelMSGError="waterMeterKAlarm" decimal ="1" maxlength="6" data-mask="0000.0" placeholder="">
+														        <input type="number" class="form-control border-success numerico " id ="waterMeterKMoreSetpoint"  min ="0.0" max ="1200.0" step="0.1" labelMSG="waterMeterKInfo" labelMSGError="waterMeterKAlarm" decimal ="1" maxlength="6"  placeholder="">
                                                                 <!--text-info text-warning text-danger -->
 													        </div>
 														    <div class="form-footer ModeSendLoad"  style="display: none;">
@@ -1246,7 +1251,7 @@
 													            <div class="form-group" aria-haspopup="True">
 														            <label for="exampleFormControlPassword4" data-translate="timeOut" ></label>
                                                                     <label for="exampleFormControlPassword4"  > sec</label>
-                                                                    <input type="number" class="form-control border-success numerico" id="timeOut" min ="000" max ="120" step="1" labelMSG="timeOutInfo" labelMSGError="timeOutAlarm" decimal ="0" maxlength="3" data-mask="000" placeholder="">
+                                                                    <input type="number" class="form-control border-success numerico" id="timeOut" min ="000" max ="120" step="1" labelMSG="timeOutInfo" labelMSGError="timeOutAlarm" decimal ="0" maxlength="3"  placeholder="">
 													            </div>
 														    <div class="form-footer ModeSendLoad"  style="display: none;">
                                                                 <div class="progress mb-3" >
@@ -1377,7 +1382,7 @@
 													            <div class="form-group" aria-haspopup="True">
 														            <label for="exampleFormControlPassword4" data-translate="powerOnDelay" ></label>
                                                                     <label for="exampleFormControlPassword4"  > min</label>
-                                                                    <input type="number" class="form-control border-success numerico" id="powerOnDelay" min ="00" max ="10" step="1" labelMSG="powerOnDelayInfo" labelMSGError="powerOnDelayAlarm" decimal ="0" maxlength="2" data-mask="00" placeholder="">
+                                                                    <input type="number" class="form-control border-success numerico" id="powerOnDelay" min ="00" max ="10" step="1" labelMSG="powerOnDelayInfo" labelMSGError="powerOnDelayAlarm" decimal ="0" maxlength="2"  placeholder="">
 													            </div>
 														    <div class="form-footer ModeSendLoad"  style="display: none;">
                                                                 <div class="progress mb-3" >
@@ -1465,7 +1470,71 @@
 
                                                         </form>
                                                        </div>
-                                                      <!-- end alarm out -->                                                    
+                                                      <!-- end alarm out -->     
+                                                      <!-- mail Setting -->  
+                                                      <div class="tab-pane fade show " id="nav-tabs-mailSetting" role="tabpanel" aria-labelledby="nav-home-tab">
+                                                          <form>
+                                                                  <div class="form-group" aria-haspopup="True">
+                                                                      <label class="custom-label"  data-translate="activeMessage"></label>
+                                                                   </div>
+
+                                                                    <div Class="custom-control custom-checkbox d-inline-block mr-3 mb-3">
+                                                                        <input type="checkbox" class="custom-control-input" id="mailLevelEnable" >
+															            <label class="custom-control-label" for="mailLevelEnable" data-translate="levelAlamr"></label>
+                                                                    </div>
+                                                                    <div Class="custom-control custom-checkbox d-inline-block mr-3 mb-3">
+                                                                        <input type="checkbox" class="custom-control-input" id="mailLevelWEnable" >
+															            <label class="custom-control-label" for="mailLevelWEnable" data-translate="levelWarning"></label>
+                                                                    </div>
+
+                                                                    <div Class="custom-control custom-checkbox d-inline-block mr-3 mb-3">
+                                                                        <input type="checkbox" class="custom-control-input" id="mailStandbyEnable" >
+															            <label class="custom-control-label" for="mailStandbyEnable" data-translate="standby"></label>
+                                                                    </div>
+                                                                    <div Class="custom-control custom-checkbox d-inline-block mr-3 mb-3">
+                                                                        <input type="checkbox" class="custom-control-input" id="mailOverflowEnable" >
+															            <label class="custom-control-label" for="mailOverflowEnable" data-translate="overflow"></label>
+                                                                    </div>
+                                                                    <div Class="custom-control custom-checkbox d-inline-block mr-3 mb-3">
+                                                                        <input type="checkbox" class="custom-control-input" id="mailOverflowWEnable" >
+															            <label class="custom-control-label" for="mailOverflowWEnable" data-translate="overflowWarning"></label>
+                                                                    </div>
+                                                                    <div Class="custom-control custom-checkbox d-inline-block mr-3 mb-3">
+                                                                        <input type="checkbox" class="custom-control-input" id="mailtHighTempEnable" >
+															            <label class="custom-control-label" for="mailtHighTempEnable" data-translate="highTemperature"></label>
+                                                                    </div>
+                                                                    <div Class="custom-control custom-checkbox d-inline-block mr-3 mb-3">
+                                                                        <input type="checkbox" class="custom-control-input" id="mailNoInputEnable" >
+															            <label class="custom-control-label" for="mailNoInputEnable" data-translate="noInput"></label>
+                                                                    </div>
+                                                                    <div Class="custom-control custom-checkbox d-inline-block mr-3 mb-3">
+                                                                        <input type="checkbox" class="custom-control-input" id="mailOverPressureEnable" >
+															            <label class="custom-control-label" for="mailOverPressureEnable" data-translate="overpressure"></label>
+                                                                    </div>
+												                <div class="form-group" aria-haspopup="True">
+														                <label for="exampleFormControlPassword4" data-translate="mail1" ></label>
+                                                                        <input type="text" class="form-control border-success mail" id="mail1Alarm"  labelMSG="mailInfo" labelMSGError="mailAlarm" maxlength="33"  placeholder="">
+												                </div>
+												                <div class="form-group" aria-haspopup="True">
+														                <label for="exampleFormControlPassword4" data-translate="mail2" ></label>
+                                                                        <input type="text" class="form-control border-success mail" id="mail2Alarm"  labelMSG="mailInfo" labelMSGError="mailAlarm" maxlength="33"  placeholder="">
+												                </div>
+														    <div class="form-footer ModeSendLoad"  style="display: none;">
+                                                                <div class="progress mb-3" >
+																      <div  class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+													            </div>
+                                                            </div>
+													        <div class="form-footer">
+														        <!-- TASTO LOADING -->
+														        <a class="ladda-button btn btn-primary btn-ladda" id="mailModeSend" data-style="expand-right">
+  															        <span class="ladda-label" data-translate="saveSetpoint"></span>
+  															        <span class="ladda-spinner" data-translate="loadingSetpoint" style="display: none;"></span>
+														        </a>
+														        <!-- END TASTO LOADING -->
+													        </div>
+                                                          </form>
+                                                      </div>
+                                                      <!-- end mail Setting -->  
 												  </div>
 									</div>
 						  </div>
@@ -1481,8 +1550,8 @@
       </div>
     </div>
 
-    <script type="text/javascript" src="M0101.js?v=1.36"></script>
-    <script type="text/javascript" src="traduzioni/T0101.js?v=1.25"></script>
+    <script type="text/javascript" src="M0101.js?v=1.47"></script>
+    <script type="text/javascript" src="traduzioni/T0101.js?v=1.33"></script>
 
     <asp:Literal ID="javaScriptHeader" runat="server"></asp:Literal>
 

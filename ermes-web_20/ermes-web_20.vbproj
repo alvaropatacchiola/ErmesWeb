@@ -158,6 +158,7 @@
     <Content Include="common\validator_plants.js" />
     <Content Include="common\validator_settings.js" />
     <Content Include="common\validator_utilizzatore.js" />
+    <Content Include="communicationAssets.aspx" />
     <Content Include="cssmenu\biocide.css" />
     <Content Include="cssmenu\script.js" />
     <Content Include="cssmenu\styles.css" />
@@ -165,6 +166,7 @@
     <Content Include="eliminaController.aspx" />
     <Content Include="eliminacontroller_query.aspx" />
     <Content Include="generateReport.aspx" />
+    <Content Include="getting-started.aspx" />
     <Content Include="Global.asax" />
     <Content Include="image\aquaprox.png" />
     <Content Include="image\background.jpg" />
@@ -317,10 +319,13 @@
     <Content Include="picker.aspx" />
     <Content Include="plant.aspx" />
     <Content Include="plantDelete.aspx" />
+    <Content Include="pompe\activeSocket.js" />
     <Content Include="pompe\M0101.aspx" />
     <Content Include="pompe\M0101.js" />
     <Content Include="pompe\P0101.aspx" />
     <Content Include="pompe\P0101.js" />
+    <Content Include="pompe\P0201.aspx" />
+    <Content Include="pompe\P0201.js" />
     <Content Include="pompe\pumpsCommunication.js" />
     <Content Include="pompe\pumpService.aspx" />
     <Content Include="pompe\testWebSocket.aspx" />
@@ -17258,6 +17263,13 @@
       <DependentUpon>webService.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
+    <Compile Include="communicationAssets.aspx.designer.vb">
+      <DependentUpon>communicationAssets.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="communicationAssets.aspx.vb">
+      <DependentUpon>communicationAssets.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
     <Compile Include="dashboardAssets.aspx.designer.vb">
       <DependentUpon>dashboardAssets.aspx</DependentUpon>
     </Compile>
@@ -17284,6 +17296,13 @@
     </Compile>
     <Compile Include="generateReport.aspx.vb">
       <DependentUpon>generateReport.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="getting-started.aspx.designer.vb">
+      <DependentUpon>getting-started.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="getting-started.aspx.vb">
+      <DependentUpon>getting-started.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="Global.asax.vb">
@@ -17803,6 +17822,13 @@
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="pompe\mqtt.vb" />
+    <Compile Include="pompe\P0201.aspx.designer.vb">
+      <DependentUpon>P0201.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pompe\P0201.aspx.vb">
+      <DependentUpon>P0201.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
     <Compile Include="pompe\pumpService.aspx.designer.vb">
       <DependentUpon>pumpService.aspx</DependentUpon>
     </Compile>
@@ -19703,6 +19729,11 @@
     <Content Include="App_LocalResources\settings.aspx.fr.resx" />
     <Content Include="App_LocalResources\settings.aspx.de.resx" />
     <Content Include="App_LocalResources\settings.aspx.es.resx" />
+    <Content Include="App_LocalResources\communicationAssets.aspx.resx" />
+    <Content Include="App_LocalResources\communicationAssets.aspx.fr.resx" />
+    <Content Include="App_LocalResources\communicationAssets.aspx.es.resx" />
+    <Content Include="App_LocalResources\communicationAssets.aspx.en.resx" />
+    <Content Include="App_LocalResources\communicationAssets.aspx.de.resx" />
     <EmbeddedResource Include="LDTower\App_LocalResources\clock_ldt.aspx.en.resx" />
     <EmbeddedResource Include="LDTower\App_LocalResources\clock_ldt.aspx.de.resx" />
     <EmbeddedResource Include="LDTower\App_LocalResources\clock_ldt.aspx.resx" />

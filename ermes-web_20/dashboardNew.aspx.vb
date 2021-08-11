@@ -280,6 +280,8 @@ Public Class dashboardNew
                                     intestazione = intestazione + "var NarrayReadSetpoint = [2, 3, 4, 5, 6];console.log(""carico i dati"");"
                                     intestazione = intestazione + "var Pompa" + split_codice(indiceCodice) + " = new OggettoPompa({serialNumber:NserialNumber, arrayReadRealTime:NarrayReadRealTime, arrayReadSetpoint:NarrayReadSetpoint});"
                                     intestazione = intestazione + "Pompa" + split_codice(indiceCodice) + ".createConnection();"
+                                    'intestazione = intestazione + "setTimeout(Pompa" + split_codice(indiceCodice) + ".createConnection,20000);"
+
                                     intestazione = intestazione + "</script>"
                                     intestazione = intestazione + "</div>"
 

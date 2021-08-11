@@ -1,28 +1,27 @@
 ﻿
 
 
-var OggettoPompaSub = function (options)
-{
+var OggettoPompaSub = function (options) {
     var vars = {
         serialNumber: '',
         arrayReadRealTime: [],
         arrayReadSetpoint: [],
         plantName: '',
         languageSet: '',
-        pumpCode:''
+        pumpCode: ''
     };
     var varsInternal = {
         arrayReadRealTimeResult: [],
         arrayReadSetpointResult: [],
         languageJson: null,
-        languageJsonWarningAlarm : null
+        languageJsonWarningAlarm: null
     };
     this.construct = function (options) {
         $.extend(vars, options);
         //console.log("lingua:" + t0101[vars.languageSet]);
         varsInternal.languageJson = jQuery.parseJSON(t0101[vars.languageSet]);
         varsInternal.languageJsonWarningAlarm = jQuery.parseJSON(t0101AlarmWarning[vars.languageSet]);
-        
+
 
     };
 
@@ -37,7 +36,7 @@ var OggettoPompaSub = function (options)
     this.checkReSyncSetpoint = function () {
         return (arrayToData(varsInternal.arrayReadRealTimeResult[0], 3 + 112, 1))
     }
-    
+
 
     this.updateValoriRuntime = function (arrayReadRealTimeTemp, indexGlobalProtocolloTemp) {
         varsInternal.arrayReadRealTimeResult[indexGlobalProtocolloTemp] = arrayReadRealTimeTemp;
@@ -46,7 +45,7 @@ var OggettoPompaSub = function (options)
         updateGrafica();
     }
     this.startDocument = function () {
-        
+
         $("[id*='_SN']").each(function () {
             //$("#" + $(this).attr("id")).removeClass("active");
             var selectionId = $(this).attr("id");
@@ -237,47 +236,39 @@ var OggettoPompaSub = function (options)
 
         }
         // controlloo Alert
-        if ((arrayToData(varsInternal.arrayReadRealTimeResult[0], 3 + 1, 1) == 1) && (arrayToData(varsInternal.arrayReadRealTimeResult[0], 3 + 2, 1) == 0))
-        {//warning livello
+        if ((arrayToData(varsInternal.arrayReadRealTimeResult[0], 3 + 1, 1) == 1) && (arrayToData(varsInternal.arrayReadRealTimeResult[0], 3 + 2, 1) == 0)) {//warning livello
             statoWarning = true;
             txtWarning = " " + varsInternal.languageJsonWarningAlarm.warningLevel;
         }
-        if ((arrayToData(varsInternal.arrayReadRealTimeResult[0], 3 + 4, 1) == 1) && (arrayToData(varsInternal.arrayReadRealTimeResult[0], 3 + 28, 1) == 1))
-        {//warning Overflow
+        if ((arrayToData(varsInternal.arrayReadRealTimeResult[0], 3 + 4, 1) == 1) && (arrayToData(varsInternal.arrayReadRealTimeResult[0], 3 + 28, 1) == 1)) {//warning Overflow
             statoWarning = true;
             txtWarning = " " + varsInternal.languageJsonWarningAlarm.warningOverflow;
         }
         //----- end controllo alert
         // controlloo allarmi
-        if ((arrayToData(varsInternal.arrayReadRealTimeResult[0], 3 + 1, 1) == 1) && (arrayToData(varsInternal.arrayReadRealTimeResult[0], 3 + 2, 1) == 1))
-        {//Alarm livello
+        if ((arrayToData(varsInternal.arrayReadRealTimeResult[0], 3 + 1, 1) == 1) && (arrayToData(varsInternal.arrayReadRealTimeResult[0], 3 + 2, 1) == 1)) {//Alarm livello
             statoAllarme = true;
             txtAllarme = " " + varsInternal.languageJsonWarningAlarm.alarmLevel;
         }
-        if ((arrayToData(varsInternal.arrayReadRealTimeResult[0], 3 + 4, 1) == 1) && (arrayToData(varsInternal.arrayReadRealTimeResult[0], 3 + 28, 1) == 0))
-        {//Alarm overflow
+        if ((arrayToData(varsInternal.arrayReadRealTimeResult[0], 3 + 4, 1) == 1) && (arrayToData(varsInternal.arrayReadRealTimeResult[0], 3 + 28, 1) == 0)) {//Alarm overflow
             statoAllarme = true;
             txtAllarme = " " + varsInternal.languageJsonWarningAlarm.alarmOverflow;
         }
-        if ((arrayToData(varsInternal.arrayReadRealTimeResult[0], 3 + 5, 1) == 1))
-        {//Alarm temperatura
+        if ((arrayToData(varsInternal.arrayReadRealTimeResult[0], 3 + 5, 1) == 1)) {//Alarm temperatura
             statoAllarme = true;
             txtAllarme = " " + varsInternal.languageJsonWarningAlarm.alarmTemperatura;
         }
-        if ((arrayToData(varsInternal.arrayReadRealTimeResult[0], 3 + 6, 1) == 1))
-        {//Alarm Input
+        if ((arrayToData(varsInternal.arrayReadRealTimeResult[0], 3 + 6, 1) == 1)) {//Alarm Input
             statoAllarme = true;
             txtAllarme = " " + varsInternal.languageJsonWarningAlarm.alarmInput;
         }
-        if ((arrayToData(varsInternal.arrayReadRealTimeResult[0], 3 + 7, 1) == 1))
-        {//Alarm Motore Bloccato
+        if ((arrayToData(varsInternal.arrayReadRealTimeResult[0], 3 + 7, 1) == 1)) {//Alarm Motore Bloccato
             statoAllarme = true;
             txtAllarme = " " + varsInternal.languageJsonWarningAlarm.alarmMotoreBloccato;
         }
         //--------end controlloo allarmi
         // controlloo stby
-        if ((arrayToData(varsInternal.arrayReadRealTimeResult[0], 3 + 3, 1) == 1))
-        {//warning Standby
+        if ((arrayToData(varsInternal.arrayReadRealTimeResult[0], 3 + 3, 1) == 1)) {//warning Standby
             statoStby = true;
             txtStby = " " + varsInternal.languageJsonWarningAlarm.alarmStby;
         }
@@ -299,7 +290,7 @@ var OggettoPompaSub = function (options)
         $("#valore3" + vars.serialNumber).attr("data-original-title", varsInternal.languageJson.titleSlow)
         $("#valore3" + vars.serialNumber).html(testoSlowMode + "<span></span><i class=\"mdi mdi-eject\"></i>");
 
-        
+
     }
     function alertErroreGrafica(statoAllarme, statoStby, statoWarning) {
         var i;
@@ -346,8 +337,7 @@ var OggettoPompaSub = function (options)
         return;
 
     }
-    function checkUpKeep()
-    {
+    function checkUpKeep() {
         if (arrayToData(varsInternal.arrayReadSetpointResult[0], 3 + 85, 1) > 0) {//up keep enable
             //if ((arrayToData(varsInternal.arrayReadRealTimeResult[0], 3 + 123, 1) > 0) || (arrayToData(varsInternal.arrayReadRealTimeResult[0], 3 + 124, 1) > 0))
             if (arrayToData(varsInternal.arrayReadRealTimeResult[0], 3 + 117, 2) == 0)//se non ci sono impulsi allora sono in upkee
@@ -355,8 +345,7 @@ var OggettoPompaSub = function (options)
         }
         return false;
     }
-    function upKeepStr()
-    {
+    function upKeepStr() {
         return varsInternal.languageJson.upKeepText + " : " + arrayToData(varsInternal.arrayReadRealTimeResult[0], 3 + 123, 1).toString() + "h " + arrayToData(varsInternal.arrayReadRealTimeResult[0], 3 + 124, 1).toString() + "m"
     }
 

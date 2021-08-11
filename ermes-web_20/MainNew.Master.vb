@@ -89,6 +89,9 @@
             scriptColor.Text = scriptColor.Text + "$("".btn-primary"").css({backgroundColor:""" + dc.colorPrimary + """});"
             scriptColor.Text = scriptColor.Text + "$("".sidebar-footer-content"").css({backgroundColor:""" + dc.colorPrimary + """});"
             scriptColor.Text = scriptColor.Text + "$("".btn-primary"").css({borderColor:""" + dc.colorPrimary + """});"
+
+            scriptColor.Text = scriptColor.Text + "$("".sidebar .sidebar-inner > li > a"").css({color: """ + dc.colorLink + """});"
+
             brandName.Text = Replace(dc.aziendaPersonalizzazione, " ", "")
             Exit For
         Next
@@ -176,7 +179,7 @@
             Dim comunicazioni_array() As String = elementComunicazione.Split("|")
             comunicazioniHTML = comunicazioniHTML + "<div Class=""media media-sm p-4 mb-0"">"
             comunicazioniHTML = comunicazioniHTML + "<div Class=""media-body"">"
-            comunicazioniHTML = comunicazioniHTML + "<a href=""communication.aspx"">"
+            comunicazioniHTML = comunicazioniHTML + "<a href=""communicationAssets.aspx"">"
             comunicazioniHTML = comunicazioniHTML + "<span Class=""title mb-0"">" + comunicazioni_array(1) + "</span>"
             comunicazioniHTML = comunicazioniHTML + "<span Class=""discribe"">" + comunicazioni_array(2) + "</span>"
             comunicazioniHTML = comunicazioniHTML + "<span Class=""time""><time>" + comunicazioni_array(0) + "</time>...</span>"
@@ -415,7 +418,13 @@
                     '    indexListCenturio = indexListCenturio - 1
                     'End If
                 End If
-                intestazione = intestazione + "<li ><a href=""" + href + """>" + dc.identificativo + "</a></li>"
+                If dc.Expr2 = 0 Then ' centurio
+                    intestazione = intestazione + "<li ><a id =""" + dc.identificativo + "_left"" href=""" + href + """>" + dc.identificativo + "</a></li>"
+                End If
+                If dc.Expr2 = 1 Then ' pompe
+                    intestazione = intestazione + "<li ><a id =""" + dc.identificativo + "_pumpLeft"" href=""#"">" + dc.identificativo + "</a></li>"
+                End If
+
 
 
             End If

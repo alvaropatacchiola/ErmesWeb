@@ -228,11 +228,14 @@ Public Class dashboardAssets
 
                             htmlCentralina = htmlCentralina + "var Pompa" + dc.identificativo + " = new OggettoPompa({serialNumber:NserialNumber, arrayReadRealTime:NarrayReadRealTime, arrayReadSetpoint:NarrayReadSetpoint,plantName:NplantName,readSetpoint:NreadSetpoint,languageSet:Nlanguage});"
                             htmlCentralina = htmlCentralina + "Pompa" + dc.identificativo + ".createConnection();"
+                            htmlCentralina = htmlCentralina + "aggiungiSocket(Pompa" + dc.identificativo + " );"
+
+                            'htmlCentralina = htmlCentralina + "setTimeout(Pompa" + dc.identificativo + ".createConnection(),5000);"
                             htmlCentralina = htmlCentralina + "</script>"
                             'un primo caricamento di info per indicare le fasi di connessione
                             htmlCentralina = htmlCentralina + "<div Class=""card card-default card-mini "">"
                             htmlCentralina = htmlCentralina + "<div Class=""card-header red"" >"
-                            htmlCentralina = htmlCentralina + "<h4>" + dc.identificativo + "</h4>"
+                            htmlCentralina = htmlCentralina + "<h5>" + dc.identificativo + "</h5>"
                             If Session("super_user") Then
                                 htmlCentralina = htmlCentralina + "<div class=""dropdown"">"
                                 htmlCentralina = htmlCentralina + "<a class=""dropdown-toggle icon-burger-mini"" href=""#"" role=""button"" id=""dropdownMenuLink"" data-toggle=""dropdown"" aria-haspopup=""true"" aria-expanded=""false""></a>"
@@ -397,8 +400,8 @@ Public Class dashboardAssets
             intestazione = intestazione + "</div></div>"
         End If
         intestazione = intestazione + "<div Class=""sub-title"" >"
-            'eeeeeeee da sostituitre  mdi-power-plug-off se disconnesso mdi-check-decagram se connesso
-            intestazione = intestazione + "<span Class=""mr-1"">" + nomeImpiantoDB + " </span><i class=""mdi eeeeeeee""></i>"
+        'eeeeeeee da sostituitre  mdi-power-plug-off se disconnesso mdi-check-decagram se connesso
+        intestazione = intestazione + "<span Class=""mr-1"">" + nomeImpiantoDB + " </span><i class=""mdi eeeeeeee""></i>"
         intestazione = intestazione + "</div></div>"
 
         'ffffffff da sostituire con eventuale stato di non connessione o allarme di flusso
@@ -2144,7 +2147,7 @@ Public Class dashboardAssets
         'dddddddd da sostituire con colore 
         intestazione = intestazione + "<div Class=""card-header dddddddd"">"
 
-        intestazione = intestazione + "<h4>" + id_strumento + " " + tipo_strumento_label + "</h>"
+        intestazione = intestazione + "<h4>" + id_strumento + " " + tipo_strumento_label + "</h4>"
         If Session("super_user") Then
             intestazione = intestazione + "<div Class=""dropdown"">"
             intestazione = intestazione + "<a Class=""dropdown-toggle icon-burger-mini"" href=""#"" role=""button"" id=""dropdownMenuLink"" data-toggle=""dropdown"" aria-haspopup=""true"" aria-expanded=""false""></a>"
@@ -2645,5 +2648,4 @@ nexLoopLabel:
         jsonVariable = jsonVariable + "]"
         Return jsonVariable
     End Function
-
 End Class

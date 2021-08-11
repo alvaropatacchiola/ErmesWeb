@@ -33,7 +33,8 @@ var OggettoPompa = function (options) {
         pumpCapacityGlobal: 0.0,
         arraySendData: [],
         statusSendData : false,
-        arrayIndiciProgrammazioniSettimanali:[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+        arrayIndiciProgrammazioniSettimanali: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        counterConnection : 0
     };
 
     this.construct = function (options) {
@@ -67,22 +68,40 @@ var OggettoPompa = function (options) {
 
     this.construct(options);
 
+    this.closeConnection = function () {
+        varsInternal.socket.close();
+        varsInternal.counterConnection = 4;
+    }
+
     this.createConnection = function () {
+        manageConnection();
+    }
+    function manageConnection() {
         console.log("verifica:" + varsInternal.stateConnection)
         messaggioTesto("Check Connection.");
 
         if (typeof (WebSocket) !== 'undefined') {
-            varsInternal.socket = new WebSocket("ws://localhost:10154/pompe/websocket.ashx");
+            varsInternal.socket = new WebSocket("ws://192.168.1.72/pompe/websocket.ashx");
         } else {
-            varsInternal.socket = new MozWebSocket("ws://localhost:10154/pompe/websocket.ashx");
+            varsInternal.socket = new MozWebSocket("ws://192.168.1.72/pompe/websocket.ashx");
         }
         varsInternal.socket.onclose = function () {
+            varsInternal.counterConnection = varsInternal.counterConnection + 1;
             alert("socket closed")
+            varsInternal.socket = null;
+            if (varsInternal.counterConnection < 3) {
+
+                manageConnection();
+                varsInternal.stateConnection = state.publish;
+            }
         }
         varsInternal.socket.onopen = function () {
             //alert("send Publish")
             //appena aperta connessione comincio a scaricare i dati dalla pompa
             varsInternal.socket.send("PUBLISH" + vars.serialNumber);
+        }
+        varsInternal.socket.onerror = function (msg) {
+            console.log ("error:" + msg)
         }
         varsInternal.socket.onmessage = function (msg) {
             varsInternal.reader = new FileReader();
@@ -92,7 +111,7 @@ var OggettoPompa = function (options) {
                 var array = new Uint8Array(data);
                 switch (varsInternal.stateConnection) {
                     case state.publish:
-                        if (((uint8arrayToStringMethod(array).indexOf("PUBLISHOK")) >= 0) ||((uint8arrayToStringMethod(array).indexOf("bsyR")) >= 0)) {
+                        if (((uint8arrayToStringMethod(array).indexOf("PUBLISHOK")) >= 0) || ((uint8arrayToStringMethod(array).indexOf("bsyR")) >= 0)) {
                             varsInternal.numeroTentativiRichieste = 0;
                             varsInternal.stateConnection = state.loadAllData;
                             clearTimeout(varsInternal.waitPompaVar); // blocco timeout
@@ -142,19 +161,19 @@ var OggettoPompa = function (options) {
                             $("#modalitaLavoro" + vars.serialNumber).text(varsInternal.languageJson.settingDownload);
                             //-----------------download dei setting della pompa o sync
 
-                                //if (varsInternal.indexGlobalProtocollo > (vars.arrayRisposteAll).length)
-                                //vars.arrayRisposteAll.push(array);//lo aggiungo se non presente
+                            //if (varsInternal.indexGlobalProtocollo > (vars.arrayRisposteAll).length)
+                            //vars.arrayRisposteAll.push(array);//lo aggiungo se non presente
                             //else
-                                 vars.arrayRisposteAll[varsInternal.indexGlobalProtocollo] = array;//lo aggiorno se già presente
-                                 clearTimeout(varsInternal.waitPompaVar); // blocco timeout
-                                 varsInternal.indexGlobalProtocollo++;
-                                 if (varsInternal.indexGlobalProtocollo >= (vars.arrayReadAll).length) {
-                                     varsInternal.indexGlobalProtocollo = 0;
-                                     varsInternal.stateConnection = state.readData;
-                                     
-                                     updateGraficaSetpoint();
-                                 }
-                                varsInternal.socket.send(createArraytoSend(vars.arrayReadAll))
+                            vars.arrayRisposteAll[varsInternal.indexGlobalProtocollo] = array;//lo aggiorno se già presente
+                            clearTimeout(varsInternal.waitPompaVar); // blocco timeout
+                            varsInternal.indexGlobalProtocollo++;
+                            if (varsInternal.indexGlobalProtocollo >= (vars.arrayReadAll).length) {
+                                varsInternal.indexGlobalProtocollo = 0;
+                                varsInternal.stateConnection = state.readData;
+
+                                updateGraficaSetpoint();
+                            }
+                            varsInternal.socket.send(createArraytoSend(vars.arrayReadAll))
                         }
                         break;
 
@@ -195,10 +214,9 @@ var OggettoPompa = function (options) {
                             //$("#statusNotConnection" + vars.serialNumber).hide();//
 
                             updateGrafica();
-                            
+
                             //controllo reload setpoint
-                            if (arrayToData(vars.arrayRisposteAll[0], 3 + 112, 1))
-                            {
+                            if (arrayToData(vars.arrayRisposteAll[0], 3 + 112, 1)) {
                                 console.log("Reload Setpoint")
                                 varsInternal.stateConnection = state.loadAllData;
                                 varsInternal.indexGlobalProtocollo = 0;
@@ -208,7 +226,7 @@ var OggettoPompa = function (options) {
                             }
 
                             clearTimeout(varsInternal.waitPompaVar); // blocco timeout
-                            
+
                             varsInternal.socket.send(createArraytoSend(vars.arrayReadAll))
                             varsInternal.indexGlobalProtocollo++;
                         }
@@ -239,7 +257,7 @@ var OggettoPompa = function (options) {
                                 varsInternal.statusSendData = false;
 
                                 $(".ModeSendLoad").hide();
-                                $(".progress-bar-animated").css("width",  "0%")
+                                $(".progress-bar-animated").css("width", "0%")
                                 $(".progress-bar-animated").css("aria - valuenow", "0")
 
                                 break;
@@ -643,14 +661,15 @@ var OggettoPompa = function (options) {
         // ---------------end Statistiche pompa
 
         //riserva
-        var riserva = arrayToData(vars.arrayRisposteAll[0], 3 + 18, 4);// 
+        var riserva = arrayToData(vars.arrayRisposteAll[0], 3 + 141, 4);// 
+        riserva = riserva / 10000;
         var riservaStringa = makeCalcoloLitriOrGallons(arrayToData(vars.arrayRisposteAll[0], 3 + 22, 1), riserva);
         unitaLitriOrGalloni = makeUnitLitriOrGallons(arrayToData(vars.arrayRisposteAll[0], 3 + 22, 1), riserva);
         $("#prismaRiserva").text(riservaStringa + " " + unitaLitriOrGalloni);
         //-----end riserva
 
         //portata istantanea
-        var portataIstantanea = makePortataIstantanea(arrayToData(vars.arrayRisposteAll[0], 3 + 23, 1), arrayToData(vars.arrayRisposteAll[0], 3 + 117, 2), arrayToData(vars.arrayRisposteAll[0], 3 + 24, 2));
+        var portataIstantanea = makePortataIstantanea(arrayToData(vars.arrayRisposteAll[0], 3 + 22, 1),arrayToData(vars.arrayRisposteAll[0], 3 + 23, 1), arrayToData(vars.arrayRisposteAll[0], 3 + 117, 2), arrayToData(vars.arrayRisposteAll[0], 3 + 24, 2));
         $("#prismaPortataIstantanea").text(portataIstantanea);
         //-----end portata istantanea
         $("#modalitaLavoro" + vars.serialNumber).text(testoModalitaLavoro);
@@ -1045,6 +1064,60 @@ var OggettoPompa = function (options) {
             $("#alarmOutOverPressureEnable").prop("checked", true)
 
         //end alarm out
+        //mail setting
+        var shiftIndex = 0;
+        var shiftOperation = arrayToData(vars.arrayRisposteAll[5], 3 + 31, 1)
+        console.log("shiftMail: " + shiftOperation)
+        for (shiftIndex = 0; shiftIndex < 8; shiftIndex++) {
+            var checkedTemp = false;
+            if (shiftOperation & 1) {
+                checkedTemp = true;
+            }
+            switch(shiftIndex)
+            {
+                case 0:
+                    $("#mailLevelEnable").prop("checked", checkedTemp)
+                 break;
+                case 1:
+                    $("#mailLevelWEnable").prop("checked", checkedTemp)
+                    break;
+                case 2:
+                    $("#mailStandbyEnable").prop("checked", checkedTemp)
+                    break;
+                case 3:
+                    $("#mailOverflowEnable").prop("checked", checkedTemp)
+                    break;
+                case 4:
+                    $("#mailOverflowWEnable").prop("checked", checkedTemp)
+                    break;
+
+                case 5:
+                    $("#mailtHighTempEnable").prop("checked", checkedTemp)
+                    break;
+                case 6:
+                    $("#mailNoInputEnable").prop("checked", checkedTemp)
+                    break;
+                case 7:
+                    $("#mailOverPressureEnable").prop("checked", checkedTemp)
+                    break;
+            }
+            shiftOperation = shiftOperation >> 1;
+        }
+        var maiText = "";
+        for (shiftIndex = 0; shiftIndex < 33; shiftIndex++) {
+            if (arrayToData(vars.arrayRisposteAll[5], 3 + 32 + shiftIndex, 1) > 0)
+                maiText = maiText + String.fromCharCode(arrayToData(vars.arrayRisposteAll[5], 3 + 32 + shiftIndex, 1))
+        }
+        maiText = maiText.replaceAll(" ","")
+        $("#mail1Alarm").val(maiText)
+        maiText = ""
+        for (shiftIndex = 0; shiftIndex < 33; shiftIndex++) {
+            if (arrayToData(vars.arrayRisposteAll[5], 3 + 65 + shiftIndex, 1) > 0)
+                    maiText = maiText + String.fromCharCode(arrayToData(vars.arrayRisposteAll[5], 3 + 65 + shiftIndex, 1))
+        }
+        maiText = maiText.replaceAll(" ", "")
+        $("#mail2Alarm").val(maiText)
+        //mail setting
         //----------more 
     }
     //-------------end grafica setpoint
@@ -1054,14 +1127,21 @@ var OggettoPompa = function (options) {
 
 
     //-----------------------funzioni di appoggio
-    function makePortataIstantanea(unit, pulse, waterMeter) {
+    function makePortataIstantanea(unit,factor, pulse, waterMeter) {
         var portataTemp = 0.0;
-        if(unit == 0)   //pulse/litro   o pulse/gall
+        if (factor == 0)   //pulse/litro   o pulse/gall
         {
             portataTemp = ((pulse * 600) * 1000) / waterMeter;
             console.log("portataIstantanea:" + portataTemp)
             //portataTemp = portataTemp / 1000;
-            if (portataTemp > 1000){
+
+        }
+        else{   //litri/pulse  o galloni/pulse
+            portataTemp = ((pulse * waterMeter * 60) * 1000) / 10;
+        }
+        if (unit == 0) //litri
+        {
+            if (portataTemp > 1000) {
                 portataTemp = portataTemp / 1000;
 
                 if (portataTemp > 1000) {
@@ -1070,12 +1150,11 @@ var OggettoPompa = function (options) {
                 }
                 else
                     return portataTemp.toFixed(3) + "l/h";
-             }
+            }
             else
                 return portataTemp.toString() + "ml/h";
         }
-        else{   //litri/pulse  o galloni/pulse
-            portataTemp = ((pulse * waterMeter * 60) * 1000) / 10;
+        else {
             portataTemp = portataTemp / 1000;
             return portataTemp.toFixed(3) + "Gal/h";
         }
@@ -1237,7 +1316,17 @@ var OggettoPompa = function (options) {
 
     });
 
-    
+    $('.mail').on('keypress keydown keyup', function () {
+        var email_re = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i;
+        var value_form = this.value;
+
+        $(this).next("div").remove();
+        if ((value_form.search(email_re) == -1)) {
+            $(this).after("<div class=\"text-danger small mt-1\">" + varsInternal.languageJsonSettingsMessage[$(this).attr("labelMSGError")] + "</div>");
+        }
+        else
+            $(this).after("<div class=\"text-success small mt-1\">" + varsInternal.languageJsonSettingsMessage[$(this).attr("labelMSG")] + "</div>");
+    });
 
     $('#pumpCapacityFlow').on('keypress keydown keyup', function () {
         varsInternal.pumpCapacityGlobal = parseInt($('#pumpCapacityFlow').val());
@@ -1959,6 +2048,62 @@ var OggettoPompa = function (options) {
         sendDataAnimation("dateTime");
 
     });
+    $("#mailModeSend").click(function () {
+        varsInternal.arraySendData = [];
+        arrayData = [];
+        var valoreInviare = 0;
+
+        if ($("#mailOverPressureEnable").is(':checked'))
+            valoreInviare = valoreInviare | 0x01;//enable
+        valoreInviare = valoreInviare << 1;
+        if ($("#mailNoInputEnable").is(':checked'))
+            valoreInviare = valoreInviare | 0x01;//enable
+        valoreInviare = valoreInviare << 1;
+        if ($("#mailtHighTempEnable").is(':checked'))
+            valoreInviare = valoreInviare | 0x01;//enable
+        valoreInviare = valoreInviare << 1;
+
+        if ($("#mailOverflowWEnable").is(':checked'))
+            valoreInviare = valoreInviare | 0x01;//enable
+        valoreInviare = valoreInviare << 1;
+
+        if ($("#mailOverflowEnable").is(':checked'))
+            valoreInviare = valoreInviare | 0x01;//enable
+        valoreInviare = valoreInviare << 1;
+        if ($("#mailStandbyEnable").is(':checked'))
+            valoreInviare = valoreInviare | 0x01;//enable
+        valoreInviare = valoreInviare << 1;
+
+        if ($("#mailLevelWEnable").is(':checked'))
+            valoreInviare = valoreInviare | 0x01;//enable
+        valoreInviare = valoreInviare << 1;
+
+        if ($("#mailLevelEnable").is(':checked'))
+            valoreInviare = valoreInviare | 0x01;//enable
+        arrayData = addDataToArray(arrayData, valoreInviare, 1);
+
+        var indiceInviare = 0;
+        var mailSend = $("#mail1Alarm").val()
+        for (indiceInviare = 0; indiceInviare < 33; indiceInviare++){
+            var code = 0
+            if (indiceInviare < mailSend.length)
+                code = mailSend.charCodeAt(indiceInviare);
+
+            arrayData = addDataToArray(arrayData, code, 1);
+        }
+        mailSend = $("#mail2Alarm").val()
+        for (indiceInviare = 0; indiceInviare < 33; indiceInviare++) {
+            var code = 0
+            if (indiceInviare < mailSend.length)
+                code = mailSend.charCodeAt(indiceInviare);
+
+            arrayData = addDataToArray(arrayData, code, 1);
+        }
+
+        varsInternal.arraySendData.push(makeArraySend(0x51, arrayData));
+
+        sendDataAnimation("mailMode");
+    });
     
     
     function makeUpKeepSend(valore1, valore2, valore3, valore4) {
@@ -2005,6 +2150,13 @@ var OggettoPompa = function (options) {
 
             varsInternal.indexGlobalProtocolloSendData = 0;
         }
+        else {
+            if (varsInternal.stateConnection != state.readData) {
+                $("#" + idLogic + "ModeSend").after("<div class=\"text-danger small mt-1\">" + varsInternal.languageJsonSettingsMessage["sendBusy"] + "</div>");
+            }
+        }
+        
+        
     }
     function addDataToArray(arrayData,intero,lunghezza){
         var i = 0;

@@ -77,6 +77,15 @@ Partial Public Class picker
     Protected WithEvents color As Global.System.Web.UI.WebControls.TextBox
     
     '''<summary>
+    '''Controllo color_links.
+    '''</summary>
+    '''<remarks>
+    '''Campo generato automaticamente.
+    '''Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
+    '''</remarks>
+    Protected WithEvents color_links As Global.System.Web.UI.WebControls.TextBox
+    
+    '''<summary>
     '''Controllo save_modifica_account_new.
     '''</summary>
     '''<remarks>

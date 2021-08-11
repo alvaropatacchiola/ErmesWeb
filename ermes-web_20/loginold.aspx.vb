@@ -307,8 +307,8 @@ Public Class loginold
         If qr IsNot Nothing And serial IsNot Nothing Then
             Response.Redirect("addimpianto.aspx?serial=" + serial)
         Else
-            Response.Redirect("dashboardAssets.aspx")
-            'Response.Redirect("dashboardNew.aspx")
+            'Response.Redirect("dashboardAssets.aspx")
+            Response.Redirect("dashboardNew.aspx")
         End If
     End Sub
 

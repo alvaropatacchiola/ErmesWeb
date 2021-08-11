@@ -107,9 +107,9 @@
 <line class="st1" x1="1.59" y1="104.64" x2="69.8" y2="104.64"/>
 </svg></div>
 
-			<a class="nav-item" id="slide1Click" href="#slide-1" style="display: none;"><i class="icon icon--rainy"></i><span>PIOGGIA FORTE</span></a>
-				<a class="nav-item" id="slide2Click" href="#slide-2" style="display: none;"><i class="icon icon--drizzle"></i><span>PIOGGIA DEBOLE</span></a>
-				<a class="nav-item" id="slide3Click" href="#slide-3" style="display: none;"><i class="icon icon--sun"></i><span>SERENO</span></a>
+			    <a class="nav-item" id="slide3Click" href="#slide-3" style="display: none;"><i class="icon icon--sun"></i><span>SERENO</span></a>
+			    <a class="nav-item" id="slide2Click" href="#slide-2" style="display: none;"><i class="icon icon--drizzle"></i><span>PIOGGIA DEBOLE</span></a>
+                <a class="nav-item" id="slide1Click" href="#slide-1" style="display: none;"><i class="icon icon--rainy"></i><span>PIOGGIA FORTE</span></a>
                 <a class="nav-item" id="slide4Click" href="#slide-4" style="display: none;"><i class="icon icon--storm"></i><span>NEVE</span></a><br>
 				<a class="nav-item" id="slide5Click" href="#slide-5" style="display: none;"><i class="icon icon--storm"></i><span>TEMPORALE</span></a><br>
 		</header>
@@ -226,11 +226,11 @@
             console.log(data.name,codiceMeteoNum)
             if ((codiceMeteoNum >= 1) && (codiceMeteoNum <= 4)) {
                 $("#particles").hide();
-                $('a')[2].click();//sole
+                $('a')[0].click();//sole
             }
             if ((codiceMeteoNum == 9)) {
                 $("#particles").hide();
-                $('a')[0].click();//pioggia forte
+                $('a')[2].click();//pioggia forte
             }
 
             if ((codiceMeteoNum == 10)) {
