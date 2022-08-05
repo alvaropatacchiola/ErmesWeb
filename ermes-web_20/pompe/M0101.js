@@ -1,6 +1,7 @@
 ﻿var state = { "publish": 0, "loadAllData": 1, "notConnected": 2, "readData": 3, "readSetpoint": 4, "sendData": 5, "busy": 6 };
 var milliseconds = 5000; //ms di timeout nella attesa di risposta
 var millisecondsRetry = 10000; //ms di timeout nel riprovare se è connsesa
+var stringaConnessione = "ws://192.168.1.72/pompe/websocket.ashx"
 /*$(document).ready(function () {
     console.log("ready!");
 });
@@ -81,13 +82,12 @@ var OggettoPompa = function (options) {
         messaggioTesto("Check Connection.");
 
         if (typeof (WebSocket) !== 'undefined') {
-            varsInternal.socket = new WebSocket("ws://192.168.1.72/pompe/websocket.ashx");
+            varsInternal.socket = new WebSocket(stringaConnessione);
         } else {
-            varsInternal.socket = new MozWebSocket("ws://192.168.1.72/pompe/websocket.ashx");
+            varsInternal.socket = new MozWebSocket(stringaConnessione);
         }
         varsInternal.socket.onclose = function () {
             varsInternal.counterConnection = varsInternal.counterConnection + 1;
-            alert("socket closed")
             varsInternal.socket = null;
             if (varsInternal.counterConnection < 3) {
 
@@ -625,19 +625,19 @@ var OggettoPompa = function (options) {
         //STATISTICHE PARZIALI - Quantità di liquido passata attraverso il contatore dalla data dell’ultimo reset delle statistiche. 
         var mcParziale = arrayToData(vars.arrayRisposteAll[0], 3 + 60, 8);// 
         var unitaMcOrGalloni = makeMcOrGallons(arrayToData(vars.arrayRisposteAll[0], 3 + 22, 1));
-        $("contatoreParziale").text(mcParziale + " " + unitaMcOrGalloni)
+        $("#contatoreParziale").text(mcParziale + " " + unitaMcOrGalloni)
         //-----------------end STATISTICHE PARZIALI - Quantità di liquido passata attraverso il contatore dalla data dell’ultimo reset delle statistiche. 
 
         //STATISTICHE PARZIALI -  Quantità di prodotto dosata dalle 00 alle 24 del giorno prima
         var dosatoParziale24 = arrayToData(vars.arrayRisposteAll[0], 3 + 68, 8);// 
         var dosatoParziale24Stringa = makeCalcoloLitriOrGallons(arrayToData(vars.arrayRisposteAll[0], 3 + 22, 1), dosatoParziale24);
         unitaLitriOrGalloni = makeUnitLitriOrGallons(arrayToData(vars.arrayRisposteAll[0], 3 + 22, 1), dosatoParziale24);
-        $("dosatoParzialeUltime24").text("24h : " + dosatoParziale24Stringa + " " + unitaLitriOrGalloni)
+        $("#dosatoParzialeUltime24").text("24h : " + dosatoParziale24Stringa + " " + unitaLitriOrGalloni)
         //-----------------end STATISTICHE PARZIALI -  Quantità di prodotto dosata dalle 00 alle 24 del giorno prima
 
         //STATISTICHE PARZIALI - Quantità  liquido  che passa attraverso il contatore dalle 00 alle 24 del giorno prima
         var mcParziale24 = arrayToData(vars.arrayRisposteAll[0], 3 + 76, 8);// 
-        $("contatoreParzialeUltime24").text("24h : " + mcParziale24 + " " + unitaMcOrGalloni);
+        $("#contatoreParzialeUltime24").text("24h : " + mcParziale24 + " " + unitaMcOrGalloni);
         //-----------------end STATISTICHE PARZIALI - Quantità  liquido  che passa attraverso il contatore dalle 00 alle 24 del giorno prima
 
         //var unitaMcOrGalloni = arrayToData(vars.arrayRisposteAll[0], 3 + 22, 1) == 1 ? "Gal" : ((dosaggioIstantaneo / 1000 > 0 && dosaggioIstantaneo / 1000 < 1) ? "mc" : "l")
@@ -692,7 +692,8 @@ var OggettoPompa = function (options) {
     {
         var variabileDiAppoggio = 0.0;
         var litriOraGalloniOra = "";
-        //software release
+        var unitaPumpCapacity = "";
+        var valorePumpCapacity = 0;
         
         $("#softwareReleaseNum").text((arrayToData(vars.arrayRisposteAll[1], 3 + 94, 1) / 10).toFixed(1));
         //end software release
@@ -760,9 +761,27 @@ var OggettoPompa = function (options) {
 
         }
 
+        variabileDiAppoggio = arrayToData(vars.arrayRisposteAll[0], 3 + 31, 4);// Quantità da dosare in modalità costante espressa in L/h (Gal/h), con tre cifre decimali. 
+        unitaPumpCapacity = makeUnitLitriOrGallonsHora(arrayToData(vars.arrayRisposteAll[0], 3 + 22, 1), variabileDiAppoggio);
+        valorePumpCapacity = variabileDiAppoggio / 1000;
+        var indiceTraduzione = 0;
+        //console.log("lunghezza messaggi:" + varsInternal.languageJsonSettingsMessage.count)
+        //for (indiceTraduzione = 0; indiceTraduzione < varsInternal.languageJsonSettingsMessage.length; indiceTraduzione++) {
+        for (element in varsInternal.languageJsonSettingsMessage){
+            if (varsInternal.languageJsonSettingsMessage[element].indexOf("xxxx") > 0) {
+                varsInternal.languageJsonSettingsMessage[element] = varsInternal.languageJsonSettingsMessage[element].replaceAll("xxxx", unitaPumpCapacity)
+            }
+        if (varsInternal.languageJsonSettingsMessage[element].indexOf("yyyy") > 0) {
+            varsInternal.languageJsonSettingsMessage[element] = varsInternal.languageJsonSettingsMessage[element].replaceAll("yyyy", valorePumpCapacity.toFixed(3))
+            }
+
+        }
+        
+
         //modalità costante
         variabileDiAppoggio = arrayToData(vars.arrayRisposteAll[1], 3 + 3, 4);// Quantità da dosare in modalità costante espressa in L/h (Gal/h), con tre cifre decimali. 
         litriOraGalloniOra = makeUnitLitriOrGallonsHora(arrayToData(vars.arrayRisposteAll[0], 3 + 22, 1), variabileDiAppoggio);
+        setIntervalCapacity("constantDosaggio", valorePumpCapacity, unitaPumpCapacity);
         $("#constantDosaggio").attr("placeholder",litriOraGalloniOra)
         $("#constantDosaggio").val((variabileDiAppoggio / 1000).toFixed(3))
         $("#constantDosaggioUnit").text( litriOraGalloniOra)
@@ -799,6 +818,7 @@ var OggettoPompa = function (options) {
         variabileDiAppoggio = arrayToData(vars.arrayRisposteAll[1], 3 + 88, 4);// Quantità da dosare in modalità costante espressa in L/h (Gal/h), con tre cifre decimali. 
         litriOraGalloniOra = makeUnitLitriOrGallonsHora(arrayToData(vars.arrayRisposteAll[0], 3 + 22, 1), variabileDiAppoggio);
         $("#upkeepDosaggioPPM").attr("placeholder", litriOraGalloniOra)
+        setIntervalCapacity("upkeepDosaggioPPM", valorePumpCapacity, unitaPumpCapacity);
         $("#upkeepDosaggioPPM").val((variabileDiAppoggio / 1000).toFixed(3))
         $("#upkeepDosaggioPPMUnit").text(litriOraGalloniOra)
         //end modalita ppm
@@ -814,6 +834,7 @@ var OggettoPompa = function (options) {
         variabileDiAppoggio = arrayToData(vars.arrayRisposteAll[1], 3 + 88, 4);// Quantità da dosare in modalità costante espressa in L/h (Gal/h), con tre cifre decimali. 
         litriOraGalloniOra = makeUnitLitriOrGallonsHora(arrayToData(vars.arrayRisposteAll[0], 3 + 22, 1), variabileDiAppoggio);
         $("#upkeepDosaggioPerc").attr("placeholder", litriOraGalloniOra)
+        setIntervalCapacity("upkeepDosaggioPerc", valorePumpCapacity, unitaPumpCapacity);
         $("#upkeepDosaggioPerc").val((variabileDiAppoggio / 1000).toFixed(3))
         $("#upkeepDosaggioPercUnit").text(litriOraGalloniOra)
 
@@ -831,8 +852,9 @@ var OggettoPompa = function (options) {
         variabileDiAppoggio = arrayToData(vars.arrayRisposteAll[1], 3 + 88, 4);// Quantità da dosare in modalità costante espressa in L/h (Gal/h), con tre cifre decimali. 
         litriOraGalloniOra = makeUnitLitriOrGallonsHora(arrayToData(vars.arrayRisposteAll[0], 3 + 22, 1), variabileDiAppoggio);
         $("#upkeepDosaggiomlq").attr("placeholder", litriOraGalloniOra)
+        setIntervalCapacity("upkeepDosaggiomlq", valorePumpCapacity, unitaPumpCapacity);
         $("#upkeepDosaggiomlq").val((variabileDiAppoggio / 1000).toFixed(3))
-        $("#upkeepDosaggiomlqcUnit").text(litriOraGalloniOra)
+        $("#upkeepDosaggiomlqUnit").text(litriOraGalloniOra)
 
         //-------------end grafica setpoint mlq
         //modalità batch
@@ -849,6 +871,7 @@ var OggettoPompa = function (options) {
         variabileDiAppoggio = arrayToData(vars.arrayRisposteAll[1], 3 + 33, 4);// Quantità da dosare in modalità costante espressa in L/h (Gal/h), con tre cifre decimali. 
         litriOraGalloniOra = makeUnitLitriOrGallonsHora(arrayToData(vars.arrayRisposteAll[0], 3 + 22, 1), variabileDiAppoggio);
         $("#voltHighDosaggio").attr("placeholder", litriOraGalloniOra)
+        setIntervalCapacity("voltHighDosaggio", valorePumpCapacity, unitaPumpCapacity);
         $("#voltHighDosaggio").val((variabileDiAppoggio / 1000).toFixed(3))
         $("#voltHighDosaggioUnit").text(litriOraGalloniOra)
 
@@ -859,6 +882,7 @@ var OggettoPompa = function (options) {
         litriOraGalloniOra = makeUnitLitriOrGallonsHora(arrayToData(vars.arrayRisposteAll[0], 3 + 22, 1), variabileDiAppoggio);
         $("#voltLowDosaggio").attr("placeholder", litriOraGalloniOra)
         $("#voltLowDosaggio").val((variabileDiAppoggio / 1000).toFixed(3))
+        setIntervalCapacity("voltLowDosaggio", valorePumpCapacity, unitaPumpCapacity);
         $("#voltLowDosaggioUnit").text(litriOraGalloniOra)
         //-------------end modalità volt
 
@@ -868,6 +892,7 @@ var OggettoPompa = function (options) {
         variabileDiAppoggio = arrayToData(vars.arrayRisposteAll[1], 3 + 45, 4);// Quantità da dosare in modalità costante espressa in L/h (Gal/h), con tre cifre decimali. 
         litriOraGalloniOra = makeUnitLitriOrGallonsHora(arrayToData(vars.arrayRisposteAll[0], 3 + 22, 1), variabileDiAppoggio);
         $("#maHighDosaggio").attr("placeholder", litriOraGalloniOra)
+        setIntervalCapacity("maHighDosaggio", valorePumpCapacity, unitaPumpCapacity);
         $("#maHighDosaggio").val((variabileDiAppoggio / 1000).toFixed(3))
         $("#maHighDosaggioUnit").text(litriOraGalloniOra)
 
@@ -877,6 +902,7 @@ var OggettoPompa = function (options) {
         variabileDiAppoggio = arrayToData(vars.arrayRisposteAll[1], 3 + 49, 4);// Quantità da dosare in modalità costante espressa in L/h (Gal/h), con tre cifre decimali. 
         litriOraGalloniOra = makeUnitLitriOrGallonsHora(arrayToData(vars.arrayRisposteAll[0], 3 + 22, 1), variabileDiAppoggio);
         $("#maLowDosaggio").attr("placeholder", litriOraGalloniOra)
+        setIntervalCapacity("maLowDosaggio", valorePumpCapacity, unitaPumpCapacity);
         $("#maLowDosaggio").val((variabileDiAppoggio / 1000).toFixed(3))
         $("#maLowDosaggioUnit").text(litriOraGalloniOra)
         //-------------end modalità volt
@@ -886,6 +912,7 @@ var OggettoPompa = function (options) {
         variabileDiAppoggio = arrayToData(vars.arrayRisposteAll[1], 3 + 57, 4);// Quantità da dosare in modalità costante espressa in L/h (Gal/h), con tre cifre decimali. 
         litriOraGalloniOra = makeUnitLitriOrGallonsHora(arrayToData(vars.arrayRisposteAll[0], 3 + 22, 1), variabileDiAppoggio);
         $("#pulseHighDosaggio").attr("placeholder", litriOraGalloniOra)
+        setIntervalCapacity("pulseHighDosaggio", valorePumpCapacity, unitaPumpCapacity);
         $("#pulseHighDosaggio").val((variabileDiAppoggio / 1000).toFixed(3))
         $("#pulseHighDosaggioUnit").text(litriOraGalloniOra)
 
@@ -895,6 +922,7 @@ var OggettoPompa = function (options) {
         variabileDiAppoggio = arrayToData(vars.arrayRisposteAll[1], 3 + 61, 4);// Quantità da dosare in modalità costante espressa in L/h (Gal/h), con tre cifre decimali. 
         litriOraGalloniOra = makeUnitLitriOrGallonsHora(arrayToData(vars.arrayRisposteAll[0], 3 + 22, 1), variabileDiAppoggio);
         $("#pulseLowDosaggio").attr("placeholder", litriOraGalloniOra)
+        setIntervalCapacity("pulseLowDosaggio", valorePumpCapacity, unitaPumpCapacity);
         $("#pulseLowDosaggio").val((variabileDiAppoggio / 1000).toFixed(3))
         $("#pulseLowDosaggioUnit").text(litriOraGalloniOra)
         //-------------end modalità pulse
@@ -907,6 +935,7 @@ var OggettoPompa = function (options) {
         variabileDiAppoggio = arrayToData(vars.arrayRisposteAll[1], 3 + 69, 4);// Quantità da dosare in modalità costante espressa in L/h (Gal/h), con tre cifre decimali. 
         litriOraGalloniOra = makeUnitLitriOrGallonsHora(arrayToData(vars.arrayRisposteAll[0], 3 + 22, 1), variabileDiAppoggio);
         $("#pausalavoroDosaggio").attr("placeholder", litriOraGalloniOra)
+        setIntervalCapacity("pausalavoroDosaggio", valorePumpCapacity, unitaPumpCapacity);
         $("#pausalavoroDosaggio").val((variabileDiAppoggio / 1000).toFixed(3))
         $("#pausalavoroDosaggioUnit").text(litriOraGalloniOra)
 
@@ -936,7 +965,7 @@ var OggettoPompa = function (options) {
             for (k = 0; k < limitWeek; k++) {
                 makeWeeklyProgram(arrayToData(vars.arrayRisposteAll[2 + j], 3 + (1 + k * 10), 1), arrayToData(vars.arrayRisposteAll[2 + j], 3 + (2 + k * 10), 1),arrayToData(vars.arrayRisposteAll[2 + j], 3 + (3 + k * 10), 1), arrayToData(vars.arrayRisposteAll[1], 3 + 93, 1),
                                    arrayToData(vars.arrayRisposteAll[2+j], 3 + (4+k*10), 1), arrayToData(vars.arrayRisposteAll[2+j], 3 + (5+k*10), 1), arrayToData(vars.arrayRisposteAll[2+j], 3 + (6+k*10), 4),
-                                   arrayToData(vars.arrayRisposteAll[2 + j], 3 + (10 + k * 10), 1), "weeklyP" + (counterWeek).toString())
+                                   arrayToData(vars.arrayRisposteAll[2 + j], 3 + (10 + k * 10), 1), "weeklyP" + (counterWeek).toString(), valorePumpCapacity, unitaPumpCapacity)
                 counterWeek = counterWeek + 1;
             }
         }
@@ -1000,6 +1029,8 @@ var OggettoPompa = function (options) {
         variabileDiAppoggio = arrayToData(vars.arrayRisposteAll[0], 3 + 48, 4);// Quantità da dosare in modalità costante espressa in L/h (Gal/h), con tre cifre decimali. 
         litriOraGalloniOra = makeUnitLitriOrGallonsHora(arrayToData(vars.arrayRisposteAll[0], 3 + 22, 1), variabileDiAppoggio);
         $("#externalInputQuantity").attr("placeholder", litriOraGalloniOra)
+        setIntervalCapacity("externalInputQuantity", valorePumpCapacity, unitaPumpCapacity);
+
         $("#externalInputQuantity").val((variabileDiAppoggio / 1000).toFixed(3))
         $("#externalInputQuantityUnit").text(litriOraGalloniOra)
 
@@ -1127,6 +1158,11 @@ var OggettoPompa = function (options) {
 
 
     //-----------------------funzioni di appoggio
+    function setIntervalCapacity(id, valorePumpCapacity, unitaPumpCapacity)
+    {
+        $("#" + id).attr("max", valorePumpCapacity.toFixed(3))
+
+    }
     function makePortataIstantanea(unit,factor, pulse, waterMeter) {
         var portataTemp = 0.0;
         if (factor == 0)   //pulse/litro   o pulse/gall
@@ -1163,10 +1199,12 @@ var OggettoPompa = function (options) {
         return unit == 1 ? "Gal" : "mc"
     }
     function makeUnitLitriOrGallons(unit, inputData) {
-        return unit == 1 ? "Gal" : ((inputData / 1000 > 0 && inputData / 1000 < 1) ? "ml" : "l")
+        //return unit == 1 ? "Gal" : ((inputData / 1000 > 0 && inputData / 1000 < 1) ? "ml" : "l")
+        return unit == 1 ? "Gal" : ("l")
     }
     function makeUnitLitriOrGallonsHora(unit, inputData) {
-        return unit == 1 ? "Gal/h" : ((inputData / 1000 > 0 && inputData / 1000 < 1) ? "ml/h" : "l/h")
+        //return unit == 1 ? "Gal/h" : ((inputData / 1000 > 0 && inputData / 1000 < 1) ? "ml/h" : "l/h")
+        return unit == 1 ? "Gal/h" : ("l/h")
     }
 
     function makeCalcoloLitriOrGallons(unit,inputData)
@@ -1245,7 +1283,7 @@ var OggettoPompa = function (options) {
         $("#" + MinutiSetpoint + "> [value=" + arrayToData(vars.arrayRisposteAll[1], 3 + 87, 1).toString() + "]").prop("selected", true)
     }
 
-    function makeWeeklyProgram(programEnableDisable, ore, minuti, formato, oreDurata,minutiDurata, weeklyDosaggio, weeklySettimana, nomeOggetto) {
+    function makeWeeklyProgram(programEnableDisable, ore, minuti, formato, oreDurata, minutiDurata, weeklyDosaggio, weeklySettimana, nomeOggetto, valorePumpCapacity, unitaPumpCapacity) {
         
         if (programEnableDisable == 1) { // weekly 1 abilitato
             $("#" + nomeOggetto).prop("checked", true)
@@ -1256,6 +1294,9 @@ var OggettoPompa = function (options) {
             variabileDiAppoggio = weeklyDosaggio;// Quantità da dosare in modalità costante espressa in L/h (Gal/h), con tre cifre decimali. 
             litriOraGalloniOra = makeUnitLitriOrGallonsHora(arrayToData(vars.arrayRisposteAll[0], 3 + 22, 1), variabileDiAppoggio);
             $("#" + nomeOggetto + "Dosaggio").attr("placeholder", litriOraGalloniOra)
+
+            setIntervalCapacity(nomeOggetto + "Dosaggio", valorePumpCapacity, unitaPumpCapacity);
+
             $("#" + nomeOggetto + "Dosaggio").val((variabileDiAppoggio / 1000).toFixed(3))
             $("#" + nomeOggetto + "DosaggioUnit").text(litriOraGalloniOra)
             var shiftOperation = weeklySettimana;
@@ -1698,6 +1739,12 @@ var OggettoPompa = function (options) {
         arrayData = [];
         varsInternal.arraySendData.push(makeArraySend(0x0C, addDataToArray(arrayData, 6, 1))); //volt
 
+
+        if (parseFloat($("#voltHighSetpoint").val()) < parseFloat($("#voltLowSetpoint").val())){ //high non può essere inferiore a low 
+            $("#voltModeSend").next("div").remove();
+                $("#voltModeSend").after("<div class=\"text-danger small mt-1\">" + varsInternal.languageJsonSettingsMessage["sendErrorRange"] + "</div>");
+                return false;
+        }
         arrayData = [];
         var valoreInviare = Math.floor(parseFloat($("#voltHighSetpoint").val()) * 10);
         arrayData = addDataToArray(arrayData, parseInt(valoreInviare), 2);
@@ -1708,6 +1755,7 @@ var OggettoPompa = function (options) {
         valoreInviare = Math.floor(parseFloat($("#voltLowDosaggio").val()) * 1000);
         arrayData = addDataToArray(arrayData, parseInt(valoreInviare), 4);
         varsInternal.arraySendData.push(makeArraySend(0x12, arrayData));
+
 
         //comando fine scrittura
         arrayData = [];
@@ -1721,6 +1769,12 @@ var OggettoPompa = function (options) {
 
         arrayData = [];
         varsInternal.arraySendData.push(makeArraySend(0x0C, addDataToArray(arrayData, 7, 1))); //ma
+
+        if (parseFloat($("#maHighSetpoint").val()) < parseFloat($("#maLowSetpoint").val())) { //high non può essere inferiore a low 
+            $("#maModeSend").next("div").remove();
+                $("#maModeSend").after("<div class=\"text-danger small mt-1\">" + varsInternal.languageJsonSettingsMessage["sendErrorRange"] + "</div>");
+                return false;
+        }
 
         arrayData = [];
         var valoreInviare = Math.floor(parseFloat($("#maHighSetpoint").val()) * 10);
@@ -1745,6 +1799,12 @@ var OggettoPompa = function (options) {
 
         arrayData = [];
         varsInternal.arraySendData.push(makeArraySend(0x0C, addDataToArray(arrayData, 8, 1))); //pulse
+        if (parseFloat($("#pulseHighSetpoint").val()) < parseFloat($("#pulseLowSetpoint").val())) { //high non può essere inferiore a low 
+            $("#pulseModeSend").next("div").remove();
+                $("#pulseModeSend").after("<div class=\"text-danger small mt-1\">" + varsInternal.languageJsonSettingsMessage["sendErrorRange"] + "</div>");
+                return false;
+        }
+
 
         arrayData = [];
         var valoreInviare = Math.floor(parseFloat($("#pulseHighSetpoint").val()) * 1);

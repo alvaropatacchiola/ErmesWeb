@@ -19,8 +19,8 @@ var OggettoPompaSub = function (options) {
     this.construct = function (options) {
         $.extend(vars, options);
         //console.log("lingua:" + t0101[vars.languageSet]);
-        varsInternal.languageJson = jQuery.parseJSON(t0101[vars.languageSet]);
-        varsInternal.languageJsonWarningAlarm = jQuery.parseJSON(t0101AlarmWarning[vars.languageSet]);
+        varsInternal.languageJson = jQuery.parseJSON(t0201[vars.languageSet]);
+        varsInternal.languageJsonWarningAlarm = jQuery.parseJSON(t0201AlarmWarning[vars.languageSet]);
 
 
     };
@@ -34,7 +34,7 @@ var OggettoPompaSub = function (options) {
         //-----------------download dei setting della pompa o sync
     }
     this.checkReSyncSetpoint = function () {
-        return (arrayToData(varsInternal.arrayReadRealTimeResult[0], 3 + 112, 1))
+        return (arrayToData(varsInternal.arrayReadRealTimeResult[0], 3 + 81, 1))
     }
 
 
@@ -57,7 +57,7 @@ var OggettoPompaSub = function (options) {
         //-----------------parametri impianto
         $("#plantName" + vars.serialNumber).text(vars.plantName);
 
-        $("#pumpLabel" + vars.serialNumber).text("Prisma - " + vars.serialNumber);
+        $("#pumpLabel" + vars.serialNumber).text("LD OSIN - " + vars.serialNumber);
 
         $("#modalitaLavoro" + vars.serialNumber).text(varsInternal.languageJson.settingDownload);
         $("#hrefNext" + vars.serialNumber).attr("href", "pompe/M" + vars.pumpCode + ".aspx?serial=" + vars.serialNumber);
@@ -85,12 +85,20 @@ var OggettoPompaSub = function (options) {
     // modifica grafica in funzione del protocollo
     function updateGrafica() {
         var testoModalitaLavoro = '';
-        var testoDosaggioIstantaneo = '';
-        var dosaggioIstantaneo = 0.0;
-        var testoUnitadiMisura = '';
-        var testoFrequenza = '';
-        var testoSlowMode = '';
-        var testoPulseMinute = '';
+        var testoUscitaConducibilita = '';
+        var uscitaConducibilita = 0.0;
+        var testoUnitadiMisuraUscitaConducibilita = '';
+        var numeroSondaConversione = 0;
+        var minutiSecondiLavaggio=''
+
+        var testoIngressoConducibilita = '';
+        var ingressoConducibilita = 0.0;
+        var testoUnitadiMisuraIngressoConducibilita = '';
+
+        var temperatura = 0.0;
+        var testoTemperatura = '';
+        var unitaTemperatura = '';
+
         var statoWarning = false;
         var txtWarning = "";
         var statoStby = false;
@@ -98,135 +106,75 @@ var OggettoPompaSub = function (options) {
         var statoAllarme = false;
         var txtAllarme = "";
 
-        var startDelay = 0;
-        var startDelayMinuti = 0;
-        var startDelaySecondi = 0;
         if ((varsInternal.arrayReadSetpointResult).length > 0) {
+            // --------------------conducibilità in uscita
+            switch(arrayToData(varsInternal.arrayReadSetpointResult[0], 3 + 13, 2))
+            {
+                case 0:
+                    numeroSondaConversione=24;
+                    break;
+                case 1:
+                case 2:
+                    numeroSondaConversione = 25;
+                    break;
+                case 3:
+                    numeroSondaConversione = 26;
+                    break;
+                case 4:
+                    numeroSondaConversione = 27;
+                    break;
 
-            startDelay = arrayToData(varsInternal.arrayReadRealTimeResult[0], 3 + 138, 1);
-            startDelayMinuti = arrayToData(varsInternal.arrayReadRealTimeResult[0], 3 + 139, 1);
-            startDelaySecondi = arrayToData(varsInternal.arrayReadRealTimeResult[0], 3 + 140, 1);
+            }
+            uscitaConducibilita = arrayToData(varsInternal.arrayReadRealTimeResult[0], 3 + 33, 2) / getFattoreDivisioneSonda(5, numeroSondaConversione);// conducibilità in uscita
+            testoUscitaConducibilita = uscitaConducibilita.toFixed(getNumeroDecimaliSonda(5, numeroSondaConversione));
+            testoUnitadiMisuraUscitaConducibilita = getValoreLabelJson(5, numeroSondaConversione);
+            // --------------------end conducibilità in uscita
+            // --------------------conducibilità in ingresso
+            switch (arrayToData(varsInternal.arrayReadSetpointResult[0], 3 + 3, 2)) {
+                case 0:
+                    numeroSondaConversione = 24;
+                    break;
+                case 1:
+                case 2:
+                    numeroSondaConversione = 25;
+                    break;
+                case 3:
+                    numeroSondaConversione = 26;
+                    break;
+                case 4:
+                    numeroSondaConversione = 27;
+                    break;
 
-            dosaggioIstantaneo = arrayToData(varsInternal.arrayReadRealTimeResult[0], 3 + 8, 4);// valore del dosaggio istantaneo
-            // se Galloni scrivo x.xxx gal/h se litri sscrivo: xxx ml/h se <1 altrimenti x.xxx l/h
-            testoDosaggioIstantaneo = arrayToData(varsInternal.arrayReadRealTimeResult[0], 3 + 22, 1) == 1 ? (dosaggioIstantaneo / 1000).toFixed(3) : ((dosaggioIstantaneo / 1000 > 0 && dosaggioIstantaneo / 1000 < 1) ? dosaggioIstantaneo.toString() : (dosaggioIstantaneo / 1000).toFixed(3))
-            testoUnitadiMisura = arrayToData(varsInternal.arrayReadRealTimeResult[0], 3 + 22, 1) == 1 ? "Gal/h" : ((dosaggioIstantaneo / 1000 > 0 && dosaggioIstantaneo / 1000 < 1) ? "ml/h" : "l/h")
-
-            //Velocità di rotazione del motore, con 1 ciffre decimali, espressa in %.Da0%a 100% 
-            testoFrequenza = (arrayToData(varsInternal.arrayReadRealTimeResult[0], 3 + 12, 4) / 1000) == 100.0 ? "100 %" : (arrayToData(varsInternal.arrayReadRealTimeResult[0], 3 + 12, 4) / 1000).toFixed(3) + "%";
-            //SLOW MODE
-            testoSlowMode = (arrayToData(varsInternal.arrayReadRealTimeResult[0], 3 + 35, 1)).toFixed(1) + "%";
-            //console.log(testoUnitadiMisura)
-            switch (arrayToData(varsInternal.arrayReadSetpointResult[0], 3 + 1, 1)) { // gestione ON / OFF
+            }
+            ingressoConducibilita = arrayToData(varsInternal.arrayReadRealTimeResult[0], 3 + 5, 2) / getFattoreDivisioneSonda(5, numeroSondaConversione);// conducibilità in uscita
+            testoIngressoConducibilita = ingressoConducibilita.toFixed(getNumeroDecimaliSonda(5, numeroSondaConversione));
+            testoUnitadiMisuraIngressoConducibilita = getValoreLabelJson(5, numeroSondaConversione);
+            // --------------------end conducibilità in ingresso
+            // --------------------temperature
+            temperatura = arrayToData(varsInternal.arrayReadRealTimeResult[0], 3 + 3, 2) / 10;
+            testoTemperatura = temperatura.toFixed(1);
+            unitaTemperatura = "°C";
+            // --------------------end temperature
+            switch (arrayToData(varsInternal.arrayReadRealTimeResult[0], 3 + 1, 2)) { // gestione ON / OFF
                 case 0:// OFF
                     testoModalitaLavoro = varsInternal.languageJson.pumpOff;
                     testoDosaggioIstantaneo = "0"
                     break;
                 case 1:// ON
-                    if (startDelay > 0) {
-                        testoModalitaLavoro = varsInternal.languageJson.startDelay
-                        testoDosaggioIstantaneo = (startDelayMinuti < 10 ? "0" + startDelayMinuti.toString() : startDelayMinuti.toString()) + " . " + (startDelaySecondi < 10 ? "0" + startDelaySecondi.toString() : startDelaySecondi.toString())
-                        testoUnitadiMisura = "";
-                        break;
-                    }
-                    switch (arrayToData(varsInternal.arrayReadSetpointResult[0], 3 + 2, 1)) { // gestione modalità di lavoro
-                        case 0://Constant
-                            testoModalitaLavoro = varsInternal.languageJson.modalita0;
-                            //ok niente per cui nascosto
-                            $("#valore1" + vars.serialNumber).hide();
+                    switch (arrayToData(varsInternal.arrayReadRealTimeResult[0], 3 + 13, 2))
+                    {
+                        case 0://nessuna azione
+                            testoModalitaLavoro = ""
                             break;
-                        case 1://cc per pulse
-                            testoModalitaLavoro = varsInternal.languageJson.modalita1;
-                            //ok p/m netto
-                            $("#valore1" + vars.serialNumber).show();
-                            testoPulseMinute = arrayToData(varsInternal.arrayReadRealTimeResult[0], 3 + 117, 2).toString() + "P/m"
+                        case 1://Produzione 
+                            testoModalitaLavoro = varsInternal.languageJson.produzione;
                             break;
-                        case 2://ppm
-                            testoModalitaLavoro = varsInternal.languageJson.modalita2;
-                            //ok p/m netto
-                            $("#valore1" + vars.serialNumber).show();
-                            if (checkUpKeep())
-                                testoPulseMinute = upKeepStr();
-                            else
-                                testoPulseMinute = arrayToData(varsInternal.arrayReadRealTimeResult[0], 3 + 117, 2).toString() + "P/m"
+                        case 2://Attesa 
+                            testoModalitaLavoro = varsInternal.languageJson.attesa;
                             break;
-                        case 3://perc
-                            testoModalitaLavoro = varsInternal.languageJson.modalita3;
-                            //ok p/m netto
-                            $("#valore1" + vars.serialNumber).show();
-                            if (checkUpKeep())
-                                testoPulseMinute = upKeepStr();
-                            else
-                                testoPulseMinute = arrayToData(varsInternal.arrayReadRealTimeResult[0], 3 + 117, 2).toString() + "P/m"
-                            break;
-                        case 4://MLQ
-                            testoModalitaLavoro = varsInternal.languageJson.modalita4;
-                            //ok p/m netto
-                            $("#valore1" + vars.serialNumber).show();
-                            if (checkUpKeep())
-                                testoPulseMinute = upKeepStr();
-                            else
-                                testoPulseMinute = arrayToData(varsInternal.arrayReadRealTimeResult[0], 3 + 117, 2).toString() + "P/m"
-                            break;
-                        case 5://batch
-                            testoModalitaLavoro = varsInternal.languageJson.modalita5;
-                            //ok litri o gal con tre decimali dopo la virgola con regola sotto a 1 scrivo ml galloni no.
-                            //var litriOGalloni = arrayToData(varsInternal.arrayReadRealTimeResult[0], 3 + 117, 2);// valore del dosaggio istantaneo
-                            var litriOGalloni = arrayToData(varsInternal.arrayReadRealTimeResult[0], 3 + 125, 8) / 10000;// valore del dosaggio istantaneo
-                            testoPulseMinute = arrayToData(varsInternal.arrayReadRealTimeResult[0], 3 + 22, 1) == 1 ? (litriOGalloni / 1000).toFixed(3) + " Gal" : ((litriOGalloni / 1000 > 0 && litriOGalloni / 1000 < 1) ? litriOGalloni.toString() + " mL" : (litriOGalloni / 1000).toFixed(3) + " L")
-                            $("#valore1" + vars.serialNumber).show();
-                            break;
-                        case 6://volt
-                            testoModalitaLavoro = varsInternal.languageJson.modalita6;
-                            //ok volt diviso 10 Volt
-                            $("#valore1" + vars.serialNumber).show();
-                            testoPulseMinute = (arrayToData(varsInternal.arrayReadRealTimeResult[0], 3 + 117, 2) / 10).toFixed(1) + "V"
-                            break;
-                        case 7://mA
-                            testoModalitaLavoro = varsInternal.languageJson.modalita7;
-                            //ok mA diviso 10 mA
-                            $("#valore1" + vars.serialNumber).show();
-                            testoPulseMinute = (arrayToData(varsInternal.arrayReadRealTimeResult[0], 3 + 117, 2) / 10).toFixed(1) + "mA"
-                            break;
-                        case 8://pulse
-                            testoModalitaLavoro = varsInternal.languageJson.modalita8;
-                            //ok p/m netto
-                            $("#valore1" + vars.serialNumber).show();
-                            testoPulseMinute = arrayToData(varsInternal.arrayReadRealTimeResult[0], 3 + 117, 2).toString() + "P/m"
-                            break;
-                        case 9://pause - work
-                            testoModalitaLavoro = varsInternal.languageJson.modalita9;
-                            //ok tempo in m:s
-                            $("#valore1" + vars.serialNumber).show();
-                            if (arrayToData(varsInternal.arrayReadRealTimeResult[0], 3 + 113, 1) == 1) {// sto in pause
-                                testoPulseMinute = varsInternal.languageJson.pauseText + " " + arrayToData(varsInternal.arrayReadRealTimeResult[0], 3 + 121, 1).toString() + ":" + arrayToData(varsInternal.arrayReadRealTimeResult[0], 3 + 122, 1).toString()
-                            }
-                            else {//sto in lavoro
-                                testoPulseMinute = varsInternal.languageJson.workText + " " + arrayToData(varsInternal.arrayReadRealTimeResult[0], 3 + 121, 1).toString() + ":" + arrayToData(varsInternal.arrayReadRealTimeResult[0], 3 + 122, 1).toString()
-                            }
-                            break;
-                        case 10://weekly
-                            testoModalitaLavoro = varsInternal.languageJson.modalita10;
-
-                            $("#valore1" + vars.serialNumber).show();
-                            //ok litri o gal con tre decimali dopo la virgola con regola sotto a 1 scrivo ml galloni no.
-                            var litriOGalloni = arrayToData(varsInternal.arrayReadRealTimeResult[0], 3 + 125, 8) / 100;// valore del dosaggio istantaneo
-                            if (arrayToData(varsInternal.arrayReadRealTimeResult[0], 3 + 114, 1) == 1) {//start
-                                testoPulseMinute = arrayToData(varsInternal.arrayReadRealTimeResult[0], 3 + 22, 1) == 1 ? (litriOGalloni / 1000).toFixed(3) + " Gal" : ((litriOGalloni / 1000 > 0 && litriOGalloni / 1000 < 1) ? litriOGalloni.toString() + " mL" : (litriOGalloni / 1000).toFixed(3) + " L")
-                            }
-                            else {//stop  nex prog
-                                testoPulseMinute = "Next Prog P" + (arrayToData(varsInternal.arrayReadRealTimeResult[0], 3 + 115, 1) + 1).toString()
-                            }
-
-                            break;
-                        case 11://undefined
-                            testoModalitaLavoro = varsInternal.languageJson.modalita11;
-                            $("#valore1" + vars.serialNumber).hide();
-                            break;
-                        case 12://external input
-                            testoModalitaLavoro = varsInternal.languageJson.modalita12;
-                            //ok nulla
-                            $("#valore1" + vars.serialNumber).hide();
+                        case 3://lavaggio 
+                            testoModalitaLavoro = varsInternal.languageJson.lavaggio;
+                            minutiSecondiLavaggio = arrayToData(varsInternal.arrayReadRealTimeResult[0], 3 + 7, 2).toString() + "Min " + arrayToData(varsInternal.arrayReadRealTimeResult[0], 3 + 9, 2).toString() + "Sec"
                             break;
 
                     }
@@ -236,6 +184,7 @@ var OggettoPompaSub = function (options) {
 
         }
         // controlloo Alert
+        /*
         if ((arrayToData(varsInternal.arrayReadRealTimeResult[0], 3 + 1, 1) == 1) && (arrayToData(varsInternal.arrayReadRealTimeResult[0], 3 + 2, 1) == 0)) {//warning livello
             statoWarning = true;
             txtWarning = " " + varsInternal.languageJsonWarningAlarm.warningLevel;
@@ -245,51 +194,77 @@ var OggettoPompaSub = function (options) {
             txtWarning = " " + varsInternal.languageJsonWarningAlarm.warningOverflow;
         }
         //----- end controllo alert
+        */
         // controlloo allarmi
-        if ((arrayToData(varsInternal.arrayReadRealTimeResult[0], 3 + 1, 1) == 1) && (arrayToData(varsInternal.arrayReadRealTimeResult[0], 3 + 2, 1) == 1)) {//Alarm livello
-            statoAllarme = true;
-            txtAllarme = " " + varsInternal.languageJsonWarningAlarm.alarmLevel;
-        }
-        if ((arrayToData(varsInternal.arrayReadRealTimeResult[0], 3 + 4, 1) == 1) && (arrayToData(varsInternal.arrayReadRealTimeResult[0], 3 + 28, 1) == 0)) {//Alarm overflow
-            statoAllarme = true;
-            txtAllarme = " " + varsInternal.languageJsonWarningAlarm.alarmOverflow;
-        }
-        if ((arrayToData(varsInternal.arrayReadRealTimeResult[0], 3 + 5, 1) == 1)) {//Alarm temperatura
+        if ((arrayToData(varsInternal.arrayReadRealTimeResult[0], 3 + 11, 2) == 1) ) {//Alarm temperatura
             statoAllarme = true;
             txtAllarme = " " + varsInternal.languageJsonWarningAlarm.alarmTemperatura;
         }
-        if ((arrayToData(varsInternal.arrayReadRealTimeResult[0], 3 + 6, 1) == 1)) {//Alarm Input
+        if ((arrayToData(varsInternal.arrayReadRealTimeResult[0], 3 + 15, 2) == 1)) {//Alarm Pressione Alta
             statoAllarme = true;
-            txtAllarme = " " + varsInternal.languageJsonWarningAlarm.alarmInput;
+            txtAllarme = " " + varsInternal.languageJsonWarningAlarm.alarmPressioneH;
         }
-        if ((arrayToData(varsInternal.arrayReadRealTimeResult[0], 3 + 7, 1) == 1)) {//Alarm Motore Bloccato
+
+        if ((arrayToData(varsInternal.arrayReadRealTimeResult[0], 3 + 17, 2) > 0)) {//Alarm Pressione Bassa tentativi
             statoAllarme = true;
-            txtAllarme = " " + varsInternal.languageJsonWarningAlarm.alarmMotoreBloccato;
+            txtAllarme = " " + varsInternal.languageJsonWarningAlarm.alarmPressioneL + " " + arrayToData(varsInternal.arrayReadRealTimeResult[0], 3 + 17, 2) + " of " + arrayToData(varsInternal.arrayReadSetpointResult[0], 3 + 85, 2);
         }
+
+        if ((arrayToData(varsInternal.arrayReadRealTimeResult[0], 3 + 19, 2) == 1)) {//Alarm Pressione Bassa
+            statoAllarme = true;
+            txtAllarme = " " + varsInternal.languageJsonWarningAlarm.alarmPressioneL;
+        }
+        if ((arrayToData(varsInternal.arrayReadRealTimeResult[0], 3 + 21, 2) == 1)) {//Alarmconducibilità in Alta
+            statoAllarme = true;
+            txtAllarme = " " + varsInternal.languageJsonWarningAlarm.alarmCdInH;
+        }
+        if ((arrayToData(varsInternal.arrayReadRealTimeResult[0], 3 + 23, 2) == 1)) {//Alarmconducibilità out Alta
+            statoAllarme = true;
+            txtAllarme = " " + varsInternal.languageJsonWarningAlarm.alarmCdOutH;
+        }
+        if ((arrayToData(varsInternal.arrayReadRealTimeResult[0], 3 + 27, 2) == 1)) {//Alarm Massimo dosaggio
+            statoAllarme = true;
+            txtAllarme = " " + varsInternal.languageJsonWarningAlarm.alarmDosing;
+        }
+        if ((arrayToData(varsInternal.arrayReadRealTimeResult[0], 3 + 29, 2) == 1)) {//Alarm filter
+            statoAllarme = true;
+            txtAllarme = " " + varsInternal.languageJsonWarningAlarm.alarmFilter;
+        }
+        if ((arrayToData(varsInternal.arrayReadRealTimeResult[0], 3 + 31, 2) == 1)) {//Alarm generic
+            statoAllarme = true;
+            txtAllarme = " " + varsInternal.languageJsonWarningAlarm.alarmGeneric;
+        }
+        if ((arrayToData(varsInternal.arrayReadRealTimeResult[0], 3 + 51, 2) == 1)) {//Alarm Levekl
+            statoAllarme = true;
+            txtAllarme = " " + varsInternal.languageJsonWarningAlarm.levelAlarm;
+        }
+        if ((arrayToData(varsInternal.arrayReadRealTimeResult[0], 3 + 53, 2) == 1)) {//Alarm temperature
+            statoAllarme = true;
+            txtAllarme = " " + varsInternal.languageJsonWarningAlarm.temperatureAlarm;
+        }
+
         //--------end controlloo allarmi
         // controlloo stby
-        if ((arrayToData(varsInternal.arrayReadRealTimeResult[0], 3 + 3, 1) == 1)) {//warning Standby
+        if ((arrayToData(varsInternal.arrayReadRealTimeResult[0], 3 + 25, 1) == 1)) {//warning Standby
             statoStby = true;
             txtStby = " " + varsInternal.languageJsonWarningAlarm.alarmStby;
         }
         //-------end  controlloo stby
 
         alertErroreGrafica(statoAllarme, statoStby, statoWarning);
-        $("#modalitaLavoro" + vars.serialNumber).text(testoModalitaLavoro + txtAllarme + txtWarning + txtStby);
-        $("#portata" + vars.serialNumber).html(testoDosaggioIstantaneo + "<span class=\"little\">" + testoUnitadiMisura + "</span>");
+        
+        $("#modalitaLavoro" + vars.serialNumber).text(testoModalitaLavoro + minutiSecondiLavaggio );
+        $("#portata" + vars.serialNumber).html(testoUscitaConducibilita + "<span class=\"little\">" + testoUnitadiMisuraUscitaConducibilita + "</span>");
 
-        //$("#valore1" + vars.serialNumber).html(testoPulseMinute + "<span class=\"badge badge-black badge-pill\" tabindex=\"0\" data-toggle=\"tooltip\" title=\"" + varsInternal.languageJson.titlePortata + "\"><i class=\"mdi mdi-information\"></i></span>");
-        $("#valore1" + vars.serialNumber).attr("data-original-title", varsInternal.languageJson.titlePortata)
-        $("#valore1" + vars.serialNumber).html(testoPulseMinute + "<span></span><i class=\"mdi mdi-information\"></i>");
+        $("#valore1" + vars.serialNumber).attr("data-original-title", varsInternal.languageJson.titleIngresso)
+        $("#valore1" + vars.serialNumber).html(testoIngressoConducibilita + " " + testoUnitadiMisuraIngressoConducibilita);
 
-        //$("#valore2" + vars.serialNumber).html(testoFrequenza + "<span class=\"badge badge-black badge-pill\" tabindex=\"0\" data-toggle=\"tooltip\" title=\"" + varsInternal.languageJson.titleFrequenza + "\"><i class=\"mdi mdi-signal-cellular-outline\"></i></span>");
-        $("#valore2" + vars.serialNumber).attr("data-original-title", varsInternal.languageJson.titleFrequenza)
-        $("#valore2" + vars.serialNumber).html(testoFrequenza + "<span></span><i class=\"mdi mdi-signal-cellular-outline\"></i>");
-
-        //$("#valore3" + vars.serialNumber).html(testoSlowMode + "<span class=\"badge badge-black badge-pill\" tabindex=\"0\" data-toggle=\"tooltip\" title=\"" + varsInternal.languageJson.titleSlow + "\">	 <i class=\"mdi mdi-eject\"></i></span>");
+        $("#valore2" + vars.serialNumber).attr("data-original-title", varsInternal.languageJson.titleTemperatura)
+        $("#valore2" + vars.serialNumber).html(testoTemperatura + " " + unitaTemperatura);
+/*
         $("#valore3" + vars.serialNumber).attr("data-original-title", varsInternal.languageJson.titleSlow)
         $("#valore3" + vars.serialNumber).html(testoSlowMode + "<span></span><i class=\"mdi mdi-eject\"></i>");
-
+        */
 
     }
     function alertErroreGrafica(statoAllarme, statoStby, statoWarning) {
@@ -337,18 +312,51 @@ var OggettoPompaSub = function (options) {
         return;
 
     }
-    function checkUpKeep() {
-        if (arrayToData(varsInternal.arrayReadSetpointResult[0], 3 + 85, 1) > 0) {//up keep enable
-            //if ((arrayToData(varsInternal.arrayReadRealTimeResult[0], 3 + 123, 1) > 0) || (arrayToData(varsInternal.arrayReadRealTimeResult[0], 3 + 124, 1) > 0))
-            if (arrayToData(varsInternal.arrayReadRealTimeResult[0], 3 + 117, 2) == 0)//se non ci sono impulsi allora sono in upkee
-                return true
-        }
-        return false;
-    }
-    function upKeepStr() {
-        return varsInternal.languageJson.upKeepText + " : " + arrayToData(varsInternal.arrayReadRealTimeResult[0], 3 + 123, 1).toString() + "h " + arrayToData(varsInternal.arrayReadRealTimeResult[0], 3 + 124, 1).toString() + "m"
-    }
+   
+    function getValoreLabelJson(tipoCanale, numeroSonda) {
+        var indiceCancvas = 0;
 
+        for (indiceCancvas = 0; indiceCancvas < jsonParseListaSonde.variable.length; indiceCancvas++) {
+            if ((jsonParseListaSonde.variable[indiceCancvas]["tipoCanale"] == tipoCanale) && (jsonParseListaSonde.variable[indiceCancvas]["numeroSonda"] == numeroSonda)) {
+                return jsonParseListaSonde.variable[indiceCancvas]["unitEu"];
+            }
+        }
+        return ""
+    }
+    function getFattoreDivisioneSonda(tipoCanale, numeroSonda) {
+        var indiceCancvas = 0;
+
+        for (indiceCancvas = 0; indiceCancvas < jsonParseListaSonde.variable.length; indiceCancvas++) {
+            if ((jsonParseListaSonde.variable[indiceCancvas]["tipoCanale"] == tipoCanale) && (jsonParseListaSonde.variable[indiceCancvas]["numeroSonda"] == numeroSonda)) {
+                switch(parseInt(jsonParseListaSonde.variable[indiceCancvas]["decimali"]))
+                {
+                    case 0:
+                        return 1;
+                        break;
+                    case 1:
+                        return 10;
+                        break;
+                    case 2:
+                        return 100;
+                        break;
+                    case 3:
+                        return 1000;
+                        break;
+                }
+            }
+        }
+        return 1
+    }
+    function getNumeroDecimaliSonda(tipoCanale, numeroSonda) {
+        var indiceCancvas = 0;
+
+        for (indiceCancvas = 0; indiceCancvas < jsonParseListaSonde.variable.length; indiceCancvas++) {
+            if ((jsonParseListaSonde.variable[indiceCancvas]["tipoCanale"] == tipoCanale) && (jsonParseListaSonde.variable[indiceCancvas]["numeroSonda"] == numeroSonda)) {
+                return parseInt(jsonParseListaSonde.variable[indiceCancvas]["decimali"]);
+            }
+        }
+        return 1
+    }
 }
 
 

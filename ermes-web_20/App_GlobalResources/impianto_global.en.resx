@@ -153,4 +153,7 @@
   <data name="strumenti_attivi" xml:space="preserve">
     <value>Controllers Active</value>
   </data>
+  <data name="vaiImpianto" xml:space="preserve">
+    <value>Go to Plant</value>
+  </data>
 </root>

@@ -8,7 +8,7 @@
 	font-style: normal;
 }
 
-.icon {
+.icon_time {
 	font-family: 'icomoon';
 	speak: none;
 	font-style: normal;
@@ -23,6 +23,7 @@
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 }
+.icon_time:before{content: attr(data-icon); font-family: 'icomoon'}
 
 .icon--radioactive:before {
 	content: "\e905";

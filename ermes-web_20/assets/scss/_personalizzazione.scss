@@ -34,6 +34,12 @@
 	background-size: cover;
 	overflow: hidden;
 }
+input#slide {
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    border-bottom: solid 1px #ccc;
+}
 
 .slideshow::before {
 	content: '';
@@ -66,6 +72,8 @@
 .slideshow__nav {
 	text-align: left;
 	width: 100%;
+	height:100vh;
+	overflow: auto;
 	display: -webkit-flex;
 	display: flex;
 	-webkit-flex-wrap: wrap;
@@ -84,6 +92,7 @@
 
 .slide__element {
 	opacity: 0;
+	
 	color: #252445;
 	-webkit-transform: translate3d(0, 50px, 0);
 	transform: translate3d(0, 50px, 0);
@@ -95,6 +104,7 @@
 	opacity: 1;
 	-webkit-transform: translate3d(0, 0, 0);
 	transform: translate3d(0, 0, 0);
+	
 }
 
 .slide__element--temp {
@@ -115,6 +125,7 @@
 	font-size: 1em;
 	font-weight: 700;
 	    display: flex;
+	
 }
 
 @media screen and (max-height: 39em) {
@@ -125,7 +136,7 @@
 		padding-top: 35vh;
 	}
 	.slideshow__nav {
-		bottom: 6em;
+		
 	}
 }
 .codrops-header {
@@ -284,7 +295,10 @@ audio,canvas,video{display:inline-block;}audio:not([controls]){display:none;heig
 		text-align: center;
 		display: block;
 		font-size: 0.75em;
-	}
+		display:none;
+	}.slideshow__nav{ top: 0;
+    transform: translate(0, 0);}
+	/*.slide{padding:0;}*/
 	.codrops-links {
 		display: block;
 		margin: 0 0 1em;
@@ -303,12 +317,12 @@ audio,canvas,video{display:inline-block;}audio:not([controls]){display:none;heig
 
 
 
+.sidebar-footer-content ul li a { color:#fff !important}
 
-
-.color_button_body, .color_button {
+.color_button_body, .color_button, .color_button_primary, .color_button_link {
     background: #236239;
    
-    color: #fff;
+    color: #fff !important;
     cursor: pointer;
     padding: 10px 15px;
     margin: 0 0 0 10px;
@@ -331,6 +345,19 @@ audio,canvas,video{display:inline-block;}audio:not([controls]){display:none;heig
     padding: 16px 0 0 0;
     border-radius: 150px;
 }
-.particles { position: absolute; left: 0; right: 0; bottom: 0; height:100vh; width:100vw; }
+#particles { position: absolute;
+  
+    right: -5vh;
+    bottom: -5vh;
+    height: 100vh;
+    width: 100vw;
+	float: left;
+	
+	
+   
+}#container_intro{height:100vh;}
 
 
+.list-group{ border-radius: 0 !important; border: solid 1px #ececec;}
+.list-group-item{ border: none !important}
+.btn-primary{color:$white !important}

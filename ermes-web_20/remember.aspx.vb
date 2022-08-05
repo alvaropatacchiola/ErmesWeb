@@ -3,18 +3,18 @@
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         If Not IsPostBack Then
-            literal_stefano.Text = Session("personalizzazioneStefano")
+            'literal_stefano.Text = Session("personalizzazioneStefano")
             java_script_local.Text = "<script>"
             java_script_local.Text = java_script_local.Text + "var invalid_mail_format='"
             java_script_local.Text = java_script_local.Text + GetGlobalResourceObject("javascript_global", "invalid_mail_format") + "';"
             java_script_local.Text = java_script_local.Text + "</script>"
-            literal_theme.Text = Session("stile")
+            'literal_theme.Text = Session("stile")
         End If
     End Sub
 
-    Protected Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
-        Response.Redirect("login.aspx")
-    End Sub
+    'Protected Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+    '    Response.Redirect("login.aspx")
+    'End Sub
 
     Protected Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Dim tabella As ermes_web_20.quey_db.super_userDataTable

@@ -65,7 +65,7 @@
 						
 							<div id='cssmenu2' class="cssmenu">
 								<ul>
-                                    <li class="dashboard"><a href='DashboardNew.aspx'><asp:Literal ID="dashboard" runat="server" Text="Dashboard"></asp:Literal></a></li>
+                                    <li class="dashboard"><a href='dashboardAssets.aspx'><asp:Literal ID="dashboard" runat="server" Text="Dashboard"></asp:Literal></a></li>
                                     <asp:Literal ID="setNameStrumento" runat="server" Text="<li id='labelCenturioR_li'  class='active' style='padding:17px'>Centurio</li>"></asp:Literal>
 
 								</ul>
@@ -577,7 +577,7 @@
 <asp:Content ID="Content4" ContentPlaceHolderID="script_at_end" runat="server">
          <script src="theme/scripts/demo/calendar_new.js"></script>
         <link href="bootstrap/css/jquery-ui-timepicker-addon.css" rel="stylesheet" />
-        <script type="text/javascript" src="Centurio/centurioMain.js?v=1.62"></script>
+        <script type="text/javascript" src="Centurio/centurioMain.js?v=1.72"></script>
         <asp:Literal ID="javaScriptLiteral" runat="server"></asp:Literal>    
 
     	<script src="theme/scripts/plugins/notifications/Gritter/js/jquery.gritter.min.js"></script>

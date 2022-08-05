@@ -21,7 +21,7 @@
  	<div class="span2">
                        <div id="riga_bleed_deadband" class="control-group">
                            <h5 style="padding-top:10px"><asp:literal ID = "Literal1"  text="DeadBand" runat="server" meta:resourcekey="Literal1Resource1"></asp:literal></h5>
-                       <asp:textbox ID="value_bleed_deadband" onblur="javascript: Changed_channel( 'value_bleed_deadband','riga_bleed_deadband',999, -999,0 );" class="span12"  runat="server" MaxLength="4" meta:resourcekey="value_bleed_deadbandResource1" ></asp:textbox>
+                       <asp:textbox ID="value_bleed_deadband" onblur="javascript: Changed_channel( 'value_bleed_deadband','riga_bleed_deadband',999, -999,0 );" class="span12"  runat="server" MaxLength="5" meta:resourcekey="value_bleed_deadbandResource1" ></asp:textbox>
                 </div>
                        </div>
                    
@@ -69,7 +69,7 @@
                 </div>
 
 
-            <script type="text/javascript" src="LDTower/validator_bleed_ldt.js"></script>
+            <script type="text/javascript" src="LDTower/validator_bleed_ldt.js?v=1.0"></script>
              <script type="text/javascript" src="common/validator_general_notify.js"></script>
 <script src="theme/scripts/demo/notifications.js"></script>
 

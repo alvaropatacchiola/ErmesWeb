@@ -2873,7 +2873,7 @@ Public Class main_function
     Public Shared Function send_mail(ByVal send_to As String, ByVal email_oggetto As String,
                                      ByVal email_body As String, ByVal send_webmaster As Boolean, Optional ByVal oggetto_web_master As String = "",
                                      Optional ByVal body_web_master As String = "")
-        Dim client As New System.Net.Mail.SmtpClient("smtp-mail.outlook.com")
+        Dim client As New System.Net.Mail.SmtpClient("smtp.office365.com")
         Dim temp_str As String = ""
         Dim oMessage As New System.Net.Mail.MailMessage()
         client.UseDefaultCredentials = False

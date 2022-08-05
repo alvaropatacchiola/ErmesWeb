@@ -1081,7 +1081,7 @@
 													        <div class="form-group ">
 														        <label for="exampleFormControlPassword4" data-translate="pumpCapacityFlow" ></label>
                                                                 <label for="exampleFormControlPassword4"  id="pumpCapacityUnit"></label>
-														        <input type="number" class="form-control border-success numerico" id="pumpCapacityFlow" min ="0.000" max ="99.000" labelMSG="constantDos" labelMSGError="constantDosAlarm" step="0.001" decimal ="3" maxlength="6"  placeholder="">
+														        <input type="number" class="form-control border-success numerico" id="pumpCapacityFlow" min ="0.000" max ="99.000" labelMSG="pumpCapacity" labelMSGError="pumpCapacityAlarm" step="0.001" decimal ="3" maxlength="6"  placeholder="">
 													        </div>
 													        <div class="form-group" aria-haspopup="True">
 														        <label for="exampleFormControlPassword4" data-translate="pumpCapacitySlowMode" ></label>
@@ -1193,7 +1193,7 @@
 													            <div class="form-group" aria-haspopup="True">
 														            <label for="exampleFormControlPassword4" data-translate="batchSetpoint" ></label>
                                                                     <label for="exampleFormControlPassword4" id="externalInputQuantityUnit" > </label>
-                                                                    <input type="number" class="form-control border-success numerico" id="externalInputQuantity" min ="0.000" max ="99.999" step="0.001" labelMSG="externalInputInfo" labelMSGError="externalInputAlarm" decimal ="3" maxlength="6"  placeholder="">
+                                                                    <input type="number" class="form-control border-success numerico" id="externalInputQuantity" min ="0.000" max ="99.999" step="0.001" labelMSG="constantDos" labelMSGError="constantDosAlarm" decimal ="3" maxlength="6"  placeholder="">
 													            </div>
                                                             </div>
 														    <div class="form-footer ModeSendLoad"  style="display: none;">
@@ -1550,8 +1550,8 @@
       </div>
     </div>
 
-    <script type="text/javascript" src="M0101.js?v=1.47"></script>
-    <script type="text/javascript" src="traduzioni/T0101.js?v=1.33"></script>
+    <script type="text/javascript" src="M0101.js?v=1.49"></script>
+    <script type="text/javascript" src="traduzioni/T0101.js?v=1.35"></script>
 
     <asp:Literal ID="javaScriptHeader" runat="server"></asp:Literal>
 

@@ -52,7 +52,8 @@ Public Class mqtt
         Options = New MqttClientOptionsBuilder()
         Dim clientId As String = Guid.NewGuid().ToString()
         With Options
-            .WithTcpServer("srvmqtt", 1883)
+            '.WithTcpServer("srvmqtt", 1883)
+            .WithTcpServer("localhost", 1883)
             .WithClientId(clientId)
             '.WithClientId("01")
             .WithCredentials("emecsrl", "emecsrl")

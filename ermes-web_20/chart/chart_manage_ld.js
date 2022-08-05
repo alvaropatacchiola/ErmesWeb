@@ -1706,9 +1706,9 @@ function draw_tabella() {
                 }
                 if (ore > 12) {
                     ore = ore - 12;
-                    if (ore == 0) ore = 12;
                 }
-                
+                if (ore == 0) ore = 12;
+
                 array_temp.push(get_numero_string(thetoday) + "/" + get_numero_string(themonth) + "/" + get_numero_string(theyear)+ " " + get_numero_string(ore) + ":" + get_numero_string(minuti)  + " " + suffex);
             }
             if (($('#ch1_val').is(':checked'))) {

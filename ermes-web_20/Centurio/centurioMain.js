@@ -94,6 +94,23 @@ function getValoreCurrentJson(tipoCanale, numeroSonda,valore) {
     return valoreCaloclato;
 
 }
+function getZeroCalibJson(tipoCanale, numeroSonda) {
+    var indiceCancvas = 0;
+    var valoreCaloclato = false;
+
+
+
+
+    for (indiceCancvas = 0; indiceCancvas < jsonParseDecimal.variable.length; indiceCancvas++) {
+        if ((jsonParseDecimal.variable[indiceCancvas]["tipoCanale"] == tipoCanale) && (jsonParseDecimal.variable[indiceCancvas]["numeroSonda"] == numeroSonda)) {
+            var statusCalib = jsonParseDecimal.variable[indiceCancvas]["zeroCalib"];
+            if (statusCalib == "yes") return true
+            else
+                return false;
+        }
+    }
+    return false;
+}
 function getValoreFullScaleJson(tipoCanale, numeroSonda) {
     var indiceCancvas = 0;
     var valoreCaloclato = 0;
@@ -890,6 +907,8 @@ $('input[typeAction="remoteCalib"]').click(function () {
     //leggiDatiGrafico();
     var idLavoro = $(this).attr("id");
     var idDatoDaPrendere = $(this).attr("getValue");
+    var idControlloPrimoPunto = $(this).attr("primopuntocheck");
+
     if (incrementoCalibrazioneGlobal >= 1) return;// se sto nella procedura di calibrazione esco
     var resultrStatusCalibrazione=0;
 
@@ -920,6 +939,22 @@ $('input[typeAction="remoteCalib"]').click(function () {
     }
     else
         sendTemp = true;
+
+    if (idControlloPrimoPunto == "yes") {
+        var enablePrimoPunto = $(this).attr("calibprimopunto");
+        if (getValoreJson(enablePrimoPunto) == "0") { //calibrazione dello zero disabilitata
+
+            $("#" + $("#" + idDatoDaPrendere).attr("id") + "_div").removeClass("control-group");
+            $("#" + $("#" + idDatoDaPrendere).attr("id") + "_div").removeClass("control-group error");
+            console.log("entro qui")
+            $("#" + idLavoro + "_count").show();
+            $("#" + idLavoro + "_label").css("color", "red")
+            $("#" + idLavoro + "_label").text("Zero not allowed")
+
+            return;
+        }
+
+    }
 
     myNumber = parseFloat($("#" + idDatoDaPrendere).val());
     $("#" + idLavoro + "_label").css("color","black")
@@ -2514,7 +2549,7 @@ function updateValori(response, firstValue) {
                 }
                 if ($("#" + jsonParse.variable[k]["chiave"] + "_h3").is("h3")) { // per data e ora
                     
-                    $("#" + jsonParse.variable[k]["chiave"] + "_h3").html(jsonParse.variable[k]["valore"]);
+                    $("#" + jsonParse.variable[k]["chiave"] + "_h3").html(jsonParse.variable[k]["valore"] + " "  + "Release: " + getValoreJson("versionR"));
                 }
             }
 
@@ -2821,8 +2856,12 @@ function updateValori(response, firstValue) {
             //console.log("flusso:" + $(oggettoFiglio).attr("id").replace("global", ""));
             if ($(oggettoFiglio).attr("id").replace("global", "") == "flowR")
                 $(oggettoFiglio).text("No Flow");
-            else
-                $(oggettoFiglio).text(createLabelGlobal($(oggettoFiglio).attr("id").replace("global", "")));
+            else {
+                if ($(oggettoFiglio).attr("id").replace("global", "") == "[stbyR]")
+                        $(oggettoFiglio).text("Standby");
+                    else
+                        $(oggettoFiglio).text(createLabelGlobal($(oggettoFiglio).attr("id").replace("global", "")));
+            }
             if (resultcanaleValore > 0)
                 $(this).show();
             else
@@ -3100,19 +3139,31 @@ function updateValori(response, firstValue) {
             }
 
             //oggettoCanaleTemp.initSetpoint(parseInt(getValoreJson(oggettoCanaleTemp.idDigitalID1)), parseInt(getValoreJson(oggettoCanaleTemp.idDigitalSp1ID1)), parseInt(getValoreJson(oggettoCanaleTemp.idDigitalSp21)));
-            oggettoCanaleTemp.idDigitalSpLabel1 = createLabelGlobal(oggettoCanaleTemp.idDigitalSpLabelID1);
+            if (parseInt(getValoreJson(oggettoCanaleTemp.idDigitalID1)) > 0 )
+                oggettoCanaleTemp.idDigitalSpLabel1 = createLabelGlobal(oggettoCanaleTemp.idDigitalSpLabelID1);
+            else
+                oggettoCanaleTemp.idDigitalSpLabel1 = "";
+
             if (oggettoCanaleTemp.idDigitalID1 != ""){
                 if (oggettoCanaleTemp.idDigitalSp2ID1.indexOf("deadband") > 0) {// caso del dead band
                     oggettoCanaleTemp.initSetpoint(parseInt(getValoreJson(oggettoCanaleTemp.idDigitalID1)), parseFloat(getValoreJson(oggettoCanaleTemp.idDigitalSp1ID1)), parseFloat(getValoreJson(oggettoCanaleTemp.idDigitalSp2ID1)), 1, true, getValoreJson(oggettoCanaleTemp.idDigitalVal1));
                 }
                 else {
-                    oggettoCanaleTemp.initSetpoint(parseInt(getValoreJson(oggettoCanaleTemp.idDigitalID1)), parseFloat(getValoreJson(oggettoCanaleTemp.idDigitalSp1ID1)), parseFloat(getValoreJson(oggettoCanaleTemp.idDigitalSp2ID1)), 1, false, getValoreJson(oggettoCanaleTemp.idDigitalVal1));
+                    
+                    if (parseInt(getValoreJson(oggettoCanaleTemp.idDigitalID1)) < 2)
+                        oggettoCanaleTemp.initSetpoint(parseInt(getValoreJson(oggettoCanaleTemp.idDigitalID1)), parseFloat(getValoreJson(oggettoCanaleTemp.idDigitalSp1ID1)), parseFloat(getValoreJson(oggettoCanaleTemp.idDigitalSp2ID1)), 1, false, getValoreJson(oggettoCanaleTemp.idDigitalVal1));
+                    else {
+                        oggettoCanaleTemp.initSetpoint(parseInt(getValoreJson(oggettoCanaleTemp.idDigitalID1)), parseFloat(getValoreJson(oggettoCanaleTemp.idPercentageSp1ID1)), parseFloat(getValoreJson(oggettoCanaleTemp.idPercentageSp2ID1)), 1, false, getValoreJson(oggettoCanaleTemp.idDigitalVal1));
+                    }
                 }
             }
             oggettoCanaleTemp.idDigitalSpLabel2 = createLabelGlobal(oggettoCanaleTemp.idDigitalSpLabelID2);
             if (oggettoCanaleTemp.idDigitalID2 != "") {
                 //console.log("setpoint:" + oggettoCanaleTemp.idDigitalSp2ID2 + ":" + parseFloat(getValoreJson(oggettoCanaleTemp.idDigitalID2)))
+                if (parseInt(getValoreJson(oggettoCanaleTemp.idDigitalID2)) < 2)
                     oggettoCanaleTemp.initSetpoint(parseInt(getValoreJson(oggettoCanaleTemp.idDigitalID2)), parseFloat(getValoreJson(oggettoCanaleTemp.idDigitalSp1ID2)), parseFloat(getValoreJson(oggettoCanaleTemp.idDigitalSp2ID2)), 2, false, getValoreJson(oggettoCanaleTemp.idDigitalVal2));
+                else
+                    oggettoCanaleTemp.initSetpoint(parseInt(getValoreJson(oggettoCanaleTemp.idDigitalID2)), parseFloat(getValoreJson(oggettoCanaleTemp.idPercentageSp1ID2)), parseFloat(getValoreJson(oggettoCanaleTemp.idPercentageSp2ID2)), 2, false, getValoreJson(oggettoCanaleTemp.idDigitalVal2));
                 }
             //gestione degli allarmi
             oggettoCanaleTemp.minAlarmpHLabel = createLabelGlobal(oggettoCanaleTemp.minAlarmpHLabelID);
@@ -3312,7 +3363,7 @@ function listWeekDetails(giornoSettimana,hr, min, thr, tmin)
     htmllistWeekDetails = htmllistWeekDetails + "<div Class=\"span2\" style=\"width:150px\">"
     htmllistWeekDetails = htmllistWeekDetails + "<h5>Feed Hr</h5>"
     htmllistWeekDetails = htmllistWeekDetails + "<select id=\"weekItemTenSubHr\" style=\"width:150px\">"
-    for (i = 0; i <= 99; i++) {
+    for (i = 0; i <= 23; i++) {
         if (i == parseInt(hr))
             htmllistWeekDetails = htmllistWeekDetails + "<Option value=\"" + i.toString() + "\" selected>" + i.toString() + "</Option>"
         else
@@ -3325,13 +3376,14 @@ function listWeekDetails(giornoSettimana,hr, min, thr, tmin)
     htmllistWeekDetails = htmllistWeekDetails + "<div Class=\"span2\" style=\"width:150px\">"
     htmllistWeekDetails = htmllistWeekDetails + "<h5>Feed Min</h5>"
     htmllistWeekDetails = htmllistWeekDetails + "<select id=\"weekItemTenSubMin\" style=\"width:150px\">"
-    for (i = 0; i <= 99; i++) {
+    for (i = 0; i <= 59; i++) {
         if (i == parseInt(min))
             htmllistWeekDetails = htmllistWeekDetails + "<Option value=\"" + i.toString() + "\" selected>" + i.toString() + "</Option>"
         else
             htmllistWeekDetails = htmllistWeekDetails + "<Option value=\"" + i.toString() + "\" >" + i.toString() + "</Option>"
     }
     htmllistWeekDetails = htmllistWeekDetails + "</select >"
+    htmllistWeekDetails = htmllistWeekDetails + "<button id=\"modals-bootbox-close\" class=\"btn btn-primary\" style=\"margin-top:5px\">Reset Feed</button>"
     htmllistWeekDetails = htmllistWeekDetails + "</div>"
     htmllistWeekDetails = htmllistWeekDetails + "</div>"
 
@@ -3763,7 +3815,9 @@ function headerCanvas(idCanvas, nomeVariabile, nomeFlow, nomeAllarme, idLabelTot
 //----------------------------BLOCCO BODY -----------------------------------
 //function CanvasNew(idCanvas, idDiv, labelCanale, valueCanale, fullScaleValue, factorDivideValue, minValueAlarm, maxValueAlarm, riga1Enable, riga1Min, riga1Max, riga2Enable, riga2Min, riga2Max, riga3Enable, riga3Min, riga3Max, riga4Enable, riga4Min, riga4Max, da, db, pa, pb, level1, level2, level3, level4, ad, ar) {
 //new CanvasNew('#bodyCanvas" + numeroHeader.ToString + "','#canale" + numeroHeader.ToString + "','#bodyCanvasSub" + numeroHeader.ToString + "','" + idGrandezza + "','" + idProbe + "','" + idMassimo + "','" + idMinimo + "','0'," + idDigital + "," + idDigitalspEn + "," + idDigitalsp1 + "," + idDigitalsp2 + "," + idDigitalLabel + "," + idAlarmEn + "," + idAlarmVal + "," + idAlarmLabel + "," + strumentoTouch.ToString + ",'" + tipoCanale + "','" + numeroSonda + "');"
-function CanvasNew(idCanvas, idDiv, idDivSub, labelpHId, valuePhId, fullscaleId, minscaleId, factorDivideID, idDigital1Val, idDigital2Val, idDigital3Val, idDigital4Val, idDigital1, idDigital2, idDigital3, idDigital4, idDigitalSp11, idDigitalSp12, idDigitalSp13, idDigitalSp14, idDigitalSp21, idDigitalSp22, idDigitalSp23, idDigitalSp24, idDigitalSpL1, idDigitalSpL2, idDigitalSpL3, idDigitalSpL4, idMinAlarmEn, idMaxAlarmEn, idMinAlarm, idMaxAlarm, idMinAlarmLabel, idMaxAlarmLabel,strumentoType,tipoCanale,numeroSonda) {
+function CanvasNew(idCanvas, idDiv, idDivSub, labelpHId, valuePhId, fullscaleId, minscaleId, factorDivideID, idDigital1Val, idDigital2Val, idDigital3Val, idDigital4Val, idDigital1, idDigital2, idDigital3, idDigital4, idDigitalSp11, idDigitalSp12, idDigitalSp13, idDigitalSp14, idDigitalSp21, idDigitalSp22, idDigitalSp23, idDigitalSp24, idDigitalSpL1, idDigitalSpL2, idDigitalSpL3, idDigitalSpL4, idMinAlarmEn, idMaxAlarmEn, idMinAlarm, idMaxAlarm, idMinAlarmLabel, idMaxAlarmLabel, strumentoType, tipoCanale, numeroSonda, idPercentageSp11, idPercentageSp12,x1,x2, idPercentageSp21, idPercentageSp22,y1,y2) {
+         
+                  
 
     var indiceCancvas = 0;
 
@@ -3850,8 +3904,10 @@ function CanvasNew(idCanvas, idDiv, idDivSub, labelpHId, valuePhId, fullscaleId,
     this.idDigitalID1 = idDigital1;
     this.enableRiga1 = 0;
     this.idDigitalSp1ID1 = idDigitalSp11;
+    this.idPercentageSp1ID1 = idPercentageSp11;
     this.minSetpoint1 = 0;
     this.idDigitalSp2ID1 = idDigitalSp21;
+    this.idPercentageSp2ID1 = idPercentageSp21;
     this.maxSetpoint1 = 0;
     this.idDigitalSpLabelID1 = idDigitalSpL1;
     this.idDigitalSpLabel1 = ""
@@ -3861,8 +3917,11 @@ function CanvasNew(idCanvas, idDiv, idDivSub, labelpHId, valuePhId, fullscaleId,
     //this.idDigitalID2 = "";
     this.enableRiga2 = 0;
     this.idDigitalSp1ID2 = idDigitalSp12;
+    this.idPercentageSp1ID2 = idPercentageSp12;
+    console.log("ciao:" + idPercentageSp11 + " " + idPercentageSp12 + " " + idPercentageSp21 + " " + idPercentageSp22)
     this.minSetpoint2 = 0;
     this.idDigitalSp2ID2 = idDigitalSp22;
+    this.idPercentageSp2ID2 = idPercentageSp22;
     this.maxSetpoint2 = 0;
     this.idDigitalSpLabelID2 = idDigitalSpL2;
     this.idDigitalSpLabel2 = ""

@@ -290,6 +290,7 @@ Public Class mainFunctionCenturio
 
 nexLoopLabel:
         Next
+        stringJson = stringJson + virgola + """flowR"" : ""No Flow"",""stbyR"":""Standby"""
         stringJson = stringJson + "}"
         Return stringJson
     End Function

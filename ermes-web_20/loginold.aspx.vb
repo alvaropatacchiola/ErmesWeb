@@ -125,17 +125,22 @@ Public Class loginold
                                                                             Session("logo") = "<img src='image/lotec.png' alt='logo'>"
                                                                             Session("stile") = "<link id='themer-stylesheet' href='theme/personalizzazione/lotec.css' rel='stylesheet' type='text/css' />"
                                                                         Else
-                                                                            'Session("logo") = "<img src='image/lotec.png' alt='logo'>"
-                                                                            'Session("stile") = "<link id='themer-stylesheet' href='theme/personalizzazione/lotec.css' rel='stylesheet' type='text/css' />"
-
-                                                                            Session("logo") = "<img src='" + ResolveUrl("~/") + "image/logo_ermes.png' alt='logo'>"
-                                                                            Session("stile") = "<link id='themer-stylesheet' href='" + ResolveUrl("~/") + "theme/personalizzazione/ermes.css' rel='stylesheet' type='text/css' />"
-                                                                            literal_stefano.Text = "<link href=""" + ResolveUrl("~/") + "theme/css/personalizzazione_stefano.css"" rel=""stylesheet"" type=""text/css""/>"
-                                                                            Session("personalizzazioneStefano") = "<link href=""" + ResolveUrl("~/") + "theme/css/personalizzazione_stefano.css?v=1.5"" rel=""stylesheet"" type=""text/css""/>"
+                                                                            If InStr(header_script, "pools") <> 0 Then 'personalizzazione 
+                                                                                Session("logo") = "<img src='image/logoPools.jpg' alt='logo'>"
+                                                                                Session("stile") = "<link id='themer-stylesheet' href='theme/personalizzazione/pools.css' rel='stylesheet' type='text/css' />"
+                                                                            Else
+                                                                                If InStr(header_script, "forest") <> 0 Then 'personalizzazione 
+                                                                                    Session("logo") = "<img src='image/forest.svg' alt='logo'>"
+                                                                                    Session("stile") = "<link id='themer-stylesheet' href='theme/personalizzazione/forestholidays.css' rel='stylesheet' type='text/css' />"
+                                                                                Else
+                                                                                    Session("logo") = "<img src='" + ResolveUrl("~/") + "image/logo_ermes.png' alt='logo'>"
+                                                                                    Session("stile") = "<link id='themer-stylesheet' href='" + ResolveUrl("~/") + "theme/personalizzazione/ermes.css' rel='stylesheet' type='text/css' />"
+                                                                                    literal_stefano.Text = "<link href=""" + ResolveUrl("~/") + "theme/css/personalizzazione_stefano.css"" rel=""stylesheet"" type=""text/css""/>"
+                                                                                    Session("personalizzazioneStefano") = "<link href=""" + ResolveUrl("~/") + "theme/css/personalizzazione_stefano.css?v=1.5"" rel=""stylesheet"" type=""text/css""/>"
+                                                                                End If
+                                                                            End If
                                                                         End If
                                                                     End If
-
-
                                                                 End If
                                                             End If
                                                         End If

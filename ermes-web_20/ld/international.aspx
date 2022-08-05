@@ -56,7 +56,7 @@
 
             </div>
         </div>
-    <script type="text/javascript" src="ld/validator_ld_international.js"></script>
+    <script type="text/javascript" src="ld/validator_ld_international.js?v=1.30"></script>
     <script src="theme/scripts/demo/calendar_new.js"></script>
     <link href="bootstrap/css/jquery-ui-timepicker-addon.css" rel="stylesheet" />
     <script type="text/javascript" src="common/validator_general_notify.js"></script>

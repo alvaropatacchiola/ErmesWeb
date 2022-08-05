@@ -356,7 +356,7 @@ Partial Public Class main
         intestazione = intestazione + "<a href="""" class=""glyphicons right_arrow"">" + Session("username") + "<i></i></a>" +
                 "</span></span>"
         intestazione = intestazione + "<ul id=""leftMenuCenturio"">" +
-                "<li class=""glyphicons display active""><a href=""" + ResolveUrl("~/") + "dashboardAssets.aspx""><i></i><span>" + GetGlobalResourceObject("main_master_global", "dashboard") + "</span></a></li>"
+                "<li class=""glyphicons display active""><a href=""" + ResolveUrl("~/") + "dashboardNew.aspx""><i></i><span>" + GetGlobalResourceObject("main_master_global", "dashboard") + "</span></a></li>"
         precedente_impianto = ""
         For Each dc In tabella_impianto.Rows
             Dim alarm_color As String = ""

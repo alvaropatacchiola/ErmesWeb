@@ -73,7 +73,16 @@ function keypress_channel_number(evt) {
     return true;
 
 }
+function keypress_channel_number_neg(evt) {
+    var charCode = (evt.which) ? evt.which : event.keyCode
 
+    if (charCode == 45) return true;// carattere -
+    if (charCode > 31 && (charCode < 48 || charCode > 57))
+        return false;
+
+    return true;
+
+}
 /////////////////////////////// DA FARE TUTTA LA GESTIONE DELLA VALIDAZIONE  /////////////////////////////////////////////
 
 
@@ -83,7 +92,7 @@ $("#value_bleed_setpoint").keypress(function (evt) {
 });
 
 $("#value_bleed_deadband").keypress(function (evt) {
-    return keypress_channel_number(evt);                // controllo che i caratteri siano numeri e non stringhe 
+    return keypress_channel_number_neg(evt);                // controllo che i caratteri siano numeri e non stringhe 
 });
 
 $("#value_bleed_time_limit_hr").keypress(function (evt) {

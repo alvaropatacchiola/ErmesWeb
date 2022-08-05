@@ -1,4 +1,4 @@
-﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="signup.aspx.vb" Inherits="ermes_web_20.signup" culture="auto" meta:resourcekey="PageResource1" uiculture="auto" %>
+﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="registrati.aspx.vb" Inherits="ermes_web_20.signup" culture="auto" meta:resourcekey="PageResource1" uiculture="auto" %>
 <html lang="en">
 <head>
   <head>
@@ -142,41 +142,64 @@
                 <div class="card card-default mb-0" style="box-shadow: 1px 2px 10px 0px #333333;">
                   <div class="card-header pb-0">
                     <div class="app-brand w-100 d-flex justify-content-center border-bottom-0">
-                      <a class="w-auto pl-0" href="/index.html">
+                      <a class="w-auto pl-0" href="login.aspx">
                         <img src="assets/img/logo.png" alt="Mono">
                         <span class="brand-name text-dark">ERMES / SIGN UP</span>
                       </a>
                     </div>
                   </div>
                   <div class="card-body px-5 pb-5 pt-0">
-
+                      <!--
                     <form id="validateSubmitForm" method="post" autocomplete="off"  action="signed.aspx">
+                          -->
+                      <form runat="server">
                       <div class="row">
 						   <div class="form-group col-md-12 mb-4">
-                          <input type="text" name="company" class="form-control input-lg" id="company" placeholder="company">
+                          <!-- <input type="text" name="company" class="form-control input-lg" id="company" placeholder="company"> -->
+                           <asp:TextBox  ID="company" placeholder="company"   runat="server" CssClass="form-control input-lg" ToolTip="company" ></asp:TextBox>
+
                         </div>
 						   <div class="form-group col-md-12 mb-4">
-                          <input type="text" name="username" class="form-control input-lg" id="username" placeholder="username">
+                          <!--<input type="text" name="username" class="form-control input-lg" id="username" placeholder="username">-->
+                               <asp:TextBox  ID="username" placeholder="username"   runat="server" CssClass="form-control input-lg" ToolTip="username" ></asp:TextBox>
                         </div>
                         <div class="form-group col-md-12 ">
-                          <input type="password" name="password" class="form-control input-lg" id="password" placeholder="Password">
+                          <!--<input type="password" name="password" class="form-control input-lg" id="password" placeholder="Password">-->
+                            <asp:TextBox  ID="password" placeholder="Password" runat="server" TextMode="Password"  CssClass="form-control input-lg"></asp:TextBox>
                         </div>
 						<div class="form-group col-md-12 ">
-                          <input type="password" class="form-control input-lg" id="confirm_password" placeholder="Confirm Password">
+                         <!-- <input type="password" class="form-control input-lg" id="confirm_password" placeholder="Confirm Password">-->
+                            <asp:TextBox  ID="confirm_password" placeholder="Confirm Password" runat="server" TextMode="Password"  CssClass="form-control input-lg"></asp:TextBox>
                         </div>
                         <div class="form-group col-md-12 mb-4">
-                          <input type="email" name="email" class="form-control input-lg" name="confirm_password" id="email" aria-describedby="emailHelp"
-                            placeholder="email">
+                          <!--<input type="email" name="email" class="form-control input-lg" name="confirm_password" id="email" aria-describedby="emailHelp"
+                            placeholder="email">-->
+                            <asp:TextBox  ID="email" placeholder="email"   runat="server" CssClass="form-control input-lg" ToolTip="email" ></asp:TextBox>
                         </div>
                         <div class="custom-control custom-checkbox mr-3 mb-3" style="margin:0 0 0 14px;">
                               <input type="checkbox" class="custom-control-input" id="agree">
                               <label class="custom-control-label" for="agree">Agree</label>
-                         </div>
-                        <asp:Literal ID="Literal10" Text="<a href='#' id='opener'>Please agree to our policy</a>" runat="server" meta:resourcekey="Literal10Resource1"></asp:Literal>
-                        
+                        <asp:Literal ID="Literal10" Text="<a href='#' id='opener'>Please agree to our polcy</a>" runat="server" meta:resourcekey="Literal10Resource1"></asp:Literal>
+                            </div>
+                          <div class="col-md-12" >
+<fieldset>
+      <legend>Ermes-server.com CAPTCHA Validation</legend>
+      <p class="prompt">
+        <label for="CaptchaCodeTextBox">Retype the characters from the picture:</label></p>
+      <BotDetect:WebFormsCaptcha runat="server" ID="ExampleCaptcha" 
+      UserInputID="CaptchaCodeTextBox" />
+      <div class="validationDiv">
+        <asp:TextBox ID="CaptchaCodeTextBox" runat="server"></asp:TextBox>
+        <asp:Button ID="ValidateCaptchaButton" runat="server" />
+        <asp:Label ID="CaptchaCorrectLabel" runat="server" CssClass="correct"></asp:Label>
+        <asp:Label ID="CaptchaIncorrectLabel" runat="server" 
+        CssClass="incorrect"></asp:Label>
+      </div>
+    </fieldset>                        
+                              </div>
                         <div class="col-md-12">
-
-                          <button id="submitForm" type="submit" class="btn btn-primary btn-pill mb-4" style="width:100% !important"><asp:Literal ID="Literal11" Text="Create account and" runat="server" meta:resourcekey="Literal11Resource1"></asp:Literal></button>
+                         <asp:Button ID="Button1" runat="server" CssClass="btn btn-primary btn-pill mb-4" style="width:100% !important" Text="Create account and" meta:resourcekey="Literal11Resource1" />
+                          <!--<button id="submitForm" type="submit" class="btn btn-primary btn-pill mb-4" style="width:100% !important"><asp:Literal ID="Literal11" Text="Create account and" runat="server" meta:resourcekey="Literal11Resource1"></asp:Literal></button>-->
                             <a class="text-blue" href="login.aspx">Login Page </a>
                         </div>
                       </div>
@@ -212,7 +235,7 @@
         $('#email').on('keypress keydown keyup', function () {
             var validateMailResult = validateMail($('#email').val());
             $("#email").next("div").remove();
-            $("#submitForm").next("div").remove();
+            $("#Button1").next("div").remove();
             if (validateMailResult == -1) {
                 alarmMail = true
                 $("#email").after("<div class=\"text-danger small mt-1\">" + email + "</div>");
@@ -224,7 +247,7 @@
         $('#username').on('keypress keydown keyup', function () {
             var value_form_lunghezza = $(this).val().length;
             $(this).next("div").remove();
-            $("#submitForm").next("div").remove();
+            $("#Button1").next("div").remove();
             if (value_form_lunghezza < 6) {
                 alarmUsername = true;
                 $(this).after("<div class=\"text-danger small mt-1\">" + username_6 + "</div>");
@@ -236,7 +259,7 @@
         $('#password').on('keypress keydown keyup', function () {
             var value_form_lunghezza = $(this).val().length;
             $(this).next("div").remove();
-            $("#submitForm").next("div").remove();
+            $("#Button1").next("div").remove();
             if (value_form_lunghezza < 6) {
                 alarmPassword = true;
                 $(this).after("<div class=\"text-danger small mt-1\">" + password_6 + "</div>");
@@ -247,7 +270,7 @@
         $('#confirm_password').on('keypress keydown keyup', function () {
             var value_form_lunghezza = $(this).val().length;
             $(this).next("div").remove();
-            $("#submitForm").next("div").remove();
+            $("#Button1").next("div").remove();
             if (value_form_lunghezza < 6) {
                 alarmPassword1 = true
                 $(this).after("<div class=\"text-danger small mt-1\">" + password_6 + "</div>");
@@ -255,16 +278,16 @@
             else
                 alarmPassword1 = false
         });
-        $("#submitForm").click(function () {
+        $("#Button1").click(function () {
             $("#agree").next("div").remove();
             if (!($("#agree").is(':checked'))) {
                 $("#agree").after("<div class=\"text-danger small mt-1\">" + policy + "</div>");
                 return false;
             }
             else {
-                $("#submitForm").next("div").remove();
+                $("#Button1").next("div").remove();
                 if ((alarmUsername) || (alarmPassword) || (alarmPassword1) || (alarmMail)) {
-                    $("#submitForm").after("<div class=\"text-danger small mt-1\">Error*</div>");
+                    $("#Button1").after("<div class=\"text-danger small mt-1\">Error*</div>");
                     return false;
                 }
                 else {
@@ -273,7 +296,7 @@
                     if ($('#password').val() != $('#confirm_password').val()) {
                         $("#password").after("<div class=\"text-danger small mt-1\">" + password_uguale + "</div>");
                         $("#confirm_password").after("<div class=\"text-danger small mt-1\">" + password_uguale + "</div>");
-                        $("#submitForm").after("<div class=\"text-danger small mt-1\">Error*" + password_uguale + "</div>");
+                        $("#Button1").after("<div class=\"text-danger small mt-1\">Error*" + password_uguale + "</div>");
                         return false;
                     }
                 }
@@ -316,8 +339,8 @@
                 dataType: "jsonp",
                 url: 'https://api.openweathermap.org/data/2.5/weather',
                 data: {
-                    lat: data.location.latitude,
-                    lon: data.location.longitude,
+                    lat: data.latitude,
+                    lon: data.longitude,
                     units: "metric",
                     appid: "57d5b21566d36d6d57fd5892ef35cc37"
                 }
@@ -329,7 +352,8 @@
             });
         }
 
-        $.getJSON("https://api.ip2loc.com/jtNZrAX52QtjennyQWIkB3oOeK4Zuzvi/detect", getWeather);
+        //$.getJSON("https://api.ip2loc.com/jtNZrAX52QtjennyQWIkB3oOeK4Zuzvi/detect", getWeather);
+        $.getJSON("https://api.ipstack.com/check?access_key=1c17d2cfbcd7c6cb1fe4204f0830abb5", getWeather);
         </script>
 <script type="text/javascript">
 

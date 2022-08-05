@@ -59,7 +59,7 @@
                	<div class="span2">
                <div id="riga_mail_1" class="control-group">
               <h5 style="padding-top:10px"><asp:literal ID = "Literal3"  text="E-Mail Number 1" runat="server" meta:resourcekey="Literal3Resource1"></asp:literal></h5>
-                       <asp:textbox ID="value_mail1_id"  class="span12" onblur="javascript: keypress_check_mail( 'value_mail1_id','riga_mail_1');" runat="server" MaxLength="29" meta:resourcekey="value_mail1_idResource1"  ></asp:textbox>
+                       <asp:textbox ID="value_mail1_id"  class="span12" onblur="javascript: keypress_check_mail( 'value_mail1_id','riga_mail_1');" runat="server" MaxLength="40" meta:resourcekey="value_mail1_idResource1"  ></asp:textbox>
                 </div>
                 </div>
                 </div>
@@ -69,7 +69,7 @@
                	<div class="span2">
                        <div id="riga_mail_2" class="control-group">
               <h5 style="padding-top:10px"><asp:literal ID = "Literal4"  text="E-Mail Number 2" runat="server" meta:resourcekey="Literal4Resource1"></asp:literal></h5>
-                       <asp:textbox ID="value_mail2_id" onblur="javascript: keypress_check_mail( 'value_mail2_id','riga_mail_2');" class="span12"  runat="server" MaxLength="29" meta:resourcekey="value_mail2_idResource1"  ></asp:textbox>
+                       <asp:textbox ID="value_mail2_id" onblur="javascript: keypress_check_mail( 'value_mail2_id','riga_mail_2');" class="span12"  runat="server" MaxLength="40" meta:resourcekey="value_mail2_idResource1"  ></asp:textbox>
                 </div>
                        </div>
                 </div>

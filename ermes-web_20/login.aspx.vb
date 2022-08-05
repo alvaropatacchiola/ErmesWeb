@@ -121,8 +121,12 @@ Public Class login
     Protected Sub Button1N_Click(sender As Object, e As EventArgs) Handles Button1N.Click
         Dim qr As String = ""
         Dim serial As String = ""
-        qr = Page.Request("qr")
-        serial = Page.Request("serial")
+        'qr = Page.Request("qr")
+        'serial = Page.Request("serial")
+        qr = Page.Request.UrlReferrer.ToString()
+        If (qr.IndexOf("qr=1") > 0) Then
+            serial = Mid(qr, qr.IndexOf("serial=") + 8, qr.Length)
+        End If
 
         If CheckBox1N.Checked Then
             Response.Cookies("UserName").Expires = DateTime.Now.AddDays(30)
@@ -139,7 +143,8 @@ Public Class login
 
         Session("username") = TextBox1N.Text
         Session("password") = TextBox2N.Text
-        If qr IsNot Nothing And serial IsNot Nothing Then
+        'If qr IsNot Nothing And serial IsNot Nothing Then
+        If serial.Length >= 17 Then
             Response.Redirect("plant.aspx?serial=" + serial)
         Else
             Response.Redirect("dashboardAssets.aspx")

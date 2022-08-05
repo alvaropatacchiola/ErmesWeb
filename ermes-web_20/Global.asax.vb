@@ -21,10 +21,10 @@ Public Class Global_asax
 
     Sub Application_Error(ByVal sender As Object, ByVal e As EventArgs)
         ' Generato quando si verifica un errore
-        'Context.ClearError()
-        'Response.Write("application_error" + "<br/>")
-        'Response.Write("<b>error msg:</b>" + e.ToString + "<br/>" + "<b>end error msg<b/>")
-        'Response.Redirect("error.aspx")
+        Context.ClearError()
+        Response.Write("application_error" + "<br/>")
+        Response.Write("<b>error msg:</b>" + e.ToString + "<br/>" + "<b>end error msg<b/>")
+        Response.Redirect("error.aspx")
     End Sub
 
     Sub Session_End(ByVal sender As Object, ByVal e As EventArgs)

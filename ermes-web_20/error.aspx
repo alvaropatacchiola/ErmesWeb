@@ -59,13 +59,13 @@ If problem still continues please contact assistance...
 <!-- Column --> 
 <div class="span6"> 
 <div class="innerAll center"> 
-<p>Is this a serious error? <a href="mailto:alvaro.patacchiola@emec.it?Subject=Ermes-Server Error">Let us know</a></p> 
+<p>Is this a serious error? <a href="mailto:support@emec.it?Subject=Ermes-Server Error">Let us know</a></p> 
 <div class="row-fluid"> 
 <div class="span6"> 
 <a href="login.aspx" class="btn btn-icon-stacked btn-block btn-success glyphicons user_add"><i></i><span>Go Login Page</span><span class="strong">Try Again</span></a> 
 </div> 
 <div class="span6"> 
-<a href="mailto:alvaro.patacchiola@emec.it?Subject=Ermes-Server Error" class="btn btn-icon-stacked btn-block btn-danger glyphicons circle_question_mark"><i></i><span>Support Center</span><span class="strong">Send E-Mail</span></a> 
+<a href="mailto:support@emec.it?Subject=Ermes-Server Error" class="btn btn-icon-stacked btn-block btn-danger glyphicons circle_question_mark"><i></i><span>Support Center</span><span class="strong">Send E-Mail</span></a> 
 </div> 
 </div> 
 </div> 

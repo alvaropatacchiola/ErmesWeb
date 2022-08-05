@@ -13,7 +13,7 @@
     <OutputType>Library</OutputType>
     <RootNamespace>ermes_web_20</RootNamespace>
     <AssemblyName>ermes-web_20</AssemblyName>
-    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <MyType>Custom</MyType>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
@@ -26,6 +26,8 @@
     <SccProvider>SAK</SccProvider>
     <UseGlobalApplicationHostFile />
     <TargetFrameworkProfile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -51,6 +53,14 @@
     <Reference Include="AjaxMin">
       <HintPath>..\packages\AjaxMin.4.97.4951.28483\lib\net40\AjaxMin.dll</HintPath>
     </Reference>
+    <Reference Include="BotDetect, Version=4.4.2.0, Culture=neutral, PublicKeyToken=74616036388b765f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Captcha.4.4.2\lib\net35\BotDetect.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="BotDetect.Web.Mvc, Version=4.4.2.0, Culture=neutral, PublicKeyToken=74616036388b765f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Captcha.4.4.2\lib\net35\BotDetect.Web.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="itextsharp, Version=5.5.0.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\iTextSharp.5.5.0\lib\itextsharp.dll</HintPath>
@@ -60,8 +70,8 @@
       <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="MQTTnet, Version=3.0.13.0, Culture=neutral, PublicKeyToken=b69712f52770c0a7, processorArchitecture=MSIL">
-      <HintPath>..\packages\MQTTnet.3.0.13\lib\net452\MQTTnet.dll</HintPath>
+    <Reference Include="MQTTnet, Version=3.1.2.0, Culture=neutral, PublicKeyToken=b69712f52770c0a7, processorArchitecture=MSIL">
+      <HintPath>..\packages\MQTTnet.3.1.2\lib\net461\MQTTnet.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="MQTTnet.Extensions.ManagedClient, Version=3.0.13.0, Culture=neutral, PublicKeyToken=b69712f52770c0a7, processorArchitecture=MSIL">
@@ -75,6 +85,10 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.SQLite, Version=1.0.115.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>..\packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.115.0\lib\net46\System.Data.SQLite.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Drawing" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Net.Http.WebRequest" />
@@ -138,11 +152,14 @@
     <Content Include="Centurio\testSerial.js" />
     <Content Include="Centurio\webRes.js" />
     <Content Include="Centurio\webService.aspx" />
+    <Content Include="chart\js\jquery-1.12.0.min.js" />
     <Content Include="chart\localCent\buttons.dataTables.min.css" />
     <Content Include="chart\localCent\buttons.flash.min.js" />
+    <Content Include="chart\localCent\buttons.html5.js" />
     <Content Include="chart\localCent\buttons.html5.min.js" />
     <Content Include="chart\localCent\buttons.print.min.js" />
     <Content Include="chart\localCent\centurio.js" />
+    <Content Include="chart\localCent\dataTables.buttons.js" />
     <Content Include="chart\localCent\dataTables.buttons.min.js" />
     <Content Include="chart\localCent\exporting.js" />
     <Content Include="chart\localCent\highstock.js" />
@@ -171,6 +188,7 @@
     <Content Include="image\aquaprox.png" />
     <Content Include="image\background.jpg" />
     <Content Include="image\bwt.png" />
+    <Content Include="image\forest.svg" />
     <Content Include="image\henkel.png" />
     <Content Include="image\hydrotech.png" />
     <Content Include="image\hydrox.png" />
@@ -322,6 +340,8 @@
     <Content Include="pompe\activeSocket.js" />
     <Content Include="pompe\M0101.aspx" />
     <Content Include="pompe\M0101.js" />
+    <Content Include="pompe\M0201.aspx" />
+    <Content Include="pompe\M0201.js" />
     <Content Include="pompe\P0101.aspx" />
     <Content Include="pompe\P0101.js" />
     <Content Include="pompe\P0201.aspx" />
@@ -330,6 +350,7 @@
     <Content Include="pompe\pumpService.aspx" />
     <Content Include="pompe\testWebSocket.aspx" />
     <Content Include="pompe\traduzioni\T0101.js" />
+    <Content Include="pompe\traduzioni\T0201.js" />
     <Content Include="pool.html" />
     <Content Include="pool\CSS\style_pool_inspector.css" />
     <Content Include="pool\CSS\style_pool_inspector2.css" />
@@ -374,11 +395,13 @@
     <Content Include="theme\personalizzazione\certidos.css" />
     <Content Include="theme\personalizzazione\cleanwater.css" />
     <Content Include="theme\personalizzazione\ermes.css" />
+    <Content Include="theme\personalizzazione\forestholidays.css" />
     <Content Include="theme\personalizzazione\henkel.css" />
     <Content Include="theme\personalizzazione\hydrotech.css" />
     <Content Include="theme\personalizzazione\hydrox.css" />
     <Content Include="theme\personalizzazione\kurita.css" />
     <Content Include="theme\personalizzazione\lotec.css" />
+    <Content Include="theme\personalizzazione\pools.css" />
     <Content Include="theme\personalizzazione\proquimia.css" />
     <Content Include="theme\personalizzazione\realtime.css" />
     <Content Include="theme\personalizzazione\sealedAir.css" />
@@ -388,6 +411,7 @@
     <Content Include="tower\message_tw.aspx" />
     <Content Include="tower\validator_message_tower.js" />
     <Content Include="tower\validator_tower_bleed_boiler.js" />
+    <Content Include="upload\upload.aspx" />
     <Content Include="utilizzatore.aspx" />
     <Content Include="utilizzatoreDelete.aspx" />
     <Content Include="wd\alert.aspx" />
@@ -699,7 +723,7 @@
     <Content Include="session_destroy.aspx" />
     <Content Include="sidebar_left.aspx" />
     <Content Include="signed.aspx" />
-    <Content Include="signup.aspx" />
+    <Content Include="registrati.aspx" />
     <Content Include="test.aspx" />
     <Content Include="test1.aspx" />
     <Content Include="TextFile1.txt" />
@@ -17814,6 +17838,13 @@
       <DependentUpon>M0101.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
+    <Compile Include="pompe\M0201.aspx.designer.vb">
+      <DependentUpon>M0201.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pompe\M0201.aspx.vb">
+      <DependentUpon>M0201.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
     <Compile Include="pompe\P0101.aspx.designer.vb">
       <DependentUpon>P0101.aspx</DependentUpon>
     </Compile>
@@ -17865,6 +17896,13 @@
     </Compile>
     <Compile Include="tower\message_tw.aspx.vb">
       <DependentUpon>message_tw.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="upload\upload.aspx.designer.vb">
+      <DependentUpon>upload.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="upload\upload.aspx.vb">
+      <DependentUpon>upload.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="utilizzatore.aspx.designer.vb">
@@ -18568,11 +18606,11 @@
       <DependentUpon>signed.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
-    <Compile Include="signup.aspx.designer.vb">
-      <DependentUpon>signup.aspx</DependentUpon>
+    <Compile Include="registrati.aspx.designer.vb">
+      <DependentUpon>registrati.aspx</DependentUpon>
     </Compile>
-    <Compile Include="signup.aspx.vb">
-      <DependentUpon>signup.aspx</DependentUpon>
+    <Compile Include="registrati.aspx.vb">
+      <DependentUpon>registrati.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="test.aspx.designer.vb">
@@ -18950,7 +18988,7 @@
       <Generator>GlobalResourceProxyGenerator</Generator>
       <LastGenOutput>javascript_global.Designer.vb</LastGenOutput>
     </Content>
-    <Content Include="App_LocalResources\signup.aspx.resx" />
+    <Content Include="App_LocalResources\registrati.aspx.resx" />
     <Content Include="App_GlobalResources\signup_global.resx">
       <Generator>GlobalResourceProxyGenerator</Generator>
       <LastGenOutput>signup_global.Designer.vb</LastGenOutput>
@@ -19061,8 +19099,8 @@
     <Content Include="App_LocalResources\modifica_impianto_form.aspx.de.resx" />
     <Content Include="App_LocalResources\signed.aspx.en.resx" />
     <Content Include="App_LocalResources\signed.aspx.de.resx" />
-    <Content Include="App_LocalResources\signup.aspx.en.resx" />
-    <Content Include="App_LocalResources\signup.aspx.de.resx" />
+    <Content Include="App_LocalResources\registrati.aspx.en.resx" />
+    <Content Include="App_LocalResources\registrati.aspx.de.resx" />
     <Content Include="App_LocalResources\tower.aspx.en.resx" />
     <Content Include="App_LocalResources\tower.aspx.de.resx" />
     <Content Include="App_LocalResources\wd.aspx.en.resx" />
@@ -19240,7 +19278,7 @@
     <Content Include="App_LocalResources\modificautilizzatore_form.aspx.fr.resx" />
     <Content Include="App_LocalResources\remember.aspx.fr.resx" />
     <Content Include="App_LocalResources\signed.aspx.fr.resx" />
-    <Content Include="App_LocalResources\signup.aspx.fr.resx" />
+    <Content Include="App_LocalResources\registrati.aspx.fr.resx" />
     <Content Include="App_LocalResources\tower.aspx.fr.resx" />
     <Content Include="App_LocalResources\wd.aspx.fr.resx" />
     <Content Include="chart\App_LocalResources\log_ld.aspx.fr.resx" />
@@ -19658,7 +19696,7 @@
     <Content Include="App_LocalResources\modificautilizzatore_form.aspx.es.resx" />
     <Content Include="App_LocalResources\remember.aspx.es.resx" />
     <Content Include="App_LocalResources\signed.aspx.es.resx" />
-    <Content Include="App_LocalResources\signup.aspx.es.resx" />
+    <Content Include="App_LocalResources\registrati.aspx.es.resx" />
     <Content Include="App_LocalResources\tower.aspx.es.resx" />
     <Content Include="App_LocalResources\wd.aspx.es.resx" />
     <Content Include="App_LocalResources\setpoint_ld.aspx.en.resx">
@@ -19959,6 +19997,7 @@
     <Content Include="tower\App_LocalResources\clock.aspx.es.resx" />
     <Content Include="tower\App_LocalResources\clock.aspx.en.resx" />
     <Content Include="tower\App_LocalResources\clock.aspx.de.resx" />
+    <None Include="Resources\login.aspx.fr.resx" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="main.Master" />
@@ -23002,6 +23041,13 @@
       </FlavorProperties>
     </VisualStudio>
   </ProjectExtensions>
+  <Import Project="..\packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.115.0\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets" Condition="Exists('..\packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.115.0\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Questo progetto fa riferimento a uno o più pacchetti NuGet che non sono presenti in questo computer. Usare lo strumento di ripristino dei pacchetti NuGet per scaricarli. Per altre informazioni, vedere http://go.microsoft.com/fwlink/?LinkID=322105. Il file mancante è {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.115.0\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.115.0\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets'))" />
+  </Target>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

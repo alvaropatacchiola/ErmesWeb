@@ -205,12 +205,21 @@ $("#save_alarm_ldtower_new").click(function () {
 
  //   alert("allarme")
     if (!($('#cond_low_off').is(':checked'))) {
-        Changed_channel('value_cond_low_abs', 'riga_cond_low_abs', max_cond, 0, 0);
-        Changed_channel('value_cond_low_track', 'riga_cond_low_track', max_cond, 0, 0);
+        
+        
+        if (($('#cond_low_absolute').is(':checked')))
+            Changed_channel('value_cond_low_abs', 'riga_cond_low_abs', max_ch1, 0, 0);
+        
+        if (($('#cond_low_track').is(':checked')))
+            Changed_channel('value_cond_low_track', 'riga_cond_low_track', max_ch1, 0, 0);
     }
     if (!($('#cond_high_off').is(':checked'))) {
-        Changed_channel('value_cond_high_abs', 'riga_cond_high_abs', max_cond, 0, 0);
-        Changed_channel('value_cond_high_track', 'riga_cond_high_track', max_cond, 0, 0);
+        
+        if (($('#cond_high_absolute').is(':checked')))
+            Changed_channel('value_cond_high_abs', 'riga_cond_high_abs', max_ch1, 0, 0);
+        
+        if (($('#cond_high_track').is(':checked')))
+            Changed_channel('value_cond_high_track', 'riga_cond_high_track', max_ch1, 0, 0);
     }
 
    

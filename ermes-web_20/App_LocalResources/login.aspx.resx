@@ -175,13 +175,13 @@
     <value>forgot your password?</value>
   </data>
   <data name="Literal2Resource1.Text" xml:space="preserve">
-    <value>&lt;li class='active'&gt;&lt;a href='' title='English'&gt;&lt;img src='theme/images/lang/en.png' alt='English'&gt; English&lt;/a&gt;&lt;/li&gt;</value>
+    <value>Registrati</value>
   </data>
   <data name="Literal2Resource2.Text" xml:space="preserve">
     <value>Sign Up</value>
   </data>
   <data name="Literal3Resource1.Text" xml:space="preserve">
-    <value>&lt;a href='#' data-toggle='dropdown'&gt;&lt;img src='theme/images/lang/en.png' alt='en' /&gt;&lt;/a&gt;</value>
+    <value>Non Hai un Account?</value>
   </data>
   <data name="literal4Resource1.Text" xml:space="preserve">
     <value>Password</value>
@@ -196,7 +196,7 @@
     <value>ERMES - Emec , Simple as Water</value>
   </data>
   <data name="remember_meNResource1.Text" xml:space="preserve">
-    <value>Remember me</value>
+    <value>Ricordami</value>
   </data>
   <data name="remember_meNResource1.ToolTip" xml:space="preserve">
     <value />

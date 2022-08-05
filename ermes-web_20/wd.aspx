@@ -128,7 +128,7 @@
        <div id="menu_strumento">
                
     <ul class="nav nav-pills">
-           </ul>
+           
         <asp:literal ID="Label33" runat="server" Text="<li class='active'><a id ='channels_id' href='#'>Channels</a></li>" ></asp:literal>
             <li class="dropdown" id="setpoint_li"><a class="dropdown-toggle" data-toggle="dropdown" href='#'><asp:Label ID="Label19" runat="server" Text="Set Point" meta:resourcekey="Label19Resource1"></asp:Label><span class="caret"></span></a>
                 <ul class="dropdown-menu">
@@ -140,7 +140,7 @@
             </li>
 
 
-            <li class="dropdown" id="alarm_li"></li>
+            <li class="dropdown" id="alarm_li">
            <a class="dropdown-toggle" data-toggle="dropdown" href='#'><asp:Label ID="Label21" runat="server" Text="Alarm" meta:resourcekey="Label21Resource1"></asp:Label><span class="caret"></span></a>
                 <ul class="dropdown-menu">
 
@@ -166,7 +166,7 @@
         <asp:literal ID="Literal4" runat="server" Text="<li><a id ='Log_1' href='#'>Log</a></li>"  meta:resourcekey="Label15Resource1"></asp:literal>
         <asp:literal ID="Literal5" runat="server" Text="<li><a id ='Log_2' href='#'>Log</a></li>"  ></asp:literal>
 
-
+</ul>
         
     </div>
 

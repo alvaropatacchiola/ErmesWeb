@@ -4,6 +4,22 @@ var jsonParseLabel;
 //in caso di variazione filtri rettificare la classe
 var classeStrumento = ["impiantoacceso", "impiantospento", "allarme"];
 
+
+function createLabelGlobal(idLabelTemp) {
+    // console.log("label:" + idLabelTemp)
+    try {
+
+        for (var key in jsonParseLabel) {
+            if (idLabelTemp == key) {
+                return jsonParseLabel[key];
+            }
+        }
+    }
+    catch (ex) {
+    }
+    return "";
+}
+
 function get_data(serialNumber, stringJson, stringGlobal, nomeLabel, stringDecimal, stringLabel, resultPipe, resultConfigurationInput, stringJsonGlobalInputOutput, sistemaUSA, traduzioneModifica, traduzioneElimina, traduzioneVaiImpianto, nomeImpiantoDB, href,start) {
     var intestazione = '';
     var check_connected = false;
@@ -13,7 +29,9 @@ function get_data(serialNumber, stringJson, stringGlobal, nomeLabel, stringDecim
         //$("#" + serialNumber + "_main").replaceWith("<div Class=\"col-xl-3 col-sm-6 plant strumento \" id=\"" + serialNumber + "_ricerca\"></div>")
         $("#" + serialNumber + "_main").replaceWith("<div Class=\"col-xl-3 col-sm-6 plant strumento \" id=\"" + serialNumber + "_ricerca\"></div>")
     }
-
+    else {
+        $grid.isotope();
+    }
     //intestazione = "<div Class=\"col-xl-3 col-sm-6 plant strumento aaaaaaaa bbbbbbbb cccccccc \" id=\"" + serialNumber + "_ricerca\"><div Class=\"card card-default card-mini \">"
     intestazione = "<div Class=\"card card-default card-mini \">"
     //intestazione = "<div id=\"" + serialNumber + "_ricerca\" Class=\"col-xl-3 col-sm-6 plant strumento \"><div Class=\"card card-default card-mini \">"

@@ -55,11 +55,11 @@
         main_function_config.get_tipo_strumento_tower(personalizzazione_aquacare, config_value(0), config_value(1), config_value(2), config_value(3), version_str, , , , full_scale_temp)
         main_function_config.get_tower_unit(unit_value, international_unit, measure_unit)
 
-        If measure_unit = "uS" Then
-            Literal12.Text = "uS "
-        Else
-            Literal12.Text = "ppm "
-        End If
+        'If measure_unit = "uS" Then
+        '    Literal12.Text = "uS "
+        'Else
+        Literal12.Text = "ppm "
+        'End If
 
         If InStr(version_str, "3.0.0") Or InStr(version_str, "3.0.1") Then
 

@@ -8,7 +8,7 @@ function Changed_channel_clock(id1, id2, lunghezza) {
     var value_form = $(id).val().length;
 
     var_alarm = false;
-
+    
     if ((value_form == 0) || (value_form != lunghezza)) {
 
         $(id_1).removeClass('error');
@@ -131,8 +131,9 @@ $("#save_international_new").click(function () {
 
     $('#save_international_new').next('p').remove();
     Changed_channel_clock('clock_12_ggmmaa', 'div_ch3', 19);
+    //console.log(var_clock12 + " " + var_clock24)
     Changed_channel_clock('clock_24_ggmmaa', 'div_ch3', 16);
-    if ((var_clock12) || (var_clock24)) {
+    if ((var_clock12) && (var_clock24)) {
         $('#save_international_new').next('p').remove();
 
         $('#save_international_new').after('<p class="error help-block"><span class="label label-important">' + wrong_settings + ' </span></p>');

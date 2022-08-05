@@ -267,26 +267,28 @@ $(document).ready(function() {
   }
 
   /*======== 11. TOASTER ========*/
+	
+	
   var toaster = $('#toaster')
   function callToaster(positionClass) {
     toastr.options = {
       closeButton: true,
       debug: false,
-      newestOnTop: false,
+      newestOnTop: true,
       progressBar: true,
       positionClass: positionClass,
       preventDuplicates: false,
       onclick: null,
-      showDuration: "300",
-      hideDuration: "1000",
-      timeOut: "5000",
-      extendedTimeOut: "1000",
+      showDuration: "10000",
+      hideDuration: "10000",
+      timeOut: "10000",
+      extendedTimeOut: "10000",
       showEasing: "swing",
       hideEasing: "linear",
       showMethod: "fadeIn",
       hideMethod: "fadeOut"
     };
-    toastr.success("Welcome to the new Ermes Prisma dashboard", "Ermes Prisma");
+    toastr.success("Lorem ipsum dolor amet lorem ipsum", "ATTENZIONE - NEW Ermes Dashboard");
   }
 
   if (toaster.length != 0) {
@@ -308,7 +310,7 @@ $(document).ready(function() {
         "debug": false,
         "newestOnTop": false,
         "progressBar": false,
-        "positionClass": "toast-top-right",
+        "positionClass": "toast-top-left",
         "preventDuplicates": false,
         "onclick": null,
         "showDuration": "3000",

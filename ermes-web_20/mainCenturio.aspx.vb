@@ -96,7 +96,7 @@ Public Class mainCenturio
 
 
         jsonVariableMainCanaleSondaTemp = jsonVariableMainCanaleSondaTemp + "]}"
-        javaScriptLiteral.Text = javaScriptLiteral.Text + "jsonParseDecimalStr ='" + jsonVariableMainCanaleSondaTemp + "'; jsonParseDecimal= JSON.parse(jsonParseDecimalStr);"
+        javaScriptLiteral.Text = javaScriptLiteral.Text + "var jsonParseDecimalStr ='" + jsonVariableMainCanaleSondaTemp + "'; var jsonParseDecimal= JSON.parse(jsonParseDecimalStr);"
 
         For Each dc1 In tabella_centurio
 
@@ -118,7 +118,12 @@ Public Class mainCenturio
             If (HttpContext.Current.Request.Url.Host.IndexOf("aquaprox") >= 0) Or (HttpContext.Current.Request.Url.Host.IndexOf("localhost") >= 0) Then
                 setNameStrumento.Text = "<li id='labelCenturioR_li'  class='active' style='padding:17px'>OPTIMUS C10</li>"
             Else
-                setNameStrumento.Text = "<li id='labelCenturioR_li'  class='active' style='padding:17px'>" + dc1.nomeStrumento + "</li>"
+                If (HttpContext.Current.Request.Url.Host.IndexOf("henkel") >= 0) Then
+                    setNameStrumento.Text = "<li id='labelCenturioR_li'  class='active' style='padding:17px'>Eco - Flex</li>"
+                Else
+                    setNameStrumento.Text = "<li id='labelCenturioR_li'  class='active' style='padding:17px'>" + dc1.nomeStrumento + "</li>"
+                End If
+
             End If
 
 
@@ -271,6 +276,7 @@ Public Class mainCenturio
         Dim stringaIstanzaTemp As String = ""
         Dim asSubMenu As Boolean = True
         Dim multiparameter As Boolean = False
+        Dim contatoreCanale As Integer = 0
         For Each oXMLNode In LstNodes
             stringaIstanzaTemp = ""
             Dim nomeAttributeIstanza As String = oXMLNode.Attributes().ItemOf("nome").Value
@@ -319,6 +325,9 @@ Public Class mainCenturio
                         GoTo nexLoopLabel
                     End If
                 End If
+                If contiene Then
+                    contatoreCanale = contatoreCanale + 1
+                End If
             End If
 
             Dim LstNodesCanale As XmlNodeList
@@ -339,7 +348,7 @@ Public Class mainCenturio
                         stringaIstanzaTemp = stringaIstanzaTemp + "<li Class=""dropdown""> <a href = ""#" + nomeAttributeIstanza + "_" + nomeAttributeComponenti + """ data-toggle=""tab"">" + oXMLNode.item("stringaIstanza").InnerText + "</a>"
                         stringaIstanzaTemp = stringaIstanzaTemp + "</li>"
                         LstNodesListaValori = oXMLNodeSub.childNodes()
-                        tabMenu.Text = tabMenu.Text + prepareListaValori(tabella_probeList, LstNodesListaValori, "null", nomeAttributeIstanza + "_" + nomeAttributeComponenti, nomeAttributeIstanzaText + ">" + nomeAttributeComponentiText, sistemaUSA)
+                        tabMenu.Text = tabMenu.Text + prepareListaValori(tabella_probeList, LstNodesListaValori, "null", nomeAttributeIstanza + "_" + nomeAttributeComponenti, nomeAttributeIstanzaText + ">" + nomeAttributeComponentiText, sistemaUSA, contatoreCanale)
 
                     Else
                         asSubMenu = True
@@ -352,7 +361,7 @@ Public Class mainCenturio
 
                         stringaIstanzaTemp = stringaIstanzaTemp + "</li>"
                         LstNodesListaValori = oXMLNodeSub.childNodes()
-                        tabMenu.Text = tabMenu.Text + prepareListaValori(tabella_probeList, LstNodesListaValori, oXMLNodeSub.item("modeComponenti").InnerText, nomeAttributeIstanza + "_" + nomeAttributeComponenti, nomeAttributeIstanzaText + ">" + nomeAttributeComponentiText, sistemaUSA)
+                        tabMenu.Text = tabMenu.Text + prepareListaValori(tabella_probeList, LstNodesListaValori, oXMLNodeSub.item("modeComponenti").InnerText, nomeAttributeIstanza + "_" + nomeAttributeComponenti, nomeAttributeIstanzaText + ">" + nomeAttributeComponentiText, sistemaUSA, contatoreCanale)
 
                     End If
 
@@ -413,7 +422,7 @@ nexLoopLabel:
         'tabMenu.Text = tabMenu.Text + "</div>"
         Return stringaIstanza
     End Function
-    Private Function prepareListaValori(ByVal tabella_probeList As ermes_web_20.centurioQuery.xmlConfigDataTable, ByVal LstNodes As XmlNodeList, ByVal modeComponenti As String, ByVal pathName As String, ByVal pathNameText As String, ByVal sistemaUSA As String) As String
+    Private Function prepareListaValori(ByVal tabella_probeList As ermes_web_20.centurioQuery.xmlConfigDataTable, ByVal LstNodes As XmlNodeList, ByVal modeComponenti As String, ByVal pathName As String, ByVal pathNameText As String, ByVal sistemaUSA As String, ByVal contatoreCanale As Integer) As String
 
         '     	<div id = "tab2" Class="tab-pane widget-body-regular">
         '	patacchiola finocchio
@@ -477,7 +486,7 @@ nexLoopLabel:
                     ListaValoreDef = Replace(ListaValoreDef, "]", "-") ' perche all'id gli rompe le scatole la parentesi [
                     'Dim ListaValoreDef As String = oXMLNodeSub.Attributes().ItemOf("nome").Value
 
-                    widgetHead = widgetHead + preparaWidgetHead(tabella_probeList, oXMLNodeSub, modeComponenti, pathName + "_" + ListaValoreDef, pathName, indiceListaValore, widgetbody, htmAfterTab, contatoreOggetti, actionListavalore, sistemaUSA)
+                    widgetHead = widgetHead + preparaWidgetHead(tabella_probeList, oXMLNodeSub, modeComponenti, pathName + "_" + ListaValoreDef, pathName, indiceListaValore, widgetbody, htmAfterTab, contatoreOggetti, actionListavalore, sistemaUSA, contatoreCanale)
                     'widgetHead = widgetHead.Replace("xxxxxx", actionListavalore)
                     'widget body
                     indiceListaValore = indiceListaValore + 1
@@ -534,7 +543,7 @@ nexLoopLabel:
         'End If
         'Return listaComponenti
     End Function
-    Public Function preparaWidgetHead(ByVal tabella_probeList As ermes_web_20.centurioQuery.xmlConfigDataTable, ByVal LstNode As XmlNode, ByVal modeComponenti As String, ByVal pathName As String, ByVal masterPathName As String, ByVal indiceListaValore As Integer, ByRef widgetbody As String, ByRef htmlAfterTab As String, ByRef contatoreOggetti As Integer, ByRef actionValore As String, ByVal sistemaUSA As String) As String
+    Public Function preparaWidgetHead(ByVal tabella_probeList As ermes_web_20.centurioQuery.xmlConfigDataTable, ByVal LstNode As XmlNode, ByVal modeComponenti As String, ByVal pathName As String, ByVal masterPathName As String, ByVal indiceListaValore As Integer, ByRef widgetbody As String, ByRef htmlAfterTab As String, ByRef contatoreOggetti As Integer, ByRef actionValore As String, ByVal sistemaUSA As String, ByVal contatoreCanale As Integer) As String
         Dim modeComponentisplit() As String
         Dim modeComponentisplitValue() As String
         Dim htmlAfterTabText As String = ""
@@ -579,7 +588,12 @@ nexLoopLabel:
                 actionValore = oXMLNodeSub.InnerText
             End If
             If (oXMLNodeSub.InnerText.ToString.IndexOf("calib") >= 0) Then
-                htmIntoTab = htmIntoTab + disegnaButtonCalib(LstNode, pathName, contatoreOggetti.ToString, oXMLNodeSub.InnerText.ToString)
+                If (pathName.IndexOf("-") > 0) Then ' per verificare se un punto va calibrato o meno
+                    htmIntoTab = htmIntoTab + disegnaButtonCalib(LstNode, pathName, contatoreOggetti.ToString, oXMLNodeSub.InnerText.ToString, True, contatoreCanale)
+                Else
+                    htmIntoTab = htmIntoTab + disegnaButtonCalib(LstNode, pathName, contatoreOggetti.ToString, oXMLNodeSub.InnerText.ToString, False, contatoreCanale)
+                End If
+
                 contatoreOggetti = contatoreOggetti + 1
             End If
 
@@ -832,7 +846,7 @@ nexLoopLabel:
                     stringResult = stringResult + "<h5>Feed Time Hr</h5>"
 
                     stringResult = stringResult + "<Select manualRemote = ""no"" calib = ""no"" action=""setpoint"" data-original-title=""" + LstNode.Item("stringa").InnerText + """  id = """ + pathName + "_" + nomeOggetto + "_feed_" + counteW.ToString() + """  min=""" + LstNode.Item("minimo").InnerText + """ mainId =""" + pathName + "_" + nomeOggetto + """ count=""" + idOggetto + """>"
-                    For i = 0 To 99
+                    For i = 0 To 23
                         stringResult = stringResult + "<Option value=""" + i.ToString + """ >" + i.ToString + "</Option>"
                     Next
 
@@ -841,7 +855,7 @@ nexLoopLabel:
                     stringResult = stringResult + "<div Class=""span2"">"
                     stringResult = stringResult + "<h5>Feed Time Min</h5>"
                     stringResult = stringResult + "<Select manualRemote = ""no"" calib = ""no"" action=""setpoint"" data-original-title=""" + LstNode.Item("stringa").InnerText + """   id = """ + pathName + "_" + nomeOggetto + "_1" + "_feed_" + counteW.ToString() + """  min=""" + LstNode.Item("minimo").InnerText + """  minB=""" + LstNode.Item("minimo").InnerText + """ mainId =""" + pathName + "_" + nomeOggetto + """  count=""" + idOggetto + """>"
-                    For i = 0 To 99
+                    For i = 0 To 59
                         stringResult = stringResult + "<Option value=""" + i.ToString + """ >" + i.ToString + "</Option>"
                     Next
 
@@ -939,7 +953,7 @@ nexLoopLabel:
         Return stringResult
 
     End Function
-    Public Function disegnaButtonCalib(ByVal LstNode As XmlNode, ByVal pathName As String, ByVal idOggetto As String, ByVal nomeOggetto As String)
+    Public Function disegnaButtonCalib(ByVal LstNode As XmlNode, ByVal pathName As String, ByVal idOggetto As String, ByVal nomeOggetto As String, ByVal checkPrimoPunto As Boolean, ByVal numeroCanale As Integer)
         '<input type = "text" place             holder="Text input" Class="span12">
         Dim stringResult As String = "<div Class=""control-group"" id =""" + pathName + "_" + nomeOggetto + "_div"">"
 
@@ -960,7 +974,12 @@ nexLoopLabel:
 
 
         'stringResult = stringResult + "</input>"
-        stringResult = stringResult + "<input manualRemote = ""no"" calib = ""ok"" typeAction =""remoteCalib"" type=""button"" id = """ + pathName + "_" + nomeOggetto + """ actionValue=""" + nomeOggetto + """ getValue=""" + pathName + "_noChange"" Class=""btn btn-primary"" value=""Start Calibration"">"
+        If (checkPrimoPunto) Then
+            stringResult = stringResult + "<input primoPuntoCheck = ""yes"" calibPrimoPunto =""ch" + numeroCanale.ToString + "zeroCalibR"" manualRemote = ""no"" calib = ""ok"" typeAction =""remoteCalib"" type=""button"" id = """ + pathName + "_" + nomeOggetto + """ actionValue=""" + nomeOggetto + """ getValue=""" + pathName + "_noChange"" Class=""btn btn-primary"" value=""Start Calibration"">"
+        Else
+            stringResult = stringResult + "<input primoPuntoCheck = ""no"" manualRemote = ""no"" calib = ""ok"" typeAction =""remoteCalib"" type=""button"" id = """ + pathName + "_" + nomeOggetto + """ actionValue=""" + nomeOggetto + """ getValue=""" + pathName + "_noChange"" Class=""btn btn-primary"" value=""Start Calibration"">"
+        End If
+
 
         stringResult = stringResult + "</div></div>"
         Return stringResult
@@ -1196,7 +1215,7 @@ nexLoopLabel:
                         If (oXMLNodeCanale.name <> "#comment") Then
                             attributeDataNodes = oXMLNodeCanale.Attributes().ItemOf("type")
                             If (attributeDataNodes.Value = "datetime") Then
-                                DateTimeHeader.Text = "<h3 id = ""clockRealR""class=""heading"">11/09/2013</h3>"
+                                DateTimeHeader.Text = "<h3 id = ""clockRealR""class=""heading""></h3>"
                             End If
                             If (attributeDataNodes.Value = "label") Then
                                 NameStrumento1.Text = "<h3 id = 'labelCenturioR_h3' class='heading'>" + nomeStrumento + "</h3>"
@@ -1504,7 +1523,7 @@ nexLoopLabel:
 
         intestazione = intestazione + "<Select manualRemote = ""no"" calib = ""no"" id=""logTypeDays"" data-original-title=""Log Type"" data-placement=""right""  min =""minlog"" Class=""span3"">"
         For i = 1 To 30
-            If i < 30 Then
+            If i <> 7 Then
                 intestazione = intestazione + "<Option value=""" + i.ToString + """ >" + i.ToString + "</Option>"
             Else
                 intestazione = intestazione + "<Option value=""" + i.ToString + """ selected>" + i.ToString + "</Option>"
@@ -1777,6 +1796,12 @@ nexLoopLabel:
                 Dim digitalsp1Counter As Integer = 1
                 Dim idDigitalsp2 As String = "'1','2','3','4'"
                 Dim digitalsp2Counter As Integer = 1
+
+                Dim idPercentagesp1 As String = "'1','2','3','4'"
+                Dim percentagesp1Counter As Integer = 1
+                Dim idPercentagesp2 As String = "'1','2','3','4'"
+                Dim percentagesp2Counter As Integer = 1
+
                 Dim idDigitalLabel As String = "'1','2','3','4'"
                 Dim digitalLabelCounter As Integer = 1
 
@@ -1911,30 +1936,34 @@ nexLoopLabel:
                                 idDigitalspEn = idDigitalspEn.Replace("'" + digitalCounter.ToString + "'", "'" + oXMLNodeCanale.InnerXml() + "'")
                                 digitalCounter = digitalCounter + 1
                             End If
-
                             If (attributeDataNodes.Value = "digitalSetpoint1") Then
                                 idDigitalsp1 = idDigitalsp1.Replace("'" + digitalsp1Counter.ToString + "'", "'" + oXMLNodeCanale.InnerXml() + "'")
                                 digitalsp1Counter = digitalsp1Counter + 1
                             End If
+                            If (attributeDataNodes.Value = "percentageSetpoint1") Then
+                                idPercentagesp1 = idPercentagesp1.Replace("'" + percentagesp1Counter.ToString + "'", "'" + oXMLNodeCanale.InnerXml() + "'")
+                                percentagesp1Counter = percentagesp1Counter + 1
+                            End If
+
                             If (attributeDataNodes.Value = "proportionalSetpoint1") Then
                                 idDigitalsp1 = idDigitalsp1.Replace("'" + digitalsp1Counter.ToString + "'", "'" + oXMLNodeCanale.InnerXml() + "'")
                                 digitalsp1Counter = digitalsp1Counter + 1
                             End If
-
                             If (attributeDataNodes.Value = "digitalSetpoint2") Then
                                 idDigitalsp2 = idDigitalsp2.Replace("'" + digitalsp2Counter.ToString + "'", "'" + oXMLNodeCanale.InnerXml() + "'")
                                 digitalsp2Counter = digitalsp2Counter + 1
-
                             End If
+                            If (attributeDataNodes.Value = "percentageSetpoint2") Then
+                                idPercentagesp2 = idPercentagesp2.Replace("'" + percentagesp2Counter.ToString + "'", "'" + oXMLNodeCanale.InnerXml() + "'")
+                                percentagesp2Counter = percentagesp2Counter + 1
+                            End If
+
                             If (attributeDataNodes.Value = "proportionalSetpoint2") Then
                                 idDigitalsp2 = idDigitalsp2.Replace("'" + digitalsp2Counter.ToString + "'", "'" + oXMLNodeCanale.InnerXml() + "'")
                                 digitalsp2Counter = digitalsp2Counter + 1
-
                             End If
-
                             If (attributeDataNodes.Value = "proportionalSetpointLabelB") Then ' B sta per indicare se deve essere presente in barra
                                 'If (oXMLNodeCanale.InnerXml().IndexOf("[")) Then 'path da ricercare nell XML
-
                                 'Else
                                 idDigitalLabel = idDigitalLabel.Replace("'" + digitalLabelCounter.ToString + "'", "'" + oXMLNodeCanale.InnerXml() + "'")
                                 'End If
@@ -1942,7 +1971,6 @@ nexLoopLabel:
                             End If
                             If (attributeDataNodes.Value = "digitalSetpointLabelB") Then ' B sta per indicare se deve essere presente in barra
                                 'If (oXMLNodeCanale.InnerXml().IndexOf("[")) Then 'path da ricercare nell XML
-
                                 'Else
                                 idDigitalLabel = idDigitalLabel.Replace("'" + digitalLabelCounter.ToString + "'", "'" + oXMLNodeCanale.InnerXml() + "'")
                                 'End If
@@ -1983,9 +2011,17 @@ nexLoopLabel:
                     For indiceReset = digitalsp1Counter To 4
                         idDigitalsp1 = idDigitalsp1.Replace("'" + indiceReset.ToString + "'", "''")
                     Next
+                    For indiceReset = percentagesp1Counter To 4
+                        idPercentagesp1 = idPercentagesp1.Replace("'" + indiceReset.ToString + "'", "''")
+                    Next
+
                     For indiceReset = digitalsp2Counter To 4
                         idDigitalsp2 = idDigitalsp2.Replace("'" + indiceReset.ToString + "'", "''")
                     Next
+                    For indiceReset = percentagesp2Counter To 4
+                        idPercentagesp2 = idPercentagesp2.Replace("'" + indiceReset.ToString + "'", "''")
+                    Next
+
                     For indiceReset = alarmEnCounter To 2
                         idAlarmEn = idAlarmEn.Replace("'" + indiceReset.ToString + "'", "''")
                     Next
@@ -2000,7 +2036,7 @@ nexLoopLabel:
                     indiceCanale = indiceCanale + 1
 
                     ' blocco header impianto java script (canvas water meter)
-                    javaScriptLiteral.Text = javaScriptLiteral.Text + "var bodyVarCanvas" + numeroHeader.ToString + "= new CanvasNew('#bodyCanvas" + numeroHeader.ToString + "','#canale" + numeroHeader.ToString + "','#bodyCanvasSub" + numeroHeader.ToString + "','" + idGrandezza + "','" + idProbe + "','" + idMassimo + "','" + idMinimo + "','0'," + idDigital + "," + idDigitalspEn + "," + idDigitalsp1 + "," + idDigitalsp2 + "," + idDigitalLabel + "," + idAlarmEn + "," + idAlarmVal + "," + idAlarmLabel + "," + strumentoTouch.ToString + ",'" + tipoCanale + "','" + numeroSonda + "');"
+                    javaScriptLiteral.Text = javaScriptLiteral.Text + "var bodyVarCanvas" + numeroHeader.ToString + "= new CanvasNew('#bodyCanvas" + numeroHeader.ToString + "','#canale" + numeroHeader.ToString + "','#bodyCanvasSub" + numeroHeader.ToString + "','" + idGrandezza + "','" + idProbe + "','" + idMassimo + "','" + idMinimo + "','0'," + idDigital + "," + idDigitalspEn + "," + idDigitalsp1 + "," + idDigitalsp2 + "," + idDigitalLabel + "," + idAlarmEn + "," + idAlarmVal + "," + idAlarmLabel + "," + strumentoTouch.ToString + ",'" + tipoCanale + "','" + numeroSonda + "'," + idPercentagesp1 + "," + idPercentagesp2 + ");"
 
                     javaScriptLiteral.Text = javaScriptLiteral.Text + "arrayOggettiCanale.push(bodyVarCanvas" + numeroHeader.ToString + ");"
 

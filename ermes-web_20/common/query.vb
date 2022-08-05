@@ -70,6 +70,10 @@
             Return False
         End If
     End Function
+    Public Function getJSONData(ByVal username As String, ByVal password As String) As ermes_web_20.quey_db.webServiceDataTable
+        Return db_data_apiJson.GetIdentificativoList(username, password)
+    End Function
+
     Public Function getProbeList(ByVal codiceProbe As String) As ermes_web_20.centurioQuery.xmlConfigDataTable
 
         Dim i As Integer
@@ -577,7 +581,7 @@
     Public Function insert_super_user(ByVal username As String, ByVal password As String, ByVal azienda As String, ByVal mail As String) As Boolean
         Dim result_insert As Integer
 
-        result_insert = db_data_super.Insert_super_user(Now, username, password, azienda, "active", mail, "PErmes", "#f0f1f5", "#202127", "logo.png", "#0fc54f", "#ffffff")
+        result_insert = db_data_super.Insert_super_user(Now, username, password, azienda, "active", mail, "PErmes", "#f0f1f5", "#202127", "logo.png", "#0fc54f", "#ffffff", "Ermes")
         If result_insert > 0 Then
             Return True
         Else

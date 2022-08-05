@@ -171,5 +171,14 @@ Namespace Resources
                 Return ResourceManager.GetString("strumenti_attivi", resourceCulture)
             End Get
         End Property
+        
+        '''<summary>
+        '''  Cerca una stringa localizzata simile a Vai all impianto.
+        '''</summary>
+        Friend Shared ReadOnly Property vaiImpianto() As String
+            Get
+                Return ResourceManager.GetString("vaiImpianto", resourceCulture)
+            End Get
+        End Property
     End Class
 End Namespace

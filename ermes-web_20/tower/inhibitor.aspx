@@ -166,7 +166,7 @@
                 <div class="row-fluid">
                	<div class="span3">
                        <div id="riga_water_meter_ppm_ppm" class="control-group">
-                           <h5 style="padding-top:10px"><asp:literal ID = "Literal12"  text="PPM" runat="server" meta:resourcekey="Literal12Resource1"></asp:literal></h5>
+                           <h5 style="padding-top:10px"><asp:literal ID = "Literal12"  text="PPM" runat="server"></asp:literal></h5>
                        <asp:textbox ID="value_water_meter_ppm_ppm" onblur="javascript: Changed_channel( 'value_water_meter_ppm_ppm','riga_water_meter_ppm_ppm',max_us, 0,0 );" class="span12"  runat="server" MaxLength="4" meta:resourcekey="value_water_meter_ppm_ppmResource1" ></asp:textbox>
                 </div>
                        </div>

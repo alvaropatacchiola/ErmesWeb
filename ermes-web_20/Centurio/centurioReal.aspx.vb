@@ -22,7 +22,8 @@ Public Class centurioReal
             For Each pipeValue In pipeSplit
                 If pipeValue.IndexOf(":") > 0 Then
                     Dim pipeValueSplit() As String = pipeValue.Split(":")
-                    If pipeValueSplit(0).IndexOf(">") < 0 Then
+                    If pipeValueSplit(0).IndexOf(">") < 0 And pipeValueSplit(0).Contains(Chr(0)) = False Then
+                        'And pipeValueSplit(0).IndexOf(",") < 0 And pipeValueSplit(1).IndexOf(",") < 0
                         stringJson = stringJson + virgola + "{""chiave"":""" + pipeValueSplit(0) + """, ""valore"":""" + pipeValueSplit(1) + """}"
                         virgola = ","
                     End If
@@ -56,11 +57,15 @@ Public Class centurioReal
                     If pipeValueSplit(1).IndexOf("\") >= 0 Then
                         pipeValueSplit(1) = pipeValueSplit(1).Replace("\", "\\")
                     End If
-                    stringJson = stringJson + virgola + "{""chiave"":""" + pipeValueSplit(0).Replace(">", "_") + """, ""valore"":""" + pipeValueSplit(1) + """}"
-                    If (pipeValueSplit(0) = "change") Then
-                        stringChange = """change"":""" + pipeValueSplit(1) + ""","
+                    'If pipeValueSplit(0).IndexOf(",") < 0 And pipeValueSplit(1).IndexOf(",") < 0 Then
+
+                    If pipeValueSplit(0).Contains(Chr(0)) = False Then
+                        stringJson = stringJson + virgola + "{""chiave"":""" + pipeValueSplit(0).Replace(">", "_") + """, ""valore"":""" + pipeValueSplit(1) + """}"
+                        If (pipeValueSplit(0) = "change") Then
+                            stringChange = """change"":""" + pipeValueSplit(1) + ""","
+                        End If
+                        virgola = ","
                     End If
-                    virgola = ","
                     'End If
                 End If
             Next
@@ -275,10 +280,14 @@ Public Class centurioReal
                         If lineSplit(1).IndexOf("\") >= 0 Then
                             lineSplit(1) = lineSplit(1).Replace("\", "\\")
                         End If
-                        stringJson = stringJson + virgola + "{""chiave"":""" + lineSplit(0).Replace(">", "_") + """, ""valore"":""" + lineSplit(1) + """}"
-                        virgola = ","
+                        'If lineSplit(0).IndexOf(",") < 0 And lineSplit(1).IndexOf(",") < 0 Then
+
+                        If lineSplit(0).Contains(Chr(32)) = False Then
+                            stringJson = stringJson + virgola + "{""chiave"":""" + lineSplit(0).Replace(">", "_") + """, ""valore"":""" + lineSplit(1) + """}"
+                            virgola = ","
+                        End If
                     End If
-                    line = r.ReadLine
+                        line = r.ReadLine
                 Loop
             End Using
         End If

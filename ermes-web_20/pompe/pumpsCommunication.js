@@ -5,6 +5,7 @@ var classePompaIcon = ["mdi-alert-octagon", "mdi-check-decagram", "mdi-alert", "
 var classePompaButton = ["btn-outline-danger", "btn-outline-primary", "btn-outline-warning", "btn-outline-warning"];
 var classePompaColor = ["red", "green", "yellow", "grey"];
 var classePompa = ["impiantoacceso", "impiantospento", "allarme"];
+var stringaConnessione = "ws://192.168.1.72/pompe/websocket.ashx"
 /*$(document).ready(function () {
     console.log("ready!");
 });
@@ -73,14 +74,14 @@ var OggettoPompa = function (options)
         //messaggioTesto("Check Connection.");
 
         if (typeof (WebSocket) !== 'undefined') {
-            varsInternal.socket = new WebSocket("ws://192.168.1.72/pompe/websocket.ashx");
+            varsInternal.socket = new WebSocket(stringaConnessione);
             //varsInternal.socket = new WebSocket("ws://localhost:10154/pompe/websocket.ashx");
         } else {
-            varsInternal.socket = new MozWebSocket("ws://192.168.1.72/pompe/websocket.ashx");
+            varsInternal.socket = new MozWebSocket(stringaConnessione);
         }
         varsInternal.socket.onclose = function () {
             varsInternal.counterConnection = varsInternal.counterConnection + 1;
-            alert("socket closed" + varsInternal.counterConnection)
+            
             varsInternal.socket = null;
             if (varsInternal.counterConnection < 3) {
                 varsInternal.stateConnection = state.connection;

@@ -40,7 +40,7 @@
                	<div class="span3">
                        <div id="riga1_ph_alarm_dosing" class="control-group">
                            <h5 style="padding-top:10px"><asp:literal ID = "Literal4"  text="Time Alarm(min)" runat="server" meta:resourcekey="Literal4Resource1"></asp:literal></h5>
-                       <asp:textbox ID="value_ph_alarm_dosing" onblur="javascript: Changed_channel( 'value_ph_alarm_dosing','riga1_ph_alarm_dosing',99, 0,0 );" class="span12"  runat="server" MaxLength="2" meta:resourcekey="value_ph_alarm_dosingResource1" ></asp:textbox>
+                       <asp:textbox ID="value_ph_alarm_dosing" onblur="javascript: Changed_channel( 'value_ph_alarm_dosing','riga1_ph_alarm_dosing',999, 0,0 );" class="span12"  runat="server" MaxLength="3" meta:resourcekey="value_ph_alarm_dosingResource1" ></asp:textbox>
                 </div>
                        </div>
 
@@ -98,7 +98,7 @@
                	<div class="span3">
                        <div id="riga1_cl_alarm_dosing" class="control-group">
                            <h5 style="padding-top:10px"><asp:literal ID = "Literal10"  text="Time Alarm(min)" runat="server" meta:resourcekey="Literal10Resource1"></asp:literal></h5>
-                       <asp:textbox ID="value_cl_alarm_dosing" onblur="javascript: Changed_channel( 'value_cl_alarm_dosing','riga1_cl_alarm_dosing',99, 0,0 );" class="span12"  runat="server" MaxLength="2" meta:resourcekey="value_cl_alarm_dosingResource1" ></asp:textbox>
+                       <asp:textbox ID="value_cl_alarm_dosing" onblur="javascript: Changed_channel( 'value_cl_alarm_dosing','riga1_cl_alarm_dosing',999, 0,0 );" class="span12"  runat="server" MaxLength="3" meta:resourcekey="value_cl_alarm_dosingResource1" ></asp:textbox>
                 </div>
                        </div>
 

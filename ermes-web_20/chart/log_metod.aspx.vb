@@ -152,9 +152,9 @@ Public Class log_metod
             'Dim time As DateTime = DateTime.Parse(dc.data, New CultureInfo(culture, False))
             Dim data_str As String = "" + (dc.data.Year).ToString + "," + (dc.data.Month - 1).ToString + "," + dc.data.Day.ToString + "," + dc.data.Hour.ToString + "," + dc.data.Minute.ToString + ""
             data_str = data_str + "," + Replace(dc.valore1.ToString, ",", ".") + "," + Replace(dc.valore2.ToString, ",", ".") + "," + Replace(dc.temperatura.ToString, ",", ".") _
-               + "," + main_function.get_status_string(dc.flusso) + "," + main_function.get_status_string(dc.lev_hcl) + "," + main_function.get_status_string(dc.lev_naclo2) + "," + main_function.get_status_string(dc.lev_k6) _
-                + "," + main_function.get_status_string(dc.temp_max) + "," + main_function.get_status_string(dc._stop) _
-                + "," + main_function.get_status_string(dc.lev_errata) + "," + Replace(dc.totAcqua.ToString, ",", ".")
+               + "," + main_function.get_status_boolean(dc.flusso) + "," + main_function.get_status_boolean(dc.lev_hcl) + "," + main_function.get_status_boolean(dc.lev_naclo2) + "," + main_function.get_status_boolean(dc.lev_k6) _
+                + "," + main_function.get_status_boolean(dc.temp_max) + "," + main_function.get_status_boolean(dc._stop) _
+                + "," + main_function.get_status_boolean(dc.lev_errata) + "," + Replace(dc.totAcqua.ToString, ",", ".")
             array.Add(data_str)
 
 

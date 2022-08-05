@@ -139,7 +139,7 @@
     <value />
   </data>
   <data name="Literal1Resource1.Text" xml:space="preserve">
-    <value>&lt;p&gt;Forgot username and/or password&lt;/p&gt;&lt;p&gt; &lt;/p&gt;</value>
+    <value>Forgot username and/or password</value>
   </data>
   <data name="Literal2Resource1.Text" xml:space="preserve">
     <value>&lt;p&gt;Enter your email address to receive account information

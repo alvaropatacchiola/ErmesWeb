@@ -14,6 +14,15 @@ Option Explicit On
 Partial Public Class MainNew
     
     '''<summary>
+    '''Controllo pagetitle.
+    '''</summary>
+    '''<remarks>
+    '''Campo generato automaticamente.
+    '''Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
+    '''</remarks>
+    Protected WithEvents pagetitle As Global.System.Web.UI.WebControls.Literal
+    
+    '''<summary>
     '''Controllo form1.
     '''</summary>
     '''<remarks>

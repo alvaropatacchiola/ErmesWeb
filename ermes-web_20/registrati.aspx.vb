@@ -35,6 +35,47 @@ Public Class signup
 
     End Sub
 
-    
+    Protected Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        Dim companyStr As String
+        Dim usernameStr As String
+        Dim passwordStr As String
+        Dim mailStr As String
+        Dim result_user As Boolean = False
+        Dim query As New query
 
+        Dim isHuman As Boolean
+        isHuman = ExampleCaptcha.Validate()
+        If isHuman Then
+            companyStr = company.Text
+            usernameStr = username.Text
+            passwordStr = password.Text
+            mailStr = email.Text
+            result_user = query.check_user(usernameStr, passwordStr) ' true utente ok
+            If result_user Then ' utente ok registrabile
+                result_user = query.insert_super_user(usernameStr, passwordStr, companyStr, mailStr)
+                If result_user Then
+                    main_function.send_mail(mailStr, GetLocalResourceObject("account_ready"), GetLocalResourceObject("Literal1Resource1.Text"), True, "Nuova Registrazione Ermes", "ip:" + getIpClient() + vbCrLf + "username:" + usernameStr + vbCrLf + "azienda:" + companyStr + vbCrLf + "mail:" + mailStr)
+                    Response.Redirect("signed.aspx?result=1")
+                Else ' errore
+                    Response.Redirect("signed.aspx?result=2")
+                End If
+            Else ' errore
+                Response.Redirect("signed.aspx?result=0")
+            End If
+        End If
+    End Sub
+    Public Function getIpClient() As String
+        Dim IPAddress As String = ""
+        'Dim Host As System.Net.IPHostEntry
+        'Dim Hostname As String
+        'Hostname = My.Computer.Name
+        'Host = System.Net.Dns.GetHostEntry(Hostname)
+        'For Each IP As System.Net.IPAddress In Host.AddressList
+        '    If IP.AddressFamily = System.Net.Sockets.AddressFamily.InterNetwork Then
+        '        IPAddress = Convert.ToString(IP)
+        '    End If
+        'Next
+        IPAddress = HttpContext.Current.Request.UserHostAddress()
+        Return IPAddress
+    End Function
 End Class

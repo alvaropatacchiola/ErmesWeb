@@ -14,3 +14,8 @@ function invalidFileSize() {
     $('#FileUpload1').after("<div class=\"text-danger small mt-1\">Max size 2Mbyte</div>");
 
 }
+function invalidFileHL() {
+    $('#FileUpload1').next("div").remove();
+    $('#FileUpload1').after("<div class=\"text-danger small mt-1\"The size must not be greater than 128 x 128 pixel</div>");
+
+}

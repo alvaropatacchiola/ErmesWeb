@@ -6,7 +6,10 @@ Public Class picker
         Dim tabella_impianto As ermes_web_20.quey_db.impianto_newDataTable
 
         tabella_impianto = Master.tabella_impianto_container
+        If Session("mid_super").ToString = "7f7dd24e-d88a-453e-8da4-a01d6d52b27b" Then ' disabilitato per utente emec emec
+            save_modifica_account_new.Enabled = False
 
+        End If
         If Not IsPostBack Then
             For Each dc In tabella_impianto
                 color_body.Text = dc.colorBody
@@ -16,6 +19,7 @@ Public Class picker
 
                 logoAssents.Text = "<img src=""assets/img/" + dc.logo + """ alt=""Mono"">"
                 slide.Text = Replace(dc.aziendaPersonalizzazione, " ", "")
+
             Next
         End If
     End Sub
@@ -50,7 +54,7 @@ Public Class picker
 
                 Dim imgFile As System.Drawing.Image = System.Drawing.Image.FromStream(FileUpload1.PostedFile.InputStream)
                 If imgFile.PhysicalDimension.Width > 128 Or imgFile.PhysicalDimension.Height > 128 Then
-                    function_java = function_java + "invalidFileSize();"
+                    function_java = function_java + "invalidFileHL();"
                 Else
                     FileUpload1.SaveAs(folderPath + dcRow.id_super.ToString + extension)
                     result_update = query.update_super_userLogo(dcRow.id_super, color_body.Text, color.Text, color_primary.Text, color_links.Text, dcRow.id_super.ToString + extension, slide.Text)

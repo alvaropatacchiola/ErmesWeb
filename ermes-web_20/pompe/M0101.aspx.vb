@@ -23,6 +23,7 @@
                     If dc.identificativo = serial_impianto Then
                         riga_impianto = dc
                         nomeImpiantoString = Replace(riga_impianto.nome_impianto, ">", " : ")
+                        Master.setTitle(nomeImpiantoString)
                         referenteImpiantoString = riga_impianto.referente
                         numeroTelefonoString = riga_impianto.telefono_referente
                         indirizzoMailString = riga_impianto.mail_referente

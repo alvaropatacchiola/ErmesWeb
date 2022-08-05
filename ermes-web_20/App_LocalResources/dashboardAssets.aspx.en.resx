@@ -124,10 +124,10 @@
     <value>show all</value>
   </data>
   <data name="filterOffResource1.Text" xml:space="preserve">
-    <value>Plants ON</value>
+    <value>Plants OFF</value>
   </data>
   <data name="filterOnResource1.Text" xml:space="preserve">
-    <value>Plants OFF</value>
+    <value>Plants ON</value>
   </data>
   <data name="filterPompaResource1.Text" xml:space="preserve">
     <value>Pumps</value>

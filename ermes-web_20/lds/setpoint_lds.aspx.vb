@@ -257,8 +257,8 @@
         End If
 
 
-        If app_ch2_pulse_mode <> "0" And Val(value2_cl_pulse1_3.Text) = 0 Then ' no on off
-            value2_cl_pulse1_3.Text = "1"
+        If app_ch2_pulse_mode <> "0" Then ' no on off
+            value2_cl_pulse1_3.Text = "0"
         End If
 
         If app_ch2_pulse_mode = "0" Then '  on off

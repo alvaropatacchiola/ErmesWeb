@@ -28,7 +28,7 @@
  	            <div class="span3">
                        <div id="riga_cond_low_abs" class="control-group">
                         <h5 style="padding-top:10px"><asp:literal ID = "Literal4"  text="uS" runat="server" meta:resourcekey="Literal4Resource1"></asp:literal></h5>
-                       <asp:textbox ID="value_cond_low_abs" onblur="javascript: Changed_channel( 'value_cond_low_abs','riga_cond_low_abs',max_cond, 0,0);" class="span12"  runat="server" MaxLength="4" meta:resourcekey="value_cond_low_absResource1" ></asp:textbox>
+                       <asp:textbox ID="value_cond_low_abs" onblur="javascript: Changed_channel( 'value_cond_low_abs','riga_cond_low_abs',max_ch1, 0,0);" class="span12"  runat="server" MaxLength="4" meta:resourcekey="value_cond_low_absResource1" ></asp:textbox>
                         </div>
                 </div>
       </div>
@@ -37,7 +37,7 @@
                   <div class="span3">
                        <div id="riga_cond_low_track" class="control-group">
                         <h5 style="padding-top:10px"><asp:literal ID = "Literal1"  text="uS" runat="server" meta:resourcekey="Literal1Resource1"></asp:literal></h5>
-                       <asp:textbox ID="value_cond_low_track" onblur="javascript: Changed_channel( 'value_cond_low_track','riga_cond_low_track',max_cond, 0,0);" class="span12"  runat="server" MaxLength="4" meta:resourcekey="value_cond_low_trackResource1" ></asp:textbox>
+                       <asp:textbox ID="value_cond_low_track" onblur="javascript: Changed_channel( 'value_cond_low_track','riga_cond_low_track',max_ch1, 0,0);" class="span12"  runat="server" MaxLength="4" meta:resourcekey="value_cond_low_trackResource1" ></asp:textbox>
                 </div>
                        </div>
             </div>        
@@ -63,7 +63,7 @@
  	            <div class="span3">
                        <div id="riga_cond_high_abs" class="control-group">
                         <h5 style="padding-top:10px"><asp:literal ID = "Literal9"  text="uS" runat="server" meta:resourcekey="Literal9Resource1"></asp:literal></h5>
-                       <asp:textbox ID="value_cond_high_abs" onblur="javascript: Changed_channel( 'value_cond_high_abs','riga_cond_high_abs',max_cond, 0,0 );" class="span12"  runat="server" MaxLength="4" meta:resourcekey="value_cond_high_absResource1" ></asp:textbox>
+                       <asp:textbox ID="value_cond_high_abs" onblur="javascript: Changed_channel( 'value_cond_high_abs','riga_cond_high_abs',max_ch1, 0,0 );" class="span12"  runat="server" MaxLength="4" meta:resourcekey="value_cond_high_absResource1" ></asp:textbox>
                 </div>
             </div>
 
@@ -72,7 +72,7 @@
                      <div class="span3">
                        <div id="riga_cond_high_track" class="control-group">
                         <h5 style="padding-top:10px"><asp:literal ID = "Literal2"  text="uS" runat="server" meta:resourcekey="Literal2Resource1"></asp:literal></h5>
-                       <asp:textbox ID="value_cond_high_track" onblur="javascript: Changed_channel( 'value_cond_high_track','riga_cond_high_track',max_cond, 0,0 );" class="span12"  runat="server" MaxLength="4" meta:resourcekey="value_cond_high_trackResource1" ></asp:textbox>
+                       <asp:textbox ID="value_cond_high_track" onblur="javascript: Changed_channel( 'value_cond_high_track','riga_cond_high_track',max_ch1, 0,0 );" class="span12"  runat="server" MaxLength="4" meta:resourcekey="value_cond_high_trackResource1" ></asp:textbox>
                         </div>
                        </div>
                    
@@ -163,7 +163,7 @@
     <!--------------------------- DA MODIFICARE L'INDIRIZZO DEL FILE VALIDATOR -------------------------------------------->
 
 
-    <script type="text/javascript" src="LDTower/validator_alarm_ldt.js"></script>
+    <script type="text/javascript" src="LDTower/validator_alarm_ldt.js?v=1.0"></script>
                                 <script type="text/javascript" src="common/validator_general_notify.js"></script>
 <script src="theme/scripts/demo/notifications.js"></script>
 

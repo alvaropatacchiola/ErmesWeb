@@ -10,7 +10,7 @@
                     <div id ="div_old_password" class="row-fluid">
                         	<div class="span3">
                                 <h5 style="padding-top:10px"><asp:literal ID = "Label7"  text="OLD Password" runat="server" meta:resourcekey="Label7Resource1" ></asp:literal></h5>
-                                <asp:textbox ID="old_password" class="span12"  runat="server" style=" position: relative; z-index: 100000; top: 0px; left: 0px;" MaxLength="4" meta:resourcekey="old_passwordResource1" ></asp:textbox>
+                                <asp:textbox ID="old_password" class="span12"  runat="server" style=" position: relative; z-index: 100000; top: 0px; left: 0px;" MaxLength="4" meta:resourcekey="old_passwordResource1" TextMode="Password" ></asp:textbox>
                             </div>
 
                      </div>
@@ -19,7 +19,7 @@
                     <div id ="div_new_password" class="row-fluid">
                         	<div class="span3">
                                 <h5 style="padding-top:10px"><asp:literal ID = "Literal1"  text="New Password" runat="server" meta:resourcekey="Literal1Resource1" ></asp:literal></h5>
-                                <asp:textbox ID="new_password" class="span12"  runat="server" style=" position: relative; z-index: 100000; top: 0px; left: 0px;" MaxLength="4" meta:resourcekey="new_passwordResource1" ></asp:textbox>
+                                <asp:textbox ID="new_password" class="span12"  runat="server" style=" position: relative; z-index: 100000; top: 0px; left: 0px;" MaxLength="4" meta:resourcekey="new_passwordResource1" TextMode="Password" ></asp:textbox>
                             </div>
 
                      </div>
@@ -28,7 +28,7 @@
                     <div id ="div_confirm_password" class="row-fluid">
                         	<div class="span3">
                                 <h5 style="padding-top:10px"><asp:literal ID = "Literal2"  text="Confirm Password" runat="server" meta:resourcekey="Literal2Resource1" ></asp:literal></h5>
-                                <asp:textbox ID="confirm_password" class="span12"  runat="server" style=" position: relative; z-index: 100000; top: 0px; left: 0px;" MaxLength="4" meta:resourcekey="confirm_passwordResource1" ></asp:textbox>
+                                <asp:textbox ID="confirm_password" class="span12"  runat="server" style=" position: relative; z-index: 100000; top: 0px; left: 0px;" MaxLength="4" meta:resourcekey="confirm_passwordResource1" TextMode="Password" ></asp:textbox>
                             </div>
 
                      </div>

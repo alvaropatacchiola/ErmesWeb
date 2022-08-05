@@ -39,91 +39,187 @@
         Dim query As New query
         Dim stringJson As String = "{"
         Dim labelList As String = ""
-        If query.getJSONEnable(user, password, serialNumber, labelList) Then
+        'Dim dataString1 As String = "mar 12 apr 2022 10-55-00"
+        'dataString1 = dataString1.Replace("-", ":")
+        'Dim dateTemp1 As DateTime = Convert.ToDateTime(dataString1)
+        'stringJson = stringJson + "{""key"":""dateTime"", ""value"":""" + Format(dateTemp1.Day, "00") + "-" + Format(dateTemp1.Month, "00") + "-" + (dateTemp1.Year - 2000).ToString + " " + Format(dateTemp1.Hour, "00") + ":" + Format(dateTemp1.Minute, "00") + """}"
+        If type = "real" Or type = "all" Then
+            If query.getJSONEnable(user, password, serialNumber, labelList) Then
 
-            If (serialNumber.Length >= 17) Then
-                If type = "real" Then ' letture e stato
+                If (serialNumber.Length >= 17) Then
+                    If type = "real" Then ' letture e stato
+                        Dim pipeClient As New centurioRealTime
+                        Dim resultPipe As String = ""
+
+                        resultPipe = pipeClient.Main(serialNumber, "")
+                        If resultPipe <> "null" And resultPipe <> "" Then
+                            Dim pipeSplit() As String = resultPipe.Split("$")
+
+                            stringJson = stringJson + """error"":""ok"",""variable"":["
+                            '{""chiave"":""Empty"", ""valore"":}"
+                            Dim virgola As String = ""
+                            For Each pipeValue In pipeSplit
+                                If pipeValue.IndexOf(":") > 0 Then
+                                    Dim pipeValueSplit() As String = pipeValue.Split(":")
+                                    If pipeValueSplit(0).IndexOf(">") < 0 Then
+                                        If (pipeValueSplit(0) = "clockRealR") Then
+                                            Dim dataString As String = pipeValueSplit(1).Replace("-", ":")
+
+                                            Try
+
+                                                Dim dateTemp As DateTime = Convert.ToDateTime(dataString)
+                                                stringJson = stringJson + virgola + "{""key"":""" + pipeValueSplit(0) + """, ""value"":""" + pipeValueSplit(1) + """}"
+                                                If virgola = "" Then
+                                                    virgola = ","
+                                                End If
+                                                stringJson = stringJson + virgola + "{""key"":""dateTime"", ""value"":""" + Format(dateTemp.Day, "00") + "-" + Format(dateTemp.Month, "00") + "-" + (dateTemp.Year - 2000).ToString + " " + Format(dateTemp.Hour, "00") + ":" + Format(dateTemp.Minute, "00") + """}"
+                                            Catch ex As Exception
+                                                stringJson = stringJson + virgola + "{""key"":""" + pipeValueSplit(0) + """, ""value"":""" + pipeValueSplit(1) + """}"
+                                            End Try
+                                        Else
+                                            stringJson = stringJson + virgola + "{""key"":""" + pipeValueSplit(0) + """, ""value"":""" + pipeValueSplit(1) + """}"
+                                        End If
+
+                                        virgola = ","
+                                    End If
+                                End If
+                            Next
+                            stringJson = stringJson + "],""labelAlarm"":""" + labelList + """}"
+                        Else
+                            stringJson = stringJson + """error"":""invalidSerial""}"
+                        End If
+                    End If
+                    If type = "all" Then ' letture e stato
+                        Dim resultPipe As String = ""
+                        Dim stringChange As String = ""
+                        Dim pipeClient As New centurioRealTime
+                        resultPipe = pipeClient.Main(serialNumber, "")
+                        If resultPipe <> "null" And resultPipe <> "" Then
+                            Dim pipeSplit() As String = resultPipe.Split("$")
+
+                            stringJson = stringJson + """error"":""ok"",changejs""variable"":["
+                            '{""chiave"":""Empty"", ""valore"":}"
+                            Dim virgola As String = ""
+                            For Each pipeValue In pipeSplit
+                                If pipeValue.IndexOf(":") > 0 Then
+                                    Dim pipeValueSplit() As String = pipeValue.Split(":")
+                                    'If pipeValueSplit(0).IndexOf(">") < 0 Then
+                                    If (pipeValueSplit(0) = "clockRealR") Then
+                                        Dim dataString As String = pipeValueSplit(1).Replace("-", ":")
+                                        Try
+                                            stringJson = stringJson + virgola + "{""key"":""" + pipeValueSplit(0) + """, ""value"":""" + pipeValueSplit(1) + """}"
+                                            Dim dateTemp As DateTime = Convert.ToDateTime(dataString)
+                                            If virgola = "" Then
+                                                virgola = ","
+                                            End If
+                                            stringJson = stringJson + virgola + "{""key"":""dateTime"", ""value"":""" + Format(dateTemp.Day, "00") + "-" + Format(dateTemp.Month, "00") + "-" + (dateTemp.Year - 2000).ToString + " " + Format(dateTemp.Hour, "00") + ":" + Format(dateTemp.Minute, "00") + """}"
+                                        Catch ex As Exception
+                                            stringJson = stringJson + virgola + "{""key"":""" + pipeValueSplit(0).Replace(">", "_") + """, ""value"":""" + pipeValueSplit(1) + """}"
+                                        End Try
+                                    Else
+                                        stringJson = stringJson + virgola + "{""key"":""" + pipeValueSplit(0).Replace(">", "_") + """, ""value"":""" + pipeValueSplit(1) + """}"
+                                    End If
+
+
+                                    If (pipeValueSplit(0) = "change") Then
+                                        stringChange = """change"":""" + pipeValueSplit(1) + ""","
+                                    End If
+                                    virgola = ","
+                                    'End If
+                                End If
+                            Next
+                            stringJson = stringJson + "],""labelAlarm"":""" + labelList + """}"
+                        Else
+
+                            Dim resultPipeData As String = ""
+
+                            Dim strinxXML As String = query.getConfigGlobal(1)
+                            resultPipeData = mainFunctionCenturio.getFileInfoXML(serialNumber, strinxXML, 4)
+                            If resultPipeData <> "" Then
+                                stringJson = stringJson + """error"":""disconnected"", ""change"":""0"" ,""variable"":["
+                                stringJson = stringJson + resultPipeData + "],""labelAlarm"":""" + labelList + """}"
+                            Else
+                                stringJson = stringJson + """error"":""invalidSerial""}"
+                            End If
+
+
+
+                        End If
+                        stringJson = stringJson.Replace("changejs", stringChange)
+                    End If
+
+                Else
+                    'stringJson = stringJson + """errore"":""invalidSerial""}"
+                    Dim riga_strumento As ermes_web_20.quey_db.strumentiRow
+                    stringJson = stringJson + getJsonLD(serialNumber, id_485_impianto, riga_strumento)
+                    If type = "real" Then ' letture e stato
+                    Else
+                        stringJson = stringJson + getJsonLDSettings(serialNumber, riga_strumento)
+                    End If
+                    stringJson = stringJson + "],""labelAlarm"":""" + labelList + """}"
+                End If
+            Else
+                stringJson = stringJson + """error"":""invalid""}"
+            End If
+        Else ' condizione group
+            Dim tabellaRisultato As ermes_web_20.quey_db.webServiceDataTable = query.getJSONData(user, password)
+            Dim virgola As String = ""
+            stringJson = stringJson + "["
+            For Each dc In tabellaRisultato
+                Dim riga_strumento As ermes_web_20.quey_db.strumentiRow
+                stringJson = stringJson + virgola + "["
+                If (dc.identificativo.Length >= 17) Then
                     Dim pipeClient As New centurioRealTime
                     Dim resultPipe As String = ""
 
                     resultPipe = pipeClient.Main(serialNumber, "")
                     If resultPipe <> "null" And resultPipe <> "" Then
                         Dim pipeSplit() As String = resultPipe.Split("$")
-
-                        stringJson = stringJson + """error"":""ok"",""variable"":["
+                        stringJson = stringJson + """error"":""ok"", ""code"":""" + dc.identificativo + """, ""variable"":["
                         '{""chiave"":""Empty"", ""valore"":}"
-                        Dim virgola As String = ""
+                        Dim virgolaCenturio As String = ""
                         For Each pipeValue In pipeSplit
                             If pipeValue.IndexOf(":") > 0 Then
                                 Dim pipeValueSplit() As String = pipeValue.Split(":")
                                 If pipeValueSplit(0).IndexOf(">") < 0 Then
-                                    stringJson = stringJson + virgola + "{""chiave"":""" + pipeValueSplit(0) + """, ""valore"":""" + pipeValueSplit(1) + """}"
-                                    virgola = ","
+                                    If (pipeValueSplit(0) = "clockRealR") Then
+                                        Dim dataString As String = pipeValueSplit(1).Replace("-", ":")
+
+                                        Try
+
+                                            Dim dateTemp As DateTime = Convert.ToDateTime(dataString)
+                                            stringJson = stringJson + virgolaCenturio + "{""key"":""" + pipeValueSplit(0) + """, ""value"":""" + pipeValueSplit(1) + """}"
+                                            If virgolaCenturio = "" Then
+                                                virgolaCenturio = ","
+                                            End If
+                                            stringJson = stringJson + virgolaCenturio + "{""key"":""dateTime"", ""value"":""" + Format(dateTemp.Day, "00") + "-" + Format(dateTemp.Month, "00") + "-" + (dateTemp.Year - 2000).ToString + " " + Format(dateTemp.Hour, "00") + ":" + Format(dateTemp.Minute, "00") + """}"
+                                        Catch ex As Exception
+                                            stringJson = stringJson + virgolaCenturio + "{""key"":""" + pipeValueSplit(0) + """, ""value"":""" + pipeValueSplit(1) + """}"
+                                        End Try
+                                    Else
+                                        stringJson = stringJson + virgolaCenturio + "{""key"":""" + pipeValueSplit(0) + """, ""value"":""" + pipeValueSplit(1) + """}"
+                                    End If
+
+                                    virgolaCenturio = ","
                                 End If
                             End If
                         Next
-                        stringJson = stringJson + "],""labelAlarm"":""" + labelList + """}"
                     Else
-                        stringJson = stringJson + """error"":""invalidSerial""}"
+                        stringJson = stringJson + """error"":""invalidSerial"", ""code"":""" + dc.identificativo + """"
                     End If
-                End If
-                If type = "all" Then ' letture e stato
-                    Dim resultPipe As String = ""
-                    Dim stringChange As String = ""
-                    Dim pipeClient As New centurioRealTime
-                    resultPipe = pipeClient.Main(serialNumber, "")
-                    If resultPipe <> "null" And resultPipe <> "" Then
-                        Dim pipeSplit() As String = resultPipe.Split("$")
-
-                        stringJson = stringJson + """error"":""ok"",changejs""variable"":["
-                        '{""chiave"":""Empty"", ""valore"":}"
-                        Dim virgola As String = ""
-                        For Each pipeValue In pipeSplit
-                            If pipeValue.IndexOf(":") > 0 Then
-                                Dim pipeValueSplit() As String = pipeValue.Split(":")
-                                'If pipeValueSplit(0).IndexOf(">") < 0 Then
-                                stringJson = stringJson + virgola + "{""chiave"":""" + pipeValueSplit(0).Replace(">", "_") + """, ""valore"":""" + pipeValueSplit(1) + """}"
-                                If (pipeValueSplit(0) = "change") Then
-                                    stringChange = """change"":""" + pipeValueSplit(1) + ""","
-                                End If
-                                virgola = ","
-                                'End If
-                            End If
-                        Next
-                        stringJson = stringJson + "],""labelAlarm"":""" + labelList + """}"
-                    Else
-
-                        Dim resultPipeData As String = ""
-
-                        Dim strinxXML As String = query.getConfigGlobal(1)
-                        resultPipeData = mainFunctionCenturio.getFileInfoXML(serialNumber, strinxXML, 4)
-                        If resultPipeData <> "" Then
-                            stringJson = stringJson + """error"":""disconnected"", ""change"":""0"" ,""variable"":["
-                            stringJson = stringJson + resultPipeData + "],""labelAlarm"":""" + labelList + """}"
-                        Else
-                            stringJson = stringJson + """error"":""invalidSerial""}"
-                        End If
-
-
-
-                    End If
-                    stringJson = stringJson.Replace("changejs", stringChange)
-                End If
-
-            Else
-                'stringJson = stringJson + """errore"":""invalidSerial""}"
-                Dim riga_strumento As ermes_web_20.quey_db.strumentiRow
-                stringJson = stringJson + getJsonLD(serialNumber, id_485_impianto, riga_strumento)
-                If type = "real" Then ' letture e stato
                 Else
-                    stringJson = stringJson + getJsonLDSettings(serialNumber, riga_strumento)
-                End If
-                stringJson = stringJson + "],""labelAlarm"":""" + labelList + """}"
-            End If
-        Else
-            stringJson = stringJson + """error"":""invalid""}"
-        End If
+                    Try
+                        stringJson = stringJson + getJsonLD(dc.identificativo, id_485_impianto, riga_strumento)
+                    Catch ex As Exception
 
+                    End Try
+
+                End If
+                stringJson = stringJson + "]"
+                virgola = ","
+            Next
+            stringJson = stringJson + "]}"
+        End If
         Return stringJson
     End Function
     Public Function getJsonLDSettings(ByVal codice As String, ByVal riga_strumento As ermes_web_20.quey_db.strumentiRow) As String
@@ -512,6 +608,8 @@
         Else
             stringJson = stringJson + """error"":""ok"", ""status"":""notconnected"" , ""lastUpdateMin"":""0"""
         End If
+
+        stringJson = stringJson + ", ""code"":""" + codice + """"
 
         stringJson = stringJson + ",""variable"":["
         Select Case riga_strumento.tipo_strumento

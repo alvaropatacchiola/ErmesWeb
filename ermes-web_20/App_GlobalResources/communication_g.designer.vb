@@ -83,7 +83,7 @@ Namespace Resources
         End Property
         
         '''<summary>
-        '''  Cerca una stringa localizzata simile a &lt;h4&gt;17/05/2016 Aggiornamento di sistema!&lt;/h4&gt;&lt;p&gt;Ogni account può contenere un numero illimitato di utenti che possono modificare i parametri dell impianto&lt;/p&gt;.
+        '''  Cerca una stringa localizzata simile a &lt;h4&gt;28/10/2021 Aggiornamento Ermes&lt;/h4&gt;&lt;p&gt;Giovedì 28 ottobre il nuovo Ermes verrà lanciato e andrà progressivamente a sostituire l\’attuale.Gli strumenti Max5, LD, LDS, Centurio, MTOWER, e i sistemi Lotus e WDPHXX saranno temporaneamente gestibili solo dal vecchio Ermes.Nei primi giorni di attivazione, inoltre, c\’è il rischio che si verifichino dei lievi disservizi.Stiamo lavorando per voi per tenere la piattaforma sempre aggiornata e funzionale&lt;/p&gt;.
         '''</summary>
         Friend Shared ReadOnly Property ultime() As String
             Get

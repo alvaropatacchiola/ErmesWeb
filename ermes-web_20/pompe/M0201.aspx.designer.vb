@@ -11,32 +11,35 @@ Option Strict On
 Option Explicit On
 
 
-Partial Public Class signup
+Partial Public Class M0201
     
     '''<summary>
-    '''Controllo Literal10.
+    '''Controllo plantName.
     '''</summary>
     '''<remarks>
     '''Campo generato automaticamente.
     '''Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
     '''</remarks>
-    Protected WithEvents Literal10 As Global.System.Web.UI.WebControls.Literal
+    Protected WithEvents plantName As Global.System.Web.UI.WebControls.Literal
     
     '''<summary>
-    '''Controllo Literal11.
+    '''Controllo javaScriptHeader.
     '''</summary>
     '''<remarks>
     '''Campo generato automaticamente.
     '''Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
     '''</remarks>
-    Protected WithEvents Literal11 As Global.System.Web.UI.WebControls.Literal
+    Protected WithEvents javaScriptHeader As Global.System.Web.UI.WebControls.Literal
     
     '''<summary>
-    '''Controllo java_script_local.
+    '''Proprietà Master.
     '''</summary>
     '''<remarks>
-    '''Campo generato automaticamente.
-    '''Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
+    '''Proprietà generata automaticamente.
     '''</remarks>
-    Protected WithEvents java_script_local As Global.System.Web.UI.WebControls.Literal
+    Public Shadows ReadOnly Property Master() As ermes_web_20.MainNew
+        Get
+            Return CType(MyBase.Master,ermes_web_20.MainNew)
+        End Get
+    End Property
 End Class

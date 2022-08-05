@@ -9,11 +9,12 @@ Public Class dashboardAssets
     End Sub
     Private Sub dashboardAssets_LoadComplete(sender As Object, e As EventArgs) Handles Me.LoadComplete
         Dim nome_impianto As String = ""
-        If Not IsPostBack Then
-            nome_impianto = Page.Request("nome_impianto")
-            nome_impianto = Replace(nome_impianto, "£", " ")
-            refresh_impianto(nome_impianto)
-        End If
+        'If Not IsPostBack Then
+        nome_impianto = Page.Request("nome_impianto")
+        nome_impianto = Replace(nome_impianto, "£", " ")
+        refresh_impianto(nome_impianto)
+        Master.setTitle("Dashboard")
+        'End If
     End Sub
     Private Sub refresh_impianto(ByVal nome_impianto As String)
         Dim tabella_strumento As ermes_web_20.quey_db.strumentiDataTable
@@ -51,7 +52,8 @@ Public Class dashboardAssets
             If InStr(dc1.nome, "Y#o") Or dc1.tipo_strumento = "LD4" Then
                 block_yagel = True
                 ' comunicazioni = "<h4>Warning!! This account will be terminated Friday the 10th of April at 12:00 Italian time.</h4><p> Please contact your EMEC distributor for information.</p>"
-                If dc1.codice = "268994" Or dc1.codice = "869534" Or
+                If Session("super_user") Then
+                    If dc1.codice = "268994" Or dc1.codice = "869534" Or
                     dc1.codice = "10000013" Or dc1.codice = "10000005" Or
                     dc1.codice = "0549263889" Or dc1.codice = "287758" Or dc1.codice = "646324" Or
                     Session("mid_super").ToString = "091eeeb4-7d61-4a04-a8fb-804652eb980f" Or
@@ -60,9 +62,22 @@ Public Class dashboardAssets
                     Session("mid_super").ToString = "d03dfb93-095f-4f2a-b0ed-2b1c3059e2f1" Or
                     Session("mid_super").ToString = "564629ca-0d28-4f3e-808b-585424b93dd6" Or
                     Session("mid_super").ToString = "ab4d51a9-91ad-40a9-82f3-37cebd476e0d" Then
-
-                    block_yagel = False
-                    Exit For
+                        block_yagel = False
+                        Exit For
+                    End If
+                Else
+                    If Session("mid_user").ToString = "5c48f70d-45e7-4bc0-8b04-c6ab6bc4cee1" Or
+                    Session("mid_user").ToString = "ae204c54-8c02-4023-994d-ebd352967a8c" Or
+                    Session("mid_user").ToString = "49f5fe47-8cd5-4f16-b0c5-fa995ebb3224" Or
+                    Session("mid_user").ToString = "35ed2d18-8d41-47d7-b00e-af96671aa909" Or
+                    Session("mid_user").ToString = "9d7a9e58-af19-4f2f-b652-651deb521fa5" Or
+                    Session("mid_user").ToString = "03db3bd1-37ad-4dd5-b5f2-4ac3723f5a58" Or
+                    Session("mid_super").ToString = "091eeeb4-7d61-4a04-a8fb-804652eb980f" Or
+                    Session("mid_super").ToString = "564629ca-0d28-4f3e-808b-585424b93dd6" Or
+                    Session("mid_super").ToString = "c97c4283-7763-45ab-8ba1-35f2a2912d8b" Then
+                        block_yagel = False
+                        Exit For
+                    End If
                 End If
             End If
         Next
@@ -82,6 +97,8 @@ Public Class dashboardAssets
 
                     End Try
                 Next
+
+
             Else
                 'verifica se è pompa o centurio
                 Dim typeStrumento As Integer = 0
@@ -209,15 +226,20 @@ Public Class dashboardAssets
                         End If
 
 
-                        javaScriptLiteral.Text = javaScriptLiteral.Text + "get_data('" + dc.identificativo + "','" + stringJson + "','" + stringJsonGlobal + "','" + dc1.nomeStrumento + "','" + stringJsonDecimal + "','" + stringJsonLabel + "','" + resultPipe + "','" + resultConfigurationInput + "','" + stringJsonGlobalInputOutput + "','" + sistemaUSA + "','" + GetGlobalResourceObject("main_master_global", "modifica") + "','" + GetGlobalResourceObject("main_master_global", "eliminaController") + "','Vai all\'impianto','" + dc.nome_impianto + "','" + hrefCenturio + "',true);"
+                        javaScriptLiteral.Text = javaScriptLiteral.Text + "get_data('" + dc.identificativo + "','" + stringJson + "','" + stringJsonGlobal + "','" + dc1.nomeStrumento + "','" + stringJsonDecimal + "','" + stringJsonLabel + "','" + resultPipe + "','" + resultConfigurationInput + "','" + stringJsonGlobalInputOutput + "','" + sistemaUSA + "','" + GetGlobalResourceObject("main_master_global", "modifica") + "','" + GetGlobalResourceObject("main_master_global", "eliminaController") + "','" + GetGlobalResourceObject("impianto_global", "vaiImpianto") + "','" + dc.nome_impianto + "','" + hrefCenturio + "',true);"
                         scriptCenturioReal = scriptCenturioReal + "serialNumber = '" + dc.identificativo + "';" + "stringJson='" + stringJson + "';" + "stringGlobal='" + stringJsonGlobal + "';" + "stringLabel='" + stringJsonLabel + "';" + "nomeLabel='" + dc1.nomeStrumento + "';" + "resultPipe='" + resultPipe + "';" + "resultConfigurationInput='" + resultConfigurationInput + "';" + "stringJsonGlobalInputOutput='" + stringJsonGlobalInputOutput + "';" + "sistemaUSA='" + sistemaUSA + "';" +
-                                "stringDecimal='" + stringJsonDecimal + "';traduzioneModificaGlobal='" + GetGlobalResourceObject("main_master_global", "modifica") + "';traduzioneEliminaGlobal='" + GetGlobalResourceObject("main_master_global", "eliminaController") + "';traduzioneVaiImpiantoGlobal='Vail all\'impianto';nomeImpiantoDBGlobal='" + dc.nome_impianto + "';hrefGlobal='" + hrefCenturio + "';" +
+                                "stringDecimal='" + stringJsonDecimal + "';traduzioneModificaGlobal='" + GetGlobalResourceObject("main_master_global", "modifica") + "';traduzioneEliminaGlobal='" + GetGlobalResourceObject("main_master_global", "eliminaController") + "';traduzioneVaiImpiantoGlobal='" + GetGlobalResourceObject("impianto_global", "vaiImpianto") + "';nomeImpiantoDBGlobal='" + dc.nome_impianto + "';hrefGlobal='" + hrefCenturio + "';" +
                                 "get_data(serialNumber,stringJson,stringGlobal,nomeLabel,stringDecimal,stringLabel,resultPipe,resultConfigurationInput,stringJsonGlobalInputOutput,sistemaUSA,traduzioneModificaGlobal,traduzioneEliminaGlobal,traduzioneVaiImpiantoGlobal,nomeImpiantoDBGlobal,hrefGlobal,false);"
                     Next
                 Else 'strumenti e pompe di nuova comunicazione
                     Select Case typeStrumento
-                        Case 1 ' pompa prisma
-                            htmlCentralina = htmlCentralina + "<div Class=""col-xl-3 col-sm-6 plant pompa"" id=""" + dc.identificativo + "_pump""" + ">"
+                        Case 1 To 2 ' pompa prismaù
+                            If typeStrumento = 1 Then 'prisma : pompa
+                                htmlCentralina = htmlCentralina + "<div Class=""col-xl-3 col-sm-6 plant pompa"" id=""" + dc.identificativo + "_pump""" + ">"
+                            End If
+                            If typeStrumento = 2 Then 'ldosin : strumento
+                                htmlCentralina = htmlCentralina + "<div Class=""col-xl-3 col-sm-6 plant strumento"" id=""" + dc.identificativo + "_pump""" + ">"
+                            End If
                             htmlCentralina = htmlCentralina + "<script type = ""text/javascript"" >"
                             htmlCentralina = htmlCentralina + "var NarrayReadRealTime = [1];"
                             htmlCentralina = htmlCentralina + "var NserialNumber = """ + dc.identificativo + """;"
@@ -248,7 +270,7 @@ Public Class dashboardAssets
                             htmlCentralina = htmlCentralina + "<div id ='statusConnection" + dc.identificativo + "' class=""list-group-item list-group-item-action""><i class=""mdi mdi-power-plug-off""></i>Connecting ...<span class=""badge badge-red badge-pill"">	<i class=""mdi mdi-arrow-down-bold white""></i></span></div></div>"
                             htmlCentralina = htmlCentralina + "</div>"
 
-                        Case 2
+
                     End Select
                 End If
 
@@ -260,6 +282,20 @@ Public Class dashboardAssets
 
         End If
         javaScriptLiteral.Text = javaScriptLiteral.Text + "setInterval(explode, 4000);function explode() {" + scriptCenturioReal + "};console.log('finito');"
+
+        'carico la lista sonde
+        Dim listDataSonda As List(Of Dictionary(Of String, String))
+        Dim jsonVariableMainCanaleSondaTemp As String = "{""variable"":["
+        Dim virgolaJsonMainCanaleSonda As String = ""
+        listDataSonda = mainFunctionCenturio.getProbeListAll()
+        For Each elementList As Dictionary(Of String, String) In listDataSonda
+            jsonVariableMainCanaleSondaTemp = jsonVariableMainCanaleSondaTemp + virgolaJsonMainCanaleSonda + "{""tipoCanale"":""" + elementList.Item("tipoCanale") + """, ""numeroSonda"":""" + elementList.Item("numeroSonda") + """, ""grandezza"":""" + elementList.Item("grandezza") + """, ""unitEu"":""" + elementList.Item("unitEu") + """, ""unitUSA"":""" + elementList.Item("unitUSA") + """,""minimo"":""" + elementList.Item("minimo") + """,""massimo"":""" + elementList.Item("massimo") + """, ""decimali"":""" + elementList.Item("decimali") + """}"
+            virgolaJsonMainCanaleSonda = ","
+        Next
+        jsonVariableMainCanaleSondaTemp = jsonVariableMainCanaleSondaTemp + "]}"
+        javaScriptLiteral.Text = javaScriptLiteral.Text + "jsonParseDecimalStr ='" + jsonVariableMainCanaleSondaTemp + "'; jsonParseListaSonde= JSON.parse(jsonParseDecimalStr);"
+        'end carico la lista sonde
+
         javaScriptLiteral.Text = javaScriptLiteral.Text + "</script>"
         Session.Remove("centurioList")
         Session("centurioList") = listCenturio
@@ -528,7 +564,7 @@ Public Class dashboardAssets
         End If
         'gggggggg
         'colore del pulsante vai allimpianto
-        intestazione = intestazione + "</div><a href=""" + href + """ class=""btn btn-block gggggggg"">Vai all'impianto</a>"
+        intestazione = intestazione + "</div><a href=""" + href + """ class=""btn btn-block gggggggg"">" + GetGlobalResourceObject("impianto_global", "vaiImpianto") + "</a>"
         intestazione = intestazione + "</div></div></div>"
         ' end visualizzazione temperatura
 
@@ -691,6 +727,11 @@ Public Class dashboardAssets
                     Else
                         valoreCanalestr = valore_canale_temp.ToString
                     End If
+                    If canale_allarme Then
+                        intestazione = intestazione + "<div Class=""list-group-item list-group-item-action red"">" + label_canale_temp + "<strong>" + valoreCanalestr + "</strong></div>"
+                    Else
+                        intestazione = intestazione + "<div Class=""list-group-item list-group-item-action"">" + label_canale_temp + "<strong>" + valoreCanalestr + "</strong></div>"
+                    End If
 
                 Case 2 'controllo canale 2
                     main_function_config.get_tipo_strumento_tower(personalizzazione_aquacare, config_value(0), config_value(1), config_value(2), config_value(3), version_str, ,
@@ -764,7 +805,7 @@ Public Class dashboardAssets
             intestazione = intestazione + "<div Class=""list-group-item list-group-item-action"">°F<strong>" + (temperature_value / 10).ToString + "</strong></div>"
         End If
         ' end visualizzazione temperatura
-        intestazione = intestazione + "</div><a href=""" + href + """ class=""btn btn-block gggggggg"">Vai all'impianto</a>"
+        intestazione = intestazione + "</div><a href=""" + href + """ class=""btn btn-block gggggggg"">" + GetGlobalResourceObject("impianto_global", "vaiImpianto") + "</a>"
         intestazione = intestazione + "</div></div></div>"
 
         'filtri
@@ -983,7 +1024,7 @@ Public Class dashboardAssets
             intestazione = intestazione + "<div Class=""list-group-item list-group-item-action "">°F<strong>" + (temperature_value).ToString + "</strong></div>"
         End If
         ' end visualizzazione temperatura
-        intestazione = intestazione + "</div><a href=""" + href + """ class=""btn btn-block gggggggg"">Vai all'impianto</a>"
+        intestazione = intestazione + "</div><a href=""" + href + """ class=""btn btn-block gggggggg"">" + GetGlobalResourceObject("impianto_global", "vaiImpianto") + "</a>"
         intestazione = intestazione + "</div></div></div>"
 
         'filtri
@@ -1161,7 +1202,7 @@ Public Class dashboardAssets
             intestazione = intestazione + "<div Class=""list-group-item list-group-item-action "">°F<strong>" + (temperature_value).ToString + "</strong></div>"
         End If
         ' end visualizzazione temperatura
-        intestazione = intestazione + "</div><a href=""" + href + """ class=""btn btn-block gggggggg"">Vai all'impianto</a>"
+        intestazione = intestazione + "</div><a href=""" + href + """ class=""btn btn-block gggggggg"">" + GetGlobalResourceObject("impianto_global", "vaiImpianto") + "</a>"
         intestazione = intestazione + "</div></div></div>"
 
         'filtri
@@ -1336,7 +1377,7 @@ Public Class dashboardAssets
             End If
 
         Next
-        intestazione = intestazione + "</div><a href=""" + href + """ class=""btn btn-block gggggggg"">Vai all'impianto</a>"
+        intestazione = intestazione + "</div><a href=""" + href + """ class=""btn btn-block gggggggg"">" + GetGlobalResourceObject("impianto_global", "vaiImpianto") + "</a>"
         intestazione = intestazione + "</div></div></div>"
 
         'filtri
@@ -1519,7 +1560,7 @@ Public Class dashboardAssets
                 End If
             End If
         Next
-        intestazione = intestazione + "</div><a href=""" + href + """ class=""btn btn-block gggggggg"">Vai all'impianto</a>"
+        intestazione = intestazione + "</div><a href=""" + href + """ class=""btn btn-block gggggggg"">" + GetGlobalResourceObject("impianto_global", "vaiImpianto") + "</a>"
         intestazione = intestazione + "</div></div></div>"
 
         'filtri
@@ -1676,7 +1717,7 @@ Public Class dashboardAssets
             intestazione = intestazione + "<div Class=""list-group-item list-group-item-action "">°F<strong>" + (temperature_value).ToString + "</strong></div>"
         End If
         ' end visualizzazione temperatura
-        intestazione = intestazione + "</div><a href=""" + href + """ class=""btn btn-block gggggggg"">Vai all'impianto</a>"
+        intestazione = intestazione + "</div><a href=""" + href + """ class=""btn btn-block gggggggg"">" + GetGlobalResourceObject("impianto_global", "vaiImpianto") + "</a>"
         intestazione = intestazione + "</div></div></div>"
         'filtri
         'aaaaaaaa da sostituire con impiantoacceso
@@ -1883,7 +1924,7 @@ Public Class dashboardAssets
             intestazione = intestazione + "<div Class=""list-group-item list-group-item-action "">°F<strong>" + (temperature_value).ToString + "</strong></div>"
         End If
         ' end visualizzazione temperatura
-        intestazione = intestazione + "</div><a href=""" + href + """ class=""btn btn-block gggggggg"">Vai all'impianto</a>"
+        intestazione = intestazione + "</div><a href=""" + href + """ class=""btn btn-block gggggggg"">" + GetGlobalResourceObject("impianto_global", "vaiImpianto") + "</a>"
         intestazione = intestazione + "</div></div></div>"
         'filtri
         'aaaaaaaa da sostituire con impiantoacceso
@@ -2040,7 +2081,7 @@ Public Class dashboardAssets
                 intestazione = intestazione + "<div Class=""list-group-item list-group-item-action "">" + label_canale_temp + "<strong>" + valore_canale_temp.ToString + "</strong></div>"
             End If
         Next
-        intestazione = intestazione + "</div><a href=""" + href + """ class=""btn btn-block gggggggg"">Vai all'impianto</a>"
+        intestazione = intestazione + "</div><a href=""" + href + """ class=""btn btn-block gggggggg"">" + GetGlobalResourceObject("impianto_global", "vaiImpianto") + "</a>"
         intestazione = intestazione + "</div></div></div>"
         'filtri
         'aaaaaaaa da sostituire con impiantoacceso
@@ -2297,7 +2338,7 @@ Public Class dashboardAssets
 
         End If
         ' end visualizzazione temperatura
-        intestazione = intestazione + "</div><a href=""" + href + """ class=""btn btn-block gggggggg"">Vai all'impianto</a>"
+        intestazione = intestazione + "</div><a href=""" + href + """ class=""btn btn-block gggggggg"">" + GetGlobalResourceObject("impianto_global", "vaiImpianto") + "</a>"
         intestazione = intestazione + "</div></div></div>"
         'filtri
         'aaaaaaaa da sostituire con impiantoacceso
@@ -2437,7 +2478,7 @@ Public Class dashboardAssets
                 intestazione = intestazione + "<div Class=""list-group-item list-group-item-action "">" + label_canale_temp + "<strong>" + valore_canale_temp.ToString + "</strong></div>"
             End If
         Next
-        intestazione = intestazione + "</div><a href=""" + href + """ class=""btn btn-block gggggggg"">Vai all'impianto</a>"
+        intestazione = intestazione + "</div><a href=""" + href + """ class=""btn btn-block gggggggg"">" + GetGlobalResourceObject("impianto_global", "vaiImpianto") + "</a>"
         intestazione = intestazione + "</div></div></div>"
         'filtri
         'aaaaaaaa da sostituire con impiantoacceso
@@ -2459,7 +2500,7 @@ Public Class dashboardAssets
         Else
             intestazione = intestazione.Replace("aaaaaaaa", "impiantoacceso")
             intestazione = intestazione.Replace("bbbbbbbb", "")
-            If check_alarm_general Or main_function.alarm_lds_flusso(allrmr_value) Then
+            If check_alarm_general Or main_function.alarm_lta_alflow(allrmr_value) Then
                 intestazione = intestazione.Replace("cccccccc", "allarme")
                 intestazione = intestazione.Replace("dddddddd", "red")
                 intestazione = intestazione.Replace("eeeeeeee", "mdi-alert-octagon")

@@ -22,7 +22,9 @@
     End Property
     Public Shared ReadOnly lingue() As String = {"gb", "it", "de", "fr", "pl", "es"}
     Public Shared ReadOnly lingueEsteso() As String = {"English", "Italiano", "Deutsch", "Français", "Polish", "Español"}
-
+    Public Sub setTitle(ByVal titleString As String)
+        pagetitle.Text = titleString
+    End Sub
     Public Sub create_master_page()
         'gestione connsessione login
         Dim table_super As ermes_web_20.quey_db.super_userDataTable
@@ -81,7 +83,7 @@
         table_super = query.login_super_user_Personalizzazione(Session("mid_super"))
         scriptColor.Text = "<script>"
         For Each dc In table_super
-            logoAssents.Text = "<img src=""assets/img/" + dc.logo + """ alt=""Mono"">"
+            logoAssents.Text = "<img src=""" + ResolveUrl("~/") + "assets/img/" + dc.logo + """ alt=""Mono"">"
             scriptColor.Text = scriptColor.Text + "$("".left-sidebar"").css({backgroundColor:""" + dc.colorSide + """});"
             scriptColor.Text = scriptColor.Text + "$(""body"").css({backgroundColor:""" + dc.colorBody + """});"
 
@@ -201,8 +203,8 @@
         utilizzatoreAggiungi.Text = comunicazioniHTML
 
         comunicazioniHTML = "<div class=""card-body"">"
-        If Not IsPostBack Then
-            Dim table_user As ermes_web_20.quey_db.userDataTable = New ermes_web_20.quey_db.userDataTable
+        'If Not IsPostBack Then
+        Dim table_user As ermes_web_20.quey_db.userDataTable = New ermes_web_20.quey_db.userDataTable
             Dim query As New query
             table_user = query.get_user_to_super(id_super_container)
             For Each dc In table_user
@@ -297,7 +299,7 @@
                 enableModificaTema.Visible = False
             End If
 
-        End If
+        'End If
     End Sub
     Public Sub manage_sidebar_left(ByVal tabella_strumento As ermes_web_20.quey_db.strumentiDataTable, ByVal tabella_impianto As ermes_web_20.quey_db.impianto_newDataTable)
         Dim intestazione As String = ""

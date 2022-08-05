@@ -422,7 +422,7 @@
         new_version = main_function_config.chek_ldtower_version(riga_strumento.nome, version_str)
         config_value = main_function.get_split_str(riga_strumento.value4)
 
-        MTower_Type = main_function_config.get_tipo_strumento_ldtower(personalizzazione_aquacare, config_value(0), config_value(1), config_value(2), config_value(3), version_str)
+        MTower_Type = main_function_config.get_tipo_strumento_tower(personalizzazione_aquacare, config_value(0), config_value(1), config_value(2), config_value(3), version_str)
 
 
         If cond_low_track.Checked Then                'low conductivity track

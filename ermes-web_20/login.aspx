@@ -143,9 +143,9 @@
                 <div class="card card-default mb-0" style="box-shadow: 1px 2px 10px 0px #333333;">
                   <div class="card-header pb-0">
                     <div class="app-brand w-100 d-flex justify-content-center border-bottom-0">
-                      <a class="w-auto pl-0" href="/index.html">
+                      <a class="w-auto pl-0">
                         <img src="assets/img/logo.png" alt="Mono">
-                        <span class="brand-name text-dark">ERMES - Login </span>
+                        <span class="brand-name text-dark">ERMES - Login  </span>
                       </a>
                     </div>
                   </div>
@@ -179,8 +179,8 @@
                               <input type="checkbox" class="custom-control-input" id="customCheck2">
                               <label class="custom-control-label" for="customCheck2">Remember me</label>
                                 -->
-                                <asp:CheckBox ID="CheckBox1N" runat="server" CssClass="custom-control-input" meta:resourcekey="CheckBox1NResource1" />
-                                <asp:Label ID="remember_meN" runat="server" Text="Remember me" CssClass="custom-control-label" meta:resourcekey="remember_meNResource1"></asp:Label>
+                                <asp:CheckBox ID="CheckBox1N" runat="server"   meta:resourcekey="CheckBox1NResource1" Checked="True" />
+                                <asp:Label ID="remember_meN" runat="server" for="CheckBox1N" Text="Remember me"  meta:resourcekey="remember_meNResource1"></asp:Label>
                             </div>
 
                             <a class="text-color" href="remember.aspx"> <asp:literal ID="Literal1" runat="server" text ="forgot your password?" meta:resourcekey="Literal1Resource3"  ></asp:literal> </a>
@@ -190,9 +190,10 @@
                           <button type="submit" class="btn btn-primary btn-pill mb-4" style="width:100% !important">Sign In</button>
                             -->
                             <asp:Button ID="Button1N" runat="server" Text="Sign in"  CssClass="btn btn-primary btn-pill mb-4" style="width:100% !important" meta:resourcekey="Button1NResource1" />
-                          <p>Don't have an account yet ?
+                          <p>
+                              <asp:Literal ID="Literal3" runat="server" Text="Don't have an account yet ?" meta:resourcekey="Literal3Resource1"></asp:Literal>
                               
-                            <a class="text-blue" href="signup.aspx"> <asp:Literal ID="Literal2" runat="server" Text="Sign Up" meta:resourcekey="Literal2Resource2"></asp:Literal></a>
+                            <a class="text-blue" href="registrati.aspx"> <asp:Literal ID="Literal2" runat="server" Text="Sign Up" meta:resourcekey="Literal2Resource1"></asp:Literal></a>
                               <!--
                               <asp:Button  ID="Button2N" runat="server" Text="Sign up"  CssClass="text-blue" />
                                       -->
@@ -256,8 +257,8 @@
                 dataType: "jsonp",
                 url: 'https://api.openweathermap.org/data/2.5/weather',
                 data: {
-                    lat: data.location.latitude,
-                    lon: data.location.longitude,
+                    lat: data.latitude,
+                    lon: data.longitude,
                     units: "metric",
                     appid: "57d5b21566d36d6d57fd5892ef35cc37"
                 }
@@ -269,7 +270,8 @@
             });
         }
 
-        $.getJSON("https://api.ip2loc.com/jtNZrAX52QtjennyQWIkB3oOeK4Zuzvi/detect", getWeather);
+        //$.getJSON("https://api.ip2loc.com/jtNZrAX52QtjennyQWIkB3oOeK4Zuzvi/detect", getWeather);
+        $.getJSON("https://api.ipstack.com/check?access_key=1c17d2cfbcd7c6cb1fe4204f0830abb5", getWeather);
         </script>
 <script type="text/javascript">
 

@@ -1,7 +1,8 @@
 ﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/MainNew.Master" CodeBehind="dashboardAssets.aspx.vb" Inherits="ermes_web_20.dashboardAssets" culture="auto" meta:resourcekey="PageResource1" uiculture="auto" %>
 <%@ MasterType VirtualPath="~/MainNew.Master"%>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-<script type = "text/javascript" src="pompe/pumpsCommunication.js?v=1.46"></script>
+<script type = "text/javascript" src="pompe/pumpsCommunication.js?v=1.50"></script>
+    <div id="toaster"></div>
 <div class="content-wrapper">
     <div class="content">  <!-- Search impianti-->
         <div class="input-group mb-3">
@@ -170,7 +171,7 @@
 
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="script_footerAssets" runat="server">
-    <script type="text/javascript" src="Centurio/centurioRealTimeAssets.js?v=1.7"></script>
+    <script type="text/javascript" src="Centurio/centurioRealTimeAssets.js?v=1.12"></script>
     
     <asp:Literal ID="javaScriptLiteral" runat="server" meta:resourcekey="javaScriptLiteralResource1"></asp:Literal>
 </asp:Content>
